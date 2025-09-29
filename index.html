@@ -1,99 +1,170 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <title>Victory Pages</title>
+<head>
+  <meta charset="utf-8" />
+  <title>Victory Pages</title>
 
-<nav>
-      <ul>
-        <a href="about.html">[About]</a>
-        <a href="archives.html">[Archives]</a>
-        <a href="contact.html">[Contact]</a>
-      </ul>
-    </nav>
+  <style>
+    .header-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
 
-    <style>
-      /* This container is for the heading and image */
-      .header-container {
-        display: flex; /* Enables Flexbox layout */
-        align-items: center; /* Vertically centers items within the container */
-        gap: 20px; /* Adds space between the heading and image */
-      }
-      
-      /* Style for the image to shrink it */
-      .header-image {
-        width: 150px; /* Sets a new width for the image */
-        height: auto; /* Maintains the image's original aspect ratio */
-      }
+    .header-image {
+      width: 150px;
+      height: auto;
+    }
 
-li {
-  margin-left: 20px; /* Adjust the pixel value as needed */
-}
-    </style>
-  </head>
-  <body>
-    <div class="header-container">
-      <!-- Restore original external image; if it fails to load, swap to an inline SVG data URL fallback -->
-      <img
-        src="https://i.imgur.com/ZexN2vf.png"
-        alt="Agnus Dei icon"
-        class="header-image"
-        onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ctitle%3EAgnus Dei icon%3C/title%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23ffffff%27 stroke=%27%23333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27%23333%27%3EVictory%3C/text%3E%3C/svg%3E';"
-      />
-      <h1>Victory Pages</h1>
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    nav ul a:hover {
+      text-decoration: underline;
+    }
+
+    .filter-buttons {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+
+    /* Muted brown underline (no animation) */
+    .filter-buttons a {
+      margin-right: 20px;
+      color: #333;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+      cursor: pointer;
+    }
+
+    .filter-buttons a:hover {
+      border-bottom-color: #8B5E3C; /* Muted brown */
+    }
+
+    .post {
+      margin-bottom: 20px;
+      padding-left: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .tags {
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <ul>
+      <a href="about.html">[About]</a>
+	<a href="categories.html">[Categories]</a>
+      <a href="contact.html">[Contact]</a>
+    </ul>
+  </nav>
+
+  <div class="header-container">
+    <img
+      src="https://i.imgur.com/ZexN2vf.png"
+      alt="Agnus Dei icon"
+      class="header-image"
+      onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23fff%27 stroke=%27333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27333%27%3EVictory%3C/text%3E%3C/svg%3E';"
+    />
+    <h1>Victory Pages</h1>
+  </div>
+
+  <div style="padding-left: 20px;">
+    <em>Author: Drew Larsen</em>
+
+<br>
+<br>
+
+    <h2>Posts</h2>
+<em>oldest to newest</em>
+  </div>
+
+<br>
+<br>
+
+  <!-- Posts -->
+  <div id="posts">
+
+    <div class="post gaming">
+      <strong><a href="Post1.html">Game "Yu-Gi-Oh"</a></strong><br>
+      <em>Last updated: Sep. 26, 2025</em><br>
+      <span class="tags">gaming</span>
     </div>
 
-    <p style="padding-left: 20px;">
+    <div class="post movie/film">
+      <strong><a href="mr.html">Movie ratings</a></strong><br>
+      <em>Last updated: Sep. 26, 2025</em><br>
+      <span class="tags">movie/film</span>
+    </div>
 
-<em>Author: Drew Larsen</em>
-      
+    <div class="post faith">
+      <strong><a href="paof.html">Powerful acts of forgiveness</a></strong><br>
+      <em>Last updated: Sep. 26, 2025</em><br>
+      <span class="tags">faith</span>
+    </div>
 
-<h3>Posts</h3>
+    <div class="post music">
+      <strong><a href="music.html">A good band called "Sweet Trip"</a></strong><br>
+      <em>Last updated: Sep. 26, 2025</em><br>
+      <span class="tags">music</span>
+    </div>
 
-<div> 
-<strong><a href="Post1.html">Game "Yu-Gi-Oh"<a/></strong>
-<br>
-<em>Last updated: Sep. 26, 2025</em> 
-<br>
-<br>
-<strong><a href="mr.html">Movie ratings<a/></strong>
-<br>
-<em>Last updated Sep. 26, 2025</em>
-<br>
-<br>
-<strong><a href="paof.html">Powerful acts of forgivness</a></strong>
-<br>
-<em>Last updated: Sep. 26, 2025</em>
-<br>
-<br>
-<strong><a href="music.html">Music</a></strong>
-<br>
-<em>Last updated: Sep. 26, 2025</em>
-<br>
-<br>
-<strong><a href="ml.html">My life</a></strong>
-<br>
-<em>Last updated: Sep. 26, 2025</em>
-<br>
-<br>
-<strong><a href="mcwol.html">My cripes with Oldlutheran.com</a></strong>
-<br>
-<em>Last updated: Sep. 26, 2025</em>
-<br>
-<br>
-<strong><a href="GFMH.html">Guy from my home town</a></strong>
-<br>
-<em>Last updated: Sep. 27, 2025</em>
-<br>
-<br>
-<strong><a href="cww.html">ChatGPT is wasting water (allegedly)</a></strong>
-<br>
-<em>Last updated: Sep. 28, 2025</em>
-<br>
+    <div class="post life">
+      <strong><a href="ml.html">My life</a></strong><br>
+      <em>Last updated: Sep. 26, 2025</em><br>
+      <span class="tags">life</span>
+    </div>
 
-</div>
+    <div class="post opinion">
+      <strong><a href="mcwol.html">My cripes with Oldlutheran.com</a></strong><br>
+      <em>Last updated: Sep. 26, 2025</em><br>
+      <span class="tags">opinion</span>
+    </div>
 
-</p>
+    <div class="post life">
+      <strong><a href="GFMH.html">Guy from my home town</a></strong><br>
+      <em>Last updated: Sep. 27, 2025</em><br>
+      <span class="tags">life</span>
+    </div>
 
-  </body>
+    <div class="post opinion">
+      <strong><a href="cww.html">ChatGPT is wasting water (allegedly)</a></strong><br>
+      <em>Last updated: Sep. 28, 2025</em><br>
+      <span class="tags">opinion</span>
+    </div>
+
+  </div>
+
+  <!-- Tiny JS Filter -->
+  <script>
+    function filterPosts(tag) {
+      const posts = document.querySelectorAll('.post');
+      posts.forEach(post => {
+        if (tag === 'all' || post.classList.contains(tag)) {
+          post.classList.remove('hidden');
+        } else {
+          post.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+</body>
 </html>
