@@ -1,198 +1,360 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8" />
-  <title>Victory Pages</title>
+    <meta charset="utf-8" />
+    <title>Victory Pages</title>
 
-  <style>
-    .header-container {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+    <style>
+        /* --- CORE LAYOUT STYLES --- */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
-    .header-image {
-      width: 150px;
-      height: auto;
-    }
+        .header-image {
+            width: 150px;
+            height: auto;
+        }
 
-    nav ul {
-      list-style: none;
-      padding: 0;
-    }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex; 
+            padding-left: 20px; 
+        }
 
-    nav ul a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #333;
-    }
+        .filter-buttons {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
 
-    nav ul a:hover {
-      text-decoration: underline;
-    }
+        .post {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .hidden {
+            display: none;
+        }
 
-    .filter-buttons {
-      margin: 20px 0;
-      padding-left: 20px;
-    }
+        .tags {
+            font-size: 0.9em;
+            color: #555;
+        }
 
-    /* Muted brown underline (no animation) */
-    .filter-buttons a {
-      margin-right: 20px;
-      color: #333;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      padding-bottom: 2px;
-      cursor: pointer;
-    }
+        /* ----------------------------------------------------------------- */
+        /* --- MINIMALIST POST TITLE STYLES (DOTTED UNDERLINE ONLY) --- */
+        /* ----------------------------------------------------------------- */
 
-    .filter-buttons a:hover {
-      border-bottom-color: #8B5E3C; /* Muted brown */
-    }
+        .post a {
+            font-size: 1.2em;
+            font-weight: normal; 
+            cursor: pointer;
+            margin: 5px 0; 
+            display: inline-block;
+            
+            /* Add transition for smooth movement */
+            transition: transform 0.15s ease-out; 
+            
+            /* REMOVE ALL BOX STYLING */
+            border: none;
+            padding: 0;
+            background: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
 
-    .post {
-      margin-bottom: 20px;
-      padding-left: 20px;
-    }
+            /* DOTTED UNDERLINE EFFECT */
+            text-decoration: none; /* Reset standard underline */
+            border-bottom: 1px dotted grey; /* Add the dotted underline */
+            color: black !important; 
+        }
+        
+        /* APPLY MOVEMENT ON HOVER */
+        .post a:hover {
+            /* Move and 1px down for a subtle pop/shift effect */
+            transform: none(0, 0px); 
+            
+            /* Change underline to solid and text to red on hover */
+            border-bottom: 1px blue; 
+            color: blue !important;
+        }
+        
+        /* Reset movement on active state (when clicking) */
+        .post a:active {
+            transform: translate(0, 0);
+            color: blue !important;
+        }
+        
+        /* --- TEXT-ONLY LINK STYLES (Navigation, Pagination, Filters) --- */
 
-    .hidden {
-      display: none;
-    }
+        /* Navigation Links (Text Only) */
+        nav ul a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+            border: none;
+            background: none;
+            appearance: none;
+            padding: 0;
+            font-weight: normal;
+            transition: color 0.15s; /* Smooth color change */
+        }
+        
+        nav ul a:hover {
+            text-decoration: none;
+            color: blue;
+        }
 
-    .tags {
-      font-size: 0.9em;
-      color: #555;
-    }
-      a:link {
-    color: black;
-    text-decoration: none;
+        /* Filter Buttons (Text Only) */
+        .filter-buttons a {
+            margin-right: 20px;
+            color: #333;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 2px;
+            cursor: pointer;
+        }
+        .filter-buttons a:hover {
+            border-bottom-color: #8B5E3C; 
+        }
 
-}
+        /* Pagination Controls (Text Only) */
+        .pagination-controls {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+        .pagination-controls a {
+            margin-right: 10px;
+            padding: 0;
+            border: none;
+            background: none;
+            appearance: none;
+            font-weight: 700; /* Strong text */
+            transition: color 0.15s; /* Smooth color change */
+        }
+        .pagination-controls a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+        .pagination-controls a.disabled {
+            color: #aaa;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
 
-a:visited {
-    color: gray; /* Changes color for already-visited links */
-    text-decoration: none;
-}
+        /* --- GENERAL & UTILITY STYLES --- */
+        /* Standard Link Colors (For all links that haven't been styled otherwise) */
+        a:link { color: black; text-decoration: none; }
+        a:visited { color: black; text-decoration: none; }
+        a:hover { color: blue; text-decoration: none; }
+        a:active { color: blue; text-decoration: none; }
+        
+        .post-hidden-by-pagination {
+            display: none !important;
+        }
 
-a:hover {
-    color: red;
-    text-decoration: none;
-}
-
-a:active {
-    color: blue; /* Briefly turns blue when clicked */
-    text-decoration: none;
-}
-
-
-  </style>
+    </style>
 </head>
 
 <body>
 
-  <nav>
-    <ul>
-      <a href="about.html">[About]</a>
-	<a href="categories.html">[Categories]</a>
-      <a href="contact.html">[Contact]</a>
-    </ul>
-  </nav>
+    <nav>
+        <ul>
+            <a href="about.html">About</a>
+            <a href="categories.html">Categories</a>
+            <a href="contact.html">Contact</a>
+        </ul>
+    </nav>
 
-  <div class="header-container">
-    <img
-      src="https://i.imgur.com/ZexN2vf.png"
-      alt="Agnus Dei icon"
-      class="header-image"
-      onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23fff%27 stroke=%27333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27333%27%3EVictory%3C/text%3E%3C/svg%3E';"
-    />
-    <h1>Victory Pages</h1>
-  </div>
-
-  <div style="padding-left: 20px;">
-    <em>Author: Drew Larsen</em>
-
-<br>
-<br>
-
-  </div>
-
-<br>
-<br>
-
-  <!-- Posts -->
-  <div id="posts">
-
-    <div class="post gaming">
-      <button><a href="Post1.html">Game "Yu-Gi-Oh"</a></button>
-<br>
-      <em>Last updated: Sep. 26, 2025</em><br>
-      <span class="tags">gaming</span>
+    <div class="header-container">
+        <img
+            src="https://i.imgur.com/ZexN2vf.png"
+            alt="Agnus Dei icon"
+            class="header-image"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23fff%27 stroke=%27333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27333%27%3EVictory%3C/text%3E%3C/svg%3E';"
+        />
+        <h1>Victory Pages</h1>
     </div>
 
-    <div class="post movie/film">
-      <button><a href="mr.html">Movie ratings</a></button>
-<br>
-      <em>Last updated: Sep. 26, 2025</em><br>
-      <span class="tags">movie/film</span>
+    <div style="padding-left: 20px;">
+        <em>Author: Drew Larsen</em>
+
+        <br>
+        <br>
+
     </div>
 
-    <div class="post faith">
-      <button><a href="paof.html">Powerful acts of forgiveness</a></button>
-<br>
-      <em>Last updated: Sep. 26, 2025</em><br>
-      <span class="tags">faith</span>
+    <br>
+    <br>
+
+    <div id="posts">
+
+        <div class="post gaming">
+            <a href="Post1.html">Game "Yu-Gi-Oh"</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">gaming</span>
+        </div>
+
+        <div class="post movie/film">
+            <a href="mr.html">Movie ratings</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">movie/film</span>
+        </div>
+
+        <div class="post faith">
+            <a href="paof.html">Powerful acts of forgiveness</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">faith</span>
+        </div>
+
+        <div class="post music">
+            <a href="music.html">A good band called "Sweet Trip"</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">music</span>
+        </div>
+
+        <div class="post life">
+            <a href="ml.html">My life</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">life</span>
+        </div>
+
+        <div class="post opinion">
+            <a href="mcwol.html">My cripes with Oldlutheran.com</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">opinion</span>
+        </div>
+
+        <div class="post life">
+            <a href="GFMH.html">Guy from my home town</a>
+            <br>
+            <em>Last updated: Sep. 27, 2025</em><br>
+            <span class="tags">life</span>
+        </div>
+
+        <div class="post opinion">
+            <a href="cww.html">ChatGPT is wasting water (allegedly)</a>
+            <br>
+            <em>Last updated: Sep. 28, 2025</em><br>
+            <span class="tags">opinion</span>
+        </div>
+        
+        <div class="post helpful info">
+            <a href="htbw.html">How to build a text based website like mine</a>
+            <br>
+            <em>Last updated: Oct. 1, 2025</em><br>
+            <span class="tags">helpful info</span>
+        </div>
+
     </div>
 
-    <div class="post music">
-      <button><a href="music.html">A good band called "Sweet Trip"</a></button>
 <br>
-      <em>Last updated: Sep. 26, 2025</em><br>
-      <span class="tags">music</span>
+
+    <div class="pagination-controls">
+        <a href="#" id="prevPage" onclick="changePage(-1); return false;">&lt; Previous</a>
+        <a href="#" id="nextPage" onclick="changePage(1); return false;">Next &gt;</a>
     </div>
 
-    <div class="post life">
-      <button><a href="ml.html">My life</a></button>
-<br>
-      <em>Last updated: Sep. 26, 2025</em><br>
-      <span class="tags">life</span>
-    </div>
+    <script>
+        // --- Configuration ---
+        const POSTS_PER_PAGE = 5;
+        let currentPage = 1;
+        let allPosts = document.querySelectorAll('.post');
+        let totalPages = 0;
 
-    <div class="post opinion">
-      <button><a href="mcwol.html">My cripes with Oldlutheran.com</a></button>
-<br>
-      <em>Last updated: Sep. 26, 2025</em><br>
-      <span class="tags">opinion</span>
-    </div>
+        // --- Core Pagination Functions ---
 
-    <div class="post life">
-      <button><a href="GFMH.html">Guy from my home town</a></button>
-<br>
-      <em>Last updated: Sep. 27, 2025</em><br>
-      <span class="tags">life</span>
-    </div>
-
-    <div class="post opinion">
-      <button><a href="cww.html">ChatGPT is wasting water (allegedly)</a></button>
-<br>
-      <em>Last updated: Sep. 28, 2025</em><br>
-      <span class="tags">opinion</span>
-    </div>
-
-  </div>
-
-  <!-- Tiny JS Filter -->
-  <script>
-    function filterPosts(tag) {
-      const posts = document.querySelectorAll('.post');
-      posts.forEach(post => {
-        if (tag === 'all' || post.classList.contains(tag)) {
-          post.classList.remove('hidden');
-        } else {
-          post.classList.add('hidden');
+        function calculateTotalPages() {
+            const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
+            totalPages = Math.ceil(visiblePosts.length / POSTS_PER_PAGE);
+            
+            const controls = document.querySelector('.pagination-controls');
+            if (totalPages <= 1) {
+                controls.style.display = 'none';
+            } else {
+                controls.style.display = 'block';
+            }
         }
-      });
-    }
-  </script>
+
+        function updatePaginationControls() {
+            const prevLink = document.getElementById('prevPage');
+            const nextLink = document.getElementById('nextPage');
+
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+            } else {
+                prevLink.classList.remove('disabled');
+            }
+            
+            if (currentPage >= totalPages) {
+                nextLink.classList.add('disabled');
+            } else {
+                nextLink.classList.remove('disabled');
+            }
+        }
+
+        function displayPage(page) {
+            calculateTotalPages();
+            currentPage = page;
+
+            const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
+            const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+            const endIndex = startIndex + POSTS_PER_PAGE;
+
+            // 1. Show/Hide Posts based on page number
+            allPosts.forEach(post => {
+                post.classList.remove('post-hidden-by-pagination');
+
+                const postIndex = visiblePosts.indexOf(post);
+                
+                if (postIndex < startIndex || postIndex >= endIndex) {
+                    if (!post.classList.contains('hidden')) {
+                        post.classList.add('post-hidden-by-pagination');
+                    }
+                }
+            });
+            
+            // 2. Update Controls
+            updatePaginationControls();
+        }
+        
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                displayPage(newPage);
+            }
+        }
+
+        // --- Filter Function (PAGINATION-AWARE) ---
+        function filterPosts(tag) {
+            allPosts.forEach(post => {
+                if (tag === 'all' || post.classList.contains(tag)) {
+                    post.classList.remove('hidden');
+                } else {
+                    post.classList.add('hidden');
+                }
+            });
+            
+            displayPage(1);
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            displayPage(1);
+        });
+    </script>
+
+<br>
+<br>
+<marquee>Christ is King</marquee>
 
 </body>
 </html>
