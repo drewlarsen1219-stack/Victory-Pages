@@ -3,36 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie ratings</title>
+    <title>Movie Ratings</title>
 
-<nav>
-      <ul>
-        <a href="index.html">Home</a>
-      </ul>
-    </nav>    
-
-<style>
+    <style>
+        /* --- CORE LAYOUT STYLES (From Victory Pages) --- */
         body {
-            /* font-family removed to keep default */
             line-height: 1.6;
             max-width: 800px;
-            margin: 2em auto;
+            margin: 2em auto 2em 0;
             padding: 0 1em;
-            background-color: #f9f9f9;
+            background-color: #ffff;
             color: #333;
         }
 
         p {
-            margin-bottom: 1em;
-        }
-
-        a {
-            color: #0077cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
+            /* Tighten text block spacing */
+            margin: 0.25em 0;
+            /* Ensure text is left-aligned */
+            text-align: left; 
         }
 
         hr {
@@ -40,39 +28,294 @@
             border: none;
             border-top: 1px solid #ccc;
         }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-image {
+            width: 150px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            padding-left: 20px;
+        }
+
+        .post {
+            /* Standard post margin/padding */
+            margin-bottom: 1.5em;
+            padding-left: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* ----------------------------------------------------------------- */
+        /* --- MINIMALIST POST TITLE STYLES (DOTTED UNDERLINE ONLY) --- */
+        /* ----------------------------------------------------------------- */
+
+        .post a.full-review-link {
+            font-size: 1em;
+            font-weight: normal;
+            cursor: pointer;
+            margin: 0;
+            display: inline;
+            transition: color 0.15s;
+
+            border: none;
+            padding: 0;
+            background: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            text-decoration: none;
+            border-bottom: 1px dotted #0077cc;
+            color: #0077cc !important;
+        }
+
+        .post a.full-review-link:hover {
+            border-bottom: 1px solid blue;
+            color: blue !important;
+        }
+
+
+        /* --- TEXT-ONLY LINK STYLES (Navigation) --- */
+
+        nav ul a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+            border: none;
+            background: none;
+            appearance: none;
+            padding: 0;
+            font-weight: normal;
+            transition: color 0.15s;
+        }
+
+        nav ul a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+
+        /* Pagination Controls (Text Only) */
+        .pagination-controls {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        .pagination-controls a {
+            margin-right: 10px;
+            padding: 0;
+            border: none;
+            background: none;
+            appearance: none;
+            font-weight: 700;
+            transition: color 0.15s;
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .pagination-controls a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .pagination-controls a.disabled {
+            color: #aaa;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        /* --- GENERAL & UTILITY STYLES --- */
+        a {
+             color: #0077cc;
+             text-decoration: none;
+        }
+        a:hover {
+            color: blue;
+            text-decoration: none;
+        }
+
+        .post-hidden-by-pagination {
+            display: none !important;
+        }
+
+        h2 {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .last-updated-container {
+             padding-left: 20px;
+        }
+
     </style>
 </head>
 <body>
 
-<h3>Movie ratings</h3>
+    <nav>
+        <ul>
+            <a href="index.html">Home</a>
+        </ul>
+    </nav>
 
-<p>"Stalker"</p> 
-<p>Directed by Adrea Tartovsky</p>
-<p>Rating: 10/10</p>
-<p>Full review <a href="S.html"> here.</a></p>
-<b>
-<b>
-<p>"Two-lane Blacktop" 1971</p>
-<p>Directed by Monte Hellman</p>
-<p>Rating: 9.5/10</p>
-<p>Full review <a href="TLB.html"> here.</a></p>
-<b>
-<b>
-<p>"Mysteries of the Bible"</p>
-<p>By Questar entertainment</p>
-<p>Rating: (Disc 1-4) 8/10, (disc 5 & 6) 6/10.</p> 
-<p>Full review <a href="MOTB.html"> here.</a></p>
-<b>
-<b>
-<p>"Conclave"</p>
-<p>by A24</p>
-<p>Rating: 7.3/10</p>
-<p>Full review <a href="conclave.html"> here.</a></p>
+    <div class="header-container">
+        <img
+            /* RESTORED ORIGINAL IMAGE URL */
+            src="https://i.imgur.com/ZexN2vf.png"
+            alt="Agnus Dei icon"
+            class="header-image"
+            /* MODIFIED FALLBACK: set fill to body background color #f9f9f9 */
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23f9f9f9%27 stroke=%27%23333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27%23333%27%3EVictory%3C/text%3E%3C/svg%3E';"
+        />
+        <h1>Movie Reviews</h1>
+    </div>
 
+    <div id="posts">
+        <div class="post film">
+            <p><strong>"Stalker"</strong></p>
+            <p>Directed by Adrea Tartovsky</p>
+            <p>Rating: 10/10</p>
+            <p>Full review <a href="S.html" class="full-review-link">here.</a></p>
+        </div>
+
+        <div class="post film">
+            <p><strong>"Two-lane Blacktop" 1971</strong></p>
+            <p>Directed by Monte Hellman</p>
+            <p>Rating: 10/10</p>
+            <p>Full review <a href="TLB.html" class="full-review-link">here.</a></p>
+        </div>
+
+        <div class="post documentary">
+            <p><strong>"Mysteries of the Bible"</strong></p>
+            <p>By Questar entertainment</p>
+            <p>Rating: (Disc 1-4) 8/10, (disc 5 & 6) 6/10.</p>
+            <p>Full review <a href="MOTB.html" class="full-review-link">here.</a></p>
+        </div>
+
+        <div class="post film">
+            <p><strong>"Conclave"</strong></p>
+            <p>by A24</p>
+            <p>Rating: 7.5/10</p>
+            <p>Full review <a href="conclave.html" class="full-review-link">here.</a></p>
+        </div>
+
+    </div>
 
     <hr>
 
-    <p><em>Last updated Oct. 3, 2025</em></p>
+    <div class="last-updated-container">
+        <p><em>Last updated Oct. 5, 2025</em></p>
+    </div>
+
+    <div class="pagination-controls">
+        <a href="#" id="prevPage" onclick="changePage(-1); return false;">&lt; Previous</a>
+        <a href="#" id="nextPage" onclick="changePage(1); return false;">Next &gt;</a>
+    </div>
+
+    <script>
+        // --- Configuration ---
+        // Set to 4 to display 4 posts per page, as requested
+        const POSTS_PER_PAGE = 4; 
+        let currentPage = 1;
+        let allPosts = document.querySelectorAll('#posts > .post'); 
+        let totalPages = 0;
+
+        // --- Core Pagination Functions ---
+
+        function calculateTotalPages() {
+            const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
+            totalPages = Math.ceil(visiblePosts.length / POSTS_PER_PAGE);
+            
+            const controls = document.querySelector('.pagination-controls');
+            if (totalPages <= 1) {
+                controls.style.display = 'none';
+            } else {
+                controls.style.display = 'block';
+            }
+        }
+
+        function updatePaginationControls() {
+            const prevLink = document.getElementById('prevPage');
+            const nextLink = document.getElementById('nextPage');
+
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+            } else {
+                prevLink.classList.remove('disabled');
+            }
+            
+            if (currentPage >= totalPages) {
+                nextLink.classList.add('disabled');
+            } else {
+                nextLink.classList.remove('disabled');
+            }
+        }
+
+        function displayPage(page) {
+            calculateTotalPages();
+            currentPage = page;
+
+            const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
+            const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+            const endIndex = startIndex + POSTS_PER_PAGE;
+
+            // 1. Show/Hide Posts based on page number
+            allPosts.forEach(post => {
+                post.classList.remove('post-hidden-by-pagination');
+
+                const postIndex = visiblePosts.indexOf(post);
+                
+                if (postIndex < startIndex || postIndex >= endIndex) {
+                    if (!post.classList.contains('hidden')) {
+                        post.classList.add('post-hidden-by-pagination');
+                    }
+                }
+            });
+            
+            // 2. Update Controls
+            updatePaginationControls();
+        }
+        
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                displayPage(newPage);
+            }
+        }
+
+        // Filter function is kept but not used on this page
+        function filterPosts(tag) {
+            allPosts.forEach(post => {
+                if (tag === 'all' || post.classList.contains(tag)) {
+                    post.classList.remove('hidden');
+                } else {
+                    post.classList.add('hidden');
+                }
+            });
+            
+            displayPage(1);
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            allPosts = document.querySelectorAll('#posts > .post');
+            displayPage(1); 
+        });
+    </script>
+<br>
+<p><marquee> If you declare with your mouth, “<strong>Jesus is Lord</strong>,” and believe in your heart that God raised him from the dead, you will be saved.</marquee></p>
+<p><marquee><em>Romans 10:9</em></marquee></p>
+
 
 </body>
 </html>
