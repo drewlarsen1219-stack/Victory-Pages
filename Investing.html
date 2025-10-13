@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Victory Pages</title>
-
-    <link rel="icon" type="image/png" href="LOGLOGO.PNG">
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Christian blog/digital garden documenting all my views, beliefs, thoughts and discoveries.">
+    <title>Investing</title>
 
     <style>
-        /* --- CORE LAYOUT STYLES --- */
+        /* --- CORE LAYOUT STYLES (From Victory Pages) --- */
         body {
-            /* Ensures body content doesn't stretch infinitely on wide screens */
-            max-width: 800px; 
+            line-height: 1.6;
+            max-width: 800px;
             margin: 2em auto 2em 0;
             padding: 0 1em;
+            background-color: #ffff;
             color: #333;
+        }
+
+        /* Added CSS to specifically prevent scrolling on the content area */
+        #posts {
+            /* Set a height that fits most viewports (80% of viewport height) */
+            max-height: 80vh; 
+            /* Hide any content that overflows this max-height */
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        p {
+            /* Tighten text block spacing */
+            margin: 0.25em 0;
+            /* Ensure text is left-aligned */
+            text-align: left;
+        }
+
+        hr {
+            margin: 2em 0;
+            border: none;
+            border-top: 1px solid #ccc;
         }
 
         .header-container {
@@ -37,37 +56,25 @@
             padding-left: 20px;
         }
 
-        .filter-buttons {
-            /* Adjusted margin for better separation */
-            margin: 10px 0 20px 0; 
+        .post {
+            /* Standard post margin/padding */
+            margin-bottom: 1.5em;
             padding-left: 20px;
         }
 
-        .post {
-            margin-bottom: 20px;
-            padding-left: 20px;
-        }
-        
         .hidden {
             display: none;
         }
 
-        .tags {
-            /* Post Tag Styling - Base for uniformity */
-            font-size: 0.9em;
-            color: #555;
-        }
 
-        /* ----------------------------------------------------------------- */
-        /* --- POST TITLE STYLES --- */
-        /* ----------------------------------------------------------------- */
-        .post a {
-            font-size: 1.2em;
+        .post a.full-review-link {
+            font-size: 1em;
             font-weight: normal;
             cursor: pointer;
-            margin: 5px 0;
-            display: inline-block;
-            transition: transform 0.15s ease-out;
+            margin: 0;
+            display: inline;
+            transition: color 0.15s;
+
             border: none;
             padding: 0;
             background: none;
@@ -75,64 +82,42 @@
             -moz-appearance: none;
             appearance: none;
 
-            text-decoration: none; 
-            border-bottom: 1px dotted grey;
-            color: black !important;
-        }
-        
-        .post a:hover {
-            transform: translate(0, 0); 
-            border-bottom: 1px blue;
-            color: blue !important;
-        }
-        
-        .post a:active {
-            transform: translate(0, 0);
-            color: blue !important;
-        }
-        
-        /* ----------------------------------------------------------------- */
-        /* --- NEW FILTER BUTTON STYLES (Bracketed and Simplistic) --- */
-        /* ----------------------------------------------------------------- */
-
-        .filter-buttons a {
-            /* Uniformity: Match the size and color of the post tags */
-            font-size: 0.9em;
-            color: #555 !important;
-            font-weight: normal;
-            
-            /* Simplistic Look: Remove all box aesthetics */
-            background: transparent;
-            border: none;
-            border-radius: 0;
-            
-            /* Text Link Styling */
             text-decoration: none;
-            display: inline-block;
-            vertical-align: top;
-            
-            /* Spacing: Use padding for separation */
-            padding: 0 5px;         
-            margin-right: 5px; /* Subtle spacing between bracketed links */
-        }
-        
-        .filter-buttons a:hover {
-            color: #333 !important; /* Slightly darker grey on hover */
-            text-decoration: underline; /* Simple text feedback */
-        }
-        
-        /* Highlight the active filter */
-        .filter-buttons a.active-filter {
-            color: black !important; /* Darkest color when active */
-            font-weight: bold;       /* Make the active tag stand out */
-            text-decoration: none;   /* No underline when active */
+            border-bottom: 1px dotted #0077cc;
+            color: #0077cc !important;
         }
 
-        /* --- Pagination Controls --- */
+        .post a.full-review-link:hover {
+            border-bottom: 1px solid blue;
+            color: blue !important;
+        }
+
+
+        /* --- TEXT-ONLY LINK STYLES (Navigation) --- */
+
+        nav ul a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+            border: none;
+            background: none;
+            appearance: none;
+            padding: 0;
+            font-weight: normal;
+            transition: color 0.15s;
+        }
+
+        nav ul a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+
+        /* Pagination Controls (Text Only) */
         .pagination-controls {
             padding-left: 20px;
             margin-top: 20px;
         }
+
         .pagination-controls a {
             margin-right: 10px;
             padding: 0;
@@ -141,11 +126,15 @@
             appearance: none;
             font-weight: 700;
             transition: color 0.15s;
+            color: #0077cc;
+            text-decoration: none;
         }
+
         .pagination-controls a:hover {
             text-decoration: none;
             color: blue;
         }
+
         .pagination-controls a.disabled {
             color: #aaa;
             cursor: not-allowed;
@@ -153,120 +142,114 @@
         }
 
         /* --- GENERAL & UTILITY STYLES --- */
-        a:link { color: black; text-decoration: none; }
-        a:visited { color: black; text-decoration: none; }
-        a:hover { color: blue; text-decoration: none; }
-        a:active { color: blue; text-decoration: none; }
-        
+        a {
+              color: #0077cc;
+              text-decoration: none;
+        }
+        a:hover {
+            color: blue;
+            text-decoration: none;
+        }
+
+        /* This is the class the JavaScript uses to hide posts not on the current page */
         .post-hidden-by-pagination {
             display: none !important;
         }
 
-        /* Footer Cleanup */
-        footer {
-            margin-top: 30px;
+        h2 {
+            padding-left: 20px;
+            margin-bottom: 20px;
         }
-        footer p {
-            margin: 0.5em 0;
+
+        .last-updated-container {
+              padding-left: 20px;
         }
+
     </style>
 </head>
-
-<body onload="filterPosts('all', document.querySelector('.filter-buttons a:first-child'));">
+<body>
 
     <nav>
         <ul>
-            <a href="about.html">About</a>
+            <a href="index.html">Home</a>
         </ul>
     </nav>
 
     <div class="header-container">
         <img
+            /* RESTORED ORIGINAL IMAGE URL */
             src="https://i.imgur.com/ZexN2vf.png"
             alt="Agnus Dei icon"
             class="header-image"
-            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23fff%27 stroke=%27333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27333%27%3EVictory%3C/text%3E%3C/svg%3E';"
+            /* MODIFIED FALLBACK: set fill to body background color #f9f9f9 */
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23f9f9f9%27 stroke=%27%23333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27%23333%27%3EVictory%3C/text%3E%3C/svg%3E';"
         />
-        <h1>Victory Pages</h1>
+        <h1>Investing</h1>
+    </div>
 
-    </div>
-<br>
-<br>
-    <div class="filter-buttons">
-        <a href="#" onclick="filterPosts('all', this); return false;">[All]</a>
-        <a href="#" onclick="filterPosts('investing', this); return false;">[Investing]</a>
-        <a href="#" onclick="filterPosts('gaming', this); return false;">[Gaming]</a>
-        <a href="#" onclick="filterPosts('movie/film', this); return false;">[Movies]</a>
-        <a href="#" onclick="filterPosts('faith', this); return false;">[Faith]</a>
-        <a href="#" onclick="filterPosts('life', this); return false;">[Life]</a>
-        <a href="#" onclick="filterPosts('opinion', this); return false;">[Opinion]</a>
-        <a href="#" onclick="filterPosts('helpful info', this); return false;">[Programing]</a>
-    </div>
-<br>
     <div id="posts">
-        <div class="post investing">
-            <a href="Investing.html">Investing and documenting what worked</a>
+        <div class="post">
+            <h3><strong>My efforts at investing and documenting what workes for me</strong></h3>
+<br>
+<p>I will be documenting what I am doing in effort to invest my money so that way I can keep track of what I did and document what worked for me.</p>            
+<br>
+<p>Here are the types of investments that I know about: S&P 500 <em><strong>low risk</strong></em>, auto investing by rounding up apps like "Acorns" <em><strong>low risk</strong></em>, Roth IRA and 401k retirnment plans by using companies like Vangaurd <em><strong>low risk</strong></em>, gambeling esk <em><strong>high risk</strong></em> investment apps like "Robinhood", investing in cryptocurrency <em><strong>risk depends</strong></em>, and investing in things like real estate (air b&b, property ownership by becoming a landlord).</p>
             <br>
-            <em>Last updated: Oct. 13, 2025</em><br>
-            <span class="tags">investing</span>
+<p><em><strong>Low risk</strong></em>: conservative and the risk is low in losing money</p>
+<p><em><strong>High risk</strong></em>: Higher in risk and I often view it as very similiar to gambling</p>
+<br>
+            <p>My plan is to invest in conservative approached using low risk because I am not a gambler and I can't imaging just being okay with freely giving other people the money that I earned by working at an entry level job.</p>
         </div>
-        <div class="post gaming">
-            <a href="Post1.html">Game "Yu-Gi-Oh"</a>
+
+        <div class="post">
+            <h3>My Research</h3>
             <br>
-            <em>Last updated: Sep. 26, 2025</em><br>
-            <span class="tags">gaming</span>
+            <p><strong><a href="https://en.wikipedia.org/wiki/S%26P_500">S&P 500</a></strong>: also known as "Standard & Poor's", is a financial services company founded in 1860. It evaluates the performance of U.S. companies by tracking credit history to assess how reliable the companies are in repaying loans. The company uses a grading system. If you are interested in looking at their system they use the wiki page has all that info. They do other things too like publish research on stocks, bonds, and commodities. And the "500" part just means the top preforming 500 companies in the U.S.<p>
+            <br>
+            <p>Going off of this description it makes sense why most people say that it is a safe and good way to invest. It's essentially means you can trust this company to do the work for you and hold on to your money because they keep track of which companies are preforming the best financially and are trust worthy. They will also use your money and divide it evenly amongst these companies lending them your money which in turn will muiltiply your money and give you a more money back in return for allowing them to borrow some money.</p>
+            <br>
+            <p> While at my work a coworker of mine went off about buying another "mystery box" from Amazon again and spending $500 on it. These boxes are items customers have returned to Amazon for xyz reason and Amazon consolidates all of these items together in a box and sells them to people. To me it seems too close to gambeling and there is no way I would spend $500 of a box of stuff that I don't even know what is in it. On top of that my co worker has to travel 12+ hours to Michigan to pick it up.</p>
+            <br>
+            <p> This all seems pretty retarded to me. This time around after hearing more about it I mentioned that my coworkers would be better off investing in S&P 500. My coworker replied with "what's that?" I responded with a brief description. Then my coworker said that they were forced to invest money their whole life by their parent's and that she wont even be able to touch that money until she is 65. She probably thought I was talking about a 401k retirnment plan in which you do have to be 59.5 years old to withdraw and pay a fee and taxes.</p>
+            <br>
+            <p>The S&P 500 stocks can be withdrawn at any time for any reason, although you will have to pay captial taxes on that money.</p>
+            <br>
+            <p><strong>What the experts say</strong></p>
+            <br>
+            <p>The one expert that stuck in my mind is <a href="https://www.youtube.com/channel/UCV6KDgJskWaEckne5aPA0aQ" class="full-review-link">Graham Stephan on YouTube.</a> There are a lot of people on YouTube claiming to be experts in all kinds of fields and same goes for the internet and the world. It's annoying that I have to sort through who to trust is telling the truth and actually going to help. This is one of the few out there who I have heard talk about investing and financing that I made sure to remember because he doesn't over complicate things and seems very transparent about how he made his money. Also he genuinly seems to care that other people make money too. But this is all a matter of opinion but it's going to be my starting point on picking an "expert" to research.</p>
+            <br>
+            <p>Roth IRA/401k retirnment plan: the benefits to this are compound interest, investing while in the lower tax bracket means.... good because....</p>
         </div>
-        <div class="post movie/film">
-            <a href="mr.html">Movie ratings</a>
+
+        <div class="post">
+            <p><strong>What I have done so far</strong></p>
             <br>
-            <em>Last updated: Sep. 26, 2025</em><br>
-            <span class="tags">movie/film</span>
+            <p>I created an account with Everbrite and started an application for a HYSA for the $2,000 sitting in my savings account. I need to talk to my wife before making the transfer but with a %4.5 interest rate I will be making around $50 for the first year with $2,000. This is better than not gaining any interest where it's at now. When I get that saving account up to $12,000 which is my ideal emergency fund, I will be making around $550/year in interest. This is assuming the interest rate stays the same.
+            <br>
+            <p>...to be able to invest in a retirnment plan and invest in the S&P 500 all in one spot. Also I downloaded the "Wallet" app on my tablet to be able to consolidate all my money information from all my bank accounts and investing.</p>
+            <br>
+            <p>Before investing it needs to be made known and handled any interest I or you are paying right now and to see if we can get out of that. I am paying interest on my truck right now, so what that is doing is taking money away from me over time when it doesn't need to if I can find a way to pay it off early.</p>
+            <br>
+            <p><strong>Steps I am taking to get started with investing</strong></p>
+            <br>
+            <p><strong> Step 1</strong>: Create a 3-6 months of expenses in a savings account for emergency funds. For me based off of mine and my wifes spending habbits ~$2,000/month, which makes my emergency budget ideally $12,000. Keep the emergency fund in a <a href="https://www.bankrate.com/banking/what-is-a-high-yield-savings-account/">high yield savings account</a> (HYSA) which offers a much higher interest rate than traditional savings accounts. I need to ask my wife if it's okay to move our savings from the USAA savings account to a that new one before finishing the application for the HYSA.</p>
+            <p>Step 1.5: Find out what the APR rate is that I am paying on my truck loan. Because if it is higher than 6% that needs to be addressed first. I don't think it is higher than 6%, from what I remember it is 4.5 or something close to that.
+            <p><strong>Step 2</strong>: Open Vanguard account and start funding Roth IRA retirnment.</p>
         </div>
-        <div class="post faith">
-            <a href="paof.html">Powerful acts of forgiveness</a>
+
+        <div class="post">
             <br>
-            <em>Last updated: Sep. 26, 2025</em><br>
-            <span class="tags">faith</span>
-        </div>
-        <div class="post music">
-            <a href="music.html">A good band called "Sweet Trip"</a>
+            <p><strong>Investment Apps</strong></p>
             <br>
-            <em>Last updated: Sep. 26, 2025</em><br>
-            <span class="tags">music</span>
-        </div>
-        <div class="post life">
-            <a href="ml.html">My life</a>
-            <br>
-            <em>Last updated: Sep. 26, 2025</em><br>
-            <span class="tags">life</span>
-        </div>
-        <div class="post opinion">
-            <a href="mcwol.html">My cripes with Oldlutheran.com</a>
-            <br>
-            <em>Last updated: Sep. 26, 2025</em><br>
-            <span class="tags">opinion</span>
-        </div>
-        <div class="post life">
-            <a href="GFMH.html">Guy from my home town</a>
-            <br>
-            <em>Last updated: Sep. 27, 2025</em><br>
-            <span class="tags">life</span>
-        </div>
-        <div class="post opinion">
-            <a href="cww.html">ChatGPT is wasting water (allegedly)</a>
-            <br>
-            <em>Last updated: Sep. 28, 2025</em><br>
-            <span class="tags">opinion</span>
-        </div>
-        <div class="post helpful info">
-            <a href="htbw.html">How to build a text based website like mine</a>
-            <br>
-            <em>Last updated: Oct. 1, 2025</em><br>
-            <span class="tags">helpful info</span>
+            <p>Automated deposit's/round up/micro-investing apps like the apps <a href="S.html" class="https://en.wikipedia.org/wiki/Acorns_(company)">"Acorns"</a> & <a href="S.html"https://en.wikipedia.org/wiki/Wealthfront">"Wealth front"</a></p>
         </div>
     </div>
 
-    <br>
+    <hr>
+
+    <div class="last-updated-container">
+        <p><em>Last updated Oct. 13, 2025</em></p>
+    </div>
 
     <div class="pagination-controls">
         <a href="#" id="prevPage" onclick="changePage(-1); return false;">&lt; Previous</a>
@@ -275,18 +258,21 @@
 
     <script>
         // --- Configuration ---
-        const POSTS_PER_PAGE = 5;
+        // Changed to 1: Now displays ONE logical section (one <div class="post">) per page.
+        const POSTS_PER_PAGE = 1; 
         let currentPage = 1;
-        let allPosts = document.querySelectorAll('.post');
+        let allPosts = document.querySelectorAll('#posts > .post'); 
         let totalPages = 0;
 
         // --- Core Pagination Functions ---
 
         function calculateTotalPages() {
+            // Recalculates total pages based on currently visible/unhidden posts
             const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
             totalPages = Math.ceil(visiblePosts.length / POSTS_PER_PAGE);
             
             const controls = document.querySelector('.pagination-controls');
+            // Hides controls if there's only one page
             if (totalPages <= 1) {
                 controls.style.display = 'none';
             } else {
@@ -298,12 +284,14 @@
             const prevLink = document.getElementById('prevPage');
             const nextLink = document.getElementById('nextPage');
 
+            // Disable 'Previous' link on the first page
             if (currentPage === 1) {
                 prevLink.classList.add('disabled');
             } else {
                 prevLink.classList.remove('disabled');
             }
             
+            // Disable 'Next' link on the last page
             if (currentPage >= totalPages) {
                 nextLink.classList.add('disabled');
             } else {
@@ -327,6 +315,7 @@
                 
                 if (postIndex < startIndex || postIndex >= endIndex) {
                     if (!post.classList.contains('hidden')) {
+                        // Apply the hidden class to posts not on the current page
                         post.classList.add('post-hidden-by-pagination');
                     }
                 }
@@ -343,50 +332,36 @@
             }
         }
 
-        // --- Filter Function (PAGINATION-AWARE with ACTIVE state) ---
-        function filterPosts(tag, clickedElement) {
+        // Filter function is kept but not used on this page
+        function filterPosts(tag) {
             allPosts.forEach(post => {
                 if (tag === 'all' || post.classList.contains(tag)) {
                     post.classList.remove('hidden');
                 } else {
                     post.classList.add('hidden');
+                    post.classList.add('post-hidden-by-pagination'); // Ensure hidden posts are not paginated
                 }
             });
             
-            // 1. Remove active class from all filter links
-            const filterLinks = document.querySelectorAll('.filter-buttons a');
-            filterLinks.forEach(link => {
-                link.classList.remove('active-filter');
-            });
-
-            // 2. Add active class to the clicked element (if one was passed)
-            if (clickedElement) {
-                clickedElement.classList.add('active-filter');
-            }
-            
-            // 3. Display the first page of the filtered results
+            // Re-calculate all posts after filtering and show the first page
+            allPosts = document.querySelectorAll('#posts > .post'); 
             displayPage(1);
         }
 
         // --- Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
-            // Automatically click the 'All' filter on page load to set the active state
-            const allFilter = document.querySelector('.filter-buttons a:first-child');
-            if (allFilter) {
-                filterPosts('all', allFilter);
-            } else {
-                 displayPage(1);
-            }
+            allPosts = document.querySelectorAll('#posts > .post');
+            displayPage(1); // Load the first page on startup
         });
     </script>
+    <br>
+    <script>
+    function changeText(el) {
+        el.textContent = el.textContent === "Christ is King" ? "Christ is King" : "Christ is King";
+    }
+    </script>
 
-    <footer>
-        <hr>
-        <div style="padding-left: 20px;">
-            <p>© 2025 Victory Pages. All rights reserved.</p>
-            <p>Jesus is Lord ☩ Christ is King</p>
-        </div>
-    </footer>
+    <div onclick="changeText(this)" style="cursor: pointer;">Jesus is Lord</div>
 
 </body>
 </html>
