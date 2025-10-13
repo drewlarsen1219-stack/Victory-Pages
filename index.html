@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>Victory Pages</title>
 
+    <link rel="icon" type="image/png" href="LOGLOGO.PNG">
 
- <link rel="icon" type="image/png" href="LOGLOGO.PNG">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Christian blog/digital garden documenting all my views, beliefs, thoughts and discoveries.">
 
     <style>
         /* --- CORE LAYOUT STYLES --- */
+        body {
+            /* Ensures body content doesn't stretch infinitely on wide screens */
+            max-width: 800px; 
+            margin: 2em auto 2em 0;
+            padding: 0 1em;
+            color: #333;
+        }
+
         .header-container {
             display: flex;
             align-items: center;
@@ -24,12 +33,13 @@
         nav ul {
             list-style: none;
             padding: 0;
-            display: flex; 
-            padding-left: 20px; 
+            display: flex;
+            padding-left: 20px;
         }
 
         .filter-buttons {
-            margin: 20px 0;
+            /* Adjusted margin for better separation */
+            margin: 10px 0 20px 0; 
             padding-left: 20px;
         }
 
@@ -43,25 +53,21 @@
         }
 
         .tags {
+            /* Post Tag Styling - Base for uniformity */
             font-size: 0.9em;
             color: #555;
         }
 
         /* ----------------------------------------------------------------- */
-        /* --- MINIMALIST POST TITLE STYLES (DOTTED UNDERLINE ONLY) --- */
+        /* --- POST TITLE STYLES --- */
         /* ----------------------------------------------------------------- */
-
         .post a {
             font-size: 1.2em;
-            font-weight: normal; 
+            font-weight: normal;
             cursor: pointer;
-            margin: 5px 0; 
+            margin: 5px 0;
             display: inline-block;
-            
-            /* Add transition for smooth movement */
-            transition: transform 0.15s ease-out; 
-            
-            /* REMOVE ALL BOX STYLING */
+            transition: transform 0.15s ease-out;
             border: none;
             padding: 0;
             background: none;
@@ -69,62 +75,60 @@
             -moz-appearance: none;
             appearance: none;
 
-            /* DOTTED UNDERLINE EFFECT */
-            text-decoration: none; /* Reset standard underline */
-            border-bottom: 1px dotted grey; /* Add the dotted underline */
-            color: black !important; 
+            text-decoration: none; 
+            border-bottom: 1px dotted grey;
+            color: black !important;
         }
         
-        /* APPLY MOVEMENT ON HOVER */
         .post a:hover {
-            /* Move and 1px down for a subtle pop/shift effect */
-            transform: none(0, 0px); 
-            
-            /* Change underline to solid and text to red on hover */
-            border-bottom: 1px blue; 
+            transform: translate(0, 0); 
+            border-bottom: 1px blue;
             color: blue !important;
         }
         
-        /* Reset movement on active state (when clicking) */
         .post a:active {
             transform: translate(0, 0);
             color: blue !important;
         }
         
-        /* --- TEXT-ONLY LINK STYLES (Navigation, Pagination, Filters) --- */
+        /* ----------------------------------------------------------------- */
+        /* --- NEW FILTER BUTTON STYLES (Bracketed and Simplistic) --- */
+        /* ----------------------------------------------------------------- */
 
-        /* Navigation Links (Text Only) */
-        nav ul a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #333;
-            border: none;
-            background: none;
-            appearance: none;
-            padding: 0;
+        .filter-buttons a {
+            /* Uniformity: Match the size and color of the post tags */
+            font-size: 0.9em;
+            color: #555 !important;
             font-weight: normal;
-            transition: color 0.15s; /* Smooth color change */
+            
+            /* Simplistic Look: Remove all box aesthetics */
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            
+            /* Text Link Styling */
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: top;
+            
+            /* Spacing: Use padding for separation */
+            padding: 0 5px;         
+            margin-right: 5px; /* Subtle spacing between bracketed links */
         }
         
-        nav ul a:hover {
-            text-decoration: none;
-            color: blue;
-        }
-
-        /* Filter Buttons (Text Only) */
-        .filter-buttons a {
-            margin-right: 20px;
-            color: #333;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 2px;
-            cursor: pointer;
-        }
         .filter-buttons a:hover {
-            border-bottom-color: #8B5E3C; 
+            color: #333 !important; /* Slightly darker grey on hover */
+            text-decoration: underline; /* Simple text feedback */
+        }
+        
+        /* Highlight the active filter */
+        .filter-buttons a.active-filter {
+            color: black !important; /* Darkest color when active */
+            font-weight: bold;       /* Make the active tag stand out */
+            text-decoration: none;   /* No underline when active */
         }
 
-        /* Pagination Controls (Text Only) */
+        /* --- Pagination Controls --- */
         .pagination-controls {
             padding-left: 20px;
             margin-top: 20px;
@@ -135,8 +139,8 @@
             border: none;
             background: none;
             appearance: none;
-            font-weight: 700; /* Strong text */
-            transition: color 0.15s; /* Smooth color change */
+            font-weight: 700;
+            transition: color 0.15s;
         }
         .pagination-controls a:hover {
             text-decoration: none;
@@ -149,7 +153,6 @@
         }
 
         /* --- GENERAL & UTILITY STYLES --- */
-        /* Standard Link Colors (For all links that haven't been styled otherwise) */
         a:link { color: black; text-decoration: none; }
         a:visited { color: black; text-decoration: none; }
         a:hover { color: blue; text-decoration: none; }
@@ -159,16 +162,21 @@
             display: none !important;
         }
 
+        /* Footer Cleanup */
+        footer {
+            margin-top: 30px;
+        }
+        footer p {
+            margin: 0.5em 0;
+        }
     </style>
 </head>
 
-<body>
+<body onload="filterPosts('all', document.querySelector('.filter-buttons a:first-child'));">
 
     <nav>
         <ul>
             <a href="about.html">About</a>
-            <a href="categories.html">Categories</a>
-            <a href="contact.html">Contact</a>
         </ul>
     </nav>
 
@@ -180,94 +188,85 @@
             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23fff%27 stroke=%27333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27333%27%3EVictory%3C/text%3E%3C/svg%3E';"
         />
         <h1>Victory Pages</h1>
-    </div>
-
-    <div style="padding-left: 20px;">
-        <em>Author: Drew Larsen</em>
-
-        <br>
-        <br>
 
     </div>
-
-    <br>
-    <br>
-
+<br>
+<br>
+    <div class="filter-buttons">
+        <a href="#" onclick="filterPosts('all', this); return false;">[All]</a>
+        <a href="#" onclick="filterPosts('investing', this); return false;">[Investing]</a>
+        <a href="#" onclick="filterPosts('gaming', this); return false;">[Gaming]</a>
+        <a href="#" onclick="filterPosts('movie/film', this); return false;">[Movies]</a>
+        <a href="#" onclick="filterPosts('faith', this); return false;">[Faith]</a>
+        <a href="#" onclick="filterPosts('life', this); return false;">[Life]</a>
+        <a href="#" onclick="filterPosts('opinion', this); return false;">[Opinion]</a>
+        <a href="#" onclick="filterPosts('helpful info', this); return false;">[Programing]</a>
+    </div>
+<br>
     <div id="posts">
-
         <div class="post investing">
             <a href="Investing.html">Investing and documenting what worked</a>
             <br>
-            <em>Last updated: Oct. 6, 2025</em><br>
+            <em>Last updated: Oct. 13, 2025</em><br>
             <span class="tags">investing</span>
-        </div>        
-
-<div class="post gaming">
+        </div>
+        <div class="post gaming">
             <a href="Post1.html">Game "Yu-Gi-Oh"</a>
             <br>
             <em>Last updated: Sep. 26, 2025</em><br>
             <span class="tags">gaming</span>
         </div>
-
         <div class="post movie/film">
             <a href="mr.html">Movie ratings</a>
             <br>
             <em>Last updated: Sep. 26, 2025</em><br>
             <span class="tags">movie/film</span>
         </div>
-
         <div class="post faith">
             <a href="paof.html">Powerful acts of forgiveness</a>
             <br>
             <em>Last updated: Sep. 26, 2025</em><br>
             <span class="tags">faith</span>
         </div>
-
         <div class="post music">
             <a href="music.html">A good band called "Sweet Trip"</a>
             <br>
             <em>Last updated: Sep. 26, 2025</em><br>
             <span class="tags">music</span>
         </div>
-
         <div class="post life">
             <a href="ml.html">My life</a>
             <br>
             <em>Last updated: Sep. 26, 2025</em><br>
             <span class="tags">life</span>
         </div>
-
         <div class="post opinion">
             <a href="mcwol.html">My cripes with Oldlutheran.com</a>
             <br>
             <em>Last updated: Sep. 26, 2025</em><br>
             <span class="tags">opinion</span>
         </div>
-
         <div class="post life">
             <a href="GFMH.html">Guy from my home town</a>
             <br>
             <em>Last updated: Sep. 27, 2025</em><br>
             <span class="tags">life</span>
         </div>
-
         <div class="post opinion">
             <a href="cww.html">ChatGPT is wasting water (allegedly)</a>
             <br>
             <em>Last updated: Sep. 28, 2025</em><br>
             <span class="tags">opinion</span>
         </div>
-        
         <div class="post helpful info">
             <a href="htbw.html">How to build a text based website like mine</a>
             <br>
             <em>Last updated: Oct. 1, 2025</em><br>
             <span class="tags">helpful info</span>
         </div>
-
     </div>
 
-<br>
+    <br>
 
     <div class="pagination-controls">
         <a href="#" id="prevPage" onclick="changePage(-1); return false;">&lt; Previous</a>
@@ -344,8 +343,8 @@
             }
         }
 
-        // --- Filter Function (PAGINATION-AWARE) ---
-        function filterPosts(tag) {
+        // --- Filter Function (PAGINATION-AWARE with ACTIVE state) ---
+        function filterPosts(tag, clickedElement) {
             allPosts.forEach(post => {
                 if (tag === 'all' || post.classList.contains(tag)) {
                     post.classList.remove('hidden');
@@ -354,18 +353,40 @@
                 }
             });
             
+            // 1. Remove active class from all filter links
+            const filterLinks = document.querySelectorAll('.filter-buttons a');
+            filterLinks.forEach(link => {
+                link.classList.remove('active-filter');
+            });
+
+            // 2. Add active class to the clicked element (if one was passed)
+            if (clickedElement) {
+                clickedElement.classList.add('active-filter');
+            }
+            
+            // 3. Display the first page of the filtered results
             displayPage(1);
         }
 
         // --- Initialization ---
         document.addEventListener('DOMContentLoaded', () => {
-            displayPage(1);
+            // Automatically click the 'All' filter on page load to set the active state
+            const allFilter = document.querySelector('.filter-buttons a:first-child');
+            if (allFilter) {
+                filterPosts('all', allFilter);
+            } else {
+                 displayPage(1);
+            }
         });
     </script>
 
-<br>
-<br>
-<br>
-Jesus is Lord ☩ Christ is King
+    <footer>
+        <hr>
+        <div style="padding-left: 20px;">
+            <p>© 2025 Victory Pages. All rights reserved.</p>
+            <p>Jesus is Lord ☩ Christ is King</p>
+        </div>
+    </footer>
+
 </body>
 </html>
