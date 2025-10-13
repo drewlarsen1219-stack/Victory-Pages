@@ -30,12 +30,17 @@
             height: auto;
         }
 
-        nav ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            padding-left: 20px;
-        }
+nav ul {
+    list-style: none;
+    padding: 0;
+	display: flex;
+    padding-left: 20px; 
+}
+
+/* Add margin/spacing to the individual links (LI or A) inside the list: */
+nav ul a {
+    margin-right: 15px; /* Or whatever spacing you prefer */
+}
 
         .filter-buttons {
             /* Adjusted margin for better separation */
@@ -175,9 +180,11 @@
 <body onload="filterPosts('all', document.querySelector('.filter-buttons a:first-child'));">
 
     <nav>
-        <ul>
-            <a href="about.html">About</a>
-        </ul>
+        
+            <ul><li><a href="about.html">About</a></li>	
+	<li><a href="library.html">Library</a></ul></li>
+
+        
     </nav>
 
     <div class="header-container">
@@ -190,7 +197,6 @@
         <h1>Victory Pages</h1>
 
     </div>
-<br>
 <br>
     <div class="filter-buttons">
         <a href="#" onclick="filterPosts('all', this); return false;">[All]</a>
@@ -379,7 +385,8 @@
             }
         });
     </script>
-
+<br>
+<br>
     <footer>
         <hr>
         <div style="padding-left: 20px;">
