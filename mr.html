@@ -209,6 +209,17 @@
             <p>Full review <a href="conclave.html" class="full-review-link">here.</a></p>
         </div>
 
+    <div id="posts">
+        <div class="post film">
+            <p><strong>"Come True"</strong></p>
+            <p>Directed by Anthony Scott Burns</p>
+            <p>Rating: 3/10</p>
+            <p><audio id="soundEffect" src="fart-with-reverb.mp3" preload="auto"></audio><button id="soundButton">
+       (¬_¬")
+    </button>
+</a></p>
+        </div>
+
     </div>
 
     <hr>
@@ -311,7 +322,25 @@
             allPosts = document.querySelectorAll('#posts > .post');
             displayPage(1); 
         });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const button = document.getElementById('soundButton');
+            const audio = document.getElementById('soundEffect');
+
+            button.addEventListener('click', function() {
+                // Reset the audio to the start for instant re-playability
+                audio.currentTime = 0; 
+                
+                // Play the sound
+                audio.play().catch(e => {
+                    // This handles potential errors, though unlikely on a user click
+                    console.error("Audio playback error:", e);
+                });
+            });
+        });
     </script>
+
 <br>
 <p><marquee> If you declare with your mouth, “<strong>Jesus is Lord</strong>,” and believe in your heart that God raised him from the dead, you will be saved.</marquee></p>
 <p><marquee><em>Romans 10:9</em></marquee></p>
