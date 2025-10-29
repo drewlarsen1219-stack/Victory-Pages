@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPG Skill Tracker</title>
+    <title>Victories</title>
     <style>
         /* Essential Layout Styles Only */
         body {
@@ -184,7 +184,7 @@
     </style>
 </head>
 <body>
-    <h1>Skill Proficiency Tracker</h1>
+    <h1>Victories</h1>
 
     <!-- 12-Button Grid --><div id="grid-container">
         <!-- Buttons will be injected here by JavaScript --></div>
@@ -197,7 +197,7 @@
         
         <!-- New Activity Input Group -->
         <div id="activity-input-group">
-            <textarea id="activity-text-input" rows="3" placeholder='e.g., "Attended Toastmasters for 8 hours this year..."'></textarea>
+            <textarea id="activity-text-input" rows="3" placeholder='e.g., "Input victories here..."'></textarea>
             
             <input type="text" id="manual-points-input" placeholder="Manual points (e.g., Mind: 5, Heart: 3)" title="Define point values for specific skills. The AI will calculate the rest.">
 
@@ -271,31 +271,31 @@
                 // Rank 0 (Newbie) -> Rank 1 (Apprentice)
                 `**Current Analysis:** You are starting fresh. The foundation of a strong 'Body' score is consistency.
 - **Tip 1:** Commit to a 10-minute walk or bodyweight routine daily, focusing on form.
-- **Tip 2:** Replace one sugary drink with water every day. Hydration is key!
-- **Tip 3:** Track your sleep and aim for a consistent bedtime, even on weekends.
+- **Tip 2:** Stay hydrated by drinking water instead of sugary drinks.
+- **Tip 3:** Aim for a consistent bedtime, even on weekends. Only lay in bed when it's time to go to sleep.
 - **Next Rank Expectation:** An **Apprentice** demonstrates consistency in basic physical health routines and can perform light, sustained physical activity without excessive strain.`,
                 // Rank 1 (Apprentice) -> Rank 2 (Journeyman)
                 `**Current Analysis:** You've built a base! Now focus on intensity and structure.
 - **Tip 1:** Add 3 structured strength training sessions/week (30 min each, e.g., using dumbbells or resistance).
-- **Tip 2:** Aim to drink 3 liters of water daily and track it.
-- **Tip 3:** Incorporate dynamic stretching or a light yoga session 3 times a week.
+- **Tip 2:** Research training routines online. Resistance training is optimal with a push/pull/legs routine. 
+- **Tip 3:** Incorporate dynamic stretching and cardio. Research cardio and stretching routines.
 - **Next Rank Expectation:** A **Journeyman** maintains consistent exercise, shows improvement in strength and stamina, and has improved daily energy levels.`,
                 // Rank 2 (Journeyman) -> Rank 3 (Expert)
                 `**Current Analysis:** Time to optimize and achieve measurable goals.
-- **Tip 1:** Establish a full workout routine (4x/week) targeting all major muscle groups.
-- **Tip 2:** Track your macros/nutrition for two weeks to identify areas for dietary improvement.
-- **Tip 3:** Aim to achieve a benchmark fitness goal (e.g., run a 5K, complete 20 push-ups).
+- **Tip 1:** Establish a full workout routine (4x/week) targeting all major muscle groups. Push/pull/legs routine is optimal.
+- **Tip 2:** Track your macros for a couple weeks to see where you need to improve your diet. "Cronometer" is a good app for this.
+- **Tip 3:** Aim to achieve a benchmark fitness goal (e.g., run a 5K, see yourself put on muscle, lose weight).
 - **Next Rank Expectation:** An **Expert** has a disciplined health regimen, maintains good physical conditioning, and has accomplished specific fitness milestones.`,
                 // Rank 3 (Expert) -> Rank 4 (Master)
                 `**Current Analysis:** Your physical condition is strong; refine performance and recovery.
-- **Tip 1:** Train for an endurance or power event (e.g., half-marathon, powerlifting meet) with a dedicated coach or program.
-- **Tip 2:** Use a wearable device to optimize sleep metrics (aim for consistent deep/REM cycles).
-- **Tip 3:** Practice advanced recovery techniques (e.g., cold exposure, foam rolling, active rest).
+- **Tip 1:** Train in a specific style (hypertrophy/resistance training, military style with strong running cardio & rucking ability with a dedicated program.
+- **Tip 2:** Track macros & micros using cronometer.
+- **Tip 3:** Practice advanced recovery techniques (e.g., sauna, cold exposure, foam rolling, active rest).
 - **Next Rank Expectation:** A **Master** exhibits high-level, specialized physical conditioning and understands the science of recovery and performance optimization.`,
                 // Rank 4 (Master) -> Rank 5 (Grandmaster)
-                `**Current Analysis:** You are a high-level performer; now focus on holistic, long-term maintenance and teaching.
+                `**Current Analysis:** You are a high-level performer; now focus on long-term maintenance and teaching.
 - **Tip 1:** Develop a personalized training plan that integrates physical, mental, and nutritional goals.
-- **Tip 2:** Maintain peak health metrics (e.g., blood pressure, resting heart rate) for 6 consecutive months.
+- **Tip 2:** Make gains in goals without falling out of good habbits for 6 months consistently.
 - **Tip 3:** Mentor three beginners in their fitness journey, sharing your knowledge and routine.
 - **Next Rank Expectation:** A **Grandmaster** is an elite performer, consistently maintaining exceptional health, and serving as a knowledgeable role model for others.`,
                 // Rank 5 (Grandmaster) -> Rank 6 (Legend)
