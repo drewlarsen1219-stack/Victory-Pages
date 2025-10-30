@@ -344,7 +344,6 @@ const elements = {
     closeHelpBtn: document.getElementById('close-help-btn')
 };
 
-// --- UPDATED: Use Dumbell_edited.png for "Body" skill symbol ---
 function updateButtonDisplay(index) {
     const skill = skillsData[index];
     const rank = getRank(skill.score, skill.name);
@@ -352,7 +351,8 @@ function updateButtonDisplay(index) {
     if (button) {
         let symbolHtml;
         if (skill.name === "Body") {
-            symbolHtml = `<img src="assets/Dumbell_edited.png" alt="Dumbbell" class="pixel-icon">`;
+            // FIXED PATH:
+            symbolHtml = `<img src="Dumbell_edited.png" alt="Dumbbell" class="pixel-icon">`;
         } else {
             symbolHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
