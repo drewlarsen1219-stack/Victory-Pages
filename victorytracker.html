@@ -48,7 +48,6 @@
         padding: 10px;
         background: white;
     }
-    /* Smaller, more compact skill buttons. No ranking label. */
     .score-button {
         background: ButtonFace;
         color: ButtonText;
@@ -78,13 +77,12 @@
         border: 2px solid #CC0000;
         background: #fff;
     }
-    /* BIGGER skill logos! */
     .skill-symbol {
         font-size: 48px;
         margin: 4px 0;
         line-height: 1;
     }
-    .pixel-icon, .img-icon {
+    .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon {
         width: 60px;
         height: 60px;
         image-rendering: pixelated;
@@ -198,7 +196,7 @@
             font-size: 10px;
             padding: 4px 1px;
         }
-        .pixel-icon, .img-icon {
+        .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon {
             width: 36px;
             height: 36px;
         }
@@ -269,16 +267,17 @@ const QUESTIONS_PER_PAGE = 8;
 const TIMESTAMP = "2025-10-29 23:30:54";
 const USER_LOGIN = "drewlarsen1219-stack";
 
+// NOTE: Place anchor.png, hourglass.png, heart2.png, status.png in the same directory as this HTML file!
 const SKILL_DATA = [
     { name: 'Body', symbol: '' },
     { name: 'Mind', symbol: '🕮' },
     { name: 'Heart', symbol: '' },
     { name: 'Hand', symbol: '⚒' },
     { name: 'Finance', symbol: '$' },
-    { name: 'Soul', symbol: '𓉸' },
-    { name: 'Status', symbol: '🜲' },
+    { name: 'Soul', symbol: '' },
+    { name: 'Status', symbol: '' },
     { name: 'Space', symbol: '⿻' },
-    { name: 'Time', symbol: '⌛︎' },
+    { name: 'Time', symbol: '' },
     { name: 'World', symbol: '🌏︎' },
     { name: 'Creative', symbol: 'ᝰ' },
     { name: 'Tech', symbol: '🖳' }
@@ -366,14 +365,19 @@ const elements = {
 
 function updateButtonDisplay(index) {
     const skill = skillsData[index];
-    // Ranking label removed from the button display!
     const button = elements.grid.querySelector(`[data-index="${index}"]`);
     if (button) {
         let symbolHtml;
         if (skill.name === "Body") {
             symbolHtml = `<img src="Dumbell_edited.png" alt="Dumbbell" class="pixel-icon">`;
         } else if (skill.name === "Heart") {
-            symbolHtml = `<img src="heart.png" alt="Heart" class="img-icon">`;
+            symbolHtml = `<img src="heart2.png" alt="Heart" class="heart2-icon">`;
+        } else if (skill.name === "Soul") {
+            symbolHtml = `<img src="anchor.png" alt="Soul" class="anchor-icon">`;
+        } else if (skill.name === "Status") {
+            symbolHtml = `<img src="status.png" alt="Status" class="status-icon">`;
+        } else if (skill.name === "Time") {
+            symbolHtml = `<img src="hourglass.png" alt="Hourglass" class="hourglass-icon">`;
         } else {
             symbolHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
