@@ -42,46 +42,54 @@
     #grid-container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 8px;
         width: 100%;
         max-width: 400px;
         padding: 10px;
         background: white;
     }
+    /* Smaller, more compact skill buttons. No ranking label. */
     .score-button {
-        background: white;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 15px 5px;
-        min-height: 100px;
+        background: ButtonFace;
+        color: ButtonText;
+        border: 2px outset ButtonShadow;
+        border-radius: 4px;
+        padding: 7px 2px;
+        min-height: 65px;
+        min-width: 65px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center;
-        font-size: 14px;
-        transition: all 0.2s;
+        font-size: 12px;
+        box-sizing: border-box;
+        transition: background 0.15s, border 0.15s;
+        font-family: inherit;
+        outline: none;
+        margin: 0;
     }
     .score-button:hover {
-        border-color: #666;
-        background: #f9f9f9;
+        background: #e3e3e3;
+        border: 2px inset ButtonShadow;
     }
     .score-button.selected {
         border: 2px solid #CC0000;
         background: #fff;
     }
+    /* BIGGER skill logos! */
     .skill-symbol {
-        font-size: 35px;
-        margin: 5px 0;
+        font-size: 48px;
+        margin: 4px 0;
         line-height: 1;
     }
-    .pixel-icon {
-        width: 64px;
-        height: 64px;
+    .pixel-icon, .img-icon {
+        width: 60px;
+        height: 60px;
         image-rendering: pixelated;
         display: block;
-        margin: 5px auto;
+        margin: 4px auto;
     }
     #modal-bg, #help-modal-bg {
         display: none;
@@ -144,20 +152,24 @@
     }
     .nav-btn {
         padding: 8px 15px;
-        background: #f0f0f0;
-        border: 1px solid #ccc;
+        background: ButtonFace;
+        color: ButtonText;
+        border: 2px outset ButtonShadow;
         border-radius: 4px;
         cursor: pointer;
         font-size: 0.9em;
-        transition: all 0.2s;
+        font-family: inherit;
+        transition: background 0.15s, border 0.15s;
     }
     .nav-btn:hover:not(:disabled) {
         background: #e0e0e0;
+        border: 2px inset ButtonShadow;
     }
     .nav-btn:disabled {
         background: #f5f5f5;
         color: #999;
         cursor: not-allowed;
+        border: 2px solid #ccc;
     }
     #blog-section, #proof-files {
         margin-top: 15px;
@@ -179,11 +191,19 @@
             padding: 10px;
         }
         #grid-container {
-            gap: 8px;
+            gap: 5px;
         }
         .score-button {
-            min-height: 90px;
-            font-size: 12px;
+            min-height: 48px;
+            font-size: 10px;
+            padding: 4px 1px;
+        }
+        .pixel-icon, .img-icon {
+            width: 36px;
+            height: 36px;
+        }
+        .skill-symbol {
+            font-size: 28px;
         }
     }
 </style>
@@ -252,7 +272,7 @@ const USER_LOGIN = "drewlarsen1219-stack";
 const SKILL_DATA = [
     { name: 'Body', symbol: '' },
     { name: 'Mind', symbol: '🕮' },
-    { name: 'Heart', symbol: '‪♡' },
+    { name: 'Heart', symbol: '' },
     { name: 'Hand', symbol: '⚒' },
     { name: 'Finance', symbol: '$' },
     { name: 'Soul', symbol: '𓉸' },
@@ -346,20 +366,20 @@ const elements = {
 
 function updateButtonDisplay(index) {
     const skill = skillsData[index];
-    const rank = getRank(skill.score, skill.name);
+    // Ranking label removed from the button display!
     const button = elements.grid.querySelector(`[data-index="${index}"]`);
     if (button) {
         let symbolHtml;
         if (skill.name === "Body") {
-            // FIXED PATH:
             symbolHtml = `<img src="Dumbell_edited.png" alt="Dumbbell" class="pixel-icon">`;
+        } else if (skill.name === "Heart") {
+            symbolHtml = `<img src="heart.png" alt="Heart" class="img-icon">`;
         } else {
             symbolHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
         button.innerHTML = `
             ${skill.name}<br>
             ${symbolHtml}<br>
-            ${rank.name}<br>
             ${skill.score}/100
         `;
     }
