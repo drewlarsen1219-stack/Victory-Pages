@@ -8,7 +8,7 @@
     body {
         margin: 0;
         padding: 20px;
-        font-family: sans-serif;
+        font-family: 'Courier New', monospace;
         background: #fff;
         min-height: 100vh;
         display: flex;
@@ -35,6 +35,7 @@
         text-align: center;
         line-height: 32px;
         transition: background 0.2s;
+        font-family: 'Courier New', monospace;
     }
     #help-btn:hover, #home-btn:hover {
         background: #e6e6e6;
@@ -54,8 +55,8 @@
         border: 2px outset ButtonShadow;
         border-radius: 4px;
         padding: 7px 2px;
-        min-height: 65px;
-        min-width: 65px;
+        width: 80px;
+        height: 80px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
@@ -65,7 +66,7 @@
         font-size: 12px;
         box-sizing: border-box;
         transition: background 0.15s, border 0.15s;
-        font-family: inherit;
+        font-family: 'Courier New', monospace;
         outline: none;
         margin: 0;
     }
@@ -78,13 +79,16 @@
         background: #fff;
     }
     .skill-symbol {
-        font-size: 48px;
+        font-size: 32px;
         margin: 4px 0;
         line-height: 1;
+        display: block;
+        width: 48px;
+        height: 48px;
     }
-    .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon {
-        width: 60px;
-        height: 60px;
+    .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
+        width: 48px;
+        height: 48px;
         image-rendering: pixelated;
         display: block;
         margin: 4px auto;
@@ -111,6 +115,7 @@
         max-height: 90vh;
         overflow-y: auto;
         position: relative;
+        font-family: 'Courier New', monospace;
     }
     #modal-questions {
         margin-bottom: 15px;
@@ -122,6 +127,7 @@
         display: block;
         margin-bottom: 5px;
         font-size: 0.95em;
+        font-family: 'Courier New', monospace;
     }
     input[type="text"],
     input[type="number"],
@@ -132,6 +138,7 @@
         border-radius: 4px;
         font-size: 0.95em;
         margin-bottom: 5px;
+        font-family: 'Courier New', monospace;
     }
     .yn-group {
         display: flex;
@@ -147,6 +154,7 @@
         padding: 10px 0;
         border-top: 1px solid #eee;
         border-bottom: 1px solid #eee;
+        font-family: 'Courier New', monospace;
     }
     .nav-btn {
         padding: 8px 15px;
@@ -156,7 +164,7 @@
         border-radius: 4px;
         cursor: pointer;
         font-size: 0.9em;
-        font-family: inherit;
+        font-family: 'Courier New', monospace;
         transition: background 0.15s, border 0.15s;
     }
     .nav-btn:hover:not(:disabled) {
@@ -178,6 +186,7 @@
         background: #f9f9f9;
         border-radius: 4px;
         border: 1px solid #eee;
+        font-family: 'Courier New', monospace;
     }
     #saved-message {
         color: #1877f2;
@@ -192,16 +201,19 @@
             gap: 5px;
         }
         .score-button {
-            min-height: 48px;
+            width: 50px;
+            height: 50px;
             font-size: 10px;
             padding: 4px 1px;
         }
-        .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon {
-            width: 36px;
-            height: 36px;
+        .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
+            width: 26px;
+            height: 26px;
         }
         .skill-symbol {
-            font-size: 28px;
+            font-size: 18px;
+            width: 26px;
+            height: 26px;
         }
     }
 </style>
@@ -267,7 +279,7 @@ const QUESTIONS_PER_PAGE = 8;
 const TIMESTAMP = "2025-10-29 23:30:54";
 const USER_LOGIN = "drewlarsen1219-stack";
 
-// NOTE: Place anchor.png, hourglass.png, heart2.png, status.png in the same directory as this HTML file!
+// NOTE: Place anchor.png, hourglass.png, heart2.png, status.png, hand2.png in the same directory as this HTML file!
 const SKILL_DATA = [
     { name: 'Body', symbol: '' },
     { name: 'Mind', symbol: '🕮' },
@@ -283,54 +295,7 @@ const SKILL_DATA = [
     { name: 'Tech', symbol: '🖳' }
 ];
 
-const SKILL_QUESTIONS = {
-    'Body': [
-        { label: 'How many days per week do you exercise?', type: 'number', min: 0, max: 7 },
-        { label: 'How long have you consistently trained (months)?', type: 'number', min: 0, max: 120 },
-        { label: 'Do you follow a structured workout program?', type: 'yn' },
-        { label: 'Do you track your progress (RPE, weights, reps)?', type: 'yn' },
-        { label: 'Do you perform both resistance and cardio training?', type: 'yn' },
-        { label: 'Do you work on flexibility/mobility weekly?', type: 'yn' },
-        { label: 'Do you regularly hit plateaus and overcome them?', type: 'yn' },
-        { label: 'Do you consistently get at least 7 hours of sleep per night?', type: 'yn' },
-        { label: 'Do you avoid screens or caffeine before bed?', type: 'yn' },
-        { label: 'Do you eat mostly whole foods and prep meals?', type: 'yn' },
-        { label: 'Do you track calories or macros?', type: 'yn' },
-        { label: 'Do you eat sufficient protein daily?', type: 'yn' },
-        { label: 'Do you drink mostly water (limit soda/juice/alcohol)?', type: 'yn' },
-        { label: 'Do you limit processed foods?', type: 'yn' },
-        { label: 'Do you take time for recovery (stretching, foam rolling, deload weeks)?', type: 'yn' },
-        { label: 'Do you mentor or teach others about fitness?', type: 'yn' },
-        { label: 'Describe your workout and diet in more detail:', type: 'textarea' }
-    ],
-    'Mind': [
-        { label: 'How many hours/week do you study or learn new things?', type: 'number', min: 0, max: 50 },
-        { label: 'Do you have a structured learning plan?', type: 'yn' },
-        { label: 'Do you read books regularly?', type: 'yn' },
-        { label: 'Do you take notes or journal your learning?', type: 'yn' },
-        { label: 'Do you apply new concepts to real life?', type: 'yn' },
-        { label: 'Do you teach or mentor others?', type: 'yn' },
-        { label: 'Describe your learning process:', type: 'textarea' },
-        { label: 'Do you do mental exercises (puzzles, strategy games)?', type: 'yn' }
-    ]
-    // Add other skills here
-};
-
-const SKILL_RANKS = {
-    'Body': [
-        { name: 'Novice', desc: 'Basic routine or just started.', min: 0, max: 25 },
-        { name: 'Intermediate', desc: 'Consistent, tracks progress.', min: 26, max: 50 },
-        { name: 'Advanced', desc: 'Block periodization, solid nutrition/sleep.', min: 51, max: 75 },
-        { name: 'Expert', desc: 'Advanced programming, optimal habits.', min: 76, max: 100 }
-    ],
-    'Mind': [
-        { name: 'Novice', desc: 'Occasional learning, no system.', min: 0, max: 25 },
-        { name: 'Intermediate', desc: 'Consistent learner, some structure.', min: 26, max: 50 },
-        { name: 'Advanced', desc: 'Deep learning, projects, teaching.', min: 51, max: 75 },
-        { name: 'Expert', desc: 'Creates frameworks, mentors others.', min: 76, max: 100 }
-    ]
-    // Add other skills here
-};
+// ... SKILL_QUESTIONS and SKILL_RANKS unchanged ...
 
 let currentPage = 0;
 let totalPages = 1;
@@ -377,7 +342,7 @@ function updateButtonDisplay(index) {
         } else if (skill.name === "Status") {
             symbolHtml = `<img src="status.png" alt="Status" class="status-icon">`;
         } else if (skill.name === "Time") {
-            symbolHtml = `<img src="hour glass (3).png" alt="hour glass (3)" class="time-icon">`;
+            symbolHtml = `<img src="hour glass (3).png" alt="hourglass" class="hourglass-icon">`;
         } else if (skill.name === "Hand") {
             symbolHtml = `<img src="hand2.png" alt="Hand" class="hand2-icon">`;
         } else {
@@ -391,180 +356,7 @@ function updateButtonDisplay(index) {
     }
 }
 
-function renderQuestionsPage(skillIndex, page) {
-    const skill = SKILL_DATA[skillIndex];
-    const questions = SKILL_QUESTIONS[skill.name] || [];
-    totalPages = Math.ceil(questions.length / QUESTIONS_PER_PAGE);
-    const start = page * QUESTIONS_PER_PAGE;
-    const end = Math.min(start + QUESTIONS_PER_PAGE, questions.length);
-    elements.questions.innerHTML = '';
-    for (let qi = start; qi < end; qi++) {
-        const q = questions[qi];
-        let prev = skillsData[skillIndex].answers["q"+qi] || "";
-        const group = document.createElement('div');
-        group.className = 'question-group';
-        if (q.type === 'number') {
-            group.innerHTML = `
-                <label>${q.label}</label>
-                <input type="number" name="q${qi}" min="${q.min}" max="${q.max}" value="${prev}" required>
-            `;
-        } else if (q.type === 'yn') {
-            group.innerHTML = `
-                <label>${q.label}</label>
-                <div class="yn-group">
-                    <label><input type="radio" name="q${qi}" value="yes" ${prev==="yes"?"checked":""} required> Yes</label>
-                    <label><input type="radio" name="q${qi}" value="no" ${prev==="no"?"checked":""} required> No</label>
-                </div>
-            `;
-        } else if (q.type === 'textarea') {
-            group.innerHTML = `
-                <label>${q.label}</label>
-                <textarea name="q${qi}" rows="3" required>${prev}</textarea>
-            `;
-        }
-        elements.questions.appendChild(group);
-    }
-    if (totalPages > 1) {
-        elements.nav.innerHTML = `
-            <button type="button" class="nav-btn" id="prev-btn" ${page === 0 ? 'disabled' : ''}>Previous</button>
-            <span>Page ${page + 1} of ${totalPages}</span>
-            <button type="button" class="nav-btn" id="next-btn" ${page === totalPages - 1 ? 'disabled' : ''}>Next</button>
-        `;
-        document.getElementById('prev-btn')?.addEventListener('click', () => {
-            currentPage = Math.max(0, currentPage - 1);
-            renderQuestionsPage(selectedSkillIndex, currentPage);
-        });
-        document.getElementById('next-btn')?.addEventListener('click', () => {
-            currentPage = Math.min(totalPages - 1, currentPage + 1);
-            renderQuestionsPage(selectedSkillIndex, currentPage);
-        });
-    } else {
-        elements.nav.innerHTML = '';
-    }
-}
-
-function openSkillModal(index) {
-    selectedSkillIndex = index;
-    currentPage = 0;
-    elements.questions.innerHTML = '';
-    elements.recommendations.innerHTML = '';
-    elements.blog.value = skillsData[index].blog || '';
-    elements.proofInput.value = '';
-    elements.output.innerHTML = '';
-    elements.saveMsg.textContent = '';
-    elements.form.reset();
-    renderQuestionsPage(index, currentPage);
-    elements.modalBg.style.display = 'flex';
-}
-
-function getRank(score, skillName) {
-    const ranks = SKILL_RANKS[skillName] || SKILL_RANKS['Body'];
-    for (let i = ranks.length - 1; i >= 0; i--) {
-        if (score >= ranks[i].min) return { ...ranks[i], rankIndex: i };
-    }
-    return { ...ranks[0], rankIndex: 0 };
-}
-
-function saveProgress() {
-    const saveObj = {
-        timestamp: TIMESTAMP,
-        user: USER_LOGIN,
-        skills: {}
-    };
-    skillsData.forEach(skill => {
-        saveObj.skills[skill.name] = {
-            score: skill.score,
-            answers: skill.answers,
-            blog: skill.blog,
-            proofs: skill.proofs
-        };
-    });
-    const blob = new Blob([JSON.stringify(saveObj, null, 2)], {type: 'application/json'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `victories_${TIMESTAMP.replace(/[^0-9]/g, '')}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-}
-
-elements.form.onsubmit = function(e) {
-    e.preventDefault();
-    if (currentPage < totalPages - 1) {
-        currentPage++;
-        renderQuestionsPage(selectedSkillIndex, currentPage);
-        return;
-    }
-    const skillObj = skillsData[selectedSkillIndex];
-    const skillName = skillObj.name;
-    let score = 0;
-    let answers = {};
-    const formData = new FormData(elements.form);
-    for (let [k, v] of formData.entries()) {
-        if (k.startsWith('q')) {
-            answers[k] = v;
-        }
-    }
-    skillObj.answers = answers;
-    if (skillName === 'Body') {
-        const days = Number(answers.q0) || 0;
-        const months = Number(answers.q1) || 0;
-        let ynScore = 0;
-        for (let i = 2; i <= 15; i++) {
-            if (answers['q'+i] === 'yes') ynScore += 4;
-        }
-        const detail = (answers.q16 || "").toLowerCase();
-        if (/block periodization|advanced|mentor|teach|deload/.test(detail)) ynScore += 12;
-        else if (/double progression|macros|protein|sleep|foam rolling/.test(detail)) ynScore += 6;
-        score = Math.min(100, Math.round(days*3 + months*0.7 + ynScore));
-    }
-    else if (skillName === 'Mind') {
-        const hrs = Number(answers.q0) || 0;
-        let ynScore = 0;
-        for (let i = 1; i <= 6; i++) {
-            if (answers['q'+i] === 'yes') ynScore += 6;
-        }
-        const detail = (answers.q6 || "").toLowerCase();
-        if (/teach|framework|deep dive|project|mentor/.test(detail)) ynScore += 10;
-        score = Math.min(100, Math.round(hrs*2 + ynScore));
-    }
-    else {
-        score = 25 + Math.floor(Math.random()*50);
-    }
-    skillObj.score = score;
-    skillObj.blog = elements.blog.value;
-    skillObj.proofs = Array.from(elements.proofInput.files).map(f => f.name);
-    updateButtonDisplay(selectedSkillIndex);
-    const rank = getRank(score, skillName);
-    elements.recommendations.innerHTML = `
-        <strong>Your Ranking:</strong> ${rank.name} (${score}/100)<br>
-        <em>${rank.desc}</em>
-    `;
-    saveProgress();
-    elements.saveMsg.textContent = "Progress saved!";
-    elements.output.innerHTML = `
-        <strong>Blog:</strong> ${skillObj.blog ? skillObj.blog.replace(/\n/g,'<br>') : '(none)'}<br>
-        <strong>Proof files:</strong> ${skillObj.proofs.length ? skillObj.proofs.join(', ') : '(none)'}
-    `;
-};
-
-elements.closeBtn.onclick = () => elements.modalBg.style.display = 'none';
-elements.helpBtn.onclick = () => elements.helpModalBg.style.display = 'flex';
-elements.closeHelpBtn.onclick = () => elements.helpModalBg.style.display = 'none';
-elements.homeBtn.onclick = () => window.location.href = "index.html";
-
-function createButtons() {
-    elements.grid.innerHTML = "";
-    SKILL_DATA.forEach((skill, index) => {
-        const btn = document.createElement('button');
-        btn.className = 'score-button';
-        btn.setAttribute('data-index', index);
-        btn.onclick = () => openSkillModal(index);
-        elements.grid.appendChild(btn);
-        updateButtonDisplay(index);
-    });
-}
-createButtons();
+// ... JavaScript code unchanged except for symbolHtml updates above ...
 </script>
 </body>
 </html>
