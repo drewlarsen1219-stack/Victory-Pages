@@ -54,7 +54,7 @@
         color: ButtonText;
         border: 2px outset ButtonShadow;
         border-radius: 4px;
-        padding: 0;
+        padding: 4px;
         width: 90px;
         height: 90px;
         cursor: pointer;
@@ -63,12 +63,14 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        font-size: 13px;
+        font-size: 11px;
         box-sizing: border-box;
         transition: background 0.15s, border 0.15s;
         font-family: 'Courier New', monospace;
         outline: none;
         margin: 0;
+        gap: 2px;
+        overflow: hidden;
     }
     .score-button:hover {
         background: #e3e3e3;
@@ -79,20 +81,39 @@
         background: #fff;
     }
     .skill-symbol {
-        font-size: 34px;
-        margin: 4px 0;
+        font-size: 32px;
+        margin: 0;
         line-height: 1;
-        display: block;
-        width: 48px;
-        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
         text-align: center;
+        flex-shrink: 0;
+    }
+    .skill-name {
+        font-weight: bold;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        flex-shrink: 1;
+        min-width: 0;
+    }
+    .skill-score {
+        font-size: 0.9em;
+        white-space: nowrap;
+        flex-shrink: 0;
     }
     .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
         image-rendering: pixelated;
         display: block;
-        margin: 4px auto;
+        margin: 0;
+        flex-shrink: 0;
+        object-fit: contain;
     }
     #modal-bg, #help-modal-bg {
         display: none;
@@ -204,17 +225,18 @@
         .score-button {
             width: 54px;
             height: 54px;
-            font-size: 10px;
-            padding: 0;
+            font-size: 8px;
+            padding: 2px;
+            gap: 1px;
         }
         .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
-            width: 28px;
-            height: 28px;
+            width: 24px;
+            height: 24px;
         }
         .skill-symbol {
-            font-size: 18px;
-            width: 28px;
-            height: 28px;
+            font-size: 16px;
+            width: 24px;
+            height: 24px;
         }
     }
 </style>
@@ -280,7 +302,7 @@ const QUESTIONS_PER_PAGE = 8;
 const TIMESTAMP = "2025-10-29 23:30:54";
 const USER_LOGIN = "drewlarsen1219-stack";
 
-// NOTE: Place anchor.png, hour glass.png, heart2.png, status.png, hand2.png in the same directory as this HTML file!
+// NOTE: Place anchor.png, hour glass (3).png, heart2.png, status.png, hand2.png in the same directory as this HTML file!
 const SKILL_DATA = [
     { name: 'Body', symbol: '' },
     { name: 'Mind', symbol: '🕮' },
@@ -391,16 +413,16 @@ function updateButtonDisplay(index) {
         } else if (skill.name === "Status") {
             symbolHtml = `<img src="status.png" alt="Status" class="status-icon">`;
         } else if (skill.name === "Time") {
-            symbolHtml = `<img src="hour glass.png" alt="Hourglass" class="hourglass-icon">`;
+            symbolHtml = `<img src="hour glass (3).png" alt="Hourglass" class="hourglass-icon">`;
         } else if (skill.name === "Hand") {
             symbolHtml = `<img src="hand2.png" alt="Hand" class="hand2-icon">`;
         } else {
             symbolHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
         button.innerHTML = `
-            ${skill.name}<br>
-            ${symbolHtml}<br>
-            ${skill.score}/100
+            <span class="skill-name">${skill.name}</span>
+            ${symbolHtml}
+            <span class="skill-score">${skill.score}/100</span>
         `;
     }
 }
