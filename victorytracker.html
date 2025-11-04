@@ -54,21 +54,51 @@
         color: ButtonText;
         border: 2px outset ButtonShadow;
         border-radius: 4px;
-        padding: 0;
-        width: 90px;
-        height: 90px;
+        width: 92px;
+        height: 92px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        text-align: center;
-        font-size: 13px;
+        align-items: center;
         box-sizing: border-box;
-        transition: background 0.15s, border 0.15s;
+        gap: 3px;
         font-family: 'Courier New', monospace;
         outline: none;
         margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .score-button > .skill-name {
+        font-size: 13px;
+        flex: none;
+        text-align: center;
+        min-width: 0;
+        max-width: 84px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .score-button > .skill-logo {
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        min-width: 0;
+        min-height: 0;
+        margin: 0 auto;
+    }
+    .score-button > .skill-score {
+        font-size: 12px;
+        flex: none;
+        text-align: center;
+        min-width: 0;
+        max-width: 84px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .score-button:hover {
         background: #e3e3e3;
@@ -78,21 +108,34 @@
         border: 2px solid #CC0000;
         background: #fff;
     }
-    .skill-symbol {
-        font-size: 34px;
-        margin: 4px 0;
-        line-height: 1;
-        display: block;
-        width: 48px;
-        height: 48px;
-        text-align: center;
-    }
+    /* Uniform icon styling */
     .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
-        width: 48px;
-        height: 48px;
+        width: 34px;
+        height: 34px;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
         image-rendering: pixelated;
         display: block;
-        margin: 4px auto;
+        margin: 0 auto;
+        padding: 0;
+    }
+    /* Hand icon larger as requested */
+    .hand2-icon {
+        width: 38px;
+        height: 38px;
+    }
+    .skill-symbol {
+        font-size: 28px;
+        min-width: 0;
+        max-width: 100%;
+        width: 34px;
+        height: 34px;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 34px;
+        overflow: hidden;
     }
     #modal-bg, #help-modal-bg {
         display: none;
@@ -196,25 +239,39 @@
     }
     @media (max-width: 480px) {
         body {
-            padding: 10px;
+            padding: 8px;
         }
         #grid-container {
             gap: 5px;
         }
         .score-button {
-            width: 54px;
-            height: 54px;
+            width: 48px;
+            height: 48px;
             font-size: 10px;
             padding: 0;
         }
-        .pixel-icon, .img-icon, .status-icon, .time-icon, .anchor-icon, .heart2-icon, .hand2-icon {
-            width: 28px;
-            height: 28px;
+        .score-button > .skill-name,
+        .score-button > .skill-score {
+            font-size: 9px;
+            max-width: 40px;
+        }
+        .score-button > .skill-logo {
+            width: 24px;
+            height: 24px;
+        }
+        .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .hand2-icon {
+            width: 22px;
+            height: 22px;
         }
         .skill-symbol {
-            font-size: 18px;
-            width: 28px;
-            height: 28px;
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
         }
     }
 </style>
@@ -280,7 +337,7 @@ const QUESTIONS_PER_PAGE = 8;
 const TIMESTAMP = "2025-10-29 23:30:54";
 const USER_LOGIN = "drewlarsen1219-stack";
 
-// NOTE: Place anchor.png, hour glass.png, heart2.png, status.png, hand2.png in the same directory as this HTML file!
+// NOTE: Place anchor.png, hour glass (3).png, heart2.png, status.png, hand2.png in the same directory as this HTML file!
 const SKILL_DATA = [
     { name: 'Body', symbol: '' },
     { name: 'Mind', symbol: '🕮' },
@@ -380,27 +437,26 @@ function updateButtonDisplay(index) {
     const skill = skillsData[index];
     const button = elements.grid.querySelector(`[data-index="${index}"]`);
     if (button) {
-        let symbolHtml;
-        // Update these paths for your real filenames/images
+        let logoHtml;
         if (skill.name === "Body") {
-            symbolHtml = `<img src="Dumbell_edited.png" alt="Dumbbell" class="pixel-icon">`;
+            logoHtml = `<img src="Dumbell_edited.png" alt="Dumbbell" class="pixel-icon">`;
         } else if (skill.name === "Heart") {
-            symbolHtml = `<img src="heart2.png" alt="Heart" class="heart2-icon">`;
+            logoHtml = `<img src="heart2.png" alt="Heart" class="heart2-icon">`;
         } else if (skill.name === "Soul") {
-            symbolHtml = `<img src="anchor.png" alt="Soul" class="anchor-icon">`;
+            logoHtml = `<img src="anchor.png" alt="Soul" class="anchor-icon">`;
         } else if (skill.name === "Status") {
-            symbolHtml = `<img src="status.png" alt="Status" class="status-icon">`;
+            logoHtml = `<img src="status.png" alt="Status" class="status-icon">`;
         } else if (skill.name === "Time") {
-            symbolHtml = `<img src="hour glass (3).png" alt="time" class="time-icon">`;
+            logoHtml = `<img src="hour glass (3).png" alt="Hourglass" class="hourglass-icon">`;
         } else if (skill.name === "Hand") {
-            symbolHtml = `<img src="hand2.png" alt="Hand" class="hand2-icon">`;
+            logoHtml = `<img src="hand2.png" alt="Hand" class="hand2-icon">`;
         } else {
-            symbolHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
+            logoHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
         button.innerHTML = `
-            ${skill.name}<br>
-            ${symbolHtml}<br>
-            ${skill.score}/100
+            <span class="skill-name">${skill.name}</span>
+            <span class="skill-logo">${logoHtml}</span>
+            <span class="skill-score">${skill.score}/100</span>
         `;
     }
 }
