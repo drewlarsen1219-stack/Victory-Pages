@@ -1,334 +1,373 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Victory tracker</title>
+<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+<title>Victory Tracker</title>
 <style>
-    body {
-        margin: 0;
-        padding: 20px;
-        font-family: 'Courier New', monospace;
-        background: #fff;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    #top-bar {
-        width: 100%;
-        max-width: 400px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    #help-btn, #home-btn {
-        background: #f5f5f5;
-        border: 1px solid #bbb;
-        color: #222;
-        border-radius: 50%;
-        font-size: 1.1em;
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-        text-align: center;
-        line-height: 32px;
-        transition: background 0.2s;
-        font-family: 'Courier New', monospace;
-    }
-    #help-btn:hover, #home-btn:hover {
-        background: #e6e6e6;
-    }
+body {
+    color: #000000;
+    background-color: #999999;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.score-button {
+    background: #eaeaea;
+    color: #000;
+    border: 2px outset #666;
+    border-radius: 4px;
+    width: 92px;
+    height: 92px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    font-family: inherit;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.score-button > .skill-name {
+    font-size: 13px;
+    flex: none;
+    text-align: center;
+    min-width: 0;
+    max-width: 84px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.score-button > .skill-logo {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-width: 0;
+    min-height: 0;
+    margin: 0 auto;
+}
+.score-button > .skill-score {
+    font-size: 12px;
+    flex: none;
+    text-align: center;
+    min-width: 0;
+    max-width: 84px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.score-button:hover {
+    background: #d0d0d0;
+    border: 2px inset #888;
+}
+.score-button.selected {
+    border: 2px solid #CC0000;
+    background: #fff;
+}
+.pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
+    width: 34px;
+    height: 34px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+.skill-symbol {
+    font-size: 28px;
+    min-width: 0;
+    max-width: 100%;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 34px;
+    overflow: hidden;
+}
+#button-grid-centerer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 324px;
+    margin: 0 auto;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    background: #CCCCCC;
+    border: 1px solid #888;
+    box-sizing: border-box;
+}
+@media (max-width: 480px) {
     #grid-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        width: 100%;
-        max-width: 400px;
-        padding: 10px;
-        background: white;
+      width: 100vw;
+      min-width: unset;
+      max-width: 100vw;
+      gap: 5px;
+      padding: 10px 0;
     }
-    .score-button {
-        background: ButtonFace;
-        color: ButtonText;
-        border: 2px outset ButtonShadow;
-        border-radius: 4px;
-        width: 92px;
-        height: 92px;
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-sizing: border-box;
-        gap: 3px;
-        font-family: 'Courier New', monospace;
-        outline: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
+    #button-grid-centerer {
+      min-width: unset;
     }
-    .score-button > .skill-name {
-        font-size: 13px;
-        flex: none;
-        text-align: center;
-        min-width: 0;
-        max-width: 84px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .score-button > .skill-logo {
-        flex: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        min-width: 0;
-        min-height: 0;
-        margin: 0 auto;
-    }
-    .score-button > .skill-score {
-        font-size: 12px;
-        flex: none;
-        text-align: center;
-        min-width: 0;
-        max-width: 84px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .score-button:hover {
-        background: #e3e3e3;
-        border: 2px inset ButtonShadow;
-    }
-    .score-button.selected {
-        border: 2px solid #CC0000;
-        background: #fff;
-    }
-    /* Uniform icon styling */
-    .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
-        width: 34px;
-        height: 34px;
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        image-rendering: pixelated;
-        display: block;
-        margin: 0 auto;
-        padding: 0;
-    }
-    .skill-symbol {
-        font-size: 28px;
-        min-width: 0;
-        max-width: 100%;
-        width: 34px;
-        height: 34px;
-        text-align: center;
-        vertical-align: middle;
-        display: inline-block;
-        line-height: 34px;
-        overflow: hidden;
-    }
-    #modal-bg, #help-modal-bg {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0,0,0,0.12);
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-    }
-    #modal, #help-modal {
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 14px rgba(0,0,0,0.11);
-        padding: 20px;
-        width: 90%;
-        max-width: 400px;
-        max-height: 90vh;
-        overflow-y: auto;
-        position: relative;
-        font-family: 'Courier New', monospace;
-    }
-    #modal-questions {
-        margin-bottom: 15px;
-    }
-    .question-group {
-        margin-bottom: 15px;
-    }
-    label {
-        display: block;
-        margin-bottom: 5px;
-        font-size: 0.95em;
-        font-family: 'Courier New', monospace;
-    }
-    input[type="text"],
-    input[type="number"],
-    textarea {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 0.95em;
-        margin-bottom: 5px;
-        font-family: 'Courier New', monospace;
-    }
-    .yn-group {
-        display: flex;
-        gap: 15px;
-        margin: 5px 0;
-    }
-    #modal-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        margin: 15px 0;
-        padding: 10px 0;
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-        font-family: 'Courier New', monospace;
-    }
-    .nav-btn {
-        padding: 8px 15px;
-        background: ButtonFace;
-        color: ButtonText;
-        border: 2px outset ButtonShadow;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 0.9em;
-        font-family: 'Courier New', monospace;
-        transition: background 0.15s, border 0.15s;
-    }
-    .nav-btn:hover:not(:disabled) {
-        background: #e0e0e0;
-        border: 2px inset ButtonShadow;
-    }
-    .nav-btn:disabled {
-        background: #f5f5f5;
-        color: #999;
-        cursor: not-allowed;
-        border: 2px solid #ccc;
-    }
-    #blog-section, #proof-files {
-        margin-top: 15px;
-    }
-    #recommendation-section {
-        margin: 15px 0;
-        padding: 10px;
-        background: #f9f9f9;
-        border-radius: 4px;
-        border: 1px solid #eee;
-        font-family: 'Courier New', monospace;
-    }
-    #saved-message {
-        color: #1877f2;
-        text-align: center;
-        margin-top: 10px;
-    }
-    @media (max-width: 480px) {
-        body {
-            padding: 8px;
-        }
-        #grid-container {
-            gap: 5px;
-        }
-        .score-button {
-            width: 48px;
-            height: 48px;
-            font-size: 10px;
-            padding: 0;
-        }
-        .score-button > .skill-name,
-        .score-button > .skill-score {
-            font-size: 9px;
-            max-width: 40px;
-        }
-        .score-button > .skill-logo {
-            width: 24px;
-            height: 24px;
-        }
-        .pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
-            width: 20px;
-            height: 20px;
-        }
-        .skill-symbol {
-            font-size: 12px;
-            width: 20px;
-            height: 20px;
-            line-height: 20px;
-        }
-    }
+}
+.btn-class2 {
+    background: #fff;
+    border: 2px outset #888;
+    color: #000;
+    font-family: inherit;
+    font-size: 1.04em;
+    padding: 8px 26px;
+    border-radius: 3px;
+    margin: 0 9px 0 0;
+    cursor: pointer;
+    transition: background 0.15s, border 0.14s;
+    min-width: 88px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.btn-class2:last-child {
+    margin-right: 0;
+}
+.btn-class2:hover {
+    background: #e3e3e3;
+    border: 2px inset #888;
+}
+#tracker-instructions {
+    margin: 16px auto 0 auto;
+    width: 97%;
+    max-width: 510px;
+    padding: 12px 12px 5px 12px;
+    background: #eee;
+    border: 1px solid #bbb;
+    font-size: 1.13em;
+    text-align: center;
+    font-family: inherit;
+}
+#top-bar {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 12px 0 8px 0;
+    background: none;
+}
+#help-btn, #home-btn {
+    background: #f5f5f5;
+    border: 1px solid #bbb;
+    color: #222;
+    border-radius: 50%;
+    font-size: 1.1em;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 32px;
+    transition: background 0.2s;
+    font-family: inherit;
+}
+#help-btn:hover, #home-btn:hover {
+    background: #e6e6e6;
+}
+.retro-hr {
+    width: 100%;
+    height: 2px;
+    border: none;
+    background: #888;
+    margin: 0;
+}
+.retro-indented-hr {
+    width: 95%;
+    margin: 10px auto 10px 30px;
+    height: 2px;
+    border: none;
+    background: #888;
+}
+#modal-bg, #saveLinkModal, #loadLinkModal, #help-modal-bg {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0; top: 0; width:100vw; height:100vh;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.12);
+}
+#modal, #saveLinkInner, #loadLinkInner, #help-modal {
+    background: #eee;
+    border-radius: 8px;
+    border: 2px solid #444;
+    box-shadow: 0 2px 14px #4444;
+    padding: 20px;
+    min-width: 250px;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    font-family: inherit;
+}
+#saveLinkField, #loadLinkField {
+    font-family:monospace;
+    font-size:0.97em;
+    width:97%;
+    margin-bottom:12px;
+}
+#saveLinkModal button, #loadLinkModal button, #help-modal button {
+    font-family: inherit;
+    margin: 0px 6px 0px 6px;
+    font-size: 1em;
+    padding: 4px 10px;
+    cursor: pointer;
+    background: #eaeaea;
+    border:1px solid #888;
+    border-radius:4px;
+}
 </style>
 </head>
 <body>
-<div id="top-bar">
-    <button id="home-btn" title="Back to Home">⌂</button>
-    <span style="font-size:1.18em;font-weight:bold;">Victory tracker</span>
-    <button id="help-btn" title="Help">?</button>
-</div>
+<table style="text-align:left;width:750px;margin-left:auto;margin-right:auto;background:#CCCCCC;"
+    cellspacing="2" cellpadding="2" border="1" align="center">
+  <tbody>
+    <tr>
+      <td style="vertical-align:top;">
+        <hr class="retro-hr">
+        <hr class="retro-hr">
+        <hr class="retro-hr">
 
-<div id="grid-container"></div>
-
-<div id="modal-bg">
-    <div id="modal">
-        <form id="modal-form">
-            <div id="modal-questions"></div>
-            <div id="modal-nav"></div>
-            <div id="recommendation-section"></div>
-            <div id="blog-section">
-                <label for="blog-text">Blog your experience, struggles, etc.:</label>
-                <textarea id="blog-text" rows="3" placeholder="Share your journey..."></textarea>
-            </div>
-            <div id="proof-files">
-                <label for="proof-file-input">Upload photos/documents</label>
-                <input type="file" id="proof-file-input" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.txt,.zip">
-            </div>
-            <button type="submit" id="modal-submit-btn">Submit & Save</button>
-            <button type="button" id="close-modal-btn">Close</button>
-        </form>
-        <div id="modal-output"></div>
-        <div id="saved-message"></div>
-    </div>
-</div>
-
-<div id="help-modal-bg">
-    <div id="help-modal">
-        <h2>How to use Victories</h2>
-        <div id="help-modal-content">
-            <b>Welcome to Victory tracker!</b><br><br>
-            <u>What's this site for?</u><br>
-            Track your progress in 12 life skills, get ranked, receive improvement guides, blog your journey, and save your achievements.<br><br>
-            <u>How to use:</u>
-            <ol>
-                <li><b>Click a skill button</b> in the grid.</li>
-                <li><b>Fill out the questionnaire</b> - use Next/Previous to navigate multiple pages.</li>
-                <li><b>Write about your experience</b> in the blog section.</li>
-                <li><b>Upload </b> (photos, documents) if you wish.</li>
-                <li><b>Submit & Save</b> will rank you and save your progress.</li>
-            </ol>
-            <u>Navigation:</u><br>
-            ⌂ Home button returns to main page<br>
-            ? Help button opens this guide<br><br>
-            <u>Saving:</u> Progress saves automatically to your device.<br>
-            <u>Privacy:</u> All data stays on your device.
+        <div id="top-bar">
+            <button id="home-btn" title="Back to Home">⌂</button>
+            <span style="font-size:1.18em;font-weight:bold;">Victory Tracker</span>
+            <button id="help-btn" title="Help">?</button>
         </div>
-        <button type="button" id="close-help-btn">Close</button>
-    </div>
-</div>
 
+        <div id="tracker-instructions">
+          <b>Click any skill below to fill out a questionnaire for that skill.<br>
+          Repeat for all skills you want to track.</b>
+        </div>
+        <div style="text-align:center; margin:16px 0 4px 0;">
+          <button id="saveLinkBtn" class="btn-class2" type="button">Save</button>
+          <button id="loadLinkBtn" class="btn-class2" type="button">Load</button>
+        </div>
+        <hr class="retro-indented-hr">
+
+        <div id="button-grid-centerer">
+          <div id="grid-container"></div>
+        </div>
+        <hr class="retro-indented-hr">
+
+        <div id="modal-bg">
+          <div id="modal">
+              <form id="modal-form">
+                  <div id="modal-questions"></div>
+                  <div id="modal-nav"></div>
+                  <div id="recommendation-section"></div>
+                  <div id="blog-section">
+                      <label for="blog-text">Blog your experience, struggles, etc.:</label>
+                      <textarea id="blog-text" rows="3" placeholder="Share your journey..."></textarea>
+                  </div>
+                  <div id="proof-files">
+                      <label for="proof-file-input">Upload photos/documents</label>
+                      <input type="file" id="proof-file-input" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.txt,.zip">
+                  </div>
+                  <button type="submit" id="modal-submit-btn">Submit & Save</button>
+                  <button type="button" id="close-modal-btn">Close</button>
+              </form>
+              <div id="modal-output"></div>
+              <div id="saved-message"></div>
+          </div>
+        </div>
+
+        <!-- Save Modal -->
+        <div id="saveLinkModal">
+          <div id="saveLinkInner">
+            <p><b>Copy/bookmark this link to save or resume your progress:</b></p>
+            <input id="saveLinkField" type="text" readonly>
+            <br>
+            <button id="copyLinkBtn">Copy</button>
+            <button id="openLinkBtn">Open in new tab</button>
+            <button id="closeSaveModalBtn">Close</button>
+            <p style="font-size:0.92em;color:#444;margin-top:9px;">Keep this link safe—it is your unique save!</p>
+          </div>
+        </div>
+        <!-- Load Modal -->
+        <div id="loadLinkModal">
+          <div id="loadLinkInner">
+            <p><b>Paste a previously saved progress link below to load it:</b></p>
+            <input id="loadLinkField" type="text" placeholder="Paste your link here" autocomplete="off">
+            <br>
+            <button id="submitLoadBtn">Load</button>
+            <button id="closeLoadModalBtn">Cancel</button>
+            <div id="loadLinkStatus" style="color:#e34;font-size:0.97em;padding-top:10px;"></div>
+          </div>
+        </div>
+
+        <div id="help-modal-bg">
+            <div id="help-modal">
+                <h2>How to use Victories</h2>
+                <div id="help-modal-content">
+                    <b>Welcome to Victory tracker!</b><br><br>
+                    <u>What's this site for?</u><br>
+                    Track your progress in 12 life skills, get ranked, receive improvement guides, blog your journey, and save your achievements.<br><br>
+                    <u>How to use:</u>
+                    <ol>
+                        <li><b>Click a skill button</b> in the grid.</li>
+                        <li><b>Fill out the questionnaire</b> - use Next/Previous to navigate multiple pages.</li>
+                        <li><b>Write about your experience</b> in the blog section.</li>
+                        <li><b>Upload </b> (photos, documents) if you wish.</li>
+                        <li><b>Submit & Save</b> will rank you and save your progress.</li>
+                        <li><b>To save or resume later:</b> Click the "Save" button and bookmark/copy your link; use "Load" to restore from a link.</li>
+                    </ol>
+                    <u>Navigation:</u><br>
+                    ⌂ Home button returns to main page<br>
+                    ? Help button opens this guide<br><br>
+                    <u>Saving:</u> Progress can be saved by copying your link.<br>
+                    <u>Privacy:</u> All data stays on your device or your link.
+                </div>
+                <button type="button" id="close-help-btn">Close</button>
+            </div>
+        </div>
+        <hr class="retro-hr">
+        <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
+            <span style="font-style:italic;">Victory Pages &copy; 2025 - All progress saved privately</span>
+        </div>
+        <hr class="retro-hr">
+        <hr class="retro-hr">
+      </td>
+    </tr>
+  </tbody>
+</table>
 <script>
-const QUESTIONS_PER_PAGE = 8;
-const TIMESTAMP = "2025-10-29 23:30:54";
-const USER_LOGIN = "drewlarsen1219-stack";
+document.getElementById("help-btn").onclick = function() {
+    document.getElementById("help-modal-bg").style.display = "flex";
+};
+document.getElementById("close-help-btn").onclick = function() {
+    document.getElementById("help-modal-bg").style.display = "none";
+};
+document.getElementById("close-modal-btn") && (document.getElementById("close-modal-btn").onclick = function() {
+    document.getElementById("modal-bg").style.display = "none";
+});
+document.getElementById("home-btn").onclick = function() {
+    window.location.href = "index.html";
+};
 
-// NOTE: Place anchor.png, hour glass (3).png, heart_remade.png, status.png, hand2.png in the same directory as this HTML file!
+const QUESTIONS_PER_PAGE = 8;
 const SKILL_DATA = [
     { name: 'Body', symbol: '' },
     { name: 'Mind', symbol: '🕮' },
@@ -343,7 +382,6 @@ const SKILL_DATA = [
     { name: 'Creative', symbol: 'ᝰ' },
     { name: 'Tech', symbol: '🖳' }
 ];
-
 const SKILL_QUESTIONS = {
     'Body': [
         { label: 'How many days per week do you exercise?', type: 'number', min: 0, max: 7 },
@@ -374,9 +412,8 @@ const SKILL_QUESTIONS = {
         { label: 'Describe your learning process:', type: 'textarea' },
         { label: 'Do you do mental exercises (puzzles, strategy games)?', type: 'yn' }
     ]
-    // Add other skills here
+    // Add additional skills if needed
 };
-
 const SKILL_RANKS = {
     'Body': [
         { name: 'Novice', desc: 'Basic routine or just started.', min: 0, max: 25 },
@@ -390,7 +427,7 @@ const SKILL_RANKS = {
         { name: 'Advanced', desc: 'Deep learning, projects, teaching.', min: 51, max: 75 },
         { name: 'Expert', desc: 'Creates frameworks, mentors others.', min: 76, max: 100 }
     ]
-    // Add other skills here
+    // Add additional skills if needed
 };
 
 let currentPage = 0;
@@ -404,7 +441,6 @@ let skillsData = SKILL_DATA.map(skill => ({
     uploads: [],
     answers: {}
 }));
-
 const elements = {
     grid: document.getElementById('grid-container'),
     modalBg: document.getElementById('modal-bg'),
@@ -418,10 +454,19 @@ const elements = {
     output: document.getElementById('modal-output'),
     saveMsg: document.getElementById('saved-message'),
     closeBtn: document.getElementById('close-modal-btn'),
-    helpBtn: document.getElementById('help-btn'),
-    homeBtn: document.getElementById('home-btn'),
-    helpModalBg: document.getElementById('help-modal-bg'),
-    closeHelpBtn: document.getElementById('close-help-btn')
+    saveLinkBtn: document.getElementById('saveLinkBtn'),
+    saveLinkModal: document.getElementById('saveLinkModal'),
+    saveLinkField: document.getElementById('saveLinkField'),
+    copyLinkBtn: document.getElementById('copyLinkBtn'),
+    openLinkBtn: document.getElementById('openLinkBtn'),
+    closeSaveModalBtn: document.getElementById('closeSaveModalBtn'),
+    loadLinkBtn: document.getElementById('loadLinkBtn'),
+    loadLinkModal: document.getElementById('loadLinkModal'),
+    loadLinkInner: document.getElementById('loadLinkInner'),
+    loadLinkField: document.getElementById('loadLinkField'),
+    submitLoadBtn: document.getElementById('submitLoadBtn'),
+    closeLoadModalBtn: document.getElementById('closeLoadModalBtn'),
+    loadLinkStatus: document.getElementById('loadLinkStatus')
 };
 
 function updateButtonDisplay(index) {
@@ -526,29 +571,6 @@ function getRank(score, skillName) {
     return { ...ranks[0], rankIndex: 0 };
 }
 
-function saveProgress() {
-    const saveObj = {
-        timestamp: TIMESTAMP,
-        user: USER_LOGIN,
-        skills: {}
-    };
-    skillsData.forEach(skill => {
-        saveObj.skills[skill.name] = {
-            score: skill.score,
-            answers: skill.answers,
-            blog: skill.blog,
-            proofs: skill.proofs
-        };
-    });
-    const blob = new Blob([JSON.stringify(saveObj, null, 2)], {type: 'application/json'});
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `victories_${TIMESTAMP.replace(/[^0-9]/g, '')}.json`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-}
-
 elements.form.onsubmit = function(e) {
     e.preventDefault();
     if (currentPage < totalPages - 1) {
@@ -601,7 +623,6 @@ elements.form.onsubmit = function(e) {
         <strong>Your Ranking:</strong> ${rank.name} (${score}/100)<br>
         <em>${rank.desc}</em>
     `;
-    saveProgress();
     elements.saveMsg.textContent = "Progress saved!";
     elements.output.innerHTML = `
         <strong>Blog:</strong> ${skillObj.blog ? skillObj.blog.replace(/\n/g,'<br>') : '(none)'}<br>
@@ -610,9 +631,6 @@ elements.form.onsubmit = function(e) {
 };
 
 elements.closeBtn.onclick = () => elements.modalBg.style.display = 'none';
-elements.helpBtn.onclick = () => elements.helpModalBg.style.display = 'flex';
-elements.closeHelpBtn.onclick = () => elements.helpModalBg.style.display = 'none';
-elements.homeBtn.onclick = () => window.location.href = "index.html";
 
 function createButtons() {
     elements.grid.innerHTML = "";
@@ -626,6 +644,95 @@ function createButtons() {
     });
 }
 createButtons();
+
+// Save/Load functionality
+function base64UrlEncode(str) {
+    return btoa(unescape(encodeURIComponent(str)))
+        .replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+}
+function base64UrlDecode(str) {
+    str = str.replace(/-/g, "+").replace(/_/g, "/");
+    while (str.length % 4) str += "=";
+    return decodeURIComponent(escape(atob(str)));
+}
+function getAppState() {
+    return skillsData;
+}
+function restoreAppWith(state) {
+    if (!Array.isArray(state) || state.length !== skillsData.length) return;
+    for (let i = 0; i < SKILL_DATA.length; ++i) {
+        skillsData[i] = Object.assign({}, skillsData[i], state[i]);
+        updateButtonDisplay(i);
+    }
+}
+
+elements.saveLinkBtn.onclick = function() {
+    const json = JSON.stringify(getAppState());
+    const encoded = base64UrlEncode(json);
+    const url = `${location.origin}${location.pathname}#data=${encoded}`;
+    elements.saveLinkField.value = url;
+    elements.saveLinkModal.style.display = "flex";
+    elements.saveLinkField.select();
+};
+document.getElementById("copyLinkBtn").onclick = function() {
+    elements.saveLinkField.select();
+    document.execCommand && document.execCommand('copy');
+    this.textContent = "Copied!";
+    setTimeout(() => { this.textContent = "Copy"; }, 1500);
+};
+document.getElementById("openLinkBtn").onclick = function() {
+    window.open(elements.saveLinkField.value, '_blank');
+};
+document.getElementById("closeSaveModalBtn").onclick = function() {
+    elements.saveLinkModal.style.display = "none";
+};
+
+elements.loadLinkBtn.onclick = function() {
+    elements.loadLinkField.value = "";
+    elements.loadLinkModal.style.display = "flex";
+    elements.loadLinkStatus.textContent = "";
+    elements.loadLinkField.focus();
+};
+elements.closeLoadModalBtn.onclick = function() {
+    elements.loadLinkModal.style.display = "none";
+    elements.loadLinkField.value = "";
+    elements.loadLinkStatus.textContent = "";
+};
+elements.submitLoadBtn.onclick = function() {
+    const val = elements.loadLinkField.value.trim();
+    elements.loadLinkStatus.textContent = "";
+    let m = val.match(/#data=([^#]+)/);
+    let hashData = m ? m[1] : (val.match(/^[-\w_=]+$/) ? val : null);
+    if (!hashData) {
+        elements.loadLinkStatus.textContent = "Not a valid save link. Paste the full link or just the data part.";
+        return;
+    }
+    try {
+        const decoded = base64UrlDecode(hashData);
+        const state = JSON.parse(decoded);
+        restoreAppWith(state);
+        elements.loadLinkModal.style.display = "none";
+        elements.loadLinkField.value = "";
+        elements.loadLinkStatus.textContent = "";
+        alert("Progress loaded! The current page will now reflect your saved data.");
+    } catch(e) {
+        elements.loadLinkStatus.textContent = "Failed to load data from link. Data may be corrupt or outdated.";
+    }
+};
+
+// Restore from #data= if present
+window.addEventListener("DOMContentLoaded", function() {
+    const m = location.hash.match(/^#data=(.+)$/);
+    if (m) {
+        try {
+            const decoded = base64UrlDecode(m[1]);
+            const state = JSON.parse(decoded);
+            restoreAppWith(state);
+        } catch (e) {
+            alert("Could not restore your save data from the URL. It may be corrupt or outdated.");
+        }
+    }
+});
 </script>
 </body>
 </html>
