@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta content="text/html; charset=windows-1252" http-equiv="content-type">
-<title>Victory Trocker</title>
+<title>Victory Trcker</title>
 <style>
 body {
     color: #000000;
@@ -110,7 +110,7 @@ body {
     justify-content: center;
     align-items: center;
     background: #CCCCCC;
-    border: 3px solid #888;
+    border: none;
     box-sizing: border-box;
 }
 @media (max-width: 480px) {
@@ -147,17 +147,6 @@ body {
     background: #e3e3e3;
     border: 2px inset #888;
 }
-#tracker-instructions {
-    margin: 16px auto 0 auto;
-    width: 97%;
-    max-width: 510px;
-    padding: 12px 12px 5px 12px;
-    background: #eee;
-    border: 1px solid #bbb;
-    font-size: 1em;
-    text-align: center;
-    font-family: inherit;
-}
 #top-bar {
     width: 100%;
     max-width: 700px;
@@ -186,6 +175,7 @@ body {
 }
 #help-btn:hover, #home-btn:hover {
     background: #e6e6e6;
+}
 hr {
     display: block;
     margin-block-start: 0.5em;
@@ -261,10 +251,8 @@ hr {
             <button id="help-btn" title="Help">?</button>
         </div>
 
-        <div id="tracker-instructions">
-          <b>Click any skill below to fill out a questionnaire for that skill.<br>
-          Repeat for all skills you want to track.</b>
-        </div>
+        <!-- Removed tracker-instructions block as requested -->
+
         <div style="text-align:center; margin:16px 0 4px 0;">
           <button id="saveLinkBtn" class="btn-class2" type="button">Save</button>
           <button id="loadLinkBtn" class="btn-class2" type="button">Load</button>
