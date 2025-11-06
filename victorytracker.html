@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta content="text/html; charset=windows-1252" http-equiv="content-type">
@@ -186,13 +186,17 @@ body {
 }
 #help-btn:hover, #home-btn:hover {
     background: #e6e6e6;
-}
-.retro-hr {
-    width: 100%;
-    height: 2px;
-    border: none;
-    background: #888;
-    margin: 0;
+hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: gray;
+    unicode-bidi: isolate;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
 }
 .retro-indented-hr {
     width: 95%;
@@ -247,9 +251,9 @@ body {
   <tbody>
     <tr>
       <td style="vertical-align:top;">
-        <hr class="retro-hr">
-        <hr class="retro-hr">
-        <hr class="retro-hr">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
 
         <div id="top-bar">
             <button id="home-btn" title="Back to Home">⌂</button>
