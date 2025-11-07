@@ -13,7 +13,6 @@ body {
     padding: 0;
     min-height: 100vh;
 }
-/* --- Updated skill menu box and text --- */
 .square-skill-box {
     background: none;
     border: none;
@@ -28,7 +27,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-/* Box around the logo/text matches table border: */
 .square-skill-box .inner-square {
     width: 100px;
     height: 100px;
@@ -39,22 +37,21 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #000; /* THIN BLACK LINE */
     position: relative;
+    overflow: hidden;
 }
 .square-skill-box .skill-name {
     font-size: 13px;
     text-align: center;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #CCCCCC;   /* Requested text color */
+    color: #CCCCCC;
     width: 92px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* REMOVED text-shadow (no black border for text) */
 }
-/* Also .skill-symbol for consistency */
 .square-skill-box .skill-symbol {
     font-size: 28px;
     width: 34px;
@@ -64,7 +61,6 @@ body {
     line-height: 34px;
     display: inline-block;
     color: #CCCCCC;
-    /* REMOVED text-shadow (no black border for text) */
 }
 .square-skill-box .skill-logo {
     display: flex;
@@ -74,14 +70,22 @@ body {
     height: 56px;
     margin: 0 auto 3px auto;
 }
-.square-skill-box .pixel-icon, .square-skill-box .img-icon, .square-skill-box .status-icon, .square-skill-box .hourglass-icon, .square-skill-box .anchor-icon, .square-skill-box .heart2-icon, .square-s[...]
-    width: 56px;
-    height: 56px;
+.square-skill-box .pixel-icon,
+.square-skill-box .img-icon,
+.square-skill-box .status-icon,
+.square-skill-box .hourglass-icon,
+.square-skill-box .anchor-icon,
+.square-skill-box .heart2-icon,
+.square-skill-box .hand2-icon {
+    width: 48px;
+    height: 48px;
     display: block;
     object-fit: contain;
     image-rendering: pixelated;
     margin: 0;
     padding: 0;
+    max-width: 80%;
+    max-height: 80%;
 }
 .square-skill-box .skill-score {
     font-size: 12px;
@@ -91,7 +95,6 @@ body {
     font-weight: 600;
     width: 80px;
     height: 1.7em;
-    /* REMOVED text-shadow (no black border for text) */
 }
 #button-grid-centerer {
     width: 100%;
@@ -109,7 +112,7 @@ body {
     justify-content: center;
     align-items: center;
     background: #CCCCCC;
-    border: 1px solid #CCCCCC;
+    border: 1px solid #000; /* Table border (thin black line) */
     box-sizing: border-box;
 }
 @media (max-width: 480px) {
@@ -132,8 +135,12 @@ body {
     .square-skill-box .hourglass-icon,
     .square-skill-box .anchor-icon,
     .square-skill-box .heart2-icon,
-    .square-skill-box .hand2-icon
-    { width: 38px; height: 38px; }
+    .square-skill-box .hand2-icon {
+        width: 34px;
+        height: 34px;
+        max-width: 90%;
+        max-height: 90%;
+    }
 }
 button, .btn-class2 {
     font-family: inherit;
