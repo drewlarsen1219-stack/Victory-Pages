@@ -76,7 +76,8 @@ body {
 .square-skill-box .anchor-icon,
 .square-skill-box .heart2-icon,
 .square-skill-box .hand2-icon,
-.square-skill-box .mind-icon { /* FIXED: missing commas and correct selector */
+.square-skill-box .mind-icon,
+.square-skill-box .finance-icon {
     width: 55px;
     height: 55px;
     display: block;
@@ -100,6 +101,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+#skill-group-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.victory-flag-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+.victory-flag-img {
+    height: 100%;
+    width: auto;
+    max-height: 100%;
+    /* Will be set in JS to match grid height */
 }
 #grid-container {
     display: grid;
@@ -125,6 +147,14 @@ body {
     #button-grid-centerer {
       min-width: unset;
     }
+    #skill-group-row {
+      flex-direction: row;
+      align-items: center;
+    }
+    .victory-flag-img {
+      max-width: 22px;
+      height: 100%;
+    }
     .square-skill-box { width: 100px; height: 100px; }
     .square-skill-box .inner-square { width: 78px; height: 78px; }
     .square-skill-box .skill-logo,
@@ -135,6 +165,7 @@ body {
     .square-skill-box .anchor-icon,
     .square-skill-box .heart2-icon,
     .square-skill-box .mind-icon,
+    .square-skill-box .finance-icon,
     .square-skill-box .hand2-icon {
         width: 34px;
         height: 34px;
@@ -277,7 +308,15 @@ hr {
         <hr class="retro-indented-hr">
 
         <div id="button-grid-centerer">
-          <div id="grid-container"></div>
+          <div id="skill-group-row">
+            <div class="victory-flag-side">
+              <img src="Victory flag (1).png" alt="Flag left" class="victory-flag-img" id="flag-left-img">
+            </div>
+            <div id="grid-container"></div>
+            <div class="victory-flag-side">
+              <img src="Victory flag (1).png" alt="Flag right" class="victory-flag-img" id="flag-right-img">
+            </div>
+          </div>
         </div>
         <!-- Moved buttons below grid -->
         <div style="text-align:center; margin:20px 0 10px 0;" id="action-buttons-section">
@@ -500,9 +539,11 @@ function updateButtonDisplay(index) {
         } else if (skill.name === "Time") {
             logoHtml = `<img src="hour glass (3).png" alt="Hourglass" class="hourglass-icon">`;
         } else if (skill.name === "Hand") {
-            logoHtml = `<img src="hand2.2.png" alt="Hand" class="hand2-icon">`;   // FIXED: only hand icon here
+            logoHtml = `<img src="hand2.2.png" alt="Hand" class="hand2-icon">`;
         } else if (skill.name === "Mind") {
-            logoHtml = `<img src="mind.png" alt="Mind" class="mind-icon">`;        // ADDED: Mind icon display
+            logoHtml = `<img src="mind2.png" alt="Mind" class="mind-icon">`;
+        } else if (skill.name === "Finance") {
+            logoHtml = `<img src="finance.png" alt="Finance" class="finance-icon">`;
         } else {
             logoHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
@@ -669,6 +710,26 @@ function createButtons() {
     });
 }
 createButtons();
+
+// Adjust flag height to match grid height after render
+function adjustFlagHeight() {
+    const grid = document.getElementById('grid-container');
+    const flagLeft = document.getElementById('flag-left-img');
+    const flagRight = document.getElementById('flag-right-img');
+    if (grid && flagLeft && flagRight) {
+        const gridRect = grid.getBoundingClientRect();
+        flagLeft.style.height = grid.offsetHeight + "px";
+        flagRight.style.height = grid.offsetHeight + "px";
+        flagLeft.style.maxHeight = grid.offsetHeight + "px";
+        flagRight.style.maxHeight = grid.offsetHeight + "px";
+    }
+}
+window.addEventListener("DOMContentLoaded", function() {
+    adjustFlagHeight();
+});
+window.addEventListener("resize", function() {
+    adjustFlagHeight();
+});
 
 // Save/Load functionality
 function base64UrlEncode(str) {
