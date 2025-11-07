@@ -14,8 +14,8 @@ body {
     min-height: 100vh;
 }
 .square-skill-box {
-    background: none;
-    border: 0;
+    background: #CCCCCC; /* Make uniform with rest of page */
+    border: 2px solid #888;
     margin: 0;
     padding: 0;
     width: 120px;
@@ -26,12 +26,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #aaa, 0 1px 0px #fff inset;
     transition: filter 0.15s;
 }
 .square-skill-box .inner-square {
     width: 100px;
     height: 100px;
-    background: #999999;
+    background: #CCCCCC;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -42,7 +44,6 @@ body {
       inset 3px 3px 7px #bbb,
       inset -2px -2px 8px #888;
     border: 2px solid #888;
-    /* Looks indented! */
     position: relative;
 }
 .square-skill-box .skill-name {
@@ -50,7 +51,7 @@ body {
     text-align: center;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #000;
+    color: #F8F8F3;                   /* Off-white text */
     width: 92px;
     white-space: nowrap;
     overflow: hidden;
@@ -72,6 +73,7 @@ body {
     vertical-align: middle;
     line-height: 34px;
     display: inline-block;
+    color: #F8F8F3; /* Off-white */
 }
 .square-skill-box .pixel-icon, .square-skill-box .img-icon, .square-skill-box .status-icon, .square-skill-box .hourglass-icon, .square-skill-box .anchor-icon, .square-skill-box .heart2-icon, .square-skill-box .hand2-icon {
     width: 56px;
@@ -86,7 +88,7 @@ body {
     font-size: 12px;
     text-align: center;
     margin-top: 2px;
-    color: #333;
+    color: #F8F8F3; /* Off-white */
     font-weight: 600;
     width: 80px;
     height: 1.7em;
@@ -133,27 +135,32 @@ body {
     .square-skill-box .hand2-icon
     { width: 38px; height: 38px; }
 }
-.btn-class2 {
-    background: #fff;
-    border: 2px outset #888;
-    color: #000;
+button, .btn-class2 {
     font-family: inherit;
-    font-size: 1.04em;
-    padding: 8px 26px;
-    border-radius: 3px;
-    margin: 0 9px 0 0;
+    font-size: 1em;
+    padding: 7px 18px;
+    margin: 6px 7px 0 0;
+    border: 1.5px solid #888;
+    background-color: #ededed;
+    color: #222;
+    border-radius: 5px;
+    transition: background 0.18s, border 0.15s, box-shadow 0.14s;
+    outline: none;
     cursor: pointer;
-    transition: background 0.15s, border 0.14s;
-    min-width: 88px;
+    box-shadow: 0 2px 4px #bbb;
     vertical-align: middle;
     display: inline-block;
 }
+button:active, .btn-class2:active {
+    background: #e0e0e0;
+    border-color: #aaa;
+}
+button:hover, .btn-class2:hover {
+    background: #dadada;
+    border-color: #555;
+}
 .btn-class2:last-child {
     margin-right: 0;
-}
-.btn-class2:hover {
-    background: #e3e3e3;
-    border: 2px inset #888;
 }
 #top-bar {
     width: 100%;
@@ -168,9 +175,6 @@ body {
     background: none;
 }
 #help-btn, #home-btn {
-    background: #f5f5f5;
-    border: 1px solid #bbb;
-    color: #222;
     border-radius: 50%;
     font-size: 1.1em;
     width: 32px;
@@ -178,8 +182,13 @@ body {
     cursor: pointer;
     text-align: center;
     line-height: 32px;
+    background: #f5f5f5;
+    border: 1px solid #bbb;
+    color: #222;
     transition: background 0.2s;
     font-family: inherit;
+    box-shadow: none;
+    padding: 0;
 }
 #help-btn:hover, #home-btn:hover {
     background: #e6e6e6;
@@ -261,14 +270,16 @@ hr {
 
         <!-- Removed tracker-instructions block as requested -->
 
-        <div style="text-align:center; margin:16px 0 4px 0;">
-          <button id="saveLinkBtn" class="btn-class2" type="button">Save</button>
-          <button id="loadLinkBtn" class="btn-class2" type="button">Load</button>
-        </div>
         <hr class="retro-indented-hr">
 
         <div id="button-grid-centerer">
           <div id="grid-container"></div>
+        </div>
+        <!-- Moved buttons below grid -->
+        <div style="text-align:center; margin:20px 0 10px 0;" id="action-buttons-section">
+          <button id="saveLinkBtn" type="button">Save</button>
+          <button id="loadLinkBtn" type="button">Load</button>
+          <button id="createPostBtn" type="button" onclick="window.location.href='Submission_tool.html'">Create Post</button>
         </div>
         <hr class="retro-indented-hr">
 
@@ -465,7 +476,8 @@ const elements = {
     loadLinkField: document.getElementById('loadLinkField'),
     submitLoadBtn: document.getElementById('submitLoadBtn'),
     closeLoadModalBtn: document.getElementById('closeLoadModalBtn'),
-    loadLinkStatus: document.getElementById('loadLinkStatus')
+    loadLinkStatus: document.getElementById('loadLinkStatus'),
+    createPostBtn: document.getElementById('createPostBtn')
 };
 
 function updateButtonDisplay(index) {
