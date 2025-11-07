@@ -13,10 +13,10 @@ body {
     padding: 0;
     min-height: 100vh;
 }
+/* ---- Updated styles for skill menu ---- */
 .square-skill-box {
     background: none;
-    border: none;
-    border style: inset;
+    border: 1px solid #CCCCCC;           /* Match table border */
     margin: 0;
     padding: 0;
     width: 120px;
@@ -36,8 +36,7 @@ body {
     height: 100px;
     background: #888;
     box-sizing: border-box;
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -50,11 +49,32 @@ body {
     text-align: center;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #F8F8F3;                   /* Off-white text */
+    color: #CCCCCC;                /* Requested color for skills text */
     width: 92px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;           /* Black border for text */
+}
+/* You may also want to tweak .skill-symbol for consistency */
+.square-skill-box .skill-symbol {
+    font-size: 28px;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 34px;
+    display: inline-block;
+    color: #CCCCCC; /* Match menu text color */
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
 .square-skill-box .skill-logo {
     display: flex;
@@ -64,17 +84,7 @@ body {
     height: 56px;
     margin: 0 auto 3px auto;
 }
-.square-skill-box .skill-symbol {
-    font-size: 28px;
-    width: 34px;
-    height: 34px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 34px;
-    display: inline-block;
-    color: #F8F8F3; /* Off-white */
-}
-.square-skill-box .pixel-icon, .square-skill-box .img-icon, .square-skill-box .status-icon, .square-skill-box .hourglass-icon, .square-skill-box .anchor-icon, .square-skill-box .heart2-icon, .square-skill-box .hand2-icon {
+.square-skill-box .pixel-icon, .square-skill-box .img-icon, .square-skill-box .status-icon, .square-skill-box .hourglass-icon, .square-skill-box .anchor-icon, .square-skill-box .heart2-icon, .square-s[...]
     width: 56px;
     height: 56px;
     display: block;
@@ -87,10 +97,15 @@ body {
     font-size: 12px;
     text-align: center;
     margin-top: 2px;
-    color: #F8F8F3; /* Off-white */
+    color: #CCCCCC;
     font-weight: 600;
     width: 80px;
     height: 1.7em;
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
 #button-grid-centerer {
     width: 100%;
@@ -108,7 +123,7 @@ body {
     justify-content: center;
     align-items: center;
     background: #CCCCCC;
-    border: none;
+    border: 1px solid #CCCCCC;      /* Match table border */
     box-sizing: border-box;
 }
 @media (max-width: 480px) {
