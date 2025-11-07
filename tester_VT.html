@@ -13,10 +13,10 @@ body {
     padding: 0;
     min-height: 100vh;
 }
-/* ---- Updated styles for skill menu ---- */
+/* --- Updated skill menu box and text --- */
 .square-skill-box {
     background: none;
-    border: 1px solid #CCCCCC;           /* Match table border */
+    border: none;
     margin: 0;
     padding: 0;
     width: 120px;
@@ -27,10 +27,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: none;
-    box-shadow: none;
-    transition: filter 0.15s;
 }
+/* Box around the logo/text matches table border: */
 .square-skill-box .inner-square {
     width: 100px;
     height: 100px;
@@ -41,7 +39,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 5px;
-    border: 2px solid BLACK;
+    border: 1px solid #CCCCCC;
     position: relative;
 }
 .square-skill-box .skill-name {
@@ -49,18 +47,14 @@ body {
     text-align: center;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #CCCCCC;                /* Requested color for skills text */
+    color: #CCCCCC;   /* Requested text color */
     width: 92px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;           /* Black border for text */
+    /* REMOVED text-shadow (no black border for text) */
 }
-/* You may also want to tweak .skill-symbol for consistency */
+/* Also .skill-symbol for consistency */
 .square-skill-box .skill-symbol {
     font-size: 28px;
     width: 34px;
@@ -69,12 +63,8 @@ body {
     vertical-align: middle;
     line-height: 34px;
     display: inline-block;
-    color: #CCCCCC; /* Match menu text color */
-    text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
+    color: #CCCCCC;
+    /* REMOVED text-shadow (no black border for text) */
 }
 .square-skill-box .skill-logo {
     display: flex;
@@ -101,11 +91,7 @@ body {
     font-weight: 600;
     width: 80px;
     height: 1.7em;
-    text-shadow:
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
+    /* REMOVED text-shadow (no black border for text) */
 }
 #button-grid-centerer {
     width: 100%;
@@ -123,7 +109,7 @@ body {
     justify-content: center;
     align-items: center;
     background: #CCCCCC;
-    border: 1px solid #CCCCCC;      /* Match table border */
+    border: 1px solid #CCCCCC;
     box-sizing: border-box;
 }
 @media (max-width: 480px) {
@@ -281,9 +267,6 @@ hr {
             <span style="font-size:1.18em;font-weight:bold;">Victory Tracker</span>
             <button id="help-btn" title="Help">?</button>
         </div>
-
-        <!-- Removed tracker-instructions block as requested -->
-
         <hr class="retro-indented-hr">
 
         <div id="button-grid-centerer">
