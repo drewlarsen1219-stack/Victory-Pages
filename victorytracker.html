@@ -625,9 +625,7 @@ elements.form.onsubmit = function(e) {
 };
 
 elements.closeBtn.onclick = () => elements.modalBg.style.display = 'none';
-elements.blogBtn.onclick = function() {
-    window.location.href = "Submission_tool.html";
-};
+elements.blogBtn.onclick = () => window.location.href = "Submission_tool.html";
 
 function createButtons() {
     elements.grid.innerHTML = "";
