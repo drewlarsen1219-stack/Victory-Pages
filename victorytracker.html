@@ -13,86 +13,88 @@ body {
     padding: 0;
     min-height: 100vh;
 }
-.score-button {
-    background: #eaeaea;
-    color: #000;
-    border: 2px outset #666;
-    border-radius: 6px;
-    width: 120px;
-    height: 120px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    font-family: inherit;
-    outline: none;
+.square-skill-box {
+    background: none;
+    border: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-}
-.score-button > .skill-name {
-    font-size: 13px;
-    flex: none;
-    text-align: center;
-    min-width: 0;
-    max-width: 84px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.score-button > .skill-logo {
-    flex: none;
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
-    min-width: 0;
-    min-height: 0;
-    margin: 0 auto;
 }
-.score-button > .skill-score {
-    font-size: 12px;
-    flex: none;
+.square-skill-box .inner-square {
+    width: 100px;
+    height: 100px;
+    background: #888;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #000; /* THIN BLACK LINE */
+    position: relative;
+    overflow: hidden;
+}
+.square-skill-box .skill-name {
+    font-size: 13px;
     text-align: center;
-    min-width: 0;
-    max-width: 84px;
+    margin-bottom: 5px;
+    color: black;
+    width: 92px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.score-button:hover {
-    background: #d0d0d0;
-    border: 2px inset #888;
-}
-.score-button.selected {
-    border: 2px solid #CC0000;
-    background: #fff;
-}
-.pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
-    width: 60px;
-    height: 60px;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    image-rendering: pixelated;
-    display: block;
-    margin: 0 auto;
-    padding: 0;
-}
-.skill-symbol {
-    font-size: 28px;
-    min-width: 0;
-    max-width: 100%;
+.square-skill-box .skill-symbol {
+    font-size: 13px;
     width: 34px;
     height: 34px;
     text-align: center;
     vertical-align: middle;
-    display: inline-block;
     line-height: 34px;
-    overflow: hidden;
+    display: inline-block;
+    color: #CCCCCC;
+}
+.square-skill-box .skill-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 3px auto;
+}
+.square-skill-box .pixel-icon,
+.square-skill-box .img-icon,
+.square-skill-box .status-icon,
+.square-skill-box .hourglass-icon,
+.square-skill-box .anchor-icon,
+.square-skill-box .heart2-icon,
+.square-skill-box .hand2-icon,
+.square-skill-box .mind-icon,
+.square-skill-box .finance-icon {
+    width: 55px;
+    height: 55px;
+    display: block;
+    object-fit: contain;
+    image-rendering: pixelated;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+.square-skill-box .skill-score {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 2px;
+    color: black;
+    width: 80px;
+    height: 1.7em;
 }
 #button-grid-centerer {
     width: 100%;
@@ -104,7 +106,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
-    width: 324px;
+    width: 388px;
     margin: 0 auto;
     padding: 20px 0;
     justify-content: center;
@@ -124,28 +126,50 @@ body {
     #button-grid-centerer {
       min-width: unset;
     }
+    .square-skill-box { width: 100px; height: 100px; }
+    .square-skill-box .inner-square { width: 78px; height: 78px; }
+    .square-skill-box .skill-logo,
+    .square-skill-box .pixel-icon,
+    .square-skill-box .img-icon,
+    .square-skill-box .status-icon,
+    .square-skill-box .hourglass-icon,
+    .square-skill-box .anchor-icon,
+    .square-skill-box .heart2-icon,
+    .square-skill-box .mind-icon,
+    .square-skill-box .finance-icon,
+    .square-skill-box .hand2-icon {
+        width: 34px;
+        height: 34px;
+        max-width: 90%;
+        max-height: 90%;
+    }
 }
-.btn-class2 {
-    background: #fff;
-    border: 2px outset #888;
-    color: #000;
+button, .btn-class2 {
     font-family: inherit;
-    font-size: 1.04em;
-    padding: 8px 26px;
-    border-radius: 3px;
-    margin: 0 9px 0 0;
+    font-size: 1em;
+    padding: 7px 18px;
+    margin: 6px 7px 0 0;
+    border: 1.5px solid #888;
+    background-color: #ededed;
+    color: #222;
+    border-radius: 5px;
+    transition: background 0.18s, border 0.15s, box-shadow 0.14s;
+    outline: none;
     cursor: pointer;
-    transition: background 0.15s, border 0.14s;
-    min-width: 88px;
+    box-shadow: 0 2px 4px #bbb;
     vertical-align: middle;
     display: inline-block;
 }
+button:active, .btn-class2:active {
+    background: #e0e0e0;
+    border-color: #aaa;
+}
+button:hover, .btn-class2:hover {
+    background: #dadada;
+    border-color: #555;
+}
 .btn-class2:last-child {
     margin-right: 0;
-}
-.btn-class2:hover {
-    background: #e3e3e3;
-    border: 2px inset #888;
 }
 #top-bar {
     width: 100%;
@@ -160,18 +184,20 @@ body {
     background: none;
 }
 #help-btn, #home-btn {
-    background: #f5f5f5;
-    border: 1px solid #bbb;
-    color: #222;
-    border-radius: 50%;
+    border-radius: 100%;
     font-size: 1.1em;
     width: 32px;
     height: 32px;
     cursor: pointer;
     text-align: center;
     line-height: 32px;
+    background: #f5f5f5;
+    border: 1px solid #bbb;
+    color: #222;
     transition: background 0.2s;
     font-family: inherit;
+    box-shadow: none;
+    padding: 0;
 }
 #help-btn:hover, #home-btn:hover {
     background: #e6e6e6;
@@ -250,17 +276,16 @@ hr {
             <span style="font-size:1.18em;font-weight:bold;">Victory Tracker</span>
             <button id="help-btn" title="Help">?</button>
         </div>
-
-        <!-- Removed tracker-instructions block as requested -->
-
-        <div style="text-align:center; margin:16px 0 4px 0;">
-          <button id="saveLinkBtn" class="btn-class2" type="button">Save</button>
-          <button id="loadLinkBtn" class="btn-class2" type="button">Load</button>
-        </div>
         <hr class="retro-indented-hr">
 
         <div id="button-grid-centerer">
           <div id="grid-container"></div>
+        </div>
+        <!-- Moved buttons below grid -->
+        <div style="text-align:center; margin:20px 0 10px 0;" id="action-buttons-section">
+          <button id="saveLinkBtn" type="button">Save</button>
+          <button id="loadLinkBtn" type="button">Load</button>
+          <button id="createPostBtn" type="button" onclick="window.location.href='Submission_tool.html'">Create Post</button>
         </div>
         <hr class="retro-indented-hr">
 
@@ -362,7 +387,7 @@ document.getElementById("home-btn").onclick = function() {
 const QUESTIONS_PER_PAGE = 8;
 const SKILL_DATA = [
     { name: 'Body', symbol: '' },
-    { name: 'Mind', symbol: '🕮' },
+    { name: 'Mind', symbol: '' },
     { name: 'Heart', symbol: '' },
     { name: 'Hand', symbol: '⚒' },
     { name: 'Finance', symbol: '$' },
@@ -404,7 +429,6 @@ const SKILL_QUESTIONS = {
         { label: 'Describe your learning process:', type: 'textarea' },
         { label: 'Do you do mental exercises (puzzles, strategy games)?', type: 'yn' }
     ]
-    // Add additional skills if needed
 };
 const SKILL_RANKS = {
     'Body': [
@@ -419,7 +443,6 @@ const SKILL_RANKS = {
         { name: 'Advanced', desc: 'Deep learning, projects, teaching.', min: 51, max: 75 },
         { name: 'Expert', desc: 'Creates frameworks, mentors others.', min: 76, max: 100 }
     ]
-    // Add additional skills if needed
 };
 
 let currentPage = 0;
@@ -433,6 +456,7 @@ let skillsData = SKILL_DATA.map(skill => ({
     uploads: [],
     answers: {}
 }));
+
 const elements = {
     grid: document.getElementById('grid-container'),
     modalBg: document.getElementById('modal-bg'),
@@ -458,13 +482,14 @@ const elements = {
     loadLinkField: document.getElementById('loadLinkField'),
     submitLoadBtn: document.getElementById('submitLoadBtn'),
     closeLoadModalBtn: document.getElementById('closeLoadModalBtn'),
-    loadLinkStatus: document.getElementById('loadLinkStatus')
+    loadLinkStatus: document.getElementById('loadLinkStatus'),
+    createPostBtn: document.getElementById('createPostBtn')
 };
 
 function updateButtonDisplay(index) {
     const skill = skillsData[index];
-    const button = elements.grid.querySelector(`[data-index="${index}"]`);
-    if (button) {
+    const box = elements.grid.querySelector(`[data-index="${index}"] .inner-square`);
+    if (box) {
         let logoHtml;
         if (skill.name === "Body") {
             logoHtml = `<img src="Dumbell_finished (2).png" alt="Dumbbell_finished" class="pixel-icon">`;
@@ -478,13 +503,17 @@ function updateButtonDisplay(index) {
             logoHtml = `<img src="hour glass (3).png" alt="Hourglass" class="hourglass-icon">`;
         } else if (skill.name === "Hand") {
             logoHtml = `<img src="hand2.2.png" alt="Hand" class="hand2-icon">`;
+        } else if (skill.name === "Mind") {
+            logoHtml = `<img src="mind2.png" alt="Mind" class="mind-icon">`;
+        } else if (skill.name === "Finance") {
+            logoHtml = `<img src="finance_2.png" alt="Finance" class="finance-icon">`;
         } else {
             logoHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
-        button.innerHTML = `
-            <span class="skill-name">${skill.name}</span>
-            <span class="skill-logo">${logoHtml}</span>
-            <span class="skill-score">${skill.score}/100</span>
+        box.innerHTML = `
+            <div class="skill-name">${skill.name}</div>
+            <div class="skill-logo">${logoHtml}</div>
+            <div class="skill-score">${skill.score}/100</div>
         `;
     }
 }
@@ -624,15 +653,23 @@ elements.form.onsubmit = function(e) {
 
 elements.closeBtn.onclick = () => elements.modalBg.style.display = 'none';
 
+// --- MAIN NEW BUTTON RENDERING ---
 function createButtons() {
     elements.grid.innerHTML = "";
     SKILL_DATA.forEach((skill, index) => {
-        const btn = document.createElement('button');
-        btn.className = 'score-button';
-        btn.setAttribute('data-index', index);
-        btn.onclick = () => openSkillModal(index);
-        elements.grid.appendChild(btn);
+        const wrapper = document.createElement('div');
+        wrapper.className = 'square-skill-box';
+        wrapper.setAttribute('data-index', index);
+
+        const inner = document.createElement('div');
+        inner.className = 'inner-square';
+
+        wrapper.appendChild(inner);
+        elements.grid.appendChild(wrapper);
+
         updateButtonDisplay(index);
+
+        wrapper.onclick = () => openSkillModal(index);
     });
 }
 createButtons();
