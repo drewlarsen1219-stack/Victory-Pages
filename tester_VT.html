@@ -75,8 +75,8 @@ body {
 .square-skill-box .hourglass-icon,
 .square-skill-box .anchor-icon,
 .square-skill-box .heart2-icon,
-.square-skill-box .hand2-icon
-.square-skill-box .mind-icon{
+.square-skill-box .hand2-icon,
+.square-skill-box .mind-icon { /* FIXED: missing commas and correct selector */
     width: 55px;
     height: 55px;
     display: block;
@@ -500,9 +500,9 @@ function updateButtonDisplay(index) {
         } else if (skill.name === "Time") {
             logoHtml = `<img src="hour glass (3).png" alt="Hourglass" class="hourglass-icon">`;
         } else if (skill.name === "Hand") {
-            logoHtml = `<img src="hand2.2.png" alt="Hand" class="hand2-icon">`;
-                } else if (skill.name === "Hand") {
-            logoHtml = `<img src="mind.png" alt="Mind" class="mind-icon">`;
+            logoHtml = `<img src="hand2.2.png" alt="Hand" class="hand2-icon">`;   // FIXED: only hand icon here
+        } else if (skill.name === "Mind") {
+            logoHtml = `<img src="mind.png" alt="Mind" class="mind-icon">`;        // ADDED: Mind icon display
         } else {
             logoHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
