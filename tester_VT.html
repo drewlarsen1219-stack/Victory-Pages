@@ -30,22 +30,16 @@ body {
 .square-skill-box .inner-square {
     width: 100px;
     height: 100px;
-    background: url('stone_texture.png'), #888; /* <- add your stone/gritty texture here */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-blend-mode: multiply;
+    background: #888;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 12px; /* Indented feel */
-    border: 2px inset #333; /* Indented/outset border */
-    box-shadow: 0 2px 5px #4449, inset 0 1px 6px #222a;
+    border-radius: 5px;
+    border: 1px solid #000; /* THIN BLACK LINE */
     position: relative;
     overflow: hidden;
-    /* Optional extra effects for gritty look */
-    filter: contrast(1.07);
 }
 .square-skill-box .skill-name {
     font-size: 13px;
@@ -56,7 +50,6 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    text-shadow: 1px 1px 0 #bbb;
 }
 .square-skill-box .skill-symbol {
     font-size: 13px;
@@ -75,8 +68,6 @@ body {
     width: 56px;
     height: 56px;
     margin: 0 auto 3px auto;
-    /* Add a soft shadow for OSRS effect */
-    filter: drop-shadow(0 2px 2px #222a);
 }
 .square-skill-box .pixel-icon,
 .square-skill-box .img-icon,
@@ -96,9 +87,6 @@ body {
     padding: 0;
     max-width: 100%;
     max-height: 100%;
-    /* Add subtle outline for visibility */
-    border-radius: 8px;
-    box-shadow: 0 1px 6px #222c, 0 0 0 2px #eee7;
 }
 .square-skill-box .skill-score {
     font-size: 13px;
@@ -107,7 +95,6 @@ body {
     color: black;
     width: 80px;
     height: 1.7em;
-    text-shadow: 1px 1px 0 #bbb;
 }
 #button-grid-centerer {
     width: 100%;
@@ -121,33 +108,20 @@ body {
     justify-content: center;
     align-items: stretch;
     width: 100%;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    margin: 0;
     padding: 0;
-    gap: 5px;
 }
 .victory-flag-side {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: stretch;
 }
 .victory-flag-img {
-    height: 97%;
-    width: 30px;
-    max-height: 97%;
-    margin-top: 7px;
-    margin-bottom: 5px;
-    /* Indented effect via drop shadow & margin */
-    filter: drop-shadow(-2px 4px 3px #444c);
-    /* You may tweak margin/width as needed for your flag size */
-}
-.victory-flag-side.right .victory-flag-img {
-    margin-left: 4px;
-    filter: drop-shadow(2px 4px 3px #3339);
-}
-.victory-flag-side.left .victory-flag-img {
-    margin-right: 4px;
+    height: 100%;
+    width: auto;
+    max-height: 100%;
+    /* Will be set in JS to match grid height */
 }
 #grid-container {
     display: grid;
@@ -161,8 +135,6 @@ body {
     background: #CCCCCC;
     border: none;
     box-sizing: border-box;
-    border-radius: 16px;
-    box-shadow: 0 4px 18px #333c, 0 0 0 3px #bbb9;
 }
 @media (max-width: 480px) {
     #grid-container {
@@ -178,14 +150,10 @@ body {
     #skill-group-row {
       flex-direction: row;
       align-items: center;
-      gap: 2px;
     }
     .victory-flag-img {
-      max-width: 18px;
-      width: 18px;
+      max-width: 22px;
       height: 100%;
-      margin-top: 2px;
-      margin-bottom: 2px;
     }
     .square-skill-box { width: 100px; height: 100px; }
     .square-skill-box .inner-square { width: 78px; height: 78px; }
@@ -341,11 +309,11 @@ hr {
 
         <div id="button-grid-centerer">
           <div id="skill-group-row">
-            <div class="victory-flag-side left">
+            <div class="victory-flag-side">
               <img src="Victory flag (2).png" alt="Flag left" class="victory-flag-img" id="flag-left-img">
             </div>
             <div id="grid-container"></div>
-            <div class="victory-flag-side right">
+            <div class="victory-flag-side">
               <img src="Victory flag (2).png" alt="Flag right" class="victory-flag-img" id="flag-right-img">
             </div>
           </div>
@@ -749,10 +717,11 @@ function adjustFlagHeight() {
     const flagLeft = document.getElementById('flag-left-img');
     const flagRight = document.getElementById('flag-right-img');
     if (grid && flagLeft && flagRight) {
-        flagLeft.style.height = Math.round(grid.offsetHeight * 0.97) + "px";
-        flagRight.style.height = Math.round(grid.offsetHeight * 0.97) + "px";
-        flagLeft.style.maxHeight = Math.round(grid.offsetHeight * 0.97) + "px";
-        flagRight.style.maxHeight = Math.round(grid.offsetHeight * 0.97) + "px";
+        const gridRect = grid.getBoundingClientRect();
+        flagLeft.style.height = grid.offsetHeight + "px";
+        flagRight.style.height = grid.offsetHeight + "px";
+        flagLeft.style.maxHeight = grid.offsetHeight + "px";
+        flagRight.style.maxHeight = grid.offsetHeight + "px";
     }
 }
 window.addEventListener("DOMContentLoaded", function() {
