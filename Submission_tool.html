@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Submission</title>
+    <style>
+        /* --- Base Styles derived from your Victory Tracker code --- */
+        body { 
+            color: #000000;
+            background-color: #999999;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Main centered container matching your table structure */
+        #main-container {
+            width: 750px;
+            margin: 40px auto; 
+            padding: 20px;
+            background: #CCCCCC;
+            border: 1px solid #000;
+            box-sizing: border-box;
+        }
+        
+        h2 { 
+            color: black; 
+            text-align: center; 
+            text-transform: none; 
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        
+        label { 
+            display: block; 
+            font-weight: bold; 
+            margin-top: 15px; 
+            margin-bottom: 5px;
+        }
+        
+        /* Input and Textarea Styles */
+        input[type="text"], textarea { 
+            width: 100%; 
+            box-sizing: border-box; 
+            border: 2px inset #666; /* Retro inset look */
+            padding: 8px; 
+            font-family: monospace;
+            background: #EAEAEA;
+        }
+        #post-content { min-height: 120px; }
+        
+        /* --- Streamlined Read-Only Score Display (Confirmation only) --- */
+        .skills-display {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            margin-bottom: 15px;
+            border-top: 2px solid #000;
+            border-bottom: 2px solid #000;
+            background: #EAEAEA;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        .skill-item {
+            text-align: center;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+        .score-value {
+            display: block;
+            color: #CC0000; /* Use the accent color for scores */
+            font-size: 1.4em;
+        }
+        
+        /* --- Button Styles matching .btn-class2 --- */
+        #copy-button, #generate-button { 
+            display: block; 
+            width: 100%; 
+            padding: 15px; 
+            margin-top: 20px; 
+            background: #fff; /* White background */
+            color: #000; /* Black text */
+            border: 2px outset #888; /* Outset border */
+            font-weight: bold; 
+            cursor: pointer; 
+            text-transform: none; 
+            font-size: 1.1em;
+            border-radius: 3px;
+            box-sizing: border-box;
+            transition: background 0.15s, border 0.14s;
+        }
+        #generate-button:hover { 
+            background: #e3e3e3; 
+            border: 2px inset #888;
+        }
+        
+        #output-code { 
+            margin-top: 10px;
+            background: #EAEAEA;
+            color: #000000;
+            border: 2px inset #666;
+        }
+        
+        #copy-button {
+            background: #EAEAEA; 
+            color: black;
+            border: 2px outset #888;
+        }
+        #copy-button:hover { 
+             background: #333; 
+             border: 2px inset #888;
+        }
+        
+        .hidden { display: none; }
+        
+        /* --- Styles for the generated score table (Final Output) --- */
+        table { border-collapse: collapse; width: 100%; font-family: monospace; font-size: 12px; }
+        th, td { border: 1px solid #000; padding: 5px; text-align: left; }
+        th { background: #D0D0D0; text-transform: uppercase; }
+    </style>
+</head>
+<body onload="loadScoresFromURL()">
+
+    <div id="main-container">
+        <h2>Blog post</h2>
+
+        <input type="hidden" id="skill-body" value="0">
+        <input type="hidden" id="skill-mind" value="0">
+        <input type="hidden" id="skill-soul" value="0">
+        <input type="hidden" id="skill-tech" value="0">
+
+        <label>Current Skill Scores</label>
+        <div class="skills-display">
+            <div class="skill-item">Body:<span class="score-value" id="display-body">--</span></div>
+            <div class="skill-item">Mind:<span class="score-value" id="display-mind">--</span></div>
+            <div class="skill-item">Soul:<span class="score-value" id="display-soul">--</span></div>
+            <div class="skill-item">Tech:<span class="score-value" id="display-tech">--</span></div>
+        </div>
+
+        <label for="post-title">Subject:</label>
+        <input type="text" id="post-title" placeholder="e.g., User302 - My Weekly Review" required>
+        
+        <label for="post-content">Body:</label>
+        <textarea id="post-content" placeholder="Write your full post here..." ></textarea>
+        
+        <button id="generate-button" onclick="generateCode()">Generate</button>
+        
+        <div id="result-area" class="hidden">
+            <label for="output-code" style="color: #000000; margin-top: 20px;">3. Copy & Email this to: Victorypages@gmail.com</label>
+            <textarea id="output-code" rows="10" readonly></textarea>
+
+            <button id="copy-button" onclick="copyCode()">Copy</button>
+        </div>
+    </div>
+
+<script>
+    // --- SCORE LOADING LOGIC (Runs when the page loads) ---
+    function loadScoresFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        
+        const scoreFields = [
+            { id: 'skill-body', displayId: 'display-body', paramName: 'body' },
+            { id: 'skill-mind', displayId: 'display-mind', paramName: 'mind' },
+            { id: 'skill-soul', displayId: 'display-soul', paramName: 'soul' },
+            { id: 'skill-tech', displayId: 'display-tech', paramName: 'tech' }
+        ];
+
+        scoreFields.forEach(field => {
+            const score = parseInt(params.get(field.paramName));
+            
+            if (!isNaN(score) && score >= 0 && score <= 100) {
+                // Set the HIDDEN input value (used for generating the HTML snippet)
+                document.getElementById(field.id).value = score;
+                // Set the VISIBLE display text (for user confirmation)
+                document.getElementById(field.displayId).textContent = score; 
+            } else {
+                document.getElementById(field.displayId).textContent = "N/A";
+            }
+        });
+    }
+    
+    // --- UTILITY FUNCTIONS ---
+    function escapeHtml(text) {
+        if (!text) return '';
+        return text.replace(/&/g, "&amp;")
+                   .replace(/</g, "&lt;")
+                   .replace(/>/g, "&gt;")
+                   .replace(/"/g, "&quot;")
+                   .replace(/'/g, "&#039;");
+    }
+
+    function getRank(score) {
+        if (score >= 75) return 'Expert';
+        if (score >= 50) return 'Advanced';
+        if (score >= 25) return 'Intermediate';
+        return 'Novice';
+    }
+
+    function generateScoreTable(scores) {
+        let tableHtml = '<table style="margin-top: 10px;"><thead><tr><th>SKILL</th><th>SCORE</th><th>RANK</th></tr></thead><tbody>';
+        let trackedCount = 0;
+        
+        for (const [name, score] of Object.entries(scores)) {
+            if (score > 0) {
+                trackedCount++;
+                const rank = getRank(score);
+                tableHtml += `<tr><td>${name.toUpperCase()}</td><td>${score}/100</td><td>${rank}</td></tr>`;
+            }
+        }
+        
+        if (trackedCount === 0) {
+            return '<p style="font-weight: bold; color: #555; border: 1px dashed #AAA; padding: 5px;">No tracked scores submitted with this post.</p>';
+        }
+
+        tableHtml += '</tbody></table>';
+        return `
+        <div class="progress-report" style="border: 2px solid #000; padding: 10px; margin: 10px 0; background: #FFF;">
+            <h4 style="margin: 0; color: #000; border-bottom: 1px dashed #666; padding-bottom: 5px; text-transform:uppercase;">Current Progress Report</h4>
+            ${tableHtml}
+        </div>
+        `;
+    }
+
+    // --- CORE GENERATION FUNCTION ---
+    function generateCode() {
+        const titleInput = document.getElementById('post-title');
+        const contentInput = document.getElementById('post-content');
+        const outputArea = document.getElementById('output-code');
+        const resultArea = document.getElementById('result-area');
+
+        const title = titleInput.value.trim();
+        const content = contentInput.value.trim();
+
+        if (title.length < 5) {
+            alert('Error: Please enter a descriptive title.');
+            resultArea.classList.add('hidden');
+            return;
+        }
+
+        // Gather Scores from HIDDEN inputs
+        const scores = {
+            body: parseInt(document.getElementById('skill-body').value) || 0,
+            mind: parseInt(document.getElementById('skill-mind').value) || 0,
+            soul: parseInt(document.getElementById('skill-soul').value) || 0,
+            tech: parseInt(document.getElementById('skill-tech').value) || 0,
+        };
+        
+        const scoreReportHtml = generateScoreTable(scores);
+        const escapedContent = escapeHtml(content); 
+        const formattedDate = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        
+        // Final Snippet
+        const htmlSnippet = `
+<div class="post community-blog">
+    <a href="#post-${Date.now()}">${title}</a>
+    <br>
+    <em>Posted: ${formattedDate}</em><br>
+    <span class="tags">community-post</span>
+    
+    ${scoreReportHtml}
+    
+    <div class="post-body" style="border: 1px dashed #666; padding: 10px; margin-top: 5px; white-space: pre-wrap; font-family: monospace;">
+        ${escapedContent || '(No text content submitted)'}
+    </div>
+</div>`;
+        
+        outputArea.value = htmlSnippet.trim();
+        resultArea.classList.remove('hidden');
+    }
+
+    // --- COPY FUNCTION ---
+    function copyCode() {
+        const outputArea = document.getElementById('output-code');
+        outputArea.select();
+        
+        try {
+            navigator.clipboard.writeText(outputArea.value);
+            alert("Code successfully copied! Now open your webmail and paste the code into a new message.");
+        } catch (err) {
+            document.execCommand("copy");
+            alert("Code copied using fallback method! Please paste it into your email.");
+        }
+    }
+</script>
+
+</body>
+</html>
