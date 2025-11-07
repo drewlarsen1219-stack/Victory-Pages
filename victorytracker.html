@@ -256,6 +256,7 @@ hr {
         <div style="text-align:center; margin:16px 0 4px 0;">
           <button id="saveLinkBtn" class="btn-class2" type="button">Save</button>
           <button id="loadLinkBtn" class="btn-class2" type="button">Load</button>
+          <button id="blogBtn" class="btn-class2" type="button">Blog</button>
         </div>
         <hr class="retro-indented-hr">
 
@@ -446,6 +447,7 @@ const elements = {
     output: document.getElementById('modal-output'),
     saveMsg: document.getElementById('saved-message'),
     closeBtn: document.getElementById('close-modal-btn'),
+    blogBtn: document.getElementById('blogBtn'),
     saveLinkBtn: document.getElementById('saveLinkBtn'),
     saveLinkModal: document.getElementById('saveLinkModal'),
     saveLinkField: document.getElementById('saveLinkField'),
@@ -623,6 +625,7 @@ elements.form.onsubmit = function(e) {
 };
 
 elements.closeBtn.onclick = () => elements.modalBg.style.display = 'none';
+elements.blogBtn.onclick = () => window.location.href = "Submission_tool.html";
 
 function createButtons() {
     elements.grid.innerHTML = "";
