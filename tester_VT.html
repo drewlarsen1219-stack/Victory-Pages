@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+<title>Victory Tracker</title>
+<style>
+body {
+    color: #000000;
+    background-color: #999999;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.score-button {
+    /* Removed old background, border, and box-shadow */
+    background: transparent; /* Must be transparent to show inner content */
+    color: #000;
+    border: none; /* Removed physical border */
+    border-radius: 0px; /* Changed to square as implied by cut-out */
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Adjusted for better layout of 3 items */
+    align-items: center;
+    gap: 0px; /* No gap needed with justify-content: space-between */
+    font-family: inherit;
+    outline: none;
+    margin: 0;
+    padding: 8px 0; /* Padding inside the border area */
+    box-sizing: border-box; /* Includes padding in width/height */
+    overflow: visible; /* Changed to visible for box-shadow to work outside */
+    position: relative;
+    z-index: 1; /* Helps with stacking context for shadows */
+
+    /* Retro 3D 'Border' - Outset effect */
+    box-shadow: 
+        /* Top/Left Highlight */
+        1px 1px 0 #fff, 2px 2px 0 #fff,
+        /* Bottom/Right Shadow */
+        -1px -1px 0 #666, -2px -2px 0 #666;
+}
+
+.score-button-content {
+    /* This element is new to contain the logo/text and create the 'cut-out' */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 4px; /* Internal padding */
+    
+    /* Indented Inner Border using inset box-shadow */
+    box-shadow: 
+        /* The transparent center that 'cuts out' and shows the grid background (#CCCCCC) */
+        0 0 0 100vw #CCCCCC inset, 
+        /* Inner Border - Inset effect for indented look */
+        1px 1px 0px 3px #666 inset, /* Shadow/Bottom-Right */
+        -1px -1px 0px 3px #fff inset, /* Highlight/Top-Left */
+        0 0 0 4px #CCCCCC inset; /* Small margin to ensure 'cutout' color is visible */
+
+    /* Ensures content appears above the inset shadow's background color (#CCCCCC) */
+    position: relative;
+    z-index: 2;
+}
+
+.score-button > .skill-name {
+    font-size: 13px;
+    flex: none;
+    text-align: center;
+    min-width: 0;
+    max-width: 100%; /* Changed to 100% to fill content area */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.score-button > .skill-logo {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    min-width: 0;
+    min-height: 0;
+    margin: 0 auto;
+}
+.score-button > .skill-score {
+    font-size: 12px;
+    flex: none;
+    text-align: center;
+    min-width: 0;
+    max-width: 100%; /* Changed to 100% to fill content area */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.score-button:hover {
+    /* Keep the hover effect subtle to maintain the cut-out look */
+    background: transparent; 
+    /* Change the box-shadows slightly to mimic an "active" or "pressed" state */
+    box-shadow: 
+        /* Switch to inset to simulate the whole button being pressed in */
+        1px 1px 0 #666 inset, -1px -1px 0 #fff inset;
+}
+.score-button:hover .score-button-content {
+    /* Remove the inner inset border when the button is "pressed" */
+    box-shadow: 0 0 0 100vw #CCCCCC inset;
+}
+.score-button.selected {
+    border: none; /* Keep border none */
+    background: transparent; /* Keep background transparent */
+}
+/* Ensure logos/icons are positioned correctly within the content area */
+.pixel-icon, .img-icon, .status-icon, .hourglass-icon, .anchor-icon, .heart2-icon, .hand2-icon {
+    /* Existing logo styles */
+    width: 60px;
+    height: 60px;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+.skill-symbol {
+    /* Existing symbol styles */
+    font-size: 28px;
+    min-width: 0;
+    max-width: 100%;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 34px;
+    overflow: hidden;
+}
+#button-grid-centerer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 324px;
+    margin: 0 auto;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    background: #CCCCCC; /* This is the color that will show through the cut-out */
+    border: none;
+    box-sizing: border-box;
+}
+@media (max-width: 480px) {
+    #grid-container {
+      width: 100vw;
+      min-width: unset;
+      max-width: 100vw;
+      gap: 5px;
+      padding: 10px 0;
+    }
+    #button-grid-centerer {
+      min-width: unset;
+    }
+}
+/* Existing modal and utility styles follow... */
+.btn-class2 {
+    background: #fff;
+    border: 2px outset #888;
+    color: #000;
+    font-family: inherit;
+    font-size: 1.04em;
+    padding: 8px 26px;
+    border-radius: 3px;
+    margin: 0 9px 0 0;
+    cursor: pointer;
+    transition: background 0.15s, border 0.14s;
+    min-width: 88px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.btn-class2:last-child {
+    margin-right: 0;
+}
+.btn-class2:hover {
+    background: #e3e3e3;
+    border: 2px inset #888;
+}
+#top-bar {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 12px 0 8px 0;
+    background: none;
+}
+#help-btn, #home-btn {
+    background: #f5f5f5;
+    border: 1px solid #bbb;
+    color: #222;
+    border-radius: 50%;
+    font-size: 1.1em;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 32px;
+    transition: background 0.2s;
+    font-family: inherit;
+}
+#help-btn:hover, #home-btn:hover {
+    background: #e6e6e6;
+}
+hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: gray;
+    unicode-bidi: isolate;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+.retro-indented-hr {
+    width: 95%;
+    margin: 10px auto 10px;
+    height: 0px;
+    border: none;
+    background: none;
+}
+#modal-bg, #saveLinkModal, #loadLinkModal, #help-modal-bg {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0; top: 0; width:100vw; height:100vh;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.12);
+}
+#modal, #saveLinkInner, #loadLinkInner, #help-modal {
+    background: #eee;
+    border-radius: 8px;
+    border: 2px solid #444;
+    box-shadow: 0 2px 14px #4444;
+    padding: 20px;
+    min-width: 250px;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    font-family: inherit;
+}
+#saveLinkField, #loadLinkField {
+    font-family:monospace;
+    font-size:0.97em;
+    width:97%;
+    margin-bottom:12px;
+}
+#saveLinkModal button, #loadLinkModal button, #help-modal button {
+    font-family: inherit;
+    margin: 0px 6px 0px 6px;
+    font-size: 1em;
+    padding: 4px 10px;
+    cursor: pointer;
+    background: #eaeaea;
+    border:1px solid #888;
+    border-radius:4px;
+}
+</style>
+</head>
+<body>
+<table style="text-align:left;width:750px;margin-left:auto;margin-right:auto;background:#CCCCCC;"
+    cellspacing="2" cellpadding="2" border="1" align="center">
+  <tbody>
+    <tr>
+      <td style="vertical-align:top;">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+
+        <div id="top-bar">
+            <button id="home-btn" title="Back to Home">⌂</button>
+            <span style="font-size:1.18em;font-weight:bold;">Victory Tracker</span>
+            <button id="help-btn" title="Help">?</button>
+        </div>
+
+                <div style="text-align:center; margin:16px 0 4px 0;">
+          <button id="saveLinkBtn" class="btn-class2" type="button">Save</button>
+          <button id="loadLinkBtn" class="btn-class2" type="button">Load</button>
+        </div>
+        <hr class="retro-indented-hr">
+
+        <div id="button-grid-centerer">
+          <div id="grid-container"></div>
+        </div>
+        <hr class="retro-indented-hr">
+
+        <div id="modal-bg">
+          <div id="modal">
+              <form id="modal-form">
+                  <div id="modal-questions"></div>
+                  <div id="modal-nav"></div>
+                  <div id="recommendation-section"></div>
+                  <div id="blog-section">
+                      <label for="blog-text">Blog your experience, struggles, etc.:</label>
+                      <textarea id="blog-text" rows="3" placeholder="Share your journey..."></textarea>
+                  </div>
+                  <div id="proof-files">
+                      <label for="proof-file-input">Upload photos/documents</label>
+                      <input type="file" id="proof-file-input" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.txt,.zip">
+                  </div>
+                  <button type="submit" id="modal-submit-btn">Submit & Save</button>
+                  <button type="button" id="close-modal-btn">Close</button>
+              </form>
+              <div id="modal-output"></div>
+              <div id="saved-message"></div>
+          </div>
+        </div>
+
+                <div id="saveLinkModal">
+          <div id="saveLinkInner">
+            <p><b>Copy/bookmark this link to save or resume your progress:</b></p>
+            <input id="saveLinkField" type="text" readonly>
+            <br>
+            <button id="copyLinkBtn">Copy</button>
+            <button id="openLinkBtn">Open in new tab</button>
+            <button id="closeSaveModalBtn">Close</button>
+            <p style="font-size:0.92em;color:#444;margin-top:9px;">Keep this link safe—it is your unique save!</p>
+          </div>
+        </div>
+                <div id="loadLinkModal">
+          <div id="loadLinkInner">
+            <p><b>Paste a previously saved progress link below to load it:</b></p>
+            <input id="loadLinkField" type="text" placeholder="Paste your link here" autocomplete="off">
+            <br>
+            <button id="submitLoadBtn">Load</button>
+            <button id="closeLoadModalBtn">Cancel</button>
+            <div id="loadLinkStatus" style="color:#e34;font-size:0.97em;padding-top:10px;"></div>
+          </div>
+        </div>
+
+        <div id="help-modal-bg">
+            <div id="help-modal">
+                <h2>How to use Victories</h2>
+                <div id="help-modal-content">
+                    <b>Welcome to Victory tracker!</b><br><br>
+                    <u>What's this site for?</u><br>
+                    Track your progress in 12 life skills, get ranked, receive improvement guides, blog your journey, and save your achievements.<br><br>
+                    <u>How to use:</u>
+                    <ol>
+                        <li><b>Click a skill button</b> in the grid.</li>
+                        <li><b>Fill out the questionnaire</b> - use Next/Previous to navigate multiple pages.</li>
+                        <li><b>Write about your experience</b> in the blog section.</li>
+                        <li><b>Upload </b> (photos, documents) if you wish.</li>
+                        <li><b>Submit & Save</b> will rank you and save your progress.</li>
+                        <li><b>To save or resume later:</b> Click the "Save" button and bookmark/copy your link; use "Load" to restore from a link.</li>
+                    </ol>
+                    <u>Navigation:</u><br>
+                    ⌂ Home button returns to main page<br>
+                    ? Help button opens this guide<br><br>
+                    <u>Saving:</u> Progress can be saved by copying your link.<br>
+                    <u>Privacy:</u> All data stays on your device or your link.
+                </div>
+                <button type="button" id="close-help-btn">Close</button>
+            </div>
+        </div>
+        <hr class="retro-hr">
+        <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
+            <span style="font-style:italic;">Victory Tracker &copy; 2025 - All progress saved privately</span>
+        </div>
+        <hr class="retro-hr">
+        <hr class="retro-hr">
+      </td>
+    </tr>
+  </tbody>
+</table>
+<script>
+document.getElementById("help-btn").onclick = function() {
+    document.getElementById("help-modal-bg").style.display = "flex";
+};
+document.getElementById("close-help-btn").onclick = function() {
+    document.getElementById("help-modal-bg").style.display = "none";
+};
+document.getElementById("close-modal-btn") && (document.getElementById("close-modal-btn").onclick = function() {
+    document.getElementById("modal-bg").style.display = "none";
+});
+document.getElementById("home-btn").onclick = function() {
+    window.location.href = "index.html";
+};
+
+const QUESTIONS_PER_PAGE = 8;
+const SKILL_DATA = [
+    { name: 'Body', symbol: '' },
+    { name: 'Mind', symbol: '🕮' },
+    { name: 'Heart', symbol: '' },
+    { name: 'Hand', symbol: '⚒' },
+    { name: 'Finance', symbol: '$' },
+    { name: 'Soul', symbol: '' },
+    { name: 'Status', symbol: '' },
+    { name: 'Space', symbol: '⿻' },
+    { name: 'Time', symbol: '' },
+    { name: 'World', symbol: '🌏︎' },
+    { name: 'Creative', symbol: 'ᝰ' },
+    { name: 'Tech', symbol: '🖳' }
+];
+const SKILL_QUESTIONS = {
+    'Body': [
+        { label: 'How many days per week do you exercise?', type: 'number', min: 0, max: 7 },
+        { label: 'How long have you consistently trained (months)?', type: 'number', min: 0, max: 120 },
+        { label: 'Do you follow a structured workout program?', type: 'yn' },
+        { label: 'Do you track your progress (RPE, weights, reps)?', type: 'yn' },
+        { label: 'Do you perform both resistance and cardio training?', type: 'yn' },
+        { label: 'Do you work on flexibility/mobility weekly?', type: 'yn' },
+        { label: 'Do you regularly hit plateaus and overcome them?', type: 'yn' },
+        { label: 'Do you consistently get at least 7 hours of sleep per night?', type: 'yn' },
+        { label: 'Do you avoid screens or caffeine before bed?', type: 'yn' },
+        { label: 'Do you eat mostly whole foods and prep meals?', type: 'yn' },
+        { label: 'Do you track calories or macros?', type: 'yn' },
+        { label: 'Do you eat sufficient protein daily?', type: 'yn' },
+        { label: 'Do you drink mostly water (limit soda/juice/alcohol)?', type: 'yn' },
+        { label: 'Do you limit processed foods?', type: 'yn' },
+        { label: 'Do you take time for recovery (stretching, foam rolling, deload weeks)?', type: 'yn' },
+        { label: 'Do you mentor or teach others about fitness?', type: 'yn' },
+        { label: 'Describe your workout and diet in more detail:', type: 'textarea' }
+    ],
+    'Mind': [
+        { label: 'How many hours/week do you study or learn new things?', type: 'number', min: 0, max: 50 },
+        { label: 'Do you have a structured learning plan?', type: 'yn' },
+        { label: 'Do you read books regularly?', type: 'yn' },
+        { label: 'Do you take notes or journal your learning?', type: 'yn' },
+        { label: 'Do you apply new concepts to real life?', type: 'yn' },
+        { label: 'Do you teach or mentor others?', type: 'yn' },
+        { label: 'Describe your learning process:', type: 'textarea' },
+        { label: 'Do you do mental exercises (puzzles, strategy games)?', type: 'yn' }
+    ]
+    // Add additional skills if needed
+};
+const SKILL_RANKS = {
+    'Body': [
+        { name: 'Novice', desc: 'Basic routine or just started.', min: 0, max: 25 },
+        { name: 'Intermediate', desc: 'Consistent, tracks progress.', min: 26, max: 50 },
+        { name: 'Advanced', desc: 'Block periodization, solid nutrition/sleep.', min: 51, max: 75 },
+        { name: 'Expert', desc: 'Advanced programming, optimal habits.', min: 76, max: 100 }
+    ],
+    'Mind': [
+        { name: 'Novice', desc: 'Occasional learning, no system.', min: 0, max: 25 },
+        { name: 'Intermediate', desc: 'Consistent learner, some structure.', min: 26, max: 50 },
+        { name: 'Advanced', desc: 'Deep learning, projects, teaching.', min: 51, max: 75 },
+        { name: 'Expert', desc: 'Creates frameworks, mentors others.', min: 76, max: 100 }
+    ]
+    // Add additional skills if needed
+};
+
+let currentPage = 0;
+let totalPages = 1;
+let selectedSkillIndex = null;
+let skillsData = SKILL_DATA.map(skill => ({
+    name: skill.name,
+    symbol: skill.symbol,
+    score: 0,
+    blog: "",
+    uploads: [],
+    answers: {}
+}));
+const elements = {
+    grid: document.getElementById('grid-container'),
+    modalBg: document.getElementById('modal-bg'),
+    modal: document.getElementById('modal'),
+    form: document.getElementById('modal-form'),
+    questions: document.getElementById('modal-questions'),
+    nav: document.getElementById('modal-nav'),
+    recommendations: document.getElementById('recommendation-section'),
+    blog: document.getElementById('blog-text'),
+    proofInput: document.getElementById('proof-file-input'),
+    output: document.getElementById('modal-output'),
+    saveMsg: document.getElementById('saved-message'),
+    closeBtn: document.getElementById('close-modal-btn'),
+    saveLinkBtn: document.getElementById('saveLinkBtn'),
+    saveLinkModal: document.getElementById('saveLinkModal'),
+    saveLinkField: document.getElementById('saveLinkField'),
+    copyLinkBtn: document.getElementById('copyLinkBtn'),
+    openLinkBtn: document.getElementById('openLinkBtn'),
+    closeSaveModalBtn: document.getElementById('closeSaveModalBtn'),
+    loadLinkBtn: document.getElementById('loadLinkBtn'),
+    loadLinkModal: document.getElementById('loadLinkModal'),
+    loadLinkInner: document.getElementById('loadLinkInner'),
+    loadLinkField: document.getElementById('loadLinkField'),
+    submitLoadBtn: document.getElementById('submitLoadBtn'),
+    closeLoadModalBtn: document.getElementById('closeLoadModalBtn'),
+    loadLinkStatus: document.getElementById('loadLinkStatus')
+};
+
+function updateButtonDisplay(index) {
+    const skill = skillsData[index];
+    const button = elements.grid.querySelector(`[data-index="${index}"]`);
+    if (button) {
+        let logoHtml;
+        if (skill.name === "Body") {
+            logoHtml = `<img src="Dumbell_finished (2).png" alt="Dumbbell_finished" class="pixel-icon">`;
+        } else if (skill.name === "Heart") {
+            logoHtml = `<img src="heart_remade(2).png" alt="Heart" class="heart2-icon">`;
+        } else if (skill.name === "Soul") {
+            logoHtml = `<img src="anchor.png" alt="Soul" class="anchor-icon">`;
+        } else if (skill.name === "Status") {
+            logoHtml = `<img src="status.png" alt="Status" class="status-icon">`;
+        } else if (skill.name === "Time") {
+            logoHtml = `<img src="hour glass (3).png" alt="Hourglass" class="hourglass-icon">`;
+        } else if (skill.name === "Hand") {
+            logoHtml = `<img src="hand2.2.png" alt="Hand" class="hand2-icon">`;
+        } else {
+            logoHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
+        }
+        // NEW STRUCTURE: Wrap content in a div for the cut-out/indented border effect
+        button.innerHTML = `
+            <div class="score-button-content">
+            <span class="skill-name">${skill.name}</span>
+            <span class="skill-logo">${logoHtml}</span>
+            <span class="skill-score">${skill.score}/100</span>
+            </div>
+        `;
+    }
+}
+
+function renderQuestionsPage(skillIndex, page) {
+// ... rest of the function remains the same ...
+//
