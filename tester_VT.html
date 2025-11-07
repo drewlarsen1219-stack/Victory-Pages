@@ -77,7 +77,11 @@ body {
 .square-skill-box .heart2-icon,
 .square-skill-box .hand2-icon,
 .square-skill-box .mind-icon,
-.square-skill-box .finance-icon {
+.square-skill-box .finance-icon,
+.square-skill-box .space-icon,
+.square-skill-box .creativity-icon,
+.square-skill-box .world-icon,
+.square-skill-box .tech-icon {
     width: 55px;
     height: 55px;
     display: block;
@@ -137,7 +141,11 @@ body {
     .square-skill-box .heart2-icon,
     .square-skill-box .mind-icon,
     .square-skill-box .finance-icon,
-    .square-skill-box .hand2-icon {
+    .square-skill-box .hand2-icon,
+    .square-skill-box .space-icon,
+    .square-skill-box .creativity-icon,
+    .square-skill-box .world-icon,
+    .square-skill-box .tech-icon {
         width: 34px;
         height: 34px;
         max-width: 90%;
@@ -507,6 +515,14 @@ function updateButtonDisplay(index) {
             logoHtml = `<img src="mind2 (1) (1).png" alt="Mind" class="mind-icon">`;
         } else if (skill.name === "Finance") {
             logoHtml = `<img src="finance_2.png" alt="Finance" class="finance-icon">`;
+        } else if (skill.name === "Space") {
+            logoHtml = `<img src="space.png" alt="Space" class="space-icon">`;
+        } else if (skill.name === "Creative") {
+            logoHtml = `<img src="creativity.png" alt="Creative" class="creativity-icon">`;
+        } else if (skill.name === "World") {
+            logoHtml = `<img src="world.png" alt="World" class="world-icon">`;
+        } else if (skill.name === "Tech") {
+            logoHtml = `<img src="tech.png" alt="Tech" class="tech-icon">`;
         } else {
             logoHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
         }
