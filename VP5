@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Victory Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Forum for Christians. This website includes a Victory game which is a gamification of real life. ">
+    
+    <style>
+        body {
+            color: #000;
+            background: #999;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .page-wrapper-table {
+            text-align: left;
+            width: 750px;
+            margin: 20px auto;
+            background: #CCCCCC;
+        }
+        hr {
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            color: gray;
+            border-style: inset;
+            border-width: 1px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 11px;
+            margin-top: 4px;
+        }
+        .header-image {
+            width: 150px;
+            height: auto;
+            background: none !important;
+        }
+        .tag-dropdown-container {
+            margin-bottom: 10px;
+            text-align: left;
+            width: auto;
+            display: flex;
+            align-items: left;
+            gap: 10px;
+            justify-content: left;
+        }
+        label {
+            font-weight: none;
+            font-size: 1em;
+        }
+        select#tagDropdown, select#trackSkillDropdown {
+            font-size: 1em;
+            padding: 3px 3px;
+            border: 2px solid #333;
+            box-shadow: 1px 1px 0 #fff inset;
+            background: #c0c0c0;
+            color: #222;
+            margin: 2px 0;
+        }
+        button, .btn-class3 {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            font-size: 1em;
+            padding: 4px 5px;
+            margin: 2px 0;
+            border: 2px solid #333;
+            background: #c0c0c0;
+            color: #111;
+            border-radius: 0;
+            box-shadow: 1px 1px 0 #fff inset;
+            outline: none;
+
+        }
+        button:hover, .btn-class3:hover {
+            background: #e4e4e4;
+            border-color: #555;
+            color: #00f;
+        }
+        button.disabled {
+            color: #aaa;
+            cursor: not-allowed;
+            background: #f3f3f3;
+            border-color: #eee;
+        }
+        .pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            margin-top: 13px;
+        }
+        #post-action-row {
+            display: block;
+            align-items: left;
+            justify-content: left;
+            gap: 10px;
+            width: auto;
+            margin: 15px auto 0 auto;
+        }
+        #posts {
+            display: block;
+            width: 95%;
+            max-width: 750px;
+            margin: 15px auto 0 auto;
+        }
+        .post-title-row {
+            margin-bottom: 11px;
+            padding-left: 8px;
+        }
+        .post em {
+            color: #666 !important;
+            font-size: 0.97em;
+            margin-left: 0.4em;
+        }
+        .main-content {
+            width: 100%;
+        }
+        footer {
+            width: 100%;
+            max-width: 750px;
+            text-align: center;
+            margin-top: 20px;
+
+        }
+        .main-nav {
+            width: 100%;
+            margin: 15px 0;
+            padding: 5px 0;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: left;
+            gap: 20px;
+        }
+        .main-nav a {
+            text-decoration: heavy;
+            color: #000099;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            transition: all 0.1s;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="page-wrapper-table" cellspacing="2" cellpadding="2" border="1">
+        <tbody>
+            <tr>
+                <td style="vertical-align:top; padding: 10px;">
+                    <div class="header-container">
+                        <img src="https://imgur.com/a/nbg-xL9nbHa" alt="Agnus Dei icon" class="header-image"
+                        style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
+                        <h4>Victory Pages</h4>
+                    </div>
+
+                    <nav class="main-nav">
+                        <ul>
+                            <em><li><a href="about.html">About</a></li>
+                            <li><a href="library.html">Library</a></li>
+                            <li><a href="victorytracker.html">Victory Tracker</a></li>
+                            <li><a href="tester_VT.html">Tester</a></li>
+                            <li><a href="NVP.html">NVP Tester</a></li></em>
+                        </ul>
+                    </nav>
+                    
+                    <hr>
+                    <hr>
+                    <hr>
+                    
+                    <div id="post-action-row">
+                        <button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='Submission_tool.html'">Create Post</button>
+                    </div>
+                    <br>
+                    <div id="posts"></div>
+<br>
+                    
+                    <!-- DROPDOWN MOVED BELOW POSTS, ABOVE FOOTER -->
+                    <div class="tag-dropdown-container">
+                       
+                        <select id="tagDropdown">
+                            <option value="all">All</option>
+                            <option value="investing">Investing</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="movies">Movies</option>
+                            <option value="faith">Faith</option>
+                            <option value="life">Life</option>
+                            <option value="opinion">Opinion</option>
+                            <option value="programing">Programming</option>
+                            <option value="music">Music</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="pagination-controls">
+                        <button id="prevPage" class="btn-class3">&lt; Previous</button>
+                        <button id="nextPage" class="btn-class3">Next &gt;</button>
+                    </div>
+                    
+                    <footer>
+                        <hr>
+                        <p>© 2025 Victory Pages. All rights reserved.</p>
+                        <p><a href="privacypolicy.html">Privacy Policy</a></p>
+                        <p><a href="TAC.html">Terms & Conditions</a></p>
+                    </footer>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+    
+    <script>
+        const POSTS = [
+            { title: "Investing and documenting what worked", url: "Investing.html", tag: "investing", username: "Drew", date: "2025-11-11" },
+            { title: 'Game "Yu-Gi-Oh"', url: "Post1.html", tag: "gaming", username: "Drew", date: "2025-09-26" },
+            { title: "Movie ratings & reviews", url: "mr.html", tag: "movies", username: "Drew", date: "2025-10-21" },
+            { title: "Powerful acts of forgiveness", url: "paof.html", tag: "faith", username: "Drew", date: "2025-09-26" },
+            { title: 'A good band called "Sweet Trip"', url: "music.html", tag: "music", username: "Drew", date: "2025-09-26" },
+            { title: "My life", url: "ml.html", tag: "life", username: "Username example", date: "2025-09-26" },
+            { title: "My cripes with Oldlutheran.com", url: "mcwol.html", tag: "opinion", username: "Drew", date: "2025-09-26" },
+            { title: "Guy from my home town", url: "GFMH.html", tag: "life", username: "Drew", date: "2025-09-27" },
+            { title: "ChatGPT is wasting water (allegedly)", url: "cww.html", tag: "opinion", username: "Drew", date: "2025-09-28" },
+            { title: "How to build a text based website like mine", url: "htbw.html", tag: "programing", username: "Drew", date: "2025-10-01" }
+        ];
+        const POSTS_PER_PAGE = 15; 
+        let currentPage = 1;
+        let filteredPosts = POSTS.slice();
+        let totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+
+        function renderPosts() {
+            const postsElem = document.getElementById("posts");
+            postsElem.innerHTML = "";
+            const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+            const endIndex = Math.min(startIndex + POSTS_PER_PAGE, filteredPosts.length);
+            for (let i = startIndex; i < endIndex; i++) {
+                const post = filteredPosts[i];
+                const postDiv = document.createElement("div");
+                postDiv.className = "post";
+                const row = document.createElement("div");
+                row.className = "post-title-row";
+                row.innerHTML =
+                    `<a href="${post.url}">${post.title}</a> <em> ${post.username}_${formatDate(post.date)}</em>`;
+                postDiv.appendChild(row);
+                postsElem.appendChild(postDiv);
+            }
+        }
+        function formatDate(dateStr) {
+            const d = new Date(dateStr);
+            if (!isNaN(d)) {
+                return `${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getDate().toString().padStart(2, '0')}/${d.getFullYear()}`;
+            }
+            return dateStr;
+        }
+        function calculateTotalPages() {
+            totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
+            updatePaginationControls();
+        }
+        function updatePaginationControls() {
+            const prevBtn = document.getElementById('prevPage');
+            const nextBtn = document.getElementById('nextPage');
+            
+            const disableNext = currentPage === totalPages || filteredPosts.length === 0;
+            const disablePrev = currentPage === 1;
+
+            prevBtn.disabled = disablePrev;
+            nextBtn.disabled = disableNext;
+            
+            prevBtn.classList.toggle('disabled', disablePrev);
+            nextBtn.classList.toggle('disabled', disableNext);
+
+            const controls = document.querySelector('.pagination-controls');
+            if (controls) {
+                controls.style.display = totalPages > 1 ? 'flex' : 'none';
+            }
+        }
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                renderPosts();
+                updatePaginationControls();
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        }
+        function filterPostsByTag(tag) {
+            if (tag === "all") {
+                filteredPosts = POSTS.slice();
+            } else {
+                filteredPosts = POSTS.filter(post => post.tag === tag);
+            }
+            currentPage = 1;
+            calculateTotalPages();
+            renderPosts();
+        }
+        document.getElementById("tagDropdown").addEventListener("change", function() {
+            filterPostsByTag(this.value);
+        });
+        document.getElementById("prevPage").addEventListener("click", () => changePage(-1));
+        document.getElementById("nextPage").addEventListener("click", () => changePage(1));
+        document.addEventListener("DOMContentLoaded", () => {
+            filterPostsByTag("all");
+        });
+    </script>
+</body>
+</html>
