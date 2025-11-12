@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Victory Pages & Tracker</title>
+    <link rel="icon" type="image/png" href="LOGLOGO.PNG">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Christian blog/digital garden documenting all my views, beliefs, thoughts and discoveries.">
+    <style>
+        body {
+            color: #000;
+            background: #999;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        hr {
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            color: gray;
+            border-style: inset;
+            border-width: 1px;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            width: 100%;
+            justify-content: center;
+            margin-bottom: 11px;
+            margin-top: 4px;
+        }
+        .header-image {
+            width: 150px;
+            height: auto;
+            background: none !important;
+        }
+        /* --- Dropdown Menu Styles --- */
+        .tag-dropdown-container {
+            margin-bottom: 10px;
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+        }
+        label {
+            font-weight: bold;
+            font-size: 1em;
+        }
+        select#tagDropdown, select#trackSkillDropdown {
+            font-size: 1em;
+            padding: 5px 12px;
+            border: 2px solid #333;
+            background: #c0c0c0;
+            color: #222;
+            margin: 2px 0;
+        }
+        /* --- Skill Grid --- */
+        #victory-tracker-section {
+            width: 100%;
+            max-width: 780px;
+            margin: 0 auto;
+            background: #CCCCCC;
+            border: none;
+            border-radius: 0;
+            box-sizing: border-box;
+            padding: 18px 8px 22px 8px;
+        }
+        /* Track location and grid */
+        #trackRow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 8px;
+            margin-top: 4px;
+            width: 100%;
+        }
+        #saveLoadRow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+        #vt-grid-centerer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #vt-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            width: 388px;
+            margin: 0 auto 0 auto;
+            padding: 14px 0;
+            justify-content: center;
+            align-items: center;
+            background: #CCCCCC;
+            border: none;
+            box-sizing: border-box;
+        }
+        .square-skill-box {
+            background: none;
+            border: none;
+            margin: 0;
+            padding: 0;
+            width: 120px;
+            height: 120px;
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .square-skill-box .inner-square {
+            width: 100px;
+            height: 100px;
+            background: #888;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .square-skill-box .skill-name {
+            font-size: 13px;
+            text-align: center;
+            margin-bottom: 5px;
+            color: black;
+            width: 92px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .square-skill-box .skill-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 3px auto;
+        }
+        .square-skill-box img,
+        .square-skill-box .skill-symbol {
+            width: 55px;
+            height: 55px;
+            display: block;
+            object-fit: contain;
+            image-rendering: pixelated;
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+        .square-skill-box .skill-score {
+            font-size: 13px;
+            text-align: center;
+            margin-top: 2px;
+            color: black;
+            width: 80px;
+            height: 1.7em;
+        }
+        /* Old Internet Button Style */
+        button, .btn-class3 {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            font-size: 1em;
+            padding: 4px 10px;
+            margin: 2px 2px;
+            border: 2px solid #333;
+            background: #c0c0c0;
+            color: #111;
+            border-radius: 0;
+            box-shadow: 1px 1px 0 #fff inset;
+            outline: none;
+            cursor: pointer;
+            text-shadow: 1px 1px 0 #fff;
+            font-weight: bold;
+        }
+        button:hover, .btn-class3:hover {
+            background: #e4e4e4;
+            border-color: #555;
+            color: #00f;
+        }
+        button.disabled {
+            color: #aaa;
+            cursor: not-allowed;
+            background: #f3f3f3;
+            border-color: #eee;
+        }
+        /* Modals */
+        #vt-modal-bg {
+            display: none;
+            position: fixed;
+            z-index: 1002;
+            left: 0; top: 0; width:100vw; height:100vh;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.12);
+        }
+        #vt-modal {
+            background: #eee;
+            border-radius: 8px;
+            border: 2px solid #444;
+            box-shadow: 0 2px 14px #4444;
+            padding: 20px;
+            min-width: 250px;
+            max-width: 420px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            font-family: inherit;
+        }
+        /* Posts, Pagination, Footer */
+        #post-action-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            width: 100%;
+            margin: 18px auto 8px auto;
+        }
+        #posts {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            margin: 15px auto 0 auto;
+        }
+        .post-title-row {
+            margin-bottom: 11px;
+            padding-left: 8px;
+        }
+        .post em {
+            color: #666 !important;
+            font-size: 0.97em;
+            margin-left: 0.4em;
+        }
+        .pagination-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+            margin-top: 13px;
+        }
+        footer {
+            margin-top: 6px;
+            width: 100%;
+        }
+        footer p {
+            margin: 0.5em 0;
+            text-align: center;
+        }
+        a:link, a:visited { color: black; text-decoration: none; }
+        a:hover, a:active { color: blue; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <img src="LOGLOGO.PNG" alt="Victory Logo" class="header-image"
+          style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
+        <h1>Victory Pages</h1>
+    </div>
+
+    <!-- Victory Tracker Section -->
+    <div id="victory-tracker-section">
+        <div id="trackRow">
+            <button id="trackBtn" class="btn-class3" type="button" style="margin-top:8px;">Track</button>
+            <select id="trackSkillDropdown" style="display:none;margin-left:12px;">
+                <option value="">Select a Skill</option>
+            </select>
+            <button id="vt-help-btn" title="Help" style="margin-left: 12px;">?</button>
+        </div>
+        <div id="vt-grid-centerer">
+            <div id="vt-grid-container"></div>
+        </div>
+        <div id="saveLoadRow">
+            <button id="vt-saveLinkBtn" class="btn-class3" type="button" title="Save Results">Save</button>
+            <button id="vt-loadLinkBtn" class="btn-class3" type="button" title="Load Results">Load</button>
+        </div>
+    </div>
+
+    <div id="post-action-row">
+        <button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='Submission_tool.html'">Create Post</button>
+        <div class="tag-dropdown-container">
+            <label for="tagDropdown">Filter posts by tag:</label>
+            <select id="tagDropdown">
+                <option value="all">All</option>
+                <option value="investing">Investing</option>
+                <option value="gaming">Gaming</option>
+                <option value="movies">Movies</option>
+                <option value="faith">Faith</option>
+                <option value="life">Life</option>
+                <option value="opinion">Opinion</option>
+                <option value="programing">Programming</option>
+                <option value="music">Music</option>
+            </select>
+        </div>
+    </div>
+    <div id="posts"></div>
+    <div class="pagination-controls">
+        <button id="prevPage" class="btn-class3">&lt; Previous</button>
+        <button id="nextPage" class="btn-class3">Next &gt;</button>
+    </div>
+    <footer>
+        <hr>
+        <p>© 2025 Victory Pages. All rights reserved.</p>
+        <p><a href="privacypolicy.html">Privacy Policy</a></p>
+        <p><a href="TAC.html">Terms & Conditions</a></p>
+    </footer>
+
+<!-- ------- POSTS PAGINATION SCRIPT ------- -->
+<script>
+const POSTS = [
+    { title: "Investing and documenting what worked", url: "Investing.html", tag: "investing", username: "Username example", date: "2025-11-11" },
+    { title: 'Game "Yu-Gi-Oh"', url: "Post1.html", tag: "gaming", username: "Username example", date: "2025-09-26" },
+    { title: "Movie ratings & reviews", url: "mr.html", tag: "movies", username: "Username example", date: "2025-10-21" },
+    { title: "Powerful acts of forgiveness", url: "paof.html", tag: "faith", username: "Username example", date: "2025-09-26" },
+    { title: 'A good band called "Sweet Trip"', url: "music.html", tag: "music", username: "Username example", date: "2025-09-26" },
+    { title: "My life", url: "ml.html", tag: "life", username: "Username example", date: "2025-09-26" },
+    { title: "My cripes with Oldlutheran.com", url: "mcwol.html", tag: "opinion", username: "Username example", date: "2025-09-26" },
+    { title: "Guy from my home town", url: "GFMH.html", tag: "life", username: "Username example", date: "2025-09-27" },
+    { title: "ChatGPT is wasting water (allegedly)", url: "cww.html", tag: "opinion", username: "Username example", date: "2025-09-28" },
+    { title: "How to build a text based website like mine", url: "htbw.html", tag: "programing", username: "Username example", date: "2025-10-01" }
+];
+const POSTS_PER_PAGE = 5;
+let currentPage = 1;
+let filteredPosts = POSTS.slice();
+let totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+
+function renderPosts() {
+    const postsElem = document.getElementById("posts");
+    postsElem.innerHTML = "";
+    const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+    const endIndex = Math.min(startIndex + POSTS_PER_PAGE, filteredPosts.length);
+    for (let i = startIndex; i < endIndex; i++) {
+        const post = filteredPosts[i];
+        const postDiv = document.createElement("div");
+        postDiv.className = "post";
+        const row = document.createElement("div");
+        row.className = "post-title-row";
+        row.innerHTML =
+            `<a href="${post.url}">${post.title}</a> <em>posted by ${post.username} on ${formatDate(post.date)}</em>`;
+        postDiv.appendChild(row);
+        postsElem.appendChild(postDiv);
+    }
+}
+function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    if (!isNaN(d)) {
+        return `${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getDate().toString().padStart(2, '0')}/${d.getFullYear()}`;
+    }
+    return dateStr;
+}
+function calculateTotalPages() {
+    totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
+    updatePaginationControls();
+}
+function updatePaginationControls() {
+    document.getElementById('prevPage').disabled = currentPage === 1;
+    document.getElementById('nextPage').disabled = currentPage === totalPages || filteredPosts.length === 0;
+    document.getElementById('prevPage').classList.toggle('disabled', currentPage === 1);
+    document.getElementById('nextPage').classList.toggle('disabled', currentPage === totalPages || filteredPosts.length === 0);
+}
+function changePage(delta) {
+    const newPage = currentPage + delta;
+    if (newPage >= 1 && newPage <= totalPages) {
+        currentPage = newPage;
+        renderPosts();
+        updatePaginationControls();
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+}
+function filterPostsByTag(tag) {
+    if (tag === "all") {
+        filteredPosts = POSTS.slice();
+    } else {
+        filteredPosts = POSTS.filter(post => post.tag === tag);
+    }
+    currentPage = 1;
+    calculateTotalPages();
+    renderPosts();
+}
+document.getElementById("tagDropdown").addEventListener("change", function() {
+    filterPostsByTag(this.value);
+});
+document.addEventListener("DOMContentLoaded", () => {
+    filterPostsByTag("all");
+    window.scrollTo(0, document.body.scrollHeight);
+});
+</script>
+
+<!-- ------- VICTORY TRACKER LOGIC ------- -->
+<script>
+// --- Skills and Questions ---
+const SKILL_DATA = [
+    { name: 'Body', symbol: '' },
+    { name: 'Mind', symbol: '' },
+    { name: 'Heart', symbol: '' },
+    { name: 'Hand', symbol: '⚒' },
+    { name: 'Finance', symbol: '$' },
+    { name: 'Soul', symbol: '' },
+    { name: 'Status', symbol: '' },
+    { name: 'Space', symbol: '⿻' },
+    { name: 'Time', symbol: '' },
+    { name: 'World', symbol: '🌏︎' },
+    { name: 'Creative', symbol: 'ᝰ' },
+    { name: 'Tech', symbol: '🖳' }
+];
+const SKILL_QUESTIONS = {
+    'Body': [
+        { label: 'How many days per week do you exercise?', type: 'number', min: 0, max: 7 },
+        { label: 'How long have you consistently trained (months)?', type: 'number', min: 0, max: 120 },
+        { label: 'Do you follow a structured workout program?', type: 'yn' },
+        { label: 'Do you track your progress (RPE, weights, reps)?', type: 'yn' },
+        { label: 'Do you perform both resistance and cardio training?', type: 'yn' },
+        { label: 'Do you work on flexibility/mobility weekly?', type: 'yn' },
+        { label: 'Do you regularly hit plateaus and overcome them?', type: 'yn' },
+        { label: 'Do you consistently get at least 7 hours of sleep per night?', type: 'yn' },
+        { label: 'Do you avoid screens or caffeine before bed?', type: 'yn' },
+        { label: 'Do you eat mostly whole foods and prep meals?', type: 'yn' },
+        { label: 'Do you track calories or macros?', type: 'yn' },
+        { label: 'Do you eat sufficient protein daily?', type: 'yn' },
+        { label: 'Do you drink mostly water (limit soda/juice/alcohol)?', type: 'yn' },
+        { label: 'Do you limit processed foods?', type: 'yn' },
+        { label: 'Do you take time for recovery (stretching, foam rolling, deload weeks)?', type: 'yn' },
+        { label: 'Do you mentor or teach others about fitness?', type: 'yn' },
+        { label: 'Describe your workout and diet in more detail:', type: 'textarea' }
+    ],
+    'Mind': [
+        { label: 'How many hours/week do you study or learn new things?', type: 'number', min: 0, max: 50 },
+        { label: 'Do you have a structured learning plan?', type: 'yn' },
+        { label: 'Do you read books regularly?', type: 'yn' },
+        { label: 'Do you take notes or journal your learning?', type: 'yn' },
+        { label: 'Do you apply new concepts to real life?', type: 'yn' },
+        { label: 'Do you teach or mentor others?', type: 'yn' },
+        { label: 'Describe your learning process:', type: 'textarea' },
+        { label: 'Do you do mental exercises (puzzles, strategy games)?', type: 'yn' }
+    ]
+};
+const SKILL_RANKS = {
+    'Body': [
+        { name: 'Novice', desc: 'Basic routine or just started.', min: 0, max: 25 },
+        { name: 'Intermediate', desc: 'Consistent, tracks progress.', min: 26, max: 50 },
+        { name: 'Advanced', desc: 'Block periodization, solid nutrition/sleep.', min: 51, max: 75 },
+        { name: 'Expert', desc: 'Advanced programming, optimal habits.', min: 76, max: 100 }
+    ],
+    'Mind': [
+        { name: 'Novice', desc: 'Occasional learning, no system.', min: 0, max: 25 },
+        { name: 'Intermediate', desc: 'Consistent learner, some structure.', min: 26, max: 50 },
+        { name: 'Advanced', desc: 'Deep learning, projects, teaching.', min: 51, max: 75 },
+        { name: 'Expert', desc: 'Creates frameworks, mentors others.', min: 76, max: 100 }
+    ]
+};
+
+let skillsData = SKILL_DATA.map(skill => ({
+    name: skill.name,
+    symbol: skill.symbol,
+    score: 0,
+    blog: "",
+    proofs: [],
+    answers: {}
+}));
+
+const vtElements = {
+    grid: document.getElementById('vt-grid-container'),
+    saveLinkBtn: document.getElementById('vt-saveLinkBtn'),
+    loadLinkBtn: document.getElementById('vt-loadLinkBtn'),
+    helpBtn: document.getElementById('vt-help-btn'),
+    modalBg: document.getElementById('vt-modal-bg'),
+    modal: document.getElementById('vt-modal'),
+    trackBtn: document.getElementById('trackBtn'),
+    trackSkillDropdown: document.getElementById('trackSkillDropdown')
+};
+
+if (!document.getElementById('vt-modal-bg')) {
+    // Add modal container if missing
+    const modalBg = document.createElement('div');
+    modalBg.id = 'vt-modal-bg';
+    modalBg.style.display = 'none';
+    document.body.appendChild(modalBg);
+    const modal = document.createElement('div');
+    modal.id = 'vt-modal';
+    modalBg.appendChild(modal);
+    vtElements.modalBg = modalBg;
+    vtElements.modal = modal;
+}
+
+// --- Fill Track dropdown
+SKILL_DATA.forEach((skill, idx) => {
+    const opt = document.createElement('option');
+    opt.value = idx;
+    opt.textContent = skill.name;
+    vtElements.trackSkillDropdown.appendChild(opt);
+});
+// --- Display skill grid
+function updateButtonDisplay(index) {
+    const skill = skillsData[index];
+    const box = vtElements.grid.querySelector(`[data-index="${index}"] .inner-square`);
+    if (box) {
+        let logoHtml;
+        logoHtml = `<span class="skill-symbol">${skill.symbol}</span>`;
+        box.innerHTML = `
+            <div class="skill-name">${skill.name}</div>
+            <div class="skill-logo">${logoHtml}</div>
+            <div class="skill-score">${skill.score}/100</div>
+        `;
+    }
+}
+function createTrackerButtons() {
+    vtElements.grid.innerHTML = "";
+    SKILL_DATA.forEach((skill, index) => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'square-skill-box';
+        wrapper.setAttribute('data-index', index);
+        const inner = document.createElement('div');
+        inner.className = 'inner-square';
+        wrapper.appendChild(inner);
+        vtElements.grid.appendChild(wrapper);
+        updateButtonDisplay(index);
+    });
+}
+createTrackerButtons();
+// -- Quest MODAL LOGIC --
+function openSkillModal(index) {
+    vtElements.modalBg.style.display = "flex";
+    renderQuestionsForm(index);
+}
+function renderQuestionsForm(skillIdx) {
+    const skill = SKILL_DATA[skillIdx];
+    const questions = SKILL_QUESTIONS[skill.name] || [];
+    vtElements.modal.innerHTML = `<h3 style="margin-top:2px;">${skill.name} Skill Tracker</h3>`;
+    let formHtml = '<form id="vt-tracker-form">';
+    questions.forEach((q, i) => {
+        const answer = skillsData[skillIdx].answers["q"+i] || "";
+        if (q.type === "number") {
+            formHtml += `<label>${q.label}<br><input type="number" name="q${i}" min="${q.min}" max="${q.max}" value="${answer}" required></label><br>`;
+        } else if (q.type === "yn") {
+            formHtml += `<label>${q.label}<br>
+            <input type="radio" name="q${i}" value="yes" ${answer==="yes"?"checked":""}> Yes 
+            <input type="radio" name="q${i}" value="no" ${answer==="no"?"checked":""}> No</label><br>`;
+        } else if (q.type === "textarea") {
+            formHtml += `<label>${q.label}<br><textarea name="q${i}" rows="3" style="width:90%;" required>${answer}</textarea></label><br>`;
+        }
+    });
+    formHtml += `<br><label>Blog/notes:<br>
+    <textarea name="blogNote" rows="3" style="width:96%;">${skillsData[skillIdx].blog||""}</textarea></label><br>`;
+    formHtml += `<label>Proofs: <input type="file" name="proofFiles" multiple></label><br><br>`;
+    formHtml += `<button class="btn-class3" type="submit">Submit & Save</button>
+                 <button class="btn-class3" type="button" id="vt-close-modal-btn">Close</button>`;
+    formHtml += '</form>';
+    vtElements.modal.innerHTML += formHtml;
+    document.getElementById("vt-close-modal-btn").onclick = () => vtElements.modalBg.style.display = "none";
+    document.getElementById("vt-tracker-form").onsubmit = function(e) {
+        e.preventDefault();
+        const fd = new FormData(this);
+        let answers = {};
+        for (let [k, v] of fd.entries()) {
+            if (k.startsWith('q')) answers[k]=v;
+        }
+        skillsData[skillIdx].answers = answers;
+        skillsData[skillIdx].blog = fd.get("blogNote")||"";
+        skillsData[skillIdx].proofs = fd.getAll("proofFiles").map(f=>typeof f==="string"?f:f.name);
+        let score = 25 + Math.floor(Math.random()*50);
+        if (skill.name === 'Body') {
+            const days = Number(answers.q0) || 0;
+            const months = Number(answers.q1) || 0;
+            let ynScore = 0;
+            for (let i = 2; i <= 15; i++) {
+                if (answers['q'+i] === 'yes') ynScore += 4;
+            }
+            const detail = (answers.q16 || "").toLowerCase();
+            if (/block periodization|advanced|mentor|teach|deload/.test(detail)) ynScore += 12;
+            else if (/double progression|macros|protein|sleep|foam rolling/.test(detail)) ynScore += 6;
+            score = Math.min(100, Math.round(days*3 + months*0.7 + ynScore));
+        } else if (skill.name === 'Mind') {
+            const hrs = Number(answers.q0) || 0;
+            let ynScore = 0;
+            for (let i = 1; i <= 6; i++) {
+                if (answers['q'+i] === 'yes') ynScore += 6;
+            }
+            const detail = (answers.q6 || "").toLowerCase();
+            if (/teach|framework|deep dive|project|mentor/.test(detail)) ynScore += 10;
+            score = Math.min(100, Math.round(hrs*2 + ynScore));
+        }
+        skillsData[skillIdx].score = score;
+        updateButtonDisplay(skillIdx);
+        vtElements.modalBg.style.display = "none";
+        alert("Progress saved for " + skill.name + "!");
+    };
+}
+// --- Track Button Dropdown-----
+vtElements.trackBtn.onclick = function() {
+    vtElements.trackSkillDropdown.style.display = "inline";
+};
+vtElements.trackSkillDropdown.onchange = function() {
+    if (this.value !== "") {
+        openSkillModal(Number(this.value));
+        this.selectedIndex = 0;
+        this.style.display="none";
+    }
+};
+// --- Save/Load logic
+const base64UrlEncode = (str) =>
+    btoa(unescape(encodeURIComponent(str))).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+const base64UrlDecode = (str) => {
+    str = str.replace(/-/g, "+").replace(/_/g, "/");
+    while (str.length % 4) str += "=";
+    return decodeURIComponent(escape(atob(str)));
+};
+function getAppState() { return skillsData;}
+function restoreAppWith(state) {
+    if (!Array.isArray(state) || state.length !== skillsData.length) return;
+    for (let i = 0; i < SKILL_DATA.length; ++i) {
+        skillsData[i] = Object.assign({}, skillsData[i], state[i]);
+        updateButtonDisplay(i);
+    }
+}
+vtElements.saveLinkBtn.onclick = function() {
+    const encoded = base64UrlEncode(JSON.stringify(getAppState()));
+    prompt("Copy your progress link!", window.location.origin + window.location.pathname + "#data=" + encoded);
+};
+vtElements.loadLinkBtn.onclick = function() {
+    const val = prompt("Paste your previously saved progress link or data.");
+    if (!val) return;
+    let m = val.match(/#data=([^#]+)/);
+    let hashData = m ? m[1] : (val.match(/^[-\w_=]+$/) ? val : null);
+    if (!hashData) { alert("Not a valid save link."); return;}
+    try {
+        const decoded = base64UrlDecode(hashData);
+        const state = JSON.parse(decoded);
+        restoreAppWith(state);
+        alert("Progress loaded!");
+    } catch(e) {
+        alert("Failed to load data from link.");
+    }
+};
+vtElements.helpBtn.onclick = function() {
+    alert("Welcome to Victory Tracker!\nTrack your progress in 12 life skills, get ranked, receive improvement guides, blog your journey, and save your achievements.\nUse the Track button to choose a skill and fill out its questionnaire.");
+};
+window.addEventListener("DOMContentLoaded", function() {
+    const m = location.hash.match(/^#data=(.+)$/);
+    if (m) {
+        try {
+            const decoded = base64UrlDecode(m[1]);
+            const state = JSON.parse(decoded);
+            restoreAppWith(state);
+        } catch (e) {
+            alert("Could not restore your save data from the URL.");
+        }
+    }
+});
+</script>
+</body>
+</html>
