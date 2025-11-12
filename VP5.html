@@ -35,19 +35,53 @@
             width: 100%;
             box-sizing: border-box;
         }
+        /* Header-adjacent box style changes */
+        .header-nav-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 11px;
+            margin-top: 4px;
+        }
         .header-container {
             display: flex;
             align-items: center;
             gap: 18px;
-            width: 100%;
-            justify-content: center;
-            margin-bottom: 11px;
-            margin-top: 4px;
+            width: auto;
         }
         .header-image {
             width: 150px;
             height: auto;
             background: none !important;
+        }
+        .site-title {
+            margin: 0;
+        }
+        /* Navigation shifts right */
+        .main-nav {
+            margin: 0 0 0 15px;
+            padding: 0;
+            width: auto;
+            /* Prevent nav from growing; keep it to right */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .main-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+        .main-nav a {
+            text-decoration: heavy;
+            color: #000099;
+            padding: 5px 10px;
+            border: 1px solid transparent;
+            transition: all 0.1s;
         }
         .tag-dropdown-container {
             margin-bottom: 10px;
@@ -145,26 +179,6 @@
             margin-top: 20px;
 
         }
-        .main-nav {
-            width: 100%;
-            margin: 15px 0;
-            padding: 5px 0;
-        }
-        .main-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .main-nav a {
-            text-decoration: heavy;
-            color: #000099;
-            padding: 5px 10px;
-            border: 1px solid transparent;
-            transition: all 0.1s;
-        }
     </style>
 </head>
 
@@ -173,21 +187,26 @@
         <tbody>
             <tr>
                 <td style="vertical-align:top; padding: 10px;">
-                    <div class="header-container">
-                        <img src="nbg - Imgur.png" alt="Agnus Dei icon" class="header-image"
-                        style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
-                        <h4>Victory Pages</h4>
-                    </div>
+                    <!-- New adjacent header and nav row -->
+                    <div class="header-nav-row">
+                        <div class="header-container">
+                            <img src="nbg - Imgur.png" alt="Agnus Dei icon" class="header-image"
+                            style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
+                            <h4 class="site-title">Victory Pages</h4>
+                        </div>
 
-                    <nav class="main-nav">
-                        <ul>
-                            <em><li><a href="about.html">About</a></li>
-                            <li><a href="library.html">Library</a></li>
-                            <li><a href="victorytracker.html">Victory Tracker</a></li>
-                            <li><a href="tester_VT.html">Tester</a></li>
-                            <li><a href="NVP.html">NVP Tester</a></li></em>
-                        </ul>
-                    </nav>
+                        <nav class="main-nav">
+                            <ul>
+                                <em>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="library.html">Library</a></li>
+                                    <li><a href="victorytracker.html">Victory Tracker</a></li>
+                                    <li><a href="tester_VT.html">Tester</a></li>
+                                    <li><a href="NVP.html">NVP Tester</a></li>
+                                </em>
+                            </ul>
+                        </nav>
+                    </div>
                     
                     <hr>
                     <hr>
