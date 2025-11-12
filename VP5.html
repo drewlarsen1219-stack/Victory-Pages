@@ -63,11 +63,10 @@
             margin: 0 0 0 15px;
             padding: 0;
             width: auto;
-            /* Prevent nav from growing; keep it to right */
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            font-style:none;
+            /* font-style:none; */
         }
         .main-nav ul {
             list-style: none;
@@ -77,12 +76,25 @@
             justify-content: flex-end;
             gap: 20px;
         }
+        /* Make nav heavy style using a custom tag, but since HTML doesn't support <heavy> natively,
+           we can create a tag with display:inline and assign heavy font-weight and style for demonstration.
+           We'll style it here. */
+        .main-nav heavy, .main-nav .heavy {
+            font-weight: bold;
+            font-size: 1.08em;
+            letter-spacing: 0.03em;
+        }
         .main-nav a {
-            text-decoration: heavy;
+            text-decoration: none;
             color: blue;
             padding: 5px 10px;
             border: 1px solid transparent;
             transition: all 0.1s;
+        }
+        .main-nav a {
+            font-weight: bold;
+            font-size: 1.08em;
+            letter-spacing: 0.03em;
         }
         .tag-dropdown-container {
             margin-bottom: 10px;
@@ -158,14 +170,18 @@
             width: 100%;
             max-width: 750px;
             margin: 15px auto 0 auto;
-            font-color: #000099;
+            /* font-color: #000099;  Does nothing in CSS, remove */
         }
         .post-title-row {
             margin-bottom: 11px;
             padding-left: 8px;
             text-align: center;
             width: 100%;
-            font-color: #000099;
+        }
+        .post-title-row a {
+            color: #000099 !important;
+            text-decoration: underline;
+            font-weight: bold;
         }
         .post em {
             color: #666 !important;
@@ -200,13 +216,12 @@
 
                         <nav class="main-nav">
                             <ul>
-                                <em>
+                                <heavy>
                                     <li><a href="about.html">About</a></li>
                                     <li><a href="library.html">Library</a></li>
                                     <li><a href="victorytracker.html">VT1</a></li>
                                     <li><a href="tester_VT.html">VT2</a></li>
-                                  
-                                </em>
+                                </heavy>
                             </ul>
                         </nav>
                     </div>
