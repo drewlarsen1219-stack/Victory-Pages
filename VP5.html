@@ -40,12 +40,12 @@
         /* --- Header and site links --- */
         .header-nav-row {
             display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
+            align-items: center; /* Vertically center header content */
+            justify-content: space-between; /* Space out logo/title and triangle */
             width: 100%;
             margin-bottom: 11px;
             margin-top: 4px;
-            position: relative; /* allow absolutely-positioned triangle */
+            position: relative;
             padding-bottom: 6px;
             min-height: 160px; /* Adjusted to keep triangle from overflowing */
         }
@@ -88,12 +88,13 @@
 
         /* --- Triangle container : aligned to top-right and sized to not extend below hr --- */
         .triangle-wrapper {
-            position: absolute;
-            right: 12px;
-            top: 4px;
+            /* position: absolute; */ /* Removed absolute positioning */
+            /* right: 12px; */
+            /* top: 4px; */
             width: 280px;
             height: 150px;
             pointer-events: none;
+            padding-right: 12px; /* Add some padding on the right */
         }
         .triangle-svg {
             width: 100%;
@@ -153,12 +154,17 @@
 
         /* --- Responsive: stack triangle below header on narrow screens --- */
         @media (max-width: 720px) {
+            .header-nav-row {
+                flex-direction: column; /* Stack header and triangle */
+                align-items: center;
+            }
             .triangle-wrapper {
                 position: static;
                 transform: none;
                 width: 320px;
                 height: 220px;
                 margin: 10px auto 0 auto;
+                padding-right: 0;
             }
             .victory-paths-link { margin-top: -20px; display: block; }
         }
@@ -192,11 +198,11 @@
 
                                 <!-- Symmetrically placed labels outside the triangle -->
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(35,52.5) rotate(-58) translate(0,-12)">
+                                      transform="translate(35,52.5) rotate(-62) translate(0,-12)">
                                     Finder →
                                 </text>
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(85,52.5) rotate(58) translate(0,-12)">
+                                      transform="translate(85,52.5) rotate(62) translate(0,-12)">
                                     Tracker →
                                 </text>
                                 <text class="edge-text" text-anchor="middle"
