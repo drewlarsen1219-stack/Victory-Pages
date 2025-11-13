@@ -11,7 +11,7 @@
             color: #000;
             background: #999;
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 13px;
+            font-size: 13px; /* page base font size - labels match this */
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -35,99 +35,106 @@
             width: 100%;
             box-sizing: border-box;
         }
+
         .header-nav-row {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
+            align-items: flex-start;
+            justify-content: flex-start;
             width: 100%;
             margin-bottom: 11px;
             margin-top: 4px;
+            position: relative; /* allow absolutely-positioned triangle */
+            min-height: 200px; /* ensure triangle fits above the <hr> */
+            padding-bottom: 6px;
         }
         .header-container {
             display: flex;
-            align-items: center;
-            gap: 18px;
+            flex-direction: column; /* title then links underneath */
+            align-items: flex-start;
+            gap: 6px;
             width: auto;
+            padding: 10px;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
         .header-image {
-            width: 150px;
+            width: 80px;
             height: auto;
             background: none !important;
         }
         .site-title {
             margin: 0;
+            font-size: 13px; /* uniform with rest of site text */
+            line-height: 1;
+            font-weight: bold;
         }
-        .main-nav {
-            margin: 0 0 0 15px;
-            padding: 0;
-            width: auto;    
-        }
-        .main-nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        /* small links listed underneath the heading */
+        .site-links {
+            margin-top: 2px;
             display: flex;
-            justify-content: flex-end;
-            gap: 0;
+            gap: 12px;
+            padding-left: 4px;
         }
-        /* Standard link formatting for navigation */
-        .main-nav a {
+        .site-links a {
             text-decoration: none;
             color: blue;
-            padding: 5px 30px;
-            border: 1px solid transparent;
-            transition: all 0.1s;
+            font-size: 13px;
+            padding: 2px 4px;
+        }
+
+        /* Triangle positioned on the right top and sized to fit above the hr */
+        .triangle-wrapper {
+            position: absolute;
+            right: 12px;      /* align to right side of top area */
+            top: 8px;
+            width: 260px;     /* triangle size */
+            height: 180px;    /* reduced height so it does not extend below hr */
+            pointer-events: none; /* decorative, center link has pointer-events enabled */
+        }
+        .triangle-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Center clickable Victory Paths link (now a plain link, styled) */
+        .victory-link {
+            position: absolute;
+            left: 50%;
+            top: 64%;                             /* centroid approx (60/120, 66.7/104) -> ~64% */
+            transform: translate(-50%, -50%);
+            z-index: 6;
+            pointer-events: auto;
+            text-decoration: none;
+            display: inline-block;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px;                      /* same size as site text */
+            color: #E5C384;                       /* requested color */
+            text-shadow: 1px 1px 0 #000;
+            background: transparent;
+            border: none;
+            padding: 0.1em 0.35em;
+        }
+        .victory-link:focus,
+        .victory-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Edge text styling — match page font-size and black color */
+        .edge-text {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px; /* matches body font-size */
+            fill: #000;
             font-weight: normal;
-            font-size: 1em;
-            letter-spacing: normal;
         }
-        /* Color override for specific links - use attribute selectors for precision */
-        .main-nav a[href="Pathfinder.html"] {
-            color: #00BF00 !important;
-            font-weight: bold;
-        }
-        .main-nav a[href="tester_VT.html"] {
-            color: purple !important;
-            font-weight: bold;
-        }
-        .main-nav a[href="Pathways.html"] {
-            color: yellow !important;
-            font-weight: bold;
-        }
-        /* Style the nav dash separator */
-        .main-nav .nav-separator {
-            display: flex;
-            align-items: center;
-            padding: 5px 30px;
-            margin-left: 0;
-            margin-right: 0;
-            color: #555;
-            font-size: 1.2em;
-            font-weight: bold;
-            /* Optional: visually align dash with links */
-        }
-        .tag-dropdown-container {
-            margin-bottom: 10px;
-            text-align: center;
-            width: auto;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            justify-content: center;
-        }
-        label {
-            font-weight: none;
-            font-size: 1em;
-        }
-        select#tagDropdown, select#trackSkillDropdown {
-            font-size: 1em;
-            padding: 3px 3px;
-            border: 2px solid #333;
-            box-shadow: 1px 1px 0 #fff inset;
-            background: #c0c0c0;
-            color: #222;
-            margin: 2px 0;
-        }
+
+        /* Place labels outside the triangle by positioning text elements at edge midpoints
+           and translating them slightly outward from the triangle edge. All labels use "→" trailing. */
+
+        /* Base button style for Create Post (unchanged) */
         button, .btn-class3 {
             font-family: 'Verdana', 'Arial', sans-serif;
             font-size: 1em;
@@ -139,74 +146,29 @@
             border-radius: 0;
             box-shadow: 1px 1px 0 #fff inset;
             outline: none;
+            cursor: pointer;
         }
         button:hover, .btn-class3:hover {
             background: #e4e4e4;
             border-color: #555;
             color: #00f;
         }
-        button.disabled {
-            color: #aaa;
-            cursor: not-allowed;
-            background: #f3f3f3;
-            border-color: #eee;
-        }
-        .pagination-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-            margin-top: 13px;
-        }
-        #post-action-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            margin: 15px auto 0 auto;
-        }
-        #createPostBtn {
-            margin-left: auto;
-            margin-right: auto;
-        }
-        #posts {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            max-width: 750px;
-            margin: 15px auto 0 auto;
-        }
-        .post-title-row {
-            margin-bottom: 11px;
-            padding-left: 8px;
-            text-align: center;
-            width: 100%;
-        }
-        .post-title-row a {
-            color: #000099 !important;
-            text-decoration: underline;
-            font-weight: bold;
-        }
-        .post em {
-            color: #666 !important;
-            font-size: 0.97em;
-            margin-left: 0.4em;
-        }
-        .main-content {
-            width: 100%;
-        }
-        footer {
-            width: 100%;
-            max-width: 750px;
-            text-align: center;
-            margin-top: 20px;
-        }
-        /* Make footer links not underlined */
-        footer a {
-            text-decoration: none !important;
+
+        /* Responsive layout: move triangle below header on smaller screens */
+        @media (max-width: 720px) {
+            .triangle-wrapper {
+                position: static;
+                transform: none;
+                width: 320px;
+                height: 220px;
+                margin: 10px auto 0 auto;
+            }
+            .victory-link {
+                position: static;
+                transform: none;
+                margin: -44px auto 8px auto;
+                display: block;
+            }
         }
     </style>
 </head>
@@ -215,38 +177,75 @@
     <table class="page-wrapper-table" cellspacing="2" cellpadding="2" border="1">
         <tbody>
             <tr>
-                <td style="vertical-align:top; padding: 10px;">
-                    <!-- New adjacent header and nav row -->
+                <td style="vertical-align:top; padding: 10px; position:relative;">
+                    <!-- Header: site title with About/Library underneath, triangle aligned right -->
                     <div class="header-nav-row">
                         <div class="header-container">
-                            <img src="nbg - Imgur.png" alt="Agnus Dei icon" class="header-image"
-                            style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
-                            <h4 class="site-title">Victory Pages</h4>
+                            <div class="header-top">
+                                <img src="nbg - Imgur.png" alt="Agnus Dei icon" class="header-image"
+                                     style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
+                                <h4 class="site-title">Victory Pages</h4>
+                            </div>
+
+                            <div class="site-links" aria-label="About and Library links">
+                                <a href="about.html">About</a>
+                                <a href="library.html">Library</a>
+                            </div>
                         </div>
 
-                        <nav class="main-nav">
-                            <ul>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="library.html">Library</a></li>
-                                <li class="nav-separator">-</li>
-                                <li><a href="Pathfinder.html">Path-Finder</a></li>
-                                <li><a href="tester_VT.html">Path-Tracker</a></li>
-                                <li><a href="Pathways.html">Path-Ways</a></li>
-                            </ul>
-                        </nav>
+                        <!-- Triangle group placed at the top-right; labels are positioned outside edges -->
+                        <div class="triangle-wrapper" aria-hidden="false">
+                            <!-- SVG equilateral triangle sized to fit above the hr -->
+                            <svg class="triangle-svg" viewBox="0 0 120 104" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
+                                <!-- triangle shape -->
+                                <polygon points="60,8 12,96 108,96" fill="#efefef" stroke="#ccc"/>
+
+                                <!-- keep the edge paths for reference (not used for textPath now) -->
+                                <defs>
+                                    <path id="edge-left"   d="M12,96 L60,8" />
+                                    <path id="edge-right"  d="M60,8 L108,96" />
+                                    <path id="edge-bottom" d="M12,96 L108,96" />
+                                </defs>
+
+                                <!-- Labels placed JUST OUTSIDE each edge:
+                                     - left edge midpoint: (12+60)/2=36, (96+8)/2=52. We'll translate outward along normal.
+                                     - right edge midpoint: (60+108)/2=84, 52.
+                                     - bottom edge midpoint: (12+108)/2=60, 96 -->
+                                <!-- Left edge label (Finder →) placed outside the left side -->
+                                <text class="edge-text" text-anchor="middle" aria-hidden="false"
+                                      transform="translate(36,52) rotate(-62) translate(0,-12)">
+                                    Finder →
+                                </text>
+
+                                <!-- Right edge label (Tracker →) placed outside the right side -->
+                                <text class="edge-text" text-anchor="middle" aria-hidden="false"
+                                      transform="translate(84,52) rotate(62) translate(0,-12)">
+                                    Tracker →
+                                </text>
+
+                                <!-- Bottom edge label (Ways →) placed below the bottom edge, upright -->
+                                <text class="edge-text" text-anchor="middle" aria-hidden="false"
+                                      transform="translate(60,106)">
+                                    Ways →
+                                </text>
+                            </svg>
+
+                            <!-- Victory Paths link centered inside the triangle; clickable and styled -->
+                            <a class="victory-link" href="Pathfinder.html" title="Open Victory Paths">Victory Paths</a>
+                        </div>
                     </div>
-                    
+
                     <hr>
                     <hr>
                     <hr>
-                    
+
                     <div id="post-action-row">
                         <button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='Submission_tool.html'">Create Post</button>
                     </div>
                     <br>
                     <div id="posts"></div>
 <br>
-                    
+
                     <!-- DROPDOWN MOVED BELOW POSTS, ABOVE FOOTER -->
                     <div class="tag-dropdown-container">
                        
@@ -267,19 +266,19 @@
                         <button id="prevPage" class="btn-class3">&lt; Previous</button>
                         <button id="nextPage" class="btn-class3">Next &gt;</button>
                     </div>
-                    
+
                     <footer>
                         <hr>
                         <p>© 2025 Victory Pages. All rights reserved.</p>
                         <p><a href="privacypolicy.html">Privacy Policy</a></p>
                         <p><a href="TAC.html">Terms & Conditions</a></p>
                     </footer>
-                    
+
                 </td>
             </tr>
         </tbody>
     </table> 
-    
+
     <script>
         const POSTS = [
             { title: "Investing and documenting what worked", url: "Investing.html", tag: "investing", username: "Drew", date: "2025-11-11" },
