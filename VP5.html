@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Victory Pages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Forum for Christians. This website includes a Victory game which is a gamification of real life. ">
+    <meta name="description" content="A Forum for Christians. This website includes Victory Paths which is a gamification of real life. ">
     
     <style>
         /* --- Page baseline --- */
@@ -40,28 +40,26 @@
         /* --- Header and site links --- */
         .header-nav-row {
             display: flex;
-            align-items: flex-start;
-            justify-content: flex-start;
+            align-items: center; /* Vertically align items */
+            justify-content: space-between; /* Space between logo/links and triangle */
             width: 100%;
             margin-bottom: 11px;
             margin-top: 4px;
-            position: relative; /* allow absolutely-positioned triangle */
-            padding-bottom: 6px;
-            min-height: 160px; /* Adjusted to keep triangle from overflowing */
+            position: relative;
+            padding: 6px 10px;
+            min-height: 140px;
         }
         .header-container {
             display: flex;
-            flex-direction: column; /* site-links on top, then header */
+            flex-direction: column;
             align-items: flex-start;
             gap: 6px;
-            width: auto;
-            padding: 10px;
         }
         .header-top {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-top: 6px; /* Space below the nav links */
+            margin-top: 6px;
         }
         .header-image {
             width: 150px;
@@ -70,7 +68,7 @@
         }
         .site-title {
             margin: 0;
-            font-size: 13px; /* uniform with rest of site text */
+            font-size: 13px;
             line-height: 1;
             font-weight: bold;
         }
@@ -86,11 +84,9 @@
             padding: 2px 4px;
         }
 
-        /* --- Triangle container : aligned to top-right and sized to not extend below hr --- */
+        /* --- Triangle container : aligned with header --- */
         .triangle-wrapper {
-            position: absolute;
-            right: 12px;
-            top: 4px;
+            position: relative; /* No longer absolute */
             width: 280px;
             height: 150px;
             pointer-events: none;
@@ -105,29 +101,28 @@
         /* --- Edge label style (uniform with site text) --- */
         .edge-text {
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 13px; /* match page base */
+            font-size: 10px;
             fill: #000;
             font-weight: normal;
         }
 
-        /* --- Centered Victory Paths link (standard blue, no animation) --- */
+        /* --- Centered Victory Paths link with shadow-glow hover effect --- */
         .victory-paths-link {
             font-size: 12px;
             font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-style: strong;
             text-decoration: none;
             line-height: 1.2;
-            color: blue; /* Standard blue link color */
             text-align: center;
-            pointer-events: auto; /* Make the link clickable */
-            display: flex; /* Use flexbox for centering */
+            pointer-events: auto;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 100%;
             height: 100%;
         }
-        .victory-paths-link:hover {
-            text-decoration: underline;
+
         }
 
 
@@ -153,14 +148,13 @@
 
         /* --- Responsive: stack triangle below header on narrow screens --- */
         @media (max-width: 720px) {
-            .triangle-wrapper {
-                position: static;
-                transform: none;
-                width: 320px;
-                height: 220px;
-                margin: 10px auto 0 auto;
+            .header-nav-row {
+                flex-direction: column;
+                align-items: center;
             }
-            .victory-paths-link { margin-top: -20px; display: block; }
+            .triangle-wrapper {
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
@@ -170,7 +164,7 @@
         <tbody>
             <tr>
                 <td style="vertical-align:top; padding: 10px; position:relative;">
-                    <!-- Header: About/Library on top, then title/logo, triangle to the right -->
+                    <!-- Header: Now a flex container to align logo and triangle -->
                     <div class="header-nav-row">
                         <div class="header-container">
                             <div class="site-links" aria-label="About and Library links">
