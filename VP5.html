@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Victory Pages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Forum for Christians. This website includes Victory Paths which is a gamification of real life. ">
+    <meta name="description" content="A Forum for Christians. This website includes a Victory game which is a gamification of real life. ">
     
     <style>
         /* --- Page baseline --- */
@@ -40,26 +40,28 @@
         /* --- Header and site links --- */
         .header-nav-row {
             display: flex;
-            align-items: center; /* Vertically align items */
-            justify-content: space-between; /* Space between logo/links and triangle */
+            align-items: flex-start;
+            justify-content: flex-start;
             width: 100%;
             margin-bottom: 11px;
             margin-top: 4px;
-            position: relative;
-            padding: 6px 10px;
-            min-height: 140px;
+            position: relative; /* allow absolutely-positioned triangle */
+            padding-bottom: 6px;
+            min-height: 160px; /* Adjusted to keep triangle from overflowing */
         }
         .header-container {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* site-links on top, then header */
             align-items: flex-start;
             gap: 6px;
+            width: auto;
+            padding: 10px;
         }
         .header-top {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-top: 6px;
+            margin-top: 6px; /* Space below the nav links */
         }
         .header-image {
             width: 150px;
@@ -68,7 +70,7 @@
         }
         .site-title {
             margin: 0;
-            font-size: 13px;
+            font-size: 13px; /* uniform with rest of site text */
             line-height: 1;
             font-weight: bold;
         }
@@ -84,9 +86,11 @@
             padding: 2px 4px;
         }
 
-        /* --- Triangle container : aligned with header --- */
+        /* --- Triangle container : aligned to top-right and sized to not extend below hr --- */
         .triangle-wrapper {
-            position: relative; /* No longer absolute */
+            position: absolute;
+            right: 12px;
+            top: 4px;
             width: 280px;
             height: 150px;
             pointer-events: none;
@@ -101,28 +105,29 @@
         /* --- Edge label style (uniform with site text) --- */
         .edge-text {
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 10px;
+            font-size: 13px; /* match page base */
             fill: #000;
             font-weight: normal;
         }
 
-        /* --- Centered Victory Paths link with shadow-glow hover effect --- */
+        /* --- Centered Victory Paths link (standard blue, no animation) --- */
         .victory-paths-link {
             font-size: 12px;
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-style: strong;
             text-decoration: none;
             line-height: 1.2;
+            color: blue; /* Standard blue link color */
             text-align: center;
-            pointer-events: auto;
-            display: flex;
+            pointer-events: auto; /* Make the link clickable */
+            display: flex; /* Use flexbox for centering */
             flex-direction: column;
             justify-content: center;
             align-items: center;
             width: 100%;
             height: 100%;
         }
-
+        .victory-paths-link:hover {
+            text-decoration: underline;
         }
 
 
@@ -148,13 +153,14 @@
 
         /* --- Responsive: stack triangle below header on narrow screens --- */
         @media (max-width: 720px) {
-            .header-nav-row {
-                flex-direction: column;
-                align-items: center;
-            }
             .triangle-wrapper {
-                margin-top: 20px;
+                position: static;
+                transform: none;
+                width: 320px;
+                height: 220px;
+                margin: 10px auto 0 auto;
             }
+            .victory-paths-link { margin-top: -20px; display: block; }
         }
     </style>
 </head>
@@ -164,7 +170,7 @@
         <tbody>
             <tr>
                 <td style="vertical-align:top; padding: 10px; position:relative;">
-                    <!-- Header: Now a flex container to align logo and triangle -->
+                    <!-- Header: About/Library on top, then title/logo, triangle to the right -->
                     <div class="header-nav-row">
                         <div class="header-container">
                             <div class="site-links" aria-label="About and Library links">
@@ -186,11 +192,11 @@
 
                                 <!-- Symmetrically placed labels outside the triangle -->
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(35,52.5) rotate(-62) translate(0,-12)">
+                                      transform="translate(35,52.5) rotate(-58) translate(0,-12)">
                                     Finder →
                                 </text>
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(85,52.5) rotate(62) translate(0,-12)">
+                                      transform="translate(85,52.5) rotate(58) translate(0,-12)">
                                     Tracker →
                                 </text>
                                 <text class="edge-text" text-anchor="middle"
@@ -199,7 +205,7 @@
                                 </text>
                                 
                                 <!-- Centered, two-line, clickable "Victory Paths" link -->
-                                <foreignObject x="30" y="45" width="60" height="40">
+                                <foreignObject x="30" y="49" width="60" height="40">
                                     <a href="Pathfinder.html" class="victory-paths-link" title="Open Victory Paths">Victory<br>Paths</a>
                                 </foreignObject>
                             </svg>
