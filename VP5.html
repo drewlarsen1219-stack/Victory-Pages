@@ -47,7 +47,7 @@
             margin-top: 4px;
             position: relative; /* allow absolutely-positioned triangle */
             padding-bottom: 6px;
-            min-height: 140px; /* Adjusted to keep triangle from overflowing */
+            min-height: 160px; /* Adjusted to keep triangle from overflowing */
         }
         .header-container {
             display: flex;
@@ -64,7 +64,7 @@
             margin-top: 6px; /* Space below the nav links */
         }
         .header-image {
-            width: 80px;
+            width: 150px;
             height: auto;
             background: none !important;
         }
@@ -90,9 +90,9 @@
         .triangle-wrapper {
             position: absolute;
             right: 12px;
-            top: 8px;
-            width: 260px;
-            height: 160px; /* Reduced height to keep it compact */
+            top: 4px;
+            width: 280px; /* Made triangle slightly larger */
+            height: 150px;
             pointer-events: none;
         }
         .triangle-svg {
@@ -112,14 +112,14 @@
 
         /* --- Centered Victory Paths link (standard blue, no animation) --- */
         .victory-paths-link {
-            font-size: 12px; /* Slightly smaller to ensure it fits */
+            font-size: 12px;
             font-family: Verdana, Arial, Helvetica, sans-serif;
             text-decoration: none;
             line-height: 1.2;
             color: blue; /* Standard blue link color */
             text-align: center;
             pointer-events: auto; /* Make the link clickable */
-            display: block; /* Needed for centering */
+            display: block;
             width: 100%;
             height: 100%;
         }
@@ -183,26 +183,26 @@
 
                         <!-- Symmetrical SVG triangle with labels outside -->
                         <div class="triangle-wrapper" aria-hidden="false">
-                            <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
+                            <svg class="triangle-svg" viewBox="0 0 120 105" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
                                 <!-- Symmetrical triangle with a thin black border -->
-                                <polygon points="60,20 18,98 102,98" fill="none" stroke="#000" stroke-width="1"/>
+                                <polygon points="60,10 10,95 110,95" fill="none" stroke="#000" stroke-width="1"/>
 
                                 <!-- Symmetrically placed labels outside the triangle -->
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(39,59) rotate(-60) translate(0,-12)">
+                                      transform="translate(35,52.5) rotate(-62) translate(0,-12)">
                                     Finder →
                                 </text>
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(81,59) rotate(60) translate(0,-12)">
+                                      transform="translate(85,52.5) rotate(62) translate(0,-12)">
                                     Tracker →
                                 </text>
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(60,112)">
+                                      transform="translate(60,109)">
                                     ← Ways
                                 </text>
                                 
                                 <!-- Centered, two-line, clickable "Victory Paths" link -->
-                                <foreignObject x="35" y="52" width="50" height="30">
+                                <foreignObject x="40" y="55" width="40" height="30">
                                     <a href="Pathfinder.html" class="victory-paths-link" title="Open Victory Paths">Victory<br>Paths</a>
                                 </foreignObject>
                             </svg>
