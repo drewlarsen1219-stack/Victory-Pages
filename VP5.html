@@ -72,9 +72,9 @@
         }
         /* Standard link formatting for navigation */
         .main-nav a {
-            text-decoration: underline;
+            text-decoration: none;
             color: blue;
-            padding: 5px 10px;
+            padding: 5px 30px;
             border: 1px solid transparent;
             transition: all 0.1s;
             font-weight: normal;
@@ -179,7 +179,10 @@
             max-width: 750px;
             text-align: center;
             margin-top: 20px;
-
+        }
+        /* Make footer links not underlined */
+        footer a {
+            text-decoration: none !important;
         }
     </style>
 </head>
@@ -200,8 +203,11 @@
                         <nav class="main-nav">
                             <ul>
                                 <li><a href="about.html">About</a></li>
+					
                                 <li><a href="library.html">Library</a></li>
+					
                                 <li><a href="victorytracker.html">VT1</a></li>
+					
                                 <li><a href="tester_VT.html">VT2</a></li>
                             </ul>
                         </nav>
