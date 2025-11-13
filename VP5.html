@@ -35,7 +35,6 @@
             width: 100%;
             box-sizing: border-box;
         }
-        /* Header-adjacent box style changes */
         .header-nav-row {
             display: flex;
             align-items: center;
@@ -58,17 +57,18 @@
         .site-title {
             margin: 0;
         }
-        /* Navigation shifts right */
         .main-nav {
             margin: 0 0 0 15px;
             padding: 0;
             width: auto;    
-            align-items: right;
         }
         .main-nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            gap: 0;
         }
         /* Standard link formatting for navigation */
         .main-nav a {
@@ -80,6 +80,31 @@
             font-weight: normal;
             font-size: 1em;
             letter-spacing: normal;
+        }
+        /* Color override for specific links - use attribute selectors for precision */
+        .main-nav a[href="Pathfinder.html"] {
+            color: #00BF00 !important;
+            font-weight: bold;
+        }
+        .main-nav a[href="tester_VT.html"] {
+            color: purple !important;
+            font-weight: bold;
+        }
+        .main-nav a[href="Pathways.html"] {
+            color: yellow !important;
+            font-weight: bold;
+        }
+        /* Style the nav dash separator */
+        .main-nav .nav-separator {
+            display: flex;
+            align-items: center;
+            padding: 5px 30px;
+            margin-left: 0;
+            margin-right: 0;
+            color: #555;
+            font-size: 1.2em;
+            font-weight: bold;
+            /* Optional: visually align dash with links */
         }
         .tag-dropdown-container {
             margin-bottom: 10px;
@@ -114,7 +139,6 @@
             border-radius: 0;
             box-shadow: 1px 1px 0 #fff inset;
             outline: none;
-
         }
         button:hover, .btn-class3:hover {
             background: #e4e4e4;
@@ -203,12 +227,11 @@
                         <nav class="main-nav">
                             <ul>
                                 <li><a href="about.html">About</a></li>
-					
                                 <li><a href="library.html">Library</a></li>
-					-
-                              <li><a href="Pathfinder.html">Path-Finder</a></li>
-								<li><a href="tester_VT.html">Path-Tracker</a></li>
-								<li><a href="Pathways.html">Path-Ways</a></li>
+                                <li class="nav-separator">-</li>
+                                <li><a href="Pathfinder.html">Path-Finder</a></li>
+                                <li><a href="tester_VT.html">Path-Tracker</a></li>
+                                <li><a href="Pathways.html">Path-Ways</a></li>
                             </ul>
                         </nav>
                     </div>
