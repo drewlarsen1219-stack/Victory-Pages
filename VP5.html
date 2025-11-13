@@ -7,11 +7,12 @@
     <meta name="description" content="A Forum for Christians. This website includes a Victory game which is a gamification of real life. ">
     
     <style>
+        /* --- Page baseline --- */
         body {
             color: #000;
             background: #999;
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 13px; /* page base font size - labels match this */
+            font-size: 13px; /* uniform text size across page */
             margin: 0;
             padding: 0;
             min-height: 100vh;
@@ -36,6 +37,7 @@
             box-sizing: border-box;
         }
 
+        /* --- Header and site links --- */
         .header-nav-row {
             display: flex;
             align-items: flex-start;
@@ -44,8 +46,8 @@
             margin-bottom: 11px;
             margin-top: 4px;
             position: relative; /* allow absolutely-positioned triangle */
-            min-height: 200px; /* ensure triangle fits above the <hr> */
             padding-bottom: 6px;
+            min-height: 160px; /* keep it compact so triangle stays above hr */
         }
         .header-container {
             display: flex;
@@ -71,7 +73,6 @@
             line-height: 1;
             font-weight: bold;
         }
-        /* small links listed underneath the heading */
         .site-links {
             margin-top: 2px;
             display: flex;
@@ -85,56 +86,74 @@
             padding: 2px 4px;
         }
 
-        /* Triangle positioned on the right top and sized to fit above the hr */
+        /* --- Triangle container : aligned to top-right and sized so it does not extend below hr --- */
         .triangle-wrapper {
             position: absolute;
-            right: 12px;      /* align to right side of top area */
+            right: 12px;
             top: 8px;
-            width: 260px;     /* triangle size */
-            height: 180px;    /* reduced height so it does not extend below hr */
-            pointer-events: none; /* decorative, center link has pointer-events enabled */
+            width: 260px;    /* reduced to fit above the hr */
+            height: 200px;   /* allow bottom label room */
+            pointer-events: none; /* decorative area; center link will be clickable */
         }
         .triangle-svg {
             width: 100%;
             height: 100%;
             display: block;
+            overflow: visible;
         }
 
-        /* Center clickable Victory Paths link (now a plain link, styled) */
-        .victory-link {
-            position: absolute;
-            left: 50%;
-            top: 64%;                             /* centroid approx (60/120, 66.7/104) -> ~64% */
-            transform: translate(-50%, -50%);
-            z-index: 6;
-            pointer-events: auto;
-            text-decoration: none;
-            display: inline-block;
-            font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 13px;                      /* same size as site text */
-            color: #E5C384;                       /* requested color */
-            text-shadow: 1px 1px 0 #000;
-            background: transparent;
-            border: none;
-            padding: 0.1em 0.35em;
-        }
-        .victory-link:focus,
-        .victory-link:hover {
-            text-decoration: underline;
-        }
-
-        /* Edge text styling — match page font-size and black color */
+        /* --- Edge label style (uniform with site text) --- */
         .edge-text {
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: 13px; /* matches body font-size */
+            font-size: 13px; /* match page base */
             fill: #000;
             font-weight: normal;
         }
 
-        /* Place labels outside the triangle by positioning text elements at edge midpoints
-           and translating them slightly outward from the triangle edge. All labels use "→" trailing. */
+        /* --- Centered Victory Paths animated link --- 
+           Use the color-cycle keyframes provided but keep font-size 13px.
+           Put the animated text inside a small .grey-background container so the animation works.
+        */
+        .grey-background {
+          /* keep layout container but make background transparent so triangle remains visible */
+          background-color: rgba(51,51,51,0); 
+          padding: 6px 8px;
+          border-radius: 6px;
+          text-align: center;
+          display: inline-block;
+          pointer-events: auto; /* allow clicks */
+        }
 
-        /* Base button style for Create Post (unchanged) */
+        @keyframes aesthetic-cycle {
+          0%   { color: #008080; }    /* deep teal */
+          33%  { color: #B8860B; }    /* muted gold */
+          66%  { color: #C8A2C8; }    /* soft mauve */
+          100% { color: #008080; }    /* return */
+        }
+
+        /* Apply animation to the link text; keep site font-size and make it clickable */
+        .color-cycle-text {
+          font-size: 13px; /* uniform with site */
+          font-family: Verdana, Arial, Helvetica, sans-serif;
+          letter-spacing: 0.5px;
+          animation: aesthetic-cycle 12s ease-in-out infinite;
+          text-shadow: 1px 1px 0 #000;
+          text-decoration: none;
+          display: inline-block;
+        }
+
+        .grey-background a.color-cycle-text {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          color: inherit;          /* animation will set color */
+        }
+        .grey-background a.color-cycle-text:hover,
+        .grey-background a.color-cycle-text:focus {
+          text-decoration: underline;
+        }
+
+        /* --- Create Post button (unchanged appearance) --- */
         button, .btn-class3 {
             font-family: 'Verdana', 'Arial', sans-serif;
             font-size: 1em;
@@ -154,7 +173,7 @@
             color: #00f;
         }
 
-        /* Responsive layout: move triangle below header on smaller screens */
+        /* --- Responsive: stack triangle below header on narrow screens --- */
         @media (max-width: 720px) {
             .triangle-wrapper {
                 position: static;
@@ -163,12 +182,7 @@
                 height: 220px;
                 margin: 10px auto 0 auto;
             }
-            .victory-link {
-                position: static;
-                transform: none;
-                margin: -44px auto 8px auto;
-                display: block;
-            }
+            .grey-background { margin-top: -20px; display: block; }
         }
     </style>
 </head>
@@ -178,7 +192,7 @@
         <tbody>
             <tr>
                 <td style="vertical-align:top; padding: 10px; position:relative;">
-                    <!-- Header: site title with About/Library underneath, triangle aligned right -->
+                    <!-- Header: title + About/Library under it, triangle aligned right -->
                     <div class="header-nav-row">
                         <div class="header-container">
                             <div class="header-top">
@@ -193,45 +207,42 @@
                             </div>
                         </div>
 
-                        <!-- Triangle group placed at the top-right; labels are positioned outside edges -->
+                        <!-- Triangle (SVG) placed top-right. Labels are placed just outside edges and are symmetric.
+                             The viewBox and SVG height leave room below so bottom label ("← Ways") is not cut off. -->
                         <div class="triangle-wrapper" aria-hidden="false">
-                            <!-- SVG equilateral triangle sized to fit above the hr -->
-                            <svg class="triangle-svg" viewBox="0 0 120 104" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
-                                <!-- triangle shape -->
-                                <polygon points="60,8 12,96 108,96" fill="#efefef" stroke="#ccc"/>
+                            <svg class="triangle-svg" viewBox="0 0 120 140" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
+                                <!-- Define triangle coordinates (upright equilateral-ish) -->
+                                <polygon points="60,18 18,106 102,106" fill="#efefef" stroke="#ccc"/>
 
-                                <!-- keep the edge paths for reference (not used for textPath now) -->
-                                <defs>
-                                    <path id="edge-left"   d="M12,96 L60,8" />
-                                    <path id="edge-right"  d="M60,8 L108,96" />
-                                    <path id="edge-bottom" d="M12,96 L108,96" />
-                                </defs>
+                                <!-- Edge midpoints calculation:
+                                     left midpoint ~ (39,62), right midpoint ~ (81,62), bottom midpoint ~ (60,106).
+                                     Label transforms below move them just outside the triangle along symmetrical normals. -->
 
-                                <!-- Labels placed JUST OUTSIDE each edge:
-                                     - left edge midpoint: (12+60)/2=36, (96+8)/2=52. We'll translate outward along normal.
-                                     - right edge midpoint: (60+108)/2=84, 52.
-                                     - bottom edge midpoint: (12+108)/2=60, 96 -->
-                                <!-- Left edge label (Finder →) placed outside the left side -->
-                                <text class="edge-text" text-anchor="middle" aria-hidden="false"
-                                      transform="translate(36,52) rotate(-62) translate(0,-12)">
+                                <!-- Left edge label (Finder →), rotated to run along edge but placed outside -->
+                                <text class="edge-text" text-anchor="middle"
+                                      transform="translate(39,62) rotate(-60) translate(0,-14)">
                                     Finder →
                                 </text>
 
-                                <!-- Right edge label (Tracker →) placed outside the right side -->
-                                <text class="edge-text" text-anchor="middle" aria-hidden="false"
-                                      transform="translate(84,52) rotate(62) translate(0,-12)">
+                                <!-- Right edge label (Tracker →), symmetric to left -->
+                                <text class="edge-text" text-anchor="middle"
+                                      transform="translate(81,62) rotate(60) translate(0,-14)">
                                     Tracker →
                                 </text>
 
-                                <!-- Bottom edge label (Ways →) placed below the bottom edge, upright -->
-                                <text class="edge-text" text-anchor="middle" aria-hidden="false"
-                                      transform="translate(60,106)">
-                                    Ways →
+                                <!-- Bottom edge label — ensure it's below the triangle and upright.
+                                     Per your request, label reads "← Ways" (left arrow then text). -->
+                                <text class="edge-text" text-anchor="middle"
+                                      transform="translate(60,122)">
+                                    ← Ways
                                 </text>
                             </svg>
 
-                            <!-- Victory Paths link centered inside the triangle; clickable and styled -->
-                            <a class="victory-link" href="Pathfinder.html" title="Open Victory Paths">Victory Paths</a>
+                            <!-- Centered, clickable "Victory Paths" using provided color-cycle animation.
+                                 It's placed visually centered inside the triangle. -->
+                            <div class="grey-background" style="position:absolute; left:50%; top:48%; transform:translate(-50%,-50%); pointer-events:auto;">
+                                <a href="Pathfinder.html" class="color-cycle-text" title="Open Victory Paths">Victory Paths</a>
+                            </div>
                         </div>
                     </div>
 
