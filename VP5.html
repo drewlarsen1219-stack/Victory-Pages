@@ -47,11 +47,11 @@
             margin-top: 4px;
             position: relative; /* allow absolutely-positioned triangle */
             padding-bottom: 6px;
-            min-height: 160px; /* keep it compact so triangle stays above hr */
+            min-height: 140px; /* Adjusted to keep triangle from overflowing */
         }
         .header-container {
             display: flex;
-            flex-direction: column; /* title then links underneath */
+            flex-direction: column; /* site-links on top, then header */
             align-items: flex-start;
             gap: 6px;
             width: auto;
@@ -61,6 +61,7 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            margin-top: 6px; /* Space below the nav links */
         }
         .header-image {
             width: 80px;
@@ -74,7 +75,6 @@
             font-weight: bold;
         }
         .site-links {
-            margin-top: 2px;
             display: flex;
             gap: 12px;
             padding-left: 4px;
@@ -86,14 +86,14 @@
             padding: 2px 4px;
         }
 
-        /* --- Triangle container : aligned to top-right and sized so it does not extend below hr --- */
+        /* --- Triangle container : aligned to top-right and sized to not extend below hr --- */
         .triangle-wrapper {
             position: absolute;
             right: 12px;
             top: 8px;
-            width: 260px;    /* reduced to fit above the hr */
-            height: 200px;   /* allow bottom label room */
-            pointer-events: none; /* decorative area; center link will be clickable */
+            width: 260px;
+            height: 160px; /* Reduced height to keep it compact */
+            pointer-events: none;
         }
         .triangle-svg {
             width: 100%;
@@ -110,48 +110,23 @@
             font-weight: normal;
         }
 
-        /* --- Centered Victory Paths animated link --- 
-           Use the color-cycle keyframes provided but keep font-size 13px.
-           Put the animated text inside a small .grey-background container so the animation works.
-        */
-        .grey-background {
-          /* keep layout container but make background transparent so triangle remains visible */
-          background-color: rgba(51,51,51,0); 
-          padding: 6px 8px;
-          border-radius: 6px;
-          text-align: center;
-          display: inline-block;
-          pointer-events: auto; /* allow clicks */
+        /* --- Centered Victory Paths link (standard blue, no animation) --- */
+        .victory-paths-link {
+            font-size: 12px; /* Slightly smaller to ensure it fits */
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            line-height: 1.2;
+            color: blue; /* Standard blue link color */
+            text-align: center;
+            pointer-events: auto; /* Make the link clickable */
+            display: block; /* Needed for centering */
+            width: 100%;
+            height: 100%;
+        }
+        .victory-paths-link:hover {
+            text-decoration: underline;
         }
 
-        @keyframes aesthetic-cycle {
-          0%   { color: #008080; }    /* deep teal */
-          33%  { color: #B8860B; }    /* muted gold */
-          66%  { color: #C8A2C8; }    /* soft mauve */
-          100% { color: #008080; }    /* return */
-        }
-
-        /* Apply animation to the link text; keep site font-size and make it clickable */
-        .color-cycle-text {
-          font-size: 13px; /* uniform with site */
-          font-family: Verdana, Arial, Helvetica, sans-serif;
-          letter-spacing: 0.5px;
-          animation: aesthetic-cycle 12s ease-in-out infinite;
-          text-shadow: 1px 1px 0 #000;
-          text-decoration: none;
-          display: inline-block;
-        }
-
-        .grey-background a.color-cycle-text {
-          display: inline-block;
-          padding: 0;
-          margin: 0;
-          color: inherit;          /* animation will set color */
-        }
-        .grey-background a.color-cycle-text:hover,
-        .grey-background a.color-cycle-text:focus {
-          text-decoration: underline;
-        }
 
         /* --- Create Post button (unchanged appearance) --- */
         button, .btn-class3 {
@@ -182,7 +157,7 @@
                 height: 220px;
                 margin: 10px auto 0 auto;
             }
-            .grey-background { margin-top: -20px; display: block; }
+            .victory-paths-link { margin-top: -20px; display: block; }
         }
     </style>
 </head>
@@ -192,57 +167,45 @@
         <tbody>
             <tr>
                 <td style="vertical-align:top; padding: 10px; position:relative;">
-                    <!-- Header: title + About/Library under it, triangle aligned right -->
+                    <!-- Header: About/Library on top, then title/logo, triangle to the right -->
                     <div class="header-nav-row">
                         <div class="header-container">
+                            <div class="site-links" aria-label="About and Library links">
+                                <a href="about.html">About</a>
+                                <a href="library.html">Library</a>
+                            </div>
                             <div class="header-top">
                                 <img src="nbg - Imgur.png" alt="Agnus Dei icon" class="header-image"
                                      style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
                                 <h4 class="site-title">Victory Pages</h4>
                             </div>
-
-                            <div class="site-links" aria-label="About and Library links">
-                                <a href="about.html">About</a>
-                                <a href="library.html">Library</a>
-                            </div>
                         </div>
 
-                        <!-- Triangle (SVG) placed top-right. Labels are placed just outside edges and are symmetric.
-                             The viewBox and SVG height leave room below so bottom label ("← Ways") is not cut off. -->
+                        <!-- Symmetrical SVG triangle with labels outside -->
                         <div class="triangle-wrapper" aria-hidden="false">
-                            <svg class="triangle-svg" viewBox="0 0 120 140" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
-                                <!-- Define triangle coordinates (upright equilateral-ish) -->
-                                <polygon points="60,18 18,106 102,106" fill="#efefef" stroke="#ccc"/>
+                            <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
+                                <!-- Symmetrical triangle with a thin black border -->
+                                <polygon points="60,20 18,98 102,98" fill="none" stroke="#000" stroke-width="1"/>
 
-                                <!-- Edge midpoints calculation:
-                                     left midpoint ~ (39,62), right midpoint ~ (81,62), bottom midpoint ~ (60,106).
-                                     Label transforms below move them just outside the triangle along symmetrical normals. -->
-
-                                <!-- Left edge label (Finder →), rotated to run along edge but placed outside -->
+                                <!-- Symmetrically placed labels outside the triangle -->
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(39,62) rotate(-60) translate(0,-14)">
+                                      transform="translate(39,59) rotate(-60) translate(0,-12)">
                                     Finder →
                                 </text>
-
-                                <!-- Right edge label (Tracker →), symmetric to left -->
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(81,62) rotate(60) translate(0,-14)">
+                                      transform="translate(81,59) rotate(60) translate(0,-12)">
                                     Tracker →
                                 </text>
-
-                                <!-- Bottom edge label — ensure it's below the triangle and upright.
-                                     Per your request, label reads "← Ways" (left arrow then text). -->
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(60,122)">
+                                      transform="translate(60,112)">
                                     ← Ways
                                 </text>
+                                
+                                <!-- Centered, two-line, clickable "Victory Paths" link -->
+                                <foreignObject x="35" y="52" width="50" height="30">
+                                    <a href="Pathfinder.html" class="victory-paths-link" title="Open Victory Paths">Victory<br>Paths</a>
+                                </foreignObject>
                             </svg>
-
-                            <!-- Centered, clickable "Victory Paths" using provided color-cycle animation.
-                                 It's placed visually centered inside the triangle. -->
-                            <div class="grey-background" style="position:absolute; left:50%; top:48%; transform:translate(-50%,-50%); pointer-events:auto;">
-                                <a href="Pathfinder.html" class="color-cycle-text" title="Open Victory Paths">Victory Paths</a>
-                            </div>
                         </div>
                     </div>
 
