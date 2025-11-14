@@ -85,12 +85,15 @@
             font-size: 13px;
             padding: 2px 4px;
         }
+        .site-links a:hover {
+            font-weight: bold;
+        }
+        .site-links a:hover .hover {
+            font-weight: bold;
+        }
 
         /* --- Triangle container : aligned to top-right and sized to not extend below hr --- */
         .triangle-wrapper {
-            /* position: absolute; */ /* Removed absolute positioning */
-            /* right: 12px; */
-            /* top: 4px; */
             width: 280px;
             height: 150px;
             pointer-events: none;
@@ -129,6 +132,7 @@
         }
         .victory-paths-link:hover {
             text-decoration: none;
+            font-weight: bold;
         }
 
 
@@ -137,7 +141,7 @@
             font-family: 'Verdana', 'Arial', sans-serif;
             font-size: 1em;
             padding: 4px 5px;
-            margin: 2px 0;
+            margin: 16px 0;
             border: 2px solid #333;
             background: #c0c0c0;
             color: #111;
@@ -168,6 +172,55 @@
             }
             .victory-paths-link { margin-top: -20px; display: block; }
         }
+
+        /* --- POST SEPARATOR STYLES --- */
+        .post {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #A0A0A0; /* Dashed line for separation */
+        }
+        .post:last-child {
+            border-bottom: none; /* Do not show line on the last post */
+        }
+        
+        /* --- LINK HOVER EFFECT STYLES --- */
+        .post-title-row a {
+            color: #1D4ED8; /* Initial Color: Dark Blue */
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;	
+            position: relative;
+            padding-left: 16px; /* Initial spacing for arrow to move into */
+            transition: all 0.3s ease; /* Transition for movement and color */
+        }
+
+        .post-title-row a::before {
+            content: "☩"; /* The character to display */
+            color: #1E3A8A; /* Deep Navy Blue for the arrow */
+            position: absolute;
+            left: -10px; /* Start position: slightly to the left of the link */
+            opacity: 0; /* Start hidden */
+            font-weight: bold;
+            transition: opacity 0.3s ease, left 0.3s ease; /* Transition for the arrow */
+        }
+
+        /* Hover state: Arrow becomes visible and moves into position */
+        .post-title-row a:hover::before {
+            opacity: 1; /* Make visible */
+            left: 0; /* Move to the left edge of the link element */
+        }
+
+        .post-title-row a:hover {
+            text-decoration: none;
+            /* Text Color: Deep Navy Blue */
+            color: #1E3A8A; 
+
+            /* Text Outline/Shadow: Light Gray (#D1D5DB) with blur */
+            text-shadow: 
+                .5px .5px 0 #D1D5DB, 
+                -.5px -.5px 0 #D1D5DB,
+                .5px .5px 0px #D1D5DB; /* Subtle shadow */
+        }
     </style>
 </head>
 
@@ -185,7 +238,7 @@
                             </div>
                             <div class="header-top">
                                 <img src="nbg - Imgur.png" alt="Agnus Dei icon" class="header-image"
-                                     style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
+                                    style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
                                 <h4 class="site-title">Victory Pages</h4>
                             </div>
                         </div>
@@ -198,20 +251,20 @@
 
                                 <!-- Symmetrically placed labels outside the triangle -->
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(35,52.5) rotate(-59) translate(0,-10)">
+                                    transform="translate(35,52.5) rotate(-59.5) translate(0,-10)">
                                     Finder →
                                 </text>
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(85,52.5) rotate(59) translate(0,-10)">
+                                    transform="translate(85,52.5) rotate(59.5) translate(0,-10)">
                                     Tracker →
                                 </text>
                                 <text class="edge-text" text-anchor="middle"
-                                      transform="translate(60,109)">
+                                    transform="translate(60,109)">
                                     ← Ways
                                 </text>
                                 
                                 <!-- Centered, two-line, clickable "Victory Paths" link -->
-                                <foreignObject x="30" y="49" width="60" height="40">
+                                <foreignObject x="30" y="49" width="60" height="45">
                                     <a href="Pathfinder.html" class="victory-paths-link" title="Open Victory Paths">Victory<br>Paths</a>
                                 </foreignObject>
                             </svg>
@@ -231,7 +284,7 @@
 
                     <!-- DROPDOWN MOVED BELOW POSTS, ABOVE FOOTER -->
                     <div class="tag-dropdown-container">
-                       
+                        
                         <select id="tagDropdown">
                             <option value="all">All</option>
                             <option value="investing">Investing</option>
@@ -263,6 +316,13 @@
     </table> 
 
     <script>
+        // Note: Firestore setup variables are available globally in the Canvas environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+
+        // Since this uses a mock array (POSTS) and not Firestore, we don't need the Firebase imports/setup.
+        // If you decide to connect this to a database later, you will need to add those imports and initialization logic.
+        
         const POSTS = [
             { title: "Investing and documenting what worked", url: "Investing.html", tag: "investing", username: "Drew", date: "2025-11-11" },
             { title: 'Game "Yu-Gi-Oh"', url: "Post1.html", tag: "gaming", username: "Drew", date: "2025-09-26" },
