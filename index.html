@@ -40,7 +40,7 @@
         /* --- Header and site links --- */
         .header-nav-row {
             display: flex;
-            align-items: center; /* Vertically center header content */
+            align-items: center; 
             justify-content: space-between; /* Space out logo/title and triangle */
             width: 100%;
             margin-bottom: 11px;
@@ -70,7 +70,7 @@
         }
         .site-title {
             margin: 0;
-            font-size: 13px; /* uniform with rest of site text */
+            font-size: 13px; 
             line-height: 1;
             font-weight: bold;
         }
@@ -87,9 +87,11 @@
         }
         .site-links a:hover {
             font-weight: bold;
+            color: purple;
         }
         .site-links a:hover .hover {
             font-weight: bold;
+	        color: purple;
         }
 
         /* --- Triangle container : aligned to top-right and sized to not extend below hr --- */
@@ -97,7 +99,7 @@
             width: 280px;
             height: 150px;
             pointer-events: none;
-            padding-right: 12px; /* Add some padding on the right */
+            padding-right: 12px; 
         }
         .triangle-svg {
             width: 100%;
@@ -106,7 +108,7 @@
             overflow: visible;
         }
 
-        /* --- Edge label style (uniform with site text) --- */
+        
         .edge-text {
             font-family: Verdana, Arial, Helvetica, sans-serif;
             font-size: 8px; /* match page base */
@@ -114,16 +116,16 @@
             font-weight: normal;
         }
 
-        /* --- Centered Victory Paths link (standard blue, no animation) --- */
+    
         .victory-paths-link {
             font-size: 12px;
             font-family: Verdana, Arial, Helvetica, sans-serif;
             text-decoration: none;
             line-height: 1.2;
-            color: blue; /* Standard blue link color */
+            color: blue; 
             text-align: center;
-            pointer-events: auto; /* Make the link clickable */
-            display: flex; /* Use flexbox for centering */
+            pointer-events: auto; 
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -133,6 +135,7 @@
         .victory-paths-link:hover {
             text-decoration: none;
             font-weight: bold;
+	        color: purple;
         }
 
 
@@ -177,51 +180,38 @@
         .post {
             padding-top: 5px;
             padding-bottom: 5px;
-            border-bottom: 1px dashed #A0A0A0; /* Dashed line for separation */
+            border-bottom: 1px
+            cursor: pointer;
         }
         .post:last-child {
             border-bottom: none; /* Do not show line on the last post */
         }
+
+       
+        .post:hover .post-title-row a {
+            color: purple;
+        }
+
+        .post:hover .post-title-row em {
+            font-weight: normal !important;
+            color: inherit !important;
+        }
         
         /* --- LINK HOVER EFFECT STYLES --- */
         .post-title-row a {
-            color: #1D4ED8; /* Initial Color: Dark Blue */
-            font-weight: bold;
+            color: #1D4ED8; 
+            font-weight: normal; 
             text-decoration: none;
             display: inline-block;	
             position: relative;
-            padding-left: 16px; /* Initial spacing for arrow to move into */
-            transition: all 0.3s ease; /* Transition for movement and color */
+            padding-left: 2px; /* Initial spacing for arrow to move into */
+            transition: all 0.1s ease; 
         }
 
-        .post-title-row a::before {
-            content: "☩"; /* The character to display */
-            color: #1E3A8A; /* Deep Navy Blue for the arrow */
-            position: absolute;
-            left: -10px; /* Start position: slightly to the left of the link */
-            opacity: 0; /* Start hidden */
-            font-weight: bold;
-            transition: opacity 0.3s ease, left 0.3s ease; /* Transition for the arrow */
         }
 
-        /* Hover state: Arrow becomes visible and moves into position */
-        .post-title-row a:hover::before {
-            opacity: 1; /* Make visible */
-            left: 0; /* Move to the left edge of the link element */
-        }
-
-        .post-title-row a:hover {
-            text-decoration: none;
-            /* Text Color: Deep Navy Blue */
-            color: #1E3A8A; 
-
-            /* Text Outline/Shadow: Light Gray (#D1D5DB) with blur */
-            text-shadow: 
-                .5px .5px 0 #D1D5DB, 
-                -.5px -.5px 0 #D1D5DB,
-                .5px .5px 0px #D1D5DB; /* Subtle shadow */
-        }
     </style>
+
 </head>
 
 <body>
@@ -229,7 +219,6 @@
         <tbody>
             <tr>
                 <td style="vertical-align:top; padding: 10px; position:relative;">
-                    <!-- Header: About/Library on top, then title/logo, triangle to the right -->
                     <div class="header-nav-row">
                         <div class="header-container">
                             <div class="site-links" aria-label="About and Library links">
@@ -243,13 +232,10 @@
                             </div>
                         </div>
 
-                        <!-- Symmetrical SVG triangle with labels outside -->
                         <div class="triangle-wrapper" aria-hidden="false">
                             <svg class="triangle-svg" viewBox="0 0 120 105" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
-                                <!-- Symmetrical triangle with a thin black border -->
                                 <polygon points="60,10 10,95 110,95" fill="none" stroke="#000" stroke-width="1"/>
 
-                                <!-- Symmetrically placed labels outside the triangle -->
                                 <text class="edge-text" text-anchor="middle"
                                     transform="translate(35,52.5) rotate(-59.5) translate(0,-10)">
                                     Finder →
@@ -263,7 +249,6 @@
                                     ← Ways
                                 </text>
                                 
-                                <!-- Centered, two-line, clickable "Victory Paths" link -->
                                 <foreignObject x="30" y="49" width="60" height="45">
                                     <a href="Pathfinder.html" class="victory-paths-link" title="Open Victory Paths">Victory<br>Paths</a>
                                 </foreignObject>
@@ -282,7 +267,6 @@
                     <div id="posts"></div>
 <br>
 
-                    <!-- DROPDOWN MOVED BELOW POSTS, ABOVE FOOTER -->
                     <div class="tag-dropdown-container">
                         
                         <select id="tagDropdown">
