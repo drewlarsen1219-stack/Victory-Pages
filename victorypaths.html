@@ -30,7 +30,33 @@ body {
        while preserving the table's original inline style for borders/etc. */
     text-align: center !important;
     vertical-align: top;
+    position: relative; /* allow absolutely positioned logo inside the cell */
 }
+
+/* logo in the top-left of the table cell */
+.logo {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    z-index: 3;
+    display: inline-block;
+    text-decoration: none;
+}
+.logo img {
+    display: block;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    transition: filter 220ms ease, transform 220ms ease;
+    -webkit-transition: filter 220ms ease, transform 220ms ease;
+}
+/* hover effect that shifts the image toward a blue tint and slightly scales it */
+.logo:hover img {
+    filter: sepia(1) saturate(6) hue-rotate(190deg);
+    transform: scale(1.04);
+}
+/* ensure the logo is keyboard-focusable and shows focus outline */
+.logo:focus { outline: 2px solid #66a3ff; outline-offset: 2px; }
 
 /* keep the original hr styles but provide a named class used for the centered hr rows */
 hr {
@@ -84,6 +110,7 @@ hr {
 @media (max-width: 420px) {
     .triangle-svg { width: 90%; }
     .triangle-buttons a { width: 120px; display: inline-block; text-align:center; }
+    .logo img { width: 48px; height: 48px; }
 }
 </style>
 </head>
@@ -94,10 +121,12 @@ hr {
   <tbody>
     <tr>
       <td style="vertical-align:top;">
-        <!-- top triple thick rules preserved exactly like the original -->
-        <hr style="width: 100%; height: 2px;">
-        <hr style="width: 100%; height: 2px;">
-        <hr style="width: 100%; height: 2px;">
+        <!-- Site logo (clickable) placed in the top-left of the table cell -->
+        <a href="index.html" class="logo" aria-label="Home">
+          <img src="nbg - Imgur.png" alt="Victory Paths logo">
+        </a>
+
+
 
         <!-- Triangle centered inside the table cell; labels are SVG text elements positioned around the triangle edges -->
         <div class="triangle-wrapper" aria-hidden="false">
