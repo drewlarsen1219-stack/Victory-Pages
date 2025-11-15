@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Victory Paths</title>
 <style>
 body {
@@ -12,27 +13,26 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-
-    }
-
-.btn-class2:last-child {
-    margin-right: 0;
 }
-#top-bar {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto 20px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    padding: 12px 0 8px 0;
-    background: none;
 
-
-
+/* keep table borders and whitespace styling like the original file,
+   but force cell contents to be centered so the triangle and labels sit in the middle */
+.center-table {
+    text-align: left;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #CCCCCC;
+    border-collapse: separate;
 }
+.center-table td {
+    /* override only the cell content alignment so triangle is centered
+       while preserving the table's original inline style for borders/etc. */
+    text-align: center !important;
+    vertical-align: top;
+}
+
+/* keep the original hr styles but provide a named class used for the centered hr rows */
 hr {
     display: block;
     margin-block-start: 0.5em;
@@ -53,116 +53,103 @@ hr {
     background: none;
 }
 
+/* SVG sizing so it scales responsively but stays centered in the cell */
+.triangle-wrapper {
+    display: inline-block;
+    padding: 12px 0;
+}
+.triangle-svg {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* style for the in-SVG html controls when supported */
+.triangle-buttons a {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 4px 0;
+    background: #eee;
+    border: 1px solid #333;
+    border-radius: 4px;
+    color: #000;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+/* keep small responsive tweak */
+@media (max-width: 420px) {
+    .triangle-svg { width: 90%; }
+    .triangle-buttons a { width: 120px; display: inline-block; text-align:center; }
+}
 </style>
 </head>
+
 <body>
-<table style="text-align:left;width:750px;margin-left:auto;margin-right:auto;background:#CCCCCC;"
-    cellspacing="2" cellpadding="2" border="1" align="center">
+
+<table class="center-table" cellspacing="2" cellpadding="2" border="1" align="center">
   <tbody>
     <tr>
       <td style="vertical-align:top;">
+        <!-- top triple thick rules preserved exactly like the original -->
         <hr style="width: 100%; height: 2px;">
         <hr style="width: 100%; height: 2px;">
         <hr style="width: 100%; height: 2px;">
 
+        <!-- Triangle centered inside the table cell; labels are SVG text elements positioned around the triangle edges -->
+        <div class="triangle-wrapper" aria-hidden="false">
+            <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
+                <!-- triangle -->
+                <polygon points="60,15 15,95 105,95" fill="none" stroke="#000" stroke-width="1"/>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta content="text/html; charset=windows-1252" http-equiv="content-type">
-<title>Victory Paths</title>
-<style>
-body {
-    color: #000000;
-    background-color: #999999;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+                <!-- left edge label rotated to follow the left edge -->
+                <text font-family="Verdana, Arial, sans-serif" font-size="6" fill="#000"
+                      text-anchor="middle"
+                      transform="translate(30,61) rotate(-60)">
+                  Finder >
+                </text>
 
-    }
+                <!-- right edge label rotated to follow the right edge -->
+                <text font-family="Verdana, Arial, sans-serif" font-size="6" fill="#000"
+                      text-anchor="middle"
+                      transform="translate(90,61) rotate(61)">
+                  Tracker >
+                </text>
 
-.btn-class2:last-child {
-    margin-right: 0;
-}
-#top-bar {
-    width: 100%;
-    max-width: 700px;
-    margin: 0 auto 20px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    padding: 12px 0 8px 0;
-    background: none;
+                <!-- bottom edge centered label -->
+                <text font-family="Verdana, Arial, sans-serif" font-size="6" fill="#000"
+                      text-anchor="middle"
+                      x="60" y="102">
+                  < Ways
+                </text>
 
-
-
-}
-hr {
-    display: block;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    color: gray;
-    unicode-bidi: isolate;
-    overflow: hidden;
-    border-style: inset;
-    border-width: 1px;
-}
-.retro-indented-hr {
-    width: 95%;
-    margin: 10px auto 10px;
-    height: 0px;
-    border: none;
-    background: none;
-}
-
-</style>
-</head>
-<body>
-
-
-                        <div class="triangle-wrapper" aria-hidden="false">
-                            <svg class="triangle-svg" viewBox="0 0 120 105" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
-                                <polygon points="60,10 10,95 110,95" fill="none" stroke="#000" stroke-width="1"/>
-
-                                <text class="edge-text" text-anchor="middle"
-                                    transform="translate(35,52.5) rotate(-59.5) translate(0,-10)">
-                                    Finder →
-                                </text>
-                                <text class="edge-text" text-anchor="middle"
-                                    transform="translate(85,52.5) rotate(59.5) translate(0,-10)">
-                                    Tracker →
-                                </text>
-                                <text class="edge-text" text-anchor="middle"
-                                    transform="translate(60,109)">
-                                    ← Ways
-                                </text>
-                                
-                                <foreignObject x="30" y="49" width="60" height="45">
-                                    <button><a href="VPnew.html" class="VP-new" title="Open New Path">New</button><br><br><button>Load<br></a></button>
-                                </foreignObject>
-                            </svg>
-                        </div>
-
-        <hr class="retro-hr">
+               
+                <foreignObject x="30" y="55" width="60" height="40">
+                  <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0;padding:0;">
+                    <div class="triangle-buttons" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                      Victory
+			<br>
+                      Paths
+                    </div>
+                  </body>
+                </foreignObject>
+            </svg>
+        </div>
+<br>
+<button>New User</button> <button> Existing User</button>
+        <br><br>
+        <hr>
         <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
             <span style="font-style:italic;">Victory Paths &copy; 2025 - All progress saved privately</span>
         </div>
-        <hr class="retro-hr">
-        <hr class="retro-hr">
+          <hr>
+          <hr>
       </td>
     </tr>
   </tbody>
 </table>
-<script>
-
-
-
-</script>
 </body>
 </html>
