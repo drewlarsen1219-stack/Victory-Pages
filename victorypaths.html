@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Victory Paths</title>
 <style>
+
+
 body {
     color: #000000;
     background-color: #999999;
@@ -30,33 +32,7 @@ body {
        while preserving the table's original inline style for borders/etc. */
     text-align: center !important;
     vertical-align: top;
-    position: relative; /* allow absolutely positioned logo inside the cell */
 }
-
-/* logo in the top-left of the table cell */
-.logo {
-    position: absolute;
-    left: 8px;
-    top: 6px;
-    z-index: 3;
-    display: inline-block;
-    text-decoration: none;
-}
-.logo img {
-    display: block;
-    width: 56px;
-    height: 56px;
-    object-fit: contain;
-    transition: filter 220ms ease, transform 220ms ease;
-    -webkit-transition: filter 220ms ease, transform 220ms ease;
-}
-/* hover effect that shifts the image toward a blue tint and slightly scales it */
-.logo:hover img {
-    filter: sepia(1) saturate(6) hue-rotate(190deg);
-    transform: scale(1.04);
-}
-/* ensure the logo is keyboard-focusable and shows focus outline */
-.logo:focus { outline: 2px solid #66a3ff; outline-offset: 2px; }
 
 /* keep the original hr styles but provide a named class used for the centered hr rows */
 hr {
@@ -78,16 +54,30 @@ hr {
     border: none;
     background: none;
 }
+	 .site-links {
+            display: flex;
+            gap: 12px;
+            padding-left: 4px;
+        }
+        .site-links a {
+            text-decoration: none;
+            color: blue;
+            font-size: 13px;
+            padding: 2px 4px;
+        }
+        .site-links a:hover {
+            font-weight: bold;
+            color: purple;
 
 /* SVG sizing so it scales responsively but stays centered in the cell */
 .triangle-wrapper {
-    display: inline-block;
+    display: block;
     padding: 12px 0;
 }
 .triangle-svg {
-    width: 320px;
+    width: 50px;
     max-width: 90%;
-    height: auto;
+    height: 100px;
     display: block;
     margin: 0 auto;
 }
@@ -107,10 +97,9 @@ hr {
 }
 
 /* keep small responsive tweak */
-@media (max-width: 420px) {
-    .triangle-svg { width: 90%; }
-    .triangle-buttons a { width: 120px; display: inline-block; text-align:center; }
-    .logo img { width: 48px; height: 48px; }
+@media (max-width: 200px) {
+    .triangle-svg { width: 60%; }
+    .triangle-buttons a { width: 60px; display: inline-block; text-align:center; }
 }
 </style>
 </head>
@@ -121,10 +110,18 @@ hr {
   <tbody>
     <tr>
       <td style="vertical-align:top;">
-        <!-- Site logo (clickable) placed in the top-left of the table cell -->
-        <a href="index.html" class="logo" aria-label="Home">
-          <img src="nbg - Imgur.png" alt="Victory Paths logo">
-        </a>
+        <!-- top triple thick rules preserved exactly like the original -->
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+
+
+                    <div class="header-nav-row">
+                        <div class="header-container">
+                            <div class="site-links" aria-label="About and Library links">
+                                <a href="about.html">About</a>
+                                <a href="library.html">Library</a>
+                            </div>
 
 
 
@@ -133,6 +130,8 @@ hr {
             <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
                 <!-- triangle -->
                 <polygon points="60,15 15,95 105,95" fill="none" stroke="#000" stroke-width="1"/>
+
+
 
                 <!-- left edge label rotated to follow the left edge -->
                 <text font-family="Verdana, Arial, sans-serif" font-size="6" fill="#000"
@@ -168,7 +167,7 @@ hr {
             </svg>
         </div>
 <br>
-<button type="button" onclick="window.location.href='Victoryfinder.html'">New User</button> <button type="button"> Existing User</button>
+<button>New User</button> <button> Existing User</button>
         <br><br>
         <hr>
         <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
