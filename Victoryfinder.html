@@ -3,8 +3,9 @@
 <head>
 <meta content="text/html; charset=windows-1252" http-equiv="content-type">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Victory Finder</title>
+<title>Victory Paths</title>
 <style>
+
 body {
     color: #000000;
     background-color: #999999;
@@ -15,8 +16,28 @@ body {
     min-height: 100vh;
 }
 
-/* keep table borders and whitespace styling like the original file,
-   but force cell contents to be centered so the triangle and labels sit in the middle */
+.triangle-wrapper {
+    width: 280px;
+    height: 150px;
+    pointer-events: none;
+    padding-right: 12px;
+}
+
+.triangle-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+.edge-text {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8px;
+    fill: #000;
+    font-weight: normal;
+}
+
+/* Table formatting */
 .center-table {
     text-align: left;
     width: 750px;
@@ -25,14 +46,12 @@ body {
     background: #CCCCCC;
     border-collapse: separate;
 }
+
 .center-table td {
-    /* override only the cell content alignment so triangle is centered
-       while preserving the table's original inline style for borders/etc. */
     text-align: center !important;
     vertical-align: top;
 }
 
-/* keep the original hr styles but provide a named class used for the centered hr rows */
 hr {
     display: block;
     margin-block-start: 0.5em;
@@ -45,6 +64,7 @@ hr {
     border-style: inset;
     border-width: 1px;
 }
+
 .retro-indented-hr {
     width: 95%;
     margin: 10px auto 10px;
@@ -53,38 +73,48 @@ hr {
     background: none;
 }
 
-/* Increased size for the triangle container */
-.triangle-wrapper {
-    width: 350px; /* Increased from 280px */
-    height: 180px; /* Increased from 150px */
-    pointer-events: none;
-    padding-right: 12px;
+/* Navigation links */
+.site-links {
+    display: flex;
+    gap: 12px;
+    padding-left: 4px;
 }
-.triangle-svg {
+
+.site-links a {
+    text-decoration: none;
+    color: blue;
+    font-size: 13px;
+    padding: 2px 4px;
+}
+
+.site-links a:hover {
+    font-weight: bold;
+    color: purple;
+}
+
+/* NEW: Positioning adjustments */
+.header-nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-container {
     width: 100%;
-    height: 100%;
-    display: block;
-    overflow: visible;
 }
 
-
-.edge-text {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 8px; /* match page base */
-    fill: #000;
-    font-weight: normal;
+.table-relative {
+    position: relative;
+}
+.top-right-triangle {
+    position: absolute;
+    top: 30px;
+    right: -70px;   /* changed from 22px → 4px */
 }
 
-.heading-3 {
-    /* Removed alignment: right and padding-left to center the h3 */
-    text-align: center; /* Ensures the H3 text is centered */
-    margin: 0; /* Remove default margins for precise control */
-    padding: 10px 0; /* Add some vertical padding */
-}
-
-/* Added styling for the inner triangle text to increase size */
-.triangle-inner-text {
-    font-size: 10px; /* Increased font size for 'Victory Paths' */
+/* Lower Welcome + buttons */
+.lower-welcome {
+    margin-top: 60px;
 }
 
 </style>
@@ -93,63 +123,67 @@ hr {
 <body>
 
 <table class="center-table" cellspacing="2" cellpadding="2" border="1" align="center">
-  <tbody>
-    <tr>
-      <td style="vertical-align:top;">
-                <hr style="width: 100%; height: 2px;">
-        <hr style="width: 100%; height: 2px;">
-        <hr style="width: 100%; height: 2px;">
+  <tbody>
+    <tr>
+      <td style="vertical-align:top;" class="table-relative">
 
-        <h3 class="heading-3">Welcome!</h3>
+        <!-- triple thick rules -->
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+
+        <!-- Triangle moved to top-right -->
+        <div class="top-right-triangle">
+            <div class="triangle-wrapper" aria-hidden="false">
+                <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet"
+                     role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
+
+                    <polygon points="60,15 15,95 105,95" fill="none" stroke="#000" stroke-width="1"/>
+
+                    <text font-size="6" fill="#000" text-anchor="middle"
+                          transform="translate(30,61) rotate(-60)">Finder ></text>
+
+                    <text font-size="6" fill="#000" text-anchor="middle"
+                          transform="translate(90,61) rotate(61)">Tracker ></text>
+
+                    <text font-size="6" fill="#000" text-anchor="middle" x="60" y="102">< Ways</text>
+
+                    <foreignObject x="30" y="55" width="60" height="40">
+                      <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0;padding:0;">
+                        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                          Victory<br>Paths
+                        </div>
+                      </body>
+                    </foreignObject>
+
+                </svg>
+            </div>
+        </div>
+
+        <div class="header-nav-row">
+            <div class="header-container">
+                <div class="site-links" aria-label="About and Library links">
+                    <a href="about.html">About</a>
+                    <a href="index.html">Forum</a>
+                </div>
+
+                <h4 class="lower-welcome">Welcome!</h4>
+                <br>
+                <p><button>New User</button>   <button>Existing User</button></p>
+            </div>
+        </div>
+
+        <hr>
+        <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
+            <span style="font-style:italic;">Victory Paths &copy; 2025 - All progress saved privately</span>
+        </div>
+        <hr>
         <hr>
 
-                <div class="triangle-wrapper" aria-hidden="false">
-            <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
-                                <polygon points="60,15 15,95 105,95" fill="none" stroke="#000" stroke-width="1"/>
-
-
-
-                                <text font-family="Verdana, Arial, sans-serif" font-size="9" fill="#000"
-                      text-anchor="middle"
-                      transform="translate(30,61) rotate(-60)">
-                  Finder >
-                </text>
-
-                                <text font-family="Verdana, Arial, sans-serif" font-size="9" fill="#000"
-                      text-anchor="middle"
-                      transform="translate(90,61) rotate(61)">
-                  Tracker >
-                </text>
-
-                                <text font-family="Verdana, Arial, sans-serif" font-size="9" fill="#000"
-                      text-anchor="middle"
-                      x="60" y="107">                   < Ways
-                </text>
-
-                                <foreignObject x="30" y="50" width="60" height="40">
-                  <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0;padding:0;">
-                    <div class="triangle-buttons triangle-inner-text" style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-                      Victory
-			<br>
-                      Finder
-                    </div>
-                  </body>
-                </foreignObject>
-            </svg>
-        </div>
-
-        <hr>
-        <hr>
-        <hr>
-
-        <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
-            <span style="font-style:italic;">Victory Paths &copy; 2025 - All progress saved privately</span>
-        </div>
-          <hr>
-          <hr>
-      </td>
-    </tr>
-  </tbody>
+      </td>
+    </tr>
+  </tbody>
 </table>
+
 </body>
 </html>
