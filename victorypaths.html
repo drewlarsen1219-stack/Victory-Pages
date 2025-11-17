@@ -1,3 +1,7 @@
+Move the triangle to the top right corner (same positioning as Victory Pages) or underneath the navigation links. On the right hand side have a welcome message explaining what the site does. Make the New and Existing user buttons large and in the middle. Along with something else for aesthetics if needed.
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,17 +71,17 @@ hr {
         }
         .site-links a:hover {
             font-weight: bold;
-            color: purple;
+            color: purple; }
 
 /* SVG sizing so it scales responsively but stays centered in the cell */
 .triangle-wrapper {
     display: block;
-    padding: 12px 0;
+    padding: 0px 0;
 }
 .triangle-svg {
-    width: 50px;
+    width: 300px;
     max-width: 90%;
-    height: 100px;
+    height: 400px;
     display: block;
     margin: 0 auto;
 }
@@ -97,7 +101,7 @@ hr {
 }
 
 /* keep small responsive tweak */
-@media (max-width: 200px) {
+@media (max-width: 100px) {
     .triangle-svg { width: 60%; }
     .triangle-buttons a { width: 60px; display: inline-block; text-align:center; }
 }
@@ -120,8 +124,13 @@ hr {
                         <div class="header-container">
                             <div class="site-links" aria-label="About and Library links">
                                 <a href="about.html">About</a>
-                                <a href="library.html">Library</a>
+                                <a href="index.html">Forum</a>
                             </div>
+
+<br>
+				<button>New User</button>
+<br>
+				<p><button>Existing User</button></p>
 
 
 
@@ -166,9 +175,7 @@ hr {
                 </foreignObject>
             </svg>
         </div>
-<br>
-<button>New User</button> <button> Existing User</button>
-        <br><br>
+
         <hr>
         <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
             <span style="font-style:italic;">Victory Paths &copy; 2025 - All progress saved privately</span>
