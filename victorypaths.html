@@ -1,7 +1,3 @@
-Move the triangle to the top right corner (same positioning as Victory Pages) or underneath the navigation links. On the right hand side have a welcome message explaining what the site does. Make the New and Existing user buttons large and in the middle. Along with something else for aesthetics if needed.
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +16,27 @@ body {
     padding: 0;
     min-height: 100vh;
 }
+
+	 .triangle-wrapper {
+            width: 280px;
+            height: 150px;
+            pointer-events: none;
+            padding-right: 12px; 
+        }
+        .triangle-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: visible;
+        }
+
+        
+        .edge-text {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 8px; /* match page base */
+            fill: #000;
+            font-weight: normal;
+        }
 
 /* keep table borders and whitespace styling like the original file,
    but force cell contents to be centered so the triangle and labels sit in the middle */
@@ -74,37 +91,7 @@ hr {
             color: purple; }
 
 /* SVG sizing so it scales responsively but stays centered in the cell */
-.triangle-wrapper {
-    display: block;
-    padding: 0px 0;
-}
-.triangle-svg {
-    width: 300px;
-    max-width: 90%;
-    height: 400px;
-    display: block;
-    margin: 0 auto;
-}
 
-/* style for the in-SVG html controls when supported */
-.triangle-buttons a {
-    display: inline-block;
-    padding: 6px 10px;
-    margin: 4px 0;
-    background: #eee;
-    border: 1px solid #333;
-    border-radius: 4px;
-    color: #000;
-    text-decoration: none;
-    font-family: inherit;
-    font-size: 0.95em;
-}
-
-/* keep small responsive tweak */
-@media (max-width: 100px) {
-    .triangle-svg { width: 60%; }
-    .triangle-buttons a { width: 60px; display: inline-block; text-align:center; }
-}
 </style>
 </head>
 
