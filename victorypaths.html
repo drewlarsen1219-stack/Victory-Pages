@@ -115,6 +115,30 @@ hr {
 /* Lower Welcome + buttons */
 .lower-welcome {
     margin-top: 60px;
+
+}
+.classic-3d-button {
+    /* BASE STYLES */
+    background-color: #C0C0C0; /* Standard Windows 95 Grey */
+    color: black; 
+    padding: 8px 20px;
+    font-family: 'Tahoma', 'Arial', sans-serif; /* Use a classic system font */
+    font-size: 13px;
+    
+    /* SHAPE & BORDER (The 3D Effect) */
+    border: none;
+    border-style: outset; /* Makes the borders look raised */
+    border-width: 3px;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF; /* Top/Left Light, Bottom/Right Dark */
+    border-radius: 0; /* Sharp corners */
+
+    cursor: pointer;
+}
+
+.classic-3d-button:active {
+    /* REVERSE THE BORDERS when pressed IN */
+    border-style: inset; 
+    border-color: #808080 #FFFFFF #FFFFFF #808080; /* Flips the highlights */
 }
 
 </style>
@@ -171,13 +195,11 @@ hr {
                 <br>
                
 <p>
-    <button onclick="window.location.href='victoryfinder.html'">
+    <button class="classic-3d-button" onclick="window.location.href='victoryfinder.html'">
         New User
     </button>
-</p>   
-                
-<p>
-    <button onclick="window.location.href='victoryways.html'">
+
+    <button class="classic-3d-button" onclick="window.location.href='victoryways.html'">
         Existing User
     </button>
 </p>
