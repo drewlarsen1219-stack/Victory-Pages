@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Victory Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Forum for Christians. This website includes a Victory game which is a gamification of real life. ">
+    
+    <style>
+        /* --- Page baseline --- */
+        body {
+            color: #000;
+            background: #999;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px; /* uniform text size across page */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .page-wrapper-table {
+            text-align: left;
+            width: 750px;
+            margin: 20px auto;
+            background: #CCCCCC;
+        }
+        hr {
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            color: gray;
+            border-style: inset;
+            border-width: 1px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* --- Header and site links --- */
+        .header-nav-row {
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; /* Space out logo/title and triangle */
+            width: 100%;
+            margin-bottom: 11px;
+            margin-top: 4px;
+            position: relative;
+            padding-bottom: 6px;
+            min-height: 160px; /* Adjusted to keep triangle from overflowing */
+        }
+        .header-container {
+            display: flex;
+            flex-direction: column; /* site-links on top, then header */
+            align-items: flex-start;
+            gap: 6px;
+            width: auto;
+            padding: 10px;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 6px; /* Space below the nav links */
+        }
+        .header-image {
+            width: 150px;
+            height: auto;
+            background: none !important;
+        }
+        .site-title {
+            margin: 0;
+            font-size: 13px; 
+            line-height: 1;
+            font-weight: bold;
+        }
+        .site-links {
+            display: flex;
+            gap: 12px;
+            padding-left: 4px;
+        }
+        .site-links a {
+            text-decoration: none;
+            color: blue;
+            font-size: 13px;
+            padding: 2px 4px;
+        }
+        .site-links a:hover {
+            font-weight: bold;
+            color: purple;
+        }
+        .site-links a:hover .hover {
+            font-weight: bold;
+	        color: purple;
+        }
+
+        /* --- Triangle container : aligned to top-right and sized to not extend below hr --- */
+        .triangle-wrapper {
+            width: 280px;
+            height: 150px;
+            pointer-events: none;
+            padding-right: 12px; 
+        }
+        .triangle-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: visible;
+        }
+
+        
+        .edge-text {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 8px; /* match page base */
+            fill: #000;
+            font-weight: normal;
+        }
+
+    
+        .victory-paths-link {
+            font-size: 12px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            line-height: 1.2;
+            color: blue; 
+            text-align: center;
+            pointer-events: auto; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .victory-paths-link:hover {
+            text-decoration: none;
+            font-weight: bold;
+	        color: purple;
+        }
+
+
+        /* --- Create Post button (unchanged appearance) --- */
+        button, .btn-class3 {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            font-size: 1em;
+            padding: 4px 5px;
+            margin: 16px 0;
+            border: 2px solid #333;
+            background: #c0c0c0;
+            color: #111;
+            border-radius: 0;
+            box-shadow: 1px 1px 0 #fff inset;
+            outline: none;
+            cursor: pointer;
+        }
+        button:hover, .btn-class3:hover {
+            background: #e4e4e4;
+            border-color: #555;
+            color: #00f;
+        }
+
+        /* --- Responsive: stack triangle below header on narrow screens --- */
+        @media (max-width: 720px) {
+            .header-nav-row {
+                flex-direction: column; /* Stack header and triangle */
+                align-items: center;
+            }
+            .triangle-wrapper {
+                position: static;
+                transform: none;
+                width: 320px;
+                height: 220px;
+                margin: 10px auto 0 auto;
+                padding-right: 0;
+            }
+            .victory-paths-link { margin-top: -20px; display: block; }
+        }
+
+        /* --- POST SEPARATOR STYLES --- */
+        .post {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px
+            cursor: pointer;
+        }
+        .post:last-child {
+            border-bottom: none; /* Do not show line on the last post */
+        }
+
+       
+        .post:hover .post-title-row a {
+            color: purple;
+        }
+
+        .post:hover .post-title-row em {
+            font-weight: normal !important;
+            color: inherit !important;
+        }
+        
+        /* --- LINK HOVER EFFECT STYLES --- */
+        .post-title-row a {
+            color: #1D4ED8; 
+            font-weight: normal; 
+            text-decoration: none;
+            display: inline-block;	
+            position: relative;
+            padding-left: 2px; /* Initial spacing for arrow to move into */
+            transition: all 0.1s ease; 
+        }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <table class="page-wrapper-table" cellspacing="2" cellpadding="2" border="1">
+        <tbody>
+            <tr>
+                <td style="vertical-align:top; padding: 10px; position:relative;">
+                    <div class="header-nav-row">
+                        <div class="header-container">
+                            <div class="site-links" aria-label="About and Library links">
+                                <a href="about.html">About</a>
+                                <a href="library.html">Library</a>
+                            </div>
+                            <div class="header-top">
+                                <img src="nbg - Imgur.png" alt="Agnus Dei icon" class="header-image"
+                                    style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
+                                <h4 class="site-title">Victory Pages</h4>
+                            </div>
+                        </div>
+
+                        <div class="triangle-wrapper" aria-hidden="false">
+                            <svg class="triangle-svg" viewBox="0 0 120 105" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
+                                <polygon points="60,10 10,95 110,95" fill="none" stroke="#000" stroke-width="1"/>
+
+                                <text class="edge-text" text-anchor="middle"
+                                    transform="translate(35,52.5) rotate(-59.5) translate(0,-10)">
+                                    Finder →
+                                </text>
+                                <text class="edge-text" text-anchor="middle"
+                                    transform="translate(85,52.5) rotate(59.5) translate(0,-10)">
+                                    Tracker →
+                                </text>
+                                <text class="edge-text" text-anchor="middle"
+                                    transform="translate(60,109)">
+                                    ← Ways
+                                </text>
+                                
+                                <foreignObject x="30" y="49" width="60" height="45">
+                                    <a href="victorypaths.html" class="victory-paths-link" title="Open Victory Paths">Victory<br>Paths</a>
+                                </foreignObject>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <hr>
+                    <hr>
+
+                    <div id="post-action-row">
+                        <button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='Submission_tool.html'">Create Post</button>
+                    </div>
+                    <br>
+                    <div id="posts"></div>
+<br>
+
+                    <div class="tag-dropdown-container">
+                        
+                        <select id="tagDropdown">
+                            <option value="all">All</option>
+                            <option value="investing">Investing</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="movies">Movies</option>
+                            <option value="faith">Faith</option>
+                            <option value="life">Life</option>
+                            <option value="opinion">Opinion</option>
+                            <option value="programing">Programming</option>
+                            <option value="music">Music</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="pagination-controls">
+                        <button id="prevPage" class="btn-class3">&lt; Previous</button>
+                        <button id="nextPage" class="btn-class3">Next &gt;</button>
+                    </div>
+
+                    <footer>
+                        <hr>
+                        <p>© 2025 Victory Pages. All rights reserved.</p>
+                        <p><a href="privacypolicy.html">Privacy Policy</a></p>
+                        <p><a href="TAC.html">Terms & Conditions</a></p>
+                    </footer>
+
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+
+    <script>
+        // Note: Firestore setup variables are available globally in the Canvas environment
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+
+        // Since this uses a mock array (POSTS) and not Firestore, we don't need the Firebase imports/setup.
+        // If you decide to connect this to a database later, you will need to add those imports and initialization logic.
+        
+        const POSTS = [
+            { title: "Investing and documenting what worked", url: "Investing.html", tag: "investing", username: "Drew", date: "2025-11-11" },
+            { title: 'Game "Yu-Gi-Oh"', url: "Post1.html", tag: "gaming", username: "Drew", date: "2025-09-26" },
+            { title: "Movie ratings & reviews", url: "mr.html", tag: "movies", username: "Drew", date: "2025-10-21" },
+            { title: "Powerful acts of forgiveness", url: "paof.html", tag: "faith", username: "Drew", date: "2025-09-26" },
+            { title: 'A good band called "Sweet Trip"', url: "music.html", tag: "music", username: "Drew", date: "2025-09-26" },
+            { title: "My life", url: "ml.html", tag: "life", username: "Username example", date: "2025-09-26" },
+            { title: "My cripes with Oldlutheran.com", url: "mcwol.html", tag: "opinion", username: "Drew", date: "2025-09-26" },
+            { title: "Guy from my home town", url: "GFMH.html", tag: "life", username: "Drew", date: "2025-09-27" },
+            { title: "ChatGPT is wasting water (allegedly)", url: "cww.html", tag: "opinion", username: "Drew", date: "2025-09-28" },
+            { title: "How to build a text based website like mine", url: "htbw.html", tag: "programing", username: "Drew", date: "2025-10-01" }
+        ];
+        const POSTS_PER_PAGE = 15; 
+        let currentPage = 1;
+        let filteredPosts = POSTS.slice();
+        let totalPages = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
+
+        function renderPosts() {
+            const postsElem = document.getElementById("posts");
+            postsElem.innerHTML = "";
+            const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+            const endIndex = Math.min(startIndex + POSTS_PER_PAGE, filteredPosts.length);
+            for (let i = startIndex; i < endIndex; i++) {
+                const post = filteredPosts[i];
+                const postDiv = document.createElement("div");
+                postDiv.className = "post";
+                const row = document.createElement("div");
+                row.className = "post-title-row";
+                row.innerHTML =
+                    `<a href="${post.url}">${post.title}</a> <em> ${post.username}_${formatDate(post.date)}</em>`;
+                postDiv.appendChild(row);
+                postsElem.appendChild(postDiv);
+            }
+        }
+        function formatDate(dateStr) {
+            const d = new Date(dateStr);
+            if (!isNaN(d)) {
+                return `${(d.getMonth()+1).toString().padStart(2, '0')}/${d.getDate().toString().padStart(2, '0')}/${d.getFullYear()}`;
+            }
+            return dateStr;
+        }
+        function calculateTotalPages() {
+            totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
+            updatePaginationControls();
+        }
+        function updatePaginationControls() {
+            const prevBtn = document.getElementById('prevPage');
+            const nextBtn = document.getElementById('nextPage');
+            
+            const disableNext = currentPage === totalPages || filteredPosts.length === 0;
+            const disablePrev = currentPage === 1;
+
+            prevBtn.disabled = disablePrev;
+            nextBtn.disabled = disableNext;
+            
+            prevBtn.classList.toggle('disabled', disablePrev);
+            nextBtn.classList.toggle('disabled', disableNext);
+
+            const controls = document.querySelector('.pagination-controls');
+            if (controls) {
+                controls.style.display = totalPages > 1 ? 'flex' : 'none';
+            }
+        }
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                renderPosts();
+                updatePaginationControls();
+                window.scrollTo(0, document.body.scrollHeight);
+            }
+        }
+        function filterPostsByTag(tag) {
+            if (tag === "all") {
+                filteredPosts = POSTS.slice();
+            } else {
+                filteredPosts = POSTS.filter(post => post.tag === tag);
+            }
+            currentPage = 1;
+            calculateTotalPages();
+            renderPosts();
+        }
+        document.getElementById("tagDropdown").addEventListener("change", function() {
+            filterPostsByTag(this.value);
+        });
+        document.getElementById("prevPage").addEventListener("click", () => changePage(-1));
+        document.getElementById("nextPage").addEventListener("click", () => changePage(1));
+        document.addEventListener("DOMContentLoaded", () => {
+            filterPostsByTag("all");
+        });
+    </script>
+</body>
+</html>

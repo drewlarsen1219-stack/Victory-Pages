@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Victory Paths</title>
+<style>
+
+body {
+    color: #000000;
+    background-color: #999999;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.triangle-wrapper {
+    width: 280px;
+    height: 150px;
+    pointer-events: none;
+    padding-right: 12px;
+}
+
+.triangle-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+.edge-text {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 8px;
+    fill: #000;
+    font-weight: normal;
+}
+
+/* Table formatting */
+.center-table {
+    text-align: left;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #CCCCCC;
+    border-collapse: separate;
+}
+
+.center-table td {
+    text-align: center !important;
+    vertical-align: top;
+}
+
+hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: gray;
+    unicode-bidi: isolate;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.retro-indented-hr {
+    width: 95%;
+    margin: 10px auto 10px;
+    height: 0px;
+    border: none;
+    background: none;
+}
+
+/* Navigation links */
+.site-links {
+    display: flex;
+    gap: 12px;
+    padding-left: 4px;
+}
+
+.site-links a {
+    text-decoration: none;
+    color: blue;
+    font-size: 13px;
+    padding: 2px 4px;
+}
+
+.site-links a:hover {
+    font-weight: bold;
+    color: purple;
+}
+
+/* NEW: Positioning adjustments */
+.header-nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-container {
+    width: 100%;
+}
+
+.table-relative {
+    position: relative;
+}
+.top-right-triangle {
+    position: absolute;
+    top: 30px;
+    right: -70px;   /* changed from 22px → 4px */
+}
+
+/* Lower Welcome + buttons */
+.lower-welcome {
+    margin-top: 60px;
+
+}
+.classic-3d-button {
+    /* BASE STYLES */
+    background-color: #C0C0C0; /* Standard Windows 95 Grey */
+    color: black; 
+    padding: 8px 20px;
+    font-family: 'Tahoma', 'Arial', sans-serif; /* Use a classic system font */
+    font-size: 13px;
+    
+    /* SHAPE & BORDER (The 3D Effect) */
+    border: none;
+    border-style: outset; /* Makes the borders look raised */
+    border-width: 3px;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF; /* Top/Left Light, Bottom/Right Dark */
+    border-radius: 0; /* Sharp corners */
+
+    cursor: pointer;
+}
+
+.classic-3d-button:active {
+    /* REVERSE THE BORDERS when pressed IN */
+    border-style: inset; 
+    border-color: #808080 #FFFFFF #FFFFFF #808080; /* Flips the highlights */
+}
+
+</style>
+</head>
+
+<body>
+
+<table class="center-table" cellspacing="2" cellpadding="2" border="1" align="center">
+  <tbody>
+    <tr>
+      <td style="vertical-align:top;" class="table-relative">
+
+        <!-- triple thick rules -->
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+
+        <!-- Triangle moved to top-right -->
+        <div class="top-right-triangle">
+            <div class="triangle-wrapper" aria-hidden="false">
+                <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet"
+                     role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
+
+                    <polygon points="60,15 15,95 105,95" fill="none" stroke="#000" stroke-width="1"/>
+
+                    <text font-size="6" fill="#000" text-anchor="middle"
+                          transform="translate(30,61) rotate(-60)">Finder ></text>
+
+                    <text font-size="6" fill="#000" text-anchor="middle"
+                          transform="translate(90,61) rotate(61)">Tracker ></text>
+
+                    <text font-size="6" fill="#000" text-anchor="middle" x="60" y="102">< Ways</text>
+
+                    <foreignObject x="30" y="55" width="60" height="40">
+                      <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0;padding:0;">
+                        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                          Victory<br>Paths
+                        </div>
+                      </body>
+                    </foreignObject>
+
+                </svg>
+            </div>
+        </div>
+
+        <div class="header-nav-row">
+            <div class="header-container">
+                <div class="site-links" aria-label="About and Library links">
+                    <a href="about.html">About</a>
+                    <a href="index.html">Forum</a>
+                </div>
+
+                <h4 class="lower-welcome">Welcome!</h4>
+                <br>
+               
+<p>
+    <button class="classic-3d-button" onclick="window.location.href='victoryfinder.html'">
+        New User
+    </button>
+
+    <button class="classic-3d-button" onclick="window.location.href='victoryways.html'">
+        Existing User
+    </button>
+</p>
+            </div>
+        </div>
+
+        <hr>
+        <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
+            <span style="font-style:italic;">Victory Paths &copy; 2025 - All progress saved privately</span>
+        </div>
+        <hr>
+        <hr>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
