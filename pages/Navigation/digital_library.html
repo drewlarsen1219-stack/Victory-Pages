@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Digital Library</title>
+    
+    <style>
+        .video-container {
+            display: none;
+            margin-bottom: 20px;
+        }
+        .video-placeholder {
+            cursor: pointer;
+            color: blue;
+            text-decoration: none;
+            display: inline;
+            margin-left: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="index.html">Home</a>
+        </ul>
+    </nav>
+    
+    <br>
+    <h2>Digital library</h2>
+    <br>
+<p><em>If the videos do not load refresh the page and try again</em></p>
+<br>
+<p><strong>Christianity</strong><p>
+<p>The Holy Bible <em>(standard english version)</em> <a href="https://www.esv.org/">🕮</a></p>
+
+    <p><strong>Lutheranism</strong></p>
+
+    <p>
+        What is the Book of Concord?
+        <span id="video1-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/GGVVegWs-vI?autoplay=1">
+             ▶︎ 
+        </span>
+    </p>
+
+    <div id="video1-container" class="video-container">
+        <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <p>The Book of Concord <a href="https://bookofconcord.org/">🕮</a></p>
+
+    <p>
+        Tour of the Cradle of Lutheran Reformation <em>(Part 1)</em>
+        <span id="video2-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/_sW_IpfP6jY?autoplay=1">
+             ▶︎ 
+        </span>
+    </p>
+    <div id="video2-container" class="video-container">
+        <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <p>
+        Tour of the Cradle of Lutheran Reformation <em>(Part 2)</em>
+        <span id="video3-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/D86nmq-2jxc?autoplay=1">
+             ▶︎ 
+        </span>
+    </p>
+    <div id="video3-container" class="video-container">
+        <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <hr>
+    
+<script>
+    // Define CSS selectors
+    const PLACEHOLDER_SELECTOR = '.video-placeholder';
+    const CONTAINER_SELECTOR = '.video-container';
+
+    /**
+     * Finds a video container and removes its iframe, effectively stopping playback 
+     * and forcing a resource release.
+     * @param {string} videoId - The ID stem (e.g., 'video1')
+     */
+    function destroyIframe(videoId) {
+        const container = document.getElementById(`${videoId}-container`);
+        if (container) {
+            const iframe = container.querySelector('iframe');
+            if (iframe) {
+                // Completely remove the iframe from the DOM
+                container.removeChild(iframe);
+            }
+        }
+    }
+
+    /**
+     * Creates a new iframe element and inserts it into the specified container.
+     * @param {string} videoId - The ID stem (e.g., 'video1')
+     * @param {string} videoUrl - The full embed URL with parameters
+     */
+    function createIframe(videoId, videoUrl) {
+        const container = document.getElementById(`${videoId}-container`);
+        if (container) {
+            // 1. Create the new iframe element
+            const newIframe = document.createElement('iframe');
+            
+            // 2. Set all necessary attributes
+            newIframe.setAttribute('width', '560');
+            newIframe.setAttribute('height', '315');
+            newIframe.setAttribute('frameborder', '0');
+            newIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            newIframe.setAttribute('allowfullscreen', '');
+            newIframe.src = videoUrl; // Set the source *after* all other attributes
+
+            // 3. Insert the new iframe into the container
+            container.appendChild(newIframe);
+        }
+    }
+
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        const videoPlaceholders = document.querySelectorAll(PLACEHOLDER_SELECTOR);
+
+        // Map to store the original iframe structure data for re-creation
+        const videoMap = {};
+
+        // Initialization: Capture all video IDs and destroy initial empty iframes
+        videoPlaceholders.forEach(placeholder => {
+            const videoId = placeholder.id.replace('-placeholder', '');
+            videoMap[videoId] = true; // Simple map to track IDs
+            
+            // Immediately destroy any placeholder iframes to start clean
+            destroyIframe(videoId); 
+        });
+
+
+        // Loop through each placeholder link to attach the click listener
+        videoPlaceholders.forEach(placeholder => {
+            placeholder.addEventListener('click', function(event) {
+                event.preventDefault();
+
+                const clickedVideoId = this.id.replace('-placeholder', '');
+                let videoUrl = this.getAttribute('data-video-url');
+
+                // 1. **AGGRESSIVE RESET:** Loop through ALL known video IDs
+                Object.keys(videoMap).forEach(videoId => {
+                    const container = document.getElementById(`${videoId}-container`);
+                    const placeholderEl = document.getElementById(`${videoId}-placeholder`);
+
+                    // Destroy the iframe if it exists
+                    destroyIframe(videoId);
+                    
+                    // Show the placeholder link and hide the container
+                    if (placeholderEl) {
+                        placeholderEl.style.display = 'inline';
+                    }
+                    if (container) {
+                        container.style.display = 'none';
+                    }
+                });
+
+                // 2. **LOAD NEW VIDEO:** Load the clicked video
+                
+                // Ensure protocol is HTTPS
+                if (!videoUrl.startsWith('https://')) {
+                    videoUrl = 'https://' + videoUrl.replace('//', '');
+                }
+
+                // Hide the text link for the one we are about to play
+                this.style.display = 'none'; 
+
+                // Create and load the new iframe for the selected video
+                createIframe(clickedVideoId, videoUrl);
+
+                // Make the container visible
+                document.getElementById(`${clickedVideoId}-container`).style.display = 'block';
+            });
+        });
+    });
+</script>
+</body>
+</html>

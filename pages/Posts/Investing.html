@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investing</title>
+
+    <style>
+        /* --- CORE LAYOUT STYLES (From Victory Pages) --- */
+        body {
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 2em auto 2em 0;
+            padding: 0 1em;
+            background-color: #ffff;
+            color: #333;
+        }
+
+        /* Added CSS to specifically prevent scrolling on the content area */
+        #posts {
+            /* Set a height that fits most viewports (80% of viewport height) */
+            max-height: 80vh; 
+            /* Hide any content that overflows this max-height */
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+        
+        p {
+            /* Tighten text block spacing */
+            margin: 0.25em 0;
+            /* Ensure text is left-aligned */
+            text-align: left;
+        }
+
+        hr {
+            margin: 2em 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-image {
+            width: 150px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            padding-left: 20px;
+        }
+
+        .post {
+            /* Standard post margin/padding */
+            margin-bottom: 1.5em;
+            padding-left: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+        .post a.full-review-link {
+            font-size: 1em;
+            font-weight: normal;
+            cursor: pointer;
+            margin: 0;
+            display: inline;
+            transition: color 0.15s;
+
+            border: none;
+            padding: 0;
+            background: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            text-decoration: none;
+            border-bottom: 1px dotted #0077cc;
+            color: #0077cc !important;
+        }
+
+        .post a.full-review-link:hover {
+            border-bottom: 1px solid blue;
+            color: blue !important;
+        }
+
+
+        /* --- TEXT-ONLY LINK STYLES (Navigation) --- */
+
+        nav ul a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+            border: none;
+            background: none;
+            appearance: none;
+            padding: 0;
+            font-weight: normal;
+            transition: color 0.15s;
+        }
+
+        nav ul a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+
+        /* Pagination Controls (Text Only) */
+        .pagination-controls {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+
+        .pagination-controls a {
+            margin-right: 10px;
+            padding: 0;
+            border: none;
+            background: none;
+            appearance: none;
+            font-weight: 700;
+            transition: color 0.15s;
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .pagination-controls a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .pagination-controls a.disabled {
+            color: #aaa;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        /* --- GENERAL & UTILITY STYLES --- */
+        a {
+              color: #0077cc;
+              text-decoration: none;
+        }
+        a:hover {
+            color: blue;
+            text-decoration: none;
+        }
+
+        /* This is the class the JavaScript uses to hide posts not on the current page */
+        .post-hidden-by-pagination {
+            display: none !important;
+        }
+
+        h2 {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .last-updated-container {
+              padding-left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <a href="index.html">Home</a>
+        </ul>
+    </nav>
+
+    <div class="header-container">
+        <img
+            /* RESTORED ORIGINAL IMAGE URL */
+            src="https://i.imgur.com/ZexN2vf.png"
+            alt="Agnus Dei icon"
+            class="header-image"
+            /* MODIFIED FALLBACK: set fill to body background color #f9f9f9 */
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23f9f9f9%27 stroke=%27%23333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27%23333%27%3EVictory%3C/text%3E%3C/svg%3E';"
+        />
+        <h1>Investing</h1>
+    </div>
+
+    <div id="posts">
+        <div class="post">
+            <h3><strong>My efforts at investing and documenting what workes for me</strong></h3>
+<br>
+<p>I will be documenting what I am doing in effort to invest my money so that way I can keep track of what I did and document what worked for me.</p>            
+<br>
+<p>Here are the types of investments that I know about: S&P 500 <em><strong>low risk</strong></em>, auto investing by rounding up apps like "Acorns" <em><strong>low risk</strong></em>, Roth IRA and 401k retirnment plans by using companies like Vangaurd <em><strong>low risk</strong></em>, gambeling esk <em><strong>high risk</strong></em> investment apps like "Robinhood", investing in cryptocurrency <em><strong>risk depends</strong></em>, and investing in things like real estate (air b&b, property ownership by becoming a landlord).</p>
+            <br>
+<p><em><strong>Low risk</strong></em>: conservative and the risk is low in losing money</p>
+<p><em><strong>High risk</strong></em>: Higher in risk and I often view it as very similiar to gambling</p>
+<br>
+            <p>My plan is to invest in conservative approached using low risk because I am not a gambler and I can't imaging just being okay with freely giving other people the money that I earned by working at an entry level job.</p>
+        </div>
+
+        <div class="post">
+            <h3>My Research</h3>
+            <br>
+            <p><strong><a href="https://en.wikipedia.org/wiki/S%26P_500">S&P 500</a></strong>: also known as "Standard & Poor's", is a financial services company founded in 1860. It evaluates the performance of U.S. companies by tracking credit history to assess how reliable the companies are in repaying loans. The company uses a grading system. If you are interested in looking at their system they use the wiki page has all that info. They do other things too like publish research on stocks, bonds, and commodities. And the "500" part just means the top preforming 500 companies in the U.S.<p>
+            <br>
+            <p>Going off of this description it makes sense why most people say that it is a safe and good way to invest. It's essentially means you can trust this company to do the work for you and hold on to your money because they keep track of which companies are preforming the best financially and are trust worthy. They will also use your money and divide it evenly amongst these companies lending them your money which in turn will muiltiply your money and give you a more money back in return for allowing them to borrow some money.</p>
+            <br>
+            <p> While at my work a coworker of mine went off about buying another "mystery box" from Amazon again and spending $500 on it. These boxes are items customers have returned to Amazon for xyz reason and Amazon consolidates all of these items together in a box and sells them to people. To me it seems too close to gambeling and there is no way I would spend $500 of a box of stuff that I don't even know what is in it. On top of that my co worker has to travel 12+ hours to Michigan to pick it up.</p>
+            <br>
+            <p> This all seems pretty retarded to me. This time around after hearing more about it I mentioned that my coworkers would be better off investing in S&P 500. My coworker replied with "what's that?" I responded with a brief description. Then my coworker said that they were forced to invest money their whole life by their parent's and that she wont even be able to touch that money until she is 65. She probably thought I was talking about a 401k retirnment plan in which you do have to be 59.5 years old to withdraw and pay a fee and taxes.</p>
+            <br>
+            <p>The S&P 500 stocks can be withdrawn at any time for any reason, although you will have to pay captial taxes on that money.</p>
+            <br>
+            <p><strong>What the experts say</strong></p>
+            <br>
+            <p>The one expert that stuck in my mind is <a href="https://www.youtube.com/channel/UCV6KDgJskWaEckne5aPA0aQ" class="full-review-link">Graham Stephan on YouTube.</a> There are a lot of people on YouTube claiming to be experts in all kinds of fields and same goes for the internet and the world. It's annoying that I have to sort through who to trust is telling the truth and actually going to help. This is one of the few out there who I have heard talk about investing and financing that I made sure to remember because he doesn't over complicate things and seems very transparent about how he made his money. Also he genuinly seems to care that other people make money too. But this is all a matter of opinion but it's going to be my starting point on picking an "expert" to research.</p>
+            <br>
+            <p>Roth IRA/401k retirnment plan: the benefits to this are compound interest, investing while in the lower tax bracket means.... good because....</p>
+        </div>
+
+        <div class="post">
+            <p><strong>What I have done so far</strong></p>
+            <br>
+            <p>I created an account with Everbrite and started an application for a HYSA for the $2,000 sitting in my savings account. I need to talk to my wife before making the transfer but with a %4.5 interest rate I will be making around $50 for the first year with $2,000. This is better than not gaining any interest where it's at now. When I get that saving account up to $12,000 which is my ideal emergency fund, I will be making around $550/year in interest. This is assuming the interest rate stays the same.
+            <br>
+            <p>...to be able to invest in a retirnment plan and invest in the S&P 500 all in one spot. Also I downloaded the "Wallet" app on my tablet to be able to consolidate all my money information from all my bank accounts and investing.</p>
+            <br>
+            <p>Before investing it needs to be made known and handled any interest I or you are paying right now and to see if we can get out of that. I am paying interest on my truck right now, so what that is doing is taking money away from me over time when it doesn't need to if I can find a way to pay it off early.</p>
+            <br>
+            <p><strong>Steps I am taking to get started with investing</strong></p>
+            <br>
+<p>What I have learned is that any interest that I am paying over 6% would nullify any money that I invest. This means that since I do have a truck loan right now with a APR of 8.69%, I am better off using my money paying off that truck payment early than investing any money. Here is the main reason why: Total interest paid so far: $2,223.22 since 2022 with a remaining principal balance of approximately $7,999.62. It is better for me to stop paying any more interest before trying to invest because I am gauranteed money by taking care of that loan. Investing is never a gaurantee.</p>
+<p>My credit score has also improved since 2022 when I first took out my loan so I am able to refinance for a lower interest rate which apparently can save me thousands of dollars and is more effective than even adding more to my monthly payments and increasing the frequency of my payments to bi-weekly instead of monthly.
+<p>
+<p>I increased my payment $100/month and switched to bi-weekly payments to increase the frequency of my payments. I also sent a message to Navy Federal to see if I am able to refinance with them since my credit score has improved.
+<p>
+<p> I started an application for opening up a HYSA and will make an update soon about this. </p>
+<br>
+<p>It's odd typing out some of this information about my loan because I am learning the jargon that always has frustrated me in the past and preventing me from being motivated to even try understanding and working on this stuff to the point where I am saving and making money</p>
+<br> 
+<p>It makes it easier for me to sort through this financing information knowing that I am documenting it all step by step becuase I am learning it step by step and taking it slow.</p>
+<br>
+<p>It's still recommended to have an emergency savings in a HYSA ~$1000-$2000 just in case I need to make a car repair or need to buy an emergency plane ticket etc. And this is done at the same time as working on that truck loan.</p>
+<br>
+            <p><strong> Step 1</strong>: Create a 3-6 months of expenses in a savings account for emergency funds. For me based off of my spending habbits ~$2,000/month, which makes my emergency budget ideally $12,000. Keep the emergency fund in a <a href="https://www.bankrate.com/banking/what-is-a-high-yield-savings-account/">high yield savings account</a> (HYSA) which offers a much higher interest rate than traditional savings accounts. I got the okay from my spouse to move our savings from the USAA to a HYSA.</p>
+            <p>Step 1.5: Find out what the APR rate is that I am paying on my truck loan. Because if it is higher than 6% that needs to be addressed first. I don't think it is higher than 6%, from what I remember it is 4.5 or something close to that. My total truck loan amount was $20,637 and I have paid off 10,574 so far which is about half of what the loan was taken out for, and I have been making payments of $371.49/month since 6/11/22. I have paid about half of my truck already in 3 years which is kinda good news.
+
+<p>Current Year Interest Paid* $875.92 
+Previous Year Interest Paid $1,347.30
+Interest Rate 8.690 %</p>
+            <p><strong>Step 2</strong>: Open Vanguard account and start funding Roth IRA retirnment.</p>
+        </div>
+
+        <div class="post">
+            <br>
+            <p><strong>Investment Apps</strong></p>
+            <br>
+            <p>Automated deposit's/round up/micro-investing apps like the apps <a href="S.html" class="https://en.wikipedia.org/wiki/Acorns_(company)">"Acorns"</a> & <a href="S.html"https://en.wikipedia.org/wiki/Wealthfront">"Wealth front"</a></p>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="last-updated-container">
+        <p><em>Last updated Oct. 14, 2025</em></p>
+    </div>
+
+    <div class="pagination-controls">
+        <a href="#" id="prevPage" onclick="changePage(-1); return false;">&lt; Previous</a>
+        <a href="#" id="nextPage" onclick="changePage(1); return false;">Next &gt;</a>
+    </div>
+
+    <script>
+        // --- Configuration ---
+        // Changed to 1: Now displays ONE logical section (one <div class="post">) per page.
+        const POSTS_PER_PAGE = 1; 
+        let currentPage = 1;
+        let allPosts = document.querySelectorAll('#posts > .post'); 
+        let totalPages = 0;
+
+        // --- Core Pagination Functions ---
+
+        function calculateTotalPages() {
+            // Recalculates total pages based on currently visible/unhidden posts
+            const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
+            totalPages = Math.ceil(visiblePosts.length / POSTS_PER_PAGE);
+            
+            const controls = document.querySelector('.pagination-controls');
+            // Hides controls if there's only one page
+            if (totalPages <= 1) {
+                controls.style.display = 'none';
+            } else {
+                controls.style.display = 'block';
+            }
+        }
+
+        function updatePaginationControls() {
+            const prevLink = document.getElementById('prevPage');
+            const nextLink = document.getElementById('nextPage');
+
+            // Disable 'Previous' link on the first page
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+            } else {
+                prevLink.classList.remove('disabled');
+            }
+            
+            // Disable 'Next' link on the last page
+            if (currentPage >= totalPages) {
+                nextLink.classList.add('disabled');
+            } else {
+                nextLink.classList.remove('disabled');
+            }
+        }
+
+        function displayPage(page) {
+            calculateTotalPages();
+            currentPage = page;
+
+            const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
+            const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+            const endIndex = startIndex + POSTS_PER_PAGE;
+
+            // 1. Show/Hide Posts based on page number
+            allPosts.forEach(post => {
+                post.classList.remove('post-hidden-by-pagination');
+
+                const postIndex = visiblePosts.indexOf(post);
+                
+                if (postIndex < startIndex || postIndex >= endIndex) {
+                    if (!post.classList.contains('hidden')) {
+                        // Apply the hidden class to posts not on the current page
+                        post.classList.add('post-hidden-by-pagination');
+                    }
+                }
+            });
+            
+            // 2. Update Controls
+            updatePaginationControls();
+        }
+        
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                displayPage(newPage);
+            }
+        }
+
+        // Filter function is kept but not used on this page
+        function filterPosts(tag) {
+            allPosts.forEach(post => {
+                if (tag === 'all' || post.classList.contains(tag)) {
+                    post.classList.remove('hidden');
+                } else {
+                    post.classList.add('hidden');
+                    post.classList.add('post-hidden-by-pagination'); // Ensure hidden posts are not paginated
+                }
+            });
+            
+            // Re-calculate all posts after filtering and show the first page
+            allPosts = document.querySelectorAll('#posts > .post'); 
+            displayPage(1);
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            allPosts = document.querySelectorAll('#posts > .post');
+            displayPage(1); // Load the first page on startup
+        });
+    </script>
+    <br>
+    <script>
+    function changeText(el) {
+        el.textContent = el.textContent === "Christ is King" ? "Christ is King" : "Christ is King";
+    }
+    </script>
+
+    <div onclick="changeText(this)" style="cursor: pointer;">Jesus is Lord</div>
+
+</body>
+</html>

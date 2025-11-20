@@ -1,0 +1,257 @@
+<style>
+body {
+    color: #000000;
+    background-color: #999999;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+.square-skill-box {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 120px;
+    height: 120px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.square-skill-box .inner-square {
+    width: 100px;
+    height: 100px;
+    background: #888;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #000; /* THIN BLACK LINE */
+    position: relative;
+    overflow: hidden;
+}
+.square-skill-box .skill-name {
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: black;
+    width: 92px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.square-skill-box .skill-symbol {
+    font-size: 13px;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 34px;
+    display: inline-block;
+    color: #CCCCCC;
+}
+.square-skill-box .skill-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 3px auto;
+}
+.square-skill-box .pixel-icon,
+.square-skill-box .img-icon,
+.square-skill-box .status-icon,
+.square-skill-box .hourglass-icon,
+.square-skill-box .anchor-icon,
+.square-skill-box .heart2-icon,
+.square-skill-box .hand2-icon,
+.square-skill-box .mind-icon,
+.square-skill-box .finance-icon {
+    width: 55px;
+    height: 55px;
+    display: block;
+    object-fit: contain;
+    image-rendering: pixelated;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height: 100%;
+}
+.square-skill-box .skill-score {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 2px;
+    color: black;
+    width: 80px;
+    height: 1.7em;
+}
+#button-grid-centerer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 388px;
+    margin: 0 auto;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    background: #CCCCCC;
+    border: none;
+    box-sizing: border-box;
+}
+@media (max-width: 480px) {
+    #grid-container {
+      width: 100vw;
+      min-width: unset;
+      max-width: 100vw;
+      gap: 5px;
+      padding: 10px 0;
+    }
+    #button-grid-centerer {
+      min-width: unset;
+    }
+    .square-skill-box { width: 100px; height: 100px; }
+    .square-skill-box .inner-square { width: 78px; height: 78px; }
+    .square-skill-box .skill-logo,
+    .square-skill-box .pixel-icon,
+    .square-skill-box .img-icon,
+    .square-skill-box .status-icon,
+    .square-skill-box .hourglass-icon,
+    .square-skill-box .anchor-icon,
+    .square-skill-box .heart2-icon,
+    .square-skill-box .mind-icon,
+    .square-skill-box .finance-icon,
+    .square-skill-box .hand2-icon {
+        width: 34px;
+        height: 34px;
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+button, .btn-class2 {
+    font-family: inherit;
+    font-size: 1em;
+    padding: 7px 18px;
+    margin: 6px 7px 0 0;
+    border: 1.5px solid #888;
+    background-color: #ededed;
+    color: #222;
+    border-radius: 5px;
+    transition: background 0.18s, border 0.15s, box-shadow 0.14s;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px #bbb;
+    vertical-align: middle;
+    display: inline-block;
+}
+button:active, .btn-class2:active {
+    background: #e0e0e0;
+    border-color: #aaa;
+}
+button:hover, .btn-class2:hover {
+    background: #dadada;
+    border-color: #555;
+}
+.btn-class2:last-child {
+    margin-right: 0;
+}
+#top-bar {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 12px 0 8px 0;
+    background: none;
+}
+#help-btn, #home-btn {
+    border-radius: 100%;
+    font-size: 1.1em;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 32px;
+    background: #f5f5f5;
+    border: 1px solid #bbb;
+    color: #222;
+    transition: background 0.2s;
+    font-family: inherit;
+    box-shadow: none;
+    padding: 0;
+}
+#help-btn:hover, #home-btn:hover {
+    background: #e6e6e6;
+}
+hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: gray;
+    unicode-bidi: isolate;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+.retro-indented-hr {
+    width: 95%;
+    margin: 10px auto 10px;
+    height: 0px;
+    border: none;
+    background: none;
+}
+#modal-bg, #saveLinkModal, #loadLinkModal, #help-modal-bg {
+    display: none;
+    position: fixed;
+    z-index: 1002;
+    left: 0; top: 0; width:100vw; height:100vh;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.12);
+}
+#modal, #saveLinkInner, #loadLinkInner, #help-modal {
+    background: #eee;
+    border-radius: 8px;
+    border: 2px solid #444;
+    box-shadow: 0 2px 14px #4444;
+    padding: 20px;
+    min-width: 250px;
+    max-width: 420px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    font-family: inherit;
+}
+#saveLinkField, #loadLinkField {
+    font-family:monospace;
+    font-size:0.97em;
+    width:97%;
+    margin-bottom:12px;
+}
+#saveLinkModal button, #loadLinkModal button, #help-modal button {
+    font-family: inherit;
+    margin: 0px 6px 0px 6px;
+    font-size: 1em;
+    padding: 4px 10px;
+    cursor: pointer;
+    background: #eaeaea;
+    border:1px solid #888;
+    border-radius:4px;
+}
+</style>

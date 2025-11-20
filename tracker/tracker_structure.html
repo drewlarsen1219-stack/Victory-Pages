@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+<title>Victory Tracker</title>
+
+</head>
+<body>
+<table style="text-align:left;width:750px;margin-left:auto;margin-right:auto;background:#CCCCCC;"
+    cellspacing="2" cellpadding="2" border="1" align="center">
+  <tbody>
+    <tr>
+      <td style="vertical-align:top;">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+        <hr style="width: 100%; height: 2px;">
+
+        <div id="top-bar">
+            <button id="home-btn" title="Back to Home">⌂</button>
+            <span style="font-size:1.18em;font-weight:bold;">Victory Tracker</span>
+            <button id="help-btn" title="Help">?</button>
+        </div>
+        <hr class="retro-indented-hr">
+
+        <div id="button-grid-centerer">
+          <div id="grid-container"></div>
+        </div>
+        <!-- Moved buttons below grid -->
+        <div style="text-align:center; margin:20px 0 10px 0;" id="action-buttons-section">
+          <button id="saveLinkBtn" type="button">Save</button>
+          <button id="loadLinkBtn" type="button">Load</button>
+          <button id="createPostBtn" type="button" onclick="window.location.href='Submission_tool.html'">Create Post</button>
+        </div>
+        <hr class="retro-indented-hr">
+
+        <div id="modal-bg">
+          <div id="modal">
+              <form id="modal-form">
+                  <div id="modal-questions"></div>
+                  <div id="modal-nav"></div>
+                  <div id="recommendation-section"></div>
+                  <div id="blog-section">
+                      <label for="blog-text">Blog your experience, struggles, etc.:</label>
+                      <textarea id="blog-text" rows="3" placeholder="Share your journey..."></textarea>
+                  </div>
+                  <div id="proof-files">
+                      <label for="proof-file-input">Upload photos/documents</label>
+                      <input type="file" id="proof-file-input" multiple accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,.txt,.zip">
+                  </div>
+                  <button type="submit" id="modal-submit-btn">Submit & Save</button>
+                  <button type="button" id="close-modal-btn">Close</button>
+              </form>
+              <div id="modal-output"></div>
+              <div id="saved-message"></div>
+          </div>
+        </div>
+
+        <!-- Save Modal -->
+        <div id="saveLinkModal">
+          <div id="saveLinkInner">
+            <p><b>Copy/bookmark this link to save or resume your progress:</b></p>
+            <input id="saveLinkField" type="text" readonly>
+            <br>
+            <button id="copyLinkBtn">Copy</button>
+            <button id="openLinkBtn">Open in new tab</button>
+            <button id="closeSaveModalBtn">Close</button>
+            <p style="font-size:0.92em;color:#444;margin-top:9px;">Keep this link safe—it is your unique save!</p>
+          </div>
+        </div>
+        <!-- Load Modal -->
+        <div id="loadLinkModal">
+          <div id="loadLinkInner">
+            <p><b>Paste a previously saved progress link below to load it:</b></p>
+            <input id="loadLinkField" type="text" placeholder="Paste your link here" autocomplete="off">
+            <br>
+            <button id="submitLoadBtn">Load</button>
+            <button id="closeLoadModalBtn">Cancel</button>
+            <div id="loadLinkStatus" style="color:#e34;font-size:0.97em;padding-top:10px;"></div>
+          </div>
+        </div>
+
+        <div id="help-modal-bg">
+            <div id="help-modal">
+                <h2>How to use Victories</h2>
+                <div id="help-modal-content">
+                    <b>Welcome to Victory tracker!</b><br><br>
+                    <u>What's this site for?</u><br>
+                    Track your progress in 12 life skills, get ranked, receive improvement guides, blog your journey, and save your achievements.<br><br>
+                    <u>How to use:</u>
+                    <ol>
+                        <li><b>Click a skill button</b> in the grid.</li>
+                        <li><b>Fill out the questionnaire</b> - use Next/Previous to navigate multiple pages.</li>
+                        <li><b>Write about your experience</b> in the blog section.</li>
+                        <li><b>Upload </b> (photos, documents) if you wish.</li>
+                        <li><b>Submit & Save</b> will rank you and save your progress.</li>
+                        <li><b>To save or resume later:</b> Click the "Save" button and bookmark/copy your link; use "Load" to restore from a link.</li>
+                    </ol>
+                    <u>Navigation:</u><br>
+                    ⌂ Home button returns to main page<br>
+                    ? Help button opens this guide<br><br>
+                    <u>Saving:</u> Progress can be saved by copying your link.<br>
+                    <u>Privacy:</u> All data stays on your device or your link.
+                </div>
+                <button type="button" id="close-help-btn">Close</button>
+            </div>
+        </div>
+        <hr class="retro-hr">
+        <div style="padding:12px 20px;text-align:center;font-size:0.97em;">
+            <span style="font-style:italic;">Victory Tracker &copy; 2025 - All progress saved privately</span>
+        </div>
+        <hr class="retro-hr">
+        <hr class="retro-hr">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<style>
+        /* --- Page baseline --- */
+        body {
+            color: #000;
+            background: #999;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 13px; /* uniform text size across page */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .page-wrapper-table {
+            text-align: left;
+            width: 750px;
+            margin: 20px auto;
+            background: #CCCCCC;
+        }
+        hr {
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            color: gray;
+            border-style: inset;
+            border-width: 1px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* --- Header and site links --- */
+        .header-nav-row {
+            display: flex;
+            align-items: center; 
+            justify-content: space-between; /* Space out logo/title and triangle */
+            width: 100%;
+            margin-bottom: 11px;
+            margin-top: 4px;
+            position: relative;
+            padding-bottom: 6px;
+            min-height: 160px; /* Adjusted to keep triangle from overflowing */
+        }
+        .header-container {
+            display: flex;
+            flex-direction: column; /* site-links on top, then header */
+            align-items: flex-start;
+            gap: 6px;
+            width: auto;
+            padding: 10px;
+        }
+        .header-top {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 6px; /* Space below the nav links */
+        }
+        .header-image {
+            width: 150px;
+            height: auto;
+            background: none !important;
+        }
+        .site-title {
+            margin: 0;
+            font-size: 13px; 
+            line-height: 1;
+            font-weight: bold;
+        }
+        .site-links {
+            display: flex;
+            gap: 12px;
+            padding-left: 4px;
+        }
+        .site-links a {
+            text-decoration: none;
+            color: blue;
+            font-size: 13px;
+            padding: 2px 4px;
+        }
+        .site-links a:hover {
+            font-weight: bold;
+            color: purple;
+        }
+        .site-links a:hover .hover {
+            font-weight: bold;
+	        color: purple;
+        }
+
+        /* --- Triangle container : aligned to top-right and sized to not extend below hr --- */
+        .triangle-wrapper {
+            width: 280px;
+            height: 150px;
+            pointer-events: none;
+            padding-right: 12px; 
+        }
+        .triangle-svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+            overflow: visible;
+        }
+
+        
+        .edge-text {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 8px; /* match page base */
+            fill: #000;
+            font-weight: normal;
+        }
+
+    
+        .victory-paths-link {
+            font-size: 12px;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            line-height: 1.2;
+            color: blue; 
+            text-align: center;
+            pointer-events: auto; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .victory-paths-link:hover {
+            text-decoration: none;
+            font-weight: bold;
+	        color: purple;
+        }
+
+
+        /* --- Create Post button (unchanged appearance) --- */
+        button, .btn-class3 {
+            font-family: 'Verdana', 'Arial', sans-serif;
+            font-size: 1em;
+            padding: 4px 5px;
+            margin: 16px 0;
+            border: 2px solid #333;
+            background: #c0c0c0;
+            color: #111;
+            border-radius: 0;
+            box-shadow: 1px 1px 0 #fff inset;
+            outline: none;
+            cursor: pointer;
+        }
+        button:hover, .btn-class3:hover {
+            background: #e4e4e4;
+            border-color: #555;
+            color: #00f;
+        }
+
+        /* --- Responsive: stack triangle below header on narrow screens --- */
+        @media (max-width: 720px) {
+            .header-nav-row {
+                flex-direction: column; /* Stack header and triangle */
+                align-items: center;
+            }
+            .triangle-wrapper {
+                position: static;
+                transform: none;
+                width: 320px;
+                height: 220px;
+                margin: 10px auto 0 auto;
+                padding-right: 0;
+            }
+            .victory-paths-link { margin-top: -20px; display: block; }
+        }
+
+        /* --- POST SEPARATOR STYLES --- */
+        .post {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-bottom: 1px
+            cursor: pointer;
+        }
+        .post:last-child {
+            border-bottom: none; /* Do not show line on the last post */
+        }
+
+       
+        .post:hover .post-title-row a {
+            color: purple;
+        }
+
+        .post:hover .post-title-row em {
+            font-weight: normal !important;
+            color: inherit !important;
+        }
+        
+        /* --- LINK HOVER EFFECT STYLES --- */
+        .post-title-row a {
+            color: #1D4ED8; 
+            font-weight: normal; 
+            text-decoration: none;
+            display: inline-block;	
+            position: relative;
+            padding-left: 2px; /* Initial spacing for arrow to move into */
+            transition: all 0.1s ease; 
+        }
+
+        }
+
+    </style>

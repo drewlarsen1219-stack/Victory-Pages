@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Victory Pages</title>
+
+    <link rel="icon" type="image/png" href="LOGLOGO.PNG">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Christian blog/digital garden documenting all my views, beliefs, thoughts and discoveries.">
+
+    <style>
+        /* --- CORE LAYOUT STYLES --- */
+        body {
+            /* Ensures body content doesn't stretch infinitely on wide screens */
+            max-width: 800px; 
+            margin: 2em auto 2em 0;
+            padding: 0 1em;
+            color: #333;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-image {
+            width: 150px;
+            height: auto;
+        }
+
+nav ul {
+    list-style: none;
+    padding: 0;
+	display: flex;
+    padding-left: 20px; 
+}
+
+/* Add margin/spacing to the individual links (LI or A) inside the list: */
+nav ul a {
+    margin-right: 15px; /* Or whatever spacing you prefer */
+}
+
+        .filter-buttons {
+            /* Adjusted margin for better separation */
+            margin: 10px 0 20px 0; 
+            padding-left: 20px;
+        }
+
+        .post {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+        .tags {
+            /* Post Tag Styling - Base for uniformity */
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* ----------------------------------------------------------------- */
+        /* --- POST TITLE STYLES --- */
+        /* ----------------------------------------------------------------- */
+        .post a {
+            font-size: 1.2em;
+            font-weight: normal;
+            cursor: pointer;
+            margin: 5px 0;
+            display: inline-block;
+            transition: transform 0.15s ease-out;
+            border: none;
+            padding: 0;
+            background: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+
+            text-decoration: none; 
+            border-bottom: 1px dotted grey;
+            color: black !important;
+        }
+        
+        .post a:hover {
+            transform: translate(0, 0); 
+            border-bottom: 1px blue;
+            color: blue !important;
+        }
+        
+        .post a:active {
+            transform: translate(0, 0);
+            color: blue !important;
+        }
+        
+        /* ----------------------------------------------------------------- */
+        /* --- NEW FILTER BUTTON STYLES (Bracketed and Simplistic) --- */
+        /* ----------------------------------------------------------------- */
+
+        .filter-buttons a {
+            /* Uniformity: Match the size and color of the post tags */
+            font-size: 0.9em;
+            color: #555 !important;
+            font-weight: normal;
+            
+            /* Simplistic Look: Remove all box aesthetics */
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            
+            /* Text Link Styling */
+            text-decoration: none;
+            display: inline-block;
+            vertical-align: top;
+            
+            /* Spacing: Use padding for separation */
+            padding: 0 5px;         
+            margin-right: 5px; /* Subtle spacing between bracketed links */
+        }
+        
+        .filter-buttons a:hover {
+            color: #333 !important; /* Slightly darker grey on hover */
+            text-decoration: underline; /* Simple text feedback */
+        }
+        
+        /* Highlight the active filter */
+        .filter-buttons a.active-filter {
+            color: black !important; /* Darkest color when active */
+            font-weight: bold;       /* Make the active tag stand out */
+            text-decoration: none;   /* No underline when active */
+        }
+
+        /* --- Pagination Controls --- */
+        .pagination-controls {
+            padding-left: 20px;
+            margin-top: 20px;
+        }
+        .pagination-controls a {
+            margin-right: 10px;
+            padding: 0;
+            border: none;
+            background: none;
+            appearance: none;
+            font-weight: 700;
+            transition: color 0.15s;
+        }
+        .pagination-controls a:hover {
+            text-decoration: none;
+            color: blue;
+        }
+        .pagination-controls a.disabled {
+            color: #aaa;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        /* --- GENERAL & UTILITY STYLES --- */
+        a:link { color: black; text-decoration: none; }
+        a:visited { color: black; text-decoration: none; }
+        a:hover { color: blue; text-decoration: none; }
+        a:active { color: blue; text-decoration: none; }
+        
+        .post-hidden-by-pagination {
+            display: none !important;
+        }
+
+        /* Footer Cleanup */
+        footer {
+            margin-top: 30px;
+        }
+        footer p {
+            margin: 0.5em 0;
+        }
+    </style>
+</head>
+
+<body onload="filterPosts('all', document.querySelector('.filter-buttons a:first-child'));">
+
+    <nav>
+        
+            <ul><a href="about.html">About</a>	
+	<a href="library.html">Library</a>
+<a href="skills.html">Six Pillars: Life Gamified</a></ul>
+
+        
+    </nav>
+
+    <div class="header-container">
+        <img
+            src="https://i.imgur.com/ZexN2vf.png"
+            alt="Agnus Dei icon"
+            class="header-image"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23fff%27 stroke=%27333%27 stroke-width=%272%27 /%3E%3Cpath d=%27M32 12 L36 26 L48 26 L38 34 L42 48 L32 38 L22 48 L26 34 L16 26 L28 26 Z%27 fill=%27%23c33%27 /%3E%3Ctext x=%2732%27 y=%2758%27 font-size=%276%27 text-anchor=%27middle%27 fill=%27333%27%3EVictory%3C/text%3E%3C/svg%3E';"
+        />
+        <h1>Victory Pages</h1>
+
+    </div>
+<br>
+    <div class="filter-buttons">
+        <a href="#" onclick="filterPosts('all', this); return false;">[All]</a>
+        <a href="#" onclick="filterPosts('investing', this); return false;">[Investing]</a>
+        <a href="#" onclick="filterPosts('gaming', this); return false;">[Gaming]</a>
+        <a href="#" onclick="filterPosts('movies', this); return false;">[Movies]</a>
+        <a href="#" onclick="filterPosts('faith', this); return false;">[Faith]</a>
+        <a href="#" onclick="filterPosts('life', this); return false;">[Life]</a>
+        <a href="#" onclick="filterPosts('opinion', this); return false;">[Opinion]</a>
+        <a href="#" onclick="filterPosts('helpful info', this); return false;">[Programing]</a>
+ 	<a href="#" onclick="filterPosts('music', this); return false;">[Music]</a>
+    </div>
+<br>
+    <div id="posts">
+        <div class="post investing">
+            <a href="Investing.html">Investing and documenting what worked</a>
+            <br>
+            <em>Last updated: Oct. 13, 2025</em><br>
+            <span class="tags">investing</span>
+        </div>
+        <div class="post gaming">
+            <a href="Post1.html">Game "Yu-Gi-Oh"</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">gaming</span>
+        </div>
+        <div class="post movies">
+            <a href="mr.html">Movie ratings & reviews</a>
+            <br>
+            <em>Last updated: Oct. 21, 2025</em><br>
+            <span class="tags">movies</span>
+        </div>
+        <div class="post faith">
+            <a href="paof.html">Powerful acts of forgiveness</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">faith</span>
+        </div>
+        <div class="post music">
+            <a href="music.html">A good band called "Sweet Trip"</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">music</span>
+        </div>
+        <div class="post life">
+            <a href="ml.html">My life</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">life</span>
+        </div>
+        <div class="post opinion">
+            <a href="mcwol.html">My cripes with Oldlutheran.com</a>
+            <br>
+            <em>Last updated: Sep. 26, 2025</em><br>
+            <span class="tags">opinion</span>
+        </div>
+        <div class="post life">
+            <a href="GFMH.html">Guy from my home town</a>
+            <br>
+            <em>Last updated: Sep. 27, 2025</em><br>
+            <span class="tags">life</span>
+        </div>
+        <div class="post opinion">
+            <a href="cww.html">ChatGPT is wasting water (allegedly)</a>
+            <br>
+            <em>Last updated: Sep. 28, 2025</em><br>
+            <span class="tags">opinion</span>
+        </div>
+        <div class="post programing">
+            <a href="htbw.html">How to build a text based website like mine</a>
+            <br>
+            <em>Last updated: Oct. 1, 2025</em><br>
+            <span class="tags">programing</span>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="pagination-controls">
+        <a href="#" id="prevPage" onclick="changePage(-1); return false;">&lt; Previous</a>
+        <a href="#" id="nextPage" onclick="changePage(1); return false;">Next &gt;</a>
+    </div>
+
+    <script>
+        // --- Configuration ---
+        const POSTS_PER_PAGE = 5;
+        let currentPage = 1;
+        let allPosts = document.querySelectorAll('.post');
+        let totalPages = 0;
+
+        // --- Core Pagination Functions ---
+
+        function calculateTotalPages() {
+            const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
+            totalPages = Math.ceil(visiblePosts.length / POSTS_PER_PAGE);
+            
+            const controls = document.querySelector('.pagination-controls');
+            if (totalPages <= 1) {
+                controls.style.display = 'none';
+            } else {
+                controls.style.display = 'block';
+            }
+        }
+
+        function updatePaginationControls() {
+            const prevLink = document.getElementById('prevPage');
+            const nextLink = document.getElementById('nextPage');
+
+            if (currentPage === 1) {
+                prevLink.classList.add('disabled');
+            } else {
+                prevLink.classList.remove('disabled');
+            }
+            
+            if (currentPage >= totalPages) {
+                nextLink.classList.add('disabled');
+            } else {
+                nextLink.classList.remove('disabled');
+            }
+        }
+
+        function displayPage(page) {
+            calculateTotalPages();
+            currentPage = page;
+
+            const visiblePosts = Array.from(allPosts).filter(post => !post.classList.contains('hidden'));
+            const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+            const endIndex = startIndex + POSTS_PER_PAGE;
+
+            // 1. Show/Hide Posts based on page number
+            allPosts.forEach(post => {
+                post.classList.remove('post-hidden-by-pagination');
+
+                const postIndex = visiblePosts.indexOf(post);
+                
+                if (postIndex < startIndex || postIndex >= endIndex) {
+                    if (!post.classList.contains('hidden')) {
+                        post.classList.add('post-hidden-by-pagination');
+                    }
+                }
+            });
+            
+            // 2. Update Controls
+            updatePaginationControls();
+        }
+        
+        function changePage(delta) {
+            const newPage = currentPage + delta;
+            if (newPage >= 1 && newPage <= totalPages) {
+                displayPage(newPage);
+            }
+        }
+
+        // --- Filter Function (PAGINATION-AWARE with ACTIVE state) ---
+        function filterPosts(tag, clickedElement) {
+            allPosts.forEach(post => {
+                if (tag === 'all' || post.classList.contains(tag)) {
+                    post.classList.remove('hidden');
+                } else {
+                    post.classList.add('hidden');
+                }
+            });
+            
+            // 1. Remove active class from all filter links
+            const filterLinks = document.querySelectorAll('.filter-buttons a');
+            filterLinks.forEach(link => {
+                link.classList.remove('active-filter');
+            });
+
+            // 2. Add active class to the clicked element (if one was passed)
+            if (clickedElement) {
+                clickedElement.classList.add('active-filter');
+            }
+            
+            // 3. Display the first page of the filtered results
+            displayPage(1);
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Automatically click the 'All' filter on page load to set the active state
+            const allFilter = document.querySelector('.filter-buttons a:first-child');
+            if (allFilter) {
+                filterPosts('all', allFilter);
+            } else {
+                 displayPage(1);
+            }
+        });
+    </script>
+<br>
+    <footer>
+        <hr>
+        <div style="padding-left: 20px;">
+            <p>© 2025 Victory Pages. All rights reserved.</p>
+     	<p><a href="privacypolicy.html">Privacy Policy<a/></p>
+	<p><a href="TAC.html"> Terms & Conditions<a/></p>
+        </div>
+    </footer>
+
+</body>
+</html>
