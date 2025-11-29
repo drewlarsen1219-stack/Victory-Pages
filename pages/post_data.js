@@ -1,118 +1,116 @@
+// posts_data.js - Contains all post information and handles dynamic loading
+
 const postsData = [
     {
-        title: "Guy from my hometown",
-        filename: "guy_from_my_hometown.html",
-        date: "Sep. 28, 2025",
-        tags: ["life", "faith"],
-        excerpt: "When I am at work I like to ask where my customers are from..."
+        title: "Yu-Gi-Oh!",
+        filename: "1764443096691_Yu_Gi_Oh.html",
+        date: "Oct. 22, 2025",
+        tags: ["gaming"],
+        author: "Green"
     },
     {
         title: "Investing",
-        filename: "Investing.html",
+        filename: "1764443096688_Investing.html",
         date: "Oct. 14, 2025",
         tags: ["investing"],
-        excerpt: "My efforts at investing and documenting what works for me"
-    },
-    {
-        title: '"Conclave" full review',
-        filename: "movie_conclave.html",
-        date: "Sep. 10, 2025",
-        tags: ["movies"],
-        excerpt: "Typically I do not like A24 movies because I find them to usually be too high effort..."
-    },
-    {
-        title: '"Mysteries of the Bible" full review',
-        filename: "movie_mysteries_of_the_bible.html",
-        date: "Sep. 10, 2025",
-        tags: ["movies", "faith"],
-        excerpt: '"Mysteries of the Bible" by Questar Entertainment. Disc 1-4 were great...'
-    },
-    {
-        title: "Movie Reviews",
-        filename: "movie_reviews.html",
-        date: "Oct. 5, 2025",
-        tags: ["movies"],
-        excerpt: "A collection of my movie ratings and reviews"
+        author: "Green"
     },
     {
         title: "Moving towns or cities",
-        filename: "moving_towns.html",
+        filename: "1764443096689_moving_towns.html",
         date: "Oct. 14, 2025",
         tags: ["life"],
-        excerpt: "Documenting my move to a new town"
-    },
-    {
-        title: "Music",
-        filename: "music.html",
-        date: "Sep. 26, 2025",
-        tags: ["music"],
-        excerpt: "I am posting here about some of my favorite music and why it's good..."
-    },
-    {
-        title: "My gripes with OldLutheran.com",
-        filename: "my_cripes_with_OldLutheran.com.html",
-        date: "Sep. 26, 2025",
-        tags: ["faith", "opinion"],
-        excerpt: "OldLutheran.com is a website that you can buy a variety of lutheran merchandise..."
+        author: "Green"
     },
     {
         title: "Things happening in my life",
-        filename: "my_life.html",
+        filename: "1764443096690_my_life.html",
         date: "Oct. 8, 2025",
         tags: ["life"],
-        excerpt: "A collection of posts about things happening in my life"
+        author: "Green"
+    },
+    {
+        title: "Movie Reviews",
+        filename: "1764443096688_movie_reviews.html",
+        date: "Oct. 5, 2025",
+        tags: ["movies"],
+        author: "Green"
     },
     {
         title: "October 2025",
-        filename: "person_post_2.html",
+        filename: "1764443096690_person_post_2.html",
         date: "Oct. 2025",
         tags: ["life", "faith"],
-        excerpt: "Going back to college, puppeteering for a local live show..."
+        author: "Green"
     },
     {
-        title: "September 2025",
-        filename: "personal_post.html",
-        date: "Sep. 2025",
-        tags: ["life"],
-        excerpt: "3 year anniversary - This year has been the most difficult and growth induced of my marriage."
+        title: "Guy from my hometown",
+        filename: "1764443096687_guy_from_my_hometown.html",
+        date: "Sep. 28, 2025",
+        tags: ["life", "faith"],
+        author: "Green"
+    },
+    {
+        title: "Music",
+        filename: "1764443096689_music.html",
+        date: "Sep. 26, 2025",
+        tags: ["music"],
+        author: "Green"
+    },
+    {
+        title: "My gripes with OldLutheran.com",
+        filename: "1764443096689_my_cripes_with_OldLutheran.com.html",
+        date: "Sep. 26, 2025",
+        tags: ["faith", "opinion"],
+        author: "Green"
     },
     {
         title: "Powerful acts of forgiveness",
-        filename: "powerful_acts_of_forgiveness.html",
+        filename: "1764443096690_powerful_acts_of_forgiveness.html",
         date: "Sep. 26, 2025",
         tags: ["faith"],
-        excerpt: "A couple of my favorite videos of acts of forgiveness that we can all learn from..."
+        author: "Green"
     },
     {
-        title: "Yu-Gi-Oh!",
-        filename: "Yu_Gi_Oh.html",
-        date: "Oct. 22, 2025",
-        tags: ["gaming"],
-        excerpt: "This game has been surprisingly an enjoyable game for me..."
+        title: "September 2025",
+        filename: "1764443096690_personal_post.html",
+        date: "Sep. 2025",
+        tags: ["life"],
+        author: "Green"
+    },
+    {
+        title: '"Conclave" full review',
+        filename: "1764443096688_movie_conclave.html",
+        date: "Sep. 10, 2025",
+        tags: ["movies"],
+        author: "Green"
+    },
+    {
+        title: '"Mysteries of the Bible" full review',
+        filename: "1764443096688_movie_mysteries_of_the_bible.html",
+        date: "Sep. 10, 2025",
+        tags: ["movies", "faith"],
+        author: "Green"
     }
 ];
 
 // Posts per page configuration
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 30;
 
 // Current page and filtered posts
 let currentPage = 1;
 let filteredPosts = [...postsData];
 let isViewingSinglePost = false;
 
-// Generate HTML for a single post
+// Generate HTML for a single post (Hacker News style)
 function generatePostHTML(post) {
-    const tagsHTML = post.tags.map(tag => `<span class="tag">${tag}</span>`).join(' ');
-        }
- return `
-        <div class="post ${post.tags.join(' ')}">
-            <div class="post-title-row">
+    return `
+        <div class="post">
+            <div class="post-title">
                 <a href="#" onclick="loadPost('${post.filename}'); return false;">${post.title}</a>
             </div>
-            <p>${post.excerpt}</p>
-            <div class="post-meta">
-                <em>${post.date}</em>
-                <div class="post-tags">${tagsHTML}</div>
+            <div class="post-subtext">
+                by ${post.author} | ${post.date} | ${post.tags.join(', ')}
             </div>
         </div>
     `;
