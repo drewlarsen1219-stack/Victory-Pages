@@ -103,20 +103,20 @@ hr {
 .top-right-triangle {
     position: absolute;
     top: 30px;
-    right: -70px;   /* changed from 22px → 4px */
+    right: -70px;  /* changed from 22px → 4px */
 }
 
 /* Lower Welcome + buttons */
 .lower-welcome {
     margin-top: 60px;
+} /* <-- FIXED MISSING BRACE */
 
-}
 .classic-3d-button {
     /* BASE STYLES */
     background-color: #C0C0C0; /* Standard Windows 95 Grey */
-    color: black; 
+    color: black;
     padding: 8px 20px;
-    font-family: 'Tahoma', 'Arial', sans-serif; /* Use a classic system font */
+    font-family: 'Tahoma', 'Arial', sans-serif;
     font-size: 13px;
     
     /* SHAPE & BORDER (The 3D Effect) */
@@ -125,14 +125,53 @@ hr {
     border-width: 3px;
     border-color: #FFFFFF #808080 #808080 #FFFFFF; /* Top/Left Light, Bottom/Right Dark */
     border-radius: 0; /* Sharp corners */
+    
+    cursor: pointer;
+    /* NEW: Add a transition for a smoother effect */
+    transition: background-color 0.1s, box-shadow 0.1s;
+}
 
+/* Hover Effect: Subtle lift/light-up */
+.classic-3d-button:hover {
+    /* Maintain the 3D look by keeping the original border definition */
+    border-style: outset;
+    border-color: #FFFFFF #808080 #808080 #FFFFFF;
+    
+    /* Slight background shift to make it look "active" */
+    background-color: #DCDCDC; /* Lighter gray than #C0C0C0 */
+    
+    /* Subtle inner shadow for a "framed" effect (optional, but good) */
+    box-shadow: inset 0 0 0 1px #grey;
+}
+
+/* Active State: The button is pressed in */
+.classic-3d-button:active {
+    /* REVERSE THE BORDERS and style to look pressed IN */
+    border-style: inset;
+    border-width: 3px; /* Ensure border width is maintained */
+    border-color: #808080 #FFFFFF #FFFFFF #808080; /* Flips the highlights */
+    
+    /* Ensure background is consistent with the hover state */
+    background-color: #DCDCDC;
+    
+    /* Remove the box-shadow when pressed to ensure a flat, recessed look */
+    box-shadow: none;
+}
+
+/* Sets the cursor to a hand pointer when hovering over the clickable summary text */
+details summary {
     cursor: pointer;
 }
 
-.classic-3d-button:active {
-    /* REVERSE THE BORDERS when pressed IN */
-    border-style: inset; 
-    border-color: #808080 #FFFFFF #FFFFFF #808080; /* Flips the highlights */
+/* Optional: Makes the text change when the mouse hovers over it */
+details summary:hover {
+    color: grey; /* Darkens the text slightly */
+    text-decoration: none; /* Adds an underline */
 }
 
+
+/* Add separation between the two buttons */
+.new-user-button {
+    margin-right: 20px; /* Adjust this value (e.g., 10px, 30px) to control the gap */
+}
 </style>
