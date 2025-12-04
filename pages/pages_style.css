@@ -195,6 +195,7 @@ body::-webkit-scrollbar-track, #posts-list::-webkit-scrollbar-track {
 }
 
 /* 3. Thumb (The movable part) - Apply Raised 3D effect */
+
 body::-webkit-scrollbar-thumb, #posts-list::-webkit-scrollbar-thumb {
     background-color: #C0C0C0; /* Main GUI Gray */
     border: 1px solid;
@@ -206,17 +207,20 @@ body::-webkit-scrollbar-thumb, #posts-list::-webkit-scrollbar-thumb {
 }
 
 /* 4. Scrollbar Corner (where vertical and horizontal meet) */
+
 body::-webkit-scrollbar-corner, #posts-list::-webkit-scrollbar-corner {
     background-color: #C0C0C0;
     border: 1px solid #808080; 
 }
 
 /* 5. Scrollbar Thumb Hover/Active state (optional visual feedback) */
+
 body::-webkit-scrollbar-thumb:hover, #posts-list::-webkit-scrollbar-thumb:hover {
     background-color: #D0D0D0; 
 }
 
 /* 6. Scrollbar Buttons (Arrows) - Apply Raised 3D effect */
+
 body::-webkit-scrollbar-button, #posts-list::-webkit-scrollbar-button {
     /* Button dimensions matching the scrollbar width/height */
     width: 15px;
@@ -233,6 +237,7 @@ body::-webkit-scrollbar-button, #posts-list::-webkit-scrollbar-button {
 }
 
 /* 7. Scrollbar Button Hover/Active (Optional: Depressed effect on click) */
+
 body::-webkit-scrollbar-button:active, #posts-list::-webkit-scrollbar-button:active {
     /* Depressed effect: Gray on top/left, White on bottom/right */
     border-top-color: #808080; 
@@ -244,6 +249,7 @@ body::-webkit-scrollbar-button:active, #posts-list::-webkit-scrollbar-button:act
 /* 8. ARROW GLYPHS: Using :decrement/:increment selectors to ensure only one arrow appears at each end. */
 
 /* UP Arrow (for the top/decrement button of vertical scrollbars) */
+
 body::-webkit-scrollbar-button:vertical:decrement, 
 #posts-list::-webkit-scrollbar-button:vertical:decrement {
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,0 0,10 10,10" fill="black"/></svg>');
@@ -253,6 +259,7 @@ body::-webkit-scrollbar-button:vertical:decrement,
 }
 
 /* DOWN Arrow (for the bottom/increment button of vertical scrollbars) */
+
 body::-webkit-scrollbar-button:vertical:increment, 
 #posts-list::-webkit-scrollbar-button:vertical:increment {
      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,10 0,0 10,0" fill="black"/></svg>');
