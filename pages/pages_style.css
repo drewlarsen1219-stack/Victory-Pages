@@ -78,7 +78,7 @@ The button now visually depresses on hover, but the text remains flat.
     box-shadow: none;
 }
 
-/* Active state (when clicked) - Depressed look, FLAT TEXT */
+/* Active state (when clicked) - Depressed look, TEXT SHIFTS WITH BUTTON */
 .classic-3d-button:active, .btn-class3:active {
     color: #000000; 
     /* Text remains flat */
@@ -89,7 +89,7 @@ The button now visually depresses on hover, but the text remains flat.
     border-left-color: #808080; 
     border-bottom-color: #ffffff; 
     border-right-color: #ffffff; 
-    transform: translateY(1px); /* Shift down to simulate click */
+    transform: translate(1px, 1px); /* Shift down and right to simulate 3D press with text */
     box-shadow: none;
 }
 
@@ -117,6 +117,11 @@ The button now visually depresses on hover, but the text remains flat.
     padding: 10px;
 }
 
+/* White background for triangle container */
+.retro-inset-panel.triangle-wrapper {
+    background-color: #FFFFFF; /* White background inside the triangle container */
+}
+
 /* Basic layout styles for the table structure */
 body {
     background-color: #C0C0C0; /* Classic GUI Gray */
@@ -136,10 +141,16 @@ td {
     /* Applying the classic raised window look to the columns */
     border: 2px solid;
     border-color: #ffffff #808080 #808080 #ffffff; 
-    background-color: #C0C0C0;
+    background-color: #FFFFFF; /* White column backgrounds */
 }
 .td-left { width: 40%; }
-.td-center { width: 20%; background-color: #B5B5B5; } /* Slightly lighter/different for separation */
+.td-center { 
+    width: 20%; 
+    background-color: #FFFFFF; /* White background for center column */
+    max-height: 80vh; /* Fixed maximum height */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+    overflow-x: hidden;
+}
 .td-right { width: 40%; }
 
 /* General content styling */
@@ -266,5 +277,97 @@ body::-webkit-scrollbar-button:vertical:increment,
     background-size: 40%; 
     background-repeat: no-repeat;
     background-position: center 45%; 
+}
+
+/* ------------------------------------------------------------------ */
+/* RETRO SCROLLBAR STYLING FOR CENTER COLUMN (Paraclete) */
+/* ------------------------------------------------------------------ */
+.td-center::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+
+.td-center::-webkit-scrollbar-track {
+    background-color: #E0E0E0;
+}
+
+.td-center::-webkit-scrollbar-thumb {
+    background-color: #C0C0C0;
+    border: 1px solid;
+    border-top-color: #ffffff; 
+    border-left-color: #ffffff;
+    border-bottom-color: #808080; 
+    border-right-color: #808080;
+}
+
+.td-center::-webkit-scrollbar-corner {
+    background-color: #C0C0C0;
+    border: 1px solid #808080; 
+}
+
+.td-center::-webkit-scrollbar-thumb:hover {
+    background-color: #D0D0D0; 
+}
+
+.td-center::-webkit-scrollbar-button {
+    width: 15px;
+    height: 15px; 
+    display: block;
+    background-color: #C0C0C0;
+    border: 1px solid;
+    border-top-color: #ffffff; 
+    border-left-color: #ffffff;
+    border-bottom-color: #808080; 
+    border-right-color: #808080;
+}
+
+.td-center::-webkit-scrollbar-button:active {
+    border-top-color: #808080; 
+    border-left-color: #808080;
+    border-bottom-color: #ffffff; 
+    border-right-color: #ffffff; 
+}
+
+.td-center::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,0 0,10 10,10" fill="black"/></svg>');
+    background-size: 40%; 
+    background-repeat: no-repeat;
+    background-position: center 55%; 
+}
+
+.td-center::-webkit-scrollbar-button:vertical:increment {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,10 0,0 10,0" fill="black"/></svg>');
+    background-size: 40%; 
+    background-repeat: no-repeat;
+    background-position: center 45%; 
+}
+
+/* ------------------------------------------------------------------ */
+/* LIBRARY LINKS HOVER EFFECT - Dark red on hover */
+/* ------------------------------------------------------------------ */
+.td-center details a:hover {
+    color: #8B0000 !important; /* Dark red on hover */
+}
+
+/* ------------------------------------------------------------------ */
+/* TRIANGLE CARET LABEL STYLING - Dark red with hover, indented look */
+/* ------------------------------------------------------------------ */
+.triangle-label {
+    fill: #8B0000; /* Dark red color */
+    font-size: 6px;
+    text-anchor: middle;
+    cursor: pointer;
+    transition: fill 0.2s ease;
+}
+
+/* Hover effect for triangle labels */
+.triangle-label:hover {
+    fill: #A52A2A; /* Lighter red on hover */
+}
+
+/* Indented text effect for caret labels */
+.triangle-label-inset {
+    fill: #8B0000; /* Dark red color */
+    /* Shadow direction: dark on top-left creates indented/carved effect */
 }
 
