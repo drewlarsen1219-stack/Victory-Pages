@@ -1,100 +1,217 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
-    <title>Victory Pages</title>
+    <title>3PS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A Forum for Christians. This website includes a Victory game which is a gamification of real life. ">
+    <meta name="description" content="Gamification of real life and a Forum for Christians. ">
+   
+   <!-- Load Tailwind CSS, I do not know if I am going to need this. I believe it is for creating an online database.-->
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+   <!-- Load Custom CSS -->
     <link rel="stylesheet" href="pages/pages_style.css">
-  <script src="pages/post_data.js"></script>
+	
 </head>
 
-<body>
-    <table class="page-wrapper-table" cellspacing="2" cellpadding="2" border="1">
+<body class="font-mono">
+
+  <table class="page-wrapper-table" cellspacing="2" cellpadding="2" border="0">
+  
         <tbody>
             <tr>
-                <td style="vertical-align:top; padding: 10px; position:relative;">
-                    <div class="header-nav-row">
-                        <div class="header-container">
-                            <div class="site-links" aria-label="About and Library links">
-                                <a href="pages/Navigation/about.html">About</a>
-                                <a href="pages/Navigation/digital_library.html">Library</a>
-                            </div>
-                            <div class="header-top">
-                                <img src="Files seperated/nbg - Imgur.png" alt="Agnus Dei icon" class="header-image" style="background:none;filter:brightness(0) saturate(100%) drop-shadow(0 0 0 black);">
-                                <h4 class="site-title">Victory Pages</h4>
-                            </div>
+                <!-- FIRST COLUMN: Paths-->
+                <td class="td-left">
+                    
+                    <!-- Title: Paths: Life Gamified -->
+                    <div class="p-2 mb-4 text-left">
+                        <div class="column-header m-0 p-0">
+                            <span class="text-base font-bold text-black">Paths: Life Gamified</span>
                         </div>
-
-                        <div class="triangle-wrapper" aria-hidden="false">
-                            <svg class="triangle-svg" viewBox="0 0 120 105" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Victory paths triangle">
-                                <polygon points="60,10 10,95 110,95" fill="none" stroke="#000" stroke-width="1"/>
-
-                                <text class="edge-text" text-anchor="middle"
-                                    transform="translate(35,52.5) rotate(-59.5) translate(0,-10)">
-                                    Finder →
-                                </text>
-                                <text class="edge-text" text-anchor="middle"
-                                    transform="translate(85,52.5) rotate(59.5) translate(0,-10)">
-                                    Tracker →
-                                </text>
-                                <text class="edge-text" text-anchor="middle"
-                                    transform="translate(60,109)">
-                                    ← Ways
-                                </text>
+                    </div>
+                    
+                    <p class="text-center mt-4">
+					
+                        <!-- Triangle Wrapper uses retro-inset-panel class and is centered with mx-auto -->
+						
+                        <div class="retro-inset-panel triangle-wrapper w-full max-w-xs mx-auto" aria-hidden="false">
+                            <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet"
+                                    role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
+                                <polygon points="60,15 15,95 105,95" fill="none" stroke="#000" stroke-width="1"/>
                                 
-                                <foreignObject x="30" y="49" width="60" height="45">
-                                    <a href="paths/paths_structure.html" class="victory-paths-link" title="Open Victory Paths">Victory<br>Paths</a>
+                                <!-- Inset Text Styling for SVG Labels -->
+                                <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
+                                      font-size="6" fill="#D0D0D0" text-anchor="middle"
+                                      transform="translate(30,61) rotate(-60)">Finder &gt;</text>
+                                <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
+                                      font-size="6" fill="#D0D0D0" text-anchor="middle"
+                                      transform="translate(90,61) rotate(61)">Tracker &gt;</text>
+                                <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
+                                      font-size="6" fill="#D0D0D0" text-anchor="middle" x="60" y="102">&lt; Ways</text>
+                                
+                                <foreignObject x="30" y="55" width="60" height="40">
+                                    <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0;padding:0;">
+                                        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                                        </div>
+                                    </body>
+									
                                 </foreignObject>
                             </svg>
                         </div>
-                    </div>
-
-                    <hr>
-                    <hr>
-                    <hr>
-
-                    <div id="post-action-row">
-                        <button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='pages/Navigation/Submission_tool (styling needs fixed).html'">Create Post</button>
-                    </div>
+                    </p>
+                    
                     <br>
-					
-                    <div id="posts"></div>
+                    <br>                    
+                    
+                    <p class="text-center">
+                        <button class="classic-3d-button new-user-button" onclick="window.location.href='/finder/finder_structure.html'">
+                            New User
+                        </button>
+						
+                        <button class="classic-3d-button" onclick="window.location.href='/tracker/tracker_structure.html'">
+                            Existing User
+                        </button>
+                    </p>
+
+                </td>
+
+                <!-- SECOND COLUMN: Paraclete (CENTER - 20%, LIGHTER) -->
+                <td class="td-center">
+                    <!-- Title: Paraclete: index -->
+                    <div class="p-2 mb-4 text-left">
+                        <div class="column-header m-0 p-0">
+                            <span class="text-base font-bold text-black">Paraclete: index</span>
+                        </div>
+                    </div>
+                    
+                    <div class="site-links" aria-label="About and Library links">
+                        <a href="pages/Navigation/about.html">About</a>
+                        <a href="pages/Navigation/digital_library.html">Library</a>
+                    </div>
+
+                    <!-- Q & A block -->
+                    <div class="mt-4">
+                        <details>
+                            <summary><p class="font-bold text-base inline-block cursor-pointer p-1">Q & A</p></summary>
+                            <p class="space-y-2 text-sm p-2">
+                            
+                                <details>
+                                    <summary>What is "<strong>Victory</strong>"?</summary>
+                                    <p>Symbolizes Jesus Christ's triumphant victory over sin, death, and the devil.</p>
+                                </details>
+
+                                <details>
+                                    <summary>What is "<strong>Paths</strong>"?</summary>
+                                    <p>The routes offered to users to achieve their own victory over worldly struggles (finances, health, family).</p>
+                                </details>
+
+                                <details>
+                                    <summary>What is "<strong>Victory Paths</strong>"?</summary>
+                                    <p>Provides clear, prioritized guidance drawn from the Bible, affirming that God's wisdom is the correct and intended methodology for our lives.</p>
+                                </details>
+
+                                <details>
+                                    <summary><strong>New User</strong> Process</summary>
+                                    <p>An onboarding process where the new user answers questionnaires designed to assess their current standing (life XP) in various areas.</p>
+                                    <p>Example Question: "How many days per week do you exercise?"</p>
+                                    <p>Example Answer: "3 days per week."</p>
+                                    <p>Website Action: The user's Skills Tracker is updated with the new data.</p>
+                                    <p>Website Action: New Pathway(s) are unlocked based on the user's current skill level.</p>
+                                    <p>The user now has new Pathways (quests) available to complete, both IRL (In Real Life) and online.</p>
+                                </details>
+
+                                <details>
+                                    <summary><strong>Existing User</strong> Flow</summary>
+                                    <p>Existing users can enter their saved data to reflect the progress they have already made.</p>
+                                    <p>Users continue completing Pathways and saving their progress.</p>
+                                    <p>Once a user finishes a Pathway, they update the Skills Tracker.</p>
+                                    <p>Website Action: A new quest is unlocked.</p>
+                                    <p>The user repeats this process to progress further through the game.</p>
+                                </details>
+
+                                <details>
+                                    <summary>Community<strong> Forum</strong></summary>
+                                    <p>A public forum called "Victory Pages" is available for users and serves as the website's home page.</p>
+                                </details>
+                            </p>
+                        </details>
+                    </div>
+                    
                     <br>
-
-                    <div class="tag-dropdown-container">
-                        <select id="tagDropdown">
-                            <option value="all">All</option>
-                            <option value="investing">Investing</option>
-                            <option value="gaming">Gaming</option>
-                            <option value="movies">Movies</option>
-                            <option value="faith">Faith</option>
-                            <option value="life">Life</option>
-                            <option value="opinion">Opinion</option>
-                            <option value="programing">Programming</option>
-                            <option value="music">Music</option>
-                        </select>
-                    </div>
-                    <hr>
-                    <div class="pagination-controls">
-                        <button id="prevPage" class="btn-class3">&lt; Previous</button>
-                        <button id="nextPage" class="btn-class3">Next &gt;</button>
-                    </div>
-
+                    <br><br><br><br><br><br><br><br><br>
+                    
                     <footer>
-                        <hr>
-                        <p>© 2025 Victory Pages. All rights reserved.</p>
-                        <p><a href="pages/Navigation/privacy_policy.html">Privacy Policy</a></p>
-                        <p><a href="pages/Navigation/terms_and_conditions.html">Terms & Conditions</a></p>
+                        <p>
+                        <!-- Combined Footer Block -->
+                        <div class="mt-auto pt-4">
+                            <div class="p-2 text-xs retro-inset-panel text-center">
+                                <p class="mb-1 font-bold text-gray-700">Victory Pages & Paths</p>
+                                <p class="text-xs">
+                                    © 2025 Victory Pages. All rights reserved. 
+                                    <br>
+                                    All progress saved privately.
+                                </p>
+                                <hr class="border-t border-gray-400 my-2">
+                                <div class="space-x-4">
+                                    <p><a href="pages/Navigation/privacy_policy.html" class="text-blue-700 hover:underline">Privacy Policy</a></p>
+                                    <p><a href="pages/Navigation/terms_and_conditions.html" class="text-blue-700 hover:underline">Terms & Conditions</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        </p>
                     </footer>
+                </td>
 
+                <!-- THIRD COLUMN: Pages: public forum (RIGHT - 40%) -->
+                <td class="td-right">
+                    <!-- Title: Pages: Christian public forum -->
+                    <div class="p-2 mb-4 text-left">
+                        <div class="column-header m-0 p-0">
+                            <span class="text-base font-bold text-black">Pages: Christian public forum</span>
+                        </div>
+                    </div>
+
+                    <hr class="border-t border-gray-600 my-4">
+                    
+                    <div id="posts-messages" class="text-sm text-center text-red-700 mb-2"></div>
+                    
+                    <!-- Controls Container (Hidden when viewing single post) -->
+                    <div id="forum-controls">
+                        <div class="tag-dropdown-container mb-4">
+                            <select id="tagDropdown" class="retro-inset-field p-1 bg-white">
+                                <option value="Most recent">Most recent</option>
+                                <option value="investing">Investing</option>
+                                <option value="gaming">Gaming</option>
+                                <option value="movies">Movies</option>
+                                <option value="faith">Faith</option>
+                                <option value="life">Life</option>
+                                <option value="opinion">Opinion</option>
+                                <option value="programing">Programming</option>
+                                <option value="music">Music</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="posts-list" class="space-y-2 h-96 overflow-y-auto">
+                        <p class="text-center">Loading posts...</p>
+                    </div>
+                    
+                    <div class="mt-4 flex justify-between items-center" id="action-controls">
+                        <button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='pages/Navigation/Submission_tool (styling needs fixed).html'">Create Post</button>
+                    
+                        <div class="pagination-controls space-x-2">
+                            <button id="prevPage" class="btn-class3">&lt; Previous</button>
+                            <button id="nextPage" class="btn-class3">Next &gt;</button>
+                        </div>
+                    </div>
                 </td>
             </tr>
         </tbody>
-    </table> 
+  </table>
 
-
-
- 
+  <!-- Load JavaScript -->
+  <script type="module" src="pages/post_data.js"></script>
 </body>
 </html>

@@ -1,131 +1,263 @@
-/* --- Page baseline --- */
-body {
-    color: #000;
-    background: #999;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-.page-wrapper-table {
-    text-align: left;
-    width: 750px;
-    margin: 20px auto;
-    background: #CCCCCC;
-}
-hr {
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    color: gray;
-    border-style: inset;
-    border-width: 1px;
-    width: 100%;
-    box-sizing: border-box;
+/*Carved in stone aesthetic*/
+
+/*Retro Inset Subtitle */
+.retro-inset-subtitle {
+    /* Set color to match the common panel background (#D0D0D0) to leave only the carved-out shadow visible */
+    color: #D0D0D0; 
+    font-weight: 600;
+    text-shadow: 
+        /* 1. Dark Shadow (Top/Left - simulates the depth edge) */
+        -1px -1px 0px #808080, 
+        /* 2. Light Highlight (Bottom/Right - simulates the inner surface catching light) */
+        1px 1px 0px #FFFFFF; 
+    /* Set to inline-block to ensure consistent rendering of text-shadow */
+    display: inline-block; 
+    font-size: 1.25rem; /* SHRUNK SIZE for all header titles */
+    letter-spacing: 0.05em;
 }
 
-/* --- Header and site links --- */
-.header-nav-row {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 11px;
-    margin-top: 4px;
-    position: relative;
-    padding-bottom: 6px;
-    min-height: 160px;
+/* */
+.retro-visible-inset-text {
+    /* Text color is dark gray so the text shape is visible, but the shadows still carve it */
+    color: #333333; 
+    font-weight: 500;
+    text-shadow: 
+        /* 1. Dark Shadow (Top/Left - simulates the depth edge) */
+        -1px -1px 0px #808080, 
+        /* 2. Light Highlight (Bottom/Right - simulates the inner surface catching light) */
+        1px 1px 0px #FFFFFF; 
+    display: inline-block; 
+    font-size: 1.25rem; /* Match size of subtitle */
+    letter-spacing: 0.05em;
 }
-.header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    width: auto;
+
+/* Styles for the classic 3D buttons used throughout the page (Raised by default) */
+.classic-3d-button, .btn-class3 {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: #C0C0C0; /* Classic GUI gray */
+    /* --- TEXT COLOR CHANGE: Ensure button text is BLACK --- */
+    color: #000000 !important; 
+    /* --------------------------------------------------- */
+    cursor: pointer;
+    transition: all 0.05s ease;
+    
+    /* Default state: Flat text, Raised Button */
+    text-shadow: none; 
+
+    /* Classic 3D Button Border (Raised effect) */
+    border: 1px solid;
+    border-top-color: #ffffff; 
+    border-left-color: #ffffff;
+    border-bottom-color: #808080; 
+    border-right-color: #808080;
+    box-shadow: 1px 1px 0px #000000; /* Outer black shadow for extra depth */
+}
+
+/* Hover state - Inset Button look, Flat Text (Updated to meet request) 
+The button now visually depresses on hover, but the text remains flat.
+*/
+.classic-3d-button:hover, .btn-class3:hover {
+    color: #000000; 
+    
+    /* Text remains flat */
+    text-shadow: none; 
+    
+    /* Button becomes depressed/inset visually */
+    border-top-color: #808080; 
+    border-left-color: #808080;
+    border-bottom-color: #ffffff; 
+    border-right-color: #ffffff; 
+
+    /* Subtle background change */
+    background-color: #C8C8C8; 
+    /* Remove extra shadow and transform from raised state */
+    transform: none; 
+    box-shadow: none;
+}
+
+/* Active state (when clicked) - Depressed look, FLAT TEXT */
+.classic-3d-button:active, .btn-class3:active {
+    color: #000000; 
+    /* Text remains flat */
+    text-shadow: none; 
+
+    /* Depressed button state: shadows/borders reverse */
+    border-top-color: #808080; 
+    border-left-color: #808080; 
+    border-bottom-color: #ffffff; 
+    border-right-color: #ffffff; 
+    transform: translateY(1px); /* Shift down to simulate click */
+    box-shadow: none;
+}
+
+/* Dropdown/Select Field - Inset look (Depressed) */
+.retro-inset-field {
+    background-color: #FFFFFF; /* White background */
+    padding: 4px;
+    border: 1px solid;
+    /* Inset Borders: Dark on Top/Left, Light on Bottom/Right */
+    border-top-color: #808080; 
+    border-left-color: #808080;
+    border-bottom-color: #FFFFFF; 
+    border-right-color: #FFFFFF;
+    /* Inner Black Shadow for deep inset, as requested */
+    box-shadow: inset 1px 1px 0px #000000; 
+    width: 100%; /* Keep width full */
+}
+
+/* Retro Inset Panel (For the SVG, Q&A, and ALL headers now) */
+.retro-inset-panel {
+    border: 2px solid;
+    /* Inset Borders: Dark on Top/Left, Light on Bottom/Right */
+    border-color: #808080 #ffffff #ffffff #808080;
+    background-color: #D0D0D0; /* Slightly lighter gray than main body (#C0C0C0) */
     padding: 10px;
 }
-.header-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 6px;
+
+/* Basic layout styles for the table structure */
+body {
+    background-color: #C0C0C0; /* Classic GUI Gray */
+    font-family: 'Inter', sans-serif;
 }
-.header-image {
-    width: 150px;
-    height: auto;
-    background: none !important;
+.page-wrapper-table {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #C0C0C0;
+    border-collapse: separate;
+    border-spacing: 4px; /* Space between the columns/cells */
 }
-.site-title {
-    margin: 0;
-    font-size: 13px; 
-    line-height: 1;
-    font-weight: bold;
+td {
+    padding: 10px;
+    vertical-align: top;
+    /* Applying the classic raised window look to the columns */
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff; 
+    background-color: #C0C0C0;
 }
-.site-links {
-    display: flex;
-    gap: 12px;
-    padding-left: 4px;
+.td-left { width: 40%; }
+.td-center { width: 20%; background-color: #B5B5B5; } /* Slightly lighter/different for separation */
+.td-right { width: 40%; }
+
+/* General content styling */
+.column-header { margin-bottom: 0; } 
+.column-header p { font-size: 1.25rem; font-weight: bold; }
+footer { font-size: 0.8rem; text-align: center; padding-top: 10px; }
+footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
+.site-links a { display: block; margin-bottom: 5px; text-decoration: none; color: #0000FF; }
+.site-links a:hover { text-decoration: underline; }
+
+/* Post Item Styling (Retro Inset Box) */
+.post-item {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080; /* Inset/depressed effect */
+    background-color: #E0E0E0; /* Lighter gray for content area */
+    padding: 8px;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
 }
-.site-links a {
-    text-decoration: none;
-    color: blue;
-    font-size: 13px;
-    padding: 2px 4px;
+.post-header {
+    font-weight: 700;
+    color: #000080; /* Dark blue title */
+    border-bottom: 1px dashed #A0A0A0;
+    margin-bottom: 4px;
+    padding-bottom: 2px;
 }
-.site-links a:hover {
-    font-weight: bold;
-    color: purple;
+.post-meta {
+    font-size: 0.75rem;
+    color: #555;
+    margin-top: 4px;
 }
 
-/* --- Triangle container --- */
-.triangle-wrapper {
-    width: 280px;
-    height: 150px;
-    pointer-events: none;
-    padding-right: 12px; 
-}
-.triangle-svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-    overflow: visible;
-}
-.edge-text {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 8px;
-    fill: #000;
-    font-weight: normal;
-}
-.victory-paths-link {
-    font-size: 12px;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    line-height: 1.2;
-    color: blue; 
-    text-align: center;
-    pointer-events: auto; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-.victory-paths-link:hover {
-    text-decoration: none;
-    font-weight: bold;
-    color: purple;
+/* Ensures the post detail container uses the inset look */
+.post-detail-container {
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080; /* Inset/depressed effect */
+    background-color: #F0F0F0;
 }
 
-/* --- Buttons --- */
-button, .btn-class3 {
-    font-family: 'Verdana', 'Arial', sans-serif;
-    font-size: 1em;
-    padding: 4px 5px;
-    margin: 16px 0;
-    bord
-	
+/* ------------------------------------------------------------------ */
+/* RETRO SCROLLBAR STYLING (FOR WEBKIT BROWSERS - Chrome/Safari/Edge) */
+/* ------------------------------------------------------------------ */
+
+/* 1. General Track and Width */
+body::-webkit-scrollbar, #posts-list::-webkit-scrollbar {
+    width: 15px; /* Standard retro width */
+    height: 15px;
+}
+
+/* 2. Track Background */
+body::-webkit-scrollbar-track, #posts-list::-webkit-scrollbar-track {
+    background-color: #E0E0E0; /* Slightly lighter gray */
+}
+
+/* 3. Thumb (The movable part) - Apply Raised 3D effect */
+body::-webkit-scrollbar-thumb, #posts-list::-webkit-scrollbar-thumb {
+    background-color: #C0C0C0; /* Main GUI Gray */
+    border: 1px solid;
+    /* Raised effect borders */
+    border-top-color: #ffffff; 
+    border-left-color: #ffffff;
+    border-bottom-color: #808080; 
+    border-right-color: #808080;
+}
+
+/* 4. Scrollbar Corner (where vertical and horizontal meet) */
+body::-webkit-scrollbar-corner, #posts-list::-webkit-scrollbar-corner {
+    background-color: #C0C0C0;
+    border: 1px solid #808080; 
+}
+
+/* 5. Scrollbar Thumb Hover/Active state (optional visual feedback) */
+body::-webkit-scrollbar-thumb:hover, #posts-list::-webkit-scrollbar-thumb:hover {
+    background-color: #D0D0D0; 
+}
+
+/* 6. Scrollbar Buttons (Arrows) - Apply Raised 3D effect */
+body::-webkit-scrollbar-button, #posts-list::-webkit-scrollbar-button {
+    /* Button dimensions matching the scrollbar width/height */
+    width: 15px;
+    height: 15px; 
+    display: block; /* Ensure it occupies space */
+    background-color: #C0C0C0; /* Main GUI Gray */
+    
+    /* Raised 3D effect: White on top/left, Gray on bottom/right */
+    border: 1px solid;
+    border-top-color: #ffffff; 
+    border-left-color: #ffffff;
+    border-bottom-color: #808080; 
+    border-right-color: #808080;
+}
+
+/* 7. Scrollbar Button Hover/Active (Optional: Depressed effect on click) */
+body::-webkit-scrollbar-button:active, #posts-list::-webkit-scrollbar-button:active {
+    /* Depressed effect: Gray on top/left, White on bottom/right */
+    border-top-color: #808080; 
+    border-left-color: #808080;
+    border-bottom-color: #ffffff; 
+    border-right-color: #ffffff; 
+}
+
+/* 8. ARROW GLYPHS: Using :decrement/:increment selectors to ensure only one arrow appears at each end. */
+
+/* UP Arrow (for the top/decrement button of vertical scrollbars) */
+body::-webkit-scrollbar-button:vertical:decrement, 
+#posts-list::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,0 0,10 10,10" fill="black"/></svg>');
+    background-size: 40%; 
+    background-repeat: no-repeat;
+    background-position: center 55%; 
+}
+
+/* DOWN Arrow (for the bottom/increment button of vertical scrollbars) */
+body::-webkit-scrollbar-button:vertical:increment, 
+#posts-list::-webkit-scrollbar-button:vertical:increment {
+     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,10 0,0 10,0" fill="black"/></svg>');
+    background-size: 40%; 
+    background-repeat: no-repeat;
+    background-position: center 45%; 
+}
+
