@@ -8,11 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gamification of real life and a Forum for Christians. ">
    
-   <!-- Load Tailwind CSS, I do not know if I am going to need this. I believe it is for creating an online database.-->
-    <script src="https://cdn.tailwindcss.com"></script>
+   <script src="https://cdn.tailwindcss.com"></script>
    
-   <!-- Load Custom CSS -->
-    <link rel="stylesheet" href="pages/pages_style.css">
+   <link rel="stylesheet" href="pages/pages_style.css">
 	
 </head>
 
@@ -22,10 +20,8 @@
   
         <tbody>
             <tr>
-                <!-- FIRST COLUMN: Paths-->
                 <td class="td-left">
                     
-                    <!-- Title: Paths: Life Gamified -->
                     <div class="p-2 mb-4 text-left">
                         <div class="column-header m-0 p-0">
                             <span class="text-base font-bold text-black">Paths: Life Gamified</span>
@@ -34,14 +30,11 @@
                     
                     <p class="text-center mt-4">
 					
-                        <!-- Triangle Wrapper uses retro-inset-panel class and is centered with mx-auto -->
-						
                         <div class="retro-inset-panel triangle-wrapper w-full max-w-xs mx-auto" aria-hidden="false">
                             <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet"
                                     role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
-                                <polygon points="60,15 15,95 105,95" fill="none" stroke="#000" stroke-width="1"/>
+                                <polygon points="60,15 15,95 105,95" fill="none" stroke="#A0A0A0" stroke-width="1" class="outset-triangle"/>
                                 
-                                <!-- Inset Text Styling for SVG Labels -->
                                 <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
                                       font-size="6" fill="#D0D0D0" text-anchor="middle"
                                       transform="translate(30,61) rotate(-60)">Finder &gt;</text>
@@ -77,23 +70,21 @@
 
                 </td>
 
-                <!-- SECOND COLUMN: Paraclete (CENTER - 20%, LIGHTER) -->
-<td class="td-center">
+                <td class="td-center">
     <div style="display: flex; flex-direction: column; min-height: 100%; height: 100%;">
-        <div style="flex-grow: 1;">
-            <!-- Title: Paraclete: index -->
-            <div class="p-2 mb-4 text-left">
-                <div class="column-header m-0 p-0">
-                    <span class="text-base font-bold text-black">Paraclete: index</span>
-                </div>
+        
+        <div class="p-2 mb-4 text-left">
+            <div class="column-header m-0 p-0">
+                <span class="text-base font-bold text-black">Paraclete: index</span>
             </div>
+        </div>
+
+        <div id="paraclete-scroll-wrapper" class="overflow-y-auto" style="flex-grow: 1;">
             
 
-			<!-- About dropdown menu -->
-
-            <div class="mt-4">
+			<div class="mt-4">
                 <details>
-                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1">About</p></summary>
+                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1 **text-black hover:text-red-700**">About</p></summary>
                     <p class="space-y-2 text-sm p-2">
                     
                         
@@ -118,29 +109,28 @@ A minimalistic Christian website for getting your life together in the form of g
 	</p>
                         </details>
 						
-            <!-- Q & A block -->
             <div class="mt-4">
                 <details>
-                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1">Q & A</p></summary>
+                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1 **text-black hover:text-red-700**">Q & A</p></summary>
                     <p class="space-y-2 text-sm p-2">
                     
                         <details>
-                            <summary>What is "<strong>Victory</strong>"?</summary>
+                            <summary class="caret-indented">What is "<strong>Victory</strong>"?</summary>
                             <p>Symbolizes Jesus Christ's triumphant victory over sin, death, and the devil.</p>
                         </details>
 
                         <details>
-                            <summary>What is "<strong>Paths</strong>"?</summary>
+                            <summary class="caret-indented">What is "<strong>Paths</strong>"?</summary>
                             <p>The routes offered to users to achieve their own victory over worldly struggles (finances, health, family).</p>
                         </details>
 
                         <details>
-                            <summary>What is "<strong>Victory Paths</strong>"?</summary>
+                            <summary class="caret-indented">What is "<strong>Victory Paths</strong>"?</summary>
                             <p>Provides clear, prioritized guidance drawn from the Bible, affirming that God's wisdom is the correct and intended methodology for our lives.</p>
                         </details>
 
                         <details>
-                            <summary><strong>New User</strong> Process</summary>
+                            <summary class="caret-indented"><strong>New User</strong> Process</summary>
                             <p>An onboarding process where the new user answers questionnaires designed to assess their current standing (life XP) in various areas.</p>
                             <p>Example Question: "How many days per week do you exercise?"</p>
                             <p>Example Answer: "3 days per week."</p>
@@ -150,7 +140,7 @@ A minimalistic Christian website for getting your life together in the form of g
                         </details>
 
                         <details>
-                            <summary><strong>Existing User</strong> Flow</summary>
+                            <summary class="caret-indented"><strong>Existing User</strong> Flow</summary>
                             <p>Existing users can enter their saved data to reflect the progress they have already made.</p>
                             <p>Users continue completing Pathways and saving their progress.</p>
                             <p>Once a user finishes a Pathway, they update the Skills Tracker.</p>
@@ -159,55 +149,54 @@ A minimalistic Christian website for getting your life together in the form of g
                         </details>
 
                         <details>
-                            <summary>Community<strong> Forum</strong></summary>
+                            <summary class="caret-indented">Community<strong> Forum</strong></summary>
                             <p>A public forum called "Victory Pages" is available for users and serves as the website's home page.</p>
                         </details>
                     </p>
                 </details>
 				
-							<!-- Library dropdown menu -->
-
-            <div class="mt-4">
+							<div class="mt-4">
                 <details>
-                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1">Library</p></summary>
+                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1 **text-black hover:text-red-700**">Library</p></summary>
                     <p class="space-y-2 text-sm p-2">
                     
                         
 
 
 
-<p>If the videos do not load refresh the page and try again</p>
+<p>*If the videos do not load refresh the page and try again.</p>
 <br>
 <p><strong>Christianity</strong><p>
-<p>The Holy Bible <em>(standard english version)</em> <a href="https://www.esv.org/">🕮</a></p>
+<p class="text-black hover:text-red-900">The Holy Bible <em>(standard english version)</em> <a href="https://www.esv.org/">🕮</a></p>
 
-    <p><strong>Lutheranism</strong></p>
+    <p><summary><strong>Lutheranism</strong></summary></p>
 
-    <p>
+   
+	<p class="text-black hover:text-red-900">
         What is the Book of Concord? (Video)
         <span id="video1-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/GGVVegWs-vI?autoplay=1">
               
         </span>
-    </p>
+    </p>-
 
     <div id="video1-container" class="video-container">
         <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <p><a href="https://bookofconcord.org/">The Book of Concord 🕮</a></p>
+    <p class="text-black hover:text-red-900"><a href="https://bookofconcord.org/">The Book of Concord 🕮</a></p>
 
-    <p>
+    <p class="text-black hover:text-red-900">
         Tour of the Cradle of Lutheran Reformation Part 1 (Video)
         <span id="video2-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/_sW_IpfP6jY?autoplay=1">
              
         </span>
-    </p>
+    </p>-
     <div id="video2-container" class="video-container">
         <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <p>
-        Tour of the Cradle of Lutheran Reformation Part 2
+    <p class="text-black hover:text-red-900">
+        Tour of the Cradle of Lutheran Reformation Part 2 (Video)
         <span id="video3-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/D86nmq-2jxc?autoplay=1">
              
         </span>
@@ -328,12 +317,7 @@ A minimalistic Christian website for getting your life together in the form of g
                         </details>
 						
             </div>
-        </div>
-        
-                 
-     
-        <footer style="margin-bottom: auto;">
-            <!-- Combined Footer Block -->
+        </div> <footer style="margin-bottom: auto;">
             <div class="pt-4">
                 <div class="p-2 text-xs retro-inset-panel text-center">
                     <p class="mb-1 font-bold text-gray-700">Victory Pages & Paths</p>
@@ -354,9 +338,7 @@ A minimalistic Christian website for getting your life together in the form of g
 </td>
                 </td>
 
-                <!-- THIRD COLUMN: Pages: public forum (RIGHT - 40%) -->
                 <td class="td-right">
-                    <!-- Title: Pages: Christian public forum -->
                     <div class="p-2 mb-4 text-left">
                         <div class="column-header m-0 p-0">
                             <span class="text-base font-bold text-black">Pages: Christian public forum</span>
@@ -367,7 +349,6 @@ A minimalistic Christian website for getting your life together in the form of g
                     
                     <div id="posts-messages" class="text-sm text-center text-red-700 mb-2"></div>
                     
-                    <!-- Controls Container (Hidden when viewing single post) -->
                     <div id="forum-controls">
                         <div class="tag-dropdown-container mb-4">
                             <select id="tagDropdown" class="retro-inset-field p-1 bg-white">
@@ -403,7 +384,6 @@ A minimalistic Christian website for getting your life together in the form of g
   
 
 
-  <!-- Load JavaScript -->
   <script type="module" src="pages/post_data.js"></script>
 </body>
 </html>
