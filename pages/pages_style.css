@@ -31,12 +31,11 @@
     letter-spacing: 0.05em;
 }
 
-/* Styles for the classic 3D buttons used throughout the page (Raised by default) */
 .classic-3d-button, .btn-class3 {
     padding: 6px 12px;
     font-size: 0.875rem;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: none;
     background-color: #C0C0C0; /* Classic GUI gray */
     /* --- TEXT COLOR CHANGE: Ensure button text is BLACK --- */
     color: #000000 !important; 
@@ -45,7 +44,7 @@
     transition: all 0.05s ease;
     
     /* Default state: Flat text, Raised Button */
-    text-shadow: none; 
+    text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF; 
 
     /* Classic 3D Button Border (Raised effect) */
     border: 1px solid;
@@ -63,7 +62,7 @@
 The button now visually depresses on hover, but the text remains flat.
 */
 .classic-3d-button:hover, .btn-class3:hover {
-    color: #000000; 
+    color: darkred; 
     
     /* Text remains flat */
     text-shadow: none; 
@@ -141,10 +140,10 @@ The button now visually depresses on hover, but the text remains flat.
 /* 2. Caret Indented Styling (For Q&A summaries) */
 .caret-indented {
     /* Set color to dark red as requested */
-    color: #990000; 
-    font-weight: bold;
+    color: #000000; 
+    font-weight: none;
     /* Indented Text Shadow */
-    text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;
+    text-shadow: none;
     
     /* Custom caret (triangle/arrow) for details element */
     list-style: none; /* Hide default arrow */
@@ -155,13 +154,13 @@ details > summary.caret-indented::marker,
 details > summary.caret-indented::-webkit-details-marker {
     content: " \25B6"; /* Unicode right-pointing triangle */
     font-size: 10px; 
-    color: #440000; /* Darker red for the inset look */
-    text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;
+    color: 
+    text-shadow: none;
 }
 
-/* Hover effect for the Caret/Summary */
+/* Hover effect for the Summary */
 .caret-indented:hover {
-    color: white; /* Lighter red on hover */
+    color: darkred; /* Hover color */
     cursor: pointer;
 }
 
@@ -170,18 +169,10 @@ details > summary.caret-indented::-webkit-details-marker {
 /* ------------------------------------------------------------------ */
 
 /* Basic layout styles for the table structure */
-body {
-    background-color: #A0A0A0; /* CHANGED: Darker GUI Gray for background */
-    font-family: 'Inter', sans-serif;
-}
-.page-wrapper-table {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: #A0A0A0; /* CHANGED: Match body background */
-    border-collapse: separate;
-    border-spacing: 4px; /* Space between the columns/cells */
-}
+{ background-color: #A0A0A0; /* CHANGED: Darker GUI Gray for background */ font-family: 'Inter', sans-serif; /
+* FIX: Ensure body takes up full viewport height for table stretching */ height: 100vh; min-height: 100vh; margin: 0; }
+.page-wrapper-table { width: 90%; max-width: 1200px; margin: 20px auto; background-color: #A0A0A0; /* CHANGED: Match body background */ 
+border-collapse: separate; border-spacing: 4px; /* Space between the columns/cells */ /* FIX: Set table height to stretch columns */ height: calc(100vh - 40px); /* 100vh minus 20px top/bottom margin */ }
 td {
     padding: 10px;
     vertical-align: top;
@@ -207,13 +198,13 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
 .post-item {
     border: 2px solid;
     border-color: #808080 #ffffff #ffffff #808080; /* Inset/depressed effect */
-    background-color: #E0E0E0; /* Lighter gray for content area */
+    background-color: white;
     padding: 8px;
     margin-bottom: 8px;
     font-size: 0.9rem;
 }
 .post-header {
-    font-weight: 700;
+    font-weight: 1000;
     color: #000080; /* Dark blue title */
     border-bottom: 1px dashed #A0A0A0;
     margin-bottom: 4px;
@@ -229,104 +220,105 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
 .post-detail-container {
     border: 2px solid;
     border-color: #808080 #ffffff #ffffff #808080; /* Inset/depressed effect */
-    background-color: #F0F0F0;
+    background-color: white;
 }
 
-/* ------------------------------------------------------------------ */
-/* RETRO SCROLLBAR STYLING (FOR WEBKIT BROWSERS - Chrome/Safari/Edge) */
-/* Apply to body, #posts-list, AND #paraclete-scroll-wrapper */
-/* ------------------------------------------------------------------ */
 
-/* 1. General Track and Width */
-body::-webkit-scrollbar, 
-#posts-list::-webkit-scrollbar, 
-#paraclete-scroll-wrapper::-webkit-scrollbar { /* ADDED */
-    width: 15px; /* Standard retro width */
-    height: 15px;
+/* This targets the visible paragraph that contains the clickable span */
+p.text-black.hover\:text-red-900 {
+    cursor: pointer;
 }
 
-/* 2. Track Background */
-body::-webkit-scrollbar-track, 
-#posts-list::-webkit-scrollbar-track, 
-#paraclete-scroll-wrapper::-webkit-scrollbar-track { /* ADDED */
-    background-color: #E0E0E0; /* Slightly lighter gray */
+
+.eb-garamond-<uniquifier> {
+  font-family: "EB Garamond", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
-/* 3. Thumb (The movable part) - Apply Raised 3D effect */
-body::-webkit-scrollbar-thumb, 
-#posts-list::-webkit-scrollbar-thumb, 
-#paraclete-scroll-wrapper::-webkit-scrollbar-thumb { /* ADDED */
-    background-color: #C0C0C0; /* Main GUI Gray */
-    border: 1px solid;
-    /* Raised effect borders */
-    border-top-color: #ffffff; 
-    border-left-color: #ffffff;
-    border-bottom-color: #808080; 
-    border-right-color: #808080;
+/* NEW STYLE: Ensure the Paraclete content area scrolls but the footer remains fixed */
+#paraclete-scroll-wrapper {
+    overflow-y: auto; /* Adds the scrollbar back */
+    -webkit-overflow-scrolling: touch; /* For smoother mobile scrolling */
+    min-height: 0; /* Important for flex items to shrink and allow space for the footer */
+}
+/* New style for video link text in the Library section */
+.library-video-link {
+    color: #6A0DAD; /* Purple color */
+    text-decoration: underline;
 }
 
-/* 4. Scrollbar Corner (where vertical and horizontal meet) */
-body::-webkit-scrollbar-corner, 
-#posts-list::-webkit-scrollbar-corner,
-#paraclete-scroll-wrapper::-webkit-scrollbar-corner { /* ADDED */
-    background-color: #C0C0C0;
-    border: 1px solid #808080; 
+/* Optional: Define a hover state for the video link */
+.library-video-link:hover {
+    color: #4B0082; /* Slightly darker purple on hover */
+    cursor: pointer;
 }
 
-/* 5. Scrollbar Thumb Hover/Active state (optional visual feedback) */
-body::-webkit-scrollbar-thumb:hover, 
-#posts-list::-webkit-scrollbar-thumb:hover, 
-#paraclete-scroll-wrapper::-webkit-scrollbar-thumb:hover { /* ADDED */
-    background-color: #D0D0D0; 
+/* Utility class to hide content without disrupting layout when shown */
+.hidden-content {
+    display: none;
 }
 
-/* 6. Scrollbar Buttons (Arrows) - Apply Raised 3D effect */
-body::-webkit-scrollbar-button, 
-#posts-list::-webkit-scrollbar-button,
-#paraclete-scroll-wrapper::-webkit-scrollbar-button { /* ADDED */
-    /* Button dimensions matching the scrollbar width/height */
-    width: 15px;
-    height: 15px; 
-    display: block; /* Ensure it occupies space */
-    background-color: #C0C0C0; /* Main GUI Gray */
+/* -------------------------------------- */
+/* 2. IMAGE STYLING FOR CARVED/INDENTED LOOK */
+/* -------------------------------------- */
+
+/* Container for the image, ensures it is centered and has the background of the "page" */
+#pages-closed-image {
+    padding: 20px;
+    margin-bottom: 10px;
+ 
     
-    /* Raised 3D effect: White on top/left, Gray on bottom/right */
-    border: 1px solid;
-    border-top-color: #ffffff; 
-    border-left-color: #ffffff;
-    border-bottom-color: #808080; 
-    border-right-color: #808080;
+    text-align: center; /* Centers the image if it's smaller than the container */
 }
 
-/* 7. Scrollbar Button Hover/Active (Optional: Depressed effect on click) */
-body::-webkit-scrollbar-button:active, 
-#posts-list::-webkit-scrollbar-button:active, 
-#paraclete-scroll-wrapper::-webkit-scrollbar-button:active { /* ADDED */
-    /* Depressed effect: Gray on top/left, White on bottom/right */
-    border-top-color: #808080; 
-    border-left-color: #808080;
-    border-bottom-color: #ffffff; 
-    border-right-color: #ffffff; 
+/* Style for the image itself to achieve the carved/embossed look */
+.carved-image-style {
+    width: 100%; /* Make the image responsive to the column width */
+    max-width: 300px; /* Adjust this maximum size as needed */
+    height: auto;
+} /* <--- CRITICAL FIX: The missing closing brace for this block is now here. */
+    
+/* -------------------------------------- */
+/* DEFINITIVE FIX: HEADER/BUTTON ALIGNMENT */
+/* -------------------------------------- */
+
+.header-and-button-container {
+    display: flex; /* <-- This is the core fix to enable Flexbox */
+    justify-content: space-between; /* <-- This rule forces the button to the far right */
+    align-items: center; 
+    width: 100%; /* Important to make space-between span the whole column */
+    margin: 0 0 5px 0; 
 }
 
-/* 8. ARROW GLYPHS: Using :decrement/:increment selectors to ensure only one arrow appears at each end. */
+.header-button {
+    width: auto !important; 
+    min-width: 60px; 
+    margin: 0;
+    padding: 3px 8px; 
+    font-size: 0.75rem; 
+    text-align: center;
+    line-height: 1; 
+} /* Added missing brace */
 
-/* UP Arrow (for the top/decrement button of vertical scrollbars) */
-body::-webkit-scrollbar-button:vertical:decrement, 
-#posts-list::-webkit-scrollbar-button:vertical:decrement, 
-#paraclete-scroll-wrapper::-webkit-scrollbar-button:vertical:decrement { /* ADDED */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,0 0,10 10,10" fill="black"/></svg>');
-    background-size: 40%; 
-    background-repeat: no-repeat;
-    background-position: center 55%; 
+.carved-image-style {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    
+
 }
 
-/* DOWN Arrow (for the bottom/increment button of vertical scrollbars) */
-body::-webkit-scrollbar-button:vertical:increment, 
-#posts-list::-webkit-scrollbar-button:vertical:increment, 
-#paraclete-scroll-wrapper::-webkit-scrollbar-button:vertical:increment { /* ADDED */
-     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><polygon points="5,10 0,0 10,0" fill="black"/></svg>');
-    background-size: 40%; 
-    background-repeat: no-repeat;
-    background-position: center 45%; 
+
+.hidden-content {
+    display: none !important;
+}
+
+.user-buttons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
 }

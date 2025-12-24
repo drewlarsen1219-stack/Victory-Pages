@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Welcome to Victory Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome page for Christian Forum and Life Gamification tool.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="pages_style.css"> 
+    
+    <style>
+        /* This centers the entire content block vertically and horizontally */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #A0A0A0; /* Matches your body background */
+        }
+        
+        .welcome-panel {
+            /* Using a max width prevents it from spanning the whole screen */
+            max-width: 700px;
+            width: 90%;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .section-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+
+        .cross-symbol {
+            font-size: 5rem; /* Large, bold cross symbol */
+            line-height: 0.8;
+            color: darkred;
+            text-shadow: -1px -1px 0px #808080, 1px 1px 0px #FFFFFF; /* Matches your header shadow */
+            margin: 10px 0 20px 0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body style="font-family: 'EB Garamond', serif;">
+
+    <div class="welcome-panel retro-inset-panel">
+
+        <h1 class="retro-visible-inset-text text-3xl font-bold mb-4">
+            Welcome to Victory Pages & Paths
+        </h1>
+
+        <div class="cross-symbol" aria-label="Christian Cross Symbol">
+            &#10013;
+        </div>
+        
+        <p class="mb-6 text-sm text-gray-700">
+            A Christian platform offering a forum for community and a tool for spiritual and personal growth.
+        </p>
+
+        <hr class="border-t border-gray-400 my-4">
+
+        <div class="text-left space-y-4">
+            
+            <p>
+                <span class="section-header">Paths: Life Gamified</span>
+                <br>
+                This section provides structured, biblical *Pathways* (quests) to help you track and achieve victory in real-life areas like finances, health, and spiritual discipline.
+            </p>
+
+            <p>
+                <span class="section-header">Pages: Christian Forum</span>
+                <br>
+                This is a public community board where users can create, share, and discuss pages on topics related to faith, life, and technology. (This is the section you see on the right of the main page.)
+            </p>
+
+            <p>
+                <span class="section-header">Paraclete: Index</span>
+                <br>
+                The Paraclete (Helper/Advocate) section contains the site's Q&A, library of resources, and general information about the platform's mission.
+            </p>
+
+        </div>
+
+        <hr class="border-t border-gray-400 my-4">
+
+        <button 
+            class="classic-3d-button text-lg px-8 py-3 mt-4" 
+            onclick="window.location.href='index.html'"
+        >
+            Enter the Site
+        </button>
+        
+        <p class="mt-4 text-xs text-gray-500">
+            Clicking 'Enter the Main Site' will take you to the three-column interface.
+        </p>
+
+    </div>
+
+</body>
+</html>

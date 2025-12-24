@@ -7,317 +7,292 @@
     <title>3PS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gamification of real life and a Forum for Christians. ">
-   
-   <script src="https://cdn.tailwindcss.com"></script>
-   
-   <link rel="stylesheet" href="pages/pages_style.css">
-	
-</head>
+    
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pages/pages_style.css">
 
-<body class="font-mono">
-
-  <table class="page-wrapper-table" cellspacing="2" cellpadding="2" border="0">
-  
+    </head>
+<body style="font-family: 'EB Garamond', serif;">
+<table class="page-wrapper-table" /cellpacing and cellpading are not working/ cellspacing="20" cellpadding="20" border="10">
+    
         <tbody>
             <tr>
                 <td class="td-left">
                     
-                    <div class="p-2 mb-4 text-left">
-                        <div class="column-header m-0 p-0">
-                            <span class="text-base font-bold text-black">Paths: Life Gamified</span>
-                        </div>
-                    </div>
+<div class="p-2 mb-4 text-left">
+    <div class="header-and-button-container">
+        <span 
+            class="text-base font-bold" 
+            style="
+                color: black; 
+                
+                text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;
+                
+                font-size: 20px;"
+        >
+            Paths: Life Gamified
+        </span>
+        
+        <button 
+			
+            id="paths-content-toggle" 
+            class="classic-3d-button header-button text-base font-bold" 
+            onclick="toggleColumn('paths-content')"
+        >
+            Open ▼
+        </button>
+    </div>
+    <hr class="border-t border-gray-600 my-4">
+</div>
+
                     
+                    <div id="paths-content" class="hidden-content">
                     <p class="text-center mt-4">
-					
+                        
                         <div class="retro-inset-panel triangle-wrapper w-full max-w-xs mx-auto" aria-hidden="false">
                             <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet"
                                     role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
                                 <polygon points="60,15 15,95 105,95" fill="none" stroke="#A0A0A0" stroke-width="1" class="outset-triangle"/>
                                 
                                 <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
-                                      font-size="6" fill="#D0D0D0" text-anchor="middle"
-                                      transform="translate(30,61) rotate(-60)">Finder &gt;</text>
+                                    font-size="6" fill="#D0D0D0" text-anchor="middle"
+                                    transform="translate(30,61) rotate(-60)">Finder &gt;</text>
                                 <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
-                                      font-size="6" fill="#D0D0D0" text-anchor="middle"
-                                      transform="translate(90,61) rotate(61)">Tracker &gt;</text>
+                                    font-size="6" fill="#D0D0D0" text-anchor="middle"
+                                    transform="translate(90,61) rotate(61)">Tracker &gt;</text>
                                 <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
-                                      font-size="6" fill="#D0D0D0" text-anchor="middle" x="60" y="102">&lt; Ways</text>
+                                    font-size="6" fill="#D0D0D0" text-anchor="middle" x="60" y="102">&lt; Ways</text>
                                 
-                                <foreignObject x="30" y="55" width="60" height="40">
+                                <foreignObject x="35" y="58" width="50" height="30">
                                     <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0;padding:0;">
                                         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
+                                            <span style="font-size: 5.5px; text-align: center; line-height: 1.3; font-weight: 600;">Welcome to<br>Pathways!</span>
                                         </div>
                                     </body>
-									
+                                    
                                 </foreignObject>
                             </svg>
                         </div>
                     </p>
                     
                     <br>
-                    <br>                    
+                    <br>                        
                     
-                    <p class="text-center">
+                    <div class="user-buttons-container">
                         <button class="classic-3d-button new-user-button" onclick="window.location.href='/finder/finder_structure.html'">
                             New User
                         </button>
-						
+                        
                         <button class="classic-3d-button" onclick="window.location.href='/tracker/tracker_structure.html'">
                             Existing User
                         </button>
-                    </p>
+                    </div>
+                    </div>
 
                 </td>
 
                 <td class="td-center">
     <div style="display: flex; flex-direction: column; min-height: 100%; height: 100%;">
         
+        
+        
+        
         <div class="p-2 mb-4 text-left">
-            <div class="column-header m-0 p-0">
-                <span class="text-base font-bold text-black">Paraclete: index</span>
-            </div>
-        </div>
+            <div class="header-and-button-container">
+                <span 
+                    class="text-base font-bold" 
+                    style="color: black; 
 
-        <div id="paraclete-scroll-wrapper" class="overflow-y-auto" style="flex-grow: 1;">
+                        text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;
+                        
+                        font-size: 20px;"
+                >
+                    Paraclete: Index
+                </span>
             
+                <button 
+                    id="paraclete-content-toggle" 
+                    class="classic-3d-button header-button" 
+                    onclick="toggleColumn('paraclete-content')"
+                >
+                    Open ▼
+                </button>
+            </div>
+            <hr class="border-t border-gray-600 my-4">
+        </div>
+		
 
-			<div class="mt-4">
-                <details>
-                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1 **text-black hover:text-red-700**">About</p></summary>
+<div id="paraclete-content" class="hidden-content" style="margin-top: 20px;">
+<div id="paraclete-scroll-wrapper" style="flex-grow: 1;">            
+
+            <div class="mt-4">
+                <details> <summary>About</p></summary>
                     <p class="space-y-2 text-sm p-2">
                     
-                        
-
-
-
-<p>
-A minimalistic Christian website for getting your life together in the form of gamifycation of life skills. Also a blog.
+                   <p>
+A website for Christians to grow.
 </p>
-
+<hr>
     <p>
-	<strong>Hardware</strong>: Public library PC, USB thumb drive<br>
-	</p>
-	<p>
+    <strong>Hardware</strong>: Public library PC, USB thumb drive<br>
+    </p>
+<hr>  
+    <p>
     <strong>Software</strong>: Formerly: Windows Notepad
-	Current: Gitbash, Notepad++<br>
- </p>
-
+    Current: Gitbash, Notepad++<br>
+    </p>
+<hr>
   <p><strong>About the V3P Owner:</strong></p>
+  
   <p>
-    Christian who lives in Northwest Arkansas. Member of the Lutheran Church of Missouri Synod. 
-	</p>
-                        </details>
-						
+    Christian who lives in Northwest Arkansas. Member of the Lutheran Church of Missouri Synod.    
+    </p>
+
+                    </details>
+                        
+                        
             <div class="mt-4">
                 <details>
-                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1 **text-black hover:text-red-700**">Q & A</p></summary>
+                    <summary>Q & A</p></summary>
                     <p class="space-y-2 text-sm p-2">
                     
                         <details>
-                            <summary class="caret-indented">What is "<strong>Victory</strong>"?</summary>
+                            <summary> What is "<strong>Victory</strong>"?</summary>
+                           <hr>                         
                             <p>Symbolizes Jesus Christ's triumphant victory over sin, death, and the devil.</p>
+                            
                         </details>
 
                         <details>
-                            <summary class="caret-indented">What is "<strong>Paths</strong>"?</summary>
+                            <summary> What is "<strong>Paths</strong>"?</summary>
+                            <hr>
                             <p>The routes offered to users to achieve their own victory over worldly struggles (finances, health, family).</p>
+                            
                         </details>
+                        
 
                         <details>
-                            <summary class="caret-indented">What is "<strong>Victory Paths</strong>"?</summary>
+                            <summary> "<strong>Victory Paths</strong>"?</summary></p>
+                            <hr>
                             <p>Provides clear, prioritized guidance drawn from the Bible, affirming that God's wisdom is the correct and intended methodology for our lives.</p>
+                            
                         </details>
 
                         <details>
-                            <summary class="caret-indented"><strong>New User</strong> Process</summary>
+                        <hr>
+                            <summary><strong>New User</strong> Process</summary>
                             <p>An onboarding process where the new user answers questionnaires designed to assess their current standing (life XP) in various areas.</p>
                             <p>Example Question: "How many days per week do you exercise?"</p>
                             <p>Example Answer: "3 days per week."</p>
                             <p>Website Action: The user's Skills Tracker is updated with the new data.</p>
                             <p>Website Action: New Pathway(s) are unlocked based on the user's current skill level.</p>
                             <p>The user now has new Pathways (quests) available to complete, both IRL (In Real Life) and online.</p>
+                            
                         </details>
 
                         <details>
-                            <summary class="caret-indented"><strong>Existing User</strong> Flow</summary>
+                        <hr>
+                            <summary><strong>Existing User</strong> Flow</summary>
                             <p>Existing users can enter their saved data to reflect the progress they have already made.</p>
                             <p>Users continue completing Pathways and saving their progress.</p>
                             <p>Once a user finishes a Pathway, they update the Skills Tracker.</p>
                             <p>Website Action: A new quest is unlocked.</p>
                             <p>The user repeats this process to progress further through the game.</p>
+                            
                         </details>
 
                         <details>
-                            <summary class="caret-indented">Community<strong> Forum</strong></summary>
+                        <hr>
+                            <summary>Public<strong> Forum</strong></summary>
                             <p>A public forum called "Victory Pages" is available for users and serves as the website's home page.</p>
+                            
                         </details>
                     </p>
                 </details>
-				
-							<div class="mt-4">
+                
+                            <div class="mt-4">
                 <details>
-                    <summary><p class="font-bold text-base inline-block cursor-pointer p-1 **text-black hover:text-red-700**">Library</p></summary>
+                    <summary>Library</p></summary>
                     <p class="space-y-2 text-sm p-2">
                     
+                    
+                    
+<p>*If the videos do not load refresh the page and try again.*</p>
+
+<p>*Contains links to external sites (books), Video load directly on site.*</p>
+
+
+                        <details>
+                            <summary><strong>Christianity</strong></summary></p>
+                            <hr>
+                           <p class="text-black hover:text-red-900">The Holy Bible <em>(standard english version)</em> <a href="https://www.esv.org/">🕮</a></p>
+                           
                         
+<p><p>
+  <strong>Mere Christianity</strong> by C.S. Lewis explores Christian faith clearly. 
+  <a href="https://www.amazon.com/dp/0060652926" target="_blank" rel="noopener noreferrer" class="minimal-link">
+    Buy on Amazon
+  </a>
+</p>
+</a>
 
+</p>
 
-
-<p>*If the videos do not load refresh the page and try again.</p>
-<br>
-<p><strong>Christianity</strong><p>
-<p class="text-black hover:text-red-900">The Holy Bible <em>(standard english version)</em> <a href="https://www.esv.org/">🕮</a></p>
-
-    <p><summary><strong>Lutheranism</strong></summary></p>
-
-   
-	<p class="text-black hover:text-red-900">
-        What is the Book of Concord? (Video)
+</details>
+                        <details>
+                            <summary><strong>Lutheranism</strong></summary></p>
+                            <hr>
+                            
+							What is the Book of Concord? 
+                            <p class="library-video-link">
+        Video
         <span id="video1-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/GGVVegWs-vI?autoplay=1">
-              
-        </span>
-    </p>-
+                             </span></p>
+                           
+                    
 
-    <div id="video1-container" class="video-container">
+    <div id="video1-container" class="video-container" style="display: none;">
         <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-
-    <p class="text-black hover:text-red-900"><a href="https://bookofconcord.org/">The Book of Concord 🕮</a></p>
-
-    <p class="text-black hover:text-red-900">
-        Tour of the Cradle of Lutheran Reformation Part 1 (Video)
+<hr>
+ The Book of Concord </p><p><a href="https://bookofconcord.org/">🕮</a></p>
+</p><hr>
+    
+    
+    Tour of the Cradle of Lutheran Reformation: Part 1
+	<p class="library-video-link">
+         Video
         <span id="video2-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/_sW_IpfP6jY?autoplay=1">
-             
-        </span>
-    </p>-
-    <div id="video2-container" class="video-container">
-        <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
-    <p class="text-black hover:text-red-900">
-        Tour of the Cradle of Lutheran Reformation Part 2 (Video)
-        <span id="video3-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/D86nmq-2jxc?autoplay=1">
-             
+                     
         </span>
     </p>
-    <div id="video3-container" class="video-container">
+<hr>
+
+    <div id="video2-container" class="video-container" style="display: none;">
         <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
-    <hr>
     
-<script>
-    // Define CSS selectors
-    const PLACEHOLDER_SELECTOR = '.video-placeholder';
-    const CONTAINER_SELECTOR = '.video-container';
+        Tour of the Cradle of Lutheran Reformation: Part 2 
+        <span id="video3-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/D86nmq-2jxc?autoplay=1">
+                  <p class="library-video-link">
+				  Video   
+        </span>
+    </p>
+    <div id="video3-container" class="video-container" style="display: none;">
+        <iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</details>
 
-    /**
-     * Finds a video container and removes its iframe, effectively stopping playback 
-     * and forcing a resource release.
-     * @param {string} videoId - The ID stem (e.g., 'video1')
-     */
-    function destroyIframe(videoId) {
-        const container = document.getElementById(`${videoId}-container`);
-        if (container) {
-            const iframe = container.querySelector('iframe');
-            if (iframe) {
-                // Completely remove the iframe from the DOM
-                container.removeChild(iframe);
-            }
-        }
-    }
+ 
 
-    /**
-     * Creates a new iframe element and inserts it into the specified container.
-     * @param {string} videoId - The ID stem (e.g., 'video1')
-     * @param {string} videoUrl - The full embed URL with parameters
-     */
-    function createIframe(videoId, videoUrl) {
-        const container = document.getElementById(`${videoId}-container`);
-        if (container) {
-            // 1. Create the new iframe element
-            const newIframe = document.createElement('iframe');
-            
-            // 2. Set all necessary attributes
-            newIframe.setAttribute('width', '560');
-            newIframe.setAttribute('height', '315');
-            newIframe.setAttribute('frameborder', '0');
-            newIframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-            newIframe.setAttribute('allowfullscreen', '');
-            newIframe.src = videoUrl; // Set the source *after* all other attributes
-
-            // 3. Insert the new iframe into the container
-            container.appendChild(newIframe);
-        }
-    }
-
-    // Wait for the DOM to be fully loaded
-    document.addEventListener('DOMContentLoaded', function() {
-        const videoPlaceholders = document.querySelectorAll(PLACEHOLDER_SELECTOR);
-
-        // Map to store the original iframe structure data for re-creation
-        const videoMap = {};
-
-        // Initialization: Capture all video IDs and destroy initial empty iframes
-        videoPlaceholders.forEach(placeholder => {
-            const videoId = placeholder.id.replace('-placeholder', '');
-            videoMap[videoId] = true; // Simple map to track IDs
-            
-            // Immediately destroy any placeholder iframes to start clean
-            destroyIframe(videoId); 
-        });
-
-
-        // Loop through each placeholder link to attach the click listener
-        videoPlaceholders.forEach(placeholder => {
-            placeholder.addEventListener('click', function(event) {
-                event.preventDefault();
-
-                const clickedVideoId = this.id.replace('-placeholder', '');
-                let videoUrl = this.getAttribute('data-video-url');
-
-                // 1. **AGGRESSIVE RESET:** Loop through ALL known video IDs
-                Object.keys(videoMap).forEach(videoId => {
-                    const container = document.getElementById(`${videoId}-container`);
-                    const placeholderEl = document.getElementById(`${videoId}-placeholder`);
-
-                    // Destroy the iframe if it exists
-                    destroyIframe(videoId);
-                    
-                    // Show the placeholder link and hide the container
-                    if (placeholderEl) {
-                        placeholderEl.style.display = 'inline';
-                    }
-                    if (container) {
-                        container.style.display = 'none';
-                    }
-                });
-
-                // 2. **LOAD NEW VIDEO:** Load the clicked video
-                
-                // Ensure protocol is HTTPS
-                if (!videoUrl.startsWith('https://')) {
-                    videoUrl = 'https://' + videoUrl.replace('//', '');
-                }
-
-                // Hide the text link for the one we are about to play
-                this.style.display = 'none'; 
-
-                // Create and load the new iframe for the selected video
-                createIframe(clickedVideoId, videoUrl);
-
-                // Make the container visible
-                document.getElementById(`${clickedVideoId}-container`).style.display = 'block';
-            });
-        });
-    });
-</script>
-	</p>
+    </p>
                         </details>
-						
+                        
             </div>
-        </div> <footer style="margin-bottom: auto;">
+        </div> <footer>
             <div class="pt-4">
                 <div class="p-2 text-xs retro-inset-panel text-center">
                     <p class="mb-1 font-bold text-gray-700">Victory Pages & Paths</p>
@@ -335,55 +310,72 @@ A minimalistic Christian website for getting your life together in the form of g
             </div>
         </footer>
     </div>
+</div>
 </td>
                 </td>
 
-                <td class="td-right">
-                    <div class="p-2 mb-4 text-left">
-                        <div class="column-header m-0 p-0">
-                            <span class="text-base font-bold text-black">Pages: Christian public forum</span>
-                        </div>
-                    </div>
+<td class="td-right">
+    <div class="p-2 mb-4 text-left">
+        <div class="header-and-button-container">
+            <span class="text-base font-bold" style="color: black; text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF; font-size: 20px;">
+                Pages: Forum                                 
+            </span>
+            
+            <button id="pages-content-toggle" class="classic-3d-button header-button" onclick="toggleColumn('pages-content')">  
+               
+                    Open ▼
+                </span>
+            </button>
+        </div>
+        <hr class="border-t border-gray-600 my-4">
+    </div>
 
-                    <hr class="border-t border-gray-600 my-4">
-                    
-                    <div id="posts-messages" class="text-sm text-center text-red-700 mb-2"></div>
-                    
-                    <div id="forum-controls">
-                        <div class="tag-dropdown-container mb-4">
-                            <select id="tagDropdown" class="retro-inset-field p-1 bg-white">
-                                <option value="Most recent">Most recent</option>
-                                <option value="investing">Investing</option>
-                                <option value="gaming">Gaming</option>
-                                <option value="movies">Movies</option>
-                                <option value="faith">Faith</option>
-                                <option value="life">Life</option>
-                                <option value="opinion">Opinion</option>
-                                <option value="programing">Programming</option>
-                                <option value="music">Music</option>
-                            </select>
-                        </div>
-                    </div>
+    <div id="pages-closed-image" style="display: block;">
+        <img src="pages/Agnus_Dei.png" alt="Agnus_Dei" class="carved-image-style">
+        <div class="pt-4">
+            <div class="p-2 text-xs retro-inset-panel text-center">
+                <p><strong>This space is for the site owner to make public posts. It is also available to the public community where users can make posts themselves.</strong></p>
+            </div>
+        </div>
+    </div>
 
-                    <div id="posts-list" class="space-y-2 h-96 overflow-y-auto">
-                        <p class="text-center">Loading posts...</p>
-                    </div>
-                    
-                    <div class="mt-4 flex justify-between items-center" id="action-controls">
-                        <button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='pages/Navigation/Submission_tool (styling needs fixed).html'">Create Post</button>
-                    
-                        <div class="pagination-controls space-x-2">
-                            <button id="prevPage" class="btn-class3">&lt; Previous</button>
-                            <button id="nextPage" class="btn-class3">Next &gt;</button>
-                        </div>
-                    </div>
-                </td>
-            </tr>
+    <div id="pages-content" class="hidden-content" style="margin-top: 20px;">
+        <div id="posts-messages" class="text-sm text-center text-red-700 mb-2"></div>
+        <div id="forum-controls">
+            <div class="tag-dropdown-container mb-4" style="margin-top: 20px;">
+                <select id="tagDropdown" class="retro-inset-field p-1">
+                    <option value="Most recent">Most recent</option>
+                    <option value="investing">Investing</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="movies">Movies</option>
+                    <option value="faith">Faith</option>
+                    <option value="life">Life</option>
+                    <option value="opinion">Opinion</option>
+                    <option value="programming">Programming</option>
+                    <option value="music">Music</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="posts-list" class="space-y-2 h-96 overflow-y-auto">
+            <p class="text-center">Loading posts...</p>
+        </div>
+        
+        <div class="mt-4 flex justify-between items-center" id="action-controls" style="margin-top: 30px;">
+            <p><button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='pages/Navigation/Submission_tool.html'">Create Post</button><br></p>
+            <div class="pagination-controls space-x-2" style="display: flex; gap: 10px;">
+                <button id="prevPage" class="btn-class3" disabled>&lt; Previous</button>
+                <button id="nextPage" class="btn-class3" disabled>Next &gt;</button>
+            </div>
+        </div>
+    </div>
+</td>
         </tbody>
-  </table>
-  
+    </table>
+    
+<script src="pages/pages_post_renderer.js"></script>
+<script src="pages/site script.js"></script>
 
 
-  <script type="module" src="pages/post_data.js"></script>
 </body>
 </html>

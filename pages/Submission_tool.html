@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Post Submission</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../../pages_style.css"> 
+</head>
+<body style="font-family: 'EB Garamond', serif;" class="p-4 bg-[#A0A0A0]">
+
+    <div class="page-wrapper-table max-w-lg mx-auto p-4 retro-inset-panel">
+        <h2 class="retro-visible-inset-text text-xl font-bold mb-6">Submit a New Page Entry</h2>
+        
+        <form id="submissionForm" class="space-y-4">
+            
+            <label for="postTitle" class="font-bold block">1. Entry Title (Max 80 characters)</label>
+            <input type="text" id="postTitle" class="retro-inset-field p-2 w-full" maxlength="80" required>
+
+            <label for="postTag" class="font-bold block">2. Category/Tag</label>
+            <select id="postTag" class="retro-inset-field p-2 w-full" required>
+                <option value="" disabled selected>Select a category...</option>
+                <option value="investing">Investing</option>
+                <option value="gaming">Gaming</option>
+                <option value="movies">Movies</option>
+                <option value="faith">Faith</option>
+                <option value="life">Life</option>
+                <option value="opinion">Opinion</option>
+                <option value="programming">Programming</option>
+                <option value="music">Music</option>
+            </select>
+
+            <label for="postContent" class="font-bold block">3. Entry Content</label>
+            <textarea id="postContent" class="retro-inset-field p-2 w-full" rows="12" required 
+                      placeholder="Enter your post content here. (Plain text only - NO HTML)"></textarea>
+                      
+            <label for="postAuthor" class="font-bold block">4. Your Name/Alias (Optional)</label>
+            <input type="text" id="postAuthor" class="retro-inset-field p-2 w-full" placeholder="Anonymous" maxlength="30">
+
+            <p class="text-sm text-center text-gray-700 pt-4">
+                * By clicking submit, an email draft will open for you to send to the editor for review.
+            </p>
+            
+            <div class="text-center pt-4 space-x-4">
+                <button type="button" class="classic-3d-button" onclick="window.history.back()">
+                    &lt; Cancel
+                </button>
+                <button type="button" class="classic-3d-button" onclick="generateEmailSubmission()">
+                    Send Post for Review
+                </button>
+            </div>
+        </form>
+    </div>
+
+<script>
+function generateEmailSubmission() {
+    const title = document.getElementById('postTitle').value.trim();
+    const tag = document.getElementById('postTag').value;
+    const content = document.getElementById('postContent').value.trim();
+    const author = document.getElementById('postAuthor').value.trim() || 'Anonymous';
+    
+    // Simple validation
+    if (!title || !tag || !content) {
+        alert("Please fill out the Title, Category, and Content fields before submitting.");
+        return;
+    }
+
+    const emailBody = `
+Post Title: ${title}
+Post Tag: ${tag}
+Author: ${author}
+Date Submitted: ${new Date().toLocaleDateString()}
+------------------------------------------
+Content:
+${content}
+------------------------------------------
+(Please do not edit the formatting above)
+`;
+
+    // !!! IMPORTANT: REPLACE 'YOUR_EMAIL@EXAMPLE.COM' with your actual submission email address !!!
+    const mailtoLink = `mailto:YOUR_EMAIL@EXAMPLE.COM?subject=NEW POST SUBMISSION: ${title}&body=${encodeURIComponent(emailBody)}`;
+
+    window.location.href = mailtoLink;
+}
+</script>
+
+</body>
+</html>
