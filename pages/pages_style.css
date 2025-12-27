@@ -265,12 +265,12 @@ p.text-black.hover\:text-red-900 {
 /* -------------------------------------- */
 
 /* Container for the image, ensures it is centered and has the background of the "page" */
-#pages-closed-image {
+/* Update this in pages_style.css */
+#pages-closed-image, 
+#paths-closed-image {
     padding: 20px;
     margin-bottom: 10px;
- 
-    
-    text-align: center; /* Centers the image if it's smaller than the container */
+    text-align: center;
 }
 
 /* Style for the image itself to achieve the carved/embossed look */
