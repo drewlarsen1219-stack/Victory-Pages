@@ -99,7 +99,7 @@ function renderPostList() {
         const postElement = document.createElement('div');
         postElement.className = 'post-item';
         
-        const contentPreviewLimit = 700;
+        const contentPreviewLimit = 7000;
         const needsReadMore = post.content && post.content.length > contentPreviewLimit;
         const contentPreview = post.content 
             ? post.content.substring(0, contentPreviewLimit) + (needsReadMore ? '...' : '') 

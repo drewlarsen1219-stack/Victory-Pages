@@ -34,11 +34,11 @@
 .classic-3d-button, .btn-class3 {
     padding: 6px 12px;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 300;
     text-transform: none;
     background-color: #C0C0C0; /* Classic GUI gray */
     /* --- TEXT COLOR CHANGE: Ensure button text is BLACK --- */
-    color: #000000 !important; 
+    color: darkred !important; 
     /* --------------------------------------------------- */
     cursor: pointer;
     transition: all 0.05s ease;
@@ -247,6 +247,7 @@ p.text-black.hover\:text-red-900 {
 .library-video-link {
     color: #6A0DAD; /* Purple color */
     text-decoration: underline;
+	cursor: pointer;
 }
 
 /* Optional: Define a hover state for the video link */
@@ -266,7 +267,8 @@ p.text-black.hover\:text-red-900 {
 
 /* Container for the image, ensures it is centered and has the background of the "page" */
 /* Update this in pages_style.css */
-#pages-closed-image, 
+#pages-closed-image,
+#paraclete-closed-image, 
 #paths-closed-image {
     padding: 20px;
     margin-bottom: 10px;

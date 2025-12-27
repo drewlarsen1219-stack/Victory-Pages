@@ -1,7 +1,5 @@
 /**
- * Toggles visibility of the columns based on the 'hidden-content' class,
- * updates the button text, and manages the carved image display.
- * This file should also contain any other general utility functions (like video functions).
+ * Toggles visibility of the columns and manages image display.
  */
 function toggleColumn(columnId) {
     const content = document.getElementById(columnId);
@@ -16,49 +14,33 @@ function toggleColumn(columnId) {
     }
 
     if (content.classList.contains('hidden-content')) {
-        // OPENING CONTENT
+        // --- OPENING CONTENT ---
         content.classList.remove('hidden-content');
         
         if (button && button.innerHTML) {
             button.innerHTML = button.innerHTML.replace('Open', 'Close').replace('▼', '▲');
         }
 
-        // HIDE THE IMAGE
+        // Hide the image if it exists for this column
         if (imageContainer) {
             imageContainer.style.display = 'none'; 
         }
         
-        // Render posts if the pages column is opened
+        // Special case: Render posts if the pages column is opened
         if (columnId === 'pages-content' && window.filterAndSortPosts) {
             window.filterAndSortPosts(); 
         }
     } else {
-        // CLOSING CONTENT
+        // --- CLOSING CONTENT ---
         content.classList.add('hidden-content');
         
         if (button && button.innerHTML) {
             button.innerHTML = button.innerHTML.replace('Close', 'Open').replace('▲', '▼');
         }
 
-        // SHOW THE IMAGE
+        // Show the image if it exists for this column
         if (imageContainer) {
             imageContainer.style.display = 'block'; 
         }
     }
 }
-    } else {
-        // Toggling other columns (like 'paths-content')
-        if (content.classList.contains('hidden-content')) {
-            content.classList.remove('hidden-content');
-            if (button && button.innerHTML) {
-                button.innerHTML = button.innerHTML.replace('Open', 'Close').replace('▼', '▲');
-            }
-        } else {
-            content.classList.add('hidden-content');
-            if (button && button.innerHTML) {
-                button.innerHTML = button.innerHTML.replace('Close', 'Open').replace('▲', '▼');
-            }
-        }
-    }
-}
-// Include any other global functions you removed from your index.html here (e.g., video functions).
