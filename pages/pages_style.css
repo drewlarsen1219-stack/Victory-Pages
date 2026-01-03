@@ -1,3 +1,25 @@
+/* Carved in stone aesthetic */
+html {
+    height: 100%;
+    /* Darker than your #C0C0C0 columns to create depth contrast */
+    background-color: #8a8a8a; 
+    
+    background-image: 
+        /* 1. The 'Micro-Grit' (This makes it feel like real stone instead of a flat color) */
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E"),
+        /* 2. Soft directional lighting from the top-left */
+        radial-gradient(circle at 0% 0%, rgba(255,255,255,0.15) 0%, transparent 50%),
+        /* 3. A subtle 'vignette' to push focus to the center */
+        radial-gradient(circle at 50% 50%, transparent 40%, rgba(0,0,0,0.15) 100%);
+
+    background-attachment: fixed;
+}
+
+body {
+    background: transparent !important;
+    margin: 0;
+}
+
 /*Carved in stone aesthetic*/
 
 /*Retro Inset Subtitle */
@@ -122,7 +144,7 @@ The button now visually depresses on hover, but the text remains flat.
     /* Inset Borders: Dark on Top/Left, Light on Bottom/Right */
     border-color: #808080 #ffffff #ffffff #808080;
     background-color: #D0D0D0; /* Slightly lighter gray than main body (#C0C0C0) */
-    padding: 10px;
+    padding: 30px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -134,13 +156,14 @@ The button now visually depresses on hover, but the text remains flat.
 .outset-triangle {
     stroke-width: 1; 
     stroke: #000000; /* This line is now effectively overruled by the HTML change */
-;
+filter: /* Top-Left DARK: This looks like the 'shadowed' side inside a hole */
+        drop-shadow(1px 1px 1px rgba(0,0,0,0.4))
 }
 
 /* 2. Caret Indented Styling (For Q&A summaries) */
 .caret-indented {
     /* Set color to dark red as requested */
-    color: #000000; 
+    color: darkred; 
     font-weight: none;
     /* Indented Text Shadow */
     text-shadow: none;
@@ -168,18 +191,20 @@ details > summary.caret-indented::-webkit-details-marker {
 /* BASIC LAYOUT CHANGES */
 /* ------------------------------------------------------------------ */
 
-/* Basic layout styles for the table structure */
-{ background-color: #A0A0A0; /* CHANGED: Darker GUI Gray for background */ font-family: 'Inter', sans-serif; /
-* FIX: Ensure body takes up full viewport height for table stretching */ height: 100vh; min-height: 100vh; margin: 0; }
-.page-wrapper-table { width: 90%; max-width: 1200px; margin: 20px auto; background-color: #A0A0A0; /* CHANGED: Match body background */ 
-border-collapse: separate; border-spacing: 4px; /* Space between the columns/cells */ /* FIX: Set table height to stretch columns */ height: calc(100vh - 40px); /* 100vh minus 20px top/bottom margin */ }
+
+.page-wrapper-table { width: 100%; max-width: 1300px; margin: 20px auto; /* CHANGED: Match body background */ 
+
+
+
+border-collapse: separate; border-spacing: 6px; /* Space between the columns/cells */ /* FIX: Set table height to stretch columns */ height: calc(100vh - 40px); /* 100vh minus 20px top/bottom margin */ }
 td {
     padding: 10px;
     vertical-align: top;
-    /* Applying the classic raised window look to the columns */
     border: 2px solid;
     border-color: #ffffff #808080 #808080 #ffffff; 
-    background-color: #C0C0C0; /* Keep the column panels gray/raised */
+    /* Use RGBA for transparency (0.8 = 80% opaque) */
+    background-color: rgba(192, 192, 192, 0.8); 
+
 }
 .td-left { width: 40%; }
 /* Lighter background for the center column to differentiate it */
@@ -192,20 +217,22 @@ td {
 footer { font-size: 0.8rem; text-align: center; padding-top: 10px; }
 footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
 .site-links a { display: block; margin-bottom: 5px; text-decoration: none; color: #0000FF; }
-.site-links a:hover { text-decoration: underline; }
+.site-links a:hover { text-decoration: none; }
 
 /* Post Item Styling (Retro Inset Box) */
 .post-item {
-    border: 2px solid;
-    border-color: #808080 #ffffff #ffffff #808080; /* Inset/depressed effect */
-    background-color: white;
+    border: none;
+    border-color: none; /* Inset/depressed effect */
+
+    background-color: none;
     padding: 8px;
     margin-bottom: 8px;
-    font-size: 0.9rem;
+    font-size: .99rem;
 }
 .post-header {
     font-weight: 1000;
-    color: #000080; /* Dark blue title */
+    color: darkgreen;
+
     border-bottom: 1px dashed #A0A0A0;
     margin-bottom: 4px;
     padding-bottom: 2px;
@@ -220,7 +247,7 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
 .post-detail-container {
     border: 2px solid;
     border-color: #808080 #ffffff #ffffff #808080; /* Inset/depressed effect */
-    background-color: white;
+    background-color: grey;
 }
 
 
@@ -270,18 +297,29 @@ p.text-black.hover\:text-red-900 {
 #pages-closed-image,
 #paraclete-closed-image, 
 #paths-closed-image {
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 10px;
     text-align: center;
 }
 
-/* Style for the image itself to achieve the carved/embossed look */
+/* Unified style for column images */
 .carved-image-style {
-    width: 100%; /* Make the image responsive to the column width */
-    max-width: 300px; /* Adjust this maximum size as needed */
-    height: auto;
-} /* <--- CRITICAL FIX: The missing closing brace for this block is now here. */
-    
+    height: 120px; /* Forces all images to the same height */
+    width: 100%;   /* Allows them to fill the container width */
+    object-fit: contain; /* Keeps the aspect ratio without stretching */
+    margin-bottom: 10px;
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
+}
+
+/* Ensure the wrapper centers everything */
+.closed-image-wrapper {
+    height: 160px; /* Fixed height for the entire image area */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 /* -------------------------------------- */
 /* DEFINITIVE FIX: HEADER/BUTTON ALIGNMENT */
 /* -------------------------------------- */
@@ -304,13 +342,6 @@ p.text-black.hover\:text-red-900 {
     line-height: 1; 
 } /* Added missing brace */
 
-.carved-image-style {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    
-}
-
 
 .hidden-content {
     display: none !important;
@@ -323,3 +354,46 @@ p.text-black.hover\:text-red-900 {
     gap: 15px;
     margin-top: 20px;
 }
+
+/* 1. Replace the Table Layout with Flexbox */
+.page-wrapper-flex {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Keeps headers aligned at the top */
+    gap: 10px;
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* 2. Unified Column Styling */
+.column-container {
+    flex: 1; /* Makes all 3 columns exactly the same width */
+    background-color: #C0C0C0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff; /* Classic raised look */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. THE ALIGNMENT SECRET: Fixed-height image containers */
+.closed-image-wrapper {
+    height: 140px; /* Forces all columns to be identical when closed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 4. Enhanced Image "Carving" */
+.carved-image-style {
+    max-height: 180px;
+    width: auto;
+    margin-bottom: 15px;
+    /* Soft shadow to make it look set into the page */
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
+	object-fit: contain;
+}
+

@@ -5,13 +5,15 @@ function toggleColumn(columnId) {
     const content = document.getElementById(columnId);
     const button = document.getElementById(columnId + '-toggle'); 
     
-    // Determine which image container to toggle based on the columnId
     let imageContainer = null;
     if (columnId === 'pages-content') {
         imageContainer = document.getElementById('pages-closed-image');
     } else if (columnId === 'paths-content') {
         imageContainer = document.getElementById('paths-closed-image');
+    } else if (columnId === 'paraclete-content') {
+        imageContainer = document.getElementById('paraclete-closed-image');
     }
+
 
     if (content.classList.contains('hidden-content')) {
         // --- OPENING CONTENT ---
