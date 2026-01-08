@@ -387,13 +387,160 @@ p.text-black.hover\:text-red-900 {
     text-align: center;
 }
 
-/* 4. Enhanced Image "Carving" */
 .carved-image-style {
     max-height: 180px;
     width: auto;
     margin-bottom: 15px;
-    /* Soft shadow to make it look set into the page */
-    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
-	object-fit: contain;
+    object-fit: contain;
+
+    /* 1. CRITICAL: Prevents browser-smoothing which causes the blur */
+    image-rendering: pixelated; 
+    image-rendering: -webkit-optimize-contrast;
+
+    /* 2. COLOR: Blend it into the stone so it looks like it's the same material */
+    mix-blend-mode: multiply;
+    filter: grayscale(1) contrast(1.5) brightness(0.9);
+    opacity: 0.85;
+
+    /* 3. THE CHISEL: Using SVG-style filters for sharp edges 
+       We use 1px offsets for maximum sharpness on modern screens. */
+    filter: 
+        /* The "Pit" (Dark shadow inside the cut) */
+        drop-shadow(-1px -1px 0px rgba(0, 0, 0, 0.7)) 
+        /* The "Rim" (Sharp white highlight where the rock is chipped) */
+        drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.8));
+
+    transition: all 0.2s ease;
+}
+
+.carved-image-style2 {
+    max-height: 700px;
+    width: auto;
+       object-fit: contain;
+
+    /* 1. CRITICAL: Prevents browser-smoothing which causes the blur */
+    image-rendering: pixelated; 
+    image-rendering: -webkit-optimize-contrast;
+
+    /* 2. COLOR: Blend it into the stone so it looks like it's the same material */
+    mix-blend-mode: multiply;
+    filter: grayscale(1) contrast(1.5) brightness(0.9);
+    opacity: 0.85;
+
+    /* 3. THE CHISEL: Using SVG-style filters for sharp edges 
+       We use 1px offsets for maximum sharpness on modern screens. */
+    filter: 
+        /* The "Pit" (Dark shadow inside the cut) */
+        drop-shadow(-1px -1px 0px rgba(0, 0, 0, 0.7)) 
+        /* The "Rim" (Sharp white highlight where the rock is chipped) */
+        drop-shadow(1px 1px 0px rgba(255, 255, 255, 0.8));
+
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================
+   CARVED STONE HELIX WITH INNER GLOW
+   ========================================= */
+
+/* 1. The Pillar Base - Perfectly matches your site's stone */
+.td-spacer.stone-pillar {
+    width: 60px;
+    min-width: 60px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 !important;
+    vertical-align: top;
+    border: none !important; /* Removes table borders to blend with background */
+    
+    /* Matches your site's 'Micro-Grit' stone texture exactly */
+    background-color: #8a8a8a; 
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* 2. The Moving Light Inside the Stone */
+.stone-pillar::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 60, 0, 0.4) 20%, /* Subtle Ember Glow */
+        rgba(255, 180, 0, 0.7) 50%, /* Core Brightness */
+        rgba(255, 60, 0, 0.4) 80%,
+        transparent 100%
+    );
+    z-index: 1;
+    /* Use steps() for a retro, choppy movement effect */
+    animation: flowLight 5s steps(30) infinite;
+}
+
+/* 3. The Static Carved Helix Mask */
+.stone-pillar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Creates the diagonal 'carved' stripes shown in your drawing */
+    background: repeating-linear-gradient(
+        45deg,
+        transparent 0px,
+        transparent 15px,
+        rgba(0, 0, 0, 0.5) 15px, /* Deep carved shadow */
+        rgba(0, 0, 0, 0.5) 30px  /* Width of the 'black' bands in your image */
+    );
+    z-index: 2;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5); /* Adds rounded depth to the pillar */
+}
+
+/* Flip the helix direction for the right side for symmetry */
+.right-pillar::after {
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent 0px,
+        transparent 15px,
+        rgba(0, 0, 0, 0.5) 15px,
+        rgba(0, 0, 0, 0.5) 30px
+    );
+}
+
+
+/* Container for the vine effect */
+.stone-roller-cell {
+    position: relative; /* Allows the vine to stay inside the column */
+    overflow: hidden;   /* Keeps vines from 'bleeding' into the main text */
+}
+
+/* Common vine styling */
+.stone-roller-cell::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* ADD YOUR IMAGE PATH HERE */
+    background-image: url(Website Victory Pages/Pages/GVLEFT.png); 
+    
+    background-repeat: repeat-y; /* Tiles the vine from top to bottom */
+    background-size: contain;    /* Fits the vine to the column width */
+    opacity: 0.4;                /* Makes the vines 'transparent' and subtle */
+    pointer-events: none;        /* Ensures you can still click things 'under' the vines */
+    z-index: 10;                 /* Places them on top of the stone texture */
+    
+    /* Optional: Makes the vines look more like a sketch to match your icons */
+    filter: grayscale(1) contrast(1.2); 
+}
+
+/* Optional: Flip the vine on the right side for variety */
+.right-roller::before {
+    transform: scaleX(-1); 
 }
 
