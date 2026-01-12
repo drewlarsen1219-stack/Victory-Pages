@@ -155,7 +155,7 @@ The button now visually depresses on hover, but the text remains flat.
 /* Existing CSS: Correctly configured for OUTSET (Raised) effect */
 .outset-triangle {
     stroke-width: 1; 
-    stroke: #000000; /* This line is now effectively overruled by the HTML change */
+    stroke: #d0d0d0; /* This line is now effectively overruled by the HTML change */
 filter: /* Top-Left DARK: This looks like the 'shadowed' side inside a hole */
         drop-shadow(1px 1px 1px rgba(0,0,0,0.4))
 }
@@ -330,6 +330,15 @@ p.text-black.hover\:text-red-900 {
     align-items: center; 
     width: 100%; /* Important to make space-between span the whole column */
     margin: 0 0 5px 0; 
+	font-family: EB Garamond, serif;;
+	font-size: 0.5px; 
+	text-transform: 
+}
+
+.prayer {
+	font-family: Cinzel, serif;
+	font-size: 15px; 
+	text-transform: uppercase
 }
 
 .header-button {

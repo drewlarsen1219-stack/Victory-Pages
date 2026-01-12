@@ -40,11 +40,18 @@ function renderPostList() {
     toDisplay.forEach(p => {
         const needsMore = p.content.length > 300;
         const div = document.createElement('div');
-        div.className = 'post-item';
+        
+        // ADDED: Applied 'retro-inset-panel' and 'mb-4' for spacing
+        div.className = 'post-item retro-inset-panel mb-4'; 
+        
         div.innerHTML = `
-            <div class="post-header">${p.title}</div>
-            <p>${p.content.substring(0, 300)}${needsMore ? '...' : ''}</p>
-            <div class="post-meta">Author: ${p.author} | Tag: ${p.tag} | Date: ${p.date}</div>
+            <div class="post-header" style="border-bottom: 1px dashed #A0A0A0; margin-bottom: 8px;">
+                ${p.title}
+            </div>
+            <p class="text-sm">${p.content.substring(0, 300)}${needsMore ? '...' : ''}</p>
+            <div class="post-meta" style="font-size: 0.75rem; color: #555; margin-top: 8px;">
+                Author: ${p.author} | Tag: ${p.tag} | Date: ${p.date}
+            </div>
             ${needsMore ? `<button class="classic-3d-button mt-2" onclick="readPost(${p.id})">Read More</button>` : ''}`;
         postsList.appendChild(div);
     });
