@@ -144,9 +144,18 @@ The button now visually depresses on hover, but the text remains flat.
     /* Inset Borders: Dark on Top/Left, Light on Bottom/Right */
     border-color: #808080 #ffffff #ffffff #808080;
     background-color: #D0D0D0; /* Slightly lighter gray than main body (#C0C0C0) */
-    padding: 30px;
-}
+    padding: 10px;
 
+
+}
+.retro-inset-panel_2 {
+	border: 2px solid;
+	    border-color: #808080 #ffffff #ffffff #808080;
+    background-color: #D0D0D0;
+	    padding: 1px;
+		text-align: center;
+	
+}
 /* ------------------------------------------------------------------ */
 /* NEW STYLES */
 /* ------------------------------------------------------------------ */
@@ -221,17 +230,17 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
 
 /* Post Item Styling (Retro Inset Box) */
 .post-item {
-    border: none;
-    border-color: none; /* Inset/depressed effect */
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080; /* Inset/depressed effect */
 
-    background-color: none;
+    background-color: #D0D0D0;
     padding: 8px;
     margin-bottom: 8px;
     font-size: .99rem;
 }
 .post-header {
     font-weight: 1000;
-    color: darkgreen;
+    color: black;
 
     border-bottom: 1px dashed #A0A0A0;
     margin-bottom: 4px;
@@ -247,14 +256,14 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
 .post-detail-container {
     border: 2px solid;
     border-color: #808080 #ffffff #ffffff #808080; /* Inset/depressed effect */
-    background-color: grey;
+    background-color: #D0D0D0;
 }
 
-
-/* This targets the visible paragraph that contains the clickable span */
-p.text-black.hover\:text-red-900 {
-    cursor: pointer;
+/* Update this in your pages_style.css if it isn't already there */
+.hidden-content {
+    display: none !important;
 }
+
 
 
 .eb-garamond-<uniquifier> {
@@ -553,3 +562,83 @@ p.text-black.hover\:text-red-900 {
     transform: scaleX(-1); 
 }
 
+/* Add this to your pages_style.css file */
+
+/* Prevent middle column from stretching */
+.td-center {
+    width: 20%;
+    min-width: 20%;
+    max-width: 20%;
+    background-color: #D0D0D0;
+    overflow: hidden; /* Prevents content from pushing column wider */
+}
+
+/* Make Paraclete content fit without scrolling */
+#paraclete-content {
+    overflow: visible;
+}
+
+/* Ensure skill grid fits within column */
+#skill-grid {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Make grid items compact and responsive */
+.skill-grid-item {
+    min-width: 0; /* Allows items to shrink below their content size */
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+/* Hover effect for grid items */
+.skill-grid-item:hover {
+    background-color: #C8C8C8;
+    border-color: #606060 #E0E0E0 #E0E0E0 #606060;
+}
+
+/* Add this to your pages_style.css file */
+
+/* Prevent middle column from stretching */
+.td-center {
+    width: 20%;
+    min-width: 20%;
+    max-width: 20%;
+    background-color: #D0D0D0;
+    overflow: hidden; /* Prevents content from pushing column wider */
+    vertical-align: top;
+    height: 100%; /* Fill available height */
+}
+
+/* Make Paraclete content fill the column */
+#paraclete-content {
+    overflow: visible;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ensure skill grid fills available space */
+#skill-grid {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Make grid items fill space evenly */
+.skill-grid-item {
+    min-width: 0;
+    box-sizing: border-box;
+    transition: all 0.1s ease;
+}
+
+/* Hover effect for grid items */
+.skill-grid-item:hover {
+    background-color: #C8C8C8;
+    border-color: #606060 #E0E0E0 #E0E0E0 #606060;
+}
+
+/* Active/click effect */
+.skill-grid-item:active {
+    background-color: #B8B8B8;
+    transform: translateY(1px);
+}

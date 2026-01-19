@@ -9,7 +9,7 @@ const el = (id) => document.getElementById(id);
 const postsList = el('posts-list'), postsMessages = el('posts-messages'), tagDropdown = el('tagDropdown');
 const prevPageBtn = el('prevPage'), nextPageBtn = el('nextPage');
 
-const POSTS_PER_PAGE = 3;
+const POSTS_PER_PAGE = 2;
 let currentPage = 1, currentPosts = [];
 
 window.readPost = (id) => {

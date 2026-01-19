@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="pages/pages_style.css">
+	<link rel="stylesheet" href="pages/finder_style.css">
 
     </head>
 	
@@ -33,99 +34,90 @@
 
 
 			
-                <td class="td-left">
+               <td class="td-left">
+    <div class="p-2 mb-4 text-left">
+	
+        <div class="header-and-button-container">
+            <span class="text-base font-bold" style="color: black; text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF; font-size: 20px;">
+                Paths/Pathways
+            </span>
+            <button id="paths-content-toggle" class="classic-3d-button header-button" onclick="toggleColumn('paths-content')">
+                Open ▼
+            </button>
+        </div>
+
+        <hr class="border-t border-gray-600 my-4">
 		
-<div class="p-2 mb-4 text-left">
-    <div class="header-and-button-container">
-        <span 
-            class="text-base font-bold" 
-            style="
-                color: black; 
-                
-                text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;
-                
-                font-size: 20px;"
-        >
-            Paths: Life Gamified
-        </span>
+    </div>
+
+    <div class="retro-inset-panel">
         
-        <button 
-			
-            id="paths-content-toggle" 
-            class="classic-3d-button header-button text-base font-bold" 
-            onclick="toggleColumn('paths-content')"
-        >
-            Open ▼
-        </button>
-    </div>
-    <hr class="border-t border-gray-600 my-4">
-</div>
-
-<div id="paths-closed-image" style="display: block;">
-
-    <div class="pt-4">
-        <div class="p-2 text-xs retro-inset-panel text-center">
+	
+        <div id="paths-closed-image" style="display: block;">
+            <p class="text-xs text-center">
 		    
-            <p><em>Paths/Pathways</em> is a game where you go out into the real world and follow assigned pathways provided by this website. 
-            Upon completion of a pathway the user will report back to this page to update the skills tracker which unlocks more pathways. The goal for this game is to give people a way to 
-			make progress in their lives. This is a placeholder sentence. This is another place holder sentence.</p>
+            <p><em>Paths/Pathways</em> is a faith-driven Personal Operating System designed to help users steward their life for the glory of God. By assessing your resources, 
+			the system identifies your starting point and assigns tailored Pathways for growth. 
+			Upon completion of Paths new Pathways are unlocked. Unlike traditional tools, 
+			Paths uses the wisdom of the Holy Bible to ensure that your progress isn't just about accomplishment, but about surrendering to God. 
+<br></p>
+            <br><hr style="width: 100%; height: 2px;"><br><br>
+            <img src="pages/magnus_dei_grey.png" alt="magnus_dei" class="carved-image-style">
+            <br><hr style="width: 100%; height: 2px;"><br>
+            <div class="prayer"><p>Lord God, Heavenly Father,</p></div>
+        </div>
 
-<br>
-		<hr>
-			       <br><br><br><img src="pages/magnus_dei_grey.png" alt="magnus_dei" class="carved-image-style"><br><br>
-				   <hr>
-<br>
-		<div class="prayer"
-		<p> Lord God, Heavenly Father,</p>
-		</div>
+        <div id="paths-content" class="hidden-content">
+            <div id="landing-screen">
+				
+		
+				<p>Welcome to Pathways Personal Operating System!</p>
+				<hr><hr><hr>
+				
+				
+            <div class="user-buttons-container">
+                <button id="open-assessment-btn" class="classic-3d-button new-user-button" >New User</button>
+                <button class="classic-3d-button" onclick="openExistingUser()">Existing User</button>
+				
+			<p><br></p> 
+			
+			
+			
+            </div>
+		
+</div>
+		
+<div id="paths-finder-view" style="display: none;">
+                <p>Bodily Health Assessment</p>
+              
+                <hr><hr><hr>
+                
+
+                    <form id="quiz-form">
+
+                        <div id="quiz-container">
+                            </div>
+                    </form>
+                    
+                    <div style="margin-top: 20px; display: flex; justify-content: space-between;">
+					
+                        <button id="next-btn" class="classic-3d-button">Next Question</button>
+                        <button class="classic-3d-button" style="color: grey !important;" onclick="switchToMenu()">Back</button>
+                    </div>
+                    
+                    <div id="score-result" style="text-align: center; margin-top: 20px; padding: 10px; border: 2px inset #ffffff; display: none;">
+                    </div>
+                		
+			
+            </div>
+	
+        </div>
+		
     </div>
-	</div>
-	</div>
-                    
-                    <div id="paths-content" class="hidden-content">
-                    <p class="text-center mt-4">
-                        
-                        <div class="retro-inset-panel triangle-wrapper w-full max-w-xs mx-auto" aria-hidden="false">
-                            <svg class="triangle-svg" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid meet"
-                                    role="img" aria-label="Victory paths triangle" xmlns="http://www.w3.org/2000/svg">
-                                <polygon points="60,15 15,95 105,95" fill="none" stroke="#A0A0A0" stroke-width="1" class="outset-triangle"/>
-                                
-                                <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
-                                    font-size="6" fill="#D0D0D0" text-anchor="middle"
-                                    transform="translate(30,61) rotate(-60)">Finder &gt;</text>
-                                <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
-                                    font-size="6" fill="#D0D0D0" text-anchor="middle"
-                                    transform="translate(90,61) rotate(61)">Tracker &gt;</text>
-                                <text style="text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;" 
-                                    font-size="6" fill="#D0D0D0" text-anchor="middle" x="60" y="102">&lt; Ways</text>
-                                
-                                <foreignObject x="35" y="58" width="50" height="30">
-                                    <body xmlns="http://www.w3.org/1999/xhtml" style="margin:0;padding:0;">
-                                        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;">
-                                            <span style="font-size: 5.5px; text-align: center; line-height: 1.3; font-weight: 600;">Welcome to<br>Pathways!</span>
-                                        </div>
-                                    </body>
-                                    
-                                </foreignObject>
-                            </svg>
-                        </div>
-                    </p>
-                    
-                    <br>
-                    <br>                        
-                    
-                    <div class="user-buttons-container">
-                        <button class="classic-3d-button new-user-button" onclick="window.location.href='/finder/finder_structure.html'">
-                            New User
-                        </button>
-                        
-                        <button class="classic-3d-button" onclick="window.location.href='/tracker/tracker_structure.html'">
-                            Existing User
-                        </button>
-                    </div>
-                    </div>
 
-                </td>
+
+
+</td>
 
                 <td class="td-center">
     <div style="display: flex; flex-direction: column; min-height: 100%; height: 100%;">
@@ -141,7 +133,7 @@
                         
                         font-size: 20px;"
                 >
-                    Paraclete: Index
+                    Paraclete/Index
                 </span>
             
                 <button 
@@ -160,22 +152,23 @@
 			<div id="paraclete-closed-image" style="display: block;">
         <div class="p-2 text-xs retro-inset-panel text-center">
 	
-	            <p><em>Paraclete</em> represents the index for this website. This will provide information about the site, common questions, and a resource library. This is a placeholder.</p>
-	<br><hr>
+	            <p><em>Paraclete</em> is the central index and resource library for Victory Pages. 
+				While currently serving as a site guide, this section transforms into a dynamic container to support your activity through the Paths/Pathways POS.</p><br>
+<hr style="width: 100%; height: 2px;">
 		
-		        <br><br><img src="pages/dove.png" alt="Dove" class="carved-image-style"><br><br><br>
-		  <hr><br>
+		        <br><br><img src="pages/dove.png" alt="Dove" class="carved-image-style"><br>
+		  <hr style="width: 100%; height: 2px;"><br><br>
 		  <div class="prayer"
-		<p>& Holy Spirit;</p>
+		<p>& Holy Spirit;</p><br>
 	</div>		
     </div>
 </div>
 
 <div id="paraclete-content" class="hidden-content" style="margin-top: 20px;">
-<div id="paraclete-scroll-wrapper" style="flex-grow: 1;">   
+  
         
 
-            <div class="mt-4">
+           <div class="p-2 text-xs retro-inset-panel text-center">
                 <details> <summary>About</p></summary>
                     <p class="space-y-2 text-sm p-2">
                     
@@ -342,25 +335,29 @@ A website for Christians to grow.
                         </details>
                         
             </div>
-        </div> <footer>
-            <div class="pt-4">
-                <div class="p-2 text-xs retro-inset-panel text-center">
-                    <p class="mb-1 font-bold text-gray-700">Victory Pages & Paths</p>
-                    <p class="text-xs">
-                        © 2025 Victory Pages. All rights reserved. 
-                        <br>
+        </div> 
+          
+
+
+						</div>
+							                        <br><div class="retro-inset-panel_2">
+																				<p><a href="pages/Navigation/privacy_policy.html" >Privacy Policy</a></p>
+                        <p><a href="pages/Navigation/terms_and_conditions.html" >Terms & Conditions</a></p>
+							<p>                        © 2025 Victory Pages.</p><p> All rights reserved.</p><p>
+                    
                         All progress saved privately.
                     </p>
-                    <hr class="border-t border-gray-400 my-2">
-                    <div class="space-x-4">
-                        <p><a href="pages/Navigation/privacy_policy.html" class="text-blue-700 hover:">Privacy Policy</a></p>
-                        <p><a href="pages/Navigation/terms_and_conditions.html" class="text-blue-700 hover:">Terms & Conditions</a></p>
+					
                     </div>
+
+
                 </div>
+
             </div>
-        </footer>
+     
     </div>
 </div>
+
 </td>
                 </td>
 
@@ -389,25 +386,26 @@ A website for Christians to grow.
 							 <div id="pages-closed-image" style="display: block;">		
             <div class="p-2 text-xs retro-inset-panel text-center">
 			
- <p><em>Pages</em> is the second half of the website domains name and is symbolic for the pages written by Christians for Christians. 
- The site owner is currently making all the public posts so far. Although it is available to the public community where users can make posts themselves. This is a placeholder sentence. 
- This is the second placeholder sentence. The last placeholder sentence is here. This is.</p>
+<p><em>Pages</em> is a living collection of wisdom in the form of a forumn written by Christians, for Christians. While the site owner currently curates the primary content, 
+this is a community-driven space where all users are invited to share their insights, testimonies, and encouragement. 
+By users contributing their voice, they help build a library of faith that directs the community toward God and managing what is His. This is a placeholder sentence.</p>
 
 
-          <br><br><hr>
+          <br><hr style="width: 100%; height: 2px;">
 			<br><br>
 					<img src="pages/Agnus_Dei.png" alt="Agnus_Dei" class="carved-image-style">
-					<br><br><br>
+					<br>
 					
-					<hr><br>
+					<hr style="width: 100%; height: 2px;">
+					<br><br>
 		<div class="prayer"
-<p>Lamb of God: have mercy upon us.</p>
+<p>Lamb of God: have mercy upon us.</p><br>
 </div>
         </div>
     </div>
 
 
-    <div id="pages-content" class="hidden-content" style="margin-top: 20px;">
+    <div id="pages-content" class="hidden-content" style="margin-top: 10px;">
         <div id="posts-messages" class="text-sm text-center text-red-700 mb-2"></div>
         <div id="forum-controls">
             <div class="tag-dropdown-container mb-4" style="margin-top: 20px;">
@@ -424,7 +422,7 @@ A website for Christians to grow.
                 </select>
             </div>
         </div>
-
+<br>
         <div id="posts-list" class="space-y-2 h-96 overflow-y-auto">
             <p class="text-center">Loading posts...</p>
         </div>
@@ -439,6 +437,9 @@ A website for Christians to grow.
     </div>
 
 
+					
+						</div>
+
 <td class="td-spacer left-roller">
 <img src="pages/Vines_Right.png" alt="Vines" class="carved-image-style2">
 </td>
@@ -448,6 +449,7 @@ A website for Christians to grow.
     
 <script src="pages/pages_post_renderer.js"></script>
 <script src="pages/site script.js"></script>
+
 
 
 </body>
