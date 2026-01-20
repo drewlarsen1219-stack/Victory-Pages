@@ -34,9 +34,9 @@
 
 
 			
-               <td class="td-left">
+<td class="td-left">
+    <!-- Column Header -->
     <div class="p-2 mb-4 text-left">
-	
         <div class="header-and-button-container">
             <span class="text-base font-bold" style="color: black; text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF; font-size: 20px;">
                 Paths/Pathways
@@ -45,78 +45,67 @@
                 Open ▼
             </button>
         </div>
-
         <hr class="border-t border-gray-600 my-4">
-		
     </div>
 
-    <div class="retro-inset-panel">
-        
-	
+    <!-- Main Content Area -->
+    <div class="pt-4">
+        <!-- Closed State:  Placeholder Image and Text -->
         <div id="paths-closed-image" style="display: block;">
-            <p class="text-xs text-center">
-		    
-            <p><em>Paths/Pathways</em> is a faith-driven Personal Operating System designed to help users steward their life for the glory of God. By assessing your resources, 
-			the system identifies your starting point and assigns tailored Pathways for growth. 
-			Upon completion of Paths new Pathways are unlocked. Unlike traditional tools, 
-			Paths uses the wisdom of the Holy Bible to ensure that your progress isn't just about accomplishment, but about surrendering to God. 
-<br></p>
-            <br><hr style="width: 100%; height: 2px;"><br><br>
-            <img src="pages/magnus_dei_grey.png" alt="magnus_dei" class="carved-image-style">
-            <br><hr style="width: 100%; height: 2px;"><br>
-            <div class="prayer"><p>Lord God, Heavenly Father,</p></div>
+            <div class="p-2 text-xs retro-inset-panel text-center">
+                <p><em>Paths/Pathways</em> is designed to help users steward their life for the glory of God. The system identifies your starting point 
+                and assigns tailored Pathways for growth. Upon completion of Paths new Pathways are unlocked.  This is a placeholder sentence. 
+                Paths uses the wisdom of the Holy Bible to ensure that your progress isn't just about accomplishment, but about surrendering to God.  This is 
+                a placeholder sentence. This is a placeholder.</p>
+                <br>
+                <hr style="width:  100%; height: 2px;">
+                <br><br>
+                <img src="pages/magnus_dei_grey.png" alt="magnus_dei" class="carved-image-style">
+                <br>
+                <hr style="width: 100%; height:  2px;">
+                <br>
+                <div class="prayer">
+                    <p>Lord God, Heavenly Father,</p>
+                </div>
+            </div>
         </div>
 
+        <!-- Open State: Interactive Content -->
         <div id="paths-content" class="hidden-content">
-            <div id="landing-screen">
-				
-		
-				<p>Welcome to Pathways Personal Operating System!</p>
-				<hr><hr><hr>
-				
-				
-            <div class="user-buttons-container">
-                <button id="open-assessment-btn" class="classic-3d-button new-user-button" >New User</button>
-                <button class="classic-3d-button" onclick="openExistingUser()">Existing User</button>
-				
-			<p><br></p> 
-			
-			
-			
-            </div>
-		
-</div>
-		
-<div id="paths-finder-view" style="display: none;">
-                <p>Bodily Health Assessment</p>
-              
-                <hr><hr><hr>
+            <div class="retro-inset-panel" style="padding: 15px;">
                 
-
+                <!-- Landing Screen -->
+                <div id="landing-screen">
+                    <p>Welcome to Pathways Personal Operating System! </p>
+                    <hr><hr><hr>
+                    
+                    <div class="user-buttons-container">
+                        <button id="open-assessment-btn" class="classic-3d-button new-user-button">New User</button>
+                        <button class="classic-3d-button" onclick="openExistingUser()">Existing User</button>
+                    </div>
+                </div>
+                
+                <!-- Assessment View -->
+                <div id="paths-finder-view" style="display: none;">
+                    <p>Bodily Health Assessment</p>
+                    <hr><hr><hr>
+                    
                     <form id="quiz-form">
-
-                        <div id="quiz-container">
-                            </div>
+                        <div id="quiz-container"></div>
                     </form>
                     
                     <div style="margin-top: 20px; display: flex; justify-content: space-between;">
-					
                         <button id="next-btn" class="classic-3d-button">Next Question</button>
-                        <button class="classic-3d-button" style="color: grey !important;" onclick="switchToMenu()">Back</button>
+                        <button id="back-btn" class="classic-3d-button">Back</button>
                     </div>
                     
-                    <div id="score-result" style="text-align: center; margin-top: 20px; padding: 10px; border: 2px inset #ffffff; display: none;">
-                    </div>
-                		
-			
+                    <div id="score-result" style="text-align: center; margin-top:  20px; padding: 10px; border: 2px inset #ffffff; display: none;"></div>
+                </div>
+                
             </div>
-	
         </div>
-		
     </div>
-
-
-
+    
 </td>
 
                 <td class="td-center">
@@ -150,6 +139,7 @@
 
     <div class="pt-4">
 			<div id="paraclete-closed-image" style="display: block;">
+			
         <div class="p-2 text-xs retro-inset-panel text-center">
 	
 	            <p><em>Paraclete</em> is the central index and resource library for Victory Pages. 

@@ -305,10 +305,16 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
 /* Update this in pages_style.css */
 #pages-closed-image,
 #paraclete-closed-image, 
-#paths-closed-image {
+#paths-closed-image,
+#paths-content {
     padding: 10px;
     margin-bottom: 10px;
     text-align: center;
+}
+
+
+.pt-4 {
+    padding-top: .5rem;
 }
 
 /* Unified style for column images */
@@ -562,17 +568,6 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
     transform: scaleX(-1); 
 }
 
-/* Add this to your pages_style.css file */
-
-/* Prevent middle column from stretching */
-.td-center {
-    width: 20%;
-    min-width: 20%;
-    max-width: 20%;
-    background-color: #D0D0D0;
-    overflow: hidden; /* Prevents content from pushing column wider */
-}
-
 /* Make Paraclete content fit without scrolling */
 #paraclete-content {
     overflow: visible;
@@ -597,7 +592,64 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
     border-color: #606060 #E0E0E0 #E0E0E0 #606060;
 }
 
-/* Add this to your pages_style.css file */
+/* Fixed height for left column assessment panel ONLY */
+.td-left .retro-inset-panel {
+    min-height: 546px;
+    max-height: 546px;
+    overflow: visible; /* Changed from hidden to visible */
+    vertical-align: top;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure content inside stays stable */
+.td-left .retro-inset-panel > div {
+    flex-shrink: 0;
+}
+/* Ensure the entire assessment view stays fixed */
+#paths-finder-view {
+    display: flex;
+    flex-direction: column;
+    height: 500px; /* Fixed total height */
+}
+
+/* Fixed height for quiz container to prevent bouncing */
+#quiz-container {
+    min-height: 350px;
+    max-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Keep question text from causing layout shifts */
+.question-text {
+    min-height: 80px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* Fixed spacing for options */
+.options-group {
+    min-height:  180px;
+    display:  flex;
+    flex-direction:  column;
+    gap: 8px;
+}
+
+/* Ensure text inputs and textareas don't cause shifts */
+.num-input, . text-input {
+    box-sizing: border-box;
+}
+
+/* Push button container to bottom */
+#paths-finder-view > div: last-of-type {
+    margin-top: auto;
+}
 
 /* Prevent middle column from stretching */
 .td-center {
@@ -642,3 +694,4 @@ footer hr { border: none; border-top: 1px solid #808080; margin: 4px 0; }
     background-color: #B8B8B8;
     transform: translateY(1px);
 }
+

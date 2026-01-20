@@ -242,9 +242,9 @@ document.addEventListener('DOMContentLoaded', function() {
             html = `<textarea name="q${q.id}" class="text-input" style="width: 90%; height: 60px;"></textarea>`;
         }
 
-        quizContainer.innerHTML = `
-            <p class="question-text"><strong>Q${currentStep + 1}:</strong> ${q.text}</p>
-            <div class="options-group">${html}</div>`;
+quizContainer.innerHTML = `
+    <p class="question-text"><strong>Q${currentStep + 1}/${myQuestions.length}</strong> <br>${q.text}</p>
+    <div class="options-group">${html}</div>`;
     }
 
     const nextBtn = document.getElementById('next-btn');
@@ -270,6 +270,36 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+	
+	const backBtn = document.getElementById('back-btn');
+if (backBtn) {
+    backBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Only go back if not on first question
+        if (currentStep > 0) {
+            currentStep--;
+            renderQuestion();
+            
+            // Re-populate the answer if user already answered this question
+            const q = myQuestions[currentStep];
+            const previousAnswer = userAnswers[q.id];
+            
+            if (previousAnswer) {
+                if (q.type === 'text' || q.type === 'number') {
+                    const input = quizContainer.querySelector('textarea') || quizContainer.querySelector('input');
+                    if (input) input.value = previousAnswer;
+                } else {
+                    const radio = quizContainer.querySelector(`input[value="${previousAnswer}"]`);
+                    if (radio) radio.checked = true;
+                }
+            }
+        } else {
+            // On first question, go back to menu
+            switchToMenu();
+        }
+    });
+}
 
     function showScore() {
         let total = 0, earned = 0;
