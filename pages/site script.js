@@ -970,11 +970,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
                             <span style="font-size: 0.75rem; color: #666;">${completedCount}/${totalTasks}</span>
                             <span style="font-size: 0.85rem; color: darkred; font-weight: bold;">+${pathway.reward}</span>
-							
                         </div>
                     </div>
-                    <div style="background: #ccc; height: 3px; border-radius: 2px; margin-top: 2px; width: 100%; <hr>">
-                        <div style="background: #4CAF50; height: 100%; width: ${progressPercent}%; border-radius: 2px; <hr>"></div>
+                    <div style="background: #ccc; height: 3px; border-radius: 2px; margin-top: 2px; width: 100%;">
+                        <div style="background: #4CAF50; height: 100%; width: ${progressPercent}%; border-radius: 2px;"></div>
                     </div>
                 </div>
             `;
@@ -1373,7 +1372,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const currentQuestions = allAssessments[currentCategory].questions;
             const q = currentQuestions[currentStep];
             
-            const checked = quizContainer.querySelector('input: checked');
+            const checked = quizContainer.querySelector('input:checked');
             userAnswers[q.id] = checked ? checked.value : null;
 
             if (currentStep < currentQuestions.length - 1) {
