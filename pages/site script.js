@@ -26641,117 +26641,110 @@ window.toggleTask = function(pathwayId, taskId) {
             return;
         }
         
-        const guidance = task.guidance;
-        
-        // Build the guidance HTML
-        let howToHTML = guidance.howTo ? guidance.howTo.map((step, i) => `
-            <div style="display: flex; gap: 6px; margin-bottom: 4px;">
-                <span style="color: #4CAF50; font-weight: bold; flex-shrink: 0;">${i + 1}.</span>
-                <span style="color: black; font-size: 0.7rem;">${step}</span>
+const guidance = task.guidance;
+
+function makeCollapsibleSection(title, content, sectionId, defaultOpen = true) {
+    return `
+        <div style="margin-bottom: 8px;">
+            <div style="display: flex; align-items: center; cursor: pointer;"
+                 onclick="toggleCollapse('${sectionId}')">
+                <span style="font-weight: bold; color: #333; font-size: 0.96rem;">${title}</span>
+                <span id="${sectionId}-toggle" style="margin-left: 6px; font-size: 1.1em; user-select: none;">${defaultOpen ? '▼' : '▶'}</span>
             </div>
-        `).join('') : '<p style="color: #666; font-size: 0.7rem;">No steps provided.</p>';
-        
-        let recommendationsHTML = guidance.recommendations ? guidance.recommendations.map(rec => `
-            <div style="display: flex; gap: 6px; margin-bottom: 3px;">
-                <span style="color: #2196F3; flex-shrink: 0;">✓</span>
-                <span style="color: black; font-size: 0.7rem;">${rec}</span>
+            <div id="${sectionId}-content" style="display: ${defaultOpen ? 'block' : 'none'}; margin-left: 2px; margin-top: 4px;">
+                ${content}
             </div>
-        `).join('') : '';
-        
-        let errorsHTML = guidance.commonErrors ? guidance.commonErrors.map(err => `
-            <div style="display: flex; gap: 6px; margin-bottom: 3px;">
-                <span style="color: #f44336; flex-shrink: 0;">⚠</span>
-                <span style="color: black; font-size: 0.7rem;">${err}</span>
+        </div>
+    `;
+}
+
+let howToHTML = guidance.howTo ? guidance.howTo.map((step, i) => `
+    <div style="display: flex; gap: 6px; margin-bottom: 4px;">
+        <span style="color: #4CAF50; font-weight: bold; flex-shrink: 0;">${i + 1}.</span>
+        <span style="color: black; font-size: 1rem;">${step}</span>
+    </div>
+`).join('') : '<p style="color: #666; font-size: 0.7rem;">No steps provided.</p>';
+
+let recommendationsHTML = guidance.recommendations ? guidance.recommendations.map(rec => `
+    <div style="display: flex; gap: 6px; margin-bottom: 3px;">
+        <span style="color: #2196F3; flex-shrink: 0;">✓</span>
+        <span style="color: black; font-size: 1rem;">${rec}</span>
+    </div>
+`).join('') : '';
+
+let errorsHTML = guidance.commonErrors ? guidance.commonErrors.map(err => `
+    <div style="display: flex; gap: 6px; margin-bottom: 3px;">
+        <span style="color: #f44336; flex-shrink: 0;">⚠</span>
+        <span style="color: black; font-size: 1rem;">${err}</span>
+    </div>
+`).join('') : '';
+
+let sourcesHTML = guidance.sources ? guidance.sources.map((src, i) => `
+    <div style="margin-bottom: 3px;">
+        <span style="color: #666; font-size: 0.8rem;">[${i + 1}] ${src}</span>
+    </div>
+`).join('') : '';
+
+// Collapsible sections (IDs are unique per task)
+const howToId = `howto${taskId}`;
+const recsId = `recs${taskId}`;
+const errorsId = `errors${taskId}`;
+const sourcesId = `sources${taskId}`;
+
+const collapsibleHowTo = makeCollapsibleSection('Step-by-Step', howToHTML, howToId, true);
+const collapsibleRecommendations = recommendationsHTML ? makeCollapsibleSection('Recommendations', recommendationsHTML, recsId, false) : '';
+const collapsibleErrors = errorsHTML ? makeCollapsibleSection('Common Errors', errorsHTML, errorsId, false) : '';
+const collapsibleSources = sourcesHTML ? makeCollapsibleSection('Sources', sourcesHTML, sourcesId, false) : '';
+
+pagesContent.innerHTML = `
+    <div style="padding: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <p style="margin: 0; font-weight: bold; color: black; font-size: 0.85rem;">📋 Task Guidance</p>
+            <button onclick="closeTaskGuidance()" class="classic-3d-button" style="font-size: 0.6rem; padding: 2px 6px;">✕</button>
+        </div>
+        <div class="retro-inset-panel" style="padding: 6px; margin-bottom: 8px;">
+            <p style="color: black; font-size: 0.9rem; margin-bottom: 12px; line-height: 1.4;"><strong>${task.text}</strong></p>
+            ${collapsibleHowTo}
+            ${collapsibleRecommendations}
+            ${collapsibleErrors}
+            ${collapsibleSources}
+        </div>
+        <div style="margin-bottom: 8px;">
+            <div style="background: #fff3e0; padding: 4px 6px; border-radius: 3px; margin-bottom: 4px;">
+                <p style="margin: 0; font-weight: bold; color: #e65100; font-size: 0.75rem;">💬 Your Notes / Dispute</p>
             </div>
-        `).join('') : '';
-        
-        let sourcesHTML = guidance.sources ? guidance.sources.map((src, i) => `
-            <div style="margin-bottom: 3px;">
-                <span style="color: #666; font-size: 0.6rem;">[${i + 1}] ${src}</span>
-            </div>
-        `).join('') : '';
-        
-        pagesContent.innerHTML = `
-            <div style="padding: 8px;">
-                <!-- Header -->
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <p style="margin: 0; font-weight: bold; color: black; font-size: 0.85rem;">📋 Task Guidance</p>
-                    <button onclick="closeTaskGuidance()" class="classic-3d-button" style="font-size: 0.6rem; padding: 2px 6px;">✕</button>
+            <div style="padding: 0 4px;">
+                <textarea 
+                    id="task-comment-input" 
+                    placeholder="Add your notes, questions, or dispute the guidance here..." 
+                    style="width: 100%; height: 60px; font-size: 0.7rem; padding: 6px; border: 1px solid #ccc; border-radius: 3px; resize: vertical; box-sizing: border-box;"
+                >${existingComment}</textarea>
+                <div style="display: flex; gap: 5px; margin-top: 4px;">
+                    <button onclick="saveTaskComment('${taskId}')" class="classic-3d-button" style="font-size: 0.65rem; padding: 3px 8px; flex: 1;">💾 Save Note</button>
+                    <button onclick="clearTaskComment('${taskId}')" class="classic-3d-button" style="font-size: 0.65rem; padding: 3px 8px;">🗑️</button>
                 </div>
-                
-                <!-- Task Text -->
-                <div class="retro-inset-panel" style="padding: 6px; margin-bottom: 8px;">
-                    <p style="color: black; font-size: 0.75rem; margin: 0; line-height: 1.3;">${task.text}</p>
-                </div>
-                
-                <!-- How To Section -->
-                <div style="margin-bottom: 8px;">
-                    <div style="background: #e8f5e9; padding: 4px 6px; border-radius: 3px; margin-bottom: 4px;">
-                        <p style="margin: 0; font-weight: bold; color: #2e7d32; font-size: 0.75rem;">📝 How To Accomplish</p>
-                    </div>
-                    <div style="padding: 0 4px;">
-                        ${howToHTML}
-                    </div>
-                </div>
-                
-                <!-- Recommendations Section -->
-                ${guidance.recommendations ? `
-                    <div style="margin-bottom: 8px;">
-                        <div style="background: #e3f2fd; padding: 4px 6px; border-radius: 3px; margin-bottom: 4px;">
-                            <p style="margin: 0; font-weight: bold; color: #1565c0; font-size: 0.75rem;">💡 Recommendations</p>
-                        </div>
-                        <div style="padding: 0 4px;">
-                            ${recommendationsHTML}
-                        </div>
-                    </div>
+                ${existingComment ? `
+                    <p style="color: #666; font-size: 0.6rem; margin: 4px 0 0 0; font-style: italic;">Note saved ✓</p>
                 ` : ''}
-                
-                <!-- Common Errors Section -->
-                ${guidance.commonErrors ? `
-                    <div style="margin-bottom: 8px;">
-                        <div style="background: #ffebee; padding: 4px 6px; border-radius: 3px; margin-bottom: 4px;">
-                            <p style="margin: 0; font-weight: bold; color: #c62828; font-size: 0.75rem;">⚠️ Common Errors</p>
-                        </div>
-                        <div style="padding: 0 4px;">
-                            ${errorsHTML}
-                        </div>
-                    </div>
-                ` : ''}
-                
-                <!-- Sources Section -->
-                ${guidance.sources ? `
-                    <div style="margin-bottom: 8px;">
-                        <div style="background: #f5f5f5; padding: 4px 6px; border-radius: 3px; margin-bottom: 4px;">
-                            <p style="margin: 0; font-weight: bold; color: #616161; font-size: 0.75rem;">📚 Sources</p>
-                        </div>
-                        <div style="padding: 0 4px;">
-                            ${sourcesHTML}
-                        </div>
-                    </div>
-                ` : ''}
-                
-                <!-- Comment/Dispute Section -->
-                <div style="margin-bottom: 8px;">
-                    <div style="background: #fff3e0; padding: 4px 6px; border-radius: 3px; margin-bottom: 4px;">
-                        <p style="margin: 0; font-weight: bold; color: #e65100; font-size: 0.75rem;">💬 Your Notes / Dispute</p>
-                    </div>
-                    <div style="padding: 0 4px;">
-                        <textarea 
-                            id="task-comment-input" 
-                            placeholder="Add your notes, questions, or dispute the guidance here..." 
-                            style="width: 100%; height: 60px; font-size: 0.7rem; padding: 6px; border: 1px solid #ccc; border-radius: 3px; resize: vertical; box-sizing: border-box;"
-                        >${existingComment}</textarea>
-                        <div style="display: flex; gap: 5px; margin-top: 4px;">
-                            <button onclick="saveTaskComment('${taskId}')" class="classic-3d-button" style="font-size: 0.65rem; padding: 3px 8px; flex: 1;">💾 Save Note</button>
-                            <button onclick="clearTaskComment('${taskId}')" class="classic-3d-button" style="font-size: 0.65rem; padding: 3px 8px;">🗑️</button>
-                        </div>
-                        ${existingComment ? `
-                            <p style="color: #666; font-size: 0.6rem; margin: 4px 0 0 0; font-style: italic;">Note saved ✓</p>
-                        ` : ''}
-                    </div>
-                </div>
             </div>
-        `;
+        </div>
+    </div>
+`;
+
+// Global handler for collapsible
+if (!window.toggleCollapse) {
+    window.toggleCollapse = function(sectionId) {
+        const content = document.getElementById(sectionId + '-content');
+        const toggle = document.getElementById(sectionId + '-toggle');
+        if (content.style.display === 'none') {
+            content.style.display = 'block';
+            toggle.textContent = '▼';
+        } else {
+            content.style.display = 'none';
+            toggle.textContent = '▶';
+        }
+    }
+}
     };
     
     window.closeTaskGuidance = function() {
@@ -26814,7 +26807,7 @@ window.showPathwaysList = function(page = 1) {
         return;
     }
     
-    const ITEMS_PER_PAGE = 5;
+    const ITEMS_PER_PAGE = 3;
     const totalPages = Math.ceil(recommended.length / ITEMS_PER_PAGE);
     const startIndex = (page - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -26879,8 +26872,8 @@ window.showPathwaysList = function(page = 1) {
     
     quizContainer.innerHTML = `
         <div style="padding: 2px; width: 100%; box-sizing: border-box;">
-            <p style="color: black; font-size: 0.75rem; margin: 0 0 3px 0; text-align: center;">
-                <span style="color: #666; font-size: 0.70rem;">(${recommended.length} available)</span>
+            <p style="color: black; font-size: 1rem; margin: 0 0 3px 0; text-align: center;">
+                <span style="color: #666; font-size: 1rem;">(${recommended.length} available)</span>
             </p>
             <hr style="margin: 3px 0;">
             <div style="width: 100%; box-sizing: border-box;">
@@ -26889,8 +26882,8 @@ window.showPathwaysList = function(page = 1) {
             ${paginationHTML}
             <hr style="margin: 3px 0;">
             <div style="text-align: center; padding: 5px 0;">
-                <button onclick="showSaveScreen()" class="classic-3d-button" style="margin: 2px; font-size: 0.7rem; padding: 4px 8px;">💾 Save</button>
-                <button onclick="location.reload()" class="classic-3d-button" style="margin: 2px; font-size: 0.7rem; padding: 4px 8px;">🏠 Home</button>
+                <button onclick="showSaveScreen()" class="classic-3d-button" style="margin: 2px; font-size: 1rem; padding: 4px 8px;">💾 Save</button>
+                <button onclick="location.reload()" class="classic-3d-button" style="margin: 2px; font-size: 1rem; padding: 4px 8px;">🏠 Home</button>
             </div>
         </div>
     `;
@@ -26911,7 +26904,7 @@ window.showPathwayDetail = function(pathway, taskPage = 1) {
         titleEl.innerHTML = `${pathway.skillSymbol} ${pathway.title}`;
     }
     
-    const TASKS_PER_PAGE = 5;
+    const TASKS_PER_PAGE = 1;
     const totalTaskPages = Math.ceil(pathway.tasks.length / TASKS_PER_PAGE);
     const startIndex = (taskPage - 1) * TASKS_PER_PAGE;
     const endIndex = startIndex + TASKS_PER_PAGE;
@@ -26926,16 +26919,17 @@ window.showPathwayDetail = function(pathway, taskPage = 1) {
         return `
             <div style="display: flex; align-items: flex-start; gap: 4px; margin-bottom: 3px; width: 100%;">
                 <!-- Checkbox area -->
-                <div style="padding: 4px 6px; flex: 1; display: flex; align-items: flex-start; gap: 6px; cursor: pointer; border-radius: 3px; transition: background-color 0.2s ease; ${isComplete ? 'background-color: #d4edda;' : 'background-color: #f9f9f9;'}" 
+                <div style="padding: 4px 6px; flex: 1; display: flex; align-items: flex-start; gap: 6px; cursor: pointer; border-radius: 3px; transition: background-color 0.2s ease; overflow-wrap: break-word; ${isComplete ? 'background-color: #d4edda;' : 'background-color: #f9f9f9;'}" 
                      onmouseover="this.style.backgroundColor='${isComplete ? '#c3e6cb' : '#f0f0f0'}'" 
                      onmouseout="this.style.backgroundColor='${isComplete ? '#d4edda' : '#f9f9f9'}'"
                      onclick="toggleTask('${pathway.id}', '${task.id}')">
                     <div style="font-size: 0.9rem; flex-shrink: 0;">${isComplete ? '☑️' : '⬜'}</div>
-                    <div style="flex: 1; font-size: 0.7rem; color: ${isComplete ? '#155724' : 'black'}; ${isComplete ? 'text-decoration: line-through;' : ''} line-height: 1.3; word-wrap: break-word;">
+                    <div style="flex: 1; font-size: 1rem; color: ${isComplete ? '#155724' : 'black'}; ${isComplete ? 'text-decoration: line-through;' : ''} line-height: 1.3; word-wrap: break-word;">
                         <strong>${taskNumber}.</strong> ${task.text}
                     </div>
                 </div>
-                <!-- Info button -->
+               
+			   <!-- Info button -->
 
 <button 
     type="button"
