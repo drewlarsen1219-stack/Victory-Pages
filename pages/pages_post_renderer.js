@@ -1,8 +1,8 @@
 // pages/pages_post_renderer.js
 const POSTS_DATA = [
-    { id: 1, title: "Welcome to Victory Pages!", tag: "life", author: "AdminUser", date: "2025-12-01", content: "This is the first post on the new forum. The retro UI looks great! Use the 'Create Post' button below to add your own public page to the forum. This post is purposefully long so you can test the 'Read More' functionality. Testing, testing, 1, 2, 3. We can write a whole paragraph about the importance of fellowship in the Christian walk, citing scripture like Hebrews 10:24-25." },
-    { id: 2, title: "Question about the Finder Path", tag: "faith", author: "NewbieVic", date: "2025-12-05", content: "I'm a new user and I'm a bit confused about the Finder Path structure. Can anyone share their experience or a quick guide on what the 'Ways' are supposed to lead to? I am currently trying to figure out how to track my progress in my spiritual disciplines." },
-    { id: 3, title: "Investing for Christians", tag: "investing", author: "FinancePro", date: "2025-12-10", content: "Are there any good Christian-focused books or resources on ethical investing? Trying to align my financial path with my faith path. Any advice appreciated!" }
+    { id: 1, title: "Welcome to Victory Pages!", tag: "life", author: "Owner", date: "2025-12-01", content: "This is the first post on the new forum. The retro UI looks great! Use the 'Create Post' button below to add your own public page to the forum. This post is purposefully long so you can test the 'Read More' functionality. Testing, testing, 1, 2, 3. We can write a whole paragraph about the importance of fellowship in the Christian walk, citing scripture like Hebrews 10:24-25." },
+    { id: 2, title: "Question about the Finder Path", tag: "faith", author: "Owner", date: "2025-12-05", content: "I'm a new user and I'm a bit confused about the Finder Path structure. Can anyone share their experience or a quick guide on what the 'Ways' are supposed to lead to? I am currently trying to figure out how to track my progress in my spiritual disciplines." },
+    { id: 3, title: "Bible Study: Book of Psalms", tag: "faith", author: "Owner", date: "2026-4-1", content: "<a href="Psalms_study.html">Book of Psalms</a>" }
 ];
 
 const el = (id) => document.getElementById(id);
