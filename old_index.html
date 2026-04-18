@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Old Victory Pages</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gamification of real life and a Forum for Christians. ">
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almendra+Display&family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pages/pages_style.css">
+	<link rel="stylesheet" href="pages/finder_style.css">
+
+<link rel="icon" type="image/png" href="agnus-dei.png">
+
+    </head>
+	
+<body>
+
+
+
+<table class="page-wrapper-table" cellspacing="20" cellpadding="20" border="0">
+    
+        <tbody>
+            <tr>
+	      
+<td class="td-spacer left-roller">
+<img src="pages/Vines_Left.png" alt="Vines" class="carved-image-style2">
+    </div>
+
+</td>
+
+
+			
+<td class="td-left">
+    <!-- Column Header -->
+    <div class="p-2 mb-4 text-left">
+        <div class="header-and-button-container">
+            <span class="text-base font-bold" style="color: black; text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF; font-size: 20px;">
+                Pathfinder/Pathways 
+            </span>
+            <button id="paths-content-toggle" class="classic-3d-button header-button" onclick="toggleColumn('paths-content')">
+                Open ▼
+            </button>
+        </div>
+        <hr class="border-t border-gray-600 my-4">
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="pt-4">
+        <!-- Closed State:  Placeholder Image and Text -->
+        <div id="paths-closed-image" style="display: block;">
+            <div class="p-2 text-xs retro-inset-panel text-center">
+                <p><em>Paths/Pathways</em> is designed to help users steward their life for the glory of God. The system identifies your starting point 
+                and assigns tailored Pathways for growth. Upon completion of Paths new Pathways are unlocked.  This is a placeholder sentence. 
+                Paths uses the wisdom of the Holy Bible to ensure that your progress isn't just about accomplishment, but about surrendering to God.  This is 
+                a placeholder sentence. This is a placeholder.</p>
+                <br>
+                <hr style="width:  100%; height: 2px;">
+                <br><br>
+                <img src="pages/magnus_dei_grey.png" alt="magnus_dei" class="carved-image-style">
+                <br>
+                <hr style="width: 100%; height:  2px;">
+                <br>
+                <div class="prayer">
+                    <p>Lord God, Heavenly Father,</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Open State: Interactive Content -->
+        <div id="paths-content" class="hidden-content">
+            <div class="retro-inset-panel" style="padding: 15px;">
+                
+                <!-- Landing Screen -->
+                <div id="landing-screen">
+                    <p>Welcome to Pathways Personal Operating System! </p>
+                    <hr><hr><hr>
+                    
+                    <div class="user-buttons-container">
+                        <button id="open-assessment-btn" class="classic-3d-button new-user-button">New User</button>
+                        <button class="classic-3d-button" onclick="openExistingUser()">Existing User</button>
+                    </div>
+                </div>
+                
+                <!-- Assessment View -->
+                <div id="paths-finder-view" style="display: none;">
+                    <p>Bodily Health Assessment</p>
+                    <hr><hr><hr>
+                    
+                    <form id="quiz-form">
+                        <div id="quiz-container"></div>
+                    </form>
+                    
+                    <div style="margin-top: 20px; display: flex; justify-content: space-between;">
+                        <button id="next-btn" class="classic-3d-button">Next Question</button>
+                        <button id="back-btn" class="classic-3d-button">Back</button>
+                    </div>
+                    
+                    <div id="score-result" style="text-align: center; margin-top:  20px; padding: 10px; border: 2px inset #ffffff; display: none;"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</td>
+
+                <td class="td-center">
+    <div style="display: flex; flex-direction: column; min-height: 100%; height: 100%;">
+           
+        
+        <div class="p-2 mb-4 text-left">
+            <div class="header-and-button-container">
+                <span 
+                    class="text-base font-bold" 
+                    style="color: black; 
+
+                        text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF;
+                        
+                        font-size: 20px;"
+                >
+                    Paraclete/Index
+                </span>
+            
+                <button 
+                    id="paraclete-content-toggle" 
+                    class="classic-3d-button header-button" 
+                    onclick="toggleColumn('paraclete-content')"
+                >
+                    Open ▼
+                </button>
+            </div>
+            <hr class="border-t border-gray-600 my-4">
+        </div>
+		
+
+    <div class="pt-4">
+			<div id="paraclete-closed-image" style="display: block;">
+			
+        <div class="p-2 text-xs retro-inset-panel text-center">
+	
+	            <p><em>Paraclete</em> is the central index and resource library for Victory Pages. 
+				While currently serving as a site guide, this section transforms into a dynamic container to support your activity through the Paths/Pathways POS.</p><br>
+<hr style="width: 100%; height: 2px;">
+		
+		        <br><br><img src="pages/dove.png" alt="Dove" class="carved-image-style"><br>
+		  <hr style="width: 100%; height: 2px;"><br><br>
+		  <div class="prayer"
+		<p>& Holy Spirit;</p><br>
+	</div>		
+    </div>
+</div>
+
+<div id="paraclete-content" class="hidden-content" style="margin-top: 20px;">
+  
+        
+
+           <div class="p-2 text-xs retro-inset-panel text-center">
+                <details> <summary>About</p></summary>
+                    <p class="space-y-2 text-sm p-2">
+                    
+<p>
+Website for Christians
+</p><hr><p>
+<strong>Hardware</strong>
+<br> Old PC</p>
+</p><p>
+<strong>Software used</strong>
+<br> Gitbash, Notepad++
+</p><p>
+<strong>About the Owner</strong>
+<br>Christian who lives in Northwest Arkansas. Member of the Lutheran Church of Missouri Synod.    
+</p></details>
+<div class="mt-4">
+<details>
+<summary>Q & A</p></summary>
+<p class="space-y-2 text-sm p-2">
+<details>
+<summary> What is "<strong>Victory</strong>"?</summary>
+<hr>                         
+<p>Symbolizes Jesus Christ's triumphant victory over sin, death, and the devil.</p>
+</details><details>
+<summary> What is "<strong>Paths</strong>"?</summary>
+<hr>
+<p>The routes offered to users to achieve their own victory over worldly struggles (finances, health, family).</p>
+</details><details>
+<summary> "<strong>Victory Paths</strong>"?</summary></p>
+<hr>
+<p>Provides clear, prioritized guidance drawn from the Bible, affirming that God's wisdom is the correct and intended methodology for our lives.</p>
+</details><details><hr>
+<summary><strong>New User</strong> Process</summary>
+<p>An onboarding process where the new user answers questionnaires designed to assess their current standing (life XP) in various areas.</p>
+<p>Example Question: "How many days per week do you exercise?"</p>
+<p>Example Answer: "3 days per week."</p>
+<p>Website Action: The user's Skills Tracker is updated with the new data.</p>
+<p>Website Action: New Pathway(s) are unlocked based on the user's current skill level.</p>
+<p>The user now has new Pathways (quests) available to complete, both IRL (In Real Life) and online.</p>
+</details><details><hr>
+<summary><strong>Existing User</strong> Flow</summary>
+<p>Existing users can enter their saved data to reflect the progress they have already made.</p>
+<p>Users continue completing Pathways and saving their progress.</p>
+<p>Once a user finishes a Pathway, they update the Skills Tracker.</p>
+<p>Website Action: A new quest is unlocked.</p>
+<p>The user repeats this process to progress further through the game.</p>
+</details><details><hr>
+<summary>Public<strong> Forum</strong></summary>
+<p> A public forum called "Victory Pages" is available for users and serves as the website's home page.</p>
+</details></p></details>
+                
+<div class="mt-4">
+<details>
+<summary>Library</p></summary>
+<p class="space-y-2 text-sm p-2">
+<details><summary><strong>
+Christianity
+</strong></summary></p><hr>
+<p class="text-black hover:text-red-900">The Holy Bible <a href="https://www.esv.org/">
+<br>Standard English Version</a></p>                       
+<p><p>
+Tools
+<br><a href="https://www.blueletterbible.org/">Blue Letter Bible</a>
+</p><p>
+Bible study & Theology
+<br><a href="Psalms_study.html">Book of Psalms</a>
+</p><p>
+Mere Christianity 
+<br> C.S. Lewis  
+<a href="https://www.amazon.com/dp/0060652926" target="_blank" rel="noopener noreferrer" class="minimal-link"> 
+<br> Available on Amazon
+</a></p></a></p></details><details>
+<summary><strong>Lutheranism</strong></summary></p><hr>
+</p><p><a href="https://bookofconcord.org/">The Book of Concord </a>
+</p>
+<p class="library-video-link"> What is the Book of Concord? <span id="video1-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/GGVVegWs-vI?autoplay=1">
+</span></p><div id="video1-container" class="video-container" style="display: none;">
+<iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</p><p>
+<p class="library-video-link"> Tour of the Cradle of Lutheran Reformation:
+<br> Part 1
+<span id="video2-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/_sW_IpfP6jY?autoplay=1"> </span>
+</p>
+<div id="video2-container" class="video-container" style="display: none;">
+<iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<span id="video3-placeholder" class="video-placeholder" data-video-url="https://www.youtube-nocookie.com/embed/D86nmq-2jxc?autoplay=1">
+<p class="library-video-link"> Tour of the Cradle of Lutheran Reformation:
+<br> Part 2  </span>
+</p>
+<div id="video3-container" class="video-container" style="display: none;">
+<iframe width="560" height="315" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</details>
+</p></details></div></div></div>
+<br><div class="retro-inset-panel_2">
+<p><a href="pages/Navigation/privacy_policy.html" >Privacy Policy</a></p>
+<p><a href="pages/Navigation/terms_and_conditions.html" >Terms & Conditions</a></p>
+<p>© 2025 Victory Pages.</p><p> All rights reserved.</p><p>
+All progress saved privately.</p>
+</div></div></div></div></div></td></td>
+
+
+<td class="td-right">
+    <div class="p-2 mb-4 text-left">
+        <div class="header-and-button-container">
+            <span class="text-base font-bold" style="color: black; text-shadow: -0.5px -0.5px 0px #606060, 0.5px 0.5px 0px #FFFFFF; font-size: 20px;">
+                Pages/Forum                              
+            </span>
+            
+            <button id="pages-content-toggle" class="classic-3d-button header-button" onclick="toggleColumn('pages-content')">  
+               
+                    Open ▼
+                </span>
+            </button>
+        </div>
+        <hr class="border-t border-gray-600 my-4">
+    </div>
+
+   
+        <div class="pt-4">
+							 <div id="pages-closed-image" style="display: block;">		
+            <div class="p-2 text-xs retro-inset-panel text-center">
+			
+<p><em>Pages</em> is a living collection of wisdom in the form of a forumn written by Christians, for Christians. While the site owner currently curates the primary content, 
+this is a community-driven space where all users are invited to share their insights, testimonies, and encouragement. 
+By users contributing their voice, they help build a library of faith that directs the community toward God and managing what is His. This is a placeholder sentence.</p>
+
+
+          <br><hr style="width: 100%; height: 2px;">
+			<br><br>
+					<img src="pages/Agnus_Dei.png" alt="Agnus_Dei" class="carved-image-style">
+					<br>
+					
+					<hr style="width: 100%; height: 2px;">
+					<br><br>
+		<div class="prayer"
+<p>Lamb of God: have mercy upon us.</p><br>
+</div>
+        </div>
+    </div>
+
+
+    <div id="pages-content" class="hidden-content" style="margin-top: 10px;">
+        <div id="posts-messages" class="text-sm text-center text-red-700 mb-2"></div>
+        <div id="forum-controls">
+            <div class="tag-dropdown-container mb-4" style="margin-top: 20px;">
+                <select id="tagDropdown" class="retro-inset-field p-1">
+                    <option value="Most recent">Most recent</option>
+                    <option value="investing">Investing</option>
+                    <option value="gaming">Gaming</option>
+                    <option value="movies">Movies</option>
+                    <option value="faith">Faith</option>
+                    <option value="life">Life</option>
+                    <option value="opinion">Opinion</option>
+                    <option value="programming">Programming</option>
+                    <option value="music">Music</option>
+                </select>
+            </div>
+        </div>
+<br>
+        <div id="posts-list" class="space-y-2 h-96 overflow-y-auto">
+            <p class="text-center">Loading posts...</p>
+        </div>
+        
+        <div class="mt-4 flex justify-between items-center" id="action-controls" style="margin-top: 30px;">
+            <p><button id="createPostBtn" class="btn-class3" type="button" onclick="window.location.href='pages/Navigation/Submission_tool.html'">Create Post</button><br></p>
+            <div class="pagination-controls space-x-2" style="display: flex; gap: 10px;">
+                <button id="prevPage" class="btn-class3" disabled>&lt; Previous</button>
+                <button id="nextPage" class="btn-class3" disabled>Next &gt;</button>
+            </div>
+        </div>
+    </div>
+
+
+					
+						</div>
+
+<td class="td-spacer left-roller">
+<img src="pages/Vines_Right.png" alt="Vines" class="carved-image-style2">
+</td>
+</td>
+        </tbody>
+    </table>
+    
+<script src="pages/pages_post_renderer.js"></script>
+<script src="pages/site script.js"></script>
+
+
+
+</body>
+</html>
