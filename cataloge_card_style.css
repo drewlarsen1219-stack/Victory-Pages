@@ -1,0 +1,177 @@
+<style>
+
+/* Now you can change the look of ALL 150 psalms at once here */
+.verse-indent {
+  padding-left: 25px;
+  display: inline-block;
+  font-style: italic; /* You can decide to make indents italic here! */
+}
+
+
+fieldset {
+  margin-top: 15px !important; /* Brings the insights closer to the verse box */
+  padding-top: 0px;           /* Optional: removes internal top space */
+}
+
+/* Also check the p tag inside the fieldset */
+fieldset p {
+  margin-top: 8px;
+margin-bottom: 8px;  
+  padding: 5px 10px;
+}
+
+
+
+hr {
+  border: 0;
+  border-top: 1px solid #808080; /* Matches your retro grey borders */
+  margin: 15px 0;
+}
+
+body {
+  background-color: lightgrey; /* Matches your retro-container */
+  margin: 0;                   /* Removes the default browser gap */
+  padding: 20px;               /* Optional: gives the window some breathing room */
+
+}
+
+  .retro-container {
+    font-family: "Tahoma", "Geneva", sans-serif;
+    color: #000;
+    background-color: lightgrey;
+    padding: 20px;
+    /* No outer window border as requested */
+  }
+
+
+  /* Terminal Style Buttons */
+  .retro-btn {
+    background: #d0d0d0;
+    border: 1px solid #000;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    padding: 4px 12px;
+    cursor: pointer;
+    color: #000;
+    
+  }
+
+  .retro-btn:hover:not(:disabled) {
+    outline: 1px dotted #000;
+    outline-offset: -4px;
+    text-decoration: underline;
+    background: #c0c0c0;
+  }
+
+  .retro-btn:active:not(:disabled) {
+    background: #808080;
+    color: #fff;
+  }
+
+  .retro-btn:disabled {
+    color: #888;
+    border-color: #888;
+    background: #d8d8d8;
+    cursor: not-allowed;
+  }
+
+  /* Inset Style Selects */
+  .retro-select {
+    background: #d8d8d8;
+    border: 2px solid;
+    border-color: #808080 #ffffff #ffffff #808080;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    padding: 2px;
+  }
+
+  .retro-hr {
+    border: 0;
+    border-top: 1px solid #808080;
+    border-bottom: 1px solid #ffffff;
+    margin: 15px 0;
+
+  margin-bottom: 25px; /* Increase this number to add space below the line */
+  }
+  
+.verse-row {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  font-family: 'Times New Roman', serif;
+}
+
+.verse-num {
+  font-weight: bold;
+  min-width: 45px; 
+  flex-shrink: 0;
+  color: #444;
+  font-size: 0.9em;
+  padding-top: 2px;
+}
+
+.verse-content {
+  flex-grow: 1;
+  font-size: 1.2em;
+  line-height: 1.4;
+  /* THIS IS THE FIX: */
+  padding-left: 10px; 
+}
+
+/* Use this ONLY if you want a line to be extra-indented (poetry style) */
+.verse-indent {
+  padding-left: 20px;
+  display: inline-block;
+}
+
+.image {
+	align-items: flex-end;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;  
+  border-bottom: 1px dotted black;
+  cursor: help;
+}
+
+/* Tooltip Box */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #FFFFCC;
+  color: #000;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 0; 
+box-shadow: 0 0 0 1px #888;
+  position: absolute;
+  z-index: 1;
+  bottom: 140%; 
+  left: 0; 
+  opacity: 1; 
+}
+
+/* Show on Hover */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}
+
+.hebrew-text {
+  font-size: 1.4em;
+  font-family: "SBL Hebrew", "Times New Roman", serif;
+}
+
+
+</style>
