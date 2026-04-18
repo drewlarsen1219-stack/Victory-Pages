@@ -1,0 +1,259 @@
+body {
+  background-color: lightgrey; /* Matches your retro-container */
+  margin: 15px;                   /* Removes the default browser gap */
+font-size: 18px;
+font-family: "MS Gothic", monospace;
+line-height: 1.4;
+-webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  image-rendering: pixelated;
+}
+
+
+
+a {
+  color: darkred; /* Classic link color */
+  text-decoration: none; /* Removes the default underline */
+  padding: 2px 5px;
+  border: 1.5px dotted grey;
+}
+
+a:hover {
+  background-color: darkred;
+  color: white;
+
+  cursor: pointer;
+
+  border: 1.5px dotted white;
+}
+
+/* Hide all descriptions by default */
+.description {
+  display: none;
+}
+
+/* Only show the description that is inside the specific .menu-item being hovered */
+.menu-item:hover .description {
+  display: inline;
+}
+
+
+/* Hide both the arrow and the description initially */
+.arrow, .description {
+  display: none;
+}
+
+/* Reveal the arrow and description when the specific list item is hovered */
+li.menu-item:hover .arrow,
+li.menu-item:hover .description {
+  display: inline;
+}
+
+
+/* Choose this version for the best "Old Internet" menu feel */
+li.menu-item {
+  display: table;        /* Shrinks the hover area to fit the text exactly */
+  width: auto;           /* Ensures it doesn't stretch to the right margin */
+  margin-bottom: 5px;    /* Adds a tiny bit of extra space between items */
+}
+
+
+
+/* Tree View Container */
+.tree-view {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+/* 1. Remove horizontal branches from all top-level items */
+.tree-view > li::before {
+  content: none !important;
+}
+
+/* 1. Remove the border and gap from the UL container */
+.tree-view ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 15px; /* Aligns the line under the summary box */
+  margin-top: -4px;   /* Pulls the line up to touch the summary box */
+  border-left: 10px;  /* Removed so we can control it on the items */
+}
+
+/* 2. Update vertical segments to include top padding */
+.tree-view ul li {
+  position: relative;
+  padding-left: 20px;
+  border-left: 1px dotted #808080;
+  margin: 0;
+  /* ADDED: padding-top pushes the box down while keeping the vertical line */
+  padding-top: 17px;    
+  padding-bottom: 10px; 
+}
+
+/* 3. Remove the "tail" from the last item in every list */
+.tree-view ul li:last-child {
+  border-left: 1px dotted transparent;
+}
+
+/* 3. Adjust the "cap" height for the last item */
+.tree-view ul li:last-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  /* UPDATED: Increased to 27px to reach the new lower branch position */
+  height: 27px; 
+  border-left: 1px dotted #808080;
+}
+
+
+
+
+/* 4. Lower the horizontal branch connection point */
+.tree-view ul li::before {
+  content: "";
+  position: absolute;
+  /* UPDATED: Changed from 12px to 27px to stay centered on the lower box */
+  top: 27px;        
+  left: 0;
+  width: 20px;
+  border-top: 1px dotted #808080;
+}
+
+/* 6. Tighten the summary box to the tree */
+summary {
+  display: table;
+  padding: 2px 2px;
+  text-decoration: none;         /* Remove standard underline */
+  border-bottom: 1px dotted #808080; 
+  display: inline-block;         /* Ensures the border wraps the text tightly */
+  line-height: 1;
+  cursor: pointer;
+  margin-bottom: 5px; /* Ensures the trunk starts right below the box */
+}
+
+//* Hide default browser arrows */
+summary { 
+  list-style: none; 
+}
+summary::-webkit-details-marker { 
+  display: none; 
+}
+
+/* The 'Closed' state symbol */
+summary::before {
+  content: "+";
+  font-family: monospace; /* Keeps the character width consistent */
+  color: darkred;
+  margin-right: 5px;
+}
+
+/* The 'Open' state symbol */
+details[open] > summary::before {
+  content: "-";
+  color: darkred; /* Optional: highlights the symbol when active */
+}
+
+
+
+/* 4. Ensure the parent list items stay positioned correctly */
+.tree-view li {
+  list-style-type: none;
+  position: relative;
+}
+
+
+
+
+
+/* Optional: Change the border color when the folder is hovered */
+summary:hover {
+  background-color: darkred;
+  color: white;
+
+  cursor: pointer;
+
+  border: 1.5px dotted white;
+}
+
+
+/* Create the side-by-side layout */
+.main-layout {
+  display: flex;          /* This puts children side-by-side */
+  align-items: flex-start; /* Keeps the tree at the top */
+  gap: 30px;              /* Space between the tree and the content */
+  margin-top: 20px;
+}
+
+/* Layout Container */
+.desktop-container {
+  display: flex;
+  gap: 20px;
+  height: 90vh;
+}
+
+.sidebar {
+  min-width: 750px;
+  max-width: 300px;
+}
+
+/* The Content Container on the right */
+.content-window {
+  flex-grow: 1;           /* Takes up all remaining horizontal space */
+  padding: 20px;
+  color: black;
+  border-left: 1px dotted #808080;
+  min-height: 400px;
+}
+
+
+/* Fix for Side-by-Side Hover Descriptions */
+.menu-item {
+  display: block;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.description {
+  display: none;
+  font-size: 14px;
+  color: #555;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+/* Ensure descriptions still behave correctly in the new layout */
+.menu-item:hover .description {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Link Button Styling */
+.link-button {
+  display: inline-block;
+  color: darkred;
+  text-decoration: none;
+  padding: 2px 6px;
+  border: 1px dotted #808080;
+  background: none;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  background-color: darkred;
+  color: white;
+  border: 1px dotted white;
+}
+
+/* Retro Typography */
+.retro-font {
+  font-family: 'MS UI Gothic', monospace;
+  font-size: 20px;
+}
+
+hr {
+  border: none;               /* Remove the default solid/3D line */
+  border-top: 1px dotted #808080; /* Grey dotted line to match your tree lines */
+  height: 0;                  /* Ensure the element itself has no height */
+  margin: 20px 0;             /* Adds vertical spacing around the line */
+}
