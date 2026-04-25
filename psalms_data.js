@@ -530,11 +530,9 @@ I'm not going to anyone else, I'm directing my prayer to You, you are my King an
 </p><hr><em>
 David Uses THREE Different Words for "Listen"
 </em></p><p> 
-Verse 2:
-<br> הַאֲזִינָה (ha'azinah) - "Give ear" (careful attention) 
+הַאֲזִינָה (ha'azinah) - "Give ear" (careful attention) 
 <br> בִּינָה (binah) - "Consider/understand" (perceive deeply) 
-</p><p>
-הַקְשִׁיבָה (hakshivah) - "Attend" (focus intently) 
+<br> הַקְשִׁיבָה (hakshivah) - "Attend" (focus intently) 
 </p><p>
 David is piling up synonyms to emphasize: "I NEED YOU TO HEAR ME!" 
 </p><p>
@@ -618,14 +616,14 @@ Other connections
 </em></p><ol>
 	<li> First Fruits Principle: Give God the first of your day by before being distracted by work, problems, etc (the world). Instead prioritize God.
 <br><sub>Proverbs 8:17, Psalm 63:1</sub>
-</p><p>
+
 	<li> New Mercies Each Morning: 
 A new day to accept the blessing of the Lord's mercy and favor. 
 <br><sub>Lamentations 3:22-23, Psalm 30:5 </sub>
-</p><p>
+
 	<li> Preparing to face the days battles: Like putting on armor before battle.
 <br><sub>Ephesians 6:11-13</sub>
-</p><p>
+
 	<li> Jesus Himself would rise early in the morning to pray.
 <br><sub>Mark 1:35 <sub>
 </ol><p><em>
@@ -724,9 +722,9 @@ This Perfect Sacrafice justifies us sinful people who are faithfull in God.
 </p><p>
 Modern day followers of God (Christians) are in a tranformative state of being made sinless and pure through Christ's sacraficial atonment. Always pure, yet always sinning.
 <br> <sub> Philippians 3:9 </sub>
-</p><p><hr>
+</p><p><hr><p>
 <em>Take aways from verse 4</em>
-</p><p>
+
 <ul>
 	<li> We're called to reflect God's character
 	<li> If God doesn't delight in wickedness, neither should we
@@ -747,6 +745,9 @@ David is confident trusting the Lord (faithfullness). And in his faith David is 
 </p><p>
 In verse 10 David will then ask God to judge the wicked people and talk about the contrast of the righteous (himself) and wicked people.
 </p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span> 
 	
 	`
   },
@@ -956,75 +957,101 @@ This sets up David's coming petition for God to judge his enemies in verse 10.
     `,
 
     insight: `
-      <p><strong>Escalation of Judgment:</strong> David uses strong language—destruction and abhorrence. God's judgment isn't just a punishment; for those who breathe out lies and sow discord, it is complete (Proverbs 6:16-19).</p>
-      <p><strong>Structure:</strong> David establishes God's nature (Holy), God's hate (Evil), and God's action (Destruction). This sets up his plea for God to act against his enemies in the coming verses.</p>
-    
-	<span class="tooltip">
-<strong>You Destroy...</strong>
-<span class="tooltiptext">
-<div class="hebrew-row">
-<span class="hebrew-text" dir="rtl">תְּאַבֵּד</span> 
-<span class="transliteration">(t'abbed)</span>
-</div>
-<div class="definition-list">
-<span dir="rtl">אָבַד</span> — (avad): to perish, be destroyed, be lost<br>
-</div>
-<p class="usage-note">Piel form (intensive/causative) - "You cause to perish / You destroy utterly"
-<hr>
-<small class="references">
-Parallel Occurences: Deuteronomy 8:19-20, Proverbs 19:9, Psalm 1:6, Psalm 37:20, Psalm 73:27
-</small>
-</span> </span>
-</p><p>
-David starts using stronger language. He is talking about complete destruction, not just a punishment. 
+      <p><strong>Escalation of Judgment:</strong> David uses strong language—destruction and abhorrence. God's judgment isn't just a punishment; for those 
+	  who breathe out lies and sow discord, it is complete (Proverbs 6:16-19).</p>
+      <p><strong>Structure:</strong> David establishes God's nature (Holy), God's hate (Evil), and God's action (Destruction). 
+	  This sets up his plea for God to act against his enemies in the coming verses.</p>
+ 
 
-</p><p><hr>
+
+
+
+
+ 
+<div class="tooltip">
+		<strong>You Destroy...</strong>
+<span class="tooltiptext">
+
+<div class="hebrew-row">
+	<span class="hebrew-text" dir="rtl">תְּאַבֵּד</span> 
+	<span class="transliteration">(t'abbed)</span>
+</div>
+
+<div class="definition-list">
+	<span dir="rtl">אָבַד</span> — (avad): to perish, be destroyed, be lost<br>
+</div>
+
+<p class="usage-note">Piel form (intensive/causative) - "You cause to perish / You destroy utterly" </p>
+<hr>
+
+<small class="references">
+	Parallel Occurences: Deuteronomy 8:19-20, Proverbs 19:9, Psalm 1:6, Psalm 37:20, Psalm 73:27
+</small>
+</span> </span> </div>
+
+<p>
+David starts using stronger language. He is talking about complete destruction, not just a punishment. 
+</p>
+
+<hr>
+
 <span class="tooltip"><strong>Those who speak...</strong><span class="tooltiptext">
 <span dir="rtl" style="font-size: 1.2em">דֹּבְרֵי</span> - (dov'rei)
 <br>Root: <span dir="rtl">דָּבַר</span> - (davar) <small>to speak, say, talk</small>
 <br><small>Participle plural - "those who speak / speakers"</small>
 </span></span>
+
 <span class="tooltip"><strong>Lies</strong><span class="tooltiptext">
 <span dir="rtl" style="font-size: 1.2em">כָזָב </span>: (kazav) - lies, falsehood, deception
 </span></span>
-</p><p>
+
+<p>
+
 David is not talking about people who lie sometimes. He is talking about habitual liars and professional deceivers.
 As an ongoing practice those who are lying make the lies their buisness and cannot be trusted.
 </p><p>
+
 The types of lying implied are:
  False testimony (bearing false witness), 
 Slander (lying about others to harm them), 
 Deception (lying to gain advantage), 
 Breaking promises (lying about commitments). 
 </p><p>
+
 God destroy liars because lying:
  Destroys trust (foundation of community),
 Perverts justice (false testimony condemns the innocent),
 Harms reputation (slander destroys people),
 Violates covenant (God is truth; lying opposes His nature).
 </p><p>
+
 Lying is a violation of God's ninth commandment:
 <br><strong>"You shall not bear false witness against your neighbor."</strong>
 <sub>Exodus 20:16</sub> 
 </p><p><hr>
+
 Things the LORD hates:
 <br><strong>"There are six things that the LORD hates, seven that are an abomination to him: haughty eyes, a <u>lying tongue</u>, and hands that shed innocent blood, a heart that devises wicked plans, feet that make haste to run to evil, a <u>false witness who breathes out lies</u>, and one who sows discord among brothers."</strong><sub>Proverbs 6:16-19</sub>
 </p><p>
+
 Notice: "Lying tongue" AND "false witness" BOTH listed among things God hates!
 </p><p>
+
 Connection to David's Situation:
 Remember Psalm 4:2 -
 "How long will you turn my honor to shame? How long will you love worthless things and pursue lies?"
 </p><p>
+
 David's enemies are: Slandering him (speaking lies about him),
 Bearing false witness (making false accusations),
 Spreading deception (lying to turn people against him).
 </p><p>
+
 David is saying:
 "LORD, You destroy those who speak lies."
 "My enemies speak lies."
 Therefore You will destroy my enemies!
-</p><p><hr>
+</p><hr>
 
 <span class="tooltip">
 <strong>Abhors...</strong>
@@ -1043,7 +1070,7 @@ Parallel Occurrences: Leviticus 26:11, 30, Psalm 119:163, Amos 6:8, Zechariah 11
 </small>
 </span> </span>
 
-</p><p>
+<p>
 David escalates Gods hate in verse 5 to a more specific type of evildoer in verse 6.
 </p><p>
 Hate (שָׂנֵא - sane) = strong opposition, hostility
@@ -1061,7 +1088,7 @@ but "I am utterly disgusted by this.
  I loathe this with every fiber of My being, and 
  this is completely abominable to Me".
  
-</p><p><hr>
+</p><hr>
 
 <span class="tooltip">
 <strong>Man of Bloodshed...</strong>
@@ -1080,11 +1107,13 @@ but "I am utterly disgusted by this.
 Parallel Occurrences: 2 Samuel 16:7-8, Psalm 26:9, Psalm 55:23, Psalm 59:2, Proverbs 29:10
 </small>
 </span> </span>
-</p><p>
+
+<p>
 Someone guilty of violence, murder, shedding innocent blood. 
 Not just one murder, but multiple. 
 This is habitual violence and the guilty killer has saturated their hands in blood.
-</p><p><hr>
+</p><hr>
+
 <span class="tooltip">
 <strong>Deceit...</strong>
 <span class="tooltiptext">
@@ -1099,14 +1128,18 @@ Root: <span dir="rtl">רָמָה</span> — (ramah): to deceive, betray, deal tr
 <small class="references">
 Parallel Occurrences: Jeremiah 9:6, Psalm 10:7, Psalm 43:1, Proverbs 12:5, Proverbs 12:17
 </small>
-</span> </span><p>
+</span> </span>
+
+<p>
 This is MORE than just lying. The difference is that lying is speaking falsehood, 
 while deceit is actively scheming to trick or betray someone. The deciever plots, plans, schemes, betrays, and commits fraud.
 This is usually calculated or planned out. 
 </p><p>
+
 כָזָב (kazav) = lies, falsehood (speaking what's untrue)
 <br> מִרְמָה (mirmah) = deceit, treachery, fraud (scheming, plotting, betraying)
 </p><p>
+
 Examples of Deceit include:
 <ul>
 <li>Jacob deceiving Isaac (Genesis 27) - pretending to be Esau
@@ -1116,14 +1149,17 @@ Examples of Deceit include:
 <li>Absalom's conspiracy (2 Samuel 15) - plotting against David through deception
 </ul>
 
-</p><p><hr><strong>
+</p><hr>
 
 "Man of Bloodshed AND Deceit"</strong> - אִישׁ־דָּמִים וּמִרְמָה (ish-damim u'mirmah)
 </p><p>
+
 These often go together because violent people use deceit to accomplish their evil and deceitful people often end up shedding blood when schemes fail.
 </p><p>
+
 Examples of both together:
 </p><p>
+
 <ul>
 <li>Cain (Genesis 4):
 <ul>
@@ -1144,60 +1180,77 @@ Examples of both together:
 <ul>
 <li>Deceit: Herodias's scheme through her daughter
 <li>Bloodshed: John beheaded
-</ul></ul></p><p><hr>
+</ul></ul></p><hr>
+
 <span class="tooltip">
 <em>Way of the Path</em>
 <span class="tooltiptext">
 <div class="definition-list">
 Sin is often described as a "Path" (derek). The momentum comes from the fact that paths are easy to follow and hard to leave once you’ve started running.
+
 <p><strong>"The way of the wicked is like deep darkness; they do not know what makes them stumble."</strong> 
+
 </p><p> The idea is that once you enter the "dark path," the momentum of your movement ensures you will hit the next obstacle because you’ve lost the ability to see clearly.
+
 </p></div><hr>
 <small class="references">Proverbs 4:19</small>
 </span> </span>
-</p><p>
+
+<p>
 Lie → eventually shed blood
 <br>Deceive → eventually commit violence
 <br>Bear false witness → cause innocent deaths
 </p><p>
+
 The Lord Hates interconnected evils: 
 <br><strong>"There are six things that the LORD hates, seven that are an abomination to him: haughty eyes, a lying tongue, and hands that shed innocent blood, a heart that devises wicked plans, feet that make haste to run to evil, a false witness who breathes out lies, and one who sows discord among brothers."
 </strong><br><sub> Proverbs 6:16-19 </sub>
 </p><p>
+
 The numerical structure of Proverbs "Numerical Proverb" (x and x+1), is a poetic way of saying 
 "this list is complete and climactic."
 
 </p><p><hr>
 
 <em>Escelation/Intensification</em>
+
 </p><p>
 David escalates God's hate using a poetic parallel sentence structure.
 </p><p>
+
 The relationship intensifies between <strong>"You destroy those who speak lies"</strong> and <strong>"The LORD abhors the man of bloodshed and deceit"</strong> 
 by both expressing God's judgment, but "Abhor" adds the emotional dimension. 
 </p><p>
+
 <strong>"Those who speak lies"</strong> parallels <strong>"Man of bloodshed and deceit"</strong> because lies and deciet are in the same category but deceit is an intensification of lies. 
 The same escelation is applied to violence and bloodshed.
 </p><p>
+
 Together God destroys liars and God abhors violent deceivers. The second is even worse than the first.
 
 </p><p><hr>
 
 <em> Building a Case (1/2) </em>
 </p><p>
+
 Building on verses 4-6, what David Is Really Saying:
 <br>“You don't delight in wickedness; evil cannot dwell with You.”
 <br>“The boastful can't stand before You; You hate evildoers.”
 <br>“You destroy liars; You abhor violent deceivers.”
 </p><p>
+
 Progression of God's character: His emotions, and then to action. God’s character is holy/opposed to evil. God's emotion is hate towards evildoers. God's action is to destroy them. God’s emotions progress even stronger abhor rather than hate.
 </p><p>
+
 David is establishes his confidence in God because his enemies are liars, violent and deceitful. Therefore God will destroy them because that is what He does to such people. 
 </p><p>
+
 It is likely that David knows what the Lord hates because he was able to draw from a shared Oral Tradition. In the ancient world, there were standard pithy sayings, ethical maxims, and instructions used to train royalty and priests called "wisdom" (Hebrew: Chokhmah), which was a specific genre of literature and speech. The origins of David’s wisdom likely comes from the Laws of Moses, patriarchs, and sages of the east, all sythesized with the help of the Holy Spirit. 
 </p><p>
+
 David gets more specific about the wicked by going from speaking generally "workers of iniquity" / "boastful" to those who speak lies, guilty of bloodshed, who practice deceit. David is specific because the Lord destroys the exact same type of people that are persecuting him. David is building his case to bring to the Lord in prayer. 
 </p><p>
+
 There were many instances in Davids lifetime that he had to face liars, violence, and deceit.
 <br>
 Instances: Saul's Pursuit, Absalom's Rebellion, Doeg and the Priests of Nob, Shimei's Curses
@@ -1244,5 +1297,349 @@ Here's who God is (holy)
   </span> 
 	
 	`
+  },
+  {
+  
+   label: "Psalm 5:7",
+    title: "",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">5:7</div>
+        <div class="verse-content">
+          But I, through the abundance of your steadfast love,
+			<br>will enter your house.
+			<br>I will bow down toward your holy temple
+			<br>in the fear of you. 
+			<br><small>(ESV)</small>
+        </div>
+      </div>
+    `,
+
+    insight: `
+<p><em>The Contrast of The Wicked and David</em></p>
+
+<p>The Wicked are...</p>
+<ol>
+<li> Evil 
+<li> The boastful 
+<li> Workers of iniquity 
+<li> Those who speak lies 
+<li> Men of bloodshed and deceit 
+</ol>
+
+<p> 
+These wicked people cannot stand before God or even dwell with Him temperoraily. 
+These wicked people are barred from His prescence. These wicked people are arbored and destroyed.
+<br><sub>Psalms 5:4-6</sub>
+</p>
+
+<div class="tooltip">
+<strong>But I,</strong>
+<span class="tooltiptext">	
+<div class="hebrew-row">
+<span class="hebrew-text" dir="rtl">וַאֲנִי</span> 
+<span class="transliteration">(va'ani)</span>
+</div>		
+<div class="definition-list">
+<span dir="rtl">אָבַד</span> — "But as for me / But I"<br>
+</div>
+	<p class="usage-note"> וְ (v') = and, but / אֲנִי (ani) = I / Emphatic contrast - <em>"But I (in contrast to them)</em>"
+</div>				
+</span> 
+</span> 
+
+(David) will...
+	
+<ol>
+<li> Enter the Lords house
+<li> Bow down toward Your temple
+<li> Approach God's holy temple
+<li> Access God's presence
+<li> Display reverence/fear of God
+<li> Worhip God
+</ol>
+
+<p>
+<em>The key to the door of God</em>
+</p>
+
+<p>
+David can enter the Lords presence when the wicked cannot. This is not because David is sinless, earned/deserves it or is better than anyone else.
+<br> David can enter because God opens the door in His abundant mercy and steadfast love. 
+<br> The covenant/promises made with His people atones for Davids sin, granting access to God's prescence.
+<br><sub> Ephesians 2:4-5, Hebrews 4:16 </sub>
+</p>
+<hr>
+<p>
+<div class="tooltip">
+<strong>is in the Abundance</strong>
+<span class="tooltiptext">	
+<div class="hebrew-row">
+<span class="hebrew-text" dir="rtl">בְּרֹב<span> 
+<span class="transliteration">(b'rov)</span>
+</div>		
+<div class="definition-list">
+<span dir="rtl">בְּ</span> (b') — "in, through, by means of"
+<br> <span dir="rtl">רֹב</span> (rov) — "abundance, multitude, greatness, wealth"
+</div>
+</div>				
+</span> 
+</span> 
+
+ of Your/(God's) 
+  
+<div class="tooltip">
+<strong>Steadfast Love.</strong>
+<span class="tooltiptext">	
+<div class="hebrew-row">
+<span class="hebrew-text" dir="rtl">חֶסֶד<span> 
+<span class="transliteration">(Chesed)</span>
+</div>		
+<div class="definition-list">
+<span dir="rtl">חֶסֶד</span> — "Steadfast Love" 
+<br>No single English word captures it fully.
+<br>Translation attempts: Steadfast love, Lovingkindness, Unfailing love, Covenant love, Loyal love, Mercy
+</div>
+</div>				
+</span> 
+</span> 
+</p>
+
+
+<p><em>Steadfast Love — חֶסֶד (Chesed)</em></p>
+<p>
+
+God's Love towards His people is based on covenant relationship and it is not arbitrary or emotional. 
+The Lord is committed, and obligated to love His people because He has bound Himself to His people with promises/covenants. 
+The Lords promises are able to be charecterized as steadfast or unfailing because of the Lords history of upholding His covenants. 
+</p><p>
+
+The Lords promises do not change based on circumstances and they are reliable, constant, and enduring. 
+The Lords promises are not dependent on the recipient's worthiness. The person recieving Gods love is not doing anything apart from accepting and recieving God's love.
+The Lords love is loyal because it combines affection with commitment. 
+</p><p>
+
+<em> We recieve God's heart and God's promise </em>
+</p><p>
+
+People are full of sin (even David) and we do not deserved the Lords favor. 
+Yet the Lord shows compassion instead of judgement. By doing so God is being mercifull and granting us grace which is going beyond what's required. 
+</p><p>
+
+This is something that we can model towards other people when being merciful. We can do this by granting people grace by being merciful beyond what is required instead of judgemental.
+</p><p>
+
+The Lord is abounding/wealthy in chesed. Delights in chesed. Chesed is paired with faithfulness and the Lords covenant promises. 
+<br> Chesed means forgiving/pardoning iniquity. Chesed is new every morning and extends into eternity. 
+<br><sub>Exodus 34:6-7, Psalm 136, Lamentations 3:22-23, Micah 7:18-20</sub>
+</p>
+<p><small>
+Biblical Usage of "Abundant Chesed": Psalm 51:1, Psalm 69:13, Psalm 106:7, Numbers 14:18-19 
+</p></small>
+<p>
+This Anticipates the Gospel by giving us a preview for what the Christ Jesus does for us.
+<br> The same logic is found in Ephesians 2:4-5 and Hebrews 4:16.
+</p>
+<p> 
+Ephesians 2:4-5:"But God, being rich in mercy, because of the great love with which he loved us, even when we were dead in our trespasses, made us alive together with Christ—by grace you have been saved."
+<br> Hebrews 4:16: "Let us then with confidence draw near to the throne of grace, that we may receive mercy and find grace to help in time of need."
+</p>
+<p>
+We can approach God NOT because we're worthy, but because of HIS abundant mercy/love.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span> 
+</p>
+<hr>
+
+I will 
+<div class="tooltip">
+<strong>enter your house</strong>
+<span class="tooltiptext">	
+<div class="hebrew-row">
+<span class="hebrew-text" dir="rtl">אָבוֹא בֵיתֶךָ<span> 
+<span class="transliteration">(bô' bayiṯ)</span>
+</div>		
+<div class="definition-list">
+<span dir="rtl">בַּיִת</span> — (bayit) "house" 
+<br>In Davids time house possibly refered to: the tabernacle, the future temple in Davids vision, 
+or generically speaking as a term for "God's dwelling place"
+</div>
+</div>				
+</span> 
+</span> 
+<br><br>
+
+"House" possibilities: 
+
+<div class="tooltip">
+the tabernacle
+<span class="tooltiptext">	
+<div class="definition-list">
+The portable sanctuary where God's presence dwelt
+<br> In Jerusalem (eventually)
+</div>
+</div>				
+</span> 
+</span>,  
+
+<div class="tooltip">
+the Future Temple in David's vision
+<span class="tooltiptext">		
+<div class="definition-list">
+David wanted to build God's house (2 Samuel 7)
+<br> God said Solomon would build it
+<br> David may be speaking prophetically/anticipatorily
+</div>
+</div>				
+</span> 
+</span>, or
+
+<div class="tooltip">
+generic term for "God's dwelling place"
+<span class="tooltiptext">		
+<div class="definition-list">
+Wherever God meets with His people
+<br> The place of worship and sacrifice
+</div>
+</div>				
+</span> 
+</span> 
+
+<p>
+Most likely: The tabernacle/place of worship in David's day, with forward-looking temple imagery.
+</p>
+<p>
+David speaks of approaching God and entering His house confidently. David has access to God's house and can approach the holy place. 
+<br> This is the privilege of the covenant relationship based on God's chesed!
+</p>
+<br>
+I will
+
+<div class="tooltip">
+    <strong> bow down </strong>
+    <div class="tooltiptext"> <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">אֶשְׁתַּחֲוֶה</span> <span class="transliteration">(Eshtachaveh)</span>
+        </div>    
+        <div class="definition-list">
+            <span dir="rtl">שָׁחָה </span> — (shachah) "Bow Down" 
+            <br>to bow down, to worship, to prostrate oneself
+            <p> 
+                Physical action: Falling on one's face, Full body prostration, Total submission, Reverence and humility
+                <br> Spiritual meaning: Worship, Submission to authority, Acknowledging God's supremacy, Honoring God's holiness
+            </p>
+            <hr> 
+            <small>Genesis 18:2, Exodus 34:8, 1 Kings 1:31, Matthew 2:11</small>
+        </div>
+    </div> 
+</div>            
+
+<div class="tooltip">
+    <strong> toward your holy temple </strong>
+    <div class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">אֶל־הֵיכַל־קָדְשְׁךָ</span> <span class="transliteration">(...)</span>
+        </div>        
+        <div class="definition-list">
+            <span dir="rtl">הֵיכָל </span> — (heikhal) temple, palace, large/grand building
+            <div class="definition-list"> 
+                <span dir="rtl">קֹדֶשׁ </span> — (qodesh) holiness, holy, sanctuary
+                <p>Together: "Your holy temple"</p>
+            </div>
+        </div>                
+    </div> 
+</div>
+
+
+<p>
+Toward (אֶל - el) possibly means physical direction or approaching in worship.
+<ul>
+<li> David praying from a distance facing toward the temple/tabernacle. The same way the prophet Daniel did. 
+<br><small>"...windows were open in his upper chamber toward Jerusalem. 
+He got down on his knees three times a day and prayed and gave thanks before his God" (Daniel 6:10)</small>
+
+<li> Approaching in worship by moving toward the temple and coming into God's presence progressively as a motion of approach.
+
+<li> Entering God's house and then bowing down in the direction of the holy place (the inner sanctuary where God's presence dwells).
+</ul>
+
+
+<div class="tooltip">
+    <strong> in the fear of you </strong>
+    <div class="tooltiptext"> <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">בְּיִרְאָתֶךָ</span> <span class="transliteration">(...)</span>
+        </div>    
+        <div class="definition-list">
+            <span dir="rtl">יִרְאָה </span> — (Yir'ah) "Fear" 
+            <br>This word has a RANGE of meaning
+            <ol>
+			<li> Terror/Dread (in some contexts): fear of danger, being afraid
+			<li> Reverence/Awe (most common in worship contexts): reverential fear, holy awe, respect mixed with wonder, recognition of God's majesty and holiness
+			<li> Obedience/Submission: "Fear of the LORD" = living in obedience to God, which is a practical response to God's authority
+            </ol>
+            <hr> 
+            <small>Proverbs 1:7, Proverbs 9:10, Psalm 111:10, Ecclesiastes 12:13</small>
+        </div>
+    </div> 
+</div>  
+<p>
+David means to be in reverent awe before God's holiness by trembling in wonder at being allowed access.
+David does this as a humble recognition of God's majesty and to be respectful during worship before the King.
+Which is a paradox because David approaches boldly at the same time. David is confident and reverent. 
+</p>
+<p>
+<em>The paradox of being Chesesed and in Fear</em>
+</p>
+<p>
+David has a balance of both chesed and fear. 
+Not treating God casually yet not being too afraid to approach. Instead coming near with confidence and awe. 
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span> 
+</p>
+<hr>
+<p>
+There is almost an exact NT parallel in Hebrews 10:19-22: confidence to enter the holy place(s), through or based on chesed in the form of 
+sacraficed flesh, approach or draw near, in the full assurance of faith or in steadfast love, with reverence and awe or fear.
+</p>
+<p>
+The same theology is seen in Ephasians 3:12: Access based on God's grace, not our merit
+</p>
+<p>
+In Psalm 73:28 there is a similiar idea (Asaph):
+"But for me it is good to be near God; I have made the Lord GOD my refuge, that I may tell of all your works."
+</p>
+<p>
+<em> Being near God is the privilege of those who trust Him </em>
+</p>
+<p>
+Verse 5 establishes clear theological foundations of:
+<ul>
+<li> Access to God is by grace alone (chesed), not merit
+<li> God's covenant love is abundant (overflowing, more than enough)
+<li> The righteous and wicked are distinguished by relationship with God, not inherent goodness.
+</ul>
+</p>
+<p>
+Comparing two theological frameworks about grace: <a href= "Theology.html" >[Roman Catholic/Lutheran] </a>
+</p>
+<p>
+This verse anticipates the gospel message, which is the paradox of approaching God as a sinner. 
+What a great privilege and blessing it is to receive God's presence and worship Him through the blood of Christ. 
+<br><sub> Hebrews 4:16, Ephesians 2:4, Hebrews 10:19, Hebrews 12:28 </sub>
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN & AMEN</em> ]
+  </span> 
+</p>
+` 
   }
   ];
+  
+ 
