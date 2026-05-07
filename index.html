@@ -4,84 +4,77 @@
     <meta charset="utf-8" />
     <title>Victory Pages</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="...">
+    <meta name="description" content="Victory Pages — a faith-based Personal Operating System for intentional Christian living.">
 
-<script src="assessment.js"defer></script>
-	
+<script src="assessment.js" defer></script>
+<script src="pathways_system.js" defer></script>
 
 <link rel="stylesheet" href="New_VP.CSS">
-
-
 </head>
 
-
 <body>
-  <strong><p style="font-family: 'MS UI Gothic', monospace;">Welcome to Victory Pages! Allelujah!</p></strong>
-  
+  <p id="page-heading" style="font-family: 'MS UI Gothic', monospace; margin: 2px 0; font-weight: bold;">Welcome to Victory Pages! Alleluia!</p>
+
 <div class="main-layout">
 <nav class="sidebar">
   <ul class="tree-view">
-   <li>
-    <details><summary>Quick Start</summary>  
-      <ul>
-        <li class="menu-item">
-          <a href="#">Hover Mouse Here</a> 
-          <span class="description"> » Begin by <u>clicking</u> the <strong>About</strong> section in the <strong>Recources</strong> drop down menu.</span>
-        </li>
-      </ul>
-    </details>
-  </li>
-  
+    <li>
+      <details><summary>Quick Start</summary>
+        <ul>
+          <li class="menu-item">
+            <span style="font-size:0.85em;color:#555;">Open <strong>Resources</strong> below, then click <strong>About</strong> to get started.</span>
+          </li>
+        </ul>
+      </details>
+    </li>
 
-    <details>
-      <summary>Resources</summary>
-      <ul>
-	          <li class="menu-item">
-          <a href="javascript:void(0)" class="link-button" onclick="showContent('about')">About</a>
-          <span class="description"> » Information about the site owner the website and how the sites functions.</span>
-        </li>
-        <li class="menu-item">
-          <a href="javascript:void(0)" class="link-button" onclick="showContent('library')">Library</a> 
-          <span class="description"> » Collection of curated literature.</span>
-        </li>
-        <li class="menu-item">
-          <a href="#"> Forum</a>
-          <span class="description"> » Public space for community discussion.</span>
-        </li>
-      </ul>
-    </details>
-  </li>
-		
+    <li>
+      <details>
+        <summary>Resources</summary>
+        <ul>
+          <li class="menu-item">
+            <a href="javascript:void(0)" class="link-button" onclick="showContent('about')">About</a>
+            <span class="description"> &raquo; Information about the site owner, the website, and how the site functions.</span>
+          </li>
+          <li class="menu-item">
+            <a href="javascript:void(0)" class="link-button" onclick="showContent('library')">Library</a>
+            <span class="description"> &raquo; Collection of curated literature.</span>
+          </li>
+          <li class="menu-item">
+            <a href='pages/Navigation/privacy_policy.html'>Privacy Policy</a>
+          </li>
+          <li class="menu-item">
+            <a href='pages/Navigation/terms_and_conditions.html'>Terms &amp; Conditions</a>
+          </li>
+        </ul>
+      </details>
+    </li>
 
-	<li>
+    <li>
       <details><summary>Pathways</summary>
-		<ul>
-			<li class="menu-item">
-			<a href="javascript:void(0)" class="link-button" onclick="showContent('pathfinder')">New User</a>
-          <span class="description"> » Assessment questionaire to determine your starting point.
-        </li>
-		
-		<li class="menu-item">
-          <a href="#">Existing User</a>
-          <span class="description"> » Progress tracker and pathway assigner.
-        </li>
-      </ul>
-    </details>
-  </li>
-</ul>
-    </nav>
+        <ul>
+          <li class="menu-item">
+            <a href="javascript:void(0)" class="link-button" onclick="showContent('pathfinder')">New User</a>
+            <span class="description"> &raquo; Assessment questionnaire to determine your starting point.</span>
+          </li>
+          <li class="menu-item">
+            <a href="javascript:void(0)" class="link-button" onclick="vpLoadExistingUser()">Existing User</a>
+            <span class="description"> &raquo; Load your saved progress and continue your pathways.</span>
+          </li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</nav>
 
 <main id="display-pane" class="content-window">
-    <div id="default-msg">
-      <p>last updated: 2026-04-25</p>
-      <p>[Added assesment questions, completed a study on Psalms 5:7]</p>
-	  <p><a href="Psalms_study.html">A Study on the Book of Psalms</a>
-	  <p><a href="old_index.html">Former Landing Page</a>
-    </div>
-  </main>
+  <div id="default-msg"></div>
+</main>
 </div>
 
+<footer>
+  &copy; 2026 Victory Pages &bull; All rights reserved &bull; Progress saved privately.
+</footer>
 
 </body>
-
 </html>
