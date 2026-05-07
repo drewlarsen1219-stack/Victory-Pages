@@ -1639,7 +1639,348 @@ What a great privilege and blessing it is to receive God's presence and worship 
   </span> 
 </p>
 ` 
-  }
+   },
+   {
+  
+   label: "Psalm 5:8",
+    title: "A Double request to the Lord",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">5:8</div>
+        <div class="verse-content">
+			Lead me, O LORD, in your righteousness
+			<br> because of my enemies;
+			<br> make your way straight before me. 
+			<br><small>(ESV)</small>
+        </div>
+      </div>
+    `,
+
+    insight: `
+<p>
+David makes a <em>double request</em> to the Lord: "Lead me in Your rightousness" and "Make straight before me Your way".
+These request compliment each other because David is asking the Lord to guide him and to clear his path of obstacles.
+</p>
+<hr>
+<div class="tooltip">
+<strong>Lead me</strong>
+<span class="tooltiptext">	
+<div class="hebrew-row">
+<span class="hebrew-text" dir="rtl"> נְחֵנִי </span> 
+<span class="transliteration"> (N'cheini) </span>
+<br> Root: <span class="hebrew-text" dir="rtl">נָחָה </span> 
+ <span class="transliteration"> (nachah)</span> — to lead, guide, conduct (like a shepherd leading sheep)
+</div>		
+<p class="usage-note"> Imperative = urgent request/command
+<br> Picture: shepherd guiding sheep along the right path
+<hr>
+<p><small>
+Usage elsewhere: Exodus 15:13, Psalm 23:2-3, Psalm 31:3, Psalm 61:2, Psalm 139:24, Psalm 143:10
+</p></small>
+</div>				
+</span> 
+</span> , O LORD, 
+
+<div class="tooltip">
+<strong>in your righteousness</strong>
+<span class="tooltiptext">	
+<div class="hebrew-row">
+<span class="hebrew-text" dir="rtl"> בְצִדְקָתֶךָ </span> 
+<span class="transliteration"> (B'tzidqatekha) </span>
+<br>Root: <span class="hebrew-text" dir="rtl"> צְדָקָה </span> 
+<span class="transliteration"> (Tzedaqah)</span> —  righteousness, justice, what is right
+</div>		
+<p class="usage-note"> This word has layers of meaning. 
+<ul>
+<li> Gods righteous charecter: moral perfection, justice, standards of right and wrongdoing
+<li> Right paths/right way: path of moral righteousness, way of justice, walking in accordance to God's standards
+<li> Vindication/salvation: God acting righteously on behalf of His people, saving righteousness, delivering righteousness from the Wicked
+</ul>
+<hr>
+<p><small>
+Parallels: Psalm 23:3, Psalm 143:11
+</p></small>
+</div>				
+</span> 
+</span>
+
+<p> 
+David is using <em>shepherd language</em>: shepherds guide, protect, direct, and lead sheep.
+Also he speaks to the Lord as though the Lord is his shephard while he is a sheep.
+</p>
+<img src="pics/good shepherd.png" alt="good shepherd" width="auto" height="450" />
+<hr>
+
+<span class="tooltip">
+    <strong>because of my enemies</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">לְמַעַן שׁוֹרְרָי</span> 
+            <span class="transliteration">(L'ma'an Shor'rai)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl">לְמַעַן</span> — (l'ma'an): because of, for the sake of, on account of<br>
+            <span dir="rtl">שׁוֹרְרָי</span> — (shor'rai): my enemies, those who watch me hostilely<br>
+            <span dir="rtl">שָׁרַר</span> — (sharar): [Root] to watch, to lie in wait, to be hostile<br>
+        </div>
+        <p class="usage-note">Specifically refers to enemies who are "watchers," lurking or lying in wait to catch one in a mistake or trap.
+        <hr>
+        <small class="references">
+            Parallel Occurrences: Psalm 5:8, Psalm 27:11, Psalm 54:5, Psalm 56:2, Psalm 59:10
+        </small>
+    </span>
+</span>
+
+<p>
+Not just general enemies, but specifically the enemies who are watching David closely and spying on him while waiting for him to make a mistake.
+These enemies are planning to act in hosility once they see a mistake hoping to catch David in the wrong so that they may accuse and bring charges towards him and potentially kill him.
+</p>
+<p>
+David mention his enemies here because his enemies are watching him. David request that the Lord guide him in the right path because David cannot afford to make any mistakes while being watched. 
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span> 
+</p>
+<hr>
+<span class="tooltip">
+    <strong>make straight</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">הַיְשַׁר</span> 
+            <span class="transliteration">(Hayeshar)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> יָשַׁר </span> — (yashar): [Root] to be straight, level, right, upright<br>
+        </div>
+        <p class="usage-note"> Hiphil form (causative): "Cause to be straight / make straight / make level"
+        <hr>
+        <small class="references">
+            Parallel Occurrences: Proverbs 3:5-6, Proverbs 4:11-12, Isaiah 40:3-4
+        </small>
+    </span>
+</span>
+<span class="tooltip">
+    <strong>before me</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> לְפָנַי </span> 
+            <span class="transliteration">(L'fanai)</span>
+        </div>
+        <p class="usage-note"> Literally: "In front of me / before my face"
+        <hr>
+        <small class="references">
+            Parallel Occurrences: ...
+        </small>
+    </span>
+</span>
+
+<span class="tooltip">
+    <strong>your way</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">דַּרְכֶּךָ </span> 
+            <span class="transliteration">(Dark'kha)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> ידֶּרֶךְ </span> — (Derekh): [Root] way, path, road, journey<br>
+        </div>
+        <hr>
+        <small class="references">
+            Parallel Occurrences: ...
+        </small>
+    </span>
+</span>
+
+<p>
+Like a road or path. A crooked path can be confusing, difficult, dangerous, or unclear. 
+While a straight path is clear, easy to follow, obvious, and safe. 
+</p>
+<p>
+When at a crossroad of pathways it can become unclear which way is right. 
+Moral decisions can be confusing to the point where a person can end up in situations where the right choice isn't obvious. 
+Temptations that look appealing might lead to false paths that seem right. 
+Obstacles like scheming enemies make it crucial to make every step be in the right direction. 
+</p>
+<p>
+David is asking God to <em>straighten the path</em> and make clear which way to go by <em>removing obstacles</em> that confuse the way.
+</p>
+<p>
+David request this "before me" as in David wants the path layed out before him.
+He asked this so that seeing the Lords way is clear before his eyes.
+David does not request his own way, the worlds way, his enemies way, or what seems right, but instead request <em>the Lords way</em>.
+</p>
+<hr>
+<p>
+
+✓ God's way (the path God wants me to walk)
+✓ God's will (what God has ordained)
+✓ God's commands (obedience to His word)
+✓ God's plan (His purposes for my life)
+
+
+Biblical Usage:
+Isaiah 55:8-9:
+"For my thoughts are not your thoughts, neither are your ways my ways, declares the LORD. For as the heavens are higher than the earth, so are my ways higher than your ways and my thoughts than your thoughts."
+God's way ≠ human way
+Psalm 25:4:
+"Make me to know your ways, O LORD; teach me your paths."
+Same request - teach me YOUR way
+Psalm 86:11:
+"Teach me your way, O LORD, that I may walk in your truth; unite my heart to fear your name."
+Proverbs 14:12:
+"There is a way that seems right to a man, but its end is the way to death."
+Human judgment is unreliable - we need GOD's way
+
+The Complete Picture:
+What David Is Asking:
+Request #1: "Lead me in Your righteousness"
+
+Active guidance from God
+Shepherd leading sheep
+In the path of righteousness
+According to God's righteous standard
+
+Request #2: "Make straight before me Your way"
+
+Clarify the path ahead
+Remove obstacles and confusion
+Make it obvious which way to go
+Let me see clearly Your will
+
+Why? "Because of my enemies"
+
+They're watching for me to stumble
+They'll use any mistake against me
+I need to walk blamelessly
+I can't afford moral errors with hostile observers
+
+
+Evidence-Based Subtext:
+What David Is Really Saying:
+"LORD, I'm in a dangerous situation. My enemies are watching me closely, like predators waiting for prey to make a mistake. They're scrutinizing my every move, looking for any moral failure, any wrong step, any sin they can use to accuse me, discredit me, or harm me. I desperately need Your guidance! Please LEAD me actively like a shepherd leading sheep—guide me in the path of righteousness, according to Your righteous standard. And please make Your way CLEAR before me—straighten the path, remove obstacles, clarify which direction to go. I can't afford confusion or moral stumbling with these enemies watching. Make it obvious what the right choice is so I don't give them ammunition against me. Guide me in YOUR way (not my own flawed judgment), and make that way straight and clear so I can walk it without stumbling."
+
+The Danger David Faces:
+Why This Prayer Is Urgent:
+If David makes a moral mistake:
+
+Enemies will accuse him (using it against him)
+His reputation will be damaged (credibility destroyed)
+God's name will be dishonored (his enemies will mock God)
+His position/life endangered (accusations could lead to death)
+
+Examples from David's life:
+1. When fleeing from Saul:
+
+Any wrong move could justify Saul's pursuit
+David refused to kill Saul (even when he could) to avoid sin
+Had to walk perfectly to avoid legitimate accusation
+
+2. When he sinned with Bathsheba:
+
+This is exactly what happened when he DIDN'T walk righteously
+Nathan confronted him (2 Samuel 12)
+"You have given great occasion to the enemies of the LORD to blaspheme" (2 Samuel 12:14)
+The consequence of NOT being led in righteousness
+
+3. During Absalom's rebellion:
+
+Had to walk carefully during crisis
+Any moral failure would justify the rebellion
+Needed clear guidance on right actions
+
+
+Biblical Parallels:
+Psalm 23:3 (Almost Identical)
+"He restores my soul. He leads me in paths of righteousness for his name's sake."
+Same request:
+
+Lead me
+In righteousness
+For a reason (His name's sake / because of enemies)
+
+
+Psalm 27:11
+"Teach me your way, O LORD, and lead me on a level path because of my enemies."
+Nearly identical to Psalm 5:8!
+
+Teach/lead me
+Your way
+Level/straight path
+Because of enemies
+
+This shows the prayer was a PATTERN for David
+
+Psalm 143:8-10
+"Let me hear in the morning of your steadfast love, for in you I trust. Make me know the way I should go, for to you I lift up my soul... Teach me to do your will, for you are my God! Let your good Spirit lead me on level ground!"
+Same themes:
+
+Make known the way
+Teach me Your will
+Lead me
+On level ground (straight path)
+
+
+Proverbs 3:5-6 (The Promise)
+"Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths."
+The condition: Trust the LORD, acknowledge Him
+The promise: He WILL make straight your paths
+David is claiming this promise!
+
+New Testament Application:
+John 16:13 (Holy Spirit's Role)
+"When the Spirit of truth comes, he will guide you into all the truth, for he will not speak on his own authority, but whatever he hears he will speak, and he will declare to you the things that are to come."
+The Spirit leads believers in truth/righteousness
+
+Galatians 5:16, 18
+"But I say, walk by the Spirit, and you will not gratify the desires of the flesh... But if you are led by the Spirit, you are not under the law."
+Being LED by the Spirit = walking in righteousness
+
+Romans 8:14
+"For all who are led by the Spirit of God are sons of God."
+Christian life = being LED by God (through the Spirit)
+
+James 1:5
+"If any of you lacks wisdom, let him ask God, who gives generously to all without reproach, and it will be given him."
+Ask God for guidance = He will make the way clear
+
+Explicit English Translation:
+Most Literal:
+"O LORD, lead me in Your righteousness because of my enemies; make straight before me Your way."
+With Clarity:
+"LORD, actively guide me like a shepherd in the path of righteousness, because my enemies are watching for me to stumble. Make Your way clear and straight before me so I can see plainly which direction to go."
+Fully Unpacked:
+"LORD, I desperately need Your guidance. My enemies are watching me closely—hostile observers lying in wait for any moral failure, any misstep they can use against me. Please actively LEAD me like a shepherd leading sheep, guiding me in paths of righteousness according to Your righteous standard. I can't trust my own judgment with so much at stake. And please make Your way STRAIGHT before me—clarify the path ahead, remove obstacles and confusion, make it obvious which choice is right. Let me see clearly what You want me to do. Don't let the path be crooked or unclear. I need to walk in YOUR way (not my own), and I need that way to be unmistakably clear so I don't stumble and give my enemies ammunition against me."
+Conversational:
+"LORD, guide me in what's right—my enemies are watching for me to mess up. Make Your will crystal clear to me so I don't stumble."
+
+Summary - Fully Explicit:
+"LORD, I'm in a precarious situation where I'm under hostile surveillance. My enemies are watching my every move like predators waiting for prey to stumble, looking for any moral failure or wrong decision they can use to accuse me, discredit me, harm me, or blaspheme Your name. Because of this dangerous scrutiny, I desperately need You to LEAD me—actively guide me like a shepherd carefully leading vulnerable sheep—in the path of righteousness. Guide me according to Your righteous standard, not my flawed judgment. Keep me from sin, from mistakes, from anything they could legitimately accuse. And please make Your way STRAIGHT before me—clarify which path to take, remove obstacles and confusion, make Your will obvious and unmistakable. I can't afford to guess or wander in uncertainty with enemies watching. Make the right choice clear so I can walk confidently in YOUR way without giving them any grounds for accusation."
+
+The Prayer's Structure So Far:
+v. 7 - WHO I AM: I can enter Your house (by Your chesed)
+v. 8 - WHAT I NEED: Lead me in righteousness; make Your way clear
+v. 9-10 - (Coming next) WHY I NEED IT: Description of enemies' wickedness
+David is building his case:
+
+I have access to You (v. 7)
+I need Your guidance urgently (v. 8)
+Because my enemies are dangerous and wicked (v. 9-10, coming)
+Therefore act against them (v. 10, petition coming)
+
+
+Does this capture the urgency and depth of David's request? He's asking for divine guidance in a high-stakes situation where enemies are watching for any moral failure they can exploit.
+Should we continue to David's description of his enemies' wickedness (verses 9-10)?
+
+
+
+
+
+
+`
+   }
   ];
   
  
