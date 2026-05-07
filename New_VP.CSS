@@ -1,12 +1,16 @@
 body {
-  background-color: lightgrey; /* Matches your retro-container */
-  margin: 15px;                   /* Removes the default browser gap */
-font-size: 18px;
-font-family: "MS Gothic", monospace;
-line-height: 1.4;
--webkit-font-smoothing: none;
+  background-color: lightgrey;
+  margin: 8px;
+  font-size: 18px;
+  font-family: "MS Gothic", monospace;
+  line-height: 1.4;
+  -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
   image-rendering: pixelated;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -27,34 +31,29 @@ a:hover {
   border: 1.5px dotted white;
 }
 
-/* Hide all descriptions by default */
+/* Menu items — compact to fit text, anchor for floating descriptions */
+li.menu-item {
+  display: table;
+  position: relative;
+  width: auto;
+  margin-bottom: 5px;
+}
+
+/* Descriptions float beside the button as plain text, no box */
 .description {
   display: none;
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  font-size: 13px;
+  color: #555;
+  z-index: 100;
 }
 
-/* Only show the description that is inside the specific .menu-item being hovered */
-.menu-item:hover .description {
-  display: inline;
-}
-
-
-/* Hide both the arrow and the description initially */
-.arrow, .description {
-  display: none;
-}
-
-/* Reveal the arrow and description when the specific list item is hovered */
-li.menu-item:hover .arrow,
 li.menu-item:hover .description {
-  display: inline;
-}
-
-
-/* Choose this version for the best "Old Internet" menu feel */
-li.menu-item {
-  display: table;        /* Shrinks the hover area to fit the text exactly */
-  width: auto;           /* Ensures it doesn't stretch to the right margin */
-  margin-bottom: 5px;    /* Adds a tiny bit of extra space between items */
+  display: block;
 }
 
 
@@ -179,10 +178,11 @@ summary:hover {
 
 /* Create the side-by-side layout */
 .main-layout {
-  display: flex;          /* This puts children side-by-side */
-  align-items: flex-start; /* Keeps the tree at the top */
-  gap: 30px;              /* Space between the tree and the content */
-  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 6px;
+  flex: 1;
 }
 
 /* Layout Container */
@@ -193,40 +193,26 @@ summary:hover {
 }
 
 .sidebar {
-  min-width: 750px;
+  min-width: 180px;
   max-width: 300px;
 }
 
 /* The Content Container on the right */
 .content-window {
-  flex-grow: 1;           /* Takes up all remaining horizontal space */
-  padding: 20px;
+  flex-grow: 1;
+  padding: 10px 16px 10px 80px;
   color: black;
-  border-left: 1px dotted #808080;
-  min-height: 400px;
+  min-height: 450px;
+}
+
+footer {
+  font-size: 0.75em;
+  color: #666;
+  padding: 12px 8px 6px;
+  margin-top: 8px;
 }
 
 
-/* Fix for Side-by-Side Hover Descriptions */
-.menu-item {
-  display: block;
-  position: relative;
-  margin-bottom: 8px;
-}
-
-.description {
-  display: none;
-  font-size: 14px;
-  color: #555;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
-/* Ensure descriptions still behave correctly in the new layout */
-.menu-item:hover .description {
-  display: inline-block;
-  margin-left: 10px;
-}
 
 /* Link Button Styling */
 .link-button {
@@ -256,4 +242,31 @@ hr {
   border-top: 1px dotted #808080; /* Grey dotted line to match your tree lines */
   height: 0;                  /* Ensure the element itself has no height */
   margin: 20px 0;             /* Adds vertical spacing around the line */
+}
+
+.answer-zone {
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.question-text {
+  font-size: 1.1em;
+  min-height: 60px;
+}
+
+.assessment-container hr {
+  border: none;
+  border-top: 1px dotted #808080;
+  margin: 15px 0;
+}
+
+
+
+.save-load-zone {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
 }
