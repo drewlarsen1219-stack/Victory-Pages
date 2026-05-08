@@ -632,15 +632,50 @@ function retreatTo(idx) {
 
 // === CONTENT ROUTING ===
 
+window.vpStartAssessment = function() {
+  const input = document.getElementById('vp-name-input');
+  const name = input ? input.value.trim() : '';
+  if (!name) {
+    if (input) input.style.borderColor = 'darkred';
+    return;
+  }
+  window.vpUserName = name;
+  currentQuestionIndex = 0;
+  userAnswers = {};
+  currentQuestionIndex = advanceTo(0);
+  renderQuestion();
+};
+
 function showContent(section) {
   const pane = document.getElementById('display-pane');
   if (section === 'pathfinder') {
-    currentQuestionIndex = 0;
-    userAnswers = {};
-    currentQuestionIndex = advanceTo(0);
-    renderQuestion();
+    pane.innerHTML = `
+      <div class="assessment-container">
+        <p><strong>Pathfinder Assessment</strong></p>
+        <p>Before we begin, what is your name?</p>
+        <hr>
+        <input id="vp-name-input" type="text" placeholder="Your name"
+          style="font-family:inherit;font-size:0.9em;padding:4px 8px;border:1px dotted #808080;background:#d4d0c8;width:200px;box-sizing:border-box;"
+          onkeydown="if(event.key==='Enter')window.vpStartAssessment()">
+        <div style="margin-top:10px;">
+          <label class="link-button" style="cursor:pointer;" onclick="window.vpStartAssessment()">Begin &rarr;</label>
+        </div>
+      </div>`;
+    setTimeout(function() {
+      const input = document.getElementById('vp-name-input');
+      if (input) input.focus();
+    }, 50);
   } else if (section === 'about') {
-    pane.innerHTML = "<p>About the Owner</p><p>Follower of Jesus Christ. Confessional Lutheran (LCMS). Husband and Outdoor Guide based in Northwest Arkansas.</p><p><hr>About Victory Pages</p><p>A Personal Operating System designed for intentional Christian living. Built on vocational stewardship and a progression system called Pathways. A new user starts with a questionaire that will determine the starting point. Existing users will log in with a saved file and continue where they left off. As the user completes and logs pathways by completing real-world tasks assigned by the site, new pathways and mini games are unlocked.<hr><p>Once finished reading the about section the New users will open <u>+Pathways</u>, select <u>New User</u>, and complete the questionaire to determine a starting point. The questionaire is an assesment of a users experiences in life and is in depth that will be measuring categories like health, faith, and status. A Save and Load function will be provided so that the questionaire will not need to be completed in one session and can be picked up later.";
+    pane.innerHTML = `
+      <div class="assessment-container">
+        <p>About the Owner</p>
+        <p>Follower of Jesus Christ. Confessional Lutheran (LCMS). Husband and Outdoor Guide based in Northwest Arkansas.</p>
+        <hr>
+        <p>About Victory Pages</p>
+        <p>A Personal Operating System designed for intentional Christian living. Built on vocational stewardship and a progression system called Pathways. A new user starts with a questionaire that will determine the starting point. Existing users will log in with a saved file and continue where they left off. As the user completes and logs pathways by completing real-world tasks assigned by the site, new pathways and mini games are unlocked.</p>
+        <hr>
+        <p>Once finished reading the about section the New users will open <u>+Pathways</u>, select <u>New User</u>, and complete the questionaire to determine a starting point. The questionaire is an assesment of a users experiences in life and is in depth that will be measuring categories like health, faith, and status. A Save and Load function will be provided so that the questionaire will not need to be completed in one session and can be picked up later.</p>
+      </div>`;
   } else if (section === 'library') {
     pane.innerHTML = `
       <div class="assessment-container">
