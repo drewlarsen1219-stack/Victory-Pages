@@ -10,6 +10,7 @@
 <script src="pathways_system.js" defer></script>
 
 <link rel="stylesheet" href="New_VP.CSS">
+<link rel="icon" type="image/png" href="Extra/crown.png">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
       <details><summary>Quick Start</summary>
         <ul>
           <li class="menu-item">
-            <span style="font-size:0.85em;color:#555;">Open <strong>Resources</strong> below, then click <strong>About</strong> to get started.</span>
+            <span style="font-size:0.85em;color:#555;">Open <strong>Pathways</strong> and select <strong>New User</strong> to begin, or <strong>Existing User</strong> to load your progress.</span>
           </li>
         </ul>
       </details>
@@ -32,19 +33,11 @@
       <details>
         <summary>Resources</summary>
         <ul>
-          <li class="menu-item">
+          <li class="menu-item" data-desc="Information about the site owner, the website, and how the site functions.">
             <a href="javascript:void(0)" class="link-button" onclick="showContent('about')">About</a>
-            <span class="description"> &raquo; Information about the site owner, the website, and how the site functions.</span>
           </li>
-          <li class="menu-item">
+          <li class="menu-item" data-desc="Collection of curated literature.">
             <a href="javascript:void(0)" class="link-button" onclick="showContent('library')">Library</a>
-            <span class="description"> &raquo; Collection of curated literature.</span>
-          </li>
-          <li class="menu-item">
-            <a href='pages/Navigation/privacy_policy.html'>Privacy Policy</a>
-          </li>
-          <li class="menu-item">
-            <a href='pages/Navigation/terms_and_conditions.html'>Terms &amp; Conditions</a>
           </li>
         </ul>
       </details>
@@ -53,18 +46,17 @@
     <li>
       <details><summary>Pathways</summary>
         <ul>
-          <li class="menu-item">
+          <li class="menu-item" data-desc="Assessment questionnaire to determine your starting point.">
             <a href="javascript:void(0)" class="link-button" onclick="showContent('pathfinder')">New User</a>
-            <span class="description"> &raquo; Assessment questionnaire to determine your starting point.</span>
           </li>
-          <li class="menu-item">
+          <li class="menu-item" data-desc="Load your saved progress and continue your pathways.">
             <a href="javascript:void(0)" class="link-button" onclick="vpLoadExistingUser()">Existing User</a>
-            <span class="description"> &raquo; Load your saved progress and continue your pathways.</span>
           </li>
         </ul>
       </details>
     </li>
   </ul>
+  <div id="sidebar-status">Click + to open a section</div>
 </nav>
 
 <main id="display-pane" class="content-window">
@@ -73,8 +65,22 @@
 </div>
 
 <footer>
-  &copy; 2026 Victory Pages &bull; All rights reserved &bull; Progress saved privately.
+  &copy; 2026 Victory Pages &bull; All rights reserved &bull; Progress saved privately &bull; <a href='pages/Navigation/privacy_policy.html'>Privacy Policy</a> &bull; <a href='pages/Navigation/terms_and_conditions.html'>Terms &amp; Conditions</a>
 </footer>
 
+<script>
+  var statusBar = document.getElementById('sidebar-status');
+  var defaultText = 'Click + to open a section';
+  document.querySelectorAll('li.menu-item').forEach(function(item) {
+    var text = item.getAttribute('data-desc');
+    if (!text) return;
+    item.addEventListener('mouseenter', function() {
+      statusBar.textContent = text;
+    });
+    item.addEventListener('mouseleave', function() {
+      statusBar.textContent = defaultText;
+    });
+  });
+</script>
 </body>
 </html>
