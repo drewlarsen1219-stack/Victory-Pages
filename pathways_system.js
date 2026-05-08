@@ -19,19 +19,31 @@ const VP_SKILL_DATA = [
 let vpSkillsData        = VP_SKILL_DATA.map(s => ({ ...s, score: 0, completed: false }));
 let vpCompletedPathways = [];
 let vpPathwayProgress   = {};
-let vpTaskComments      = {};
 let vpCurrentPathway    = null;
-let vpTrackerExpanded   = false;
+let vpUserName          = '';
+let vpIsLoggedIn        = false;
+let vpStreak            = 0;
+let vpLastVisit         = '';
+let vpLastReflection    = '';
+let vpReflections       = [];
+let vpScoreHistory      = [];
+let vpMilestonesShown   = [];
 
 // ── LOCAL SAVE / LOAD ──────────────────────────────────────────────────────
 function vpSaveToLocal() {
   const data = {
     v: 1,
     savedAt: new Date().toISOString(),
+    userName: vpUserName,
+    streak: vpStreak,
+    lastVisit: vpLastVisit,
+    lastReflection: vpLastReflection,
+    reflections: vpReflections,
+    scoreHistory: vpScoreHistory,
+    milestonesShown: vpMilestonesShown,
     skills: vpSkillsData.map(s => ({ score: s.score, completed: s.completed })),
     completedPathways: vpCompletedPathways,
     pathwayProgress: vpPathwayProgress,
-    taskComments: vpTaskComments
   };
   localStorage.setItem('victoryPages_v1', JSON.stringify(data));
 }
@@ -49,9 +61,16 @@ function vpLoadFromLocal() {
         vpSkillsData[i].completed = s.completed || false;
       }
     });
-    vpCompletedPathways = data.completedPathways || [];
-    vpPathwayProgress   = data.pathwayProgress   || {};
-    vpTaskComments      = data.taskComments       || {};
+    vpUserName          = data.userName           || '';
+    vpIsLoggedIn        = true;
+    vpStreak            = data.streak             || 0;
+    vpLastVisit         = data.lastVisit          || '';
+    vpLastReflection    = data.lastReflection     || '';
+    vpReflections       = data.reflections        || [];
+    vpScoreHistory      = data.scoreHistory       || [];
+    vpMilestonesShown   = data.milestonesShown    || [];
+    vpCompletedPathways = data.completedPathways  || [];
+    vpPathwayProgress   = data.pathwayProgress    || {};
     return data.savedAt ? new Date(data.savedAt).toLocaleDateString() : 'unknown date';
   } catch (e) { return null; }
 }
@@ -59,6 +78,68 @@ function vpLoadFromLocal() {
 window.vpHasSave = function() {
   return !!localStorage.getItem('victoryPages_v1');
 };
+
+function vpSnapshotScores() {
+  const today = new Date().toDateString();
+  const last  = vpScoreHistory[vpScoreHistory.length - 1];
+  if (last && new Date(last.date).toDateString() === today) return;
+  vpScoreHistory.push({
+    date: new Date().toISOString(),
+    scores: vpSkillsData.map(s => ({ score: s.score, completed: s.completed }))
+  });
+  if (vpScoreHistory.length > 30) vpScoreHistory.shift();
+}
+
+const VP_REFLECTION_QUESTIONS = {
+  'Body':     'How did you do with your body this week — sleep, movement, and food?',
+  'Mind':     'Where did your focus go this week? Did your mind serve you well?',
+  'Heart':    'How were your closest relationships this week?',
+  'Hand':     'What practical work did you put your hands to this week?',
+  'Finance':  'Did you spend and steward your money in line with your values this week?',
+  'Vitality': 'How consistent was your prayer and Scripture time this week?',
+  'Status':   'Did your words and conduct reflect who you want to be this week?',
+  'Space':    'Is your home and workspace in the order you want it?',
+  'Time':     'Did you spend your time intentionally this week?',
+  'World':    'How did you love your neighbor or serve someone outside yourself this week?',
+  'Creative': 'Did you create or make anything meaningful this week?',
+  'Tech':     'How was your relationship with screens and devices this week?',
+  'Spirit':   'Where did you rest in the Gospel this week?',
+};
+
+const VP_MILESTONE_DATA = {
+  25:  { label: 'First Quarter',    body: 'Getting to 25 is harder than it looks. You built something real here.', scripture: 'He who began a good work in you will bring it to completion.', ref: 'Philippians 1:6' },
+  50:  { label: 'Halfway',          body: 'Halfway is where most people stop. You didn\'t. Keep going.', scripture: 'Let us not grow weary of doing good, for in due season we will reap.', ref: 'Galatians 6:9' },
+  75:  { label: 'Three Quarters',   body: 'You\'re in rare territory now. Finish what you started.', scripture: 'I press on toward the goal for the prize of the upward call of God in Christ Jesus.', ref: 'Philippians 3:14' },
+  100: { label: 'Domain Complete',  body: 'This is what sustained faithfulness produces. This domain is fully cultivated.', scripture: 'Well done, good and faithful servant. You have been faithful over a little; I will set you over much.', ref: 'Matthew 25:21' },
+};
+
+window.vpSaveReflection = function() {
+  const el = document.getElementById('vp-reflection-input');
+  if (!el) return;
+  const text = el.value.trim();
+  vpLastReflection = new Date().toISOString();
+  if (text) {
+    vpReflections.unshift({ date: vpLastReflection, text });
+    if (vpReflections.length > 12) vpReflections.pop();
+  }
+  vpSaveToLocal();
+  vpGoHome();
+};
+
+window.vpSkipReflection = function() {
+  vpLastReflection = new Date().toISOString();
+  vpSaveToLocal();
+  vpGoHome();
+};
+
+function vpUpdateStreak() {
+  const today = new Date().toDateString();
+  if (vpLastVisit === today) return;
+  const yesterday = new Date(Date.now() - 86400000).toDateString();
+  vpStreak    = vpLastVisit === yesterday ? vpStreak + 1 : 1;
+  vpLastVisit = today;
+  vpSaveToLocal();
+}
 
 window.vpLoadExistingUser = function() {
   const date = vpLoadFromLocal();
@@ -71,9 +152,65 @@ window.vpLoadExistingUser = function() {
       </div>`;
     return;
   }
+  vpSnapshotScores();
+  vpUpdateStreak();
+  const heading = document.getElementById('page-heading');
+  if (heading) heading.textContent = vpUserName ? `Welcome back, ${vpUserName}!` : 'Victory Pages — Your Pathways. Alleluia!';
   renderPathwaysNav();
-  renderSkillTracker();
+  attachSidebarStatusBar();
+  vpGoHome();
 };
+
+// ── DAILY SCRIPTURE ────────────────────────────────────────────────────────
+const VP_DAILY_SCRIPTURES = [
+  { text: 'The Lord is my shepherd; I shall not want.',                                                                           ref: 'Psalm 23:1' },
+  { text: 'I can do all things through him who strengthens me.',                                                                  ref: 'Philippians 4:13' },
+  { text: 'For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.', ref: 'Jeremiah 29:11' },
+  { text: 'Trust in the Lord with all your heart, and do not lean on your own understanding.',                                    ref: 'Proverbs 3:5' },
+  { text: 'Come to me, all who labor and are heavy laden, and I will give you rest.',                                             ref: 'Matthew 11:28' },
+  { text: 'Be strong and courageous. Do not be frightened, and do not be dismayed, for the Lord your God is with you wherever you go.', ref: 'Joshua 1:9' },
+  { text: 'And we know that for those who love God all things work together for good.',                                           ref: 'Romans 8:28' },
+  { text: 'The Lord is near to the brokenhearted and saves the crushed in spirit.',                                               ref: 'Psalm 34:18' },
+  { text: 'Do not be anxious about anything, but in everything by prayer and supplication with thanksgiving let your requests be made known to God.', ref: 'Philippians 4:6' },
+  { text: 'For by grace you have been saved through faith. And this is not your own doing; it is the gift of God.',               ref: 'Ephesians 2:8' },
+  { text: 'Cast your burden on the Lord, and he will sustain you.',                                                               ref: 'Psalm 55:22' },
+  { text: 'Let us not grow weary of doing good, for in due season we will reap, if we do not give up.',                          ref: 'Galatians 6:9' },
+  { text: 'The steadfast love of the Lord never ceases; his mercies never come to an end; they are new every morning.',          ref: 'Lamentations 3:22–23' },
+  { text: 'God is our refuge and strength, a very present help in trouble.',                                                      ref: 'Psalm 46:1' },
+  { text: 'Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you.',            ref: 'Isaiah 41:10' },
+  { text: 'If we confess our sins, he is faithful and just to forgive us our sins and to cleanse us from all unrighteousness.',  ref: '1 John 1:9' },
+  { text: 'Therefore, if anyone is in Christ, he is a new creation. The old has passed away; behold, the new has come.',         ref: '2 Corinthians 5:17' },
+  { text: 'He who began a good work in you will bring it to completion at the day of Jesus Christ.',                             ref: 'Philippians 1:6' },
+  { text: 'The Lord your God is in your midst, a mighty one who will save; he will rejoice over you with gladness.',             ref: 'Zephaniah 3:17' },
+  { text: 'Peace I leave with you; my peace I give to you. Not as the world gives do I give to you.',                            ref: 'John 14:27' },
+  { text: 'For God gave us a spirit not of fear but of power and love and self-control.',                                         ref: '2 Timothy 1:7' },
+  { text: 'But they who wait for the Lord shall renew their strength; they shall mount up with wings like eagles.',               ref: 'Isaiah 40:31' },
+  { text: 'I have been crucified with Christ. It is no longer I who live, but Christ who lives in me.',                          ref: 'Galatians 2:20' },
+  { text: 'The Lord is faithful in all his words and kind in all his works.',                                                     ref: 'Psalm 145:13' },
+  { text: 'Draw near to God, and he will draw near to you.',                                                                      ref: 'James 4:8' },
+  { text: 'For I am sure that neither death nor life, nor angels nor rulers, nor things present nor things to come, nor powers, nor height nor depth, nor anything else in all creation, will be able to separate us from the love of God in Christ Jesus our Lord.', ref: 'Romans 8:38–39' },
+  { text: 'Commit your work to the Lord, and your plans will be established.',                                                    ref: 'Proverbs 16:3' },
+  { text: 'This is the day that the Lord has made; let us rejoice and be glad in it.',                                           ref: 'Psalm 118:24' },
+  { text: 'Blessed is the man who remains steadfast under trial, for when he has stood the test he will receive the crown of life.', ref: 'James 1:12' },
+  { text: 'Search me, O God, and know my heart! Try me and know my thoughts!',                                                   ref: 'Psalm 139:23' },
+  { text: 'The name of the Lord is a strong tower; the righteous man runs into it and is safe.',                                  ref: 'Proverbs 18:10' },
+  { text: 'Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me.',             ref: 'Psalm 23:4' },
+  { text: 'And my God will supply every need of yours according to his riches in glory in Christ Jesus.',                         ref: 'Philippians 4:19' },
+  { text: 'For the word of God is living and active, sharper than any two-edged sword.',                                         ref: 'Hebrews 4:12' },
+  { text: 'I sought the Lord, and he answered me and delivered me from all my fears.',                                            ref: 'Psalm 34:4' },
+  { text: 'Whoever finds his life will lose it, and whoever loses his life for my sake will find it.',                            ref: 'Matthew 10:39' },
+  { text: 'The Lord will keep your going out and your coming in from this time forth and forevermore.',                           ref: 'Psalm 121:8' },
+  { text: 'For we are his workmanship, created in Christ Jesus for good works, which God prepared beforehand, that we should walk in them.', ref: 'Ephesians 2:10' },
+  { text: 'Bless the Lord, O my soul, and forget not all his benefits — who forgives all your iniquity, who heals all your diseases.', ref: 'Psalm 103:2–3' },
+  { text: 'If God is for us, who can be against us?',                                                                            ref: 'Romans 8:31' },
+];
+
+function vpGetDailyScripture() {
+  const now   = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const day   = Math.floor((now - start) / 86400000);
+  return VP_DAILY_SCRIPTURES[day % VP_DAILY_SCRIPTURES.length];
+}
 
 // ── PATHWAYS DATA ──────────────────────────────────────────────────────────
 const VP_PATHWAYS_DATA = {
@@ -1293,15 +1430,29 @@ window.enterPathwaysMode = function() {
       skill.completed = true;
     }
   });
+  vpIsLoggedIn = true;
+  vpSnapshotScores();
   vpSaveToLocal();
-  // Change the page heading
   const heading = document.getElementById('page-heading');
-  if (heading) heading.textContent = 'Victory Pages — Your Pathways. Alleluia!';
+  if (heading) heading.textContent = vpUserName ? `Welcome back, ${vpUserName}!` : 'Victory Pages — Your Pathways. Alleluia!';
   renderPathwaysNav();
-  renderSkillTracker();
+  attachSidebarStatusBar();
+  vpGoHome();
 };
 
 // ── LEFT SIDEBAR ────────────────────────────────────────────────────────────
+function attachSidebarStatusBar() {
+  const statusBar = document.getElementById('sidebar-status');
+  if (!statusBar) return;
+  const defaultText = 'Click + to open a section';
+  statusBar.textContent = defaultText;
+  document.querySelectorAll('[data-desc]').forEach(function(item) {
+    const text = item.getAttribute('data-desc');
+    item.addEventListener('mouseenter', function() { statusBar.textContent = text; });
+    item.addEventListener('mouseleave', function() { if (!window._vpStatusAnim) statusBar.textContent = defaultText; });
+  });
+}
+
 function renderPathwaysNav() {
   const nav = document.querySelector('.sidebar');
   if (!nav) return;
@@ -1320,12 +1471,12 @@ function renderPathwaysNav() {
       const total = pw.tasks.length;
       const isLast = idx === recommended.length - 1;
       return `
-        <li style="position:relative;padding-left:20px;padding-top:14px;padding-bottom:10px;
+        <li class="menu-item" data-desc="${pw.skillName} · ${pw.difficulty} · ${done}/${total} tasks"
+            style="position:relative;padding-left:20px;padding-top:14px;padding-bottom:10px;
                    border-left:${isLast ? '1px dotted transparent' : '1px dotted #808080'};">
           ${isLast ? `<span style="position:absolute;top:0;left:-1px;height:27px;border-left:1px dotted #808080;"></span>` : ''}
           <span style="position:absolute;top:27px;left:0;width:20px;border-top:1px dotted #808080;display:block;"></span>
           <a href="javascript:void(0)" class="link-button" onclick="vpShowPathwayDetail('${pw.id}')">${pw.title}</a>
-          <span class="description"> &raquo; ${pw.skillName} &bull; ${pw.difficulty} &bull; ${done}/${total} tasks</span>
         </li>`;
     }).join('');
 
@@ -1346,12 +1497,12 @@ function renderPathwaysNav() {
   const resourceItems = resourceDefs.map((item, idx) => {
     const isLast = idx === resourceDefs.length - 1;
     return `
-      <li class="menu-item" style="position:relative;padding-left:20px;padding-top:14px;padding-bottom:10px;
-                                   border-left:${isLast ? '1px dotted transparent' : '1px dotted #808080'};">
+      <li class="menu-item" data-desc="${item.desc}"
+          style="position:relative;padding-left:20px;padding-top:14px;padding-bottom:10px;
+                 border-left:${isLast ? '1px dotted transparent' : '1px dotted #808080'};">
         ${isLast ? `<span style="position:absolute;top:0;left:-1px;height:27px;border-left:1px dotted #808080;"></span>` : ''}
         <span style="position:absolute;top:27px;left:0;width:20px;border-top:1px dotted #808080;display:block;"></span>
         <a href="javascript:void(0)" class="link-button" onclick="${item.action}">${item.label}</a>
-        <span class="description"> &raquo; ${item.desc}</span>
       </li>`;
   }).join('');
 
@@ -1373,12 +1524,76 @@ function renderPathwaysNav() {
           </ul>
         </details>
       </li>
-    </ul>`;
+    </ul>
+    <div id="sidebar-status">Click + to open a section</div>`;
 }
 
 window.vpGoHome = function() {
   const heading = document.getElementById('page-heading');
-  if (heading) heading.textContent = 'Welcome to Victory Pages! Alleluia!';
+  if (heading) heading.textContent = vpUserName ? `Welcome back, ${vpUserName}!` : 'Welcome to Victory Pages! Alleluia!';
+
+  const pane = document.getElementById('display-pane');
+  if (!pane) return;
+
+  // If logged in, only update the content pane — leave the pathways sidebar intact
+  if (vpIsLoggedIn) {
+    const recommended = getRecommendedPathways();
+    const focus = recommended[0] || null;
+    const verse = vpGetDailyScripture();
+
+    let focusBlock = '';
+    if (focus) {
+      focusBlock = `
+        <div style="max-width:500px;margin-top:18px;">
+          <div style="font-size:0.72em;font-weight:bold;color:#555;margin-bottom:6px;border-bottom:1px dotted #808080;padding-bottom:4px;">TODAY'S FOCUS</div>
+          <div style="font-size:0.85em;color:#888;margin-bottom:2px;">${focus.skillName}</div>
+          <div style="font-weight:bold;margin-bottom:6px;">${focus.title}</div>
+          <div style="font-size:0.82em;color:#333;margin-bottom:12px;line-height:1.5;">${focus.description}</div>
+          <label class="link-button" style="cursor:pointer;" onclick="vpShowPathwayDetail('${focus.id}')">Open Pathway &rarr;</label>
+        </div>`;
+    } else {
+      focusBlock = `
+        <div style="max-width:500px;margin-top:18px;">
+          <div style="font-size:0.72em;font-weight:bold;color:#555;margin-bottom:6px;border-bottom:1px dotted #808080;padding-bottom:4px;">TODAY'S FOCUS</div>
+          <div style="font-size:0.85em;color:#555;">All available pathways complete. Well done — open Your Pathways to review your progress.</div>
+        </div>`;
+    }
+
+    const streakLabel = vpStreak > 1 ? `${vpStreak}-day streak` : `Day 1`;
+    const streakBlock = `
+      <div style="max-width:500px;margin-top:20px;">
+        <div style="font-size:0.72em;font-weight:bold;color:#555;margin-bottom:6px;border-bottom:1px dotted #808080;padding-bottom:4px;">STREAK</div>
+        <div style="font-size:0.85em;color:#222;">${streakLabel} — keep showing up.</div>
+      </div>`;
+
+    // Weekly reflection prompt
+    const daysSince = vpLastReflection
+      ? Math.floor((Date.now() - new Date(vpLastReflection)) / 86400000)
+      : 99;
+    let reflectionBlock = '';
+    if (daysSince >= 7) {
+      const focusDomain = focus ? focus.skillName : null;
+      const question = focusDomain && VP_REFLECTION_QUESTIONS[focusDomain]
+        ? VP_REFLECTION_QUESTIONS[focusDomain]
+        : 'How did this past week go? Where did you grow, and where did you fall short?';
+      reflectionBlock = `
+        <div style="max-width:500px;margin-top:20px;">
+          <div style="font-size:0.72em;font-weight:bold;color:#555;margin-bottom:6px;border-bottom:1px dotted #808080;padding-bottom:4px;">WEEKLY REFLECTION</div>
+          <div style="font-size:0.85em;margin-bottom:8px;">${question}</div>
+          <textarea id="vp-reflection-input" rows="3"
+            style="width:100%;box-sizing:border-box;font-family:inherit;font-size:0.85em;padding:4px 6px;border:1px dotted #808080;background:#d4d0c8;resize:vertical;"></textarea>
+          <div style="margin-top:6px;display:flex;gap:8px;">
+            <label class="link-button" style="cursor:pointer;" onclick="vpSaveReflection()">Save</label>
+            <label class="link-button" style="cursor:pointer;color:#888;" onclick="vpSkipReflection()">Skip</label>
+          </div>
+        </div>`;
+    }
+
+    pane.innerHTML = `<div id="default-msg">${focusBlock}${streakBlock}${reflectionBlock}</div>`;
+    return;
+  }
+
+  // Not logged in — reset sidebar to original nav
   const nav = document.querySelector('.sidebar');
   if (nav) {
     nav.innerHTML = `
@@ -1387,60 +1602,72 @@ window.vpGoHome = function() {
           <details><summary>Quick Start</summary>
             <ul>
               <li class="menu-item">
-                <a href="#">Hover Mouse Here</a>
-                <span class="description"> &raquo; Begin by <u>clicking</u> the <strong>About</strong> section in the <strong>Resources</strong> drop down menu.</span>
+                <span style="font-size:0.85em;color:#555;">Open <strong>Pathways</strong> and select <strong>New User</strong> to begin, or <strong>Existing User</strong> to load your progress.</span>
               </li>
             </ul>
           </details>
         </li>
-        <details>
-          <summary>Resources</summary>
-          <ul>
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="link-button" onclick="showContent('about')">About</a>
-              <span class="description"> &raquo; Information about the site owner, the website, and how the site functions.</span>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="link-button" onclick="showContent('library')">Library</a>
-              <span class="description"> &raquo; Collection of curated literature.</span>
-            </li>
-            <li class="menu-item">
-              <a href="#">Forum</a>
-              <span class="description"> &raquo; Public space for community discussion.</span>
-            </li>
-          </ul>
-        </details>
+        <li>
+          <details>
+            <summary>Resources</summary>
+            <ul>
+              <li class="menu-item" data-desc="Information about the site owner, the website, and how the site functions.">
+                <a href="javascript:void(0)" class="link-button" onclick="showContent('about')">About</a>
+              </li>
+              <li class="menu-item" data-desc="Collection of curated literature.">
+                <a href="javascript:void(0)" class="link-button" onclick="showContent('library')">Library</a>
+              </li>
+            </ul>
+          </details>
+        </li>
         <li>
           <details><summary>Pathways</summary>
             <ul>
-              <li class="menu-item">
+              <li class="menu-item" data-desc="Assessment questionnaire to determine your starting point.">
                 <a href="javascript:void(0)" class="link-button" onclick="showContent('pathfinder')">New User</a>
-                <span class="description"> &raquo; Assessment questionnaire to determine your starting point.</span>
               </li>
-              <li class="menu-item">
+              <li class="menu-item" data-desc="Load your saved progress and continue your pathways.">
                 <a href="javascript:void(0)" class="link-button" onclick="vpLoadExistingUser()">Existing User</a>
-                <span class="description"> &raquo; Load your saved progress.</span>
               </li>
             </ul>
           </details>
         </li>
-      </ul>`;
+      </ul>
+      <div id="sidebar-status">Click + to open a section</div>`;
+    attachSidebarStatusBar();
   }
-  const pane = document.getElementById('display-pane');
-  if (pane) {
-    pane.innerHTML = `<div id="default-msg"></div>`;
-  }
+  const _v = vpGetDailyScripture();
+  pane.innerHTML = `<div id="default-msg">
+    <div style="max-width:500px;margin-top:18px;">
+      <div style="font-size:0.85em;color:#222;line-height:1.6;">"${_v.text}"</div>
+      <div style="font-size:0.78em;color:#888;margin-top:4px;">— ${_v.ref}</div>
+    </div>
+  </div>`;
 };
 
 // Also update the Existing User link in index.html's nav at runtime
 document.addEventListener('DOMContentLoaded', function() {
   const existingLink = document.querySelector('a[onclick*="existing"]');
   if (existingLink) existingLink.setAttribute('onclick', 'vpLoadExistingUser()');
+
+  const pane = document.getElementById('display-pane');
+  if (pane) {
+    const v = vpGetDailyScripture();
+    pane.innerHTML = `<div id="default-msg">
+      <div style="max-width:500px;margin-top:18px;">
+        <div style="font-size:0.85em;color:#222;line-height:1.6;">"${v.text}"</div>
+        <div style="font-size:0.78em;color:#888;margin-top:4px;">— ${v.ref}</div>
+      </div>
+    </div>`;
+  }
 });
 
 // ── RIGHT PANEL — Skill Tracker ────────────────────────────────────────────
 
 function renderSkillTracker() {
+  if (window._vpStatusAnim) { clearInterval(window._vpStatusAnim); window._vpStatusAnim = null; }
+  const _sb = document.getElementById('sidebar-status');
+  if (_sb) _sb.textContent = 'Click + to open a section';
   const pane = document.getElementById('display-pane');
   if (!pane) return;
 
@@ -1482,36 +1709,116 @@ function renderSkillTracker() {
       <span style="${scoCol}">Score</span>
     </div>`;
 
-  const visible = vpTrackerExpanded ? sorted : sorted.slice(0, 3);
-  const rows = visible.map((skill, i) => `
+  const jc = window._vpJustCompleted || null;
+  window._vpJustCompleted = null;
+
+  const visible = sorted;
+  const rows = visible.map((skill, i) => {
+    const isJustCompleted = jc && skill.originalIndex === jc.skillIndex;
+    const scoreCell = skill.completed
+      ? (isJustCompleted
+          ? `<span id="vp-score-flash" style="${scoCol}color:#1a7a1a;align-self:flex-start;padding-top:1px;font-weight:bold;">${skill.score}/100 <span style="color:#1a7a1a;">&#8593;+${jc.reward}</span></span>`
+          : `<span style="${scoCol}color:darkred;align-self:flex-start;padding-top:1px;">${skill.score}/100</span>`)
+      : `<span style="${scoCol}color:darkred;align-self:flex-start;padding-top:1px;">—</span>`;
+    return `
     <div style="${fs}display:flex;gap:10px;${rowPad}${border}align-items:center;cursor:default;"
-         onmouseenter="this.querySelector('.vp-desc').style.display='block';this.style.background='#c8c8c8';"
-         onmouseleave="this.querySelector('.vp-desc').style.display='none';this.style.background='';">
+         data-desc="${(skill.desc || '').replace(/"/g, '&quot;')}"
+         onmouseenter="var s=document.getElementById('sidebar-status');if(s)s.textContent=this.dataset.desc;this.style.background='#c8c8c8';"
+         onmouseleave="var s=document.getElementById('sidebar-status');if(s)s.textContent='Click + to open a section';this.style.background='';">
       <span style="${priCol}color:#888;align-self:flex-start;padding-top:1px;">${i + 1}</span>
       <div style="flex:1;">
         <div>${skill.name}</div>
-        <div class="vp-desc" style="display:none;color:#777;font-size:0.88em;line-height:1.3;">${skill.desc}</div>
       </div>
-      <span style="${scoCol}color:darkred;align-self:flex-start;padding-top:1px;">${skill.completed ? skill.score + '/100' : '—'}</span>
-    </div>`).join('');
+      ${scoreCell}
+    </div>`;
+  }).join('');
 
-  const toggleBtn = vpTrackerExpanded
-    ? `<label class="link-button" style="cursor:pointer;" onclick="vpTrackerExpanded=false;renderSkillTracker();">&#9650; Show Top 3</label>`
-    : `<label class="link-button" style="cursor:pointer;" onclick="vpTrackerExpanded=true;renderSkillTracker();">&#9660; Show All 13</label>`;
+  // Build right-side description
+  let tierLabel, tierBody, tierScripture, tierRef;
+  if (!completedSkills.length) {
+    tierLabel     = 'Assessment Needed';
+    tierBody      = 'Complete the Pathfinder assessment to unlock your domains. Your scores will appear here and guide which pathways are recommended first.';
+    tierScripture = 'Search me, O God, and know my heart; try me and know my thoughts!';
+    tierRef       = 'Psalm 139:23';
+  } else if (overall < 20) {
+    tierLabel     = 'Just Beginning';
+    tierBody      = 'Every great journey starts with honest self-examination. You\'ve already done the harder thing — you looked. God doesn\'t demand perfection; He asks for faithfulness. Pick one domain and start there. Show up again tomorrow.';
+    tierScripture = 'He who began a good work in you will bring it to completion at the day of Jesus Christ.';
+    tierRef       = 'Philippians 1:6';
+  } else if (overall < 40) {
+    tierLabel     = 'Laying Foundations';
+    tierBody      = 'You\'re in the building phase. The habits you form now will carry you further than any single breakthrough. Small, repeated faithfulness is how God shapes character.';
+    tierScripture = 'Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.';
+    tierRef       = 'Proverbs 3:5–6';
+  } else if (overall < 60) {
+    tierLabel     = 'Growing Strong';
+    tierBody      = 'The middle of a journey is harder than the beginning — the novelty is gone, but the finish isn\'t yet in sight. This is where real character is formed: not in the victories, but in the staying. Keep going. The fruit is coming.';
+    tierScripture = 'Let us not grow weary of doing good, for in due season we will reap, if we do not give up.';
+    tierRef       = 'Galatians 6:9';
+  } else if (overall < 80) {
+    tierLabel     = 'Bearing Fruit';
+    tierBody      = 'Consistent effort over time produces real change. What your scores reflect isn\'t a number — it\'s sustained faithfulness. Go deeper now rather than wider. Mastery in the domains you\'ve claimed is more valuable than scattered effort.';
+    tierScripture = 'I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing.';
+    tierRef       = 'John 15:5';
+  } else {
+    tierLabel     = 'Walking in Maturity';
+    tierBody      = 'This is what a well-ordered life looks like — not perfection, but intention. Consider how your growth now serves those around you: your household, your neighbor, your church. A mature life pours outward.';
+    tierScripture = 'As each has received a gift, use it to serve one another, as good stewards of God\'s varied grace.';
+    tierRef       = '1 Peter 4:10';
+  }
+
+  // Milestone banner
+  const ms = window._vpMilestone || null;
+  window._vpMilestone = null;
+  const milestoneBanner = ms ? `
+    <div id="vp-milestone-banner" style="max-width:860px;margin-bottom:16px;padding:10px 14px;border:1px dotted #808080;background:#f0f0e8;">
+      <div style="${fs}font-weight:bold;color:#555;margin-bottom:4px;">${ms.domain} — ${ms.data.label}</div>
+      <div style="font-size:0.85em;margin-bottom:6px;">${ms.data.body}</div>
+      <div style="font-size:0.82em;color:#555;">"${ms.data.scripture}" — ${ms.data.ref}</div>
+    </div>` : '';
+
+  // Score history delta for description panel
+  let historyNote = '';
+  if (vpScoreHistory.length >= 2) {
+    const first = vpScoreHistory[0];
+    const firstDate = new Date(first.date).toLocaleDateString();
+    const completedNow = vpSkillsData.filter(s => s.completed);
+    let totalDelta = 0;
+    completedNow.forEach((s, idx) => {
+      const orig = vpSkillsData.indexOf(s);
+      const snap = first.scores[orig];
+      if (snap && snap.completed) totalDelta += s.score - snap.score;
+    });
+    if (totalDelta > 0)
+      historyNote = `<div style="border-top:1px dotted #808080;margin-top:10px;padding-top:8px;font-size:0.9em;color:#555;">Since ${firstDate}: <strong style="color:#1a7a1a;">+${totalDelta} pts</strong> across all domains</div>`;
+  }
 
   pane.innerHTML = `
     <div>
-      <div style="${fs}margin-bottom:8px;">Overall: <strong style="color:darkred;">${overall}/100</strong></div>
-      ${header}
-      <div>${rows}</div>
-      <div style="${fs}margin-top:6px;display:flex;align-items:center;gap:12px;">
-        ${toggleBtn}
-        <label class="link-button" style="cursor:pointer;" onclick="vpSaveAndConfirm()">Save Progress</label>
-        <label class="link-button" style="cursor:pointer;" onclick="vpCopyForClaude()">Ask Claude</label>
-        <span id="vp-save-label" style="color:#555;">${saveLabel ? 'Saved ' + saveLabel : ''}</span>
+    ${milestoneBanner}
+    <div style="display:flex;gap:28px;align-items:flex-start;">
+      <div style="max-width:380px;flex-shrink:0;">
+        <div style="${fs}margin-bottom:8px;">Overall: <strong style="color:darkred;">${overall}/100</strong></div>
+        ${header}
+        <div>${rows}</div>
+        <div style="${fs}margin-top:6px;display:flex;align-items:center;gap:12px;">
+          <label class="link-button" style="cursor:pointer;" onclick="vpSaveAndConfirm()">Save Progress</label>
+          <label class="link-button" style="cursor:pointer;" onclick="vpCopyForClaude()"
+            onmouseenter="var s=document.getElementById('sidebar-status');if(s)s.textContent='Claude is an AI assistant by Anthropic — recommended here for its depth and nuance with personal reflection. Copies your VP scores to clipboard; paste into claude.ai for tailored guidance.';"
+            onmouseleave="var s=document.getElementById('sidebar-status');if(s)s.textContent='Click + to open a section';">Ask Claude</label>
+          <span id="vp-save-label" style="color:#555;">${saveLabel ? 'Saved ' + saveLabel : ''}</span>
+        </div>
+      </div>
+      <div style="font-size:0.78em;max-width:300px;padding-top:22px;padding-left:70px;">
+        <div style="font-weight:bold;margin-bottom:8px;font-size:1.05em;">${tierLabel}</div>
+        <p style="margin:0 0 12px 0;line-height:1.5;color:#222;">${tierBody}</p>
+        <hr style="margin:8px 0;">
+        <p style="margin:0;line-height:1.5;color:#555;">"${tierScripture}"</p>
+        <p style="margin:4px 0 0 0;color:#888;">— ${tierRef}</p>
+        ${historyNote}
       </div>
     </div>
-    <div id="vp-task-panel" style="margin-top:12px;"></div>`;
+    </div>`;
 }
 
 window.vpSaveAndConfirm = function() {
@@ -1651,21 +1958,33 @@ window.vpShowPathwayDetail = function(pathwayId) {
   }).join('');
 
   pane.innerHTML = `
-    <div>
-      <p style="margin:0 0 4px 0;"><strong>${pw.title}</strong></p>
-      <p style="font-size:0.85em;color:#555;margin:0 0 6px 0;">${pw.skillName} &bull; ${pw.difficulty} &bull; <span style="color:darkred;">+${pw.reward} pts on completion</span></p>
+    <div class="assessment-container">
+      <p style="margin:0 0 8px 0;"><strong>${pw.title}</strong></p>
       <p style="font-size:0.9em;margin:0 0 8px 0;">${pw.description}</p>
       <hr>
       <p style="font-size:0.85em;margin:0 0 6px 0;"><strong>Tasks (${done}/${pw.tasks.length} completed)</strong></p>
       <div>${taskItems}</div>
-      <hr>
-      <p style="font-style:italic;font-size:0.82em;color:#555;margin-bottom:10px;">
-        &ldquo;${pw.scriptureText}&rdquo; &mdash; ${pw.scriptureRef}
-      </p>
-      ${allDone ? `<label class="link-button" style="cursor:pointer;" onclick="vpCompletePathway('${pw.id}')">Claim Reward (+${pw.reward} pts)</label>&nbsp;` : ''}
-      <label class="link-button" style="cursor:pointer;" onclick="renderSkillTracker()">&#8592; Back</label>
+      <div style="margin-top:14px;">
+        ${allDone ? `<label class="link-button" style="cursor:pointer;" onclick="vpCompletePathway('${pw.id}')">Complete Path</label>&nbsp;` : ''}
+        <label class="link-button" style="cursor:pointer;" onclick="renderSkillTracker()">&#8592; Back</label>
+      </div>
       <div id="vp-guidance-panel" style="margin-top:16px;"></div>
     </div>`;
+  if (window._vpStatusAnim) clearInterval(window._vpStatusAnim);
+  const _sb = document.getElementById('sidebar-status');
+  if (_sb) {
+    const _scripture = '“' + pw.scriptureText + '” — ' + pw.scriptureRef;
+    const _frames = [
+      '▲ ' + pw.skillName + '<br><span style="font-style:italic;color:#888;display:block;margin-top:4px;">' + _scripture + '</span>',
+      '△ ' + pw.skillName + '<br><span style="font-style:italic;color:#888;display:block;margin-top:4px;">' + _scripture + '</span>'
+    ];
+    let _f = 0;
+    _sb.innerHTML = _frames[0];
+    window._vpStatusAnim = setInterval(function() {
+      const s = document.getElementById('sidebar-status');
+      if (s) s.innerHTML = _frames[_f++ % 2];
+    }, 1200);
+  }
 };
 
 // ── TASK GUIDANCE ───────────────────────────────────────────────────────────
@@ -1675,8 +1994,6 @@ window.vpShowGuidance = function(pathwayId, taskId) {
   if (!task || !task.guidance) return;
 
   const g       = task.guidance;
-  const comment = vpTaskComments[taskId] || '';
-
   const sec = (title, items, marker) => items && items.length
     ? `<details style="margin-bottom:8px;">
          <summary style="cursor:pointer;font-size:0.85em;border-bottom:1px dotted #808080;">${title}</summary>
@@ -1697,18 +2014,7 @@ window.vpShowGuidance = function(pathwayId, taskId) {
     ${sec('Step-by-Step',    g.howTo,         '-')}
     ${sec('Recommendations', g.recommendations, '+')}
     ${sec('Common Errors',   g.commonErrors,   '!')}
-    ${sec('Sources',         g.sources,        '*')}
-    <hr>
-    <p style="font-size:0.82em;margin-bottom:4px;"><strong>Your Notes</strong></p>
-    <textarea id="vp-note-input"
-      style="width:100%;height:50px;font-family:inherit;font-size:0.8em;padding:4px;
-             border:1px dotted #808080;background:#f9f9f9;resize:vertical;box-sizing:border-box;"
-    >${comment}</textarea>
-    <div style="margin-top:4px;">
-      <label class="link-button" style="cursor:pointer;font-size:0.8em;" onclick="vpSaveNote('${taskId}')">Save Note</label>
-      &nbsp;
-      <label class="link-button" style="cursor:pointer;font-size:0.8em;" onclick="vpClearNote('${taskId}')">Clear</label>
-    </div>`;
+    ${sec('Sources',         g.sources,        '*')}`;
 };
 
 // ── HELPERS ─────────────────────────────────────────────────────────────────
@@ -1765,18 +2071,31 @@ window.vpCompletePathway = function(pathwayId) {
   const pw = vpFindPathwayById(pathwayId);
   if (!pw || !vpIsPathwayComplete(pw)) return;
   vpCompletedPathways.push(pathwayId);
-  vpSkillsData[pw.skillIndex].score = Math.min(100, vpSkillsData[pw.skillIndex].score + pw.reward);
+  const oldScore = vpSkillsData[pw.skillIndex].score;
+  const newScore = Math.min(100, oldScore + pw.reward);
+  vpSkillsData[pw.skillIndex].score = newScore;
+  // Check for milestone crossings
+  let milestone = null;
+  [25, 50, 75, 100].forEach(function(t) {
+    const key = pw.skillIndex + '_' + t;
+    if (oldScore < t && newScore >= t && !vpMilestonesShown.includes(key)) {
+      vpMilestonesShown.push(key);
+      milestone = { domain: pw.skillName, threshold: t, data: VP_MILESTONE_DATA[t] };
+    }
+  });
   vpSaveToLocal();
+  window._vpJustCompleted = { skillIndex: pw.skillIndex, reward: pw.reward };
+  if (milestone) window._vpMilestone = milestone;
   renderPathwaysNav();
   renderSkillTracker();
-};
-window.vpSaveNote = function(taskId) {
-  const el = document.getElementById('vp-note-input');
-  if (el) { vpTaskComments[taskId] = el.value; vpSaveToLocal(); }
-};
-window.vpClearNote = function(taskId) {
-  delete vpTaskComments[taskId];
-  vpSaveToLocal();
-  const el = document.getElementById('vp-note-input');
-  if (el) el.value = '';
+  setTimeout(function() {
+    const flash = document.getElementById('vp-score-flash');
+    if (flash) {
+      flash.style.transition = 'color 1s, font-weight 0.5s';
+      flash.style.color = 'darkred';
+      flash.style.fontWeight = '';
+      const arrow = flash.querySelector('span');
+      if (arrow) arrow.style.display = 'none';
+    }
+  }, 2500);
 };
