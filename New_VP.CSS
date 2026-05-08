@@ -7,7 +7,8 @@ body {
   -webkit-font-smoothing: none;
   -moz-osx-font-smoothing: grayscale;
   image-rendering: pixelated;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -38,24 +39,6 @@ li.menu-item {
   width: auto;
   margin-bottom: 5px;
 }
-
-/* Descriptions float beside the button as plain text, no box */
-.description {
-  display: none;
-  position: absolute;
-  left: calc(100% + 8px);
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  font-size: 13px;
-  color: #555;
-  z-index: 100;
-}
-
-li.menu-item:hover .description {
-  display: block;
-}
-
 
 
 /* Tree View Container */
@@ -178,11 +161,12 @@ summary:hover {
 
 /* Create the side-by-side layout */
 .main-layout {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: 220px 1fr;
   gap: 30px;
   margin-top: 6px;
   flex: 1;
+  align-items: start;
 }
 
 /* Layout Container */
@@ -200,9 +184,23 @@ summary:hover {
 /* The Content Container on the right */
 .content-window {
   flex-grow: 1;
-  padding: 10px 16px 10px 80px;
+  padding: 10px 16px 10px 200px;
   color: black;
   min-height: 450px;
+}
+
+#sidebar-status {
+  font-size: 0.75em;
+  color: #444;
+  background: #d4d0c8;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  padding: 2px 6px;
+  min-height: 1.6em;
+  margin-top: 12px;
+  white-space: normal;
 }
 
 footer {
@@ -210,6 +208,19 @@ footer {
   color: #666;
   padding: 12px 8px 6px;
   margin-top: 8px;
+}
+
+footer a {
+  color: #666;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+footer a:hover {
+  background-color: transparent;
+  color: darkred;
+  border: none;
 }
 
 
@@ -238,10 +249,11 @@ footer {
 }
 
 hr {
-  border: none;               /* Remove the default solid/3D line */
-  border-top: 1px dotted #808080; /* Grey dotted line to match your tree lines */
-  height: 0;                  /* Ensure the element itself has no height */
-  margin: 20px 0;             /* Adds vertical spacing around the line */
+  border: none;
+  border-top: 1px dotted #808080;
+  height: 0;
+  margin: 20px 0;
+  max-width: 860px;
 }
 
 .answer-zone {
@@ -253,6 +265,10 @@ hr {
 .question-text {
   font-size: 1.1em;
   min-height: 60px;
+}
+
+.assessment-container {
+  max-width: 860px;
 }
 
 .assessment-container hr {
