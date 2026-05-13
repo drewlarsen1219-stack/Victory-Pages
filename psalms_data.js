@@ -2,8 +2,9 @@
      As you add more, keep following the { label, title, text, ref, insight } pattern.
   */
   const psalmData = [
-    {
-      label: "Introduction",
+   
+   /* --- INTRO --- */
+{ label: "Introduction",
       title: "The Book of 'Praises' (Tehillim) תְּהִלִּים",
 	  image: "lyre.png",
       text: `
@@ -14,8 +15,9 @@
       insight: `The Psalters often contain layers of meaning that aren't fully realized until later revelations by other inspired prophets. 
 	  <br><small> 2 Timothy 3:16–17, 2 Peter 1:20–21, Isaiah 40:8 </small>`
     },
-    {
-      label: "Psalm 1:1",
+	
+	/* --- PSALM 1 --- */
+{ label: "Psalm 1:1",
       title: "The Way of the Righteous",
 	  image: "lyre.png",
       text:`
@@ -80,8 +82,9 @@ to a Christian or they portray something other than the Word of God it can lead 
 </ul>
 `
     },
-	    {
-      label: "Psalm 2:1",
+	
+	/* --- PSALM 2 --- */
+{ label: "Psalm 2:1",
       title: "The Way of the Righteous",
 	  image: "lyre.png",
       text:`
@@ -111,8 +114,9 @@ Then make peace, align and be loyal to the Lords appointed king (David). If you 
 The people who do trust and follow the instructions of the Lord will be in proper alignment and not need anything else in this world. </p> 
 `
     },
-	{ 
-	label: "Psalm 3:1",
+	
+	/* --- PSALM 3 --- */
+{ label: "Psalm 3:1",
       title: "David fled from Absalom his son",
 	  image: "lyre.png",
 	  text:`
@@ -142,10 +146,9 @@ Saving and possessing is what you do! You bless your people! </p>
 `
 
 	},
-	{
+	
 	/* --- PSALM 4 --- */
-  
-    label: "Psalm 4:1",
+   { label: "Psalm 4:1",
     title: "Answer Me When I Call",
     image: "lyre.png",
     text: `
@@ -179,8 +182,7 @@ insight: `
 
     `
   },
-  {
-    label: "Psalm 4:2",
+  { label: "Psalm 4:2",
     title: "How Long Will You Slander Me?",
     image: "lyre.png",
     text: `
@@ -193,8 +195,7 @@ insight: `
     `,
     insight: `<p>David addresses the heart of his enemies: they are chasing "worthless lies" and delusions of grandeur that they can somehow thwart God's will for His anointed king.</p>`
   },
-  {
-    label: "Psalm 4:4",
+ { label: "Psalm 4:4",
     title: "Be Angry and Do Not Sin",
     image: "lyre.png",
     text: `
@@ -210,8 +211,7 @@ insight: `
       <p>David is essentially saying: "Turn that emotional energy inward. Examine your heart. Ask: 'Am I really in the right here?' Then be quiet before God. Don't rush to plot your next move."</p>
     `
   },
-  {
-    label: "Psalm 4:5",
+{ label: "Psalm 4:5",
     title: "Offer Right Sacrifices",
     image: "lyre.png",
     text: `
@@ -256,8 +256,7 @@ The glory we "see" in Jesus = the "light of God's face" David prayed for</p>
 <p> Be near to me Lord. Bless us and hold us in your favor. Guide us and show us the path to the light who is Jesus Christ. Bring us joy and gladness. 
 Deliver us from this body of sin and shine your face upon us. </p>`
   },
-  {
-    label: "Psalm 4:6",
+ { label: "Psalm 4:6",
     title: "The Light of Your Face",
     image: "lyre.png",
     text: `
@@ -273,8 +272,7 @@ Deliver us from this body of sin and shine your face upon us. </p>`
       <p><strong>Prayer:</strong> Be near to me Lord. Bless us and hold us in your favor. Guide us and show us the path to the light who is Jesus Christ. Bring us joy and gladness.</p>
     `
   },
-  {
-    label: "Psalm 4:7",
+  { label: "Psalm 4:7",
     title: "Joy Greater than Harvest",
     image: "lyre.png",
     text: `
@@ -303,8 +301,7 @@ My joy comes from You and surpasses anything material prosperity could bring. </
 <p><em> Although David is being sought out to be killed David is at ease. </p></em>
     `
   },
-  {
-    label: "Psalm 4:8",
+   { label: "Psalm 4:8",
     title: "In Peace I Lie Down",
     image: "lyre.png",
     text: `
@@ -417,8 +414,8 @@ Your salvation is sufficient. I rest in your care and not my own this night. </p
   },
 
   /* --- PSALM 5 --- */
-  {
-    label: "Psalm 5:1",
+  
+    { label: "Psalm 5:1",
     title: "Words and Groaning",
     image: "lyre.png",
     text: `
@@ -464,8 +461,7 @@ David shows:
 
    `
   },
-  {
-    label: "Psalm 5:2",
+   { label: "Psalm 5:2",
     title: "My King and My God",
     image: "lyre.png",
     text: `
@@ -548,8 +544,7 @@ All three are valid prayer. God hears all three.
 	
 	`
   },
-  {
-    label: "Psalm 5:3",
+  { label: "Psalm 5:3",
     title: "The Morning Sacrifice",
     image: "watchman.png",
     text: `
@@ -634,8 +629,7 @@ Side notes
 </ul>
 	`
   },
-  {
-    label: "Psalm 5:4",
+ { label: "Psalm 5:4",
     title: "A Holy God",
     image: "lyre.png",
     text: `
@@ -751,8 +745,7 @@ In verse 10 David will then ask God to judge the wicked people and talk about th
 	
 	`
   },
-  {
-    label: "Psalm 5:5",
+{ label: "Psalm 5:5",
     title: "The Boastful Shall Not Stand",
     image: "lyre.png",
     text: `
@@ -943,8 +936,7 @@ This sets up David's coming petition for God to judge his enemies in verse 10.
 	
 	`
   },
-  {
-    label: "Psalm 5:6",
+ { label: "Psalm 5:6",
     title: "The Bloodthirsty and Deceitful",
     image: "lyre.png",
     text: `
@@ -1298,9 +1290,7 @@ Here's who God is (holy)
 	
 	`
   },
-  {
-  
-   label: "Psalm 5:7",
+  { label: "Psalm 5:7",
     title: "",
     image: "lyre.png",
     text: `
@@ -1640,9 +1630,7 @@ What a great privilege and blessing it is to receive God's presence and worship 
 </p>
 ` 
    },
-   {
-  
-   label: "Psalm 5:8",
+   { label: "Psalm 5:8",
     title: "A Double request to the Lord",
     image: "lyre.png",
     text: `
@@ -1734,10 +1722,10 @@ Also he speaks to the Lord as though the Lord is his shephard while he is a shee
 
 <p>
 Not just general enemies, but specifically the enemies who are watching David closely and spying on him while waiting for him to make a mistake.
-These enemies are planning to act in hosility once they see a mistake hoping to catch David in the wrong so that they may accuse and bring charges towards him and potentially kill him.
+These enemies are planning to act in hosility once they see a mistake hoping to catch David in the wrong so that they may accuse and bring charges towards him, potentially even killing him.
 </p>
 <p>
-David mention his enemies here because his enemies are watching him. David request that the Lord guide him in the right path because David cannot afford to make any mistakes while being watched. 
+David mentions his enemies here because his enemies are watching him. David request that the Lord guide him on the right path because he cannot afford to make any mistakes while being watched. 
 </p>
 <p>
   <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
@@ -1789,7 +1777,7 @@ David mention his enemies here because his enemies are watching him. David reque
         </div>
         <hr>
         <small class="references">
-            Parallel Occurrences: ...
+            Biblical Usage: Isaiah 55:8-9, Psalm 25:4, Psalm 86:11, Proverbs 14:12
         </small>
     </span>
 </span>
@@ -1808,179 +1796,353 @@ Obstacles like scheming enemies make it crucial to make every step be in the rig
 David is asking God to <em>straighten the path</em> and make clear which way to go by <em>removing obstacles</em> that confuse the way.
 </p>
 <p>
-David request this "before me" as in David wants the path layed out before him.
+David uses the words "before me" as a request to have a path layed out before him.
 He asked this so that seeing the Lords way is clear before his eyes.
 David does not request his own way, the worlds way, his enemies way, or what seems right, but instead request <em>the Lords way</em>.
 </p>
+<p>
+<em>The Lords way</em> is the path God wants us to walk and the Lords will is what God has ordained. The Lord commands obedience to His word.
+God's plan is His purposes for our lives.
+</p>
+<p>
+God's way is not human's way. Human judgment is unreliable - we need GOD's way.
+</p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span> 
 <hr>
 <p>
+This prayer was a pattern for David.
+<br><small>Biblical Parallels: Psalm 23:3, Psalm 27:11, Psalm 143:8-10, Proverbs 3:5-6,</small>
+</p>
+<p>
+When applying this Psalter to New Testament text there is a parallel to what Apostle Paul speaks about being led by the Spirit and walking in righteousness. 
+In the book of Romans Paul talks about the Christian life being led by God through the Spirit.
+<br><small> John 16:13, Galatians 5:16 & 18, Romans 8:14, James 1:5 </small>
+</p>
+<p>
+The prayer begins in verse 7; David is someone who is able to enter the Lords house by God's chesed.
+In verse 8 David needs to be led in righteousness by the Lords way. Upcoming in verses 9-10 David needs his request answered
+ because his enemies are dangerous and wicked therefore David petitions the Lord to act against them.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN & AMEN</em> ]
+  </span> 
+</p>
+`
+   },
+	{ label: "Psalm 5:9",
+    title: "The anatomy of evil speech",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">5:9</div>
+        <div class="verse-content">
+			For there is no truth in their mouth;
+			<br> their inmost self is destruction;
+			<br> their throat is an open grave;
+			<br> they flatter with their tongue. 
+			<br><small>(ESV)</small>
+        </div>
+      </div>
+    `,
 
-✓ God's way (the path God wants me to walk)
-✓ God's will (what God has ordained)
-✓ God's commands (obedience to His word)
-✓ God's plan (His purposes for my life)
+    insight: `
+<p>
+David disects his enemies' way of communication in anotomical parts. Their mouth and tongue are an output of lies and flattery. 
+While their inward part/true nature and throat contain destruction and death. 
+</p>
+<hr>
+For their is 
+<span class="tooltip">
+    <strong>no truth</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">דאֵין נְכוֹנָה </span> 
+            <span class="transliteration">(Ein N'khonah)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> נְכוֹנָה </span> — (N'khonah) from root <span dir="rtl"> כּוּן </span> (kun):  to be firm, established, fixed, reliable
+			<br> The causative form = to establish/direct firmly
+			<br>This word means MORE than just "truth". In different contexts it means:
+			<ul>
+			<li> Truth (what is reliable/trustworthy)
+			<li> Faithfulness (what is steadfast)
+			<li> Sincerity (what is genuine)
+			<li> Reliability (what can be depended on)
+			<li> What is established/firm (opposite of shaky/uncertain)
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Psalm 51:6, Psalm 78:37
+        </small>
+    </span>
+</span>
+in their mouth;
+<p>
+There is not any reliability/trustworthiness/sincerity in what they say.
+Instead what they speak are only empty words.
+</p>
+their
+<span class="tooltip">
+    <strong>inward self/part</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">קִרְבָּם הַוּוֹת </span> 
+            <span class="transliteration">(Qirbam Havvot)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> קֶרֶב </span> — (Qerev) = midst, inward part, inner being, heart
+			<br> What's being described is not just their words (surface), but their heart/core (what's inside). 
+			<br> Their true nature (who they really are) and inner motivations (what drives them).
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Psalm 51:6, Psalm 78:37
+        </small>
+    </span>
+</span>
+is 
+<span class="tooltip">
+    <strong>destruction;</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">הַוּוֹת </span> 
+            <span class="transliteration">(Havvot)</span>: destructions, disasters, calamities, ruin (plural)
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> הַוָּה </span> — (havvah) = [Root] destruction, ruin, disaster, calamity
+		<br> This is strong language.
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Psalm 38:12, Psalm 52:2, Proverbs 17:4, Micah 7:3
+        </small>
+    </span>
+</span>
+<p>
+Davids enemies are filled at the core with malicious intent, destructive desires, harmful purposes, ruinous schemes and calamitious plans. 
+His enemies are not just occasionally thinking bad thoughts or sometimes having wrong motives. His enemies at their very essence are destructive. 
+Rotten from the inside out. 
+</p>
+<p>
+Jesus teaches about the connection between a inward part and what comes out of a mouth in Matthew 12:34-35 and 15:18-19.
+</p> 
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span> 
+</p>
+<hr>
+<span class="tooltip">
+    <strong>their throat is an open grave;</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">קֶבֶר־פָּתוּחַ גְּרוֹנָם </span> 
+            <span class="transliteration">(Qever-Patuach G'ronam)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> קֶבֶר </span> — (Qever) = grave, tomb, sepulcher
+			<br> place of death, containing corpses, associated with decay, corruption, stench
+			<span dir="rtl">פָּתוּחַ </span> — (Patuach) = open, opened
+			<br> not closed/sealed, exposed, accessible
+			<span dir="rtl">פגָּרוֹן </span> — (Garon) = throat
+			<br> not mouth (פֶּה - peh), but throat which is deeper because it is the passage from mouth to stomach.
+			<br> Where things go down. 
+		</div>
+        <hr>
+        <small class="references">
+            Biblical Usage: ...
+        </small>
+    </span>
+</span>
+<p>
+This is a vivid and shocking metaphor, which has multiple layers and all are intended. Their speech brings death like an empty grave calls for the dead.
+Death is inside the speakers throat like a grave carries a corpse.
+Their words are corrupt/putrid like the stench of an open grave.  
+</p>
+<p>
+The grave/sheol is often depicted in scripture as devouring, insatiable and comparisons are made with throat/greed which is also insatiable. 
+<br><small> Proverbs 30:12-16, Proverbs 1:12, Isaiah 5:14, Habakkuk 2:5 </small>
+</p>
+<p>
+In ancient Israel open graves where viewed as ritually unclean and contact with it meant defilement. 
+<br><small> Numbers 19:16 </small>
+</p>
+<p>
+David is saying that his enemies throat is like walking death and what comes from them is defiling. That they spead corruption wherever they speak because they are spiritually putrid.
+</p>
+<p>
+Paul quotes David in Romans 3:13 in his catalog of human sinfulness to demonstrate that sinfulness is universal, deadly, and reveals the corrupt nature of a human heart. 
+<br><small> Context (Romans 3:10-18): Paul strings together multiple OT quotes to prove "all have sinned"
+</small>
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>  
+<hr>
+<span class="tooltip">
+    <strong>they flatter with their tongue;</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> לְשׁוֹנָם יַחֲלִיקוּן </span> 
+            <span class="transliteration">(L'shonam Yachaliqu̇n)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> חָלַק </span> — (Chalaq) = to be smooth, slippery; to flatter with smooth words
+			<br> Hiphil form: "They make smooth" = they use smooth/flattering words
+		</div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Proverbs 26:28, Proverbs 28:23, Proverbs 29:5, Psalm 12:2-3, Daniel 11:32
+        </small>
+    </span>
+</span>
+<p>
+As a method of manipulation Davids enemies give insincere compliments by using slippery words and smooth talk. 
+These enemies make false/fake friendships only to betray the person later. 
+His enemies are conceiling themselves behind appealing speech and use flattery as a tool of seduction/deception.
+</p>
+<p>
+<small> Parallel occurences: Proverbs 26:28, Proverbs 28:23, Proverbs 29:5, Psalm 12:2-3, Daniel 11:32, 2 Samuel 15:2-6 </small>
+</p>
+<p>
+The ultimate use of flattery while concealing deadly intent is in Matthew 26:49 when Judas Iscariot respectfully greeted Jesus saying "Greetings, Rabbi!" and kissed Him as a sign of affection/loyalty. 
+All while simultaneously betraying Jesus by handing Him over to be arrested and condemed to death. 
+</p>
+<p>
+Flattery is a form of lying and dangerous because is deceives by concealing true intent to take advantage over someone. Only to then betray that persons trust after their defense is disarmed.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>  
+<hr>
+<p>
+David's case, as brought to the Lord in vv.4-6: God hates and destroys the wicked (liars, deceivers). V.7 But David can approach God (by chesed). V.8 David requests that the Lord lead him in righteousness because of his enemies.
+V.9 Now his enemies have a deceiving/manipulating tongue in their mouth that betrays and destroys through the deadly speech they produce. Their tongue reveals the source of destruction.
+It comes from their throat, which contains a devouring evil.
+</p>
+<p>
+<small> Parallel occurences: Jerimiah 9:3-8, Psalm 12:2-4, Psalm 55:21, Psalm 57:4, Psalm 64:3-4, Proverbs 5:3-4, Romans 3:10-18, James 3:5-8 </small>
+</p>
+<p>
+Coming in Verse 10 David makes the petition for the Lord to judge his enemies. 
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN & AMEN</em> ]
+  </span>
+</p>
+`
 
+    },
+{   label: "Psalm 5:10",
+    title: "...",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">5:10</div>
+        <div class="verse-content">
+			Make them bear their guilt, O God;
+			<br> let them fall by their own counsels;
+			<br> because of the abundance of their transgressions cast them out,
+			<br> for they have rebelled against you. 
+			<br><small>(ESV)</small>
+        </div>
+      </div>
+    `,
 
-Biblical Usage:
-Isaiah 55:8-9:
-"For my thoughts are not your thoughts, neither are your ways my ways, declares the LORD. For as the heavens are higher than the earth, so are my ways higher than your ways and my thoughts than your thoughts."
-God's way ≠ human way
-Psalm 25:4:
-"Make me to know your ways, O LORD; teach me your paths."
-Same request - teach me YOUR way
-Psalm 86:11:
-"Teach me your way, O LORD, that I may walk in your truth; unite my heart to fear your name."
-Proverbs 14:12:
-"There is a way that seems right to a man, but its end is the way to death."
-Human judgment is unreliable - we need GOD's way
+    insight: `
+<p>
+David makes three request from the Lord and gives one reason for the Lord to fullfill them. 
+<ol>
+<li> Declare them guilty, O God
+<li> Let them fall by their own counsels 
+<li> Cast them out because of the abundance of their transgressions
+</ol>
+<p>
+Because of one reason; they have rebelled against You (God).
+</p>
+<p> This is an imprecatory prayer which means to invoke evil upon a person, or to curse someone. 
+Imprecatory prayers in the Psalms are prayers asking God to judge/curse enemies, petitions for devine retribution,
+and appeals for God's justice against the wicked.
+</p>
+<p>
+<small> Parallel occurences: Psalm 35, 55, 58, 59, 69, 79, 109, 137, 139, 140 </small>
+</p>
+<p>
+These types of prayers exist in Scripture because David appeals to God to judge rather than taking vengeance himself — he is submitting to the Lord's divine justice. His zeal for God's glory is evident in his phrasing: "they have rebelled against <em>You</em>," not against <em>me</em>. His enemies are the Lord's enemies, and so he appeals to the Lord to judge on the Lord's behalf, not his own. God's righteousness demands judgment by the very nature of who He is. David prays with honest emotion, and these imprecatory prayers also carry messianic weight, pointing to Christ Jesus — the ultimate judge of evil and wickedness.
+</p>  
+<hr>
 
-The Complete Picture:
-What David Is Asking:
-Request #1: "Lead me in Your righteousness"
+<span class="tooltip">
+    <strong>Declare them guilty</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">הַאֲשִׁימֵם</span> 
+            <span class="transliteration">(Ha'ashimem)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> אָשַׁם </span> — (asham) Root:  to be guilty, to bear guilt, to incur guilt, to be held accountable 
+			<br> The causative form: "cause to be guilty" = declare guilty, pronounce guilty, condemn
+			<br> This is judicial language.
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: 2 Samuel 14:13, Hosea 5:15, Ezekiel 22:4, Psalm 34:21-22
+        </small>
+    </span>
+</span>
+<p>
+David is requesting that God execute justice and pronounce the verdict that they are <em>guilty</em>.
+</p>
+<span class="tooltip">
+    <strong>Let them fall by their own counsels</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">יִפְּלוּ מִמֹּעֲצוֹתֵיהֶם</span> 
+            <span class="transliteration">(Yiplu Mimo'atzoteihem)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> נָפַל </span> — (Naphal) to fall, drop, collapse, be overthrown 
+			<br> <span dir="rtl"> מוֹעֵצָה </span> — (Mo'etzah) counsel, plan, scheme, purpose, advice
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Psalm  7:15-16, Psalm 9:15-16, Psalm 35:7-8, Psalm 37:14-15, Psalm 57:6, Proverbs 26:27, Proverbs 28:10, Esther 7:10  
+        </small>
+    </span>
+</span>
+<p> 
+As a poetic justice David is requesting that their own plans backfire and destroy them. 
+</p>
+<p>
+Why This Is Just:
+God's justice often works through:
 
-Active guidance from God
-Shepherd leading sheep
-In the path of righteousness
-According to God's righteous standard
+Natural consequences of sin
+Reaping what you sow (Galatians 6:7)
+The wicked becoming victims of their own wickedness
 
-Request #2: "Make straight before me Your way"
+It demonstrates:
 
-Clarify the path ahead
-Remove obstacles and confusion
-Make it obvious which way to go
-Let me see clearly Your will
+God's wisdom (using their schemes against them)
+God's justice (appropriate punishment)
+The self-destructive nature of evil
 
-Why? "Because of my enemies"
+3 is next 
 
-They're watching for me to stumble
-They'll use any mistake against me
-I need to walk blamelessly
-I can't afford moral errors with hostile observers
-
-
-Evidence-Based Subtext:
-What David Is Really Saying:
-"LORD, I'm in a dangerous situation. My enemies are watching me closely, like predators waiting for prey to make a mistake. They're scrutinizing my every move, looking for any moral failure, any wrong step, any sin they can use to accuse me, discredit me, or harm me. I desperately need Your guidance! Please LEAD me actively like a shepherd leading sheep—guide me in the path of righteousness, according to Your righteous standard. And please make Your way CLEAR before me—straighten the path, remove obstacles, clarify which direction to go. I can't afford confusion or moral stumbling with these enemies watching. Make it obvious what the right choice is so I don't give them ammunition against me. Guide me in YOUR way (not my own flawed judgment), and make that way straight and clear so I can walk it without stumbling."
-
-The Danger David Faces:
-Why This Prayer Is Urgent:
-If David makes a moral mistake:
-
-Enemies will accuse him (using it against him)
-His reputation will be damaged (credibility destroyed)
-God's name will be dishonored (his enemies will mock God)
-His position/life endangered (accusations could lead to death)
-
-Examples from David's life:
-1. When fleeing from Saul:
-
-Any wrong move could justify Saul's pursuit
-David refused to kill Saul (even when he could) to avoid sin
-Had to walk perfectly to avoid legitimate accusation
-
-2. When he sinned with Bathsheba:
-
-This is exactly what happened when he DIDN'T walk righteously
-Nathan confronted him (2 Samuel 12)
-"You have given great occasion to the enemies of the LORD to blaspheme" (2 Samuel 12:14)
-The consequence of NOT being led in righteousness
-
-3. During Absalom's rebellion:
-
-Had to walk carefully during crisis
-Any moral failure would justify the rebellion
-Needed clear guidance on right actions
-
-
-Biblical Parallels:
-Psalm 23:3 (Almost Identical)
-"He restores my soul. He leads me in paths of righteousness for his name's sake."
-Same request:
-
-Lead me
-In righteousness
-For a reason (His name's sake / because of enemies)
-
-
-Psalm 27:11
-"Teach me your way, O LORD, and lead me on a level path because of my enemies."
-Nearly identical to Psalm 5:8!
-
-Teach/lead me
-Your way
-Level/straight path
-Because of enemies
-
-This shows the prayer was a PATTERN for David
-
-Psalm 143:8-10
-"Let me hear in the morning of your steadfast love, for in you I trust. Make me know the way I should go, for to you I lift up my soul... Teach me to do your will, for you are my God! Let your good Spirit lead me on level ground!"
-Same themes:
-
-Make known the way
-Teach me Your will
-Lead me
-On level ground (straight path)
-
-
-Proverbs 3:5-6 (The Promise)
-"Trust in the LORD with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths."
-The condition: Trust the LORD, acknowledge Him
-The promise: He WILL make straight your paths
-David is claiming this promise!
-
-New Testament Application:
-John 16:13 (Holy Spirit's Role)
-"When the Spirit of truth comes, he will guide you into all the truth, for he will not speak on his own authority, but whatever he hears he will speak, and he will declare to you the things that are to come."
-The Spirit leads believers in truth/righteousness
-
-Galatians 5:16, 18
-"But I say, walk by the Spirit, and you will not gratify the desires of the flesh... But if you are led by the Spirit, you are not under the law."
-Being LED by the Spirit = walking in righteousness
-
-Romans 8:14
-"For all who are led by the Spirit of God are sons of God."
-Christian life = being LED by God (through the Spirit)
-
-James 1:5
-"If any of you lacks wisdom, let him ask God, who gives generously to all without reproach, and it will be given him."
-Ask God for guidance = He will make the way clear
-
-Explicit English Translation:
-Most Literal:
-"O LORD, lead me in Your righteousness because of my enemies; make straight before me Your way."
-With Clarity:
-"LORD, actively guide me like a shepherd in the path of righteousness, because my enemies are watching for me to stumble. Make Your way clear and straight before me so I can see plainly which direction to go."
-Fully Unpacked:
-"LORD, I desperately need Your guidance. My enemies are watching me closely—hostile observers lying in wait for any moral failure, any misstep they can use against me. Please actively LEAD me like a shepherd leading sheep, guiding me in paths of righteousness according to Your righteous standard. I can't trust my own judgment with so much at stake. And please make Your way STRAIGHT before me—clarify the path ahead, remove obstacles and confusion, make it obvious which choice is right. Let me see clearly what You want me to do. Don't let the path be crooked or unclear. I need to walk in YOUR way (not my own), and I need that way to be unmistakably clear so I don't stumble and give my enemies ammunition against me."
-Conversational:
-"LORD, guide me in what's right—my enemies are watching for me to mess up. Make Your will crystal clear to me so I don't stumble."
-
-Summary - Fully Explicit:
-"LORD, I'm in a precarious situation where I'm under hostile surveillance. My enemies are watching my every move like predators waiting for prey to stumble, looking for any moral failure or wrong decision they can use to accuse me, discredit me, harm me, or blaspheme Your name. Because of this dangerous scrutiny, I desperately need You to LEAD me—actively guide me like a shepherd carefully leading vulnerable sheep—in the path of righteousness. Guide me according to Your righteous standard, not my flawed judgment. Keep me from sin, from mistakes, from anything they could legitimately accuse. And please make Your way STRAIGHT before me—clarify which path to take, remove obstacles and confusion, make Your will obvious and unmistakable. I can't afford to guess or wander in uncertainty with enemies watching. Make the right choice clear so I can walk confidently in YOUR way without giving them any grounds for accusation."
-
-The Prayer's Structure So Far:
-v. 7 - WHO I AM: I can enter Your house (by Your chesed)
-v. 8 - WHAT I NEED: Lead me in righteousness; make Your way clear
-v. 9-10 - (Coming next) WHY I NEED IT: Description of enemies' wickedness
-David is building his case:
-
-I have access to You (v. 7)
-I need Your guidance urgently (v. 8)
-Because my enemies are dangerous and wicked (v. 9-10, coming)
-Therefore act against them (v. 10, petition coming)
-
-
-Does this capture the urgency and depth of David's request? He's asking for divine guidance in a high-stakes situation where enemies are watching for any moral failure they can exploit.
-Should we continue to David's description of his enemies' wickedness (verses 9-10)?
-
-
-
+</p>
 
 
 
 `
-   }
-  ];
+    },
+];
   
  
