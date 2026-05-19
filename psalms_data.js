@@ -2042,7 +2042,7 @@ Coming in Verse 10 David makes the petition for the Lord to judge his enemies.
 
     },
 {   label: "Psalm 5:10",
-    title: "...",
+    title: "David's Imprecatory Prayer",
     image: "lyre.png",
     text: `
       <div class="verse-row">
@@ -2069,19 +2069,25 @@ David makes three request from the Lord and gives one reason for the Lord to ful
 Because of one reason; they have rebelled against You (God).
 </p>
 <p> This is an imprecatory prayer which means to invoke evil upon a person, or to curse someone. 
-Imprecatory prayers in the Psalms are prayers asking God to judge/curse enemies, petitions for devine retribution,
+Imprecatory prayers in the Psalms are prayers asking God to judge/curse enemies, petitions for divine retribution,
 and appeals for God's justice against the wicked.
 </p>
 <p>
 <small> Parallel occurences: Psalm 35, 55, 58, 59, 69, 79, 109, 137, 139, 140 </small>
 </p>
 <p>
-These types of prayers exist in Scripture because David appeals to God to judge rather than taking vengeance himself — he is submitting to the Lord's divine justice. His zeal for God's glory is evident in his phrasing: "they have rebelled against <em>You</em>," not against <em>me</em>. His enemies are the Lord's enemies, and so he appeals to the Lord to judge on the Lord's behalf, not his own. God's righteousness demands judgment by the very nature of who He is. David prays with honest emotion, and these imprecatory prayers also carry messianic weight, pointing to Christ Jesus — the ultimate judge of evil and wickedness.
+These types of prayers exist in Scripture because David appeals to God to judge rather than taking vengeance himself — he is submitting to the Lord's divine justice. 
+His zeal for God's glory is evident in his phrasing: "they have rebelled against <em>You</em>," not against <em>me</em>. His enemies are the Lord's enemies, and so he appeals to the Lord to judge on the Lord's behalf, not his own. God's righteousness demands judgment by the very nature of who He is. David prays with honest emotion, and these imprecatory prayers also carry messianic weight, pointing to Christ Jesus — the ultimate judge of evil and wickedness.
 </p>  
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p> 
 <hr>
 
 <span class="tooltip">
-    <strong>Declare them guilty</strong>
+    <strong>Make them bear their guilt/Declare them guilty,</strong>
     <span class="tooltiptext">
         <div class="hebrew-row">
             <span class="hebrew-text" dir="rtl">הַאֲשִׁימֵם</span> 
@@ -2098,11 +2104,13 @@ These types of prayers exist in Scripture because David appeals to God to judge 
         </small>
     </span>
 </span>
+<strong> O God; </strong>
 <p>
 David is requesting that God execute justice and pronounce the verdict that they are <em>guilty</em>.
 </p>
+<strong> let them </strong>
 <span class="tooltip">
-    <strong>Let them fall by their own counsels</strong>
+    <strong>fall by their own counsels;</strong>
     <span class="tooltiptext">
         <div class="hebrew-row">
             <span class="hebrew-text" dir="rtl">יִפְּלוּ מִמֹּעֲצוֹתֵיהֶם</span> 
@@ -2119,28 +2127,290 @@ David is requesting that God execute justice and pronounce the verdict that they
     </span>
 </span>
 <p> 
-As a poetic justice David is requesting that their own plans backfire and destroy them. 
+As a poetic justice David is requesting that his enemies own plans backfire and destroy them. 
 </p>
 <p>
-Why This Is Just:
-God's justice often works through:
-
-Natural consequences of sin
-Reaping what you sow (Galatians 6:7)
-The wicked becoming victims of their own wickedness
-
-It demonstrates:
-
-God's wisdom (using their schemes against them)
-God's justice (appropriate punishment)
-The self-destructive nature of evil
-
-3 is next 
-
+God's justice often works through natural consequences of sin.
+<br> <small>Reaping what you sow (Galatians 6:7)</small>
 </p>
+<p>
+This type of justice demonstrates God's wisdom and the self-destructive nature of evil.
+</p>
+<strong> because of the </strong>
+<span class="tooltip">
+    <strong>abundance of their transgressions...</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> בְּרֹב פִּשְׁעֵיהֶם </span> 
+            <span class="transliteration">(B'rov Pish'eihem)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> רֹב </span> — (Rov) abundance, multitude, greatness
+			<br> <span dir="rtl"> פֶּשַׁע </span> — (Pesha) transgression, rebellion, revolt
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Isaiah 53:5, Isaiah 59:12-13, Ezekiel 18:31, Amos 5:12  
+        </small>
+    </span>
+</span>
+<p>
+There is ironic contrast with this line and the line in verse 7: "In the abundance in Your chesed I will enter Your house"
+<br> In the abundance of chesed David may enter the Lords house. In the abuncance of transgressions, Davids enemies 
+may be cast out. This is a parallel structure with opposite content. 
+</p>
+<p>
+פֶּשַׁע (Pesha) - "Transgression" is a strong word for sin and means a willfull and intentional defiance against God. 
+Trangression is serious enough to require Christ's death. <sub> Isaiah 53:5 </sub>
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p> 
+<hr>
+<span class="tooltip">
+    <strong>...cast them out</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> הַדִּיחֵמוֹ </span> 
+            <span class="transliteration">(Hadichemo)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> נָדַח </span> — (nadach) to drive out, thrust out, banish, cast away
+			<br> Hiphil form (causative): "cause to be driven out / thrust out forcefully"
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Deuteronomy 30:1, Jeremiah 8:3, Jeremiah 23:2-3
+        </small>
+    </span>
+</span>
+<p>
+David is asking that his enemies be removed from:
+<ul>
+<li> God's presence as a spiritual banishment <small>Ref: V. 4 & 5</small>
+<li> Jerusalem/Israel as a physical exile
+<li> Life and to be cast into the grave
+<li> Positions of power and influence
+</ul>
+</p>
+<span class="tooltip">
+    <strong>for they have rebelled against you.</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> כִּי־מָרוּ בָךְ  </span> 
+            <span class="transliteration">(Ki-Maru Bakh)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> מָרָה </span> — (Marah)  to rebel, to be disobedient, to be contentious, to be bitter
+			<br> Marah implies willfull disobedience against authority, defiance against commands, contentious attitude, bitter opposition
+			<br> Marah often used for Israel's rebellion against God
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Numbers 20:24, Deuteronomy 1:26, 43, Deuteronomy 9:7, Psalm (78:8, 17, 40, 56), Isaiah 1:20, Lamentations 1:18, 20 
+        </small>
+    </span>
+</span>
+<p>
+Although David's enemies persecute him, he points to a more critical problem: his enemies have rebelled against God himself.
+</p>
+<p>
+Since God has anointed David as king of Israel, these enemies oppose the will of God — an offense not merely to David but to God.
+</p>
+<p>
+David appeals to God's honor rather than his own, aligning himself with God's purpose — framing the conflict not as a personal dispute but as a matter of cosmic justice.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+<p>
+<em> Imprecatory Prayer Fulfilled </em>
+</p>
+<p>
+In 2 Samuel 15:31, God answered David's imprecatory prayer: Ahithophel's counsel was rejected (2 Samuel 17:14), and he hanged himself (2 Samuel 17:23). He fell by his own counsel — a striking fulfillment of imprecatory prayer.
+</p>
+<p>
+<em> New Testament Balance </em>
+</p>
+<p>
+In Romans 12:19, Christians are called not to take personal revenge, but instead to leave judgement to God and trust that the Lord will execute justice.
+</p>
+<p>
+In Matthew 5:44, Jesus teaches His disciples to pray for those who persecute them. 
+</p>
+<p>
+In Ezekiel 18:23, it is written that God takes no pleasure in the death of the wicked — rather, He desires repentance.
+</p>
+<p>
+<em> What This Teaches </em>
+</p>
+<p>
+Both of the following are legitimate petitions before God:
+</p>
+<ul>
+    <li>Praying for an enemy's repentance</li>
+    <li>Praying for God to judge them</li>
+</ul>
+<p>
+<em> The Lord's Prayer Imprecatory Petition</em>
+</p>
+<p>
+The Lord's Prayer contains imprecatory language: <em>"Thy kingdom come, thy will be done on earth as it is in heaven"</em> petitions for God's enemies and evil to be defeated and for His righteous reign to be established. The final judgement of evil — of Satan, demons, and unbelievers — is the fullfillment of this prayer.
+</p>
+<p><small>Biblical parallels of imprecatory language in prayer: Psalm 3:7, Psalm 35:1–8, Psalm 109:6–15</small></p>
+<p>
+David has made his petition for the Lord's judgement. In the next verse, David petitions and anticipates a blessing for the righteous — in contrast to the wicked whom he has prayed God would judge and cast out.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN & AMEN</em> ]
+  </span>
+</p> 
+`
+},
+{   label: "Psalm 5:11",
+    title: "From Judgement to Joy",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">5:11</div>
+        <div class="verse-content">
+			But let all who take refuge in you rejoice;
+			<br> let them ever sing for joy,
+			<br> and spread your protection over them,
+			<br> that those who love your name may exult in you.
+			<br><small>(ESV)</small>
+        </div>
+      </div>
+    `,
 
-
-
+    insight: `
+<p>
+Davids prayer went from petitioning the Lord to judge the wicked in verse 10, to now blessing the righteous. 
+He prays that the destiny of the righteous is of rejoicing, singing for joy forever, being protected by God, and to be exulted in the Lord.
+</p>
+<p>
+David uses three different words for joy/gladness:
+</p>
+<ul>
+<li> שָׂמַח (samach) = rejoice, be glad
+<li> רָנַן (ranan) = sing joyfully, shout for joy
+<li> עָלַץ (alatz) = exult, triumph
+</ul>
+<p>
+In doing this he is pilling up joy vocabulary to show an abundance and overflowing gladness by the blessed righteous people.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+<strong> But let </strong>
+<span class="tooltip">
+    <strong>all who take refuge in you</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> כָל־חוֹסֵי בָךְ </span> 
+            <span class="transliteration">(Kol-Chosei Bakh)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> חָסָה </span> — (chasah) [Root]  to take refuge, seek shelter, trust, flee for protection
+			<br> A Key word in the Psalms appearing 37 times!
+			<br> As an image: like running to a fortress when enemies attack or seeking shelter from a storm
+			<br> This is an active action like running to God
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Psalm 2:12, Psalm 7:1, Psalm 11:1, Psalm 16:1, Psalm 17:7, Psalm 18: (2, 30), Psalm 25:20, Psalm 31: (1, 19), Psalm 34: (8, 22), Psalm 36:7, Psalm 37:40, Psalm 57:1, Psalm 62:8, Psalm 64:10, Psalm 91: (2, 4, 9), Psalm 118: 8-9, Psalm 141:8, Psalm 144:2      
+        </small>
+    </span>
+</span>
+<span class="tooltip">
+    <strong>rejoice;</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> יִשְׂמְחוּ </span> 
+            <span class="transliteration">(Yism'chu)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> שָׂמַח </span> — (samach) [Root]  to rejoice, be glad, be joyful, be merry
+			<br> general foundation of joy
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Psalm 32:11, Psalm 97:12, Philippians 4:4       
+        </small>
+    </span>
+</span>
+<p>
+All who actively flee to God for safety and protection, trusting the Lord. Like David who fees from his enemies praying for the Lord to guide him.
+David petitions for all these people to be full of joy.  
+</p>
+<strong> let them </strong>
+<span class="tooltip">
+    <strong> ever/forever </strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> לְעוֹלָם </span> 
+            <span class="transliteration">(L'olam)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> עוֹלָם </span> — (Olam) forever, eternity, perpetuity, always
+			</div>
+    </span>
+</span>
+<span class="tooltip">
+    <strong> sing for joy, </strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> יְרַנֵּנוּ </span> 
+            <span class="transliteration">(Y'rannenu)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> רָנַן </span> — (ranan) to cry out, shout for joy, sing joyfully, give a ringing cry
+			<br> Louder and more exuberant than שָׂמַח (samach). An audible celebration.
+			<hr>
+			<small class="references">
+            Biblical Usage- Psalm 33:11, 33:1, 35:27, 51:14, 81:1, 84:2, 92:4, 98:4, 132:(9,16), 145:7       
+        </small>
+			</div>
+    </span>
+</span>
+<p>
+A petition for all who take refuge to eternally experience joy to the point of singing and celebration. The type of joy that cannot be contained and must be expressed. 
+This petition is for a public glorification of God and communally expressed in song.
+</p>
+<strong> and </strong>
+<span class="tooltip">
+    <strong> spread your protection over them, </strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> וְתָסֵךְ עָלֵימוֹ </span> 
+            <span class="transliteration">(V'tasekh Alemo)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> סָכַךְ </span> — (sakhakh) to cover, screen, shelter, protect
+			<br> As imagery a roof protecting from the sun/rain.
+			<hr>
+			<small class="references">
+            Biblical Usage: Psalm 94:4, 104:7, Exodus 40:3       
+        </small>
+			</div>
+    </span>
+</span>
+<p>
+David is asking God to spread His protection like a bird protecting her chicks covering them with her wings. 
+This is the opposite fate of the wicked who are petitioned to be expelled. The righteous are being petitioned to be protected. 
+</p>
+<p>
+Exult
+</p>
 `
     },
 ];
