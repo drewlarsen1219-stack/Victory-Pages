@@ -28,6 +28,7 @@ let vpLastReflection    = '';
 let vpReflections       = [];
 let vpScoreHistory      = [];
 let vpMilestonesShown   = [];
+let vpEstimatedDomains  = [];
 
 // ── LOCAL SAVE / LOAD ──────────────────────────────────────────────────────
 function vpSaveToLocal() {
@@ -44,6 +45,7 @@ function vpSaveToLocal() {
     skills: vpSkillsData.map(s => ({ score: s.score, completed: s.completed })),
     completedPathways: vpCompletedPathways,
     pathwayProgress: vpPathwayProgress,
+    estimatedDomains: vpEstimatedDomains,
   };
   localStorage.setItem('victoryPages_v1', JSON.stringify(data));
 }
@@ -71,6 +73,7 @@ function vpLoadFromLocal() {
     vpMilestonesShown   = data.milestonesShown    || [];
     vpCompletedPathways = data.completedPathways  || [];
     vpPathwayProgress   = data.pathwayProgress    || {};
+    vpEstimatedDomains  = data.estimatedDomains   || [];
     return data.savedAt ? new Date(data.savedAt).toLocaleDateString() : 'unknown date';
   } catch (e) { return null; }
 }
@@ -1430,6 +1433,15 @@ window.enterPathwaysMode = function() {
       skill.completed = true;
     }
   });
+  if (window.vpAssessmentIsQuick) {
+    vpEstimatedDomains = vpSkillsData.filter(s => s.completed).map(s => s.section);
+    window.vpAssessmentIsQuick = false;
+  } else if (window.vpRefineSection) {
+    vpEstimatedDomains = vpEstimatedDomains.filter(d => d !== window.vpRefineSection);
+    window.vpRefineSection = null;
+  } else {
+    vpEstimatedDomains = [];
+  }
   vpIsLoggedIn = true;
   vpSnapshotScores();
   vpSaveToLocal();
@@ -1636,13 +1648,7 @@ window.vpGoHome = function() {
       <div id="sidebar-status">Click + to open a section</div>`;
     attachSidebarStatusBar();
   }
-  const _v = vpGetDailyScripture();
-  pane.innerHTML = `<div id="default-msg">
-    <div style="max-width:500px;margin-top:18px;">
-      <div style="font-size:0.85em;color:#222;line-height:1.6;">"${_v.text}"</div>
-      <div style="font-size:0.78em;color:#888;margin-top:4px;">— ${_v.ref}</div>
-    </div>
-  </div>`;
+  pane.innerHTML = `<div id="default-msg"></div>`;
 };
 
 // Also update the Existing User link in index.html's nav at runtime
@@ -1651,15 +1657,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (existingLink) existingLink.setAttribute('onclick', 'vpLoadExistingUser()');
 
   const pane = document.getElementById('display-pane');
-  if (pane) {
-    const v = vpGetDailyScripture();
-    pane.innerHTML = `<div id="default-msg">
-      <div style="max-width:500px;margin-top:18px;">
-        <div style="font-size:0.85em;color:#222;line-height:1.6;">"${v.text}"</div>
-        <div style="font-size:0.78em;color:#888;margin-top:4px;">— ${v.ref}</div>
-      </div>
-    </div>`;
-  }
+  if (pane) pane.innerHTML = `<div id="default-msg"></div>`;
+  const v  = vpGetDailyScripture();
+  const fs = document.getElementById('footer-scripture');
+  if (fs) fs.innerHTML = '“' + v.text + '”' +
+    '<span style="display:block;font-size:0.85em;color:#999;margin-top:3px;letter-spacing:0.05em;">— ' + v.ref + '</span>';
 });
 
 // ── RIGHT PANEL — Skill Tracker ────────────────────────────────────────────
@@ -1715,6 +1717,11 @@ function renderSkillTracker() {
   const visible = sorted;
   const rows = visible.map((skill, i) => {
     const isJustCompleted = jc && skill.originalIndex === jc.skillIndex;
+    const isEstimated = vpEstimatedDomains.includes(skill.section);
+    const estTag   = isEstimated ? ` <span style="font-size:0.85em;color:#888;">(est.)</span>` : '';
+    const refineBtn = (isEstimated && skill.completed)
+      ? ` <a href="javascript:void(0)" class="link-button" style="font-size:0.78em;" onclick="startDomainRefinement('${skill.section}')">Refine</a>`
+      : '';
     const scoreCell = skill.completed
       ? (isJustCompleted
           ? `<span id="vp-score-flash" style="${scoCol}color:#1a7a1a;align-self:flex-start;padding-top:1px;font-weight:bold;">${skill.score}/100 <span style="color:#1a7a1a;">&#8593;+${jc.reward}</span></span>`
@@ -1727,7 +1734,7 @@ function renderSkillTracker() {
          onmouseleave="var s=document.getElementById('sidebar-status');if(s)s.textContent='Click + to open a section';this.style.background='';">
       <span style="${priCol}color:#888;align-self:flex-start;padding-top:1px;">${i + 1}</span>
       <div style="flex:1;">
-        <div>${skill.name}</div>
+        <div>${skill.name}${estTag}${refineBtn}</div>
       </div>
       ${scoreCell}
     </div>`;
@@ -1975,8 +1982,8 @@ window.vpShowPathwayDetail = function(pathwayId) {
   if (_sb) {
     const _scripture = '“' + pw.scriptureText + '” — ' + pw.scriptureRef;
     const _frames = [
-      '▲ ' + pw.skillName + '<br><span style="font-style:italic;color:#888;display:block;margin-top:4px;">' + _scripture + '</span>',
-      '△ ' + pw.skillName + '<br><span style="font-style:italic;color:#888;display:block;margin-top:4px;">' + _scripture + '</span>'
+      '▲ ' + pw.skillName + '<br><span style="color:#888;display:block;margin-top:4px;">' + _scripture + '</span>',
+      '△ ' + pw.skillName + '<br><span style="color:#888;display:block;margin-top:4px;">' + _scripture + '</span>'
     ];
     let _f = 0;
     _sb.innerHTML = _frames[0];
@@ -2043,12 +2050,17 @@ function getRecommendedPathways() {
   const out = [];
   vpSkillsData.forEach((skill, i) => {
     if (skill.completed && VP_PATHWAYS_DATA[i]) {
-      VP_PATHWAYS_DATA[i].forEach(pw => {
+      const isEstimated = vpEstimatedDomains.includes(skill.section);
+      let addedForDomain = 0;
+      const sorted = [...VP_PATHWAYS_DATA[i]].sort((a, b) => (a.priority || 99) - (b.priority || 99));
+      sorted.forEach(pw => {
         if (vpCompletedPathways.includes(pw.id)) return;
         if (skill.score >= pw.scoreThreshold) return;
         if (pw.prerequisites && pw.prerequisites.length > 0)
           if (!pw.prerequisites.every(pid => vpCompletedPathways.includes(pid))) return;
+        if (isEstimated && addedForDomain >= 1) return;
         out.push({ ...pw, skillIndex: i, skillName: skill.name, currentScore: skill.score, importance: skill.importance || 1 });
+        addedForDomain++;
       });
     }
   });
