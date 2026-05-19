@@ -5,6 +5,8 @@ const assessmentData = [
   { id: 1, section: "Body", text: "How would you rate your current overall physical health?", type: "scale", weight: 8, scaleLabels: ["Very Poor", "Excellent"] },
   { id: 2, section: "Body", text: "Do you have any chronic health conditions (diabetes, heart disease, autoimmune, etc.)?", type: "yn", weight: 6, reverse: true },
   { id: 3, section: "Body", text: "Are your chronic conditions well-managed with your doctor?", type: "yn", weight: 5, showIf: { id: 2, answer: 'yes' } },
+  { id: 3.5, section: "Body", text: "Do you struggle with mental health challenges such as depression, anxiety, ADHD, or similar conditions?", type: "yn", weight: 0 },
+  { id: 3.6, section: "Body", text: "Are you actively pursuing appropriate care — therapy, medication, or professional support — for your mental health?", type: "yn", weight: 9, showIf: { id: 3.5, answer: 'yes' } },
   { id: 4, section: "Body", text: "Have you had a physical checkup with a doctor in the past 12 months?", type: "yn", weight: 5 },
   { id: 5, section: "Body", text: "Do you know your key health numbers (blood pressure, cholesterol, blood sugar)?", type: "yn", weight: 4 },
   { id: 6, section: "Body", text: "Are you currently at a healthy weight for your height and frame?", type: "yn", weight: 6 },
@@ -52,6 +54,7 @@ const assessmentData = [
   { id: 44, section: "Body", text: "How often do you consume alcohol?", type: "select", options: [1, 2, 3, 4, 5], optionLabels: ["Daily", "Several times/week", "Weekly", "Occasionally", "Rarely/Never"], weight: 6 },
   { id: 45, section: "Body", text: "When you drink, do you typically have more than 2 drinks?", type: "yn", weight: 5, reverse: true, showIf: { id: 44, answer: [1, 2, 3, 4] } },
   { id: 46, section: "Body", text: "Do you use recreational drugs?", type: "yn", weight: 6, reverse: true },
+  { id: 46.5, section: "Body", text: "Do you struggle with behavioral compulsions — pornography, gambling, compulsive spending, or similar addictive behaviors?", type: "yn", weight: 8, reverse: true },
   { id: 47, section: "Body", text: "Do you rely on caffeine to function (more than 2-3 cups of coffee per day)?", type: "yn", weight: 3, reverse: true },
 
   { id: 48, section: "Body", text: "Do you experience chronic pain (back, neck, joints) that affects daily life?", type: "yn", weight: 7, reverse: true },
@@ -126,7 +129,7 @@ const assessmentData = [
   { id: 105, section: "Mind", text: "Do you experience racing thoughts or mental anxiety frequently?", type: "yn", weight: 6, reverse: true },
   { id: 106, section: "Mind", text: "How mentally sharp do you feel in the morning?", type: "scale", weight: 5, scaleLabels: ["Takes hours to wake up", "Sharp immediately"] },
 
-  { id: 107, section: "Mind", text: "Do you regularly read Scripture or wisdom literature?", type: "yn", weight: 7 },
+  { id: 107, section: "Mind", text: "Do you regularly engage with wisdom literature — theology, philosophy, or classic works that shape how you think?", type: "yn", weight: 7 },
   { id: 108, section: "Mind", text: "Do you seek God's guidance in your thinking and decisions?", type: "yn", weight: 7 },
   { id: 109, section: "Mind", text: "Do you have mentors or wise counselors you learn from?", type: "yn", weight: 6 },
   { id: 110, section: "Mind", text: "Can you discern between wisdom and foolishness in daily situations?", type: "yn", weight: 6 },
@@ -149,8 +152,15 @@ const assessmentData = [
   { id: 122, section: "Heart", text: "Do you have a healthy relationship with your parents, or have you made peace with the past?", type: "yn", weight: 8 },
   { id: 122.5, section: "Heart", text: "Do you have siblings?", type: "yn", weight: 0 },
   { id: 123, section: "Heart", text: "Do you have healthy relationships with your siblings?", type: "yn", weight: 6, showIf: { id: 122.5, answer: 'yes' } },
-  { id: 124, section: "Heart", text: "Are you married?", type: "yn", weight: 0 },
-  { id: 124.1, section: "Heart", text: "How would you rate your marriage overall?", type: "scale", weight: 10, scaleLabels: ["Struggling", "Thriving"], showIf: { id: 124, answer: 'yes' } },
+  { id: 124, section: "Heart", text: "Are you married or in a committed relationship?", type: "yn", weight: 0 },
+  { id: 124.1, section: "Heart", text: "How would you rate your relationship overall?", type: "scale", weight: 10, scaleLabels: ["Struggling", "Thriving"], showIf: { id: 124, answer: 'yes' } },
+  { id: 124.2, section: "Heart", text: "Do you and your partner communicate openly and honestly with each other?", type: "yn", weight: 8, showIf: { id: 124, answer: 'yes' } },
+  { id: 124.3, section: "Heart", text: "Do you handle conflict with your partner in a healthy, respectful way?", type: "yn", weight: 8, showIf: { id: 124, answer: 'yes' } },
+  { id: 124.4, section: "Heart", text: "Do you regularly express love, appreciation, and affection to your partner?", type: "yn", weight: 7, showIf: { id: 124, answer: 'yes' } },
+  { id: 124.6, section: "Heart", text: "Is there emotional intimacy and genuine trust between you and your partner?", type: "yn", weight: 9, showIf: { id: 124, answer: 'yes' } },
+  { id: 124.7, section: "Heart", text: "Do you and your partner actively support each other's goals and growth?", type: "yn", weight: 7, showIf: { id: 124, answer: 'yes' } },
+  { id: 124.8, section: "Heart", text: "Do you protect your relationship from outside threats — inappropriate relationships, harmful content, or chronic neglect?", type: "yn", weight: 8, showIf: { id: 124, answer: 'yes' } },
+  { id: 124.9, section: "Heart", text: "Are you sexually faithful to your partner?", type: "yn", weight: 9, showIf: { id: 124, answer: 'yes' } },
   { id: 124.5, section: "Heart", text: "Do you have children?", type: "yn", weight: 0 },
   { id: 125, section: "Heart", text: "Do you have strong, healthy relationships with each of your children?", type: "yn", weight: 9, showIf: { id: 124.5, answer: 'yes' } },
   { id: 126, section: "Heart", text: "Do you prioritize family time in your schedule?", type: "yn", weight: 7 },
@@ -169,7 +179,6 @@ const assessmentData = [
   { id: 137, section: "Heart", text: "Are you holding grudges or unforgiveness toward anyone?", type: "yn", weight: 9, reverse: true },
   { id: 138, section: "Heart", text: "Do you forgive others when they wrong you?", type: "yn", weight: 8 },
   { id: 139, section: "Heart", text: "Is there anyone you need to ask forgiveness from?", type: "yn", weight: 7, reverse: true },
-  { id: 140, section: "Heart", text: "Do you apologize when you are wrong?", type: "yn", weight: 7 },
   { id: 141, section: "Heart", text: "Are there broken relationships in your life that could be reconciled?", type: "yn", weight: 6, reverse: true },
   { id: 142, section: "Heart", text: "Do you deal with conflict directly rather than avoiding it?", type: "yn", weight: 6 },
   { id: 143, section: "Heart", text: "Can you separate a person from their behavior — hate the sin, love the sinner?", type: "yn", weight: 6 },
@@ -240,6 +249,8 @@ const assessmentData = [
   { id: 205, section: "Hand", text: "Do you clean up and organize after completing a project?", type: "yn", weight: 5 },
   { id: 206, section: "Hand", text: "Do you maintain your tools and equipment properly?", type: "yn", weight: 5 },
   { id: 207, section: "Hand", text: "Do you approach your work as service to God and others, not just obligation?", type: "yn", weight: 7 },
+  { id: 207.5, section: "Hand", text: "Does your current work draw on the gifts and abilities God has given you?", type: "yn", weight: 7 },
+  { id: 207.6, section: "Hand", text: "Are you actively discerning your vocational calling — seeking to serve where God has placed and gifted you?", type: "yn", weight: 8 },
 
 
   // === FINANCE ===
@@ -249,6 +260,7 @@ const assessmentData = [
   { id: 210, section: "Finance", text: "Do you know your net worth (assets minus liabilities)?", type: "yn", weight: 6 },
   { id: 211, section: "Finance", text: "Do you live below your means — spend less than you earn?", type: "yn", weight: 10 },
   { id: 212, section: "Finance", text: "Do you have financial goals written down?", type: "yn", weight: 7 },
+  { id: 212.5, section: "Finance", text: "Do you have a spouse, mentor, or trusted person who reviews your finances with you and holds you accountable?", type: "yn", weight: 6 },
   { id: 213, section: "Finance", text: "How would you rate your current financial stress level?", type: "scale", weight: 8, scaleLabels: ["Very Stressed", "No Stress"] },
 
   { id: 214, section: "Finance", text: "Do you have an emergency fund?", type: "yn", weight: 9 },
@@ -286,6 +298,7 @@ const assessmentData = [
 
   { id: 241, section: "Finance", text: "Do you earn enough to meet your basic needs?", type: "yn", weight: 8 },
   { id: 242, section: "Finance", text: "Do you have multiple sources of income?", type: "yn", weight: 5 },
+  { id: 242.5, section: "Finance", text: "Is your income stable and predictable enough to plan your budget around month to month?", type: "yn", weight: 7 },
   { id: 243, section: "Finance", text: "Are you content with what you have — not always wanting more?", type: "yn", weight: 8 },
   { id: 244, section: "Finance", text: "Do you make purchases impulsively that you later regret?", type: "yn", weight: 7, reverse: true },
   { id: 245, section: "Finance", text: "Do you compare your financial situation to others?", type: "yn", weight: 5, reverse: true },
@@ -294,7 +307,12 @@ const assessmentData = [
 
 
   // === SPIRIT ===
-  { id: 247.5, section: "Spirit", text: "Do you trust in Jesus Christ alone for the forgiveness of your sins?", type: "yn", weight: 100 },
+  { id: 247.5, section: "Spirit", text: "Do you trust in Jesus Christ alone for the forgiveness of your sins and eternal life?", type: "yn", weight: 40 },
+  { id: 247.6, section: "Spirit", text: "How certain are you that you are forgiven — not based on your feelings, but on God's promise?", type: "scale", weight: 15, scaleLabels: ["Full of doubt", "Certain — His promise stands regardless of my feelings"] },
+  { id: 247.7, section: "Spirit", text: "When you sin and fall, do you return to your Baptism — trusting that God has already claimed and forgiven you?", type: "yn", weight: 12 },
+  { id: 247.8, section: "Spirit", text: "Do you struggle to receive God's grace — feeling your sins are too great or that you must earn forgiveness?", type: "yn", weight: 10, reverse: true },
+  { id: 247.9, section: "Spirit", text: "Do you understand and live in the distinction between Law and Gospel?", type: "yn", weight: 8 },
+  { id: 247.95, section: "Spirit", text: "Is your sense of worth and identity grounded in who Christ says you are, rather than your performance or feelings?", type: "yn", weight: 15 },
 
 
   // === VITALITY ===
@@ -371,17 +389,15 @@ const assessmentData = [
   { id: 304, section: "Status", text: "Are you comfortable leading when called upon?", type: "yn", weight: 5 },
 
   { id: 305, section: "Status", text: "Do you seek recognition and credit for your work?", type: "yn", weight: 6, reverse: true },
-  { id: 306, section: "Status", text: "Do you celebrate others' successes genuinely?", type: "yn", weight: 7 },
   { id: 307, section: "Status", text: "Do you serve without expecting recognition?", type: "yn", weight: 8 },
   { id: 308, section: "Status", text: "Can you receive correction without becoming defensive?", type: "yn", weight: 7 },
   { id: 309, section: "Status", text: "Do you give credit to others who deserve it?", type: "yn", weight: 7 },
   { id: 310, section: "Status", text: "Do you consider yourself better than others?", type: "yn", weight: 7, reverse: true },
 
-  { id: 311, section: "Status", text: "Do you address conflict directly and respectfully?", type: "yn", weight: 7 },
-  { id: 312, section: "Status", text: "Do you hold grudges?", type: "yn", weight: 6, reverse: true },
+  { id: 311, section: "Status", text: "When you address conflict, do you remain composed and respectful rather than reactive?", type: "yn", weight: 7 },
+  { id: 312, section: "Status", text: "Does past hurt or resentment affect how you treat or speak of others?", type: "yn", weight: 6, reverse: true },
   { id: 313, section: "Status", text: "Do you apologize when you are wrong?", type: "yn", weight: 8 },
-  { id: 314, section: "Status", text: "Do you seek reconciliation in broken relationships?", type: "yn", weight: 7 },
-  { id: 315, section: "Status", text: "Do you give others the benefit of the doubt?", type: "yn", weight: 6 },
+  { id: 314, section: "Status", text: "Do you take the first step toward repairing relationships you have damaged?", type: "yn", weight: 7 },
 
 
   // === SPACE ===
@@ -435,7 +451,7 @@ const assessmentData = [
   { id: 354, section: "Time", text: "Do you plan your week in advance?", type: "yn", weight: 8 },
   { id: 355, section: "Time", text: "Do you know your most important tasks each day?", type: "yn", weight: 9 },
 
-  { id: 356, section: "Time", text: "Can you focus on a single task for extended periods without distraction?", type: "yn", weight: 8 },
+  { id: 356, section: "Time", text: "Do you regularly schedule and protect dedicated blocks for focused, uninterrupted work?", type: "yn", weight: 8 },
   { id: 357, section: "Time", text: "Do you complete what you set out to do each day?", type: "yn", weight: 8 },
   { id: 358, section: "Time", text: "Do you frequently feel overwhelmed by all you have to do?", type: "yn", weight: 7, reverse: true },
   { id: 359, section: "Time", text: "Do you procrastinate on important tasks?", type: "yn", weight: 8, reverse: true },
@@ -464,6 +480,7 @@ const assessmentData = [
   { id: 378, section: "Time", text: "Does how you spend your time align with what you say matters most?", type: "yn", weight: 9 },
   { id: 380, section: "Time", text: "Do you regularly review your goals and progress?", type: "yn", weight: 6 },
   { id: 381, section: "Time", text: "Do you feel your time is spent on meaningful activities?", type: "yn", weight: 8 },
+  { id: 381.5, section: "Time", text: "Do you think intentionally about the long-term legacy you are building — what you want your life to have amounted to?", type: "yn", weight: 7 },
   { id: 382, section: "Time", text: "Do you waste significant time on things that do not matter?", type: "yn", weight: 7, reverse: true },
 
   { id: 383, section: "Time", text: "Are you consistently on time for appointments and commitments?", type: "yn", weight: 7 },
@@ -484,7 +501,6 @@ const assessmentData = [
   { id: 393, section: "World", text: "Do you notice and respond to needs in your community?", type: "yn", weight: 7 },
   { id: 394, section: "World", text: "Have you volunteered for a charitable cause in the past year?", type: "yn", weight: 7 },
   { id: 395, section: "World", text: "Do you help the poor, hungry, or marginalized?", type: "yn", weight: 8 },
-  { id: 396, section: "World", text: "Do you give to charitable causes beyond your church?", type: "yn", weight: 6 },
   { id: 397, section: "World", text: "How many hours per month do you spend serving others outside your family?", type: "select", options: [0, 1, 2, 3, 4, 5, 6, 7], weight: 7 },
 
   { id: 398, section: "World", text: "Do you actively serve in your local church?", type: "yn", weight: 9 },
@@ -510,6 +526,8 @@ const assessmentData = [
   { id: 415, section: "World", text: "Are you known as someone who helps others in your community?", type: "yn", weight: 6 },
   { id: 416, section: "World", text: "Do you show hospitality to those outside your normal circle?", type: "yn", weight: 7 },
   { id: 417, section: "World", text: "Do you love others in practical ways, not just in feeling?", type: "yn", weight: 8 },
+  { id: 417.5, section: "World", text: "Do you treat God's creation — land, water, plants, animals — with care, recognizing it as His and yourself as a steward?", type: "yn", weight: 6 },
+  { id: 417.6, section: "World", text: "Do you steward natural resources responsibly — avoiding waste and taking only what you need?", type: "yn", weight: 5 },
 
 
   // === CREATIVE ===
@@ -598,14 +616,52 @@ const assessmentData = [
   { id: 482, section: "Tech", text: "Does your online behavior reflect your Christian values?", type: "yn", weight: 8 },
   { id: 483, section: "Tech", text: "Do you protect yourself from harmful content online?", type: "yn", weight: 8 },
   { id: 484, section: "Tech", text: "Do you use technology to connect with and serve others?", type: "yn", weight: 6 },
-  { id: 485, section: "Tech", text: "Are you teaching good digital habits to those in your care?", type: "yn_na", weight: 6 }
+  { id: 485, section: "Tech", text: "Are you teaching good digital habits to those in your care?", type: "yn_na", weight: 6 },
+
+  { id: 485.5, section: "Tech", text: "Do you play video games?", type: "yn", weight: 0 },
+  { id: 485.6, section: "Tech", text: "Does gaming interfere with your responsibilities, sleep, or relationships?", type: "yn", weight: 8, reverse: true, showIf: { id: 485.5, answer: 'yes' } },
+  { id: 485.7, section: "Tech", text: "Can you stop gaming when you intend to, without it pulling you back in?", type: "yn", weight: 7, showIf: { id: 485.5, answer: 'yes' } }
 
 ]; // end of assessmentData
+
+
+// === QUICK SCAN IDS ===
+// Questions shown in Quick Scan mode. Gate questions (weight: 0) always show regardless.
+const QUICK_SCAN_IDS = new Set([
+  // Body
+  1, 2, 3, 3.5, 3.6, 7, 8, 20, 43, 46.5,
+  // Mind
+  64, 72, 80, 80.5, 83,
+  // Heart
+  114, 119, 122.5, 123, 124, 124.1, 124.5, 129, 137,
+  // Hand
+  173, 178, 207, 207.6,
+  // Finance
+  208, 211, 214, 219, 231, 241, 242.5,
+  // Spirit (all — small domain)
+  247.5, 247.6, 247.7, 247.8, 247.9, 247.95,
+  // Vitality
+  249, 253, 254, 263,
+  // Status
+  281, 282, 283, 293,
+  // Space
+  316, 322, 336,
+  // Time
+  350, 351, 359, 378,
+  // World
+  386, 387, 392, 398,
+  // Creative
+  418, 420, 449,
+  // Tech
+  452, 456.5, 457, 467, 481, 483, 485.5, 485.6
+]);
 
 
 // === STATE ===
 let currentQuestionIndex = 0;
 let userAnswers = {};
+let assessmentMode  = 'full';  // 'full' | 'quick' | 'refine'
+let vpRefineSection = null;
 
 
 // === SKIP LOGIC ===
@@ -619,20 +675,31 @@ function shouldSkip(q) {
   return ans !== cond.answer;
 }
 
+function shouldSkipForTier(q) {
+  if (assessmentMode === 'full') return false;
+  if (q.weight === 0) return false; // gate questions always show
+  if (assessmentMode === 'quick') return !QUICK_SCAN_IDS.has(q.id);
+  if (assessmentMode === 'refine') {
+    if (q.section !== vpRefineSection) return true;
+    return QUICK_SCAN_IDS.has(q.id); // skip tier-1 already answered
+  }
+  return false;
+}
+
 function advanceTo(idx) {
-  while (idx < assessmentData.length && shouldSkip(assessmentData[idx])) idx++;
+  while (idx < assessmentData.length && (shouldSkipForTier(assessmentData[idx]) || shouldSkip(assessmentData[idx]))) idx++;
   return idx;
 }
 
 function retreatTo(idx) {
-  while (idx >= 0 && shouldSkip(assessmentData[idx])) idx--;
+  while (idx >= 0 && (shouldSkipForTier(assessmentData[idx]) || shouldSkip(assessmentData[idx]))) idx--;
   return idx;
 }
 
 
 // === CONTENT ROUTING ===
 
-window.vpStartAssessment = function() {
+window.vpStartAssessment = function(mode) {
   const input = document.getElementById('vp-name-input');
   const name = input ? input.value.trim() : '';
   if (!name) {
@@ -640,8 +707,17 @@ window.vpStartAssessment = function() {
     return;
   }
   window.vpUserName = name;
+  assessmentMode = mode || 'full';
   currentQuestionIndex = 0;
   userAnswers = {};
+  currentQuestionIndex = advanceTo(0);
+  renderQuestion();
+};
+
+window.startDomainRefinement = function(sectionName) {
+  assessmentMode  = 'refine';
+  vpRefineSection = sectionName;
+  currentQuestionIndex = 0;
   currentQuestionIndex = advanceTo(0);
   renderQuestion();
 };
@@ -656,9 +732,17 @@ function showContent(section) {
         <hr>
         <input id="vp-name-input" type="text" placeholder="Your name"
           style="font-family:inherit;font-size:0.9em;padding:4px 8px;border:1px dotted #808080;background:#d4d0c8;width:200px;box-sizing:border-box;"
-          onkeydown="if(event.key==='Enter')window.vpStartAssessment()">
-        <div style="margin-top:10px;">
-          <label class="link-button" style="cursor:pointer;" onclick="window.vpStartAssessment()">Begin &rarr;</label>
+          onkeydown="if(event.key==='Enter')window.vpStartAssessment('quick')">
+        <div style="margin-top:14px;">
+          <div style="font-size:0.82em;color:#555;margin-bottom:8px;">Choose your path:</div>
+          <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <label class="link-button" style="cursor:pointer;white-space:nowrap;" onclick="window.vpStartAssessment('quick')">Quick Scan &rarr;</label>
+            <span style="font-size:0.82em;color:#555;">~15 min &mdash; Estimated scores, refine any domain later</span>
+          </div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;">
+            <label class="link-button" style="cursor:pointer;white-space:nowrap;" onclick="window.vpStartAssessment('full')">Full Assessment &rarr;</label>
+            <span style="font-size:0.82em;color:#555;">~45 min &mdash; Accurate scores, complete picture</span>
+          </div>
         </div>
       </div>`;
     setTimeout(function() {
@@ -733,9 +817,10 @@ function renderQuestion() {
     }).join(' ');
   }
 
+  const modeLabel = assessmentMode === 'quick' ? ' — Quick Scan' : assessmentMode === 'refine' ? ` — ${vpRefineSection} Deep Dive` : '';
   pane.innerHTML = `
     <div class="assessment-container">
-      <h3>Pathfinder Assessment</h3>
+      <h3>Pathfinder Assessment${modeLabel}</h3>
       <p>Progress: ${progress}%</p>
       <hr>
       <p class="question-text">${q.text}</p>
@@ -871,6 +956,7 @@ function calculateScores() {
     if (!sections[q.section]) sections[q.section] = { earned: 0, total: 0 };
     if (!q.weight || q.weight <= 0) return;
     if (shouldSkip(q)) return;
+    if (shouldSkipForTier(q)) return;
 
     const ans = userAnswers[q.id];
 
@@ -905,9 +991,6 @@ function calculateScores() {
     scores[name] = data.total > 0 ? Math.round((data.earned / data.total) * 100) : 0;
   }
 
-  // Spirit is binary — Jesus question only
-  scores['Spirit'] = userAnswers[247.5] === 'yes' ? 100 : 0;
-
   return scores;
 }
 
@@ -916,25 +999,37 @@ function calculateScores() {
 
 function showResults() {
   const scores = calculateScores();
-  window.vpAssessmentScores = scores;
+  window.vpAssessmentScores  = scores;
+  window.vpAssessmentIsQuick = (assessmentMode === 'quick');
+  window.vpRefineSection     = (assessmentMode === 'refine') ? vpRefineSection : null;
 
+  const isQuick  = assessmentMode === 'quick';
+  const isRefine = assessmentMode === 'refine';
   const skillOrder = ['Body','Mind','Heart','Hand','Finance','Vitality','Status','Space','Time','World','Creative','Tech','Spirit'];
   const pane = document.getElementById('display-pane');
 
   const scoreRows = skillOrder.map(name => {
     const score = scores[name];
     if (score === undefined) return '';
+    const est = isQuick ? ' <span style="font-size:0.8em;color:#888;">(est.)</span>' : '';
     return `
       <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dotted #808080;">
-        <span>${name}</span><span style="color:darkred;font-weight:bold;">${score}/100</span>
+        <span>${name}${est}</span><span style="color:darkred;font-weight:bold;">${score}/100</span>
       </div>`;
   }).join('');
 
+  const heading = isRefine ? `${vpRefineSection} Refined` : 'Assessment Complete';
+  const subtext  = isQuick
+    ? 'Scores are estimated from a quick pass. Refine any domain from Your Pathways for a full score.'
+    : isRefine
+    ? `${vpRefineSection} score updated with the full question set.`
+    : 'Your scores have been recorded. Click <strong>Continue</strong> to view your Pathways.';
+
   pane.innerHTML = `
     <div class="assessment-container">
-      <h3>Assessment Complete</h3>
+      <h3>${heading}</h3>
       <hr>
-      <p>Your scores have been recorded. Click <strong>Continue</strong> to view your Pathways.</p>
+      <p>${subtext}</p>
       <hr>
       <div style="margin:10px 0;">${scoreRows}</div>
       <hr>
