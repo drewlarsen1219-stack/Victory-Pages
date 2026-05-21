@@ -2408,9 +2408,173 @@ This petition is for a public glorification of God and communally expressed in s
 David is asking God to spread His protection like a bird protecting her chicks covering them with her wings. 
 This is the opposite fate of the wicked who are petitioned to be expelled. The righteous are being petitioned to be protected. 
 </p>
+<strong> that </strong> 
+<span class="tooltip">
+    <strong> those who love your name </strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> יַעְלְצוּ </span> 
+            <span class="transliteration">(Ya'letzu)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> אֹהֲבֵי שְׁמֶךָ </span> — (Ohavei Shem'kha) 
+			<br> <span dir="rtl"> אָהַב </span> — (Ahav) to love
+			<br> <span dir="rtl"> שֵׁם </span> — (Shem) name
+			<hr>
+			<small class="references">
+            Biblical Usage: Psalm 69:36, 119:132, Isaiah 56:6, Malachi 3:16       
+        </small>
+			</div>
+    </span>
+</span>
 <p>
-Exult
+<em>"Your name"</em> in hebrew thought is more than a label and means God's revealed charecter, essence, reputation, attributes, nature. 
+To <em>"love God's name"</em> means to love God for what is revealed about Himself and His attributes (holiness, justice, mercy, etc.), and reputation/glory.
 </p>
+<p>
+There is a parallel description in
+<span class="tooltip">
+    <strong>v.11a</strong>
+    <span class="tooltiptext">
+        <span class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">חוֹסֵי בָךְ</span>
+            <span class="transliteration">(chosei bakh)</span>
+        </span>
+        <span class="definition-list">
+            "All who take refuge in You"
+        </span>
+    </span>
+</span>
+and
+<span class="tooltip">
+    <strong>v.11b</strong>
+    <span class="tooltiptext">
+        <span class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">אֹהֲבֵי שְׁמֶךָ</span>
+            <span class="transliteration">(ohavei shem'kha)</span>
+        </span>
+        <span class="definition-list">
+            "Those who love Your name"
+        </span>
+    </span>
+</span>
+descibing the same people from two different angles. The action is the people take refuge in God by trusting/depending on Him.
+The affection is that they love God by devoting/delighting in His name. 
+</p>
+<p>
+The righteous are charecterized by who trust (taking refuge) and love (loving His name). Both are necessary to be charecterized by David as righteous.
+Rather than just an intellectual belief it is a relational trust and affectionate love.
+</p>
+<strong> may </strong>
+<span class="tooltip">
+    <strong> exult </strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl"> יַעְלְצוּ </span> 
+            <span class="transliteration">(Ya'letzu)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl"> עָלַץ </span> — (alatz) to exult, rejoice, triumph
+			<br> Joy over victory/deliverance
+			<hr>
+			<small class="references">
+            Biblical Usage: Psalm 9:2, 60:8, 68:3-4, 89:16, 96:12, Proverbs 11:10       
+        </small>
+			</div>
+    </span>
+</span>
+<strong> in you. </strong>
+<p>
+Third word for joy in this verse carries a sense of triumphant joy by the means of victory/deliverance.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+<p>
+Verse 11 presents a three-part progression of joy, building in intensity from inner gladness to outward expression to triumphant exultation:
+<span class="tooltip">
+    <em>Rejoice</em>
+    <span class="tooltiptext">
+        <span class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">שָׂמַח</span>
+            <span class="transliteration">(samach)</span>
+        </span>
+        <span class="definition-list">
+            General gladness, inner joy, foundational happiness
+        </span>
+    </span>
+</span>
+→
+<span class="tooltip">
+    <em>Sing for joy</em>
+    <span class="tooltiptext">
+        <span class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">רָנַן</span>
+            <span class="transliteration">(ranan)</span>
+        </span>
+        <span class="definition-list">
+            Vocal expression · Audible celebration · Corporate worship
+        </span>
+    </span>
+</span>
+→
+<span class="tooltip">
+    <em>Exult</em>
+    <span class="tooltiptext">
+        <span class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">עָלַץ</span>
+            <span class="transliteration">(alatz)</span>
+        </span>
+        <span class="definition-list">
+            Triumphant joy · Victory celebration · Exuberant gladness
+        </span>
+    </span>
+</span>
+</p>
+<p>
+This prayer is in complete contrast to Davids imprecatory prayer for<em> the wicked </em> in verse 10:
+<span class="tooltip">
+    <em>Prayer for the wicked</em>
+    <span class="tooltiptext">
+        <span class="definition-list">
+            Verdict: Declared guilty<br>
+            Fate: Fall by own schemes<br>
+            Reason: Abundance of transgressions<br>
+            Action: Cast out<br>
+            Root cause: Rebelled against God
+        </span>
+    </span>
+</span>
+|
+<span class="tooltip">
+    <em>Prayer for the righteous</em>
+    <span class="tooltiptext">
+        <span class="definition-list">
+            Action: Take refuge in God / Love His name<br>
+            Result #1: Rejoice forever<br>
+            Result #2: Sing for joy continually<br>
+            Result #3: Protected/covered by God<br>
+            Result #4: Exult in God
+        </span>
+    </span>
+</span>
+</p>
+<p>
+The wicked follow a path of rebellion leading to judgment and destruction, while the righteous who trust and love God are led to protection and joy.
+</p>
+<p>
+<small> Biblical Parallels: Psalm 32:10-11, 97:10-12, 64:9-10, 58:10-11 </small>
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+New Testament Fulfillment
 `
     },
 ];
