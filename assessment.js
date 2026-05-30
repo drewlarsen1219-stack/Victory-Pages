@@ -758,7 +758,7 @@ window.showContent = function showContent(section) {
         <p>About Pilgrim Pace</p>
         <p>Pilgrim Pace is a Personal Operating System designed for intentional Christian living, built on vocational stewardship and a progression system called Pathways. New users begin with a questionnaire that establishes a personalized starting point; returning users log in with a saved file and pick up where they left off. As users complete real-world tasks and log their progress, new pathways are unlocked.</p>
         <hr>
-        <p>New users can get started by opening <u>+Pathways</u>, selecting <u>New User</u>, and completing the questionnaire. It is a thorough assessment of a user's life experiences across areas like health, faith, and status — the results establish a personalized starting point in the system. Progress is saved so the questionnaire can be paused and picked up at any time.</p>
+        <p><strong>New users</strong> can now get started by opening <u>+Pathways</u>, selecting <u>New User</u>, and completing the questionnaire. It is a thorough assessment of a user's life experiences across areas like health, faith, and status — the results establish a personalized starting point in the system. Progress is saved so the questionnaire can be paused and picked up at any time.</p>
       </div>`;
   } else if (section === 'library') {
     pane.innerHTML = `

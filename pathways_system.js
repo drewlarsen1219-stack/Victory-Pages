@@ -105,8 +105,8 @@ window.vpImportFromFile = function(event) {
       vpSaveToLocal();
       vpSnapshotScores();
       vpUpdateStreak();
-      const heading = document.getElementById('page-heading');
-      if (heading) heading.textContent = vpUserName ? `Welcome, ${vpUserName}! Alleluia!` : 'Pilgrim Pace — Your Pathways. Alleluia!';
+      const welcome = document.getElementById('sidebar-welcome');
+      if (welcome) welcome.textContent = vpUserName ? `Welcome, ${vpUserName}!` : 'Welcome!';
       renderPathwaysNav();
       attachSidebarStatusBar();
       vpGoHome();
@@ -1505,14 +1505,22 @@ window.enterPathwaysMode = function() {
 
 // ── LEFT SIDEBAR ────────────────────────────────────────────────────────────
 function attachSidebarStatusBar() {
-  const statusBar = document.getElementById('sidebar-status');
-  if (!statusBar) return;
-  const defaultText = 'Click + to open a section';
-  statusBar.textContent = defaultText;
+  const descEl = document.getElementById('sidebar-desc');
+  if (!descEl) return;
+  const defaultHTML = 'Click a section below';
+  descEl.innerHTML = defaultHTML;
   document.querySelectorAll('[data-desc]').forEach(function(item) {
     const text = item.getAttribute('data-desc');
-    item.addEventListener('mouseenter', function() { statusBar.textContent = text; });
-    item.addEventListener('mouseleave', function() { if (!window._vpStatusAnim) statusBar.textContent = defaultText; });
+    item.addEventListener('mouseenter', function() {
+      descEl.textContent = text;
+      var sb = document.getElementById('sidebar-status');
+      if (sb) sb.classList.add('has-desc');
+    });
+    item.addEventListener('mouseleave', function() {
+      if (!window._vpStatusAnim) descEl.innerHTML = defaultHTML;
+      var sb = document.getElementById('sidebar-status');
+      if (sb) sb.classList.remove('has-desc');
+    });
   });
 }
 
@@ -1574,7 +1582,7 @@ window.renderPathwaysNav = function renderPathwaysNav() {
     <ul class="tree-view">
       <li>
         <details open>
-          <summary>Your Pathways</summary>
+          <summary data-desc="Your recommended pathways based on your domain scores — expand to view and work on each one.">Your Pathways</summary>
           <ul style="list-style-type:none;padding-left:0;margin-left:15px;margin-top:-4px;">
             ${pathwayItems}
           </ul>
@@ -1588,13 +1596,12 @@ window.renderPathwaysNav = function renderPathwaysNav() {
           </ul>
         </details>
       </li>
-    </ul>
-    <div id="sidebar-status">Click + to open a section</div>`;
+    </ul>`;
 };
 
 window.vpGoHome = function() {
-  const heading = document.getElementById('page-heading');
-  if (heading) heading.textContent = vpUserName ? `Welcome, ${vpUserName}! Alleluia!` : 'Welcome to Pilgrim Pace! Alleluia!';
+  const welcome = document.getElementById('sidebar-welcome');
+  if (welcome) welcome.textContent = vpUserName ? `Welcome, ${vpUserName}!` : 'Welcome!';
 
   const pane = document.getElementById('display-pane');
   if (!pane) return;
@@ -1678,17 +1685,17 @@ window.vpGoHome = function() {
     nav.innerHTML = `
       <ul class="tree-view">
         <li>
-          <details><summary>Quick Start</summary>
+          <details><summary data-desc="Hovering over any menu item will show a description here, then click to open the item.">Quick Start</summary>
             <ul>
-              <li class="menu-item">
-                <span style="font-size:0.85em;color:#555;">Open <strong>Pathways</strong> and select <strong>New User</strong> to begin, or <strong>Existing User</strong> to load your progress.</span>
+              <li class="menu-item" data-desc="You now understand how the menu works. Next, find and click the About item in the Resources dropdown.">
+                <a href="javascript:void(0)" class="link-button">Hover here</a>
               </li>
             </ul>
           </details>
         </li>
         <li>
           <details>
-            <summary>Resources</summary>
+            <summary data-desc="Access reference materials, curated literature, and information about the site.">Resources</summary>
             <ul>
               <li class="menu-item" data-desc="Information about the site owner, the website, and how the site functions.">
                 <a href="javascript:void(0)" class="link-button" onclick="showContent('about')">About</a>
@@ -1700,7 +1707,7 @@ window.vpGoHome = function() {
           </details>
         </li>
         <li>
-          <details><summary>Pathways</summary>
+          <details><summary data-desc="Begin a new assessment to find your starting point, or load your saved progress to continue your pathways.">Pathways</summary>
             <ul>
               <li class="menu-item" data-desc="Assessment questionnaire to determine your starting point.">
                 <a href="javascript:void(0)" class="link-button" onclick="showContent('pathfinder')">New User</a>
@@ -1712,18 +1719,14 @@ window.vpGoHome = function() {
           </details>
         </li>
       </ul>
-      <div id="sidebar-status">Click + to open a section</div>`;
+`;
     attachSidebarStatusBar();
   }
-  pane.innerHTML = `<div id="default-msg" style="text-align:center;padding:40px 0;"><pre style="font-family:'MS Gothic',monospace;font-size:20px;line-height:1.4;display:inline-block;text-align:left;color:#555;margin:0;padding:0;user-select:none;">· · · PILGRIM  PACE · · ·
-
-        ╲  ╲  │  ╱  ╱
-        ─╲──╲─┼─╱──╱─
-        ────[─┼─]────
-            ( │ )
-             ╲_╱
-
-  · · · · IN VIA · · · ·</pre></div>`;
+  pane.innerHTML = `<div id="default-msg" style="padding:24px 20px;">
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.95em;color:#333;margin:0 0 12px;font-weight:bold;letter-spacing:0.03em;">What is Pilgrim Pace?</p>
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#555;margin:0 0 16px;line-height:1.6;letter-spacing:0.08em;">A faith-based personal operating system for intentional Christian living. Assess your life across 13 domains — Body, Mind, Finance, Vitality, Spirit, and more — then follow guided pathways toward growth in each area.</p>
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#888;margin:0;">New Users select <strong style="color:#444;">"Quick Start"</strong> on the menu to begin.</p>
+</div>`;
 };
 
 window.vpSetName = function() {
@@ -1733,8 +1736,8 @@ window.vpSetName = function() {
   if (!name) return;
   vpUserName = name;
   vpSaveToLocal();
-  const heading = document.getElementById('page-heading');
-  if (heading) heading.textContent = `Welcome, ${vpUserName}! Alleluia!`;
+  const welcome = document.getElementById('sidebar-welcome');
+  if (welcome) welcome.textContent = `Welcome, ${vpUserName}!`;
   vpGoHome();
 };
 
@@ -1744,15 +1747,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (existingLink) existingLink.setAttribute('onclick', 'vpLoadExistingUser()');
 
   const pane = document.getElementById('display-pane');
-   if (pane) pane.innerHTML = `<div id="default-msg" style="text-align:center;padding:40px 0;"><pre style="font-family:'MS Gothic',monospace;font-size:20px;line-height:1.4;display:inline-block;text-align:left;color:#555;margin:0;padding:0;user-select:none;">· · · PILGRIM  PACE · · ·
-
-        ╲  ╲  │  ╱  ╱
-        ─╲──╲─┼─╱──╱─
-        ────[─┼─]────
-            ( │ )
-             ╲_╱
-
-  · · · · IN VIA · · · ·</pre></div>`;
+   if (pane) pane.innerHTML = `<div id="default-msg" style="padding:24px 20px;">
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.95em;color:#333;margin:0 0 12px;font-weight:bold;letter-spacing:0.03em;">What is Pilgrim Pace?</p>
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#555;margin:0 0 16px;line-height:1.6;letter-spacing:0.08em;">A faith-based personal operating system for intentional Christian living. Assess your life across 13 domains — Body, Mind, Finance, Vitality, Spirit, and more — then follow guided pathways toward growth in each area.</p>
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#888;margin:0;">New Users select <strong style="color:#444;">"Quick Start"</strong> on the menu to begin.</p>
+</div>`;
   const v  = vpGetDailyScripture();
   const fs = document.getElementById('footer-scripture');
   if (fs) fs.innerHTML = '”' + v.text + '” <span style=”font-size:0.85em;color:#999;letter-spacing:0.05em;”>— ' + v.ref + '</span>';
@@ -1764,8 +1763,8 @@ window.renderSkillTracker = function renderSkillTracker() {
   const _fsq = document.getElementById('footer-scripture');
   if (_fsq) _fsq.style.display = 'none';
   if (window._vpStatusAnim) { clearInterval(window._vpStatusAnim); window._vpStatusAnim = null; }
-  const _sb = document.getElementById('sidebar-status');
-  if (_sb) _sb.textContent = 'Click + to open a section';
+  const _sb = document.getElementById('sidebar-desc');
+  if (_sb) _sb.innerHTML = 'Click a section below';
   const pane = document.getElementById('display-pane');
   if (!pane) return;
 
@@ -1826,8 +1825,8 @@ window.renderSkillTracker = function renderSkillTracker() {
     return `
     <div style="${fs}display:flex;gap:10px;${rowPad}${border}align-items:center;cursor:default;"
          data-desc="${(skill.desc || '').replace(/"/g, '&quot;')}"
-         onmouseenter="var s=document.getElementById('sidebar-status');if(s)s.textContent=this.dataset.desc;this.style.background='#c8c8c8';"
-         onmouseleave="var s=document.getElementById('sidebar-status');if(s)s.textContent='Click + to open a section';this.style.background='';">
+         onmouseenter="var s=document.getElementById('sidebar-desc');if(s)s.textContent=this.dataset.desc;var sb=document.getElementById('sidebar-status');if(sb)sb.classList.add('has-desc');this.style.background='#c8c8c8';"
+         onmouseleave="var s=document.getElementById('sidebar-desc');if(s)s.innerHTML='Click a section below';var sb=document.getElementById('sidebar-status');if(sb)sb.classList.remove('has-desc');this.style.background='';">
       <span style="${priCol}color:#888;align-self:flex-start;padding-top:1px;">${i + 1}</span>
       <div style="flex:1;">
         <div>${skill.name}${estTag}${refineBtn}</div>
@@ -1913,8 +1912,8 @@ window.renderSkillTracker = function renderSkillTracker() {
         <div style="${fs}margin-top:6px;display:flex;align-items:center;gap:12px;">
           <label class="link-button" style="cursor:pointer;" onclick="vpSaveAndConfirm()">Save Progress</label>
           <label class="link-button" style="cursor:pointer;" onclick="vpCopyForClaude()"
-            onmouseenter="var s=document.getElementById('sidebar-status');if(s)s.textContent='Claude is an AI assistant by Anthropic — recommended here for its depth and nuance with personal reflection. Copies your VP scores to clipboard; paste into claude.ai for tailored guidance.';"
-            onmouseleave="var s=document.getElementById('sidebar-status');if(s)s.textContent='Click + to open a section';">Ask Claude</label>
+            onmouseenter="var s=document.getElementById('sidebar-desc');if(s)s.textContent='Claude is an AI assistant by Anthropic — recommended here for its depth and nuance with personal reflection. Copies your VP scores to clipboard; paste into claude.ai for tailored guidance.';var sb=document.getElementById('sidebar-status');if(sb)sb.classList.add('has-desc');"
+            onmouseleave="var s=document.getElementById('sidebar-desc');if(s)s.innerHTML='Click a section below';var sb=document.getElementById('sidebar-status');if(sb)sb.classList.remove('has-desc');">Ask Claude</label>
           <span id="vp-save-label" style="color:#555;">${saveLabel ? 'Saved ' + saveLabel : ''}</span>
         </div>
       </div>
@@ -2082,17 +2081,17 @@ window.vpShowPathwayDetail = function(pathwayId) {
       <div id="vp-guidance-panel" style="margin-top:16px;"></div>
     </div>`;
   if (window._vpStatusAnim) clearInterval(window._vpStatusAnim);
-  const _sb = document.getElementById('sidebar-status');
+  const _sb = document.getElementById('sidebar-desc');
   if (_sb) {
-    const _scripture = '“' + pw.scriptureText + '” — ' + pw.scriptureRef;
+    const _scripture = '”' + pw.scriptureText + '” — ' + pw.scriptureRef;
     const _frames = [
-      '▲ ' + pw.skillName + '<br><span style="color:#888;display:block;margin-top:4px;">' + _scripture + '</span>',
-      '△ ' + pw.skillName + '<br><span style="color:#888;display:block;margin-top:4px;">' + _scripture + '</span>'
+      '▲ ' + pw.skillName + '<br><span style=”color:#888;display:block;margin-top:4px;”>' + _scripture + '</span>',
+      '△ ' + pw.skillName + '<br><span style=”color:#888;display:block;margin-top:4px;”>' + _scripture + '</span>'
     ];
     let _f = 0;
     _sb.innerHTML = _frames[0];
     window._vpStatusAnim = setInterval(function() {
-      const s = document.getElementById('sidebar-status');
+      const s = document.getElementById('sidebar-desc');
       if (s) s.innerHTML = _frames[_f++ % 2];
     }, 1200);
   }
