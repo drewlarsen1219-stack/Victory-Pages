@@ -1,4 +1,4 @@
-// pathways_system.js — see inline comments for change summary
+﻿// pathways_system.js — see inline comments for change summary
 
 const VP_SKILL_DATA = [
   { name: 'Body',     section: 'Body',     importance: 4, desc: 'Physical health — sleep, movement, nutrition, and care of the body as a temple.' },
@@ -24,6 +24,7 @@ let vpUserName          = '';
 let vpIsLoggedIn        = false;
 let vpStreak            = 0;
 let vpLastVisit         = '';
+let vpFirstUse          = '';
 let vpLastReflection    = '';
 let vpReflections       = [];
 let vpScoreHistory      = [];
@@ -38,6 +39,7 @@ function vpSaveToLocal() {
     userName: vpUserName,
     streak: vpStreak,
     lastVisit: vpLastVisit,
+    firstUse: vpFirstUse,
     lastReflection: vpLastReflection,
     reflections: vpReflections,
     scoreHistory: vpScoreHistory,
@@ -67,6 +69,7 @@ function vpLoadFromLocal() {
     vpIsLoggedIn        = true;
     vpStreak            = data.streak             || 0;
     vpLastVisit         = data.lastVisit          || '';
+    vpFirstUse          = data.firstUse           || '';
     vpLastReflection    = data.lastReflection     || '';
     vpReflections       = data.reflections        || [];
     vpScoreHistory      = data.scoreHistory       || [];
@@ -158,7 +161,7 @@ window.vpLoadExistingUser = function() {
   vpSnapshotScores();
   vpUpdateStreak();
   const heading = document.getElementById('page-heading');
-  if (heading) heading.textContent = vpUserName ? `Welcome back, ${vpUserName}!` : 'Victory Pages — Your Pathways. Alleluia!';
+  if (heading) heading.textContent = vpUserName ? `Welcome, ${vpUserName}! Alleluia!` : 'Pilgrim Pace — Your Pathways. Alleluia!';
   renderPathwaysNav();
   attachSidebarStatusBar();
   vpGoHome();
@@ -1443,10 +1446,11 @@ window.enterPathwaysMode = function() {
     vpEstimatedDomains = [];
   }
   vpIsLoggedIn = true;
+  if (!vpFirstUse) vpFirstUse = new Date().toISOString();
   vpSnapshotScores();
   vpSaveToLocal();
   const heading = document.getElementById('page-heading');
-  if (heading) heading.textContent = vpUserName ? `Welcome back, ${vpUserName}!` : 'Victory Pages — Your Pathways. Alleluia!';
+  if (heading) heading.textContent = vpUserName ? `Welcome, ${vpUserName}! Alleluia!` : 'Pilgrim Pace — Your Pathways. Alleluia!';
   renderPathwaysNav();
   attachSidebarStatusBar();
   vpGoHome();
@@ -1465,7 +1469,7 @@ function attachSidebarStatusBar() {
   });
 }
 
-function renderPathwaysNav() {
+window.renderPathwaysNav = function renderPathwaysNav() {
   const nav = document.querySelector('.sidebar');
   if (!nav) return;
 
@@ -1502,9 +1506,10 @@ function renderPathwaysNav() {
   }
 
   const resourceDefs = [
-    { label: 'Home',    action: 'vpGoHome()',             desc: 'Return to the landing page.'             },
-    { label: 'About',   action: "showContent('about')",   desc: 'Information about the site and owner.'   },
-    { label: 'Library', action: "showContent('library')", desc: 'Collection of curated literature.'       }
+    { label: 'Home',   action: 'vpGoHome()',              desc: 'Return to the landing page.'           },
+    { label: 'Skills', action: 'renderSkillTracker()',    desc: 'View all domain scores and progress.'  },
+    { label: 'About',  action: "showContent('about')",    desc: 'Information about the site and owner.' },
+    { label: 'Library',action: "showContent('library')",  desc: 'Collection of curated literature.'     }
   ];
   const resourceItems = resourceDefs.map((item, idx) => {
     const isLast = idx === resourceDefs.length - 1;
@@ -1538,11 +1543,11 @@ function renderPathwaysNav() {
       </li>
     </ul>
     <div id="sidebar-status">Click + to open a section</div>`;
-}
+};
 
 window.vpGoHome = function() {
   const heading = document.getElementById('page-heading');
-  if (heading) heading.textContent = vpUserName ? `Welcome back, ${vpUserName}!` : 'Welcome to Victory Pages! Alleluia!';
+  if (heading) heading.textContent = vpUserName ? `Welcome, ${vpUserName}! Alleluia!` : 'Welcome to Pilgrim Pace! Alleluia!';
 
   const pane = document.getElementById('display-pane');
   if (!pane) return;
@@ -1579,9 +1584,10 @@ window.vpGoHome = function() {
       </div>`;
 
     // Weekly reflection prompt
-    const daysSince = vpLastReflection
-      ? Math.floor((Date.now() - new Date(vpLastReflection)) / 86400000)
-      : 99;
+    const _reflectionBase = vpLastReflection || vpFirstUse;
+    const daysSince = _reflectionBase
+      ? Math.floor((Date.now() - new Date(_reflectionBase)) / 86400000)
+      : -1;
     let reflectionBlock = '';
     if (daysSince >= 7) {
       const focusDomain = focus ? focus.skillName : null;
@@ -1601,7 +1607,21 @@ window.vpGoHome = function() {
         </div>`;
     }
 
-    pane.innerHTML = `<div id="default-msg">${focusBlock}${streakBlock}${reflectionBlock}</div>`;
+    const nameBlock = !vpUserName ? `
+      <div style="max-width:500px;margin-top:20px;">
+        <div style="font-size:0.72em;font-weight:bold;color:#555;margin-bottom:6px;border-bottom:1px dotted #808080;padding-bottom:4px;">YOUR NAME</div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <input id="vp-name-set" type="text" placeholder="Enter your name"
+            style="font-family:inherit;font-size:0.9em;padding:4px 8px;border:1px dotted #808080;background:#d4d0c8;width:180px;box-sizing:border-box;"
+            onkeydown="if(event.key==='Enter')vpSetName()">
+          <label class="link-button" style="cursor:pointer;" onclick="vpSetName()">Save</label>
+        </div>
+      </div>` : '';
+
+    const _fsq = document.getElementById('footer-scripture');
+    if (_fsq) _fsq.style.display = '';
+
+    pane.innerHTML = `<div id="default-msg">${focusBlock}${streakBlock}${reflectionBlock}${nameBlock}</div>`;
     return;
   }
 
@@ -1648,7 +1668,25 @@ window.vpGoHome = function() {
       <div id="sidebar-status">Click + to open a section</div>`;
     attachSidebarStatusBar();
   }
-  pane.innerHTML = `<div id="default-msg"></div>`;
+  pane.innerHTML = `<div id="default-msg" style="text-align:center;padding:40px 0;"><pre style="font-family:'MS Gothic',monospace;font-size:20px;line-height:1.4;display:inline-block;text-align:left;color:#555;margin:0;padding:0;user-select:none;">   Coram
+     │
+   ╲ │ ╱
+A ──┼── Ω
+   ╱ │ ╲
+     │
+    Deo</pre></div>`;
+};
+
+window.vpSetName = function() {
+  const input = document.getElementById('vp-name-set');
+  if (!input) return;
+  const name = input.value.trim();
+  if (!name) return;
+  vpUserName = name;
+  vpSaveToLocal();
+  const heading = document.getElementById('page-heading');
+  if (heading) heading.textContent = `Welcome, ${vpUserName}! Alleluia!`;
+  vpGoHome();
 };
 
 // Also update the Existing User link in index.html's nav at runtime
@@ -1657,16 +1695,21 @@ document.addEventListener('DOMContentLoaded', function() {
   if (existingLink) existingLink.setAttribute('onclick', 'vpLoadExistingUser()');
 
   const pane = document.getElementById('display-pane');
-  if (pane) pane.innerHTML = `<div id="default-msg"></div>`;
+   if (pane) pane.innerHTML = `<div id="default-msg" style="text-align:center;padding:40px 0;"><pre style="font-family:'MS Gothic',monospace;font-size:20px;line-height:1.4;display:inline-block;text-align:left;color:#555;margin:0;padding:0;user-select:none;">     Coram
+      │      
+ A ─ ┼ ─ Ω       
+      │
+      Deo</pre></div>`;
   const v  = vpGetDailyScripture();
   const fs = document.getElementById('footer-scripture');
-  if (fs) fs.innerHTML = '“' + v.text + '”' +
-    '<span style="display:block;font-size:0.85em;color:#999;margin-top:3px;letter-spacing:0.05em;">— ' + v.ref + '</span>';
+  if (fs) fs.innerHTML = '”' + v.text + '” <span style=”font-size:0.85em;color:#999;letter-spacing:0.05em;”>— ' + v.ref + '</span>';
 });
 
 // ── RIGHT PANEL — Skill Tracker ────────────────────────────────────────────
 
-function renderSkillTracker() {
+window.renderSkillTracker = function renderSkillTracker() {
+  const _fsq = document.getElementById('footer-scripture');
+  if (_fsq) _fsq.style.display = 'none';
   if (window._vpStatusAnim) { clearInterval(window._vpStatusAnim); window._vpStatusAnim = null; }
   const _sb = document.getElementById('sidebar-status');
   if (_sb) _sb.textContent = 'Click + to open a section';
@@ -1800,8 +1843,14 @@ function renderSkillTracker() {
       historyNote = `<div style="border-top:1px dotted #808080;margin-top:10px;padding-top:8px;font-size:0.9em;color:#555;">Since ${firstDate}: <strong style="color:#1a7a1a;">+${totalDelta} pts</strong> across all domains</div>`;
   }
 
+  const saveReminder = jc ? `
+    <div style="max-width:860px;margin-bottom:12px;padding:8px 14px;border:1px dotted #808080;background:#f5f5e8;font-size:0.85em;">
+      Pathway complete — <strong>Save Progress</strong> below to keep your new score.
+    </div>` : '';
+
   pane.innerHTML = `
     <div>
+    ${saveReminder}
     ${milestoneBanner}
     <div style="display:flex;gap:28px;align-items:flex-start;">
       <div style="max-width:380px;flex-shrink:0;">
@@ -1820,13 +1869,12 @@ function renderSkillTracker() {
         <div style="font-weight:bold;margin-bottom:8px;font-size:1.05em;">${tierLabel}</div>
         <p style="margin:0 0 12px 0;line-height:1.5;color:#222;">${tierBody}</p>
         <hr style="margin:8px 0;">
-        <p style="margin:0;line-height:1.5;color:#555;">"${tierScripture}"</p>
-        <p style="margin:4px 0 0 0;color:#888;">— ${tierRef}</p>
+        <p style="margin:0;line-height:1.5;color:#555;">"${tierScripture}" <span style="color:#888;">— ${tierRef}</span></p>
         ${historyNote}
       </div>
     </div>
     </div>`;
-}
+};
 
 window.vpSaveAndConfirm = function() {
   vpSaveToLocal();
@@ -1897,7 +1945,7 @@ window.vpCopyForClaude = function() {
   const completedLines = completedCount > 0 ? recentCompleted : '  None yet.';
 
   const text =
-`Victory Pages Snapshot — ${date}
+`Pilgrim Pace Snapshot — ${date}
 Overall: ${overallAvg}/100
 
 DOMAIN SCORES (priority order):
@@ -1913,7 +1961,7 @@ COMPLETED PATHWAYS (${completedCount} total${completedCount > 5 ? ', showing 5 m
 ${completedLines}
 
 ---
-I use Victory Pages, a faith-based personal operating system with 13 life domains. Based on my scores and recommended pathways above, what should I focus on next for intentional Christian living?`;
+I use Pilgrim Pace, a faith-based personal operating system with 13 life domains. Based on my scores and recommended pathways above, what should I focus on next for intentional Christian living?`;
 
   const confirmBtn = () => {
     const btn = document.querySelector('[onclick="vpCopyForClaude()"]');
@@ -1949,6 +1997,9 @@ window.vpShowPathwayDetail = function(pathwayId) {
 
   const pane = document.getElementById('display-pane');
   if (!pane) return;
+
+  const _fsq = document.getElementById('footer-scripture');
+  if (_fsq) _fsq.style.display = 'none';
 
   const progress = vpGetPathwayProgress(pw.id);
   const done     = countCompletedTasks(pw);

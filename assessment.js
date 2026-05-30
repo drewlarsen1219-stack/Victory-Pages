@@ -355,7 +355,7 @@ const assessmentData = [
   { id: 277, section: "Vitality", text: "Do you recognize the attacks of the devil, world, and flesh in your life?", type: "yn", weight: 6 },
   { id: 278, section: "Vitality", text: "Do you fight temptation with God's Word and prayer?", type: "yn", weight: 7 },
   { id: 279, section: "Vitality", text: "Do you find joy in the Gospel and your identity in Christ?", type: "yn", weight: 8 },
-  { id: 280, section: "Vitality", text: "How consistently do you practice Sabbath rest, trusting God rather than your own efforts?", type: "scale", weight: 6, scaleLabels: ["Never", "Consistently"] },
+  { id: 280, section: "Vitality", text: "How consistently do you keep the Sabbath holy — setting aside time to hear and receive God's Word?", type: "scale", weight: 6, scaleLabels: ["Never", "Consistently"] },
 
 
   // === STATUS ===
@@ -722,7 +722,7 @@ window.startDomainRefinement = function(sectionName) {
   renderQuestion();
 };
 
-function showContent(section) {
+window.showContent = function showContent(section) {
   const pane = document.getElementById('display-pane');
   if (section === 'pathfinder') {
     pane.innerHTML = `
@@ -755,10 +755,10 @@ function showContent(section) {
         <p>About the Owner</p>
         <p>Follower of Jesus Christ. Confessional Lutheran (LCMS). Husband and Outdoor Guide based in Northwest Arkansas.</p>
         <hr>
-        <p>About Victory Pages</p>
-        <p>A Personal Operating System designed for intentional Christian living. Built on vocational stewardship and a progression system called Pathways. A new user starts with a questionaire that will determine the starting point. Existing users will log in with a saved file and continue where they left off. As the user completes and logs pathways by completing real-world tasks assigned by the site, new pathways and mini games are unlocked.</p>
+        <p>About Pilgrim Pace</p>
+        <p>Pilgrim Pace is a Personal Operating System designed for intentional Christian living, built on vocational stewardship and a progression system called Pathways. New users begin with a questionnaire that establishes a personalized starting point; returning users log in with a saved file and pick up where they left off. As users complete real-world tasks and log their progress, new pathways are unlocked.</p>
         <hr>
-        <p>Once finished reading the about section the New users will open <u>+Pathways</u>, select <u>New User</u>, and complete the questionaire to determine a starting point. The questionaire is an assesment of a users experiences in life and is in depth that will be measuring categories like health, faith, and status. A Save and Load function will be provided so that the questionaire will not need to be completed in one session and can be picked up later.</p>
+        <p>New users can get started by opening <u>+Pathways</u>, selecting <u>New User</u>, and completing the questionnaire. It is a thorough assessment of a user's life experiences across areas like health, faith, and status — the results establish a personalized starting point in the system. Progress is saved so the questionnaire can be paused and picked up at any time.</p>
       </div>`;
   } else if (section === 'library') {
     pane.innerHTML = `
@@ -770,7 +770,7 @@ function showContent(section) {
         <p><a href="Psalms_study.html">Study on the Book of Psalms</a> &mdash; The site owner's personal study of the Psalms, updated as the study progresses.</p>
       </div>`;
   }
-}
+};
 
 
 // === RENDER QUESTION ===
