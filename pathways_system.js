@@ -52,34 +52,75 @@ function vpSaveToLocal() {
   localStorage.setItem('victoryPages_v1', JSON.stringify(data));
 }
 
+function vpApplyData(data) {
+  if (!data || !data.skills) return false;
+  // Tolerate saves from before Spirit was added
+  data.skills.forEach((s, i) => {
+    if (i < vpSkillsData.length) {
+      vpSkillsData[i].score     = s.score     || 0;
+      vpSkillsData[i].completed = s.completed || false;
+    }
+  });
+  vpUserName          = data.userName           || '';
+  vpIsLoggedIn        = true;
+  vpStreak            = data.streak             || 0;
+  vpLastVisit         = data.lastVisit          || '';
+  vpFirstUse          = data.firstUse           || '';
+  vpLastReflection    = data.lastReflection     || '';
+  vpReflections       = data.reflections        || [];
+  vpScoreHistory      = data.scoreHistory       || [];
+  vpMilestonesShown   = data.milestonesShown    || [];
+  vpCompletedPathways = data.completedPathways  || [];
+  vpPathwayProgress   = data.pathwayProgress    || {};
+  vpEstimatedDomains  = data.estimatedDomains   || [];
+  return true;
+}
+
 function vpLoadFromLocal() {
   try {
     const raw = localStorage.getItem('victoryPages_v1');
     if (!raw) return null;
     const data = JSON.parse(raw);
-    if (!data.skills) return null;
-    // Tolerate saves from before Spirit was added
-    data.skills.forEach((s, i) => {
-      if (i < vpSkillsData.length) {
-        vpSkillsData[i].score     = s.score     || 0;
-        vpSkillsData[i].completed = s.completed || false;
-      }
-    });
-    vpUserName          = data.userName           || '';
-    vpIsLoggedIn        = true;
-    vpStreak            = data.streak             || 0;
-    vpLastVisit         = data.lastVisit          || '';
-    vpFirstUse          = data.firstUse           || '';
-    vpLastReflection    = data.lastReflection     || '';
-    vpReflections       = data.reflections        || [];
-    vpScoreHistory      = data.scoreHistory       || [];
-    vpMilestonesShown   = data.milestonesShown    || [];
-    vpCompletedPathways = data.completedPathways  || [];
-    vpPathwayProgress   = data.pathwayProgress    || {};
-    vpEstimatedDomains  = data.estimatedDomains   || [];
+    if (!vpApplyData(data)) return null;
     return data.savedAt ? new Date(data.savedAt).toLocaleDateString() : 'unknown date';
   } catch (e) { return null; }
 }
+
+window.vpImportFromFile = function(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const data = JSON.parse(e.target.result);
+      if (!vpApplyData(data)) {
+        document.getElementById('display-pane').innerHTML = `
+          <div class="assessment-container">
+            <p style="color:darkred;">That file does not appear to be a valid Pilgrim Pace save.</p>
+            <hr>
+            <a href="javascript:void(0)" class="link-button" onclick="vpLoadExistingUser()">Try again</a>
+          </div>`;
+        return;
+      }
+      vpSaveToLocal();
+      vpSnapshotScores();
+      vpUpdateStreak();
+      const heading = document.getElementById('page-heading');
+      if (heading) heading.textContent = vpUserName ? `Welcome, ${vpUserName}! Alleluia!` : 'Pilgrim Pace — Your Pathways. Alleluia!';
+      renderPathwaysNav();
+      attachSidebarStatusBar();
+      vpGoHome();
+    } catch (err) {
+      document.getElementById('display-pane').innerHTML = `
+        <div class="assessment-container">
+          <p style="color:darkred;">Could not read that file. Make sure it is a valid vp_export.json.</p>
+          <hr>
+          <a href="javascript:void(0)" class="link-button" onclick="vpLoadExistingUser()">Try again</a>
+        </div>`;
+    }
+  };
+  reader.readAsText(file);
+};
 
 window.vpHasSave = function() {
   return !!localStorage.getItem('victoryPages_v1');
@@ -154,7 +195,13 @@ window.vpLoadExistingUser = function() {
       <div class="assessment-container">
         <p>No saved progress found in this browser.</p>
         <hr>
-        <label class="link-button" style="cursor:pointer;" onclick="showContent('pathfinder')">Start as New User</label>
+        <p style="margin:0 0 8px 0;">Have a saved file? Load it here:</p>
+        <label class="classic-3d-button" style="cursor:pointer;display:inline-block;">
+          Choose vp_export.json
+          <input type="file" accept=".json" style="display:none;" onchange="vpImportFromFile(event)">
+        </label>
+        <hr>
+        <a href="javascript:void(0)" class="link-button" onclick="showContent('pathfinder')">Start as New User instead</a>
       </div>`;
     return;
   }
