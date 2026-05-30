@@ -1715,13 +1715,15 @@ window.vpGoHome = function() {
       <div id="sidebar-status">Click + to open a section</div>`;
     attachSidebarStatusBar();
   }
-  pane.innerHTML = `<div id="default-msg" style="text-align:center;padding:40px 0;"><pre style="font-family:'MS Gothic',monospace;font-size:20px;line-height:1.4;display:inline-block;text-align:left;color:#555;margin:0;padding:0;user-select:none;">   Coram
-     │
-   ╲ │ ╱
-A ──┼── Ω
-   ╱ │ ╲
-     │
-    Deo</pre></div>`;
+  pane.innerHTML = `<div id="default-msg" style="text-align:center;padding:40px 0;"><pre style="font-family:'MS Gothic',monospace;font-size:20px;line-height:1.4;display:inline-block;text-align:left;color:#555;margin:0;padding:0;user-select:none;">· · · PILGRIM  PACE · · ·
+
+        ╲  ╲  │  ╱  ╱
+        ─╲──╲─┼─╱──╱─
+        ────[─┼─]────
+            ( │ )
+             ╲_╱
+
+  · · · · IN VIA · · · ·</pre></div>`;
 };
 
 window.vpSetName = function() {
@@ -1742,11 +1744,15 @@ document.addEventListener('DOMContentLoaded', function() {
   if (existingLink) existingLink.setAttribute('onclick', 'vpLoadExistingUser()');
 
   const pane = document.getElementById('display-pane');
-   if (pane) pane.innerHTML = `<div id="default-msg" style="text-align:center;padding:40px 0;"><pre style="font-family:'MS Gothic',monospace;font-size:20px;line-height:1.4;display:inline-block;text-align:left;color:#555;margin:0;padding:0;user-select:none;">     Coram
-      │      
- A ─ ┼ ─ Ω       
-      │
-      Deo</pre></div>`;
+   if (pane) pane.innerHTML = `<div id="default-msg" style="text-align:center;padding:40px 0;"><pre style="font-family:'MS Gothic',monospace;font-size:20px;line-height:1.4;display:inline-block;text-align:left;color:#555;margin:0;padding:0;user-select:none;">· · · PILGRIM  PACE · · ·
+
+        ╲  ╲  │  ╱  ╱
+        ─╲──╲─┼─╱──╱─
+        ────[─┼─]────
+            ( │ )
+             ╲_╱
+
+  · · · · IN VIA · · · ·</pre></div>`;
   const v  = vpGetDailyScripture();
   const fs = document.getElementById('footer-scripture');
   if (fs) fs.innerHTML = '”' + v.text + '” <span style=”font-size:0.85em;color:#999;letter-spacing:0.05em;”>— ' + v.ref + '</span>';
