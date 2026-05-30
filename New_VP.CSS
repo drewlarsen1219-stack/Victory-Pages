@@ -362,3 +362,64 @@ hr {
   gap: 8px;
   align-items: center;
 }
+
+/* ── Mobile ── */
+@media (max-width: 640px) {
+
+  body {
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 15px;
+    margin: 4px;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    flex: none;
+  }
+
+  .sidebar-column {
+    min-width: unset;
+    max-width: 100%;
+  }
+
+  #sidebar-status {
+    margin-left: 0;
+    height: auto;
+    min-height: 50px;
+    padding: 6px 8px 8px;
+    display: block;
+  }
+
+  #sidebar-status::after {
+    display: none;
+  }
+
+  #sidebar-desc {
+    margin-top: 4px;
+  }
+
+  .content-window {
+    padding: 10px 12px;
+    min-height: unset;
+  }
+
+  #page-seal {
+    display: none;
+  }
+
+  footer {
+    padding-right: 8px;
+  }
+
+  .tree-view {
+    padding-left: 10px;
+  }
+
+  .assessment-container {
+    max-width: 100%;
+  }
+
+}
