@@ -1296,15 +1296,15 @@ Here's who God is (holy)
     text: `
       <div class="verse-row">
         <div class="verse-num">5:7</div>
-        <div class="verse-content">
-          But I, through the abundance of your steadfast love,
-			<br>will enter your house.
-			<br>I will bow down toward your holy temple
-			<br>in the fear of you. 
-			<br><small>(ESV)</small>
-        </div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
       </div>
     `,
+    versions: {
+      ESV: [`But I, through the abundance of your steadfast love,<br>will enter your house.<br>I will bow down toward your holy temple<br>in the fear of you.<br><small>(ESV)</small>`],
+      KJV: [`But as for me, I will come into thy house<br>in the multitude of thy mercy:<br>and in thy fear will I worship<br>toward thy holy temple.<br><small>(KJV)</small>`],
+      NASB: [`But as for me, by Your abundant lovingkindness<br>I will enter Your house,<br>At Your holy temple I will bow<br>in reverence for You.<br><small>(NASB)</small>`],
+      NIV: [`But I, by your great love,<br>can come into your house;<br>in reverence I bow down<br>toward your holy temple.<br><small>(NIV)</small>`]
+    },
 
     insight: `
 <p><em>The Contrast of The Wicked and David</em></p>
@@ -1636,14 +1636,15 @@ What a great privilege and blessing it is to receive God's presence and worship 
     text: `
       <div class="verse-row">
         <div class="verse-num">5:8</div>
-        <div class="verse-content">
-			Lead me, O LORD, in your righteousness
-			<br> because of my enemies;
-			<br> make your way straight before me. 
-			<br><small>(ESV)</small>
-        </div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
       </div>
     `,
+    versions: {
+      ESV: [`Lead me, O LORD, in your righteousness<br>because of my enemies;<br>make your way straight before me.<br><small>(ESV)</small>`],
+      KJV: [`Lead me, O LORD, in thy righteousness<br>because of mine enemies;<br>make thy way straight before my face.<br><small>(KJV)</small>`],
+      NASB: [`O LORD, lead me in Your righteousness<br>because of my foes;<br>Make Your way straight before me.<br><small>(NASB)</small>`],
+      NIV: [`Lead me, LORD, in your righteousness<br>because of my enemies—<br>make your way straight before me.<br><small>(NIV)</small>`]
+    },
 
     insight: `
 <p>
@@ -1838,15 +1839,15 @@ In verse 8 David needs to be led in righteousness by the Lords way. Upcoming in 
     text: `
       <div class="verse-row">
         <div class="verse-num">5:9</div>
-        <div class="verse-content">
-			For there is no truth in their mouth;
-			<br> their inmost self is destruction;
-			<br> their throat is an open grave;
-			<br> they flatter with their tongue. 
-			<br><small>(ESV)</small>
-        </div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
       </div>
     `,
+    versions: {
+      ESV: [`For there is no truth in their mouth;<br>their inmost self is destruction;<br>their throat is an open grave;<br>they flatter with their tongue.<br><small>(ESV)</small>`],
+      KJV: [`For there is no faithfulness in their mouth;<br>their inward part is very wickedness;<br>their throat is an open sepulchre;<br>they flatter with their tongue.<br><small>(KJV)</small>`],
+      NASB: [`There is nothing reliable in what they say;<br>Their inward part is destruction itself.<br>Their throat is an open grave;<br>They flatter with their tongue.<br><small>(NASB)</small>`],
+      NIV: [`Not a word from their mouth can be trusted;<br>their heart is filled with malice.<br>Their throat is an open grave;<br>with their tongues they tell lies.<br><small>(NIV)</small>`]
+    },
 
     insight: `
 <p>
@@ -2047,15 +2048,15 @@ Coming in Verse 10 David makes the petition for the Lord to judge his enemies.
     text: `
       <div class="verse-row">
         <div class="verse-num">5:10</div>
-        <div class="verse-content">
-			Make them bear their guilt, O God;
-			<br> let them fall by their own counsels;
-			<br> because of the abundance of their transgressions cast them out,
-			<br> for they have rebelled against you. 
-			<br><small>(ESV)</small>
-        </div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
       </div>
     `,
+    versions: {
+      ESV: [`Make them bear their guilt, O God;<br>let them fall by their own counsels;<br>because of the abundance of their transgressions cast them out,<br>for they have rebelled against you.<br><small>(ESV)</small>`],
+      KJV: [`Destroy thou them, O God;<br>let them fall by their own counsels;<br>cast them out in the multitude of their transgressions;<br>for they have rebelled against thee.<br><small>(KJV)</small>`],
+      NASB: [`Hold them guilty, O God;<br>By their own devices let them fall!<br>In the multitude of their transgressions thrust them out,<br>For they are rebellious against You.<br><small>(NASB)</small>`],
+      NIV: [`Declare them guilty, O God!<br>Let their intrigues be their downfall.<br>Banish them for their many sins,<br>for they have rebelled against you.<br><small>(NIV)</small>`]
+    },
 
     insight: `
 <p>
@@ -2279,15 +2280,15 @@ David has made his petition for the Lord's judgement. In the next verse, David p
     text: `
       <div class="verse-row">
         <div class="verse-num">5:11</div>
-        <div class="verse-content">
-			But let all who take refuge in you rejoice;
-			<br> let them ever sing for joy,
-			<br> and spread your protection over them,
-			<br> that those who love your name may exult in you.
-			<br><small>(ESV)</small>
-        </div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
       </div>
     `,
+    versions: {
+      ESV: [`But let all who take refuge in you rejoice;<br>let them ever sing for joy,<br>and spread your protection over them,<br>that those who love your name may exult in you.<br><small>(ESV)</small>`],
+      KJV: [`But let all those that put their trust in thee rejoice:<br>let them ever shout for joy, because thou defendest them:<br>let them also that love thy name be joyful in thee.<br><small>(KJV)</small>`],
+      NASB: [`But let all who take refuge in You be glad,<br>Let them ever sing for joy;<br>And may You shelter them,<br>That those who love Your name may exult in You.<br><small>(NASB)</small>`],
+      NIV: [`But let all who take refuge in you be glad;<br>let them ever sing for joy.<br>Spread your protection over them,<br>that those who love your name may rejoice in you.<br><small>(NIV)</small>`]
+    },
 
     insight: `
 <p>
@@ -2496,7 +2497,7 @@ Third word for joy in this verse carries a sense of triumphant joy by the means 
 <p>
 Verse 11 presents a three-part progression of joy, building in intensity from inner gladness to outward expression to triumphant exultation:
 <span class="tooltip">
-    <em>Rejoice</em>
+    <em>rejoice</em>
     <span class="tooltiptext">
         <span class="hebrew-row">
             <span class="hebrew-text" dir="rtl">שָׂמַח</span>
@@ -2509,7 +2510,7 @@ Verse 11 presents a three-part progression of joy, building in intensity from in
 </span>
 →
 <span class="tooltip">
-    <em>Sing for joy</em>
+    <em>sing for joy</em>
     <span class="tooltiptext">
         <span class="hebrew-row">
             <span class="hebrew-text" dir="rtl">רָנַן</span>
@@ -2522,7 +2523,7 @@ Verse 11 presents a three-part progression of joy, building in intensity from in
 </span>
 →
 <span class="tooltip">
-    <em>Exult</em>
+    <em>exult</em>
     <span class="tooltiptext">
         <span class="hebrew-row">
             <span class="hebrew-text" dir="rtl">עָלַץ</span>
@@ -2537,7 +2538,7 @@ Verse 11 presents a three-part progression of joy, building in intensity from in
 <p>
 This prayer is in complete contrast to Davids imprecatory prayer for<em> the wicked </em> in verse 10:
 <span class="tooltip">
-    <em>Prayer for the wicked</em>
+    <em>prayer for the wicked</em>
     <span class="tooltiptext">
         <span class="definition-list">
             Verdict: Declared guilty<br>
@@ -2550,7 +2551,7 @@ This prayer is in complete contrast to Davids imprecatory prayer for<em> the wic
 </span>
 |
 <span class="tooltip">
-    <em>Prayer for the righteous</em>
+    <em>prayer for the righteous</em>
     <span class="tooltiptext">
         <span class="definition-list">
             Action: Take refuge in God / Love His name<br>
@@ -2574,9 +2575,1384 @@ The wicked follow a path of rebellion leading to judgment and destruction, while
   </span>
 </p>
 <hr>
-New Testament Fulfillment
+<p>
+Davids prayer for God to bless the righteous is fulfilled in the New Testament. 
+The believers/redeemed take refuge in God through Christ and are protected and rejoice with inexpressible joy. <sub> 1 Peter (1:3-6, 8), Romans 5:11, Philippians 4:4 </sub> 
+</p>
+<p>
+This verse establishes a theological foundation: the eternal destiny of the righteous overflows with blessing — <em>joy</em> flowing from a personal relationship with God, divine protection for those who take refuge in Him, and worship arising naturally from trust. Together these mark a living relationship with God, not mere obedience.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN & AMEN</em> ]
+  </span>
+</p>
+`
+},
+{   label: "Psalm 5:12",
+    title: "Crowned with Favor",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">5:12</div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
+      </div>
+      <hr class="retro-hr">
+      <div class="interlinear-block" style="display: flex; justify-content: space-between; width: 100%; text-align: center;">
+        <div class="word-pair">
+          <div class="heb-word">כִּי־אַתָּה</div>
+          <div class="heb-gloss">For-You</div>
+        </div>
+        <div class="word-pair">
+          <div class="heb-word">יְהוָה</div>
+          <div class="heb-gloss">YHWH</div>
+        </div>
+        <div class="word-pair">
+          <div class="heb-word">תְּבָרֵךְ</div>
+          <div class="heb-gloss">You-bless</div>
+        </div>
+        <div class="word-pair">
+          <div class="heb-word">צַדִּיק</div>
+          <div class="heb-gloss">righteous-one</div>
+        </div>
+        <div class="word-pair">
+          <div class="heb-word">כַּצִּנָּה</div>
+          <div class="heb-gloss">like-the-large-shield</div>
+        </div>
+        <div class="word-pair">
+          <div class="heb-word">רָצוֹן</div>
+          <div class="heb-gloss">favor</div>
+        </div>
+        <div class="word-pair">
+          <div class="heb-word">תַּעְטְרֶנּוּ</div>
+          <div class="heb-gloss">You-crown/encircle-him</div>
+        </div>
+      </div>
+    `,
+    versions: {
+      ESV: [`For you bless the righteous, O LORD;<br>you cover him with favor as with a shield.<br><small>(ESV)</small>`],
+      KJV: [`For thou, LORD, wilt bless the righteous;<br>with favour wilt thou compass him as with a shield.<br><small>(KJV)</small>`],
+      NASB: [`For it is You who blesses the righteous man, O LORD,<br>You surround him with favor as with a shield.<br><small>(NASB)</small>`],
+      NIV: [`Surely, LORD, you bless the righteous;<br>you surround them with your favor as with a shield.<br><small>(NIV)</small>`]
+    },
+
+    insight: `
+<details open class="study-section">
+<summary>Word Analysis</summary>
+<br>
+<span class="tooltip">
+    <strong>For</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">כִּי</span>
+            <span class="transliteration">(ki)</span>
+        </div>
+        <div class="definition-list">
+            for, because, since — causal conjunction
+            <hr>
+			Closes the logical arc of the psalm: all of Psalm 5's prayer rests on this foundation.
+        </div>
+    </span>
+</span>
+
+<span class="tooltip">
+    <strong>you</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">אַתָּה</span>
+            <span class="transliteration">(attah)</span>
+        </div>
+        <div class="definition-list">
+            You — emphatic independent pronoun
+            <hr>
+			Fronted for emphasis in Hebrew word order. The stress is on the divine actor, not the human recipient.
+        </div>
+    </span>
+</span>
+
+<span class="tooltip">
+    <strong>LORD</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">יְהוָה</span>
+            <span class="transliteration">(YHWH)</span>
+        </div>
+        <div class="definition-list">
+            The covenant name of God — I AM / He Who Is
+            <hr>
+			David addresses his confidence specifically to the covenant God who made promises, not a generic deity.
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Exodus 3:14, Exodus 6:2-3, Isaiah 42:8
+        </small>
+    </span>
+</span>
+
+<span class="tooltip">
+    <strong>bless</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">תְּבָרֵךְ</span>
+            <span class="transliteration">(t'varekh)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl">בָּרַךְ</span> — (barak) to bless, bestow favor
+            <hr>
+			Piel imperfect — intensive stem + ongoing/habitual action: God continuously and actively blesses
+            <br>Piel indicates God's blessing is not passive or incidental — it is deliberate, intensive, directed
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Genesis 12:2-3, Numbers 6:24, Deuteronomy 28:3-6, Psalm 67:1, Psalm 128:5
+        </small>
+    </span>
+</span>
+
+<p>
+The declaration lands on GOD as the one who acts because the LORD <span class="tooltip">blesses<span class="tooltiptext">God's blessing is not a wish or a sentiment — it is an active, effectual divine act. When God blesses, something happens. His word creates what it declares (Isaiah 55:11).<br><br>To be blessed by God means His face is turned toward you in favor rather than judgment (Numbers 6:24–26), He is actively working all circumstances for your good (Romans 8:28), and His sustaining power is personally directed at you. You lack nothing essential for life with Him.<br><br>God's blessing is distinct from feeling blessed, from circumstances going well, or from human approval. It is God's own active disposition of grace directed at the one He has chosen — prior to and independent of their merit.<br><br>The Aaronic blessing is the OT pattern: face, keeping, grace, peace — specific, concrete acts of divine attention. David is declaring that this is exactly what God does for the tzaddik.</span></span> the righteous as an active personal covenantal promise.
+</p>
+
+<p>
+<span id="cite-1" class="cite-anchor">David uses the same word (<em>Barak/Bless</em>) used by God in His covenant with Abraham.<sup class="ref"><a href="#ref-1">[1]</a></sup></span>
+God's blessing of the righteous is not a new development; it is the fulfillment of a covenantal promise woven through all of Scripture.
+</p>
+<strong> the </strong>
+<span class="tooltip">
+    <strong>righteous</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">צַדִּיק</span>
+            <span class="transliteration">(tzaddik)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl">צָדַק</span> — (tzadak) righteous, just, one in right standing before God
+            <hr>
+			Singular collective — referring to the class of people who are faithful to God by covenant
+            <br>NOT sinlessness: David himself sinned greatly (Psalm 51) yet is called righteous
+            <br>Righteousness = right relationship with God through faith in His covenant promises
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Genesis 15:6, Psalm 1:6, Psalm 37:16-17, Proverbs 10:3, Habakkuk 2:4
+        </small>
+    </span>
+</span>
+
+<p>The <em>tzaddik/righteous</em> are not morally perfect or without sin. 
+<span class="tooltip">Works based righteousness<span class="tooltiptext">The belief that one earns God's favor through moral effort or religious performance. Common attempts: keeping the Ten Commandments perfectly, accumulating good deeds to outweigh bad ones, ritual observance (fasting, almsgiving, pilgrimage), striving for moral self-improvement. Scripture rules this out — "by works of the law no human being will be justified" (Romans 3:20).</span></span> 
+<span id="cite-2" class="cite-anchor">condemns everyone, including David who committed adultery and murder.<sup class="ref"><a href="#ref-2">[2]</a></sup></span>
+</p>
+<p>
+The tzaddik/righteous is the one in right standing with God by <span class="tooltip">faith.<span class="tooltiptext">Faith (Hebrew: emunah אֱמוּנָה; Greek: pistis πίστις) — trust, reliance, and confidence in God. Not intellectual agreement alone, but clinging to God's promises and taking refuge in His mercy. It is the instrument by which righteousness is received, not earned — "Abraham believed God, and it was counted to him as righteousness" (Genesis 15:6). Faith is itself a gift, not a work (Ephesians 2:8-9).</span></span>
+</p>
+<p>
+Here are examples of tzaddik/righteous by faith not by good works and not disqualified by the sin they have committed:
+</p>
+<ul>
+<li>Abraham "believed God, and it was counted to him as righteousness." <small>Genesis 15:6</small></li>
+<li>David himself: confessed sin but trusted God's mercy — <small>Psalm 51:1-4</small></li>
+<li>Habakkuk 2:4 — "the righteous shall live by his faith"</li>
+<li>In Psalm 5: the tzaddik/righteous takes refuge in God <small>(v. 11)</small>, enters through His chesed <small>(v. 7)</small>, not by earned merit</li>
+</ul>
+<p>
+The behavior consistent with faith like fleeing to God and loving His name are the fruit — not the cause — of being tzaddik/righteous. This means a person cannot make themselves tzaddik/righteous, instead a person becomes tzaddik/righteous through <span class="tooltip">what God does to the person<span class="tooltiptext">Regeneration — the Holy Spirit creates faith in a heart that could not produce it on its own. God gives a new heart (Ezekiel 36:26), not as a reward for seeking Him, but as the act that makes seeking possible. In the New Testament this comes through Word and Sacrament; in the Old Testament through the Word as revealed — promise, Torah, sacrifice, and direct divine encounter. Faith is always God's gift, never the person's achievement (Titus 3:5, Ephesians 2:8-9).</span></span>. The person then becomes faithful in God because of what happens to them.
+</p>
+<p>
+David did not have the full Scripture or the New Testament sacraments the way modern Christians do, yet his faith was still granted by the Spirit through what God had revealed to him:
+<span class="tooltip">the Tabernacle presence<span class="tooltiptext">God literally dwelt among Israel in the Tent of Meeting. For David, "dwelling in the house of the LORD" was a real encounter with the divine presence — not metaphor. The Tabernacle was the place where God met His people, where atonement was made, and where the Spirit could work through that nearness. (Exodus 25:8, Psalm 27:4)</span></span>,
+<span class="tooltip">the Levitical sacrificial system<span class="tooltiptext">The priestly sacrifices ordained by God were a means of atonement pointing forward to Christ. David didn't understand the full picture, but he trusted the God behind the rites — the one who provides a way to cover sin. The sacrifices were not merely ritual; they were God's promise in physical form that sin would be dealt with. (Leviticus 17:11, Hebrews 10:1)</span></span>,
+<span class="tooltip">the Abrahamic promise<span class="tooltiptext">God's covenant with Abraham — "he believed God, and it was counted to him as righteousness" (Genesis 15:6) — was already Scripture to David. David knew that standing before God came through faith in God's promise, not earned merit. This promise was the foundation of Israel's hope and David's own trust.</span></span>,
+<span class="tooltip">prophetic revelation<span class="tooltiptext">God spoke directly to David through the prophet Nathan and through the Davidic covenant (2 Samuel 7) — the promise that God would establish David's house and throne forever. This was the external Word delivered personally. David's faith was anchored to a specific promise God had made to him by name.</span></span>, and
+<span class="tooltip">meditation on the Torah<span class="tooltiptext">The books of Moses — the Law and the promises — were already written and available to David. Psalm 1 opens with the blessed man who meditates on Torah day and night. David's faith was formed and fed by what had already been revealed in writing. The Spirit worked through that written Word the same way He works through Scripture today. (Psalm 1:2, Deuteronomy 17:18-19)</span></span>.
+The Spirit has always worked through the external Word — the means were different in David's age, but the mechanism was the same.
+</p>
+<p>
+For modern Christians the fullness of the means are available through <span class="tooltip">Word<span class="tooltiptext">The Word of God — God's self-revelation through Scripture and preaching. It works in two movements: the Law, which convicts of sin and produces contrition; and the Gospel, which creates faith through the promise of forgiveness in Christ. The Word is not merely information — it is the active instrument the Holy Spirit uses to create and sustain faith. "Faith comes from hearing, and hearing through the word of Christ." (Romans 10:17)</span></span> and <span class="tooltip">Sacrament<span class="tooltiptext">A sacred act instituted by Christ that joins an earthly element with the Word of God to deliver forgiveness and create or strengthen faith. Lutheran theology recognizes two Sacraments: Baptism (water + Word, delivering forgiveness and the Holy Spirit — Titus 3:5, Acts 2:38) and the Lord's Supper (bread and wine with Christ's true body and blood, given for the forgiveness of sins — Matthew 26:26-28). The Sacraments are not symbols of faith already present — they are means through which the Spirit acts on the person.</span></span>.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+     <em>SELAH</em> 
+  </span>
+</p>
+<hr>
+<strong> like a </strong>
+<span class="tooltip">
+    <strong> shield</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">כַּצִּנָּה</span>
+            <span class="transliteration">(katzinnah)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl">צִנָּה</span> — (tzinnah) large body shield — covers the whole person
+            <hr>
+			Distinguished from <span dir="rtl">מָגֵן</span> (magen) — small round shield held in one hand
+            <br>Tzinnah is the large shield a soldier (or shieldbearer) carries to protect the entire body
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: 1 Samuel 17:7 (Goliath's shield), 1 Kings 10:16-17, Psalm 35:2, Ezekiel 23:24
+        </small>
+    </span>
+</span>
+
+<p>
+David chooses the Hebrew word <span dir="rtl">צִנָּה</span> (tzinnah) to describe the total, comprehensive protection. 
+<span id="cite-3" class="cite-anchor">This shield covers a person from head to foot because it is a full body shield like the one Goliath had.<sup class="ref"><a href="#ref-3">[3]</a></sup></span>
+He uses this word because God's favor leaves no part of the righteous exposed — it covers fully, from head to foot.
+</p>
+<hr>
+
+<span class="tooltip">
+    <strong>favor</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">רָצוֹן</span>
+            <span class="transliteration">(ratzon)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl">רָצָה</span> — (ratzah) favor, goodwill, delight, acceptance, pleasure
+            <hr>
+			God's active disposition of delight and acceptance toward the recipient
+            <br>Used in the Aaronic blessing and Levitical worship — the priest prayed for God's ratzon
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Numbers 6:25-26, Psalm 19:14, Psalm 30:5, Psalm 51:18, Proverbs 8:35
+        </small>
+    </span>
+</span>
+
+<p>
+Favor/ratzon is God's covenantal delight in His people.
+David closes the psalm with a declaration of
+God's favor to actively encircle the righteous as a shield — a confession of covenant truth.
+</p>
+<p>
+The Aaronic blessing from Numbers 6:25-26 uses shine/face/gracious/peace — the same covenant vocabulary David uses in Psalm 5 when he speaks of God's favor encircling the righteous.
+<span id="cite-4" class="cite-anchor">Both texts are drawing on the same covenantal idiom which is God's face turned toward His people as delight and protection.<sup class="ref"><a href="#ref-4">[4]</a></sup></span>
+</p>
+<hr>
+
+<span class="tooltip">
+    <strong>you cover him</strong>
+    <span class="tooltiptext">
+        <div class="hebrew-row">
+            <span class="hebrew-text" dir="rtl">תַּעְטְרֶנּוּ</span>
+            <span class="transliteration">(ta'terenu)</span>
+        </div>
+        <div class="definition-list">
+            <span dir="rtl">עָטַר</span> — (atar) to crown, to encircle, to surround
+            <hr>
+			Piel (intensive) — active, thorough encircling
+            <br>Used for crowning royalty AND for surrounding/encircling completely
+            <br>The verb does double work: God crowns the righteous with favor AND encircles them with it
+        </div>
+        <hr>
+        <small class="references">
+            Biblical Usage: Psalm 8:5, Psalm 65:11, Psalm 103:4, Song of Songs 3:11
+        </small>
+    </span>
+</span>
+
+<p>
+The verb <em>atar</em> (encircle/crown) extends and completes the shield metaphor.
+A shield blocks attacks from one direction. But God's favor <em>encircles</em> — 360° protection.
+There is no angle from which the enemy can approach the righteous unguarded.
+</p>
+<p>
+Simultaneously, <em>atar</em> means to crown. God's favor is not only defensive protection — it is royal dignity.
+<span id="cite-5" class="cite-anchor">The righteous one is crowned with divine favor, not shame.<sup class="ref"><a href="#ref-5">[5]</a></sup></span>
+</p>
+<p>
+The righteous one does not merely survive — he is crowned. <em>Atar</em> gives the final word: not a warrior barely holding his shield, but a king wearing his favor.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    <em>SELAH</em> 
+  </span>
+</p>
+
+</details>
+<hr>
+<details class="study-section">
+
+<summary>Fulfillment</summary>
+
+<p><em>Christ as the Righteous/Tzaddik</em></p>
+<p>
+The tzaddikim of the Psalms were righteous before God — not by moral perfection, but by covenant standing.
+Their sin was covered year by year through sacrifice, and they were held in right relationship with God by faith in His promises. <sup class="ref"><a href="#ref-2">[2]</a></sup>
+But that covering was always provisional — the sacrifices pointed forward to a permanent removal of sin that they could not themselves accomplish.
+<span id="cite-6" class="cite-anchor"><sup class="ref"><a href="#ref-6">[6]</a></sup></span>
+</p>
+<p>
+Jesus is the fulfillment those sacrifices pointed to. He is specifically identified as "the Righteous One" (ho dikaios) <span id="cite-7" class="cite-anchor"><sup class="ref"><a href="#ref-7">[7]</a></sup></span> — not merely first among the tzaddikim, but categorically different:
+<span id="cite-8" class="cite-anchor">He alone is without sin.<sup class="ref"><a href="#ref-8">[8]</a></sup></span>
+The tzaddikim had their sin covered; Christ had no sin to cover. 
+<span id="cite-9" class="cite-anchor">Only the One who carries no sin-debt of His own can freely credit His righteousness to another — and that is exactly what God does for us in Christ.<sup class="ref"><a href="#ref-9">[9]</a></sup></span>
+</p>
+<p>
+Through faith in Christ, His righteousness is credited to us — we receive tzaddik status not by achievement
+but by union with Him who is the Righteous One. The path has always been faith; what has changed is that the One the sacrifices always pointed to has now come.
+<span id="cite-10" class="cite-anchor"><sup class="ref"><a href="#ref-10">[10]</a></sup></span>
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    <em>SELAH</em> 
+  </span>
+</p>
+<hr>
+<p><em>Blessed in Christ</em></p>
+<p>
+The <em>barak</em>/blessing David declared was always covenantal — God's favor resting on those in right standing with Him. The <em>tzaddikim</em> received it through faith, their sin covered year by year through sacrifice. But the blessing was bounded by the covenant's earthly scope: land, harvest, protection, long life — the <span class="tooltip">provisional blessings of Sinai<span class="tooltiptext">The blessings promised in the Mosaic covenant (Deuteronomy 28:1–14) were real but conditional and temporary — tied to Israel's covenant faithfulness, secured by sacrifices that could cover but not remove sin. They pointed forward to a greater and permanent blessing still to come.</span></span>.
+</p>
+<p>
+Paul's language in Ephesians 1:3<span id="cite-11" class="cite-anchor"><sup class="ref"><a href="#ref-11">[11]</a></sup></span> deliberately bursts that scope open. <em>Every</em> spiritual blessing — not the provisional blessings of Sinai, but the full <span class="tooltip">eschatological inheritance<span class="tooltiptext">Eschatological means pertaining to the "last things" — the final age inaugurated by Christ's resurrection. The inheritance is not earthly or temporary but eternal: justification, adoption, glorification, and the new creation. It is received now by faith and consummated at Christ's return.</span></span> of those united to the Righteous One. Justification. Adoption. Redemption. These are not given because we have earned God's favor, but because we are <span class="tooltip">found in Christ<span class="tooltiptext">To be "found in Christ" (Philippians 3:9) is to be so identified with Him by faith that His righteousness is credited as ours and our sin was credited to Him at the cross. Union with Christ is the ground of every spiritual blessing we receive — we do not stand before God in our own name but in His.</span></span> — and His righteous standing before the Father is ours by imputation.
+</p>
+<p>
+Among those blessings, Paul names the Holy Spirit as seal and guarantee. <span id="cite-12" class="cite-anchor"><sup class="ref"><a href="#ref-12">[12]</a></sup></span> The Spirit is not merely a comfort or a power for holy living — He is God's down payment on the full inheritance yet to be revealed. His <span class="tooltip">indwelling presence<span class="tooltiptext">The indwelling of the Holy Spirit refers to the Spirit taking up residence within the believer at baptism and faith (1 Corinthians 6:19; Romans 8:9). Unlike the Spirit's temporary presence in the Old Testament — resting on prophets or kings for a task — the New Covenant indwelling is permanent. The Spirit does not visit; He dwells. This is the fulfillment of Ezekiel 36:27: "I will put my Spirit within you."</span></span> in the believer is the pledge that what God began in us, He will bring to completion.
+</p>
+<p>
+God blesses the righteous — and we are <span class="tooltip">righteous in Christ alone<span class="tooltiptext">Righteousness before God is not achieved by moral performance but received by faith. Christ's perfect obedience is credited (imputed) to the believer, so that God declares us just — not because of what we have done, but because of what Christ has done in our place. (Romans 4:5; 2 Corinthians 5:21)</span></span>, <span class="tooltip">by grace alone<span class="tooltiptext">Grace (Latin: gratia; Greek: charis) is God's unmerited favor — a gift freely given, with no prior claim on our part. Salvation originates entirely in God's initiative, not in human will or effort. (Ephesians 2:8–9; Romans 11:6)</span></span>,  <span class="tooltip">through faith alone<span class="tooltiptext">Faith (Greek: pistis) is the instrument by which we receive what God gives in Christ — not a work we perform, but the open hand that receives the gift. Sola fide ("faith alone") is the channel of justification, recovered by Luther against the medieval addition of human merit. (Romans 3:28; Galatians 2:16)</span></span>.
+</p>
+<p>
+<img src="pics/Allegorie-auf-Gesetz-und-Gnade.jpg" alt="Law and Gospel by Lucas Cranach the Elder" width="auto" height="500" style="border: 1px solid #888888;" />
+<p>
+Lucas Cranach the Elder, <em>Law and Gospel</em> (Gesetz und Gnade), c. 1529. 
+</p>
+<p>
+Painted in collaboration with Martin Luther to visually teach justification. The left panel shows Moses, the Law, and death driving a naked sinner toward condemnation — righteousness from the law, which only condemns. The right panel shows the crucified and risen Christ, his blood flowing directly onto that same sinner — the righteousness that comes from God, received through faith. The naked sinner covered by Christ's blood is the visual rendering of Philippians 3:9: "not having a righteousness of my own that comes from the law, but that which is through faith in Christ."
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    <em>SELAH</em> 
+  </span>
+</p>
+<hr>
+<p><em>Shielded by God's Power & Crowned with Glory</em></p>
+<p>
+<span id="cite-13" class="cite-anchor">The same shield/tzinnah — the comprehensive encircling shield — is applied to believers through Christ.
+God guards the believer with something more impenetrable than any physical shield.<sup class="ref"><a href="#ref-13">[13]</a></sup></span>
+</p>
+<p>
+<span id="cite-14" class="cite-anchor">The crown of favor David describes anticipates the crown of glory — the honor restored to humanity in Christ.<sup class="ref"><a href="#ref-14">[14]</a></sup></span>
+<span id="cite-15" class="cite-anchor">At the crucifixion, soldiers twisted a crown of thorns and placed it on His head in mockery — the Righteous One, who deserved every crown, was given thorns.<sup class="ref"><a href="#ref-15">[15]</a></sup></span>
+The thorns were not incidental. They recalled the curse of the fall — God's declaration that the ground would bring forth thorns and thistles against sinful humanity. Christ bore that curse in His own flesh.
+The exchange is the Gospel: He took the thorns so the righteous could be crowned. David's <em>atar</em> finds its fulfillment here — not merely anticipated in royal imagery, but accomplished at the cross.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    <em>SELAH</em> 
+  </span>
+</p>
+</details>
+<hr>
+<details class="study-section">
+<summary>Insight</summary>
+
+<p>
+Psalm 5 closes with a <span class="tooltip">declaration of divine confidence<span class="tooltiptext">A recognized literary element in lament psalms where the psalmist pivots from complaint and petition to a bold, present-tense affirmation of trust in God's character and faithfulness. Distinct from a <em>vow of praise</em> (a future promise of thanks) and from the <em>certainty of hearing</em> (confidence God has heard). The declaration of confidence asserts God <em>is</em> trustworthy <em>now</em>, regardless of whether deliverance has arrived — grounding trust in who God is, not in changed circumstances. It typically serves as the hinge of a lament psalm, the theological turning point between the cry of distress and anticipated praise. (cf. Ps. 23:4; 31:14; 56:3–4)</span></span>
+ — rather than David having uncertainty and placing his trust in what might happen or if God will deliver him. Instead he rests on the settled theological fact that God blesses the righteous.
+ </p>
+ <p>
+David has <em>prayed</em> <small>(vv. 1–3)</small>, <em>argued</em> from God's holy character <small>(vv. 4–6)</small>, <em>entered</em> God's presence through chesed <small>(v. 7)</small>,
+<em>asked</em> for guidance <small>(vv. 8–9)</small>, <em>petitioned</em> for judgment against the wicked <small>(v. 10)</small>, and <em>prayed</em> for the joy of the righteous <small>(v. 11)</small>.
+</p>
+<p>
+Now he <em>gives the grounding reason</em> for everything. The reason is that God actively blesses and completely encircles the righteous with His favor.
+</p>
+<p>
+The journey of Psalm 5 starts with David groaning in verse 1 and ends with him crowned with favor in verse 12. Although the crisis has not changed his perspective has — through prayer.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    <em>SELAH</em> 
+  </span>
+</p>
+</details>
+<hr>
+<details class="study-section">
+<summary>Lessons</summary>
+
+<p>
+<em>Prayer has a structure, not just a feeling.</em> David didn't simply vent his distress. He prayed, argued from God's holy character, entered His presence through chesed, asked for guidance, petitioned against the wicked, and interceded for the righteous. The psalm reveals prayer as a sequence of deliberate movements — not an emotional release, but an ordered approach to God.
+</p>
+<p>
+<em>Confidence in God is grounded in theology, not circumstances.</em> David does not close the psalm because his situation improved — the enemies are still there at verse 12. He arrives at confidence by reasoning from who God is: a God who actively blesses the righteous and completely encircles them with favor. Settled trust is built on the character of God, not on the outcome of events.
+</p>
+<p>
+<em>The goal of prayer is a changed perspective, not always a changed situation.</em> The journey from groaning in verse 1 to crowned with favor in verse 12 is an internal one. David has been reoriented — through the act of praying itself. Prayer does not always alter what surrounds you, but it restores right sight: who God is, where you stand, and what is already true.
+</p>
+<p>
+<em>You are not just shielded — you are crowned.</em> The verse does not close with a warrior barely holding against enemies; it closes with a king wearing divine favor. God's protection of the righteous is also God's dignity over them. To stand before God righteous by faith is not merely a defensive status — you are encircled with His delight, adorned with His favor. This is not how you feel in difficult seasons. It is what is already true.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    <em>SELAH</em> 
+  </span>
+</p>
+</details>
+<hr>
+<details class="study-section">
+<summary>Prayer</summary>
+<p>
+Lord God, You bless the righteous — and I am only righteous because of what You have done in Christ.
+I bring no merit, only trust in Your chesed. Cover me with Your favor like the large shield that leaves no side exposed.
+Encircle me with Your presence. Let the enemies of my soul find no gap in Your protection.
+Crown me not with what I deserve, but with what You delight to give — Your favor, Your mercy, Your righteousness.
+For it is You, LORD, who bless. And I receive it by faith alone, in Christ alone.
+</p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    <em>AMEN</em> 
+  </span>
+</details>
+<hr>
+<details class="study-section">
+<summary> References </summary>
+<div class="ref-list">
+  
+  <ol>
+    <li id="ref-1"><a href="#cite-1" class="ref-back">↩</a> Genesis 12:2 — <em>"I will make you into a great nation, and I will bless you; I will make your name great, and you will be a blessing."</em> God's use of <em>barak</em> in the Abrahamic covenant establishes blessing as a covenantal category — not a reward for merit, but a sovereign promise to the chosen.</li>
+    <li id="ref-2"><a href="#cite-2" class="ref-back">↩</a> Psalm 51 — David's great penitential psalm, written after his adultery with Bathsheba and the murder of Uriah. The same David declared righteous in Psalm 5 is the one who cried "I have sinned against you" in Psalm 51 — demonstrating that <em>tzaddik</em> status rests on covenant standing before God, not moral perfection.</li>
+    <li id="ref-3"><a href="#cite-3" class="ref-back">↩</a> 1 Samuel 17:7 — <em>"The shaft of his spear was like a weaver's beam, and his spear's head weighed six hundred shekels of iron. And his shield-bearer [נֹשֵׂא הַצִּנָּה] went before him."</em> The same Hebrew word tzinnah (צִנָּה) used in Psalm 5:12 appears here — the large body shield carried before Goliath, covering him completely. David knew this shield firsthand; he chose the word deliberately.</li>
+    <li id="ref-4"><a href="#cite-4" class="ref-back">↩</a> Numbers 6:25-26 — <em>"The LORD make his face shine on you and be gracious to you; the LORD turn his face toward you and give you peace."</em> The Aaronic blessing uses the same covenant vocabulary as Psalm 5:12 — face, favor, and peace — establishing that God's encircling protection of the righteous is rooted in the priestly blessing given to Israel.</li>
+    <li id="ref-5"><a href="#cite-5" class="ref-back">↩</a> Psalm 103:4 — <em>"[God] who crowns you with steadfast love and mercy."</em> The same verb <em>atar</em> (encircle/crown) used in Psalm 5:12 appears here, confirming that God's favor is not merely defensive but carries royal dignity — the righteous are crowned, not just shielded.</li>
+    <li id="ref-6"><a href="#cite-6" class="ref-back">↩</a> Hebrews 10:1-4 — <em>"For since the law has but a shadow of the good things to come instead of the true form of these realities, it can never, by the same sacrifices that are continually offered every year, make perfect those who draw near... it is impossible for the blood of bulls and goats to take away sins."</em> The OT sacrificial system covered sin provisionally; it was always oriented toward the One whose single sacrifice would remove it permanently (Hebrews 10:12-14).</li>
+    <li id="ref-7"><a href="#cite-7" class="ref-back">↩</a> Acts 3:14, 7:52, 22:14 — three separate NT speakers (Peter, Stephen, Ananias) each independently identify Jesus as "the Righteous One" (ho dikaios), establishing it as a recognized Christological title in the early church.</li>
+    <li id="ref-8"><a href="#cite-8" class="ref-back">↩</a> Hebrews 4:15 — <em>"one who in every respect has been tempted as we are, yet without sin."</em> Cf. 1 Peter 2:22 — <em>"He committed no sin, neither was deceit found in his mouth"</em>; 1 John 3:5 — <em>"in him there is no sin."</em> The NT is uniform: Christ's sinlessness is stated directly, not inferred from a title or article.</li>
+    <li id="ref-9"><a href="#cite-9" class="ref-back">↩</a> 2 Corinthians 5:21 — <em>"For our sake he made him to be sin who knew no sin, so that in him we might become the righteousness of God."</em> The logic of imputation depends entirely on the sinlessness of the one whose righteousness is credited — a righteous-yet-sinful man cannot bear another's guilt and emerge as the righteous one.</li>
+    <li id="ref-10"><a href="#cite-10" class="ref-back">&#x21A9;</a> Romans 4:3-8; 2 Corinthians 5:21; Philippians 3:9 &mdash; Together these establish the full arc: Abraham was justified by faith (<em>tzaddik</em> status through trust in God&rsquo;s promise); Christ became sin so that we might become the righteousness of God; and Paul counted his own law-keeping as loss, seeking only the righteousness that comes through faith in Christ.</li>
+    <li id="ref-11"><a href="#cite-11" class="ref-back">&#x21A9;</a> Ephesians 1:3 &mdash; <em>&ldquo;Blessed be the God and Father of our Lord Jesus Christ, who has blessed us in Christ with every spiritual blessing in the heavenly places.&rdquo;</em> The phrase &ldquo;every spiritual blessing in the heavenly places&rdquo; is Paul&rsquo;s deliberate contrast with the earthly, conditional blessings of the Mosaic covenant. In Christ, the full scope of what God had promised &mdash; not just land and harvest, but adoption, redemption, and glory &mdash; is given freely to those united to Him.</li>
+    <li id="ref-12"><a href="#cite-12" class="ref-back">&#x21A9;</a> Ephesians 1:13&ndash;14 &mdash; <em>&ldquo;In him you also, when you heard the word of truth, the gospel of your salvation, and believed in him, were sealed with the promised Holy Spirit, who is the guarantee of our inheritance until we acquire possession of it, to the praise of his glory.&rdquo;</em> The Greek word translated &ldquo;guarantee&rdquo; (&alpha;&rho;&rho;&alpha;&beta;&omega;&nu;, <em>arrabon</em>) was a commercial term meaning a down payment that legally obligated the full amount to follow. The Spirit&rsquo;s indwelling is God&rsquo;s binding pledge that the full inheritance of the believer will be delivered.</li>
+    <li id="ref-13"><a href="#cite-13" class="ref-back">&#x21A9;</a> 1 Peter 1:5 &mdash; <em>&ldquo;[You] who by God&rsquo;s power are being guarded through faith for a salvation ready to be revealed in the last time.&rdquo;</em> Philippians 4:7 &mdash; <em>&ldquo;And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.&rdquo;</em></li>
+    <li id="ref-14"><a href="#cite-14" class="ref-back">&#x21A9;</a>  Psalm 8:5 / Hebrews 2:7 &mdash; <em>&ldquo;...you have crowned him with glory and honor.&rdquo;</em> Hebrews 2:7 quotes Psalm 8:5 directly; the author of Hebrews then applies it to Christ in v.9 &mdash; &ldquo;crowned with glory and honor because of the suffering of death.&rdquo; David&rsquo;s royal crown-language finds its ultimate referent in the crucified and risen Son.</li> 
+    <li id="ref-15"><a href="#cite-15" class="ref-back">&#x21A9;</a> Matthew 27:29 &mdash; <em>&ldquo;and twisting together a crown of thorns, they put it on his head...&rdquo;</em> Cf. Mark 15:17; John 19:2. The crown of thorns connects directly to the curse of Genesis 3:18 &mdash; Christ bore the curse of the fall in His own flesh, making possible the exchange David&rsquo;s <em>atar</em> anticipates: the righteous crowned with favor.</li>
+   </ol>
+</div>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+</details>
 `
     },
+
+  /* --- PSALM 6 --- */
+
+  { label: "Introduction",
+    title: "Psalm 6 — The First Penitential Psalm",
+    image: "lyre.png",
+    text: `
+      <p><em>To the choirmaster: with stringed instruments; according to The Sheminith. A Psalm of David.</em></p>
+    `,
+    insight: `
+<details class="study-section">
+<summary> Insight </summary>
+<p>
+Psalm 6 is the first of the seven <strong>Penitential Psalms</strong> — a category recognized by the church since the patristic period. The seven are Psalms 6, 32, 38, 51, 102, 130, and 143. They form a complete portrait of the soul moving from exposed guilt to received forgiveness.
+</p>
+<p>
+David is at his lowest: physically sick, emotionally crushed, surrounded by enemies, afraid that God's discipline has become condemnation. He moves from terror (vv. 1–3) through petition (vv. 4–5) through grief (vv. 6–7) to sudden, confident resolution (vv. 8–10). The shift from weeping to certainty — without anything external changing — is what makes Hebrew lament a distinct spiritual form.
+</p>
+<hr>
+<p><strong>The Superscription</strong></p>
+<p>
+<span class="tooltip"><strong>Sheminith</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">הַשְּׁמִינִית</span>
+  <span class="transliteration">(haSheminith)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">שְׁמִינִי</span> — (shemini) "eighth"
+  <br>1. A lower octave direction — suiting the somber tone
+  <br>2. Possibly an 8-stringed instrument
+  <br>3. A specific liturgical mode
+  <br>Also appears in: Psalm 12 only
+</div>
+</span></span>
+— most likely a lower-register musical direction. The Psalm descends; the music descends with it.
+</p>
+<p><strong>Structure:</strong></p>
+<ol>
+<li>vv. 1–3 — Do not rebuke in wrath; description of suffering</li>
+<li>vv. 4–5 — Turn, deliver, save — for the sake of chesed</li>
+<li>vv. 6–7 — Physical toll: weeping, wasting eyes</li>
+<li>vv. 8–10 — Sudden resolution: The LORD has heard</li>
+</ol>
+<hr>
+<blockquote class="church-voice">
+  <p>Luther called the Penitential Psalms his "dearest Psalms" and placed Psalm 6 first among them in his 1517 commentary. He argued that they form the complete movement of a soul from the weight of sin to received mercy — and that any believer who has never prayed Psalm 6 has not yet fully felt the weight of sin before a holy God.</p>
+  <footer>— Martin Luther, <cite>Explanation of the Seven Penitential Psalms</cite>, 1517 [paraphrase]</footer>
+</blockquote>
+<p>
+Luther's point: these psalms are not gloomy exercises in self-condemnation. They are the pathway through which Law (exposure of sin) gives way to Gospel (received mercy). Psalm 6 is where the journey begins.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+`
+  },
+
+  { label: "Psalm 6:1",
+    title: "Rebuke Me Not in Anger",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">6:1</div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
+      </div>
+    `,
+    versions: {
+      ESV: [`O LORD, rebuke me not in your anger,<br>nor discipline me in your wrath.<br><small>(ESV)</small>`],
+      KJV: [`O LORD, rebuke me not in thine anger,<br>neither chasten me in thy hot displeasure.<br><small>(KJV)</small>`],
+      NASB: [`O LORD, do not rebuke me in Your anger,<br>Nor discipline me in Your wrath.<br><small>(NASB)</small>`],
+      NIV: [`LORD, do not rebuke me in your anger<br>or discipline me in your wrath.<br><small>(NIV)</small>`]
+    },
+    insight: `
+<p>
+David's opening petition is not a request to escape correction — he knows he deserves correction. He is asking God to correct him as a father does a son, not condemn him as a judge does an enemy. The distinction between divine discipline and divine wrath is the difference between being formed and being destroyed. David appeals to the relationship.
+</p>
+<p><strong>Literal Hebrew word order:</strong>
+<br><span dir="rtl">יְהוָה אַל-בְּאַפְּךָ תוֹכִיחֵנִי וְאַל-בַּחֲמָתְךָ תְיַסְּרֵנִי</span>
+<br>YHWH | not-in-your-anger | rebuke-me | and-not-in-your-wrath | discipline-me
+</p>
+<hr>
+<span class="tooltip"><strong>rebuke me</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">תוֹכִיחֵנִי</span>
+  <span class="transliteration">(tokhikheni)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">יָכַח</span> — (yakach) to rebuke, reprove, correct, argue a case
+  <br>Hiphil imperfect — causative: "cause me to be reproved"
+  <br>Legal/forensic: presenting a case in court
+  <br>Wisdom: parental correction that leads to growth
+</div>
+<hr>
+<small><strong>LXX:</strong> ἐλέγξῃς (elencxeis) — same root in John 16:8 (Spirit "convicts" the world of sin), 2 Tim 3:16 (Scripture profitable for "reproof"), Hebrews 12:5 ("do not despise the Lord's discipline/reproof"). The LXX links David's petition directly to the Spirit's ongoing corrective work in believers.</small>
+<hr>
+<small class="references">Biblical Usage: Job 13:3, Proverbs 3:12, Isaiah 1:18, Habakkuk 1:12</small>
+</span></span>
+
+<span class="tooltip"><strong>in your anger</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">בְּאַפְּךָ</span>
+  <span class="transliteration">(b'appekha)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">אַף</span> — (af) nose, nostril; by extension anger — heavy breathing through the nose = rage
+  <br>An anthropomorphism rooted in physical sensation
+</div>
+<hr>
+<small class="references">Biblical Usage: Exodus 15:8, Numbers 11:1, Psalm 2:5, Isaiah 48:9</small>
+</span></span>
+
+<span class="tooltip"><strong>discipline me</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">תְיַסְּרֵנִי</span>
+  <span class="transliteration">(t'yass'reni)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">יָסַר</span> — (yasar) to discipline, chasten, instruct, correct
+  <br>Piel imperfect — intensive: thorough, formative discipline
+  <br>Parental image: a father forming his child toward wisdom
+  <br>Distinguished from punishment aimed at destruction
+</div>
+<hr>
+<small class="references">Biblical Usage: Deuteronomy 8:5, Proverbs 3:12, 19:18, Psalm 94:12</small>
+</span></span>
+
+<span class="tooltip"><strong>in your wrath</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">בַּחֲמָתְךָ</span>
+  <span class="transliteration">(bakhamatekha)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">חֵמָה</span> — (khemah) burning anger, wrath, heat
+  <br>From <span dir="rtl">חָמַם</span> (khamam) = to be hot
+  <br>More intense than אַף (af): not just anger but burning wrath
+  <br>Together af and khemah cover the full spectrum of divine anger
+</div>
+<hr>
+<small class="references">Biblical Usage: Deuteronomy 29:23, Psalm 38:1, Jeremiah 10:24, Ezekiel 5:13</small>
+</span></span>
+
+<p><strong>The distinction David is making:</strong></p>
+<ul>
+<li><strong>Discipline</strong> (<span dir="rtl">יָסַר</span> yasar) — corrective, formative, the response of a father to a son. <span id="cite-1" class="cite-anchor">Painful but purposeful. <sup class="ref"><a href="#ref-1">[1]</a></sup></span></li>
+<li><strong>Wrath</strong> (<span dir="rtl">חֵמָה</span> khemah) — condemning, consuming, the response of a judge to an enemy. Terminal.</li>
+</ul>
+<p>
+David is not claiming innocence. He is appealing to relationship: "Correct me as Your son, not judge me as Your enemy." The same Law/Gospel tension that runs through all of the penitential psalms is alive in the very first verse: God must punish sin, and yet God has bound Himself in covenant to His people.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+<p><strong>Theological Exposition</strong></p>
+<p>
+The Law confronts David. He knows his sin — he does not plead "I didn't do it." The Law is doing its work: exposing sin, showing need. But David does not stop at Law. He appeals to the covenant name ("O LORD" — YHWH) as the grounds for the discipline being fatherly rather than condemning. This is the move from Law to Gospel: not "I'm righteous enough" but "You are bound to me in love."
+</p>
+<p>
+<span id="cite-2" class="cite-anchor">For the Christian, the wrath David feared has been absorbed by Christ on the cross. <sup class="ref"><a href="#ref-2">[2]</a></sup></span> What remains for the believer is discipline, not condemnation. <span id="cite-3" class="cite-anchor">Hebrews 12 makes this explicit: "the Lord disciplines the one he loves" — God's correction of the believer is proof of sonship, not abandonment. <sup class="ref"><a href="#ref-3">[3]</a></sup></span>
+</p>
+<hr>
+<blockquote class="church-voice">
+  <p>Luther distinguished between two kinds of God's anger: one that punishes as a judge (condemning) and one that corrects as a father (forming). David's prayer, Luther argued, is not to escape God's hand but to remain under His fatherly hand rather than fall under His judicial hand. The truly penitent person does not flee from God but toward Him — which is itself a sign they are under grace, not wrath.</p>
+  <footer>— Martin Luther, <cite>Explanation of the Seven Penitential Psalms</cite>, Psalm 6 [paraphrase]</footer>
+</blockquote>
+<hr>
+<p><strong>New Testament Connections</strong></p>
+<p>
+<strong>"The Lord disciplines the one he loves, and chastises every son whom he receives."</strong> <sup class="ref"><a href="#ref-3">[3]</a></sup>
+Hebrews 12:6 makes explicit what David prayed by faith: God's discipline of believers is parental, purposeful, and proof of belonging — not evidence of rejection.
+</p>
+<p>
+<strong>"There is therefore now no condemnation for those who are in Christ Jesus."</strong> <sup class="ref"><a href="#ref-2">[2]</a></sup>
+Romans 8:1 answers David's deepest fear. The wrath of a judge — condemnation — has been absorbed by Christ. For those in Christ, what remains is discipline, not condemnation.
+</p>
+<hr>
+<p><em>Prayer</em></p>
+<p>
+Lord, I know I deserve correction. I am not asking You to ignore my sin — I am asking You to correct me as a Father, not condemn me as a judge. I know Your wrath was poured out on Christ for my sake. So discipline me — form me, correct me. But let me know throughout that I am Your son, not Your enemy. Your discipline is love. I will receive it.
+</p>
+<div class="ref-list">
+  
+  <ol>
+    <li id="ref-1"><a href="#cite-1" class="ref-back">↩</a> Proverbs 3:11-12; Hebrews 12:5-11</li>
+    <li id="ref-2"><a href="#cite-2" class="ref-back">↩</a> Romans 5:9; Romans 8:1</li>
+    <li id="ref-3"><a href="#cite-3" class="ref-back">↩</a> Hebrews 12:5-6 (quoting Proverbs 3:12)</li>
+    <li id="ref-13"><a href="#cite-13" class="ref-back">&#x21A9;</a> 1 Peter 1:5 &mdash; <em>&ldquo;[You] who by God&rsquo;s power are being guarded through faith for a salvation ready to be revealed in the last time.&rdquo;</em></li>
+    <li id="ref-14"><a href="#cite-14" class="ref-back">&#x21A9;</a> Philippians 4:7 &mdash; <em>&ldquo;And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.&rdquo;</em></li>
+    <li id="ref-15"><a href="#cite-15" class="ref-back">&#x21A9;</a> Psalm 8:5 / Hebrews 2:7 &mdash; <em>&ldquo;...you have crowned him with glory and honor.&rdquo;</em> Hebrews 2:7 quotes Psalm 8:5 directly; the author of Hebrews then applies it to Christ in v.9 &mdash; &ldquo;crowned with glory and honor because of the suffering of death.&rdquo; David&rsquo;s royal crown-language finds its ultimate referent in the crucified and risen Son.</li>
+  </ol>
+</div>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+`
+  },
+
+  { label: "Psalm 6:2-3",
+    title: "Languishing — How Long?",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">6:2</div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
+      </div>
+      <div class="verse-row">
+        <div class="verse-num">6:3</div>
+        <div class="verse-content"><div data-verse-swap="1"></div></div>
+      </div>
+    `,
+    versions: {
+      ESV: [
+        `Be gracious to me, O LORD, for I am languishing;<br>heal me, O LORD, for my bones are troubled.`,
+        `My soul also is greatly troubled.<br>But you, O LORD — how long?<br><small>(ESV)</small>`
+      ],
+      KJV: [
+        `Have mercy upon me, O LORD; for I am weak:<br>O LORD, heal me; for my bones are vexed.`,
+        `My soul is also sore vexed:<br>but thou, O LORD, how long?<br><small>(KJV)</small>`
+      ],
+      NASB: [
+        `Be gracious to me, O LORD, for I am pining away;<br>Heal me, O LORD, for my bones are dismayed.`,
+        `And my soul is greatly dismayed;<br>But You, O LORD — how long?<br><small>(NASB)</small>`
+      ],
+      NIV: [
+        `Have mercy on me, LORD, for I am faint;<br>heal me, LORD, for my bones are in agony.`,
+        `My soul is in deep anguish.<br>How long, LORD, how long?<br><small>(NIV)</small>`
+      ]
+    },
+    insight: `
+<p>
+David moves from appeal (v.1) to description and petition. He does not hide the severity of his condition — bones troubled, soul terrified, suffering bodily and spiritual together. Yet the verse does not end in despair. "But you, O LORD — how long?" is not hopelessness; it is the language of someone who still believes God is present and able to act. You do not ask "how long?" of a God who doesn't care.
+</p>
+<hr>
+<span class="tooltip"><strong>Be gracious to me</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">חָנֵּנִי</span>
+  <span class="transliteration">(khanneni)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">חָנַן</span> — (khanan) to be gracious, show favor, grant grace
+  <br>Qal imperative — direct, urgent appeal
+  <br>Root of חֵן (khein) = grace; Hananiah, John (Yochanan) = "The LORD is gracious"
+</div>
+<hr>
+<small><strong>LXX:</strong> ἐλέησόν με (eleison me) — "have mercy on me." This is the origin of the <em>Kyrie Eleison</em> (Lord, have mercy) of the Divine Service. Every time the congregation sings the Kyrie, they are praying Psalm 6:2 in the LXX's voice.</small>
+<hr>
+<small class="references">Biblical Usage: Genesis 43:29, Numbers 6:25, Psalm 4:1, Psalm 51:1, Psalm 123:3</small>
+</span></span>
+
+<span class="tooltip"><strong>I am languishing</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">אֻמְלַל אָנִי</span>
+  <span class="transliteration">(umlal ani)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">אָמַל</span> — (amal) to languish, wither, fade, grow feeble
+  <br>Pulal perfect (passive intensive) — "I am being made to wither completely"
+  <br>Used of dried plants, exhausted people, failing nations — total depletion of vitality
+</div>
+<hr>
+<small class="references">Biblical Usage: Isaiah 16:8, 24:4, 33:9; Hosea 4:3; Joel 1:10</small>
+</span></span>
+
+<span class="tooltip"><strong>heal me</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">רְפָאֵנִי</span>
+  <span class="transliteration">(r'fa'eni)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">רָפָא</span> — (rafa) to heal, cure, restore
+  <br>Qal imperative — direct appeal for divine healing
+  <br>Root of the name Raphael ("God heals")
+  <br>OT does not sharply separate physical and spiritual healing — both are asked here
+</div>
+<hr>
+<small class="references">Biblical Usage: Exodus 15:26, Numbers 12:13, Psalm 30:2, Psalm 41:4, Isaiah 53:5</small>
+</span></span>
+
+<span class="tooltip"><strong>my bones are troubled</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">נִבְהֲלוּ עֲצָמַי</span>
+  <span class="transliteration">(niv'halu atzamai)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">בָּהַל</span> — (bahal) to be terrified, troubled, dismayed, thrown into panic
+  <br>Niphal perfect — passive: "my bones have been thrown into terror"
+  <br><span dir="rtl">עֶצֶם</span> — (etzem) bone; in Hebrew thought, bones = the deepest innermost self
+  <br>The terror has reached to the core of his being
+  <br>This root (bahal) will echo in v.10 — David's enemies will be "greatly troubled" with the same word
+</div>
+<hr>
+<small class="references">Biblical Usage: Genesis 2:23, Job 4:14, Proverbs 12:4, Psalm 31:10</small>
+</span></span>
+
+<span class="tooltip"><strong>my soul</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">נַפְשִׁי</span>
+  <span class="transliteration">(nafshi)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">נֶפֶשׁ</span> — (nefesh) soul, being, life, self, appetite
+  <br>Not the immaterial soul of Greek philosophy that contrasts with body
+  <br>In Hebrew: the whole living person — the self as an animated being
+  <br>When nefesh is troubled, the whole person is troubled — body and soul inseparable
+</div>
+<hr>
+<small class="references">Biblical Usage: Genesis 2:7, Deuteronomy 6:5, Psalm 42:5-6, Matthew 10:28</small>
+</span></span>
+
+<span class="tooltip"><strong>how long?</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">עַד מָתַי</span>
+  <span class="transliteration">(ad matai)</span>
+</div>
+<div class="definition-list">
+  "Until when?" / "How long?"
+  <br>Classic Hebrew lament formula — appears ~17 times in the Psalms alone
+  <br>NOT an expression of despair but of active faith: you ask "how long?" only of someone you believe will act
+  <br>The question implies: "I know You will — I'm asking when"
+</div>
+<hr>
+<small class="references">Biblical Usage: Psalm 13:1-2, 35:17, 74:10, 79:5, 80:4, 89:46, 90:13; Revelation 6:10</small>
+</span></span>
+
+<p>
+The verse breaks off mid-sentence: "But you, O LORD —" This is <em>aposiopesis</em> — a sudden silence, a sentence deliberately left incomplete. David cannot finish it. The suffering is too great to articulate. But the very turning toward God ("But YOU, O LORD") in the middle of breaking off is itself the prayer. God hears the incomplete sentence.
+</p>
+<p>
+This is the deepest form of multilayered prayer (cf. Psalm 5:1) — beyond words, beyond groaning, into the sheer turning of the face toward God.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+<p><strong>Theological Exposition</strong></p>
+<p>
+Two requests in v.2 — "be gracious" and "heal me" — reveal that David is asking for what he cannot produce himself. He is not confessing a recovery plan; he is confessing total depletion. <em>Umlal</em> (languishing) describes someone with no resources left. Grace meets humanity at exactly this point: at the end of human capacity.
+</p>
+<p>
+<strong>Body and soul unity:</strong> Hebrew anthropology does not separate spiritual from physical. David's bones are troubled AND his soul is troubled — they are the same person in distress. This challenges any view that divorces spiritual suffering from bodily suffering. God heals the whole person.
+</p>
+<hr>
+<blockquote class="church-voice">
+  <p>Augustine read "my bones are troubled" as the whole person — body and soul together — being drawn into spiritual anguish before God. He argued that the Psalm teaches us true prayer does not leave the body behind; the whole self comes before God in petition. Nothing is hidden, nothing excluded from the cry.</p>
+  <footer>— Augustine, <cite>Enarrationes in Psalmos</cite>, Psalm 6 [paraphrase]</footer>
+</blockquote>
+<hr>
+<p><strong>New Testament Connections</strong></p>
+<p>
+<strong>The Kyrie Eleison:</strong> The LXX rendered "be gracious to me" as <em>eleison me</em> — "have mercy on me." This became the Kyrie Eleison of the liturgy, prayed by the whole congregation at the start of the Divine Service. <span id="cite-1" class="cite-anchor">Psalm 6:2 is one of the most prayed verses in Christian history — most worshipers just don't know it. <sup class="ref"><a href="#ref-1">[1]</a></sup></span>
+</p>
+<p>
+<strong>"How long, O Lord?"</strong> The martyred saints under the altar in Revelation 6:10 cry <em>ad matai</em> — "how long?" to God. The lament prayer of Psalm 6 is still being prayed at the end of time. <span id="cite-2" class="cite-anchor">It is not a sign of weak faith but the persistent prayer of those who know God will act. <sup class="ref"><a href="#ref-2">[2]</a></sup></span>
+</p>
+<p>
+<span id="cite-3" class="cite-anchor"><strong>"He offered up prayers and supplications, with loud cries and tears."</strong> <sup class="ref"><a href="#ref-3">[3]</a></sup></span>
+Hebrews 5:7 describes Jesus in Gethsemane using language that echoes the lament psalms. Jesus prayed "how long?" before the Father. He brought bones and soul before God in anguish. Our lament is not merely permitted — it was modeled by Christ.
+</p>
+<hr>
+<p><em>Prayer</em></p>
+<p>
+Lord, I am languishing. My resources are gone. I am not coming to You with a recovery plan — I am coming because I have nothing left. Be gracious to me. Heal what is broken. I cannot tell You how long or when it will end. But You, O LORD — that is all I have. Receive the broken sentence. You know what it means.
+</p>
+<div class="ref-list">
+  
+  <ol>
+    <li id="ref-1"><a href="#cite-1" class="ref-back">↩</a> Kyrie Eleison (Divine Service) — from LXX Psalm 6:2</li>
+    <li id="ref-2"><a href="#cite-2" class="ref-back">↩</a> Revelation 6:10</li>
+    <li id="ref-3"><a href="#cite-3" class="ref-back">↩</a> Hebrews 5:7</li>
+    <li id="ref-13"><a href="#cite-13" class="ref-back">&#x21A9;</a> 1 Peter 1:5 &mdash; <em>&ldquo;[You] who by God&rsquo;s power are being guarded through faith for a salvation ready to be revealed in the last time.&rdquo;</em></li>
+    <li id="ref-14"><a href="#cite-14" class="ref-back">&#x21A9;</a> Philippians 4:7 &mdash; <em>&ldquo;And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.&rdquo;</em></li>
+    <li id="ref-15"><a href="#cite-15" class="ref-back">&#x21A9;</a> Psalm 8:5 / Hebrews 2:7 &mdash; <em>&ldquo;...you have crowned him with glory and honor.&rdquo;</em> Hebrews 2:7 quotes Psalm 8:5 directly; the author of Hebrews then applies it to Christ in v.9 &mdash; &ldquo;crowned with glory and honor because of the suffering of death.&rdquo; David&rsquo;s royal crown-language finds its ultimate referent in the crucified and risen Son.</li>
+  </ol>
+</div>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+`
+  },
+
+  { label: "Psalm 6:4-5",
+    title: "Turn, O LORD — The Chesed Appeal",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">6:4</div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
+      </div>
+      <div class="verse-row">
+        <div class="verse-num">6:5</div>
+        <div class="verse-content"><div data-verse-swap="1"></div></div>
+      </div>
+    `,
+    versions: {
+      ESV: [
+        `Turn, O LORD, deliver my soul;<br>save me for the sake of your steadfast love.`,
+        `For in death there is no remembrance of you;<br>in Sheol who will give you praise?<br><small>(ESV)</small>`
+      ],
+      KJV: [
+        `Return, O LORD, deliver my soul:<br>oh save me for thy mercies' sake.`,
+        `For in death there is no remembrance of thee:<br>in the grave who shall give thee thanks?<br><small>(KJV)</small>`
+      ],
+      NASB: [
+        `Return, O LORD, rescue my soul;<br>Save me because of Your lovingkindness.`,
+        `For there is no mention of You in death;<br>In Sheol who will give You thanks?<br><small>(NASB)</small>`
+      ],
+      NIV: [
+        `Turn, LORD, and deliver me;<br>save me because of your unfailing love.`,
+        `Among the dead no one proclaims your name.<br>Who praises you from the realm of the dead?<br><small>(NIV)</small>`
+      ]
+    },
+    insight: `
+<p>
+David's petition sharpens to three imperatives: turn, deliver, save. The ground for all three is not his own righteousness but God's <em>chesed</em> — covenantal steadfast love. Then in v.5, David makes a striking rhetorical move: he argues that God should save him for God's own sake, because the dead cannot praise.
+</p>
+<hr>
+<span class="tooltip"><strong>Turn</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">שׁוּבָה</span>
+  <span class="transliteration">(shuvah)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">שׁוּב</span> — (shuv) to turn, return, come back
+  <br>Qal imperative — "Turn!" The same verb used for repentance
+  <br>David asks God to turn His face back — not from sin, but from His apparent hiddenness
+  <br>This root echoes in v.10: David's enemies will "turn back" (shuv) in shame — deliberate reversal
+</div>
+<hr>
+<small class="references">Biblical Usage: Numbers 10:36, Psalm 80:3, Psalm 90:13, Lamentations 5:21, Zechariah 1:3</small>
+</span></span>
+
+<span class="tooltip"><strong>deliver my soul</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">חַלְּצָה נַפְשִׁי</span>
+  <span class="transliteration">(khaltza nafshi)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">חָלַץ</span> — (khalatz) to draw out, pull free, rescue, deliver
+  <br>Piel imperative — intensive: "draw me completely free"
+  <br>Image: pulling someone out of a pit, a trap, a net — extraction from danger
+</div>
+<hr>
+<small class="references">Biblical Usage: Psalm 18:19, 34:7, 60:5, 116:8; Isaiah 58:6</small>
+</span></span>
+
+<span class="tooltip"><strong>save me</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">הוֹשִׁיעֵנִי</span>
+  <span class="transliteration">(hoshi'eni)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">יָשַׁע</span> — (yasha) to save, deliver, bring to safety
+  <br>Hiphil imperative — causative: "cause me to be saved"
+  <br>This is the exact root of the name <strong>יֵשׁוּעַ (Yeshua / Jesus)</strong> — "YHWH saves"
+  <br>Every messianic "save me!" in the Psalms is already praying in the name of the One who would come
+</div>
+<hr>
+<small class="references">Biblical Usage: Psalm 3:7, 7:1, 12:1; Matthew 1:21; Acts 4:12</small>
+</span></span>
+
+<span class="tooltip"><strong>for the sake of your steadfast love</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">לְמַעַן חַסְדֶּךָ</span>
+  <span class="transliteration">(l'ma'an chasd'kha)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">חֶסֶד</span> — (chesed) steadfast love, covenantal loyalty, lovingkindness
+  <br><span dir="rtl">לְמַעַן</span> — (l'ma'an) for the sake of, on account of
+  <br>David grounds the entire petition NOT in his own righteousness but in God's covenant character
+  <br>Not "I deserve this" but "You are this — and You have bound Yourself to me"
+</div>
+<hr>
+<small><strong>LXX:</strong> ἕνεκεν τοῦ ἐλέους σου — "for the sake of your mercy/eleos." This is the same word used in "Blessed are the merciful" (Matthew 5:7) and "I desire mercy, not sacrifice" (Matthew 9:13 quoting Hosea 6:6). Chesed/eleos threads from David through Jesus' own teaching.</small>
+<hr>
+<small class="references">Biblical Usage: Psalm 5:7, 25:7, 31:16, 44:26, 51:1; Exodus 34:6-7</small>
+</span></span>
+
+<p>
+Three imperatives — turn → deliver → save — describe a complete rescue operation:
+</p>
+<ul>
+<li><strong>שׁוּבָה (Turn)</strong> — God must first turn His face back (relational)</li>
+<li><strong>חַלְּצָה (Deliver)</strong> — draw David out of danger (active extraction)</li>
+<li><strong>הוֹשִׁיעֵנִי (Save)</strong> — bring him to safety (completed rescue)</li>
+</ul>
+<hr>
+<p><strong>The Sheol Argument (v.5)</strong></p>
+<span class="tooltip"><strong>in Sheol</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">בִּשְׁאוֹל</span>
+  <span class="transliteration">(bisheol)</span>
+</div>
+<div class="definition-list">
+  שְׁאוֹל — (Sheol) the realm of the dead; the underworld
+  <br>In OT understanding: a place of shadowy existence, cut off from the living covenant community and temple worship
+  <br>Not hell in the NT sense — the grave / realm of the dead before resurrection
+</div>
+<hr>
+<small><strong>LXX:</strong> ἐν τῷ ᾍδῃ (in Hades) — the same word Peter uses in Acts 2:27 (quoting Psalm 16:10), and Jesus uses in Matthew 16:18 ("gates of Hades will not prevail"). Sheol/Hades is the domain Christ overcomes in His resurrection.</small>
+<hr>
+<small class="references">Biblical Usage: Genesis 37:35, Psalm 16:10, 49:14-15, Isaiah 14:9-15, Acts 2:27</small>
+</span></span>
+
+<p>
+David's argument in v.5: "Save me so I can keep praising You. In Sheol, no one praises."
+</p>
+<p>
+This is NOT crass bargaining. The theological logic:
+</p>
+<ol>
+<li><span id="cite-1" class="cite-anchor">God is glorified when His people praise Him <sup class="ref"><a href="#ref-1">[1]</a></sup></span></li>
+<li><span id="cite-2" class="cite-anchor">The dead in Sheol are cut off from the covenant community's active praise <sup class="ref"><a href="#ref-2">[2]</a></sup></span></li>
+<li>Therefore saving David gains God a living worshiper</li>
+</ol>
+<p>
+The argument reflects OT theology at a specific stage — the full hope of bodily resurrection and eternal praise was still emerging. David prays within his understanding, and God honors it. The Sheol argument is ultimately transcended by the Resurrection: <span id="cite-3" class="cite-anchor">Christ has conquered death, and those who die in faith are with Christ, not silenced. <sup class="ref"><a href="#ref-3">[3]</a></sup></span> But David's instinct — that God's glory is served by the praise of His people — is permanently valid.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+<p><strong>Theological Exposition — Chesed as the Ground of All Prayer</strong></p>
+<p>
+"For the sake of your steadfast love" is the defining phrase. David does not appeal to his merit, his track record, his sacrifices. He appeals to <em>chesed</em> — God's covenantal character. This is LCMS Lutheran theology at its root: prayer is not meritorious. It moves toward God on the basis of what God has already established — His covenantal love.
+</p>
+<p>
+The NT equivalent is prayer "in Jesus' name" — not a formula but a ground. We approach God not because we deserve access but because Christ is our chesed, our covenantal standing before the Father.
+</p>
+<hr>
+<blockquote class="church-voice">
+  <p>Luther argued that "for the sake of your steadfast love" is the only true ground of prayer. Prayer that appeals to human merit is self-glorifying. But prayer that appeals to God's promise and covenant love is prayer that God Himself established — and therefore must honor. David's petition is not "save me because I am worth saving" but "save me because You have committed to be this kind of God."</p>
+  <footer>— Martin Luther, <cite>Explanation of the Seven Penitential Psalms</cite>, Psalm 6 [paraphrase]</footer>
+</blockquote>
+<hr>
+<p><strong>New Testament Connections</strong></p>
+<p>
+<strong>The name hidden in the petition:</strong> <em>Hoshi'eni</em> — "save me!" — from the root יָשַׁע (yasha). This is the exact root of Yeshua (Jesus). <span id="cite-4" class="cite-anchor">Matthew 1:21: "You shall call his name Jesus, for he will save his people from their sins." <sup class="ref"><a href="#ref-4">[4]</a></sup></span> Every messianic "save me!" in the Psalms is already praying in the name of the One who would answer.
+</p>
+<p>
+<span id="cite-5" class="cite-anchor"><strong>Resurrection as the answer to Sheol:</strong> "Death is swallowed up in victory. O death, where is your sting?" <sup class="ref"><a href="#ref-5">[5]</a></sup></span> The fear David articulated — that death silences praise — is answered definitively in the empty tomb. Christ rose from Sheol, and those who die in Him are with Him, not silent.
+</p>
+<hr>
+<p><em>Prayer</em></p>
+<p>
+Turn to me, Lord. Not because I deserve it — I know I do not. Turn to me for the sake of Your steadfast love, for the sake of what You have promised, for the sake of the Christ who is Your covenant in person. Draw me out. Save me, Yeshua — for that is Your name and Your nature. And let me live to praise You, here, in the land of the living.
+</p>
+<div class="ref-list">
+  
+  <ol>
+    <li id="ref-1"><a href="#cite-1" class="ref-back">↩</a> Psalm 22:23, Isaiah 43:21, John 4:23-24</li>
+    <li id="ref-2"><a href="#cite-2" class="ref-back">↩</a> Psalm 88:10-12, Isaiah 38:18</li>
+    <li id="ref-3"><a href="#cite-3" class="ref-back">↩</a> Daniel 12:2, Job 19:25-27, 1 Corinthians 15:20-22, Philippians 1:21-23</li>
+    <li id="ref-4"><a href="#cite-4" class="ref-back">↩</a> Matthew 1:21, Acts 4:12</li>
+    <li id="ref-5"><a href="#cite-5" class="ref-back">↩</a> 1 Corinthians 15:54-55; Acts 2:24, 31-32</li>
+    <li id="ref-13"><a href="#cite-13" class="ref-back">&#x21A9;</a> 1 Peter 1:5 &mdash; <em>&ldquo;[You] who by God&rsquo;s power are being guarded through faith for a salvation ready to be revealed in the last time.&rdquo;</em></li>
+    <li id="ref-14"><a href="#cite-14" class="ref-back">&#x21A9;</a> Philippians 4:7 &mdash; <em>&ldquo;And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.&rdquo;</em></li>
+    <li id="ref-15"><a href="#cite-15" class="ref-back">&#x21A9;</a> Psalm 8:5 / Hebrews 2:7 &mdash; <em>&ldquo;...you have crowned him with glory and honor.&rdquo;</em> Hebrews 2:7 quotes Psalm 8:5 directly; the author of Hebrews then applies it to Christ in v.9 &mdash; &ldquo;crowned with glory and honor because of the suffering of death.&rdquo; David&rsquo;s royal crown-language finds its ultimate referent in the crucified and risen Son.</li>
+  </ol>
+</div>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+`
+  },
+
+  { label: "Psalm 6:6-7",
+    title: "Weeping Through the Night",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">6:6</div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
+      </div>
+      <div class="verse-row">
+        <div class="verse-num">6:7</div>
+        <div class="verse-content"><div data-verse-swap="1"></div></div>
+      </div>
+    `,
+    versions: {
+      ESV: [
+        `I am weary with my moaning;<br>every night I flood my bed with tears;<br>I drench my couch with my weeping.`,
+        `My eye wastes away because of grief;<br>it grows weak because of all my foes.<br><small>(ESV)</small>`
+      ],
+      KJV: [
+        `I am weary with my groaning;<br>all the night make I my bed to swim;<br>I water my couch with my tears.`,
+        `Mine eye is consumed because of grief;<br>it waxeth old because of all mine enemies.<br><small>(KJV)</small>`
+      ],
+      NASB: [
+        `I am worn out with my sighing;<br>Every night I make my bed swim,<br>I dissolve my couch with my tears.`,
+        `My eye has wasted away with grief;<br>It has become old because of all my adversaries.<br><small>(NASB)</small>`
+      ],
+      NIV: [
+        `I am worn out from my groaning.<br>All night long I flood my bed with weeping<br>and drench my couch with tears.`,
+        `My eyes grow weak with sorrow;<br>they fail because of all my foes.<br><small>(NIV)</small>`
+      ]
+    },
+    insight: `
+<p>
+David now gives us a physical record of sustained grief: exhausted from groaning, eyes failing, tears so constant they soak the bed. This is not metaphor for emotional difficulty — this is bodily deterioration. These two verses sit at the lowest point of the psalm before the sudden reversal in v.8. The descent must reach the bottom before the turn.
+</p>
+<hr>
+<span class="tooltip"><strong>I am weary</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">יָגַעְתִּי</span>
+  <span class="transliteration">(yaga'ti)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">יָגַע</span> — (yaga) to toil, labor, be exhausted
+  <br>Qal perfect — "I have become exhausted" — not passing fatigue but a state of depletion
+  <br>Used for the exhaustion of hard labor, soldiers after battle, travelers in the wilderness
+</div>
+<hr>
+<small class="references">Biblical Usage: Genesis 19:11, Isaiah 40:28-31, Jeremiah 51:58, Habakkuk 2:13</small>
+</span></span>
+
+<span class="tooltip"><strong>my moaning</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">בְּאַנְחָתִי</span>
+  <span class="transliteration">(b'ankhat)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">אַנְחָה</span> — (anakhah) groaning, sighing, moaning
+  <br>From <span dir="rtl">אָנַח</span> (anakh) = to sigh, groan — an involuntary, sustained expression of pain
+  <br>Not the articulate prayer of vv. 1–4 but the pre-verbal sound that comes from deep anguish
+  <br>Connects to Psalm 5:1 — the "groaning" (hagigi) beneath the words
+</div>
+<hr>
+<small class="references">Biblical Usage: Psalm 5:1, 31:10, 38:9; Lamentations 1:22; Romans 8:26</small>
+</span></span>
+
+<span class="tooltip"><strong>I flood my bed</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">אַשְׂחֶה מִטָּתִי</span>
+  <span class="transliteration">(ash'kheh mitati)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">שָׂחָה</span> — (sakhah) to swim, float — used here metaphorically for tears overflowing
+  <br>"I cause my bed to swim" — the image of tears so plentiful the bed is soaked
+  <br>A rare and vivid word; its rarity signals an extreme condition
+</div>
+</span></span>
+
+<span class="tooltip"><strong>my eye wastes away</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">עָשְׁשָׁה עֵינִי</span>
+  <span class="transliteration">(ashshah eini)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">עָשַׁשׁ</span> — (ashah) to waste away, be consumed — a rare word
+  <br>Only a handful of occurrences in the Hebrew Bible; rarity emphasizes the extreme
+  <br>Eyes grow dim, fail — physical sign of prolonged weeping and grief
+</div>
+<hr>
+<small class="references">Biblical Usage: Psalm 31:9-10, Lamentations 5:17</small>
+</span></span>
+
+<span class="tooltip"><strong>because of grief</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">מִכַּעַס</span>
+  <span class="transliteration">(mikka'as)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">כַּעַס</span> — (ka'as) grief, vexation, anger, emotional agitation
+  <br>Not just sadness — a churning, turbulent inner state
+  <br>Same root as Hannah's grief before she prayed for a son (1 Samuel 1:16)
+</div>
+<hr>
+<small class="references">Biblical Usage: 1 Samuel 1:16, Ecclesiastes 1:18, 2:23; Proverbs 12:16</small>
+</span></span>
+
+<p>
+<strong>The body as witness to the soul:</strong> David gives the physical record of sustained grief — exhaustion, groaning, soaked bedding, failing eyes. The Psalm is teaching that grief makes legitimate bodily claims. The emotion is not "just in your head" — it lives in the bones (v.2), the eyes (v.7), the bed (v.6). When someone is physically depleted by grief, their body is accurately reporting what is happening to the whole person.
+</p>
+<p>
+The enemy appears for the first time since v.1 in v.7b: "because of all my foes." David's suffering is not only spiritual — it is the fruit of sustained opposition and persecution. The Psalms do not separate spiritual, emotional, and physical suffering into separate compartments. They treat the whole person under attack.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+<blockquote class="church-voice">
+  <p>Spurgeon observed that David's tears were themselves a form of prayer — that there is "a language in tears which God understands." The night weeping of Psalm 6 is not faithlessness but raw trust: David does not hide from God in his grief, he brings it to God. Even the soaked bed is laid before the Lord. Grief brought to God is already turning toward faith.</p>
+  <footer>— Charles Spurgeon, <cite>The Treasury of David</cite>, Psalm 6 [paraphrase]</footer>
+</blockquote>
+<hr>
+<p><strong>New Testament Connections</strong></p>
+<p>
+<span id="cite-1" class="cite-anchor"><strong>"Jesus wept."</strong> <sup class="ref"><a href="#ref-1">[1]</a></sup></span> The Son of God cried at the tomb of Lazarus. He does not stand over human grief as an observer — He enters it. <span id="cite-2" class="cite-anchor">He who "bore our griefs and carried our sorrows" <sup class="ref"><a href="#ref-2">[2]</a></sup></span> wept at the same kind of loss that reduces David to soaking his bed with tears.
+</p>
+<p>
+<span id="cite-3" class="cite-anchor"><strong>"The Spirit himself intercedes for us with groanings too deep for words."</strong> <sup class="ref"><a href="#ref-3">[3]</a></sup></span> Paul's description of the Spirit interceding with "groanings" is the NT completion of David's anakhah (v.6). The Spirit prays the prayers we cannot form. When David's words run out and only the moaning remains, the Spirit is already interceding in that gap.
+</p>
+<hr>
+<p><em>Prayer</em></p>
+<p>
+Lord, I am exhausted. I have been groaning so long my body is worn out. My nights are long. I lay all of this before You — not to complain but because You are the only One I can bring this to. You saw David's soaked bed. You see mine. Jesus wept. The Spirit groans when I cannot pray. Receive my tears as prayer. Be near in this night.
+</p>
+<div class="ref-list">
+  
+  <ol>
+    <li id="ref-1"><a href="#cite-1" class="ref-back">↩</a> John 11:35</li>
+    <li id="ref-2"><a href="#cite-2" class="ref-back">↩</a> Isaiah 53:4</li>
+    <li id="ref-3"><a href="#cite-3" class="ref-back">↩</a> Romans 8:26</li>
+    <li id="ref-13"><a href="#cite-13" class="ref-back">&#x21A9;</a> 1 Peter 1:5 &mdash; <em>&ldquo;[You] who by God&rsquo;s power are being guarded through faith for a salvation ready to be revealed in the last time.&rdquo;</em></li>
+    <li id="ref-14"><a href="#cite-14" class="ref-back">&#x21A9;</a> Philippians 4:7 &mdash; <em>&ldquo;And the peace of God, which surpasses all understanding, will guard your hearts and your minds in Christ Jesus.&rdquo;</em></li>
+    <li id="ref-15"><a href="#cite-15" class="ref-back">&#x21A9;</a> Psalm 8:5 / Hebrews 2:7 &mdash; <em>&ldquo;...you have crowned him with glory and honor.&rdquo;</em> Hebrews 2:7 quotes Psalm 8:5 directly; the author of Hebrews then applies it to Christ in v.9 &mdash; &ldquo;crowned with glory and honor because of the suffering of death.&rdquo; David&rsquo;s royal crown-language finds its ultimate referent in the crucified and risen Son.</li>
+  </ol>
+</div>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+`
+  },
+
+  { label: "Psalm 6:8-10",
+    title: "The LORD Has Heard",
+    image: "lyre.png",
+    text: `
+      <div class="verse-row">
+        <div class="verse-num">6:8</div>
+        <div class="verse-content"><div data-verse-swap="0"></div></div>
+      </div>
+      <div class="verse-row">
+        <div class="verse-num">6:9</div>
+        <div class="verse-content"><div data-verse-swap="1"></div></div>
+      </div>
+      <div class="verse-row">
+        <div class="verse-num">6:10</div>
+        <div class="verse-content"><div data-verse-swap="2"></div></div>
+      </div>
+    `,
+    versions: {
+      ESV: [
+        `Depart from me, all you workers of evil,<br>for the LORD has heard the sound of my weeping.`,
+        `The LORD has heard my plea;<br>the LORD accepts my prayer.`,
+        `All my enemies shall be ashamed and greatly troubled;<br>they shall turn back and be put to shame in a moment.<br><small>(ESV)</small>`
+      ],
+      KJV: [
+        `Depart from me, all ye workers of iniquity;<br>for the LORD hath heard the voice of my weeping.`,
+        `The LORD hath heard my supplication;<br>the LORD will receive my prayer.`,
+        `Let all mine enemies be ashamed and sore vexed:<br>let them return and be ashamed suddenly.<br><small>(KJV)</small>`
+      ],
+      NASB: [
+        `Depart from me, all you who do iniquity,<br>For the LORD has heard the voice of my weeping.`,
+        `The LORD has heard my supplication,<br>The LORD receives my prayer.`,
+        `All my enemies will be ashamed and greatly dismayed;<br>They shall turn back, they will suddenly be ashamed.<br><small>(NASB)</small>`
+      ],
+      NIV: [
+        `Away from me, all you who do evil,<br>for the LORD has heard my weeping.`,
+        `The LORD has heard my cry for mercy;<br>the LORD accepts my prayer.`,
+        `All my enemies will be overwhelmed with shame and anguish;<br>they will turn back and suddenly be put to shame.<br><small>(NIV)</small>`
+      ]
+    },
+    insight: `
+<p>
+Nothing external changed between v.7 and v.8. No rescue arrived. No enemy fled. No healing came. But David turns completely — and declares with certainty: "The LORD has heard." This is what Hebrew lament is designed to do. It does not end in despair. It ends in the certainty of a God who hears. The act of bringing suffering fully before God in honest prayer produces a confidence that cannot be manufactured through willpower or positive thinking.
+</p>
+<p>
+The resolution cascades across three verses:
+</p>
+<ul>
+<li>v.8 — God heard <em>the sound of my weeping</em> (the inarticulate cry)</li>
+<li>v.9 — God heard <em>my plea</em>; God <em>accepts</em> my prayer (the articulate petition)</li>
+<li>v.10 — Enemies <em>will</em> be ashamed — future certainty stated as accomplished fact</li>
+</ul>
+<hr>
+<span class="tooltip"><strong>Depart from me</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">סוּרוּ מִמֶּנִּי</span>
+  <span class="transliteration">(suru mimmenni)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">סוּר</span> — (sur) to turn aside, depart, leave
+  <br>Qal imperative plural — a direct command; David dismisses his enemies with authority
+  <br>This authority comes entirely from v.8b: "for the LORD has heard"
+  <br>The command is only possible because of the prior declaration of God's action
+</div>
+<hr>
+<small><strong>LXX:</strong> ἀπόστητε ἀπ᾿ ἐμοῦ πάντες οἱ ἐργαζόμενοι τὴν ἀνομίαν — "Depart from me, all you workers of lawlessness." Jesus quotes this <strong>directly and verbatim</strong> in Matthew 7:23. See NT Connections.</small>
+<hr>
+<small class="references">Biblical Usage: Matthew 7:23, Luke 13:27, Matthew 25:41</small>
+</span></span>
+
+<span class="tooltip"><strong>the sound of my weeping</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">קוֹל בְּכִיִּי</span>
+  <span class="transliteration">(kol b'khiyi)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">קוֹל</span> — (kol) voice, sound
+  <br><span dir="rtl">בְּכִי</span> — (bekhi) weeping
+  <br>God heard the SOUND — not structured words but the cry of grief itself
+  <br>God heard the crying before it was a formed prayer
+</div>
+</span></span>
+
+<span class="tooltip"><strong>greatly troubled</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">יִבָּהֲלוּ מְאֹד</span>
+  <span class="transliteration">(yivvahalu me'od)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">בָּהַל</span> — (bahal) to be terrified, troubled, dismayed
+  <br>This is the <strong>same root</strong> used in vv. 2–3: David's bones were "troubled" (bahal); his soul was "greatly troubled" (bahal me'od)
+  <br>Now his enemies are "greatly troubled" (bahal me'od) — the word has turned back on them
+  <br>What was done to David is now done by God to his enemies
+</div>
+</span></span>
+
+<span class="tooltip"><strong>they shall turn back</strong><span class="tooltiptext">
+<div class="hebrew-row">
+  <span class="hebrew-text" dir="rtl">יָשֻׁבוּ</span>
+  <span class="transliteration">(yashuvu)</span>
+</div>
+<div class="definition-list">
+  <span dir="rtl">שׁוּב</span> — (shuv) to turn, return
+  <br>Same root as "Turn" (shuvah) in v.4 — David asked God to turn toward him
+  <br>Now his enemies turn back in shame — the shuv David asked of God now happens to his enemies
+  <br>Deliberate echo: prayer answered in structural reversal
+</div>
+</span></span>
+
+<p><strong>The Circular Structure of Psalm 6</strong></p>
+<p>
+Hebrew poetry uses verbal echoes to signal resolution. In Psalm 6, the words used for David's affliction are turned back onto his enemies:
+</p>
+<ul>
+<li>v.3: David is "greatly troubled" (<span dir="rtl">נִבְהֲלָה מְאֹד</span> — bahal me'od)</li>
+<li>v.10: David's enemies are "greatly troubled" (<span dir="rtl">יִבָּהֲלוּ מְאֹד</span> — bahal me'od)</li>
+<li>v.4: David asks God to "turn" (<span dir="rtl">שׁוּבָה</span> — shuvah) toward him</li>
+<li>v.10: David's enemies "turn back" (<span dir="rtl">יָשֻׁבוּ</span> — yashuvu) in shame</li>
+</ul>
+<p>
+The resolution is not merely David's relief — it is a complete structural reversal. The terror that was on David, the turning that David sought, now falls on his enemies. God's hearing repositions everything.
+</p>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN</em> ]
+  </span>
+</p>
+<hr>
+<p><strong>Theological Exposition — The Certainty That Comes Through Lament</strong></p>
+<p>
+The confidence of v.9 is stated with triple emphasis: "The LORD has heard my plea; the LORD accepts my prayer." The repetition of "the LORD" (YHWH) is deliberate — not chance, not fate, not a general deity, but the covenant God who made promises. This is the foundation of confidence: not circumstances, but the character of the One who hears.
+</p>
+<p>
+This is also the theology of lament: the act of bringing suffering before God in honest prayer — the groaning, the weeping, the incomplete sentences, the "how long?" — does something. It does not change God's mind (He already knew). It changes the posture of the one praying. David prayed fully, brought everything before God, and came out the other side certain. The Psalms teach us that lament is not the opposite of faith — it is faith working through suffering.
+</p>
+<hr>
+<blockquote class="church-voice">
+  <p>Bonhoeffer wrote that the Psalms are first the prayer of Jesus Christ and only through Him our prayer. The certainty at the end of Psalm 6 — "The LORD has heard" — is most fully true in Christ, who prayed with loud cries and tears (Hebrews 5:7) and was heard. When we pray Psalm 6:9, we pray in and through the One whose prayer God definitively answered in the Resurrection.</p>
+  <footer>— Dietrich Bonhoeffer, <cite>The Psalms: The Prayer Book of the Bible</cite>, 1940 [paraphrase]</footer>
+</blockquote>
+<hr>
+<p><strong>New Testament Connections — Jesus Quotes This Verse at the Final Judgment</strong></p>
+<p>
+The most significant NT connection in all of Psalm 6:
+</p>
+<p>
+<strong>Psalm 6:8 (LXX):</strong> "Depart from me, all you workers of lawlessness"
+<br><strong>Matthew 7:23:</strong> <span id="cite-1" class="cite-anchor">Jesus says at the judgment: "I never knew you; depart from me, you workers of lawlessness" — a <em>direct quotation</em> of the LXX. <sup class="ref"><a href="#ref-1">[1]</a></sup></span>
+</p>
+<p>
+What this means:
+</p>
+<ol>
+<li>Jesus applies to Himself the words of the vindicated Psalmist. He is the ultimate David — the one whose prayer God has heard — speaking with final eschatological authority.</li>
+<li>The "workers of iniquity" who persecuted David become, eschatologically, those who claimed to serve Jesus but did not know Him.</li>
+<li>David's confidence — "depart from me, for God has heard my prayer!" — becomes Christ's final verdict at the judgment. The psalm's resolution is not merely historical; it is eschatological.</li>
+</ol>
+<p>
+<span id="cite-2" class="cite-anchor"><strong>"He offered up prayers and supplications, with loud cries and tears, to him who was able to save him from death, and he was heard because of his reverence."</strong> <sup class="ref"><a href="#ref-2">[2]</a></sup></span>
+</p>
+<p>
+Hebrews 5:7 describes Jesus in Gethsemane using lament psalm language. Jesus prayed Psalm 6. He was heard. The answer was the Resurrection. <span id="cite-3" class="cite-anchor">Our confidence that God hears us is anchored in the fact that God definitively heard the perfect Pray-er — and raised Him on the third day. <sup class="ref"><a href="#ref-3">[3]</a></sup></span>
+</p>
+<hr>
+<p><em>Prayer</em></p>
+<p>
+Lord, You have heard. You heard the sound of my weeping — not just my formed words but the sound itself, the cry in the night. You heard my plea. You accept my prayer. I declare it: the LORD has heard. And so I speak to whatever opposes me — depart. Not because I am strong, but because God is for me. Not because my enemies are small, but because the One who hears me is great. I end where David ends: in certainty not because circumstances changed but because You are who You are. The LORD has heard. That is enough.
+</p>
+<div class="ref-list">
+  
+  <ol>
+    <li id="ref-1"><a href="#cite-1" class="ref-back">↩</a> Matthew 7:23; Luke 13:27; Matthew 25:41</li>
+    <li id="ref-2"><a href="#cite-2" class="ref-back">↩</a> Hebrews 5:7</li>
+    <li id="ref-3"><a href="#cite-3" class="ref-back">↩</a> Romans 8:34; 1 John 2:1-2; Acts 2:24, 31-32</li>
+  </ol>
+</div>
+<p>
+  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+    [ <em>SELAH AMEN &amp; AMEN — END OF PSALM 6</em> ]
+  </span>
+</p>
+`
+  },
 ];
   
  
