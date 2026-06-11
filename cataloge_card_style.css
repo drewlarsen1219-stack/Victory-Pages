@@ -1,17 +1,14 @@
-<style>
+
 
 /* Now you can change the look of ALL 150 psalms at once here */
 .verse-indent {
   padding-left: 25px;
   display: inline-block;
   font-style: italic; /* You can decide to make indents italic here! */
+
 }
 
 
-fieldset {
-  margin-top: 15px !important; /* Brings the insights closer to the verse box */
-  padding-top: 0px;           /* Optional: removes internal top space */
-}
 
 /* Also check the p tag inside the fieldset */
 fieldset p {
@@ -47,30 +44,37 @@ body {
   /* Terminal Style Buttons */
   .retro-btn {
     background: #d0d0d0;
-    border: 1px solid #000;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #606060;
+    border-right: 2px solid #606060;
     font-family: "Courier New", Courier, monospace;
     font-size: 13px;
     padding: 4px 12px;
     cursor: pointer;
     color: #000;
-    
   }
 
   .retro-btn:hover:not(:disabled) {
-    outline: 1px dotted #000;
-    outline-offset: -4px;
-    text-decoration: underline;
-    background: #c0c0c0;
+    background: #e0e0e0;
+    font-weight: bold;
   }
 
   .retro-btn:active:not(:disabled) {
-    background: #808080;
-    color: #fff;
+    border-top: 2px solid #606060;
+    border-left: 2px solid #606060;
+    border-bottom: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    background: #b8b8b8;
+    color: #000;
   }
 
   .retro-btn:disabled {
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #888;
+    border-right: 2px solid #888;
     color: #888;
-    border-color: #888;
     background: #d8d8d8;
     cursor: not-allowed;
   }
@@ -118,11 +122,6 @@ body {
   padding-left: 10px; 
 }
 
-/* Use this ONLY if you want a line to be extra-indented (poetry style) */
-.verse-indent {
-  padding-left: 20px;
-  display: inline-block;
-}
 
 .image {
 	align-items: flex-end;
@@ -137,20 +136,26 @@ body {
 
 /* Tooltip Box */
 .tooltip .tooltiptext {
+  display: block;
   visibility: hidden;
   width: 350px;
+  max-width: 90vw;
   background-color: #FFFFCC;
   color: #000;
   text-align: left;
   padding: 10px;
   border: 1px solid white;
-  border-radius: 0; 
-box-shadow: 0 0 0 1px #888;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px #888;
   position: absolute;
-  z-index: 1;
-  bottom: 140%; 
-  left: 0; 
-  opacity: 1; 
+  z-index: 999;
+  bottom: 140%;
+  left: 0;
+  opacity: 1;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 0.9em;
+  line-height: 1.5;
 }
 
 /* Show on Hover */
@@ -168,10 +173,207 @@ box-shadow: 0 0 0 1px #888;
   border-color: #000 transparent transparent transparent;
 }
 
+
+/* Tooltip that appears below trigger (for elements near top of card) */
+.tooltip-down .tooltiptext {
+  top: 100%;
+  bottom: auto;
+  margin-top: 8px;
+}
+
+.tooltip-down .tooltiptext::after {
+  top: auto;
+  bottom: 100%;
+  border-color: transparent transparent #000 transparent;
+}
+.hebrew-row, .definition-list { display: block; }
+
+/* ── Tooltip internals ── */
+.usage-note {
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+  margin: 5px 0 3px;
+  padding-left: 7px;
+  border-left: 2px solid #aaa;
+}
+
+small.references {
+  display: block;
+  color: #777;
+  font-size: 0.85em;
+  margin-top: 5px;
+  font-style: italic;
+}
+
 .hebrew-text {
   font-size: 1.4em;
   font-family: "SBL Hebrew", "Times New Roman", serif;
 }
 
+.transliteration {
+    margin-left: 12px; /* Adjust the 12px to whatever looks best to you */
+}
 
-</style>
+
+/* ── Numbered reference superscripts ── */
+sup.ref {
+  font-size: 0.75em;
+  color: #555;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+}
+
+sup.ref a {
+  color: inherit;
+  text-decoration: none;
+}
+
+sup.ref a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* ── References list at bottom of insight ── */
+.ref-list {
+  background: #d0d0d0;
+  border-top: 1px solid #606060;
+  border-left: 1px solid #606060;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.18);
+  padding: 8px 12px;
+  margin-top: 15px;
+  font-size: 0.88em;
+  line-height: 1.6;
+}
+
+.ref-list ol {
+  margin: 4px 0 0 0;
+  padding-left: 20px;
+}
+
+.ref-list li {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #b8b8b8;
+}
+
+.ref-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.ref-list li:target {
+  background: #fffbe6;
+  border-left: 2px solid #999;
+  padding-left: 6px;
+  margin-left: -8px;
+}
+
+/* ── Selah / liturgical pause markers ── */
+.selah-marker {
+  display: block;
+  font-family: "Courier New", monospace;
+  font-size: 12px;
+  color: #808080;
+  margin: 2px 0 14px;
+}
+
+.ref-back {
+  font-family: "Courier New", monospace;
+  font-size: 0.85em;
+  color: #999;
+  text-decoration: none;
+  margin-right: 4px;
+}
+
+.ref-back:hover {
+  color: #333;
+}
+
+@keyframes cite-highlight-fade {
+  0%, 67%  { background: #fffbe6; outline: 1px solid #bba; }
+  100%     { background: transparent; outline: 1px solid transparent; }
+}
+
+.cite-anchor:target {
+  animation: cite-highlight-fade 3s ease-out forwards;
+}
+
+/* ── Collapsible study sections ── */
+details.study-section {
+  margin: 6px 0;
+}
+
+details.study-section > summary {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: #555;
+  cursor: pointer;
+  padding: 3px 0;
+  list-style: none;
+  user-select: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+details.study-section > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.study-section > summary::before {
+  content: "▶ ";
+  font-size: 9px;
+}
+
+details.study-section[open] > summary::before {
+  content: "▼ ";
+  font-size: 9px;
+}
+
+/* ── Church fathers / reformer quotes ── */
+blockquote.church-voice {
+  background: #d8d8d8;
+  margin: 10px 0;
+  padding: 8px 12px;
+  font-style: normal;
+  
+}
+
+blockquote.church-voice footer {
+  font-size: 0.85em;
+  color: #444;
+  margin-top: 6px;
+  font-family: "Courier New", monospace;
+}
+
+/* ── Hebrew interlinear word-order block ── */
+.interlinear-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 6px 0 10px;
+}
+
+.word-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 52px;
+}
+
+.heb-word {
+  font-family: 'Frank Ruhl Libre', "SBL Hebrew", "Times New Roman", serif;
+  font-size: 2.2em;
+  direction: rtl;
+}
+
+.heb-gloss {
+  font-size: 0.72em;
+  color: #666;
+  text-align: center;
+  direction: ltr;
+  margin-top: 3px;
+}
