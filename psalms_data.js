@@ -1,21 +1,131 @@
-  /* PSALM DATA STORAGE 
+﻿  /* PSALM DATA STORAGE 
      As you add more, keep following the { label, title, text, ref, insight } pattern.
   */
   const psalmData = [
    
    /* --- INTRO --- */
 { label: "Introduction",
-      title: "The Book of 'Praises' (Tehillim) תְּהִלִּים",
+      title: "The Prayer Book of God's People",
 	  image: "lyre.png",
       text: `
-        An anthology of hymns and songs containing praises and supplications to God. 
-        While many are attributed to David, others were written by inspired scribes and prophets across different eras.        
+        An anthology of hymns, laments, and songs of praise spanning many authors and centuries &#8212; the prayer book of God&#8217;s people. The Hebrew title, <span class="tooltip">Tehillim<span class="tooltiptext"><span style="font-size:1.4em;">תְּהִלִּים</span> &#8212; meaning &#8220;Praises.&#8221; Though lament dominates much of the interior, the collection ends in pure doxology &#8212; the title names the destination, not the journey.</span></span>, means &#8220;Praises.&#8221;
       `,
       ref: "Selah Amen",
-      insight: `The Psalters often contain layers of meaning that aren't fully realized until later revelations by other inspired prophets. 
-	  <br><small> 2 Timothy 3:16–17, 2 Peter 1:20–21, Isaiah 40:8 </small>`
+      insight: `<details class="study-section">
+<summary>About These Pages</summary>
+<p>
+These pages are a verse-by-verse <span class="tooltip">exegetical<span class="tooltiptext">From exegesis &#8212; drawing the meaning out of the text itself through careful analysis of the original language, grammar, and historical context. The opposite of reading a meaning into the text that is not already there.</span></span> study of the Psalms. Each verse is examined word by word: Hebrew text with transliteration and grammatical analysis, covenantal and theological context, parallel passages from across Scripture, and comparison of major English translations. The goal is precision &#8212; to know exactly what is written, what it means, and why it matters.
+</p>
+<p>
+The study is written from a <span class="tooltip">confessional<span class="tooltiptext">Subscribing to specific historic statements of faith &#8212; creeds, catechisms, and confessions &#8212; as authoritative summaries of what Scripture teaches. A confessional church is bound to those documents, not merely broadly Christian in a general sense.</span></span> <span class="tooltip">Lutheran<span class="tooltiptext">A tradition of Christian theology rooted in the 16th-century Reformation work of Martin Luther. Core commitments: Scripture alone as the supreme authority (Sola Scriptura), justification by grace through faith alone (Sola Gratia, Sola Fide), and the means of grace &#8212; Word and Sacraments &#8212; as the channels through which God delivers forgiveness and life.</span></span> (<span class="tooltip">LCMS<span class="tooltiptext">The Lutheran Church&#8212;Missouri Synod. A confessional Lutheran denomination in the United States that affirms biblical inerrancy and subscribes to the Lutheran confessional documents, including the Augsburg Confession, Luther&#8217;s Small and Large Catechisms, and the Formula of Concord.</span></span>) perspective. Two commitments shape the reading throughout.
+</p>
+<p>
+<strong>First</strong>, every passage is read through the <span class="tooltip"><strong>Law and Gospel</strong><span class="tooltiptext">The central distinction in Lutheran theology. The Law is everything Scripture says about what God demands &#8212; it reveals sin, condemns, and shows what is owed but cannot be paid. The Gospel is everything Scripture says about what God gives &#8212; the promise of forgiveness, life, and salvation in Christ, received by faith alone. Every biblical text functions as one or the other.</span></span> distinction &#8212; whether a text is exposing sin and demanding righteousness, or delivering the promise of grace.
+</p>
+<p>
+<strong>Second</strong>, the <span class="tooltip"><strong>Christological</strong><span class="tooltiptext">Relating to Christ. A Christological reading identifies where a text speaks of Christ &#8212; either as prophecy fulfilled in him, or as language that only fits Christ and not its human author.</span></span><strong> reading of the Psalms is treated as the plain meaning of the text</strong>, not as a meaning imported from outside the text. Where David describes suffering he never died &#8212; bones disjointed, garments divided, abandoned by God &#8212; or a reign and resurrection that outstrips anything in his biography, the language is read as written: the Holy Spirit placed those words there about Christ, using David&#8217;s voice to speak of what was not David&#8217;s to bear &#8212; <span id="cite-intro-1">because Christ Himself said so.<sup class="ref"><a href="#ref-intro-1">[1]</a></sup></span>
+</p>
+<p>
+A <span class="tooltip">Reformed<span class="tooltiptext">The Protestant theological tradition shaped by John Calvin and Huldrych Zwingli in the 16th century. Emphasizes God&#8217;s sovereignty, covenant theology, and election. Also called Calvinist. Major denominations include Presbyterian, Dutch Reformed, and many Baptist and evangelical churches.</span></span> reader would share the <span class="tooltip">grammatical-historical method<span class="tooltiptext">Reading a text according to what the words meant in their original language and historical context &#8212; asking what the author said, to whom, and what it would have meant to the original audience. The standard interpretive method in Protestant biblical scholarship.</span></span> but tends to organize Scripture under covenant categories (covenant of works and grace) rather than Law and Gospel &#8212; a framework that can soften the sharp distinction between what God demands and what God delivers.<span id="cite-intro-2"><sup class="ref"><a href="#ref-intro-2">[2]</a></sup></span>
+</p>
+<p>
+An <span class="tooltip">Eastern Orthodox<span class="tooltiptext">The family of ancient Eastern churches in communion with the Ecumenical Patriarch of Constantinople. Orthodox theology holds Scripture and Holy Tradition &#8212; the writings of the Church Fathers and the decrees of the Ecumenical Councils &#8212; as a unified whole. Biblical interpretation is governed by Patristic consensus, and the Septuagint (Greek Old Testament) is the authoritative Old Testament text. The Christological reading of the Psalms is native to Orthodox tradition; it is governed by the Church Fathers and Councils rather than by the Lutheran confessional documents.</span></span> reading shares the Christological commitment and holds Scripture and Tradition together, but grounds interpretation in the <span class="tooltip">Church Fathers and Ecumenical Councils<span class="tooltiptext"><strong>Church Fathers:</strong> Early Christian theologians and writers (roughly 1st&#8211;8th century) whose works are considered authoritative guides to interpreting Scripture. Key Fathers include Origen, John Chrysostom, Augustine, Athanasius, and John of Damascus. <strong>Ecumenical Councils:</strong> Official gatherings of bishops from across the universal Church to settle matters of doctrine. The Eastern Orthodox Church recognizes seven such councils (Nicaea I through Nicaea II, 325&#8211;787 AD) as definitively authoritative.</span></span> &#8212; the collective mind of the ancient Church &#8212; rather than in the <span class="tooltip">solas of the Reformation<span class="tooltiptext">The five foundational slogans of the Protestant Reformation: <em>Sola Scriptura</em> (Scripture alone), <em>Sola Gratia</em> (grace alone), <em>Sola Fide</em> (faith alone), <em>Solus Christus</em> (Christ alone), and <em>Soli Deo Gloria</em> (to God alone be glory). Together they summarize the Reformers&#8217; rejection of elements they believed had been added to the faith without biblical warrant.</span></span>.
+</p>
+<p>
+An <span class="tooltip">Evangelical<span class="tooltiptext">A broadly Protestant tradition emphasizing the authority of Scripture, personal conversion, the centrality of the cross, and active faith. Evangelical interpretation typically uses the grammatical-historical method but varies widely in applying typological and Christological readings &#8212; some streams embrace them readily, others are cautious about what they call over-spiritualizing the Old Testament. Major streams include Baptist, nondenominational, and Pentecostal churches.</span></span> reader typically affirms Scripture&#8217;s authority and uses the grammatical-historical method, but without a <span class="tooltip">formal confessional grid<span class="tooltiptext">A set of authoritative doctrinal standards &#8212; creeds, catechisms, or confessions &#8212; that a denomination is formally bound to and uses to govern interpretation. For Lutherans this is the Book of Concord (1580); for Presbyterians the Westminster Standards; for Roman Catholics the Catechism. Without such a grid, interpretive decisions must be made case by case without a binding framework.</span></span> may apply Christological readings inconsistently &#8212; sometimes treating the Psalms as <span class="tooltip">devotional literature<span class="tooltiptext">Writing or Scripture read primarily for personal piety, emotional engagement, and encouragement in prayer &#8212; rather than careful exegesis of what a text historically and doctrinally means. Reading the Psalms as devotional literature applies them directly to the individual&#8217;s feelings and relationship with God, often bypassing the historical, typological, and doctrinal layers.</span></span> addressed to the individual believer rather than as royal and prophetic texts requiring careful typological reasoning.
+</p>
+<p>
+A Jewish reading engages the historical and literary layers carefully but, without the Christological fulfillment, treats David&#8217;s descriptions of suffering he never died as hyperbole or liturgical convention rather than prophecy pointing beyond him.<span id="cite-intro-3"><sup class="ref"><a href="#ref-intro-3">[3]</a></sup></span>
+</p>
+<p>
+A Roman Catholic reading introduces the Church&#8217;s Tradition as a co-authority alongside Scripture, which means the <span class="tooltip">Magisterium&#8217;s<span class="tooltiptext">The official teaching authority of the Roman Catholic Church, held by the Pope and bishops in communion with him. Catholic doctrine holds that the Magisterium has authority to interpret both Scripture and Tradition.</span></span> interpretation can qualify or override the plain meaning of the text.<span id="cite-intro-4"><sup class="ref"><a href="#ref-intro-4">[4]</a></sup></span>
+</p>
+<p>
+The Lutheran lens is used here because it holds all three layers of the Psalms together &#8212; historical, typological, and Christological &#8212; without collapsing any of them, and because it reads the text the way Christ himself read it: as having always spoken of Him.
+</p>
+<hr>
+<p><small><em>The Luther Rose &#8212; Martin Luther&#8217;s Personal Seal</em></small></p>
+<div style="display: flex; gap: 1.5em; align-items: center; margin-top: 0.75em;">
+  <img src="pics/luthers seal.jpg" alt="The Luther Rose &#8212; Martin Luther&#8217;s personal seal" height="260" width="auto" style="flex-shrink: 0; mix-blend-mode: multiply;" />
+  <div>
+    <p>In 1530, Martin Luther explained the meaning of his seal in a letter to Lazarus Spengler. Every element carries doctrinal weight &#8212; it is not decoration but a compressed confession of the faith.</p>
+    <p><strong>The black cross on the red heart</strong> &#8212; Faith in the Crucified saves us. The cross is black because it mortifies and brings pain &#8212; but the heart retains its natural color, because the cross does not destroy nature; it keeps alive. <em>&#8220;The just shall live by faith.&#8221;</em> <small>Romans 1:17</small></p>
+    <p><strong>The white rose</strong> &#8212; Faith gives joy, comfort, and peace. The rose is white, not red, because white is the color of the spirits and angels. This is not the peace the world gives &#8212; it is Christ&#8217;s own peace, which the world cannot take away. <small>John 14:27</small></p>
+    <p><strong>The sky-blue field</strong> &#8212; The joy of the Spirit and of faith is already a beginning of the heavenly joy to come. It is real now, grasped in hope, but not yet fully revealed.</p>
+    <p><strong>The gold ring</strong> &#8212; The blessedness of heaven lasts forever and has no end. As gold is the most precious of metals, so eternal life surpasses all earthly goods and joys.</p>
+    <p>This is the lens through which this study reads the Psalms: the cross at the center, the heart kept alive by it, joy in the promise, and hope fixed on what is coming.</p>
+  </div>
+</div>
+<hr>
+<p><strong>How to use these pages</strong></p>
+<p><strong>Collapsible sections</strong> &#8212; Each topic is in its own expandable section. Click or tap the section header to open or close it. Sections can be read independently or in order.</p>
+<p><strong>Tooltips</strong> &#8212; Terms with a dotted underline can be hovered (or tapped on mobile) to reveal a definition or explanation. Tooltips on Hebrew and Greek words include the original text, root form, transliteration, and grammatical notes. You do not need to know any Hebrew or Greek &#8212; the tooltip gives you what you need.</p>
+<p><strong>Scripture references</strong> &#8212; Inline citations appear in small text after a claim or quotation. These are not decorative &#8212; they mark the specific passage the point depends on. Look them up.</p>
+<p><strong>Translation switcher</strong> &#8212; On verse study pages, a switcher lets you view the psalm text in ESV, KJV, NASB, or NIV. Comparing translations is one of the simplest ways to see where a word or phrase carries interpretive weight.</p>
+<p><strong>Cross-references</strong> &#8212; Underlined links within the pages jump to related sections. These connect verses, themes, or terms that bear on each other across the study.</p>
+<p><strong>Illustrations</strong> &#8212; Images appear throughout to make events, themes, and contexts from Scripture concrete. Each image is labeled and accompanied by explanatory text connecting it to the passage or concept being studied.</p>
+</details>
+<details class="study-section">
+<summary>Scripture and Layers of Meaning</summary>
+<p>
+The Psalter often contains layers of meaning that aren&#8217;t fully realized until later revelations by other inspired prophets. The psalms are not merely the personal prayers of their human authors &#8212; they are the living Word of God, breathed out by the Holy Spirit and enduring across every generation.
+</p>
+<p><small>2 Timothy 3:16&#8211;17 &#8212; 2 Peter 1:20&#8211;21 &#8212; Isaiah 40:8</small></p>
+<hr>
+<p>The Psalter operates on at least three levels of meaning simultaneously.</p>
+<p><strong>The Historical Layer</strong> &#8212; Each psalm arose from a specific moment in history. David wrote Psalm 3 while fleeing Absalom. Psalm 137 was written in Babylonian captivity. These are real prayers from real people in real circumstances. This layer is the foundation and should not be bypassed in favor of abstract meaning.</p>
+<p><strong>The Typological Layer</strong> &#8212; The Psalms are <span class="tooltip">prophetic texts<span class="tooltiptext">Texts in which the Holy Spirit, working through a human author, embedded meaning that points beyond the author's own time and experience — often toward events or persons the author could not fully see.</span></span>. The Holy Spirit, as the true author behind the human author, often intended more than the human author himself understood. The evidence is the gap between what was written and what the human author ever lived through. They are writing about a life that is not their own. David described suffering in Psalm 22 &#8212; <em>&#8220;They have pierced my hands and my feet&#8221;</em> &#8212; yet David was never crucified. David wrote words that described a death he never died. The text does not fit the writer. That gap is not an accident. It is the Holy Spirit writing through David about a suffering that was not David&#8217;s to bear. The typological layer is simply this: recognizing that the words are bigger than their human author. <small>1 Peter 1:10&#8211;12</small></p>
+<hr>
+<p><small><em>Illustration &#8212; Mortal Author, Enduring Word</em></small></p>
+<div style="display: flex; gap: 1.5em; align-items: flex-start; margin-top: 0.75em;">
+  <img src="pics/Caravaggio_—_The_Martyrdom_of_Saint_Matthew.jpg" alt="The Martyrdom of Saint Matthew &#8212; Caravaggio" height="500" width="auto" style="border: 1px solid #888888; flex-shrink: 0;" />
+  <div>
+    <p>Caravaggio, <em>The Martyrdom of Saint Matthew</em>, 1599&#8211;1600.<br><br>An executioner strikes Matthew down as an angel descends with a palm frond &#8212; the symbol of martyrdom. Matthew reaches upward even in death. The Word he proclaimed and recorded outlasted the sword raised against him.</p>
+    <p>Matthew lived and died in a specific moment in history. So did David. So did Moses, Asaph, and every other biblical author. Each one was a mortal person bound to their own time, circumstance, and language &#8212; yet the Holy Spirit worked through all of them, across centuries and vastly different conditions, to breathe out one living Word. The sword in this painting silenced Matthew the man. It could not silence what the Spirit had spoken through him. That is what it means for Scripture to be God-breathed &#8212; not that the authors floated above their humanity, but that the Holy Spirit moved through their humanity, and what He produced through them endures when they are gone.</p>
+  </div>
+</div>
+<hr>
+<p><strong>The Christological Layer</strong> &#8212; The New Testament authors show how the Psalms find their fullest meaning in Christ. At Pentecost, Peter preaches from Psalm 16: <em>&#8220;You will not abandon my soul to Hades.&#8221;</em> His argument is simple &#8212; David did die and was buried, therefore David was speaking of someone greater than himself. Jesus Himself quotes Psalm 22 from the cross. The third layer does not replace the first two; it completes them. <small>Acts 2:25&#8211;31, Matthew 27:46</small></p>
+<p>Christ himself demonstrated reading the Psalms through all three layers. Luke 24:44&#8211;45 records him opening the minds of his disciples to understand that the Law, the Prophets, and the Psalms had spoken of him all along. The three-layer reading did not begin with the Church &#8212; it was taught by Christ and received by the apostles. Reading the Psalter this way is not <span class="tooltip">eisegesis<span class="tooltiptext">Reading a meaning into the text from outside &#8212; importing an interpretation the text itself does not support, rather than drawing out what the text actually says. The opposite of exegesis.</span></span>; it is following where Christ led. <small>Luke 24:44&#8211;45</small></p>
+</details>
+<details class="study-section">
+<summary>How the Psalter Is Arranged</summary>
+<p>
+The Psalms are not a diary. They were written by many authors &#8212; <span class="tooltip">David<span class="tooltiptext">Israel&#8217;s most celebrated king (c. 1010&#8211;970 BC), military leader, and poet. Attributed with more psalms than any other author &#8212; 73 in the Hebrew tradition. His life provides the historical context for many lament and trust psalms.</span></span>, <span class="tooltip">Asaph<span class="tooltiptext">A Levitical musician appointed by David as a chief temple worship leader (1 Chronicles 15:17). Attributed with Psalms 50 and 73&#8211;83. The Asaph psalms often deal with theodicy &#8212; the justice of God in the face of suffering and apparent injustice.</span></span>, <span class="tooltip">the Sons of Korah<span class="tooltiptext">A Levitical guild of temple musicians and gatekeepers descended from Korah (Numbers 26:11), the man who led a rebellion against Moses in the wilderness (Numbers 16). Though Korah was destroyed, his sons survived and became a distinguished line of temple servants. Attributed with Psalms 42&#8211;49, 84&#8211;85, 87&#8211;88. Their psalms tend toward longing for God&#8217;s presence and the beauty of worship.</span></span>, <span class="tooltip">Moses<span class="tooltiptext">The prophet and lawgiver through whom God delivered Israel from Egypt and gave the Torah at Sinai. Attributed with Psalm 90 &#8212; the oldest psalm in the Psalter &#8212; a meditation on human frailty before God&#8217;s eternity: &#8220;Lord, you have been our dwelling place in all generations.&#8221;</span></span>, <span class="tooltip">Solomon<span class="tooltiptext">David&#8217;s son and successor as king (c. 970&#8211;931 BC), builder of the First Temple in Jerusalem. Attributed with Psalms 72 and 127. Psalm 72 is a royal prayer for God&#8217;s blessing on the king; Psalm 127 meditates on God&#8217;s sovereignty over human effort and family.</span></span>, and others &#8212; across many centuries, and they are not arranged by authorship or by the order in which they were written. The Psalter is an edited anthology &#8212; compiled and shaped over centuries, likely reaching its final <span class="tooltip">canonical form<span class="tooltiptext">The final, authoritative state of a text as received and recognized by the community &#8212; the form in which a collection was fixed and accepted as Scripture. For the Psalter, this refers to the five-book structure as it appears in the Hebrew Bible.</span></span> during or after the <span class="tooltip">Babylonian exile<span class="tooltiptext">The period (c. 597&#8211;538 BC) when the Babylonian empire under Nebuchadnezzar II conquered Jerusalem, destroyed the First Temple, and deported a large portion of the Israelite population to Babylon. It ended when the Persian king Cyrus the Great conquered Babylon and permitted the exiles to return (Ezra 1:1&#8211;4). Many scholars believe the final editing of the Psalter took place during or shortly after this period.</span></span> &#8212; and its arrangement is <span class="tooltip"><em>theological and liturgical</em><span class="tooltiptext"><strong>Theological:</strong> Arranged to teach doctrine &#8212; what the Psalms say about God, sin, covenant, and redemption. <strong>Liturgical:</strong> Arranged for corporate worship use &#8212; for the rhythms of Israel&#8217;s temple calendar and the congregation&#8217;s shared prayer life. Neither principle is chronological or biographical.</span></span>, not biographical.
+</p>
+<p>
+This matters for reading. When Psalm 5 ends in confidence and Psalm 6 opens in crisis &#8212; both are David&#8217;s psalms &#8212; that is not a contradiction or a regression in his faith. They are prayers from different seasons and circumstances, placed side by side because they belong together as <em>types of prayer</em>, not as consecutive diary entries. <span class="tooltip">Faith<span class="tooltiptext">Trust in God based on His character and promises, not on present circumstances or emotional state. In Lutheran theology, faith is not a feeling or achieved certainty but the reception of God&#8217;s word and promise &#8212; which is why genuine faith can coexist with doubt, lament, and apparent absence. The Psalter is the prayer book of faith precisely because it includes both confident praise and raw complaint.</span></span> is not linear &#8212; a soul can pray with certainty in the morning and be undone by evening &#8212; and the Psalter reflects that honestly.
+</p>
+<p>
+The Psalter is structured in <strong>five books</strong>, mirroring the five books of Moses:
+</p>
+<ul>
+<li><strong>Book I</strong> &#8212; Psalms 1&#8211;41 (predominantly <span class="tooltip">Davidic<span class="tooltiptext">Written by or attributed to David. Book I is the most concentrated collection of Davidic psalms in the Psalter.</span></span>; heavy <span class="tooltip">lament<span class="tooltiptext">A psalm genre in which the speaker cries out to God in distress &#8212; describing suffering, complaining, petitioning, and often turning toward trust. Lament is not faithlessness but honest prayer to God in the midst of pain. It is the most common genre in the Psalter.</span></span>)</li>
+<li><strong>Book II</strong> &#8212; Psalms 42&#8211;72 (Sons of Korah, Asaph, David)</li>
+<li><strong>Book III</strong> &#8212; Psalms 73&#8211;89 (Asaph and others; exile and <span class="tooltip">theodicy<span class="tooltiptext">The problem of reconciling God&#8217;s goodness and power with the existence of suffering and evil. Many Asaph psalms wrestle directly with this question &#8212; why do the wicked prosper and the righteous suffer? Book III contains the Psalter&#8217;s most sustained wrestling with God&#8217;s apparent hiddenness.</span></span>)</li>
+<li><strong>Book IV</strong> &#8212; Psalms 90&#8211;106 (Moses, anonymous; God&#8217;s reign over all nations)</li>
+<li><strong>Book V</strong> &#8212; Psalms 107&#8211;150 (praise crescendo; ends in pure <span class="tooltip">doxology<span class="tooltiptext">An expression of praise directed to God. The final five psalms (146&#8211;150) are each pure praise with no lament &#8212; each beginning and ending with &#8220;Hallelujah&#8221; (Praise the LORD). The Psalter begins in instruction (Psalm 1) and ends in unbroken praise.</span></span>)</li>
+</ul>
+<p>
+Within this structure the psalms are grouped by author, catchword, genre, and liturgical use &#8212; not chronology. The <span class="tooltip">superscriptions<span class="tooltiptext">The Hebrew titles or headings that appear at the beginning of many psalms, containing information about authorship, musical instructions, historical occasion, or genre. Examples: &#8220;A Psalm of David, when he fled from Absalom his son&#8221; (Psalm 3); &#8220;To the choirmaster, with stringed instruments&#8221; (Psalm 4). They are not part of the original psalm text in the modern editorial sense, but are treated as part of the canonical Scripture in both Jewish and Christian tradition.</span></span> confirm this: psalms with historical headings (&#8220;when he fled from Absalom,&#8221; &#8220;after Nathan came to him&#8221;) are scattered throughout the Psalter with no regard for the order those events occurred in David&#8217;s life.
+</p>
+<p>
+The result is a prayer book that transcends any single life. Because the psalms are not locked to a biographical sequence, they are available to every generation in every circumstance. A believer today can pray Psalm 6 in the same crisis David prayed it &#8212; because the psalm is not about David&#8217;s particular Tuesday. It is about the shape of the soul before God.
+</p>
+</details>
+<details class="study-section">
+<summary>References</summary>
+<div class="ref-list">
+  <ol>
+    <li id="ref-intro-1"><a href="#cite-intro-1" class="ref-back">&#x21A9;</a> Luke 24:44&#8211;45 &#8212; <em>&#8220;Then he said to them, &#8216;These are my words that I spoke to you while I was still with you, that everything written about me in the Law of Moses and the Prophets and the Psalms must be fulfilled.&#8217; Then he opened their minds to understand the Scriptures.&#8221;</em> Christ himself named the Psalms as a category of Scripture that had always spoken of him; the three-layer Christological reading is not a method imposed by the Church but the reading Christ taught and the apostles received. <small>See also Matthew 26:24; John 5:46.</small></li>
+    <li id="ref-intro-2"><a href="#cite-intro-2" class="ref-back">&#x21A9;</a> Westminster Confession of Faith, Chapter VII: &#8220;Of God&#8217;s Covenant with Man&#8221; (1647) &#8212; the defining statement of Reformed covenant theology. It distinguishes the Covenant of Works (made with Adam, requiring perfect obedience) from the Covenant of Grace (administered through Christ, requiring faith). This framework organizes the entire biblical narrative under covenant categories; a psalm is read by asking which covenant it belongs to, rather than whether it kills or gives life in the Lutheran Law-Gospel sense. The Presbyterian, Dutch Reformed, and many Baptist confessions follow this structure.</li>
+    <li id="ref-intro-3"><a href="#cite-intro-3" class="ref-back">&#x21A9;</a> Rashi (Rabbi Shlomo Yitzchaki, 1040&#8211;1105), <em>Commentary on Psalms</em> &#8212; the most influential medieval Jewish commentator on the Hebrew Bible. Rashi consistently reads the royal and suffering psalms as referring to David&#8217;s historical circumstances or to the nation of Israel collectively. Extreme suffering language (Psalm 22&#8217;s piercing imagery, Psalm 16&#8217;s deliverance from Sheol) is read as the heightened register of lament poetry or as representing Israel&#8217;s corporate experience in exile. See also Abraham ibn Ezra (1089&#8211;1167), whose Psalms commentary similarly anchors the language to the historical author and context rather than to messianic fulfillment.</li>
+    <li id="ref-intro-4"><a href="#cite-intro-4" class="ref-back">&#x21A9;</a> <em>Dei Verbum</em> (Dogmatic Constitution on Divine Revelation), Vatican II, 1965, §9&#8211;10 &#8212; <em>&#8220;Sacred Tradition and Sacred Scripture form one sacred deposit of the word of God&#8230; The task of authentically interpreting the word of God, whether written or handed on, has been entrusted exclusively to the living teaching office of the Church.&#8221;</em> See also <em>Catechism of the Roman Catholic Church</em>, §80&#8211;83. The Roman Catholic position holds that Scripture and Tradition constitute a single source of revelation, and that the Magisterium alone has binding authority to interpret both. This differs from the Eastern Orthodox position, which also holds Tradition alongside Scripture but locates authority in Patristic consensus and Ecumenical Councils rather than in the office of Rome.</li>
+  </ol>
+</div>
+</details>`
     },
-	
+
 	/* --- PSALM 1 --- */
 { label: "Psalm 1:1",
       title: "The Way of the Righteous",
@@ -739,7 +849,7 @@ David is confident trusting the Lord (faithfullness). And in his faith David is 
 </p><p>
 In verse 10 David will then ask God to judge the wicked people and talk about the contrast of the righteous (himself) and wicked people.
 </p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span> 
 	
@@ -930,7 +1040,7 @@ As part of a petition of prayer we are able to appeal to God's covenenantal rela
 This sets up David's coming petition for God to judge his enemies in verse 10.
 </p>
 
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span> 
 	
@@ -1284,7 +1394,7 @@ Here's who God is (holy)
 <br>Therefore (coming in later verses): Act against my enemies!
 </p><hr>
 
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span> 
 	
@@ -1439,7 +1549,7 @@ Ephesians 2:4-5:"But God, being rich in mercy, because of the great love with wh
 We can approach God NOT because we're worthy, but because of HIS abundant mercy/love.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span> 
 </p>
@@ -1588,7 +1698,7 @@ David has a balance of both chesed and fear.
 Not treating God casually yet not being too afraid to approach. Instead coming near with confidence and awe. 
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span> 
 </p>
@@ -1624,7 +1734,7 @@ What a great privilege and blessing it is to receive God's presence and worship 
 <br><sub> Hebrews 4:16, Ephesians 2:4, Hebrews 10:19, Hebrews 12:28 </sub>
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN & AMEN</em> ]
   </span> 
 </p>
@@ -1729,7 +1839,7 @@ These enemies are planning to act in hosility once they see a mistake hoping to 
 David mentions his enemies here because his enemies are watching him. David request that the Lord guide him on the right path because he cannot afford to make any mistakes while being watched. 
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span> 
 </p>
@@ -1808,7 +1918,7 @@ God's plan is His purposes for our lives.
 <p>
 God's way is not human's way. Human judgment is unreliable - we need GOD's way.
 </p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span> 
 <hr>
@@ -1827,7 +1937,7 @@ In verse 8 David needs to be led in righteousness by the Lords way. Upcoming in 
  because his enemies are dangerous and wicked therefore David petitions the Lord to act against them.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN & AMEN</em> ]
   </span> 
 </p>
@@ -1931,7 +2041,7 @@ Rotten from the inside out.
 Jesus teaches about the connection between a inward part and what comes out of a mouth in Matthew 12:34-35 and 15:18-19.
 </p> 
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span> 
 </p>
@@ -1980,7 +2090,7 @@ Paul quotes David in Romans 3:13 in his catalog of human sinfulness to demonstra
 </small>
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>  
@@ -2018,7 +2128,7 @@ All while simultaneously betraying Jesus by handing Him over to be arrested and 
 Flattery is a form of lying and dangerous because is deceives by concealing true intent to take advantage over someone. Only to then betray that persons trust after their defense is disarmed.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>  
@@ -2035,7 +2145,7 @@ It comes from their throat, which contains a devouring evil.
 Coming in Verse 10 David makes the petition for the Lord to judge his enemies. 
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN & AMEN</em> ]
   </span>
 </p>
@@ -2081,7 +2191,7 @@ These types of prayers exist in Scripture because David appeals to God to judge 
 His zeal for God's glory is evident in his phrasing: "they have rebelled against <em>You</em>," not against <em>me</em>. His enemies are the Lord's enemies, and so he appeals to the Lord to judge on the Lord's behalf, not his own. God's righteousness demands judgment by the very nature of who He is. David prays with honest emotion, and these imprecatory prayers also carry messianic weight, pointing to Christ Jesus — the ultimate judge of evil and wickedness.
 </p>  
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p> 
@@ -2165,7 +2275,7 @@ may be cast out. This is a parallel structure with opposite content.
 Trangression is serious enough to require Christ's death. <sub> Isaiah 53:5 </sub>
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p> 
@@ -2224,7 +2334,7 @@ Since God has anointed David as king of Israel, these enemies oppose the will of
 David appeals to God's honor rather than his own, aligning himself with God's purpose — framing the conflict not as a personal dispute but as a matter of cosmic justice.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -2268,7 +2378,7 @@ The Lord's Prayer contains imprecatory language: <em>"Thy kingdom come, thy will
 David has made his petition for the Lord's judgement. In the next verse, David petitions and anticipates a blessing for the righteous — in contrast to the wicked whom he has prayed God would judge and cast out.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN & AMEN</em> ]
   </span>
 </p> 
@@ -2307,7 +2417,7 @@ David uses three different words for joy/gladness:
 In doing this he is pilling up joy vocabulary to show an abundance and overflowing gladness by the blessed righteous people.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -2489,7 +2599,7 @@ Rather than just an intellectual belief it is a relational trust and affectionat
 Third word for joy in this verse carries a sense of triumphant joy by the means of victory/deliverance.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -2570,7 +2680,7 @@ The wicked follow a path of rebellion leading to judgment and destruction, while
 <small> Biblical Parallels: Psalm 32:10-11, 97:10-12, 64:9-10, 58:10-11 </small>
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -2583,7 +2693,7 @@ The believers/redeemed take refuge in God through Christ and are protected and r
 This verse establishes a theological foundation: the eternal destiny of the righteous overflows with blessing — <em>joy</em> flowing from a personal relationship with God, divine protection for those who take refuge in Him, and worship arising naturally from trust. Together these mark a living relationship with God, not mere obedience.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN & AMEN</em> ]
   </span>
 </p>
@@ -2771,7 +2881,7 @@ The Spirit has always worked through the external Word — the means were differ
 For modern Christians the fullness of the means are available through <span class="tooltip">Word<span class="tooltiptext">The Word of God — God's self-revelation through Scripture and preaching. It works in two movements: the Law, which convicts of sin and produces contrition; and the Gospel, which creates faith through the promise of forgiveness in Christ. The Word is not merely information — it is the active instrument the Holy Spirit uses to create and sustain faith. "Faith comes from hearing, and hearing through the word of Christ." (Romans 10:17)</span></span> and <span class="tooltip">Sacrament<span class="tooltiptext">A sacred act instituted by Christ that joins an earthly element with the Word of God to deliver forgiveness and create or strengthen faith. Lutheran theology recognizes two Sacraments: Baptism (water + Word, delivering forgiveness and the Holy Spirit — Titus 3:5, Acts 2:38) and the Lord's Supper (bread and wine with Christ's true body and blood, given for the forgiveness of sins — Matthew 26:26-28). The Sacraments are not symbols of faith already present — they are means through which the Spirit acts on the person.</span></span>.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
      <em>SELAH</em> 
   </span>
 </p>
@@ -2869,13 +2979,13 @@ Simultaneously, <em>atar</em> means to crown. God's favor is not only defensive 
 The righteous one does not merely survive — he is crowned. <em>Atar</em> gives the final word: not a warrior barely holding his shield, but a king wearing his favor.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     <em>SELAH</em> 
   </span>
 </p>
 
 </details>
-<hr>
+
 <details class="study-section">
 
 <summary>Fulfillment</summary>
@@ -2899,7 +3009,7 @@ but by union with Him who is the Righteous One. The path has always been faith; 
 <span id="cite-10" class="cite-anchor"><sup class="ref"><a href="#ref-10">[10]</a></sup></span>
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     <em>SELAH</em> 
   </span>
 </p>
@@ -2926,7 +3036,7 @@ Lucas Cranach the Elder, <em>Law and Gospel</em> (Gesetz und Gnade), c. 1529.
 Painted in collaboration with Martin Luther to visually teach justification. The left panel shows Moses, the Law, and death driving a naked sinner toward condemnation — righteousness from the law, which only condemns. The right panel shows the crucified and risen Christ, his blood flowing directly onto that same sinner — the righteousness that comes from God, received through faith. The naked sinner covered by Christ's blood is the visual rendering of Philippians 3:9: "not having a righteousness of my own that comes from the law, but that which is through faith in Christ."
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     <em>SELAH</em> 
   </span>
 </p>
@@ -2943,12 +3053,12 @@ The thorns were not incidental. They recalled the curse of the fall — God's de
 The exchange is the Gospel: He took the thorns so the righteous could be crowned. David's <em>atar</em> finds its fulfillment here — not merely anticipated in royal imagery, but accomplished at the cross.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     <em>SELAH</em> 
   </span>
 </p>
 </details>
-<hr>
+
 <details class="study-section">
 <summary>Insight</summary>
 
@@ -2957,8 +3067,8 @@ Psalm 5 closes with a <span class="tooltip">declaration of divine confidence<spa
  — rather than David having uncertainty and placing his trust in what might happen or if God will deliver him. Instead he rests on the settled theological fact that God blesses the righteous.
  </p>
  <p>
-David has <em>prayed</em> <small>(vv. 1–3)</small>, <em>argued</em> from God's holy character <small>(vv. 4–6)</small>, <em>entered</em> God's presence through chesed <small>(v. 7)</small>,
-<em>asked</em> for guidance <small>(vv. 8–9)</small>, <em>petitioned</em> for judgment against the wicked <small>(v. 10)</small>, and <em>prayed</em> for the joy of the righteous <small>(v. 11)</small>.
+David has <em>prayed</em> <small>(verses 1–3)</small>, <em>argued</em> from God's holy character <small>(verses 4–6)</small>, <em>entered</em> God's presence through chesed <small>(v. 7)</small>,
+<em>asked</em> for guidance <small>(verses 8–9)</small>, <em>petitioned</em> for judgment against the wicked <small>(v. 10)</small>, and <em>prayed</em> for the joy of the righteous <small>(v. 11)</small>.
 </p>
 <p>
 Now he <em>gives the grounding reason</em> for everything. The reason is that God actively blesses and completely encircles the righteous with His favor.
@@ -2967,12 +3077,12 @@ Now he <em>gives the grounding reason</em> for everything. The reason is that Go
 The journey of Psalm 5 starts with David groaning in verse 1 and ends with him crowned with favor in verse 12. Although the crisis has not changed his perspective has — through prayer.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     <em>SELAH</em> 
   </span>
 </p>
 </details>
-<hr>
+
 <details class="study-section">
 <summary>Lessons</summary>
 
@@ -2989,12 +3099,12 @@ The journey of Psalm 5 starts with David groaning in verse 1 and ends with him c
 <em>You are not just shielded — you are crowned.</em> The verse does not close with a warrior barely holding against enemies; it closes with a king wearing divine favor. God's protection of the righteous is also God's dignity over them. To stand before God righteous by faith is not merely a defensive status — you are encircled with His delight, adorned with His favor. This is not how you feel in difficult seasons. It is what is already true.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     <em>SELAH</em> 
   </span>
 </p>
 </details>
-<hr>
+
 <details class="study-section">
 <summary>Prayer</summary>
 <p>
@@ -3004,11 +3114,11 @@ Encircle me with Your presence. Let the enemies of my soul find no gap in Your p
 Crown me not with what I deserve, but with what You delight to give — Your favor, Your mercy, Your righteousness.
 For it is You, LORD, who bless. And I receive it by faith alone, in Christ alone.
 </p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     <em>AMEN</em> 
   </span>
 </details>
-<hr>
+
 <details class="study-section">
 <summary> References </summary>
 <div class="ref-list">
@@ -3032,8 +3142,8 @@ For it is You, LORD, who bless. And I receive it by faith alone, in Christ alone
    </ol>
 </div>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
-    [ <em>SELAH AMEN</em> ]
+  <span class="selah-marker">
+     <em>SELAH AMEN</em> 
   </span>
 </p>
 </details>
@@ -3046,55 +3156,94 @@ For it is You, LORD, who bless. And I receive it by faith alone, in Christ alone
     title: "Psalm 6 — The First Penitential Psalm",
     image: "lyre.png",
     text: `
-      <p><em>To the choirmaster: with stringed instruments; according to The Sheminith. A Psalm of David.</em></p>
+      <p>To the choirmaster: with stringed instruments; according to <span class="tooltip tooltip-down">The Sheminith<span class="tooltiptext"><span class="hebrew-row"><span class="hebrew-text" dir="rtl">&#x05D4;&#x05E9;&#x05BC;&#x05B0;&#x05DE;&#x05B4;&#x05D9;&#x05E0;&#x05B4;&#x05D9;&#x05EA;</span> <span class="transliteration">(haSheminith)</span></span><span class="definition-list"><span dir="rtl">&#x05E9;&#x05B0;&#x05DE;&#x05B4;&#x05D9;&#x05E0;&#x05B4;&#x05D9;</span> &#8212; (shemini) &#8220;eighth&#8221;<br>1. A lower-octave musical direction &#8212; suiting the somber tone<br>2. Possibly an 8-stringed instrument<br>3. A specific liturgical mode<br><small>Also appears in: Psalm 12 only</small></span></span></span>. A Psalm of David.</p>
     `,
     insight: `
 <details class="study-section">
-<summary> Insight </summary>
+<summary>Overview</summary>
 <p>
-Psalm 6 is the first of the seven <strong>Penitential Psalms</strong> — a category recognized by the church since the patristic period. The seven are Psalms 6, 32, 38, 51, 102, 130, and 143. They form a complete portrait of the soul moving from exposed guilt to received forgiveness.
+Psalm 6 is the first of the seven <span class="tooltip">Penitential Psalms<span class="tooltiptext">Seven psalms grouped since the patristic era for their themes of confession, sorrow over sin, and prayer for forgiveness: Psalms 6, 32, 38, 51, 102, 130, and 143. Together they trace the soul&#8217;s movement from sin&#8217;s exposure under the Law to mercy received through the Gospel.</span></span> &#8212; a category recognized by the church since the <span class="tooltip">patristic period<span class="tooltiptext">The era of the Church Fathers (roughly AD 100&#8211;750) &#8212; theologians such as Augustine, Origen, Chrysostom, and Jerome who shaped Christian doctrine through preaching, commentary, and creedal definition. Their readings of Scripture carry significant weight in confessional traditions as witnesses to how the early church understood the text.</span></span>. They form a complete portrait of the soul moving from exposed guilt to received forgiveness.
 </p>
 <p>
-David is at his lowest: physically sick, emotionally crushed, surrounded by enemies, afraid that God's discipline has become condemnation. He moves from terror (vv. 1–3) through petition (vv. 4–5) through grief (vv. 6–7) to sudden, confident resolution (vv. 8–10). The shift from weeping to certainty — without anything external changing — is what makes Hebrew lament a distinct spiritual form.
+David is at his lowest: physically sick, emotionally crushed, surrounded by enemies, afraid that God&#8217;s discipline has become condemnation. The soul&#8217;s movement through the psalm is the movement of every penitent:
 </p>
-<hr>
-<p><strong>The Superscription</strong></p>
+<ul style="display:flex;flex-direction:column;gap:0.75em;">
+<li><strong>Terror</strong> (verses 1&#8211;3) &#8212; The soul stands under what feels like divine wrath. The body breaks. God&#8217;s presence is felt, but as threat rather than comfort &#8212; the question is not &#8220;where is God?&#8221; but &#8220;how long will He be angry?&#8221;</li>
+<li><strong>Petition</strong> (verses 4&#8211;5) &#8212; The soul turns. Not in self-justification but in appeal to God&#8217;s <span class="tooltip">chesed<span class="tooltiptext">The Hebrew word for God&#8217;s covenant loyalty &#8212; often translated &#8220;steadfast love&#8221; or &#8220;lovingkindness.&#8221; It describes a committed, faithful love that flows not from the recipient&#8217;s merit but from God&#8217;s own character and promise to His people.</span></span>. The argument is entirely theological: <em>&#8220;save me for the sake of your steadfast love.&#8221;</em> The soul has nothing to offer; it pleads God&#8217;s character.</li>
+<li><strong>Grief</strong> (verses 6&#8211;7) &#8212; Sorrow does its full work. Tears, sleeplessness, physical wasting. This is not theatrical; it is the honest cost of sin felt in the bones. The soul does not rush past the grief to get to the resolution.</li>
+<li><strong>Resolution</strong> (verses 8&#8211;10) &#8212; Sudden, declarative, certain. Nothing external has changed &#8212; the enemies are still present, the body is still worn &#8212; but the soul is certain: <em>&#8220;The LORD has heard.&#8221;</em> The turn is not emotional recovery. It is faith receiving a word.</li>
+</ul>
 <p>
-<span class="tooltip"><strong>Sheminith</strong><span class="tooltiptext">
-<div class="hebrew-row">
-  <span class="hebrew-text" dir="rtl">הַשְּׁמִינִית</span>
-  <span class="transliteration">(haSheminith)</span>
-</div>
-<div class="definition-list">
-  <span dir="rtl">שְׁמִינִי</span> — (shemini) "eighth"
-  <br>1. A lower octave direction — suiting the somber tone
-  <br>2. Possibly an 8-stringed instrument
-  <br>3. A specific liturgical mode
-  <br>Also appears in: Psalm 12 only
-</div>
-</span></span>
-— most likely a lower-register musical direction. The Psalm descends; the music descends with it.
+This fourfold movement is what makes <span class="tooltip">Hebrew lament<span class="tooltiptext">A recognized biblical prayer genre in which the psalmist brings suffering, fear, or confusion directly to God &#8212; roughly one-third of the Psalter takes this form. The typical movement runs from addressing God, to stating the complaint, to petitioning for help, to expressing trust, and closing with a vow of praise. Lament is not unbelief. It is faith speaking honestly. The defining mark of the form is the turn from raw pain to declared trust, without anything external having changed.</span></span> a distinct form of prayer &#8212; and a template the church has prayed in every generation.
 </p>
-<p><strong>Structure:</strong></p>
-<ol>
-<li>vv. 1–3 — Do not rebuke in wrath; description of suffering</li>
-<li>vv. 4–5 — Turn, deliver, save — for the sake of chesed</li>
-<li>vv. 6–7 — Physical toll: weeping, wasting eyes</li>
-<li>vv. 8–10 — Sudden resolution: The LORD has heard</li>
-</ol>
-<hr>
+</details>
+<details class="study-section">
+<summary>Structure</summary>
+<ul style="display:flex;flex-direction:column;gap:0.75em;">
+<li>verses 1&#8211;3 &#8212; Do not rebuke in wrath; description of suffering</li>
+<li>verses 4&#8211;5 &#8212; Turn, deliver, save &#8212; for the sake of chesed</li>
+<li>verses 6&#8211;7 &#8212; Physical toll: weeping, wasting eyes</li>
+<li>verses 8&#8211;10 &#8212; Sudden resolution: The LORD has heard</li>
+</ul>
+</details>
+<details class="study-section">
+<summary>Law &amp; Gospel</summary>
+<p>
+Psalm 6 is a compressed Law and Gospel movement. The Law speaks first and fully: God&#8217;s wrath, the psalmist&#8217;s shaking bones, the grinding weight of divine displeasure. David does not minimize this &#8212; he feels it in his body (v. 2), in his soul (v. 3), in his sleepless nights (v. 6). The Law does its full work.
+</p>
+<p>
+The hinge is v. 4: <em>&#8220;Save me for the sake of your <span class="tooltip">steadfast love<span class="tooltiptext"><span class="hebrew-row"><span class="hebrew-text" dir="rtl">&#x05D7;&#x05B6;&#x05E1;&#x05B6;&#x05D3;</span> <span class="transliteration">(chesed)</span></span><span class="definition-list">The covenant loyalty of God &#8212; faithful, merciful, and unearned. Not sentiment but commitment. God&#8217;s chesed is the ground on which every biblical prayer for forgiveness stands.</span></span></span>.&#8221;</em> David does not appeal to his own worthiness. He appeals to God&#8217;s character. This is the Gospel logic: mercy is received, not achieved.
+</p>
+<p>
+The resolution (verses 8&#8211;10) is not earned by David&#8217;s grief or prayer &#8212; it simply arrives. &#8220;The LORD has heard.&#8221; The declaration precedes any visible change. This is how justification works: the word is spoken, and the soul is certain before the circumstances shift.
+</p>
+</details>
+<details class="study-section">
+<summary>Christ in the Psalm</summary>
+<p>
+The church has always heard more than David&#8217;s voice in Psalm 6. Augustine writes that these are the words of Christ in the members of his body &#8212; the Head praying through his people. But more directly: Christ prayed this psalm in his own person, not for his own sin, but for ours.
+</p>
+<p>
+Hebrews 5:7 describes Jesus in Gethsemane: <em>&#8220;In the days of his flesh, Jesus offered up prayers and supplications, with loud cries and tears, to him who was able to save him from death.&#8221;</em> This is Psalm 6 made flesh. The shaking bones, the drenched pillow, the plea for deliverance &#8212; Jesus entered that place entirely, bearing the wrath David feared, so that we receive only the chesed David clung to.
+</p>
+<p>
+The penitential psalms do not describe Christ&#8217;s personal sin &#8212; he had none. They describe the condition he assumed on our behalf. He was <em>rebuked in anger</em> (v. 1) so we would not be. He descended into abandonment so that our cry of <em>&#8220;How long?&#8221;</em> (v. 3) is already answered in him. When we pray Psalm 6, we pray it sheltered in his prior praying of it.
+</p>
+</details>
+<details class="study-section">
+<summary>Liturgical Use</summary>
+<p>
+Psalm 6 has occupied a fixed place in Christian worship since the early church, anchoring the <span class="tooltip">Seven Penitential Psalms<span class="tooltiptext">Assigned to Ash Wednesday devotion in medieval practice and prayed through Lent; Psalm 6 opens the sequence.</span></span> as a penitential season anchor.
+</p>
+<ul>
+<li><strong>Lent / Ash Wednesday</strong> &#8212; The seven penitential psalms were prayed together on Ash Wednesday in medieval practice; Psalm 6 opens that sequence.</li>
+<li><strong>Office of the Dead</strong> &#8212; Used in burial rites and prayers for the dying in both Roman and Lutheran traditions.</li>
+<li><strong>Morning Prayer</strong> &#8212; Psalm 6 appears in the traditional Divine Hours rotation, fitting for beginning the day with honest confession before God.</li>
+</ul>
+<p>
+In confessional Lutheran practice, Psalm 6 belongs to the penitential rhythm of the church year &#8212; not as a morbid exercise, but as the honest acknowledgment that we come to God empty-handed, relying entirely on his chesed.
+</p>
+</details>
+<details class="study-section">
+<summary>From the Church</summary>
 <blockquote class="church-voice">
-  <p>Luther called the Penitential Psalms his "dearest Psalms" and placed Psalm 6 first among them in his 1517 commentary. He argued that they form the complete movement of a soul from the weight of sin to received mercy — and that any believer who has never prayed Psalm 6 has not yet fully felt the weight of sin before a holy God.</p>
-  <footer>— Martin Luther, <cite>Explanation of the Seven Penitential Psalms</cite>, 1517 [paraphrase]</footer>
+  <p>This psalm is the voice of one who is afraid &#8212; afraid not because God is absent, but because He is present and holy. Yet even in that fear, the soul turns toward God and not away. To cry out to God in terror is itself an act of trust. The one who fears only men falls silent; the one who fears God speaks.</p>
+  <footer>&#8212; Augustine, <cite>Enarrationes in Psalmos</cite>, on Psalm 6 [paraphrase]</footer>
+</blockquote>
+<blockquote class="church-voice">
+  <p>These are my dearest Psalms. In them a man is taught to know himself in the sight of God &#8212; and knowing himself, to flee not from God but toward Him. The soul that has never prayed Psalm 6 has not yet felt the full weight of its sin, and has therefore not yet tasted the full sweetness of forgiveness received.</p>
+  <footer>&#8212; Martin Luther, <cite>Explanation of the Seven Penitential Psalms</cite>, 1517 [paraphrase]</footer>
+</blockquote>
+<blockquote class="church-voice">
+  <p>Note where this psalm begins and where it ends: it opens in the minor key and closes in the major. Terror and trembling in the first verses; confidence and song in the last. Between them, a single turning point: &#8220;The LORD hath heard.&#8221; When a man knows that God has heard him, the whole tone of the soul is changed.</p>
+  <footer>&#8212; Charles Spurgeon, <cite>Treasury of David</cite>, on Psalm 6 [paraphrase]</footer>
 </blockquote>
 <p>
-Luther's point: these psalms are not gloomy exercises in self-condemnation. They are the pathway through which Law (exposure of sin) gives way to Gospel (received mercy). Psalm 6 is where the journey begins.
-</p>
-<p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
-    [ <em>SELAH AMEN</em> ]
+  <span class="selah-marker">
+     <em>SELAH AMEN</em> 
   </span>
 </p>
+</details>
 `
   },
 
@@ -3191,7 +3340,7 @@ David's opening petition is not a request to escape correction — he knows he d
 David is not claiming innocence. He is appealing to relationship: "Correct me as Your son, not judge me as Your enemy." The same Law/Gospel tension that runs through all of the penitential psalms is alive in the very first verse: God must punish sin, and yet God has bound Himself in covenant to His people.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3235,7 +3384,7 @@ Lord, I know I deserve correction. I am not asking You to ignore my sin — I am
   </ol>
 </div>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3376,7 +3525,7 @@ The verse breaks off mid-sentence: "But you, O LORD —" This is <em>aposiopesis
 This is the deepest form of multilayered prayer (cf. Psalm 5:1) — beyond words, beyond groaning, into the sheer turning of the face toward God.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3422,7 +3571,7 @@ Lord, I am languishing. My resources are gone. I am not coming to You with a rec
   </ol>
 </div>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3567,7 +3716,7 @@ This is NOT crass bargaining. The theological logic:
 The argument reflects OT theology at a specific stage — the full hope of bodily resurrection and eternal praise was still emerging. David prays within his understanding, and God honors it. The Sheol argument is ultimately transcended by the Resurrection: <span id="cite-3" class="cite-anchor">Christ has conquered death, and those who die in faith are with Christ, not silenced. <sup class="ref"><a href="#ref-3">[3]</a></sup></span> But David's instinct — that God's glory is served by the praise of His people — is permanently valid.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3611,7 +3760,7 @@ Turn to me, Lord. Not because I deserve it — I know I do not. Turn to me for t
   </ol>
 </div>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3676,7 +3825,7 @@ David now gives us a physical record of sustained grief: exhausted from groaning
 <div class="definition-list">
   <span dir="rtl">אַנְחָה</span> — (anakhah) groaning, sighing, moaning
   <br>From <span dir="rtl">אָנַח</span> (anakh) = to sigh, groan — an involuntary, sustained expression of pain
-  <br>Not the articulate prayer of vv. 1–4 but the pre-verbal sound that comes from deep anguish
+  <br>Not the articulate prayer of verses 1–4 but the pre-verbal sound that comes from deep anguish
   <br>Connects to Psalm 5:1 — the "groaning" (hagigi) beneath the words
 </div>
 <hr>
@@ -3730,7 +3879,7 @@ David now gives us a physical record of sustained grief: exhausted from groaning
 The enemy appears for the first time since v.1 in v.7b: "because of all my foes." David's suffering is not only spiritual — it is the fruit of sustained opposition and persecution. The Psalms do not separate spiritual, emotional, and physical suffering into separate compartments. They treat the whole person under attack.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3764,7 +3913,7 @@ Lord, I am exhausted. I have been groaning so long my body is worn out. My night
   </ol>
 </div>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3860,7 +4009,7 @@ The resolution cascades across three verses:
 </div>
 <div class="definition-list">
   <span dir="rtl">בָּהַל</span> — (bahal) to be terrified, troubled, dismayed
-  <br>This is the <strong>same root</strong> used in vv. 2–3: David's bones were "troubled" (bahal); his soul was "greatly troubled" (bahal me'od)
+  <br>This is the <strong>same root</strong> used in verses 2–3: David's bones were "troubled" (bahal); his soul was "greatly troubled" (bahal me'od)
   <br>Now his enemies are "greatly troubled" (bahal me'od) — the word has turned back on them
   <br>What was done to David is now done by God to his enemies
 </div>
@@ -3893,7 +4042,7 @@ Hebrew poetry uses verbal echoes to signal resolution. In Psalm 6, the words use
 The resolution is not merely David's relief — it is a complete structural reversal. The terror that was on David, the turning that David sought, now falls on his enemies. God's hearing repositions everything.
 </p>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN</em> ]
   </span>
 </p>
@@ -3947,7 +4096,7 @@ Lord, You have heard. You heard the sound of my weeping — not just my formed w
   </ol>
 </div>
 <p>
-  <span style="font-family: 'Courier New', monospace; font-size: 12px; color: #808080;">
+  <span class="selah-marker">
     [ <em>SELAH AMEN &amp; AMEN — END OF PSALM 6</em> ]
   </span>
 </p>
@@ -3956,3 +4105,4 @@ Lord, You have heard. You heard the sound of my weeping — not just my formed w
 ];
   
  
+
