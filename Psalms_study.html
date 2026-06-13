@@ -59,6 +59,20 @@
 <script src="psalms_data.js"></script>
 <script>
   /* UI ELEMENT SELECTION */
+  const genreTooltips = {
+    "Individual Lament": "A direct cry to God in suffering — the most common genre in the Psalter. Lament is not faithlessness; it is the prayer of faith in the face of crisis.",
+    "Communal Lament": "A corporate cry to God on behalf of the community in collective suffering.",
+    "Hymn": "Direct praise of God for who He is — His character, power, and works in creation and history.",
+    "Royal": "A psalm concerning the king — his coronation, reign, or prayer. These psalms make claims that exceed any human ruler and find their full referent in Christ.",
+    "Wisdom": "A psalm that teaches — the way of life, the contrast between righteous and wicked, and the fear of God as the foundation of understanding.",
+    "Penitential": "A psalm of confession — the soul owning its sin before God and appealing to His mercy rather than any righteousness of its own.",
+    "Song of Ascent": "One of Psalms 120–134, sung by pilgrims traveling up to Jerusalem for the three annual festivals.",
+  };
+  const parallelismTooltips = {
+    "Synonymous": "The second line restates the first with different words or images — not repetition but deepening.",
+    "Antithetic": "The second line contrasts the first. The meaning lives in the gap between the two halves.",
+    "Synthetic": "The second line extends or completes the first — adding a result, a location, or carrying the thought forward.",
+  };
   let currentIndex = 0;
   const nextBtn = document.getElementById('next-btn');
   const prevBtn = document.getElementById('prev-btn');
@@ -126,11 +140,15 @@
     statusText.innerText = v.label;
     
     // Update Content Window
+    const genreBar = (v.genre || v.parallelism) ? `<div style="font-size: 11px; font-family: monospace; color: #606060; margin-bottom: 6px;">${v.genre ? `<span class="tooltip" style="cursor:default;">${v.genre}<span class="tooltiptext">${genreTooltips[v.genre] || ''}</span></span>` : ''}${v.genre && v.parallelism ? ' &nbsp;&#183;&nbsp; ' : ''}${v.parallelism ? `<span class="tooltip" style="cursor:default;">${v.parallelism}<span class="tooltiptext">${parallelismTooltips[v.parallelism] || ''}</span></span>` : ''}</div>` : '';
     display.innerHTML = `
       <div style="display: flex; justify-content: space-between; align-items: flex-end">
-        <h2 style="margin-top: 0; font-family: 'EB Garamond', serif; line-height: 1; margin-bottom: 8px;">
-          ${v.title}
-        </h2>
+        <div>
+          <h2 style="margin-top: 0; font-family: 'EB Garamond', serif; line-height: 1; margin-bottom: 10px;">
+            ${v.title}
+          </h2>
+          ${genreBar}
+        </div>
         ${v.image ? `<img src="${v.image}" height="70">` : ''}
       </div>
       <hr class="retro-hr">

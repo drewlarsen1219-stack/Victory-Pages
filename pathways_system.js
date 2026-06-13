@@ -1722,10 +1722,9 @@ window.vpGoHome = function() {
 `;
     attachSidebarStatusBar();
   }
-  pane.innerHTML = `<div id="default-msg" style="padding:24px 20px;">
-  <p style="font-family:'MS UI Gothic',monospace;font-size:0.95em;color:#333;margin:0 0 12px;font-weight:bold;letter-spacing:0.03em;">What is Pilgrim Pace?</p>
-  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#555;margin:0 0 16px;line-height:1.6;letter-spacing:0.08em;">A faith-based personal operating system for intentional Christian living. Assess your life across 13 domains — Body, Mind, Finance, Vitality, Spirit, and more — then follow guided pathways toward growth in each area.</p>
-  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#888;margin:0;">New Users select <strong style="color:#444;">"Quick Start"</strong> on the menu to begin.</p>
+  pane.innerHTML = `<div id="default-msg" style="padding:24px 20px;max-width:420px;">
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.95em;color:#333;margin:0 0 10px;font-weight:bold;letter-spacing:0.03em;">What is Pilgrim Pace?</p>
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#555;margin:0;line-height:1.7;letter-spacing:0.08em;">A faith-based personal operating system for intentional Christian living. Assess your life across 13 domains — Body, Mind, Finance, Vitality, Spirit, and more — then follow guided pathways toward growth in each area. New Users select <strong style="color:#444;">"Quick Start"</strong> on the menu to begin.</p>
 </div>`;
 };
 
@@ -1747,10 +1746,9 @@ document.addEventListener('DOMContentLoaded', function() {
   if (existingLink) existingLink.setAttribute('onclick', 'vpLoadExistingUser()');
 
   const pane = document.getElementById('display-pane');
-   if (pane) pane.innerHTML = `<div id="default-msg" style="padding:24px 20px;">
-  <p style="font-family:'MS UI Gothic',monospace;font-size:0.95em;color:#333;margin:0 0 12px;font-weight:bold;letter-spacing:0.03em;">What is Pilgrim Pace?</p>
-  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#555;margin:0 0 16px;line-height:1.6;letter-spacing:0.08em;">A faith-based personal operating system for intentional Christian living. Assess your life across 13 domains — Body, Mind, Finance, Vitality, Spirit, and more — then follow guided pathways toward growth in each area.</p>
-  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#888;margin:0;">New Users select <strong style="color:#444;">"Quick Start"</strong> on the menu to begin.</p>
+   if (pane) pane.innerHTML = `<div id="default-msg" style="padding:24px 20px;max-width:420px;">
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.95em;color:#333;margin:0 0 10px;font-weight:bold;letter-spacing:0.03em;">What is Pilgrim Pace?</p>
+  <p style="font-family:'MS UI Gothic',monospace;font-size:0.8em;color:#555;margin:0;line-height:1.7;letter-spacing:0.08em;">A faith-based personal operating system for intentional Christian living. Assess your life across 13 domains — Body, Mind, Finance, Vitality, Spirit, and more — then follow guided pathways toward growth in each area. New Users select <strong style="color:#444;">"Quick Start"</strong> on the menu to begin.</p>
 </div>`;
   const v  = vpGetDailyScripture();
   const fs = document.getElementById('footer-scripture');

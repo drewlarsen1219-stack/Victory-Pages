@@ -766,8 +766,8 @@ window.showContent = function showContent(section) {
         <p><strong>Library</strong></p>
         <p>Curated literature for the modern pilgrim.</p>
         <hr>
-        <p><strong>Scripture Studies</strong></p>
-        <p><a href="Psalms_study.html">Study on the Book of Psalms</a> &mdash; The site owner's personal study of the Psalms, updated as the study progresses.</p>
+        <p><strong>Expositions on Scripture</strong></p>
+        <p><a href="Psalms_study.html" style="font-family:'Garamond','Palatino Linotype','Book Antiqua',serif;font-size:1.15em;font-style:italic;letter-spacing:0.04em;">The Book of Psalms</a> &mdash; A verse-by-verse confessional Lutheran exposition of the Psalter by the same author as Pilgrim Pace. Hebrew grammar, covenantal theology, and Christological fulfillment &mdash; studied in order, updated as the work advances.</p>
       </div>`;
   }
 };
